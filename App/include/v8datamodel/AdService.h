@@ -1,6 +1,6 @@
 //
 //  AdService.h
-//  Copyright ROBLOX Corp 2014
+//  Copyright NAMEHERE Corp 2014
 //
 //  Created by Ben Tkacheff on 4/16/14.
 //

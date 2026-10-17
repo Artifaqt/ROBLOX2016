@@ -22,8 +22,8 @@ static Reflection::BoundFuncDesc<FriendService, void(std::string)> func_SetGetFr
 
 static Reflection::BoundFuncDesc<FriendService, void(bool)>func_SetEnabled(&FriendService::setEnable, "SetEnabled", "enable", Security::LocalUser);
 
-static Reflection::RemoteEventDesc<FriendService, void(int,int,FriendService::FriendEventType)> desc_friendEventReplicating(&FriendService::friendEventReplicatingSignal, "RemoteFriendEventSignal", "userId", "userId", "event", Security::Roblox, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::BROADCAST);
-static Reflection::RemoteEventDesc<FriendService, void(int,int,FriendService::FriendStatus)> desc_friendStatusReplicating(&FriendService::friendStatusReplicatingSignal,  "RemoteFriendStatusSignal", "userId", "userId", "status", Security::Roblox, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::CLIENT_SERVER);
+static Reflection::RemoteEventDesc<FriendService, void(int,int,FriendService::FriendEventType)> desc_friendEventReplicating(&FriendService::friendEventReplicatingSignal, "RemoteFriendEventSignal", "userId", "userId", "event", Security::NAMEHERE, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::BROADCAST);
+static Reflection::RemoteEventDesc<FriendService, void(int,int,FriendService::FriendStatus)> desc_friendStatusReplicating(&FriendService::friendStatusReplicatingSignal,  "RemoteFriendStatusSignal", "userId", "userId", "status", Security::NAMEHERE, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::CLIENT_SERVER);
 
 static Reflection::BoundFuncDesc<FriendService, void(std::string)> func_SetFriendsOnlineUrl(&FriendService::setFriendsOnlineUrl, "SetFriendsOnlineUrl", "url", Security::LocalUser);
 REFLECTION_END();
@@ -34,9 +34,9 @@ FriendService::FriendService()
 	:enable(false)
 {
 	setName(sFriendService);
-	//setMakeFriendUrl("http://siteapp3.roblox.com/Friend/CreateFriend?firstUserId=%d&secondUserId=%d");
-	//setGetFriendsUrl("http://siteapp3.roblox.com/Friend/AreFriends?userId=%d");
-	//setBreakFriendUrl("http://siteapp3.roblox.com/Friend/BreakFriend?firstUserId=%d&secondUserId=%d");
+	//setMakeFriendUrl("http://siteapp3.namehere.com/Friend/CreateFriend?firstUserId=%d&secondUserId=%d");
+	//setGetFriendsUrl("http://siteapp3.namehere.com/Friend/AreFriends?userId=%d");
+	//setBreakFriendUrl("http://siteapp3.namehere.com/Friend/BreakFriend?firstUserId=%d&secondUserId=%d");
 }
 
 void FriendService::setEnable(bool value)

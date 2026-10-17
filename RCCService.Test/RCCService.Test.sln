@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 10.00
 # Visual Studio 2008
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCCService.Test", "RCCService.Test.csproj", "{F539D099-AC34-4F4D-9E00-C8DC77EC4F0F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roblox.Grid.Common", "..\..\Client.LegacyAssemblies\Grid\Roblox.Grid.Common\Roblox.Grid.Common.csproj", "{DC7F620E-40D7-41F9-A569-2401AB1B9EAF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAMEHERE.Grid.Common", "..\..\Client.LegacyAssemblies\Grid\NAMEHERE.Grid.Common\NAMEHERE.Grid.Common.csproj", "{DC7F620E-40D7-41F9-A569-2401AB1B9EAF}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roblox.Common", "..\..\Client.LegacyAssemblies\Roblox.Common\Roblox.Common.csproj", "{31C4415B-A946-47BD-83FE-AE13FBFB1324}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAMEHERE.Common", "..\..\Client.LegacyAssemblies\NAMEHERE.Common\NAMEHERE.Common.csproj", "{31C4415B-A946-47BD-83FE-AE13FBFB1324}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{DCBF33F7-790E-4E91-BED6-01AA87773F17}"
 	ProjectSection(SolutionItems) = preProject
@@ -17,7 +17,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Emcaster", "..\..\Client.LegacyAssemblies\Emcaster\Emcaster.csproj", "{6FBD14B8-C57D-49FD-8283-A162F40ABE37}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roblox.Configuration", "..\..\Client.LegacyAssemblies\Roblox.Configuration\Roblox.Configuration.csproj", "{D996AD59-D9C6-4DBB-9E96-D7C90896E8D0}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAMEHERE.Configuration", "..\..\Client.LegacyAssemblies\NAMEHERE.Configuration\NAMEHERE.Configuration.csproj", "{D996AD59-D9C6-4DBB-9E96-D7C90896E8D0}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCCService.Thumb.Test", "..\RCCService.Thumb.Test\RCCService.Thumb.Test.csproj", "{13ADB282-C9B7-4397-9867-23EB7E3E2536}"
 	ProjectSection(ProjectDependencies) = postProject
@@ -27,11 +27,11 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "RCCService.Thumb.Test", "..
 		{F539D099-AC34-4F4D-9E00-C8DC77EC4F0F} = {F539D099-AC34-4F4D-9E00-C8DC77EC4F0F}
 	EndProjectSection
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roblox.WebsiteSettings", "..\..\Client.LegacyAssemblies\WebsiteSettings\Roblox.WebsiteSettings.csproj", "{91147901-6468-4D3B-96C8-93E2ABD4F09A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAMEHERE.WebsiteSettings", "..\..\Client.LegacyAssemblies\WebsiteSettings\NAMEHERE.WebsiteSettings.csproj", "{91147901-6468-4D3B-96C8-93E2ABD4F09A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roblox.Common.Web", "..\..\Client.LegacyAssemblies\Roblox.Common.Web\Roblox.Common.Web.csproj", "{B7BAF271-C2A3-4945-B75E-11F3F34EE4DC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAMEHERE.Common.Web", "..\..\Client.LegacyAssemblies\NAMEHERE.Common.Web\NAMEHERE.Common.Web.csproj", "{B7BAF271-C2A3-4945-B75E-11F3F34EE4DC}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Roblox.Diagnostics", "..\..\Client.LegacyAssemblies\Roblox.Diagnostics\Roblox.Diagnostics.csproj", "{5CFFB705-D0E3-4402-8FF9-8BE7E1422FBE}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NAMEHERE.Diagnostics", "..\..\Client.LegacyAssemblies\NAMEHERE.Diagnostics\NAMEHERE.Diagnostics.csproj", "{5CFFB705-D0E3-4402-8FF9-8BE7E1422FBE}"
 EndProject
 Global
 	GlobalSection(TestCaseManagementSettings) = postSolution
@@ -46,30 +46,30 @@ Global
 		SccProjectUniqueName1 = RCCService.Test.csproj
 		SccLocalPath1 = ..\\..
 		SccProjectFilePathRelativizedFromConnection1 = Client\\RCCService.Test\\
-		SccProjectUniqueName2 = ..\\..\\Client.LegacyAssemblies\\Grid\\Roblox.Grid.Common\\Roblox.Grid.Common.csproj
+		SccProjectUniqueName2 = ..\\..\\Client.LegacyAssemblies\\Grid\\NAMEHERE.Grid.Common\\NAMEHERE.Grid.Common.csproj
 		SccLocalPath2 = ..\\..
-		SccProjectFilePathRelativizedFromConnection2 = Client.LegacyAssemblies\\Grid\\Roblox.Grid.Common\\
-		SccProjectUniqueName3 = ..\\..\\Client.LegacyAssemblies\\Roblox.Common\\Roblox.Common.csproj
+		SccProjectFilePathRelativizedFromConnection2 = Client.LegacyAssemblies\\Grid\\NAMEHERE.Grid.Common\\
+		SccProjectUniqueName3 = ..\\..\\Client.LegacyAssemblies\\NAMEHERE.Common\\NAMEHERE.Common.csproj
 		SccLocalPath3 = ..\\..
-		SccProjectFilePathRelativizedFromConnection3 = Client.LegacyAssemblies\\Roblox.Common\\
+		SccProjectFilePathRelativizedFromConnection3 = Client.LegacyAssemblies\\NAMEHERE.Common\\
 		SccProjectUniqueName4 = ..\\..\\Client.LegacyAssemblies\\Emcaster\\Emcaster.csproj
 		SccLocalPath4 = ..\\..
 		SccProjectFilePathRelativizedFromConnection4 = Client.LegacyAssemblies\\Emcaster\\
-		SccProjectUniqueName5 = ..\\..\\Client.LegacyAssemblies\\Roblox.Configuration\\Roblox.Configuration.csproj
+		SccProjectUniqueName5 = ..\\..\\Client.LegacyAssemblies\\NAMEHERE.Configuration\\NAMEHERE.Configuration.csproj
 		SccLocalPath5 = ..\\..
-		SccProjectFilePathRelativizedFromConnection5 = Client.LegacyAssemblies\\Roblox.Configuration\\
+		SccProjectFilePathRelativizedFromConnection5 = Client.LegacyAssemblies\\NAMEHERE.Configuration\\
 		SccProjectUniqueName6 = ..\\RCCService.Thumb.Test\\RCCService.Thumb.Test.csproj
 		SccLocalPath6 = ..\\..
 		SccProjectFilePathRelativizedFromConnection6 = Client\\RCCService.Thumb.Test\\
-		SccProjectUniqueName7 = ..\\..\\Client.LegacyAssemblies\\WebsiteSettings\\Roblox.WebsiteSettings.csproj
+		SccProjectUniqueName7 = ..\\..\\Client.LegacyAssemblies\\WebsiteSettings\\NAMEHERE.WebsiteSettings.csproj
 		SccLocalPath7 = ..\\..
 		SccProjectFilePathRelativizedFromConnection7 = Client.LegacyAssemblies\\WebsiteSettings\\
-		SccProjectUniqueName8 = ..\\..\\Client.LegacyAssemblies\\Roblox.Common.Web\\Roblox.Common.Web.csproj
+		SccProjectUniqueName8 = ..\\..\\Client.LegacyAssemblies\\NAMEHERE.Common.Web\\NAMEHERE.Common.Web.csproj
 		SccLocalPath8 = ..\\..
-		SccProjectFilePathRelativizedFromConnection8 = Client.LegacyAssemblies\\Roblox.Common.Web\\
-		SccProjectUniqueName9 = ..\\..\\Client.LegacyAssemblies\\Roblox.Diagnostics\\Roblox.Diagnostics.csproj
+		SccProjectFilePathRelativizedFromConnection8 = Client.LegacyAssemblies\\NAMEHERE.Common.Web\\
+		SccProjectUniqueName9 = ..\\..\\Client.LegacyAssemblies\\NAMEHERE.Diagnostics\\NAMEHERE.Diagnostics.csproj
 		SccLocalPath9 = ..\\..
-		SccProjectFilePathRelativizedFromConnection9 = Client.LegacyAssemblies\\Roblox.Diagnostics\\
+		SccProjectFilePathRelativizedFromConnection9 = Client.LegacyAssemblies\\NAMEHERE.Diagnostics\\
 	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU

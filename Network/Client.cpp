@@ -1,4 +1,4 @@
-/* Copyright 2003-2006 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2006 NAMEHERE Corporation, All Rights Reserved */
 
 #include "Client.h"
 #include "ClientReplicator.h"
@@ -54,7 +54,7 @@ REFLECTION_BEGIN();
 Reflection::BoundProp<std::string> Client::prop_Ticket("Ticket", "Authentication", &Client::ticket);
 static Reflection::BoundFuncDesc<Client, shared_ptr<Instance>(int, std::string, int, int, int)> f_connect(&Client::playerConnect, "PlayerConnect", "userId", "server", "serverPort", "clientPort", 0, "threadSleepTime", 30, Security::Plugin);
 static Reflection::BoundFuncDesc<Client, void(int)> f_disconnect(&Client::disconnect, "Disconnect", "blockDuration", 3000, Security::LocalUser);
-static Reflection::BoundFuncDesc<Client, void(std::string)> func_setGameSessionID(&Client::setGameSessionID, "SetGameSessionID", "gameSessionID", Security::Roblox);
+static Reflection::BoundFuncDesc<Client, void(std::string)> func_setGameSessionID(&Client::setGameSessionID, "SetGameSessionID", "gameSessionID", Security::NAMEHERE);
 static Reflection::EventDesc<Client, void(std::string, shared_ptr<RBX::Instance>)> event_ConnectionAccepted(&Client::connectionAcceptedSignal, "ConnectionAccepted", "peer", "replicator");
 static Reflection::EventDesc<Client, void(std::string)> event_ConnectionRejected(&Client::connectionRejectedSignal, "ConnectionRejected", "peer");
 static Reflection::EventDesc<Client, void(std::string, int, std::string)> event_ConnectionFailed(&Client::connectionFailedSignal, "ConnectionFailed", "peer", "code", "reason");
@@ -162,7 +162,7 @@ shared_ptr<Instance> Client::playerConnect(int userId, std::string server, int s
 		{
 			if (!lansubnet)
 			{
-				RBX::Security::Context::current().requirePermission(RBX::Security::Roblox, " connect to an extranet game");
+				RBX::Security::Context::current().requirePermission(RBX::Security::NAMEHERE, " connect to an extranet game");
 			}
 		}
 	}
@@ -286,7 +286,7 @@ void Client::sendTicket()
 	// TODO: better way to track protocol changes between versions
 	// Network Protocol version 2
 	serializeStringCompressed(DebugSettings::singleton().osPlatform(), bitStream);
-    serializeStringCompressed(DebugSettings::singleton().getRobloxProductName(), bitStream);
+    serializeStringCompressed(DebugSettings::singleton().getNAMEHEREProductName(), bitStream);
 
     serializeStringCompressed(Http::gameSessionID, bitStream);
 
@@ -306,7 +306,7 @@ std::string rakIdToString(int id)
 	{
 	case ID_INVALID_PASSWORD:
 	case ID_HASH_MISMATCH:
-		return "ROBLOX version is out of date. Please uninstall and try again.";
+		return "NAMEHERE version is out of date. Please uninstall and try again.";
 	case ID_CONNECTION_ATTEMPT_FAILED:
 		return "Connection attempt failed.";
 	case ID_SECURITYKEY_MISMATCH:

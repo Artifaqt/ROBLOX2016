@@ -1,0 +1,11 @@
+HKCR
+{
+	NoRemove AppID
+	{
+		'%APPID%' = s 'NAMEHEREProxy'
+		'NAMEHEREProxy.DLL'
+		{
+			val AppID = s '%APPID%'
+		}
+	}
+}

@@ -361,7 +361,7 @@ MigrationBackup/
 # Fody - auto-generated XML schema
 FodyWeavers.xsd
 
-# Roblox
+# NAMEHERE
 App/include/security/RandomConstant.h
 App/AlreadyBuiltRandomConstant.h
 App/tmp.h
@@ -442,7 +442,7 @@ compile_commands.json
 # Ignore project-specific libraries
 WindowsClient/libraries/*
 RCCService/libraries/*
-RobloxStudio/libraries/*
+NAMEHEREStudio/libraries/*
 XboxClient/libraries/*
 
 # Don't ignore certain libraries

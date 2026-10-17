@@ -355,7 +355,7 @@ LUA_API const char *lua_tolstring (lua_State *L, int idx, size_t *len) {
   return svalue(o);
 }
 
-/* ROBLOX */
+/* NAMEHERE */
 static unsigned int lua_hash(const char* str, unsigned int l)
 {
     unsigned int h = cast(unsigned int, l);  /* seed */
@@ -402,7 +402,7 @@ LUA_API const char *lua_tolstringsecure(lua_State *L, int idx, size_t *len)
     return str;
 #endif
 }
-/* /ROBLOX */
+/* /NAMEHERE */
 
 LUA_API size_t lua_objlen (lua_State *L, int idx) {
   StkId o = index2adr(L, idx);
@@ -630,7 +630,7 @@ LUA_API void lua_createtable (lua_State *L, int narray, int nrec) {
   lua_unlock(L);
 }
 
-// ROBLOX
+// NAMEHERE
 void lua_setreadonly (lua_State *L, int objindex, bool value) {
   lua_lock(L);
   const TValue *o = index2adr(L, objindex);
@@ -730,7 +730,7 @@ LUA_API void lua_rawset (lua_State *L, int idx) {
   api_checknelems(L, 2);
   t = index2adr(L, idx);
   api_check(L, ttistable(t));
-  // ROBLOX
+  // NAMEHERE
   if ( hvalue(t)->readonly )
 	  luaG_runerror(L, "Attempt to modify a readonly table");
   setobj2t(L, luaH_set(L, hvalue(t), L->top-2), L->top-1);
@@ -746,7 +746,7 @@ LUA_API void lua_rawseti (lua_State *L, int idx, int n) {
   api_checknelems(L, 1);
   o = index2adr(L, idx);
   api_check(L, ttistable(o));
-  // ROBLOX
+  // NAMEHERE
   if ( hvalue(o)->readonly )
 	  luaG_runerror(L, "Attempt to modify a readonly table");
   setobj2t(L, luaH_setnum(L, hvalue(o), n), L->top-1);
@@ -771,7 +771,7 @@ LUA_API int lua_setmetatable (lua_State *L, int objindex) {
   }
   switch (ttype(obj)) {
     case LUA_TTABLE: {
-        // ROBLOX
+        // NAMEHERE
         if ( hvalue(obj)->readonly )
           luaG_runerror(L, "Attempt to modify a readonly table");
 

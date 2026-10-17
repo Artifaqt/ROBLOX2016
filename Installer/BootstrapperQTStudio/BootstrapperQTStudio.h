@@ -41,7 +41,7 @@ private:
 	virtual const wchar_t *GetVersionFileName() const;
 	virtual const wchar_t *GetGuidName() const;
 	virtual std::wstring GetBootstrapperFileName() const;
-	virtual std::wstring GetRobloxAppFileName() const;
+	virtual std::wstring GetNAMEHEREAppFileName() const;
 	virtual std::wstring GetProductCodeKey() const;
 	virtual const wchar_t* GetStartAppMutexName() const;
 	virtual const wchar_t* GetBootstrapperMutexName() const;
@@ -72,5 +72,5 @@ public:
 	virtual void FlushEvents();
 	virtual bool PerModeLoggingEnabled();
 
-	virtual void StartRobloxApp(bool fromInstall);
+	virtual void StartNAMEHEREApp(bool fromInstall);
 };

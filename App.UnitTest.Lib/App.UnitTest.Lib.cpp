@@ -31,7 +31,7 @@ AppGlobalFixture::AppGlobalFixture()
 
 	if (!setBaseUrl)
 		// TODO: Is this right?
-		::SetBaseURL("www.roblox.com");
+		::SetBaseURL("www.namehere.com");
 
 	if (!setContentFolder)
 	{
@@ -58,7 +58,7 @@ bool AppGlobalFixture::processArg( const std::string arg )
 {
 	if (arg.find("--help") == 0)
 	{
-		std::cout << "ROBLOX custom arguments:\n";
+		std::cout << "NAMEHERE custom arguments:\n";
 		std::cout << "   --content_path=<dir> - directory to the Content folder. Can be absolute or relative\n";
 		std::cout << "   --base_url=<url> - define the BaseUrl\n";
 		return false;

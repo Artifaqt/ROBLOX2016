@@ -56,7 +56,7 @@ HRESULT RbxWebView::ShowContextMenu(DWORD dwID, POINT *ppt, IUnknown *pcmdtReser
 	return E_NOTIMPL;
 }
 
-#define ROBLOX_BROWSERFLAGS \
+#define NAMEHERE_BROWSERFLAGS \
 	DOCHOSTUIFLAG_DISABLE_HELP_MENU |\
 	DOCHOSTUIFLAG_ENABLE_FORMS_AUTOCOMPLETE |\
 	DOCHOSTUIFLAG_THEME |\
@@ -69,7 +69,7 @@ HRESULT RbxWebView::GetHostInfo(DOCHOSTUIINFO *pInfo)
 {
 	pInfo->dwFlags |= 
 		DOCHOSTUIFLAG_NO3DBORDER | 
-		ROBLOX_BROWSERFLAGS |
+		NAMEHERE_BROWSERFLAGS |
 		0;
 
 	return S_OK;
@@ -180,7 +180,7 @@ LRESULT RbxWebView::OnInitDialog(UINT uMsg, WPARAM wParam, LPARAM lParam, BOOL& 
 
 	webBrowserEvents.SetRbxWebView(this);
 
-	// Load the Roblox Icon
+	// Load the NAMEHERE Icon
 	m_hIcon = ::LoadIcon(GetModuleHandle(NULL), MAKEINTRESOURCE(IDI_WINDOW_ICON));
 	SetIcon(m_hIcon, TRUE);			// Set big icon
 	SetIcon(m_hIcon, FALSE);		// Set small icon

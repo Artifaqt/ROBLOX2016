@@ -1,13 +1,13 @@
 -- local CoreGui = Game:GetService("CoreGui")
 
--- local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+-- local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 
 local GuiService = game:GetService('GuiService')
 local SoundService = Game:GetService("SoundService")
 local runService = game:GetService("RunService")
 
 local CoreGui = Game:GetService("CoreGui")
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 
 local Utility = require(Modules:FindFirstChild('Utility'))
@@ -17,7 +17,7 @@ local BASE_SOUND_URL = 'rbxasset://sounds/ui/Shell/'
 local SOUNDS =
 {
 	--[[ BGM ]]--
-	['BackgroundLoop'] = 'RobloxMusic.ogg';
+	['BackgroundLoop'] = 'NAMEHEREMusic.ogg';
 
 
 	--[[ UI Sounds ]]--

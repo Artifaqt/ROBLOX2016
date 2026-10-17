@@ -1,9 +1,9 @@
 //
 //  LoginManager.h
-//  RobloxMobile
+//  NAMEHEREMobile
 //
 //  Created by Ben Tkacheff on 4/19/13.
-//  Copyright (c) 2013 ROBLOX. All rights reserved.
+//  Copyright (c) 2013 NAMEHERE. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
@@ -78,7 +78,7 @@ typedef void(^SocialLoginCompletionBlock)(bool success, NSString *message);
 #pragma mark - Login/Out Functions
 -(void) processStartupAutoLogin:(LoginManagerCompletionBlock)autoLoginCompletionBlock;
 -(void) loginWithUsername:(NSString*) username password:(NSString*)password completionBlock:(LoginManagerCompletionBlock)completionBlock;
--(void) logoutRobloxUser;
+-(void) logoutNAMEHEREUser;
 
 - (void) getUserAccountInfoForContext:(RBXAnalyticsContextName)context completionHandler:(LoginManagerCompletionBlock)loginV2CompletionHandler;
 
@@ -86,7 +86,7 @@ typedef void(^SocialLoginCompletionBlock)(bool success, NSString *message);
 +(NSArray *) cookies;
 +(void) initializeCookieManagementPolicy;
 +(void) updateCookiesInAppHttpLayer;
-+(void) clearAllRobloxCookie;
++(void) clearAllNAMEHERECookie;
 +(void) printCookies;
 
 @end

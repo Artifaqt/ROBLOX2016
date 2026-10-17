@@ -4,7 +4,7 @@ using System.IO;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using RobloxLib;
+using NAMEHERELib;
 
 namespace RegressionTestSuite
 {
@@ -27,7 +27,7 @@ namespace RegressionTestSuite
                 string[] filePaths = Directory.GetFiles(Directory.GetCurrentDirectory(), "*.rbxl",
                                              SearchOption.AllDirectories);
 
-                var app = new RobloxLib.AppClass();
+                var app = new NAMEHERELib.AppClass();
 
                 int numTests = filePaths.Length;
                 int numRepeats = 10; // Run each file this many times

@@ -44,7 +44,7 @@ public:
         {
             debugSerializer.data.reserve( bufferSize + 1024 * 1024 );
             boost::filesystem::path path = boost::filesystem::temp_directory_path();
-            path /= "ROBLOX";
+            path /= "NAMEHERE";
             path /= "SolverLog_Client";
             path += boost::lexical_cast<std::string>( userId );
             path += ".bin";

@@ -80,7 +80,7 @@ void btPersistentManifold::clearUserCache(btManifoldPoint& pt)
 			(*gContactDestroyedCallback)(pt.m_userPersistentData);
 			pt.m_userPersistentData = 0;
 		}
-		// Added by ROBLOX because gContactDestroyedCallback does not need to be defined
+		// Added by NAMEHERE because gContactDestroyedCallback does not need to be defined
 		// to need m_userPersistentData
 		else if (pt.m_userPersistentData)
 		{
@@ -203,7 +203,7 @@ int btPersistentManifold::getCacheEntry(const btManifoldPoint& newPoint) const
 	{
 		const btManifoldPoint &mp = m_pointCache[i];
         
-        // ROBLOX: Fix cache reuse by considering both points
+        // NAMEHERE: Fix cache reuse by considering both points
 		// This makes sure we replace the correct point in case of one box sliding on a surface of larger box
 		// regardless of contact ordering.
 		btVector3 diffA = mp.m_localPointA - newPoint.m_localPointA;

@@ -1,4 +1,4 @@
-/* Copyright 2003-2008 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2008 NAMEHERE Corporation, All Rights Reserved */
 #if 1 // remove this file when fast flag RemoveInterpolationReciever is accepted and removed
 
 #include "InterpolatingPhysicsReceiver.h"

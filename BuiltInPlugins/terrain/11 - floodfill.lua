@@ -60,7 +60,7 @@ local currentMaterial = 1
 -- load our libraries
 local RbxGui = LoadLibrary("RbxGui")
 local RbxUtil = LoadLibrary("RbxUtility")
-game:GetService("ContentProvider"):Preload("http://www.roblox.com/asset/?id=82741829")
+game:GetService("ContentProvider"):Preload("http://www.namehere.com/asset/?id=82741829")
 
 
 ------------------------- OBJECT DEFINITIONS ---------------------
@@ -141,7 +141,7 @@ function MouseHighlighter.Create(mouseUse)
 	imageLabel.BackgroundTransparency = 1
 	imageLabel.Size = UDim2.new(1,0,1,0)
 	imageLabel.Position = UDim2.new(-0.35,0,-0.5,0)
-	imageLabel.Image = "http://www.roblox.com/asset/?id=82741829"
+	imageLabel.Image = "http://www.namehere.com/asset/?id=82741829"
 
 	local lastTweenChange = nil
 
@@ -334,7 +334,7 @@ function CreateStandardButton(name,
 		button.Size = size
 	end
 	
-	button.Style = Enum.ButtonStyle.RobloxButton
+	button.Style = Enum.ButtonStyle.NAMEHEREButton
 
 	button.TextColor3 = buttonTextColor
 	button.Font = buttonFont
@@ -372,7 +372,7 @@ function ConfirmationPopup.Create(confirmText,
 	popup.confirmationFrame.Name = "ConfirmationFrame"
 	popup.confirmationFrame.Size = UDim2.new(0, 280, 0, 160)
 	popup.confirmationFrame.Position = UDim2.new(.5, -popup.confirmationFrame.Size.X.Offset/2, 0.5, -popup.confirmationFrame.Size.Y.Offset/2)
-	popup.confirmationFrame.Style = Enum.FrameStyle.RobloxRound
+	popup.confirmationFrame.Style = Enum.FrameStyle.NAMEHERERound
 	popup.confirmLabel = CreateStandardLabel("ConfirmLabel", UDim2.new(0,0,0,15), UDim2.new(1, 0, 0, 24), confirmText, popup.confirmationFrame)
 	popup.confirmLabel.FontSize = Enum.FontSize.Size18
 	popup.confirmLabel.TextXAlignment = Enum.TextXAlignment.Center
@@ -531,7 +531,7 @@ function LoadProgressBar(text)
 		spinnerImage.Size = UDim2.new(0, 16, 0, 16)
 		spinnerImage.Position = UDim2.new(.5+.3*math.cos(math.rad(45*spinnerNum)), -8, .5+.3*math.sin(math.rad(45*spinnerNum)), -8)
 		spinnerImage.BackgroundTransparency = 1
-	   spinnerImage.Image = "http://www.roblox.com/Asset/?id=45880710"
+	   spinnerImage.Image = "http://www.namehere.com/Asset/?id=45880710"
 		spinnerImage.Parent = spinnerFrame
 
 	   spinnerIcons[spinnerNum] = spinnerImage
@@ -546,9 +546,9 @@ function LoadProgressBar(text)
 
 			while pos < 8 do
 				if pos == spinPos or pos == ((spinPos+1)%8) then
-					spinnerIcons[pos+1].Image = "http://www.roblox.com/Asset/?id=45880668"
+					spinnerIcons[pos+1].Image = "http://www.namehere.com/Asset/?id=45880668"
 				else
-					spinnerIcons[pos+1].Image = "http://www.roblox.com/Asset/?id=45880710"
+					spinnerIcons[pos+1].Image = "http://www.namehere.com/Asset/?id=45880710"
 				end
 				
 				pos = pos + 1

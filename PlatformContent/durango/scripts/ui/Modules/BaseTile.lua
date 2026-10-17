@@ -2,12 +2,12 @@
 			// BaseTile.lua
 
 			// Created by Kip Turner
-			// Copyright Roblox 2015
+			// Copyright NAMEHERE 2015
 ]]
 
 
 local CoreGui = game:GetService("CoreGui")
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 
 

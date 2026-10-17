@@ -113,7 +113,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>..\..\Library\SDK\Lib\Iphlpapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)Roblox.exe</OutputFile>
+      <OutputFile>$(OutDir)NAMEHERE.exe</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
@@ -140,7 +140,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>..\..\Library\SDK\Lib\Iphlpapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)Roblox.exe</OutputFile>
+      <OutputFile>$(OutDir)NAMEHERE.exe</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
@@ -172,7 +172,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>..\..\Library\SDK\Lib\Iphlpapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)Roblox.exe</OutputFile>
+      <OutputFile>$(OutDir)NAMEHERE.exe</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX64</TargetMachine>
@@ -202,7 +202,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>..\..\Library\SDK\Lib\Iphlpapi.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)Roblox.exe</OutputFile>
+      <OutputFile>$(OutDir)NAMEHERE.exe</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>

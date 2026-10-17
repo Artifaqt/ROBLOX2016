@@ -1,6 +1,6 @@
 // This file is used for two targets:
-// 1. Used in Mac Roblox Player app, this is the place where actual file resides
-// 2. Used in Qt version of Roblox Studio as a soft link from above
+// 1. Used in Mac NAMEHERE Player app, this is the place where actual file resides
+// 2. Used in Qt version of NAMEHERE Studio as a soft link from above
 
 #include "FunctionMarshaller.h"
 
@@ -9,7 +9,7 @@
 
 #include "util/StandardOut.h"
 #include "rbx/boost.hpp"
-#include "Roblox.h"
+#include "NAMEHERE.h"
 
 using namespace RBX;
 
@@ -120,7 +120,7 @@ void FunctionMarshaller::Execute(boost::function<void()> job, CEvent *waitEvent)
 		Closure *pClosure = new Closure;
 		pClosure->f = new boost::function<void()>(job);
 		pClosure->waitEvent = waitEvent;
-		Roblox::sendAppEvent(pClosure);
+		NAMEHERE::sendAppEvent(pClosure);
 	}
 }
 
@@ -129,12 +129,12 @@ void FunctionMarshaller::Submit(boost::function<void()> job)
 	Closure *pClosure = new Closure;
 	pClosure->f = new boost::function<void()>(job);
 	pClosure->waitEvent = NULL;
-	Roblox::postAppEvent(pClosure);
+	NAMEHERE::postAppEvent(pClosure);
 }
 
 void FunctionMarshaller::ProcessMessages()
 {
-    Roblox::processAppEvents();
+    NAMEHERE::processAppEvents();
 }
 
 

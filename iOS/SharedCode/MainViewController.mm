@@ -70,12 +70,12 @@
     ogreView = value;
 }
 
--(void) setRobloxView:(RobloxView*) newRbxView
+-(void) setNAMEHEREView:(NAMEHEREView*) newRbxView
 {
     rbxView = newRbxView;
 }
 
--(RobloxView*) getRobloxView
+-(NAMEHEREView*) getNAMEHEREView
 {
     return rbxView;
 }

@@ -7,7 +7,7 @@
 
 -------------- SERVICES --------------
 local CoreGui = game:GetService("CoreGui")
-local RobloxGui = CoreGui:WaitForChild("RobloxGui")
+local NAMEHEREGui = CoreGui:WaitForChild("NAMEHEREGui")
 local GuiService = game:GetService("GuiService")
 local UserInputService = game:GetService("UserInputService")
 local PlatformService = nil 
@@ -47,12 +47,12 @@ local MOVEMENT_MODE_KEYBOARDMOUSE_STRING = "Keyboard + Mouse"
 local MOVEMENT_MODE_CLICKTOMOVE_STRING = UserInputService.TouchEnabled and "Tap to Move" or "Click to Move"
 
 ----------- UTILITIES --------------
-local utility = require(RobloxGui.Modules.Settings.Utility)
+local utility = require(NAMEHEREGui.Modules.Settings.Utility)
 
 ------------ Variables -------------------
-RobloxGui:WaitForChild("Modules"):WaitForChild("TenFootInterface")
-RobloxGui:WaitForChild("Modules"):WaitForChild("Settings"):WaitForChild("SettingsHub")
-local isTenFootInterface = require(RobloxGui.Modules.TenFootInterface):IsEnabled()
+NAMEHEREGui:WaitForChild("Modules"):WaitForChild("TenFootInterface")
+NAMEHEREGui:WaitForChild("Modules"):WaitForChild("Settings"):WaitForChild("SettingsHub")
+local isTenFootInterface = require(NAMEHEREGui.Modules.TenFootInterface):IsEnabled()
 local PageInstance = nil
 local LocalPlayer = game.Players.LocalPlayer
 local platform = UserInputService:GetPlatform()
@@ -61,7 +61,7 @@ local overscanScreen = nil
 ----------- CLASS DECLARATION --------------
 
 local function Initialize()
-	local settingsPageFactory = require(RobloxGui.Modules.Settings.SettingsPageFactory)
+	local settingsPageFactory = require(NAMEHEREGui.Modules.Settings.SettingsPageFactory)
 	local this = settingsPageFactory:CreateNewPage()
 
 	----------- FUNCTIONS ---------------
@@ -469,7 +469,7 @@ local function Initialize()
 		this.VolumeLabel,
 		this.VolumeSlider = utility:AddNewRow(this, "Volume", "Slider", 10, startVolumeLevel)
 
-		local volumeSound = Instance.new("Sound", game.CoreGui.RobloxGui.Sounds)
+		local volumeSound = Instance.new("Sound", game.CoreGui.NAMEHEREGui.Sounds)
 		volumeSound.Name = "VolumeChangeSound"
 		volumeSound.SoundId = "rbxasset://sounds/uuhhh.mp3"
 
@@ -511,12 +511,12 @@ local function Initialize()
 		local showOverscanScreen = function()
 
 			if not overscanScreen then
-				local createOverscanFunc = require(RobloxGui.Modules.OverscanScreen)
-				overscanScreen = createOverscanFunc(RobloxGui)
+				local createOverscanFunc = require(NAMEHEREGui.Modules.OverscanScreen)
+				overscanScreen = createOverscanFunc(NAMEHEREGui)
 				overscanScreen:SetStyleForInGame()
 			end
 
-			local MenuModule = require(RobloxGui.Modules.Settings.SettingsHub)
+			local MenuModule = require(NAMEHEREGui.Modules.Settings.SettingsHub)
  	  		MenuModule:SetVisibility(false, true)
 
  	  		local closedCon = nil
@@ -534,7 +534,7 @@ local function Initialize()
 												Enum.UserInputType.Gamepad1, Enum.UserInputType.Gamepad2,
 												Enum.UserInputType.Gamepad3, Enum.UserInputType.Gamepad4)
 
-			local ScreenManager = require(RobloxGui.Modules.ScreenManager)
+			local ScreenManager = require(NAMEHEREGui.Modules.ScreenManager)
 			ScreenManager:OpenScreen(overscanScreen)
 
 		end

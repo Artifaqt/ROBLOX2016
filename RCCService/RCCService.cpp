@@ -494,7 +494,7 @@ void SvcInstall()
     CServiceHandle schService = CreateService( 
         schSCManager,              // SCM database 
         SVCNAME,                   // name of service 
-        "Roblox Compute Cloud Service",   // service name to display 
+        "NAMEHERE Compute Cloud Service",   // service name to display 
         SERVICE_ALL_ACCESS,        // desired access 
         SERVICE_WIN32_OWN_PROCESS, // service type 
         SERVICE_AUTO_START,        // start type 
@@ -577,7 +577,7 @@ void ReadAccessKey()
 		if (RBX::Http::accessKey.empty()) 
 		{
 			CRegKey key;
-			if (SUCCEEDED(key.Open(HKEY_LOCAL_MACHINE, "Software\\ROBLOX Corporation\\Roblox\\", KEY_READ))) 
+			if (SUCCEEDED(key.Open(HKEY_LOCAL_MACHINE, "Software\\NAMEHERE Corporation\\NAMEHERE\\", KEY_READ))) 
 			{
 				CHAR keyData[MAX_PATH];
 				ULONG bufLen = MAX_PATH-1;

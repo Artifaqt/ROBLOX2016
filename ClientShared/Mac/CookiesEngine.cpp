@@ -3,7 +3,7 @@
 #include <vector>
 
 #define RBX_PLIST_KEY "CPath"
-#define RBX_PLAYER_BUNDLE_ID "com.roblox.RobloxPlayer"
+#define RBX_PLAYER_BUNDLE_ID "com.namehere.NAMEHEREPlayer"
 #include <CoreFoundation/CoreFoundation.h>
 
 bool CookiesEngine::reportValue(CookiesEngine &engine, std::string key, std::string value)
@@ -67,7 +67,7 @@ void CookiesEngine::setCookiesFilePath(std::wstring &path)
 	// Cannot be done here for Mac. It's already too late to set the plist preferences if we're running the app
 	// Instead, this is handled within the bootstrapper...
 	//  at the time of writing this, that's within
-	//  .../Client/Installer/BootstrapperMac/Roblox/controller.m::ModifyClientInfoList
+	//  .../Client/Installer/BootstrapperMac/NAMEHERE/controller.m::ModifyClientInfoList
 }
 
 

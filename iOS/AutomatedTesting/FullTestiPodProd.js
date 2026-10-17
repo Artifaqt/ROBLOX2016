@@ -1,5 +1,5 @@
 
-//Script for testing basic Roblox iOS App fuctionality on iPhone/iPod Touch on Prod (internal build)
+//Script for testing basic NAMEHERE iOS App fuctionality on iPhone/iPod Touch on Prod (internal build)
 
 
 var target = UIATarget.localTarget();
@@ -54,7 +54,7 @@ target.logElementTree();
 
 //Select test environment
 
-wheel.selectValue("http://m.roblox.com/"); //selecting test environment
+wheel.selectValue("http://m.namehere.com/"); //selecting test environment
 
 UIALogger.logMessage("Test Environment: " + wheel.value()); //log current selected environment
 

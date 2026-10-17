@@ -368,7 +368,7 @@
         {
             "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_41CB5A0DCC6345BDB59E8CC1A10C0211"
             {
-            "Name" = "8:Roblox.exe"
+            "Name" = "8:NAMEHERE.exe"
             "Condition" = "8:"
             "Object" = "8:_2B1C7C0D8CC7498989EDEB52C0B7A43E"
             "FileType" = "3:2"
@@ -382,7 +382,7 @@
             }
             "{4AA51A2D-7D85-4A59-BA75-B0809FC8B380}:_EC9E45F6FB184A0FA985B340C8C05669"
             {
-            "Name" = "8:Roblox.exe"
+            "Name" = "8:NAMEHERE.exe"
             "Condition" = "8:"
             "Object" = "8:_2B1C7C0D8CC7498989EDEB52C0B7A43E"
             "FileType" = "3:2"
@@ -546,7 +546,7 @@
                 {
                     "{9EF0B969-E518-4E46-987F-47570745A589}:_0ECAD8C0694C4D0585B5D41A833AB09B"
                     {
-                    "Name" = "8:Roblox"
+                    "Name" = "8:NAMEHERE"
                     "AlwaysCreate" = "11:FALSE"
                     "Condition" = "8:"
                     "Transitive" = "11:FALSE"
@@ -583,7 +583,7 @@
         "Product"
         {
         "Name" = "8:Microsoft Visual Studio"
-        "ProductName" = "8:Roblox Compute Cloud Service"
+        "ProductName" = "8:NAMEHERE Compute Cloud Service"
         "ProductCode" = "8:{BF683ADD-0FAC-4FBE-9C4A-D54F5AE4C165}"
         "PackageCode" = "8:{DDFFBEEA-1115-4D72-AB52-239C6E5A8953}"
         "UpgradeCode" = "8:{7C0154FD-ABED-44A4-97BF-B1F336183596}"
@@ -592,15 +592,15 @@
         "DetectNewerInstalledVersion" = "11:TRUE"
         "InstallAllUsers" = "11:TRUE"
         "ProductVersion" = "8:1.0.0"
-        "Manufacturer" = "8:ROBLOX Corporation"
+        "Manufacturer" = "8:NAMEHERE Corporation"
         "ARPHELPTELEPHONE" = "8:"
         "ARPHELPLINK" = "8:"
         "Title" = "8:RCC Service Setup"
         "Subject" = "8:"
-        "ARPCONTACT" = "8:ROBLOX Corporation"
+        "ARPCONTACT" = "8:NAMEHERE Corporation"
         "Keywords" = "8:"
         "ARPCOMMENTS" = "8:"
-        "ARPURLINFOABOUT" = "8:http://www.roblox.com"
+        "ARPURLINFOABOUT" = "8:http://www.namehere.com"
         "ARPPRODUCTICON" = "8:"
         "ARPIconIndex" = "3:2"
         "SearchPath" = "8:"
@@ -914,7 +914,7 @@
         {
             "{5259A561-127C-4D43-A0A1-72F10C7B3BF8}:_2B1C7C0D8CC7498989EDEB52C0B7A43E"
             {
-            "SourcePath" = "8:..\\BootstrapperRccService\\ReleaseSitetest3\\Roblox.exe"
+            "SourcePath" = "8:..\\BootstrapperRccService\\ReleaseSitetest3\\NAMEHERE.exe"
             "TargetName" = "8:"
             "Tag" = "8:"
             "Folder" = "8:_94D0DC55809344ACB1D5BF32E13FC097"
@@ -938,7 +938,7 @@
             "ShowKeyOutput" = "11:TRUE"
                 "ExcludeFilters"
                 {
-                "ExcludeFilter" = "8:RobloxApp.exe"
+                "ExcludeFilter" = "8:NAMEHEREApp.exe"
                 }
             }
         }

@@ -2,7 +2,7 @@
 			// AvatarTile.lua
 
 			// Created by Kip Turner
-			// Copyright Roblox 2015
+			// Copyright NAMEHERE 2015
 ]]
 
 
@@ -12,7 +12,7 @@ local TextService = game:GetService('TextService')
 local ContextActionService = game:GetService("ContextActionService")
 local CoreGui = game:GetService("CoreGui")
 local ContentProvider = game:GetService("ContentProvider")
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 
 

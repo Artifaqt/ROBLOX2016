@@ -44,7 +44,7 @@ namespace RBX
 #define HARDSTACKTESTS
 #endif
 
-// ROBLOX:
+// NAMEHERE:
 #if defined(_DEBUG) || defined(_NOOPT)
 #define lua_assert(x) RBXASSERT(x)
 #else
@@ -370,7 +370,7 @@ namespace RBX
 ** CHANGE it to undefined as soon as your programs use only '...' to
 ** access vararg parameters (instead of the old 'arg' table).
 */
-// ROBLOX
+// NAMEHERE
 #undef LUA_COMPAT_VARARG
 
 /*
@@ -378,7 +378,7 @@ namespace RBX
 ** CHANGE it to undefined as soon as your programs use 'math.fmod' or
 ** the new '%' operator instead of 'math.mod'.
 */
-// ROBLOX
+// NAMEHERE
 #undef LUA_COMPAT_MOD
 
 /*
@@ -387,7 +387,7 @@ namespace RBX
 ** CHANGE it to 2 if you want the old behaviour, or undefine it to turn
 ** off the advisory error when nesting [[...]].
 */
-// ROBLOX
+// NAMEHERE
 #undef LUA_COMPAT_LSTR
 
 /*
@@ -395,7 +395,7 @@ namespace RBX
 ** CHANGE it to undefined as soon as you rename 'string.gfind' to
 ** 'string.gmatch'.
 */
-// ROBLOX
+// NAMEHERE
 #undef LUA_COMPAT_GFIND
 
 /*
@@ -404,7 +404,7 @@ namespace RBX
 ** CHANGE it to undefined as soon as you replace to 'luaL_register'
 ** your uses of 'luaL_openlib'
 */
-// ROBLOX
+// NAMEHERE
 #undef LUA_COMPAT_OPENLIB
 
 
@@ -416,7 +416,7 @@ namespace RBX
 ** a bit, but may be quite useful when debugging C code that interfaces
 ** with Lua. A useful redefinition is to use assert.h.
 */
-// ROBLOX
+// NAMEHERE
 #define luai_apicheck(L,o)	{ (void)L; lua_assert(o); }
 
 /*
@@ -642,7 +642,7 @@ union luai_Cast { double l_d; long l_l; };
 */
 #if defined(__cplusplus)
 /* C++ exceptions */
-// ROBLOX
+// NAMEHERE
 #include <stdexcept>
 #define LUAI_THROW(L,c)	throw(lua_exception(L,c))
 #define LUAI_TRY(L,c,a) \
@@ -727,11 +727,11 @@ catch (RBX::base_exception const& e)	\
 ** CHANGE it if you have a way to implement it in your system.
 */
 
-// ROBLOX CHANGE: effectively NoOps
+// NAMEHERE CHANGE: effectively NoOps
 #define lua_popen(L,c,m)	((void)((void)c, m),  \
 		luaL_error(L, LUA_QL("popen") " not supported"), (FILE*)0)
 #define lua_pclose(L,file)		((void)((void)L, file), 0)
-// END ROBLOX CHANGE
+// END NAMEHERE CHANGE
 
 /*
 @@ LUA_DL_* define which dynamic-library system Lua should use.
@@ -756,15 +756,15 @@ catch (RBX::base_exception const& e)	\
 #endif
 
 /////////////////////////////////////////////////
-// ROBLOX - BEGIN
+// NAMEHERE - BEGIN
 
 #pragma pack(push)
 #pragma pack(8)
-// This object is embedded in every Lua thread to manage Roblox-specific information
+// This object is embedded in every Lua thread to manage NAMEHERE-specific information
 
-class RobloxExtraSpace : public RBX::Intrusive::Set<RobloxExtraSpace>::Hook
+class NAMEHEREExtraSpace : public RBX::Intrusive::Set<NAMEHEREExtraSpace>::Hook
 {
-	typedef RBX::Intrusive::Set<RobloxExtraSpace> AllThreads;
+	typedef RBX::Intrusive::Set<NAMEHEREExtraSpace> AllThreads;
 
 	struct Shared
 	{
@@ -811,29 +811,29 @@ public:
 			iter->node->forEachRefs(func);
 	}
 
-	static RobloxExtraSpace* get(struct lua_State *L)
+	static NAMEHEREExtraSpace* get(struct lua_State *L)
 	{
-		return L ? reinterpret_cast<RobloxExtraSpace*>(((char*) L) - sizeof(RobloxExtraSpace)) : 0;
+		return L ? reinterpret_cast<NAMEHEREExtraSpace*>(((char*) L) - sizeof(NAMEHEREExtraSpace)) : 0;
 	}
 	static void constructRoot(lua_State *L)
 	{
-		new(get(L)) RobloxExtraSpace();
+		new(get(L)) NAMEHEREExtraSpace();
 	}
 	static void destroyRoot(lua_State *L)
 	{
-		get(L)->~RobloxExtraSpace();
+		get(L)->~NAMEHEREExtraSpace();
 	}
-	static void constructChild(lua_State *L, RobloxExtraSpace *parent)
+	static void constructChild(lua_State *L, NAMEHEREExtraSpace *parent)
 	{
-		new(get(L)) RobloxExtraSpace(parent);
+		new(get(L)) NAMEHEREExtraSpace(parent);
 	}
 	static void destroyChild(lua_State *L)
 	{
-		get(L)->~RobloxExtraSpace();
+		get(L)->~NAMEHEREExtraSpace();
 	}
 
 private:
-	RobloxExtraSpace()
+	NAMEHEREExtraSpace()
 		:shared(new Shared())
 		,identity(RBX::Security::Anonymous)
 		,node(0)
@@ -843,7 +843,7 @@ private:
 		shared->allThreads.insert(*this);
 	}
 
-	RobloxExtraSpace(RobloxExtraSpace* parent)
+	NAMEHEREExtraSpace(NAMEHEREExtraSpace* parent)
 		:shared(parent->shared)
 		,identity(parent->identity)
 		,yieldCaptured(false)
@@ -864,7 +864,7 @@ private:
         }
 	}
 
-	~RobloxExtraSpace()
+	~NAMEHEREExtraSpace()
 	{
 		shared->allThreads.remove_element(*this);
 
@@ -890,7 +890,7 @@ private:
 ** CHANGE (define) this if you really need that. This value must be
 ** a multiple of the maximum alignment required for your machine.
 */
-#define LUAI_EXTRASPACE		sizeof(RobloxExtraSpace)
+#define LUAI_EXTRASPACE		sizeof(NAMEHEREExtraSpace)
 
 
 /*
@@ -900,29 +900,29 @@ private:
 */
 inline void luai_userstateopen(lua_State *L)
 {
-	RobloxExtraSpace::constructRoot(L);
+	NAMEHEREExtraSpace::constructRoot(L);
 }
 inline void luai_userstateclose(lua_State *L)
 {
-	RobloxExtraSpace::destroyRoot(L);
+	NAMEHEREExtraSpace::destroyRoot(L);
 }
 inline void luai_userstatethread(lua_State *L, lua_State *L1)
 {
-	RobloxExtraSpace::constructChild(L1, RobloxExtraSpace::get(L));
+	NAMEHEREExtraSpace::constructChild(L1, NAMEHEREExtraSpace::get(L));
 }
 inline void luai_userstatefree(lua_State *L)
 {
-	RobloxExtraSpace::destroyChild(L);
+	NAMEHEREExtraSpace::destroyChild(L);
 }
 inline void luai_userstateresume(lua_State *L, int nargs)
 {
-	RobloxExtraSpace::get(L)->yieldCaptured = false;
+	NAMEHEREExtraSpace::get(L)->yieldCaptured = false;
 }
 
 inline void luai_userstateyield(lua_State *L, int nresults)
 {
 }
-// ROBLOX - END
+// NAMEHERE - END
 /////////////////////////////////////////////////
 
 

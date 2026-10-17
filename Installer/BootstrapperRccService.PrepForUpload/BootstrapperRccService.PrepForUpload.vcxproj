@@ -122,7 +122,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <PostBuildEvent>
-      <Message>Copy bits needed to upload Roblox project to UploadBits directory</Message>
+      <Message>Copy bits needed to upload NAMEHERE project to UploadBits directory</Message>
       <Command>%40echo off
 mkdir ..\..\UploadBits
 rmdir /s /q ..\..\UploadBits\$(Platform)-$(Configuration)-BootstrapperRccService\
@@ -134,7 +134,7 @@ copy ..\Uploader\Redist.zip ..\..\UploadBits\$(Platform)-$(Configuration)-Bootst
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <PostBuildEvent>
-      <Message>Copy bits needed to upload Roblox project to UploadBits directory</Message>
+      <Message>Copy bits needed to upload NAMEHERE project to UploadBits directory</Message>
       <Command>%40echo off
 mkdir ..\..\UploadBits
 rmdir /s /q ..\..\UploadBits\$(Platform)-$(Configuration)-BootstrapperRccService\
@@ -146,7 +146,7 @@ copy ..\Uploader\Redist.zip ..\..\UploadBits\$(Platform)-$(Configuration)-Bootst
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='NoOpt|Win32'">
     <PostBuildEvent>
-      <Message>Copy bits needed to upload Roblox project to UploadBits directory</Message>
+      <Message>Copy bits needed to upload NAMEHERE project to UploadBits directory</Message>
       <Command>%40echo off
 mkdir ..\..\UploadBits
 rmdir /s /q ..\..\UploadBits\$(Platform)-$(Configuration)-BootstrapperRccService\
@@ -161,7 +161,7 @@ copy ..\Uploader\Redist.zip ..\..\UploadBits\$(Platform)-$(Configuration)-Bootst
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <PostBuildEvent>
-      <Message>Copy bits needed to upload Roblox project to UploadBits directory</Message>
+      <Message>Copy bits needed to upload NAMEHERE project to UploadBits directory</Message>
       <Command>%40echo off
 mkdir ..\..\UploadBits
 rmdir /s /q ..\..\UploadBits\$(Platform)-$(Configuration)-BootstrapperRccService\
@@ -176,7 +176,7 @@ copy ..\Uploader\Redist.zip ..\..\UploadBits\$(Platform)-$(Configuration)-Bootst
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <PostBuildEvent>
-      <Message>Copy bits needed to upload Roblox project to UploadBits directory</Message>
+      <Message>Copy bits needed to upload NAMEHERE project to UploadBits directory</Message>
       <Command>%40echo off
 mkdir ..\..\UploadBits
 rmdir /s /q ..\..\UploadBits\$(Platform)-$(Configuration)-BootstrapperRccService\
@@ -191,7 +191,7 @@ copy ..\Uploader\Redist.zip ..\..\UploadBits\$(Platform)-$(Configuration)-Bootst
       <TargetEnvironment>X64</TargetEnvironment>
     </Midl>
     <PostBuildEvent>
-      <Message>Copy bits needed to upload Roblox project to UploadBits directory</Message>
+      <Message>Copy bits needed to upload NAMEHERE project to UploadBits directory</Message>
       <Command>%40echo off
 mkdir ..\..\UploadBits
 rmdir /s /q ..\..\UploadBits\$(Platform)-$(Configuration)-BootstrapperRccService\

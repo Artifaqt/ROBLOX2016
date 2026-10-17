@@ -7,11 +7,11 @@ BOOST_AUTO_TEST_SUITE(URLParser)
 BOOST_AUTO_TEST_CASE(Split)
 {
     {
-        const std::string url_string = "https://www.roblox.com/path";
+        const std::string url_string = "https://www.namehere.com/path";
         RBX::Url url = RBX::Url::fromString(url_string);
         BOOST_CHECK(url.isValid());
         BOOST_CHECK_EQUAL(url.scheme(), "https");
-        BOOST_CHECK_EQUAL(url.host(), "www.roblox.com");
+        BOOST_CHECK_EQUAL(url.host(), "www.namehere.com");
         BOOST_CHECK_EQUAL(url.path(), "/path");
         BOOST_CHECK(url.query().empty());
         BOOST_CHECK(url.fragment().empty());
@@ -19,11 +19,11 @@ BOOST_AUTO_TEST_CASE(Split)
     }
     
     {
-        const std::string url_string = "https://www.roblox.com/path?query";
+        const std::string url_string = "https://www.namehere.com/path?query";
         RBX::Url url = RBX::Url::fromString(url_string);
         BOOST_CHECK(url.isValid());
         BOOST_CHECK_EQUAL(url.scheme(), "https");
-        BOOST_CHECK_EQUAL(url.host(), "www.roblox.com");
+        BOOST_CHECK_EQUAL(url.host(), "www.namehere.com");
         BOOST_CHECK_EQUAL(url.path(), "/path");
         BOOST_CHECK_EQUAL(url.query(), "query");
         BOOST_CHECK(url.fragment().empty());
@@ -31,11 +31,11 @@ BOOST_AUTO_TEST_CASE(Split)
     }
     
     {
-        const std::string url_string = "https://www.roblox.com/path#fragment";
+        const std::string url_string = "https://www.namehere.com/path#fragment";
         RBX::Url url = RBX::Url::fromString(url_string);
         BOOST_CHECK(url.isValid());
         BOOST_CHECK_EQUAL(url.scheme(), "https");
-        BOOST_CHECK_EQUAL(url.host(), "www.roblox.com");
+        BOOST_CHECK_EQUAL(url.host(), "www.namehere.com");
         BOOST_CHECK_EQUAL(url.path(), "/path");
         BOOST_CHECK(url.query().empty());
         BOOST_CHECK_EQUAL(url.fragment(), "fragment");
@@ -75,18 +75,18 @@ BOOST_AUTO_TEST_CASE(Split)
 
 BOOST_AUTO_TEST_CASE(Normalization)
 {
-    const std::string url_string = "HTtps://www.ROBLOX.com/../a/../.c/.//Bb?Qu/../Ue&rr=Y#./../Fr?aq";
+    const std::string url_string = "HTtps://www.NAMEHERE.com/../a/../.c/.//Bb?Qu/../Ue&rr=Y#./../Fr?aq";
     
     RBX::Url url = RBX::Url::fromString(url_string);
     BOOST_CHECK(url.isValid());
     BOOST_CHECK_EQUAL(url.scheme(), "https");
-    BOOST_CHECK_EQUAL(url.host(), "www.roblox.com");
+    BOOST_CHECK_EQUAL(url.host(), "www.namehere.com");
     BOOST_CHECK_EQUAL(url.path(), "/.c/Bb");
     BOOST_CHECK_EQUAL(url.query(), "Qu/../Ue&rr=Y");
     BOOST_CHECK_EQUAL(url.fragment(), "./../Fr?aq");
 
     BOOST_CHECK_EQUAL(url.asString(),
-                      "https://www.roblox.com/.c/Bb?Qu/../Ue&rr=Y#./../Fr?aq");
+                      "https://www.namehere.com/.c/Bb?Qu/../Ue&rr=Y#./../Fr?aq");
 }
 
 namespace {
@@ -158,47 +158,47 @@ BOOST_AUTO_TEST_CASE(Invalid)
     }
     
     {
-        RBX::Url url = RBX::Url::fromString("roblox.com");
+        RBX::Url url = RBX::Url::fromString("namehere.com");
         BOOST_CHECK(!url.isValid());
         BOOST_CHECK(url.scheme().empty());
-        BOOST_CHECK_EQUAL(url.host(), "roblox.com");
+        BOOST_CHECK_EQUAL(url.host(), "namehere.com");
         BOOST_CHECK_EQUAL(url.path(), "/");
         BOOST_CHECK(url.query().empty());
         BOOST_CHECK(url.fragment().empty());
-        BOOST_CHECK_EQUAL(url.asString(), "roblox.com/");
+        BOOST_CHECK_EQUAL(url.asString(), "namehere.com/");
     }
     
     {
-        RBX::Url url = RBX::Url::fromString("roblox.com/path?#?");
+        RBX::Url url = RBX::Url::fromString("namehere.com/path?#?");
         BOOST_CHECK(!url.isValid());
         BOOST_CHECK(url.scheme().empty());
-        BOOST_CHECK_EQUAL(url.host(), "roblox.com");
+        BOOST_CHECK_EQUAL(url.host(), "namehere.com");
         BOOST_CHECK_EQUAL(url.path(), "/path");
         BOOST_CHECK(url.query().empty());
         BOOST_CHECK_EQUAL(url.fragment(), "?");
-        BOOST_CHECK_EQUAL(url.asString(), "roblox.com/path#?");
+        BOOST_CHECK_EQUAL(url.asString(), "namehere.com/path#?");
     }
 }
 
 BOOST_AUTO_TEST_CASE(Queries)
 {
-    BOOST_CHECK(RBX::Url::fromString("roblox.com").isSubdomainOf("com"));
-    BOOST_CHECK(RBX::Url::fromString("roblox.com").isSubdomainOf("ROBLOX.com"));
-    BOOST_CHECK(RBX::Url::fromString("www.ROBLOX.com").isSubdomainOf("roblox.com"));
-    BOOST_CHECK(!RBX::Url::fromString("notroblox.com").isSubdomainOf("roblox.com"));
+    BOOST_CHECK(RBX::Url::fromString("namehere.com").isSubdomainOf("com"));
+    BOOST_CHECK(RBX::Url::fromString("namehere.com").isSubdomainOf("NAMEHERE.com"));
+    BOOST_CHECK(RBX::Url::fromString("www.NAMEHERE.com").isSubdomainOf("namehere.com"));
+    BOOST_CHECK(!RBX::Url::fromString("notnamehere.com").isSubdomainOf("namehere.com"));
     
-    BOOST_CHECK(RBX::Url::fromString("roblox.com").pathEquals(""));
-    BOOST_CHECK(RBX::Url::fromString("roblox.com").pathEquals("/"));
-    BOOST_CHECK(RBX::Url::fromString("roblox.com///").pathEquals("/"));
-    BOOST_CHECK(!RBX::Url::fromString("roblox.com/PATH").pathEquals("path"));
-    BOOST_CHECK(RBX::Url::fromString("roblox.com/PATH").pathEqualsCaseInsensitive("path"));
-    BOOST_CHECK(RBX::Url::fromString("roblox.com/long/path").pathEquals("long/path"));
-    BOOST_CHECK(RBX::Url::fromString("roblox.com/long/path").pathEquals("/long/path"));
-    BOOST_CHECK(RBX::Url::fromString("roblox.com/long/path?query").pathEquals("long/path"));
-    BOOST_CHECK(!RBX::Url::fromString("roblox.com/long/path").pathEquals("long/path/with/stuff"));
-    BOOST_CHECK(!RBX::Url::fromString("roblox.com/long/path/with/stuff_here").pathEquals("long/path"));
+    BOOST_CHECK(RBX::Url::fromString("namehere.com").pathEquals(""));
+    BOOST_CHECK(RBX::Url::fromString("namehere.com").pathEquals("/"));
+    BOOST_CHECK(RBX::Url::fromString("namehere.com///").pathEquals("/"));
+    BOOST_CHECK(!RBX::Url::fromString("namehere.com/PATH").pathEquals("path"));
+    BOOST_CHECK(RBX::Url::fromString("namehere.com/PATH").pathEqualsCaseInsensitive("path"));
+    BOOST_CHECK(RBX::Url::fromString("namehere.com/long/path").pathEquals("long/path"));
+    BOOST_CHECK(RBX::Url::fromString("namehere.com/long/path").pathEquals("/long/path"));
+    BOOST_CHECK(RBX::Url::fromString("namehere.com/long/path?query").pathEquals("long/path"));
+    BOOST_CHECK(!RBX::Url::fromString("namehere.com/long/path").pathEquals("long/path/with/stuff"));
+    BOOST_CHECK(!RBX::Url::fromString("namehere.com/long/path/with/stuff_here").pathEquals("long/path"));
     
-    BOOST_CHECK(RBX::Url::fromString("roblox.com/LONG/path").pathEqualsCaseInsensitive("long/PATH"));
+    BOOST_CHECK(RBX::Url::fromString("namehere.com/LONG/path").pathEqualsCaseInsensitive("long/PATH"));
 }
 
 BOOST_AUTO_TEST_SUITE_END()

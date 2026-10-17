@@ -1,4 +1,4 @@
-<com.roblox.client.components.RbxLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.namehere.client.components.RbxLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/fragment_about_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -21,7 +21,7 @@
         android:contentDescription="@string/empty"
         android:gravity="center"
         android:scaleType="fitCenter"
-        android:src="@drawable/roblox_logo" />
+        android:src="@drawable/namehere_logo" />
 
     <TextView
         android:layout_width="match_parent"
@@ -38,7 +38,7 @@
         android:layout_height="0dp"
         android:layout_weight="0.41" />
 	
-	<com.roblox.client.AutoResizeTextView
+	<com.namehere.client.AutoResizeTextView
         android:id="@+id/fragment_about_terms_licenscing_privacy"
 		android:ellipsize="none"
         android:layout_width="match_parent"
@@ -50,7 +50,7 @@
         android:textColor="@color/shell_text_normal"
         android:textSize="20sp" />
 
-	<com.roblox.client.AutoResizeTextView
+	<com.namehere.client.AutoResizeTextView
 	    android:id="@+id/fragment_about_baseURL"
 	    android:layout_width="match_parent"
 	    android:layout_height="25dp"
@@ -73,4 +73,4 @@
         android:text="@string/lorem_ipsum"
         android:textColor="@color/shell_text_normal"
         android:textSize="12sp" />
-</com.roblox.client.components.RbxLinearLayout>
+</com.namehere.client.components.RbxLinearLayout>

@@ -30,7 +30,7 @@ struct filedesc
 
 //3456                                                                         |<--80
 const char* usage = 
-"Roblox Script Compiler - compiles and encrypts local core scripts."
+"NAMEHERE Script Compiler - compiles and encrypts local core scripts."
 ""
 "Usage:\n"
 "\n"

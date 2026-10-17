@@ -4,7 +4,7 @@
 
 #include "v8xml/WebParser.h"
 
-#include "Util/RobloxGoogleAnalytics.h"
+#include "Util/NAMEHEREGoogleAnalytics.h"
 
 #include "v8datamodel/PointsService.h"
 #include "v8datamodel/ContentProvider.h"
@@ -286,7 +286,7 @@ namespace RBX
 
 	static void sendPointAwardStats(int placeId)
 	{
-		RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HasAwardedAPoint", format("%d", placeId).c_str());
+		NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HasAwardedAPoint", format("%d", placeId).c_str());
 	}
 
 	static void fireErrorFunctions(PointsService::AwardPointYieldFunctions& yieldingFunctions, const char* error)

@@ -6,7 +6,7 @@
 #include "V8Datamodel/HttpRbxApiService.h"
 #include "v8xml/WebParser.h"
 
-#include "Util/RobloxGoogleAnalytics.h"
+#include "Util/NAMEHEREGoogleAnalytics.h"
 
 #include "network/WebChatFilter.h"
 #include "Network/Players.h"
@@ -108,13 +108,13 @@ void ChatService::gotFilteredStringSuccess(std::string response, Network::Player
 			}
 		}
 
-		RBX::RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "ChatService:FilterString", "Filter failed because could not parse response");
+		RBX::NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "ChatService:FilterString", "Filter failed because could not parse response");
 
 		errorFunction("ChatService:FilterString could not parse response");
 	}
 	else
 	{
-		RBX::RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "ChatService:FilterString", "Filter failed because response was empty");
+		RBX::NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "ChatService:FilterString", "Filter failed because response was empty");
 
 		errorFunction("ChatService:FilterString returned an empty response");
 	}
@@ -127,7 +127,7 @@ void ChatService::gotFilterStringError(std::string error, boost::function<void(s
 
 static void sendFilterChatStats(int placeId)
 {
-	RBX::RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "ChatService:FilterStringForPlayerAsync", RBX::format("placeId: %i", placeId).c_str());
+	RBX::NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "ChatService:FilterStringForPlayerAsync", RBX::format("placeId: %i", placeId).c_str());
 }
 
 void ChatService::filterStringForPlayer(std::string stringToFilter, shared_ptr<Instance> playerToFilterFor, boost::function<void(std::string)> resumeFunction, boost::function<void(std::string)> errorFunction)

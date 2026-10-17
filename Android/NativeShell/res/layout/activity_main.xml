@@ -12,7 +12,7 @@
         android:background="@android:color/white"
         android:orientation="vertical" android:visibility="visible">
 
-        <!--app:theme="@style/RobloxCompatTheme.Toolbar.Overlay"-->
+        <!--app:theme="@style/NAMEHERECompatTheme.Toolbar.Overlay"-->
 
         <android.support.v7.widget.Toolbar
             android:id="@+id/toolbar"
@@ -21,9 +21,9 @@
             android:minHeight="54dp"
             android:background="@color/RbxBlue3"
             app:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"
-            app:titleTextAppearance="@style/RobloxCompatTheme.Toolbar.TitleText"/>
+            app:titleTextAppearance="@style/NAMEHERECompatTheme.Toolbar.TitleText"/>
 
-        <com.roblox.client.ReclickableTabHost xmlns:android="http://schemas.android.com/apk/res/android"
+        <com.namehere.client.ReclickableTabHost xmlns:android="http://schemas.android.com/apk/res/android"
             android:id="@android:id/tabhost"
             android:layout_width="fill_parent"
             android:layout_height="fill_parent">
@@ -91,14 +91,14 @@
 
             </RelativeLayout>
 
-        </com.roblox.client.ReclickableTabHost>
+        </com.namehere.client.ReclickableTabHost>
 
     </LinearLayout>
-    <!--<com.roblox.client.components.RbxLinearLayout-->
+    <!--<com.namehere.client.components.RbxLinearLayout-->
         <!--android:layout_width="match_parent"-->
         <!--android:layout_height="match_parent"-->
         <!--android:id="@+id/activity_main_overlay"-->
         <!--android:background="@color/RbxRed1">-->
 
-    <!--</com.roblox.client.components.RbxLinearLayout>-->
+    <!--</com.namehere.client.components.RbxLinearLayout>-->
 </FrameLayout>

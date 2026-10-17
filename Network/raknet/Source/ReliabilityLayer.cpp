@@ -19,7 +19,7 @@
 
 using namespace RakNet;
 
-// Roblox
+// NAMEHERE
 #include "FastLog.h"
 LOGGROUP(RakNetDisconnect)
 DYNAMIC_FASTINT(RakNetMaxSplitPacketCount)
@@ -1592,7 +1592,7 @@ bool ReliabilityLayer::Send( char *data, BitSize_t numberOfBitsToSend, PacketPri
 //-------------------------------------------------------------------------------------------------------
 // Run this once per game cycle.  Handles internal lists and actually does the send
 //-------------------------------------------------------------------------------------------------------
-// ROBLOX: return bool
+// NAMEHERE: return bool
 bool ReliabilityLayer::Update( SOCKET s, SystemAddress &systemAddress, int MTUSize, CCTimeType time,
 							  unsigned bitsPerSecondLimit,
 							  DataStructures::List<PluginInterface2*> &messageHandlerList,
@@ -1696,7 +1696,7 @@ bool ReliabilityLayer::Update( SOCKET s, SystemAddress &systemAddress, int MTUSi
 	if ( statistics.messagesInResendBuffer!=0 && AckTimeout(RakNet::TimeMS(time/(CCTimeType)1000)) )
 #endif
 	{
-		// Roblox
+		// NAMEHERE
 		FASTLOG(FLog::RakNetDisconnect, "Raknet: AckTimeout");
 
 		// SHOW - dead connection
@@ -2144,7 +2144,7 @@ bool ReliabilityLayer::Update( SOCKET s, SystemAddress &systemAddress, int MTUSi
 	// Keep on top of deleting old unreliable split packets so they don't clog the list.
 	//DeleteOldUnreliableSplitPackets( time );
 
-	// ROBLOX:
+	// NAMEHERE:
 	return outgoingPacketBuffer.Size() > 0 ? false : true;
 }
 
@@ -2660,7 +2660,7 @@ InternalPacket* ReliabilityLayer::CreateInternalPacketFromBitStream( RakNet::Bit
 		return 0;
 	}
 
-	// ROBLOX
+	// NAMEHERE
 	{
 		if (internalPacket->splitPacketCount > (uint32_t)DFInt::RakNetMaxSplitPacketCount)
 		{

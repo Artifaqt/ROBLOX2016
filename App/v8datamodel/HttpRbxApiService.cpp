@@ -7,7 +7,7 @@
 #include "v8datamodel/HttpRbxApiJob.h"
 #include "Network/Players.h"
 #include "V8Xml/WebParser.h"
-#include "Util/RobloxGoogleAnalytics.h"
+#include "Util/NAMEHEREGoogleAnalytics.h"
 
 #define HTTP_POST_COMPRESSION_LIMIT 256
 
@@ -32,11 +32,11 @@ LOGVARIABLE(HttpRbxApiBudget, 0);
 namespace {
 	static inline void sendApiServiceDidThrottle()
 	{
-		RBX::RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HttpRbxApiService", "GameHasBeenAPIThrottled");
+		RBX::NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HttpRbxApiService", "GameHasBeenAPIThrottled");
 	}
 	static inline void sendApiServiceDidQueue()
 	{
-		RBX::RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HttpRbxApiService", "GameHasBeenAPIQueued");
+		RBX::NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HttpRbxApiService", "GameHasBeenAPIQueued");
 	}
 }
 
@@ -46,8 +46,8 @@ namespace RBX {
 
     REFLECTION_BEGIN();
 	// CoreScript Exposed Functions
-	static Reflection::BoundYieldFuncDesc<HttpRbxApiService, std::string(std::string, bool, ThrottlingPriority)> apiGetAsyncFunction(&HttpRbxApiService::getAsyncLua, "GetAsync", "apiUrlPath", "useHttps", true, "priority", PRIORITY_DEFAULT, Security::RobloxScript);
-	static Reflection::BoundYieldFuncDesc<HttpRbxApiService, std::string(std::string, std::string, bool, ThrottlingPriority, HttpService::HttpContentType)> apiPostAsyncFunction(&HttpRbxApiService::postAsyncLua, "PostAsync", "apiUrlPath", "data", "useHttps", true, "priority", PRIORITY_DEFAULT, "content_type", HttpService::APPLICATION_JSON, Security::RobloxScript);
+	static Reflection::BoundYieldFuncDesc<HttpRbxApiService, std::string(std::string, bool, ThrottlingPriority)> apiGetAsyncFunction(&HttpRbxApiService::getAsyncLua, "GetAsync", "apiUrlPath", "useHttps", true, "priority", PRIORITY_DEFAULT, Security::NAMEHEREScript);
+	static Reflection::BoundYieldFuncDesc<HttpRbxApiService, std::string(std::string, std::string, bool, ThrottlingPriority, HttpService::HttpContentType)> apiPostAsyncFunction(&HttpRbxApiService::postAsyncLua, "PostAsync", "apiUrlPath", "data", "useHttps", true, "priority", PRIORITY_DEFAULT, "content_type", HttpService::APPLICATION_JSON, Security::NAMEHEREScript);
     REFLECTION_END();
 
 	namespace Reflection {
@@ -123,18 +123,18 @@ namespace RBX {
 			{
 				if (isPlaySolo)
 				{
-					RBX::RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HttpRbxApiService", "TotalHttpApiCallsInPlaySolo", totalNumOfApiCalls);
-					RBX::RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HttpRbxApiService", "AvgHttpApiCallsPerSecInPlaySolo",((double)totalNumOfApiCalls)/instanceAliveTimer.delta().seconds());
+					RBX::NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HttpRbxApiService", "TotalHttpApiCallsInPlaySolo", totalNumOfApiCalls);
+					RBX::NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HttpRbxApiService", "AvgHttpApiCallsPerSecInPlaySolo",((double)totalNumOfApiCalls)/instanceAliveTimer.delta().seconds());
 				}
 				else if(serverPresent)
 				{
-					RBX::RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HttpRbxApiService", "TotalHttpApiCallsInServer",totalNumOfApiCalls);
-					RBX::RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HttpRbxApiService", "AvgHttpApiCallsPerSecInServer",((double)totalNumOfApiCalls)/instanceAliveTimer.delta().seconds());
+					RBX::NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HttpRbxApiService", "TotalHttpApiCallsInServer",totalNumOfApiCalls);
+					RBX::NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HttpRbxApiService", "AvgHttpApiCallsPerSecInServer",((double)totalNumOfApiCalls)/instanceAliveTimer.delta().seconds());
 				}
 				else if(clientPresent)
 				{
-					RBX::RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HttpRbxApiService", "TotalHttpApiCallsInClient",totalNumOfApiCalls);
-					RBX::RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HttpRbxApiService", "AvgHttpApiCallsPerSecInClient",((double)totalNumOfApiCalls)/instanceAliveTimer.delta().seconds());
+					RBX::NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HttpRbxApiService", "TotalHttpApiCallsInClient",totalNumOfApiCalls);
+					RBX::NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HttpRbxApiService", "AvgHttpApiCallsPerSecInClient",((double)totalNumOfApiCalls)/instanceAliveTimer.delta().seconds());
 				}
 			}
 
@@ -294,7 +294,7 @@ namespace RBX {
 
 			if (request.retryCount == 0 && recordInGoogleAnalytics)
 			{
-				RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HttpRbxApiService", "RetryRequestStarted");
+				NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HttpRbxApiService", "RetryRequestStarted");
 			}
 
 			shouldRetry = shouldRetryFromStatusCode(statusCode, request) && (request.retryCount < DFInt::HttpRbxApiMaxRetryCount);
@@ -350,7 +350,7 @@ namespace RBX {
 		{
 			if (apiService->getRecordInGoogleAnalytics() && request.retryCount > 0)
 			{
-				RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HttpRbxApiService", "RetryRequestSucceeded");
+				NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HttpRbxApiService", "RetryRequestSucceeded");
 			}
 
 			resumeFunction(*response);
@@ -359,7 +359,7 @@ namespace RBX {
 		{
 			if (apiService->getRecordInGoogleAnalytics() && request.retryCount > 0)
 			{
-				RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HttpRbxApiService", "RetryRequestFailed");
+				NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HttpRbxApiService", "RetryRequestFailed");
 			}
 
 			errorFunction(exception->what());
@@ -410,7 +410,7 @@ namespace RBX {
 			RBXASSERT(false);
 			if (getRecordInGoogleAnalytics())
 			{
-				RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HttpRbxApiService", ("postAsyncNotApiRequest for " + httpRequest.url).c_str());
+				NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HttpRbxApiService", ("postAsyncNotApiRequest for " + httpRequest.url).c_str());
 			}
 		}
 
@@ -427,7 +427,7 @@ namespace RBX {
 
 			if (getRecordInGoogleAnalytics())
 			{
-				RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HttpRbxApiService", std::string("postAsyncUrlPathContainsDomain for " + urlPath).c_str());
+				NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HttpRbxApiService", std::string("postAsyncUrlPathContainsDomain for " + urlPath).c_str());
 			}
 
 			fullUrl = urlPath;
@@ -465,7 +465,7 @@ namespace RBX {
 		checkAndUpdatePostUrl(fullUrl, urlPath);
 
 		Http http(fullUrl);
-		robloxScriptModifiedCheck(RBX::apiPostAsyncFunction.security);
+		namehereScriptModifiedCheck(RBX::apiPostAsyncFunction.security);
 		postAsyncInternal(http, data, content, data.size() > HTTP_POST_COMPRESSION_LIMIT, throttlePriority, resumeFunction, errorFunction);
 	}
 
@@ -537,7 +537,7 @@ namespace RBX {
 
 			if (getRecordInGoogleAnalytics())
 			{
-				RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HttpRbxApiService", std::string("getAsyncNonApiCall for " + httpRequest.url).c_str());
+				NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HttpRbxApiService", std::string("getAsyncNonApiCall for " + httpRequest.url).c_str());
 			}
 		}
 
@@ -558,7 +558,7 @@ namespace RBX {
 
 
 		Http http(fullUrl);
-		robloxScriptModifiedCheck(RBX::apiGetAsyncFunction.security);
+		namehereScriptModifiedCheck(RBX::apiGetAsyncFunction.security);
 		getAsyncInternal(http, throttlePriority, resumeFunction, errorFunction);
 	}
 

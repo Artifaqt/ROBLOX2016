@@ -17,15 +17,15 @@
 <string name="AccountCreationFloodcheck"><![CDATA[You have made too many accounts. Please wait before making more.]]></string>
 <string name="UnexpectedError"><![CDATA[Sorry! An unexpected error occured: %s.]]></string>
 <string name="PasswordWrongAndroid"><![CDATA[Password must contain 6-20 characters with at least 2 numbers.]]></string>
-<string name="TermsLicensingPrivacy"><![CDATA[<a href=\'http://www.roblox.com/info/terms-of-service\'>Terms of Service</a> - <a href=\'http://www.roblox.com/info/EULA.htm\'>Licensing Agreement</a> - <a href=\'http://www.roblox.com/Info/Privacy.aspx?layout=null\'>Privacy Policy</a>]]></string>
+<string name="TermsLicensingPrivacy"><![CDATA[<a href=\'http://www.namehere.com/info/terms-of-service\'>Terms of Service</a> - <a href=\'http://www.namehere.com/info/EULA.htm\'>Licensing Agreement</a> - <a href=\'http://www.namehere.com/Info/Privacy.aspx?layout=null\'>Privacy Policy</a>]]></string>
 <string name="SearchWord">Search</string>
 <string name="SearchUsersWord">Search users...</string>
-<string name="SignupFinePrintAndroid"><![CDATA[By tapping \'Sign up\' above, you are agreeing to our <a href=\'http://www.roblox.com/info/terms-of-service\'>Terms of Service</a>, <a href=\'http://www.roblox.com/info/EULA.htm\'>Licensing Agreement</a>, and <a href=\'http://www.roblox.com/Info/Privacy.aspx?layout=null\'>Privacy Policy</a>.]]></string>
+<string name="SignupFinePrintAndroid"><![CDATA[By tapping \'Sign up\' above, you are agreeing to our <a href=\'http://www.namehere.com/info/terms-of-service\'>Terms of Service</a>, <a href=\'http://www.namehere.com/info/EULA.htm\'>Licensing Agreement</a>, and <a href=\'http://www.namehere.com/Info/Privacy.aspx?layout=null\'>Privacy Policy</a>.]]></string>
 <string name="LoggedOut">You have been logged out.</string>
 <string name="GroupsWord">Groups</string>
 <string name="LeaderboardsWord">Leaderboards</string>
 <string name="RateMeDialogTitle">Please rate this app</string>
-<string name="RateMeDialogMessage">We would really appreciate you rating ROBLOX on the Play store.</string>
+<string name="RateMeDialogMessage">We would really appreciate you rating NAMEHERE on the Play store.</string>
 <string name="RateMeRateIt">Rate it</string>
 <string name="RateMeNever">Never</string>
 <string name="RateMeNotNow">Not now</string>
@@ -47,65 +47,65 @@
 
 <!-- ======================= Android-only environment spinner strings ======================= -->
 <string-array name="EnvironmentArray">
-    <item>www.roblox.com/</item>
-    <item>www.gametest1.robloxlabs.com/</item>
-    <item>www.gametest2.robloxlabs.com/</item>
-    <item>www.gametest3.robloxlabs.com/</item>
-    <item>www.gametest4.robloxlabs.com/</item>
-    <item>www.gametest5.robloxlabs.com/</item>
-    <item>www.sitetest1.robloxlabs.com/</item>
-    <item>www.sitetest2.robloxlabs.com/</item>
-    <item>www.sitetest3.robloxlabs.com/</item>
-    <item>www.sitetest4.robloxlabs.com/</item>
-    <item>allen.sitetest3.robloxlabs.com/</item>
-    <item>anthony.sitetest3.robloxlabs.com/</item>
-    <item>alex.sitetest3.robloxlabs.com/</item>
-    <item>baker.sitetest3.robloxlabs.com/</item>
-    <item>ernie.sitetest3.robloxlabs.com/</item>
-    <item>guru.sitetest3.robloxlabs.com/</item>
-    <item>rosemary.sitetest3.robloxlabs.com/</item>
-    <item>antoni.sitetest3.robloxlabs.com/</item>
-    <item>isaiah.sitetest3.robloxlabs.com/</item>
-    <item>akshay.sitetest3.robloxlabs.com/</item>
-    <item>ying.sitetest3.robloxlabs.com/</item>
-    <item>wooldridge.sitetest3.robloxlabs.com/</item>
-    <item>je.sitetest3.robloxlabs.com/</item>
-    <item>jeremy.sitetest3.robloxlabs.com/</item>
-    <item>manika.sitetest3.robloxlabs.com/</item>
-    <item>linjun.sitetest3.robloxlabs.com/</item>
-    <item>shailendra.sitetest3.robloxlabs.com/</item>
+    <item>www.namehere.com/</item>
+    <item>www.gametest1.nameherelabs.com/</item>
+    <item>www.gametest2.nameherelabs.com/</item>
+    <item>www.gametest3.nameherelabs.com/</item>
+    <item>www.gametest4.nameherelabs.com/</item>
+    <item>www.gametest5.nameherelabs.com/</item>
+    <item>www.sitetest1.nameherelabs.com/</item>
+    <item>www.sitetest2.nameherelabs.com/</item>
+    <item>www.sitetest3.nameherelabs.com/</item>
+    <item>www.sitetest4.nameherelabs.com/</item>
+    <item>allen.sitetest3.nameherelabs.com/</item>
+    <item>anthony.sitetest3.nameherelabs.com/</item>
+    <item>alex.sitetest3.nameherelabs.com/</item>
+    <item>baker.sitetest3.nameherelabs.com/</item>
+    <item>ernie.sitetest3.nameherelabs.com/</item>
+    <item>guru.sitetest3.nameherelabs.com/</item>
+    <item>rosemary.sitetest3.nameherelabs.com/</item>
+    <item>antoni.sitetest3.nameherelabs.com/</item>
+    <item>isaiah.sitetest3.nameherelabs.com/</item>
+    <item>akshay.sitetest3.nameherelabs.com/</item>
+    <item>ying.sitetest3.nameherelabs.com/</item>
+    <item>wooldridge.sitetest3.nameherelabs.com/</item>
+    <item>je.sitetest3.nameherelabs.com/</item>
+    <item>jeremy.sitetest3.nameherelabs.com/</item>
+    <item>manika.sitetest3.nameherelabs.com/</item>
+    <item>linjun.sitetest3.nameherelabs.com/</item>
+    <item>shailendra.sitetest3.nameherelabs.com/</item>
 
 
 </string-array>
 
 <string-array name="EnvironmentArrayMobile">
-    <item>m.roblox.com/</item>
-    <item>m.gametest1.robloxlabs.com/</item>
-    <item>m.gametest2.robloxlabs.com/</item>
-    <item>m.gametest3.robloxlabs.com/</item>
-    <item>m.gametest4.robloxlabs.com/</item>
-    <item>m.gametest5.robloxlabs.com/</item>
-    <item>m.sitetest1.robloxlabs.com/</item>
-    <item>m.sitetest2.robloxlabs.com/</item>
-    <item>m.sitetest3.robloxlabs.com/</item>
-    <item>m.sitetest4.robloxlabs.com/</item>
-    <item>allen.sitetest3.robloxlabs.com/</item>
-    <item>anthony.sitetest3.robloxlabs.com/</item>
-    <item>alex.sitetest3.robloxlabs.com/</item>
-    <item>baker.sitetest3.robloxlabs.com/</item>
-    <item>ernie.sitetest3.robloxlabs.com/</item>
-    <item>guru.sitetest3.robloxlabs.com/</item>
-    <item>rosemary.sitetest3.robloxlabs.com/</item>
-    <item>antoni.sitetest3.robloxlabs.com/</item>
-    <item>isaiah.sitetest3.robloxlabs.com/</item>
-    <item>akshay.sitetest3.robloxlabs.com/</item>
-    <item>ying.sitetest3.robloxlabs.com/</item>
-    <item>wooldridge.sitetest3.robloxlabs.com/</item>
-    <item>je.sitetest3.robloxlabs.com/</item>
-    <item>jeremy.sitetest3.robloxlabs.com/</item>
-    <item>manika.sitetest3.robloxlabs.com/</item>
-    <item>linjun.sitetest3.robloxlabs.com/</item>
-    <item>shailendra.sitetest3.robloxlabs.com/</item>
+    <item>m.namehere.com/</item>
+    <item>m.gametest1.nameherelabs.com/</item>
+    <item>m.gametest2.nameherelabs.com/</item>
+    <item>m.gametest3.nameherelabs.com/</item>
+    <item>m.gametest4.nameherelabs.com/</item>
+    <item>m.gametest5.nameherelabs.com/</item>
+    <item>m.sitetest1.nameherelabs.com/</item>
+    <item>m.sitetest2.nameherelabs.com/</item>
+    <item>m.sitetest3.nameherelabs.com/</item>
+    <item>m.sitetest4.nameherelabs.com/</item>
+    <item>allen.sitetest3.nameherelabs.com/</item>
+    <item>anthony.sitetest3.nameherelabs.com/</item>
+    <item>alex.sitetest3.nameherelabs.com/</item>
+    <item>baker.sitetest3.nameherelabs.com/</item>
+    <item>ernie.sitetest3.nameherelabs.com/</item>
+    <item>guru.sitetest3.nameherelabs.com/</item>
+    <item>rosemary.sitetest3.nameherelabs.com/</item>
+    <item>antoni.sitetest3.nameherelabs.com/</item>
+    <item>isaiah.sitetest3.nameherelabs.com/</item>
+    <item>akshay.sitetest3.nameherelabs.com/</item>
+    <item>ying.sitetest3.nameherelabs.com/</item>
+    <item>wooldridge.sitetest3.nameherelabs.com/</item>
+    <item>je.sitetest3.nameherelabs.com/</item>
+    <item>jeremy.sitetest3.nameherelabs.com/</item>
+    <item>manika.sitetest3.nameherelabs.com/</item>
+    <item>linjun.sitetest3.nameherelabs.com/</item>
+    <item>shailendra.sitetest3.nameherelabs.com/</item>
 </string-array>
 
 <!-- ================================== the iOS en strings ================================== -->
@@ -141,7 +141,7 @@
 <string name="EntryIncorrectBody"><![CDATA[One or more of the fields are incorrect or empty.]]></string>
 <string name="VerifyWord"><![CDATA[Verify]]></string>
 <string name="VerifyRequirements"><![CDATA[Retype Password]]></string>
-<string name="SignupFinePrint"><![CDATA[By tapping \'Sign up\' above, you are agreeing to our &lt;a href=\'http://www.roblox.com/info/terms-of-service\'&gt;Terms of Service&lt;/a&gt;, &lt;a href=\'http://www.roblox.com/info/EULA.htm\'&gt;Licensing Agreement&lt;/a&gt;, and &lt;a href=\'http://www.roblox.com/Info/Privacy.aspx?layout=null\'&gt;Privacy Policy&lt;/a&gt;.  We will not share your information with third parties.]]></string>
+<string name="SignupFinePrint"><![CDATA[By tapping \'Sign up\' above, you are agreeing to our &lt;a href=\'http://www.namehere.com/info/terms-of-service\'&gt;Terms of Service&lt;/a&gt;, &lt;a href=\'http://www.namehere.com/info/EULA.htm\'&gt;Licensing Agreement&lt;/a&gt;, and &lt;a href=\'http://www.namehere.com/Info/Privacy.aspx?layout=null\'&gt;Privacy Policy&lt;/a&gt;.  We will not share your information with third parties.]]></string>
 <string name="DoneWord"><![CDATA[Done]]></string>
 <string name="NextWord"><![CDATA[Next]]></string>
 <string name="SelectBirthday"><![CDATA[Select Birthday]]></string>
@@ -193,7 +193,7 @@
 <string name="MessagesWordPhone">MSGs</string>
 <string name="CommunityWord"><![CDATA[Community]]></string>
 <string name="YouAreCurrentlyLoggedInAs"><![CDATA[You are currently signed in as a guest]]></string>
-<string name="WelcomeToRoblox"><![CDATA[Welcome to ROBLOX!]]></string>
+<string name="WelcomeToNAMEHERE"><![CDATA[Welcome to NAMEHERE!]]></string>
 <string name="SignupButton"><![CDATA[Sign up]]></string>
 <string name="LoginButton"><![CDATA[Login]]></string>
 <string name="YouMustLogin"><![CDATA[Create an account or sign in to access this feature.]]></string>
@@ -204,7 +204,7 @@
 
 <!-- AboutController string  -->
 <string name="AboutWord"><![CDATA[About]]></string>
-<string name="LegalText"><![CDATA[ROBLOX, \'Online Building Toy\', characters, logos, names, and all related indicia are trademarks of ROBLOX Corporation ©2015. US Patents 7,874,921. Patents pending. Contact us at info@roblox.com]]></string>
+<string name="LegalText"><![CDATA[NAMEHERE, \'Online Building Toy\', characters, logos, names, and all related indicia are trademarks of NAMEHERE Corporation ©2015. US Patents 7,874,921. Patents pending. Contact us at info@namehere.com]]></string>
 <string name="TermsOfService"><![CDATA[Terms of Service]]></string>
 <string name="LicensingAgreement"><![CDATA[Licensing Agreement]]></string>
 <string name="PrivacyPolicy"><![CDATA[Privacy Policy]]></string>
@@ -233,7 +233,7 @@
 	<!-- Button words -->
 	<string name="CancelWord"><![CDATA[Cancel]]></string>
 	<string name="LogoutWord"><![CDATA[Log Out]]></string>
-	<string name="RobloxWord"><![CDATA[ROBLOX]]></string>
+	<string name="NAMEHEREWord"><![CDATA[NAMEHERE]]></string>
 	<string name="OkWord"><![CDATA[Ok]]></string>
 	
 	<!-- Bad user experience because place has too many xyz -->
@@ -241,12 +241,12 @@
 	<string name="WarnTooManyParts" formatted="false"><![CDATA[This place has %d parts (%d is recommended)]]></string>
 
 <!-- Purchasing strings  -->
-<string name="CannotMakePurchase"><![CDATA[We are sorry, you cannot make purchases at this time. If this problem persists contact info@roblox.com]]></string>
-<string name="HavePendingTransactionError"><![CDATA[You already have pending transactions, please try again after some time. You may need to restart your device. If this problem persists contact info@roblox.com]]></string>
+<string name="CannotMakePurchase"><![CDATA[We are sorry, you cannot make purchases at this time. If this problem persists contact info@namehere.com]]></string>
+<string name="HavePendingTransactionError"><![CDATA[You already have pending transactions, please try again after some time. You may need to restart your device. If this problem persists contact info@namehere.com]]></string>
 <string name="TransactionFailedTitle"><![CDATA[Purchase failed]]></string>
-<string name="TransactionFailedBody"><![CDATA[Purchase failed, please contact info@roblox.com with your Apple receipt]]></string>
-<string name="UserNeedsToSignIn"><![CDATA[Roblox User %s needs to login to complete the pending transaction before you can buy. You may need to restart your device. If this problem persists contact info@roblox.com]]></string>
-<string name="AnyUserNeedsToSignIn"><![CDATA[Please login to complete the pending transaction. If this problem persists contact info@roblox.com]]></string>
+<string name="TransactionFailedBody"><![CDATA[Purchase failed, please contact info@namehere.com with your Apple receipt]]></string>
+<string name="UserNeedsToSignIn"><![CDATA[NAMEHERE User %s needs to login to complete the pending transaction before you can buy. You may need to restart your device. If this problem persists contact info@namehere.com]]></string>
+<string name="AnyUserNeedsToSignIn"><![CDATA[Please login to complete the pending transaction. If this problem persists contact info@namehere.com]]></string>
 <string name="AppPurchasingDisabledTitle"><![CDATA[In-App Purchasing disabled]]></string>
 <string name="CannotPurchaseBecauseParentalControl"><![CDATA[You are not able to make purchases.  Check your parental control settings and try again later.]]></string>
 <string name="SessionExpired"><![CDATA[Session Expired, Please logout and log back in to do the purchase]]></string>
@@ -260,9 +260,9 @@
 <string name="WaitForAnotherCatalogPurchase"><![CDATA[Please wait for some time before making Catalog purchase]]></string>
 
 <!-- App Rating Strings  -->
-<string name="RatingString"><![CDATA[If you enjoy using ROBLOX, would you please rate it? It wont take more than a minute. If you are having issues or problems, please email support at support@roblox.com.]]></string>
-<string name="RatingTitle"><![CDATA[Rate ROBLOX]]></string>
-<string name="RatingYesButton"><![CDATA[Rate ROBLOX]]></string>
+<string name="RatingString"><![CDATA[If you enjoy using NAMEHERE, would you please rate it? It wont take more than a minute. If you are having issues or problems, please email support at support@namehere.com.]]></string>
+<string name="RatingTitle"><![CDATA[Rate NAMEHERE]]></string>
+<string name="RatingYesButton"><![CDATA[Rate NAMEHERE]]></string>
 <string name="RatingNoThanksButton"><![CDATA[No, Thanks]]></string>
 <string name="RatingRemindMeLaterButton"><![CDATA[Remind me later]]></string>
 
@@ -270,22 +270,22 @@
 <string name="BuildWord"><![CDATA[Build]]></string>
 
 <!-- Cookies  -->
-<string name="CookiesClearedMessage"><![CDATA[Roblox Cookies are cleared]]></string>
+<string name="CookiesClearedMessage"><![CDATA[NAMEHERE Cookies are cleared]]></string>
 <string name="ClearCookiesWord"><![CDATA[Clear Cookies]]></string>
 
-<!-- Roblox Developer  -->
-<string name="RobloxDevSuccessfulPair"><![CDATA[Successfuly Paired with %s]]></string>
-<string name="RobloxDevPairFailure"><![CDATA[Did not pair with Studio, did you put in the right code?]]></string>
-<string name="RobloxDevPairFailureTimeout"><![CDATA[Could not find ROBLOX Studio. Please make sure you are on the same network as ROBLOX studio.]]></string>
+<!-- NAMEHERE Developer  -->
+<string name="NAMEHEREDevSuccessfulPair"><![CDATA[Successfuly Paired with %s]]></string>
+<string name="NAMEHEREDevPairFailure"><![CDATA[Did not pair with Studio, did you put in the right code?]]></string>
+<string name="NAMEHEREDevPairFailureTimeout"><![CDATA[Could not find NAMEHERE Studio. Please make sure you are on the same network as NAMEHERE studio.]]></string>
 <string name="EnterHerePhrase"><![CDATA[Enter Here]]></string>
 <string name="PairWord"><![CDATA[Pair]]></string>
-<string name="RbxDevPairingInstructions"><![CDATA[Type your Rbx Dev Code (should be 4 numbers) from ROBLOX Studio to pair this device.]]></string>
-<string name="RbxDevWaiting"><![CDATA[Waiting for ROBLOX Studio Connection...]]></string>
-<string name="RbxDevConnectionCreated"><![CDATA[ROBLOX Studio connection created, waiting for setup...]]></string>
-<string name="RbxDevStudioFound"><![CDATA[ROBLOX Studio found, creating connection...]]></string>
+<string name="RbxDevPairingInstructions"><![CDATA[Type your Rbx Dev Code (should be 4 numbers) from NAMEHERE Studio to pair this device.]]></string>
+<string name="RbxDevWaiting"><![CDATA[Waiting for NAMEHERE Studio Connection...]]></string>
+<string name="RbxDevConnectionCreated"><![CDATA[NAMEHERE Studio connection created, waiting for setup...]]></string>
+<string name="RbxDevStudioFound"><![CDATA[NAMEHERE Studio found, creating connection...]]></string>
 <string name="RbxDevFinalizing"><![CDATA[Finalizing some things...]]></string>
-<string name="RbxDevPressConnect"><![CDATA[Please press connect button when you have a server running on ROBLOX Studio.]]></string>
-<string name="UpgradeBodyString">Your version of ROBLOX is out of date and will not work properly. Taking you to the Google Play Store for an upgrade.</string>
+<string name="RbxDevPressConnect"><![CDATA[Please press connect button when you have a server running on NAMEHERE Studio.]]></string>
+<string name="UpgradeBodyString">Your version of NAMEHERE is out of date and will not work properly. Taking you to the Google Play Store for an upgrade.</string>
 
 <!--  Facebook integration -->
 <string name="app_id">190191627665278</string>
@@ -296,16 +296,16 @@
 <string name="FriendsWord">Friends</string>
 <string name="SearchGamesWord">Search games...</string>
 <string name="SearchCatalogWord">Search catalog...</string>
-<string name="BannedMessageTemporary">You have been temporarily banned from ROBLOX. Please login via a browser for more information.</string>
-<string name="BannedMessagePermanent">You have been banned from ROBLOX permanently. Please login via a browser for more information.</string>
+<string name="BannedMessageTemporary">You have been temporarily banned from NAMEHERE. Please login via a browser for more information.</string>
+<string name="BannedMessagePermanent">You have been banned from NAMEHERE permanently. Please login via a browser for more information.</string>
 <string name="BannedTitle">Account Unavailable</string>
-<string name="BannedFirstLine">Our content monitors have determined that your behavior at ROBLOX has been in violation of our Terms of Service. We will terminate your account if you do not abide by the rules.</string>
+<string name="BannedFirstLine">Our content monitors have determined that your behavior at NAMEHERE has been in violation of our Terms of Service. We will terminate your account if you do not abide by the rules.</string>
 <string name="BannedReviewed">Reviewed: %s</string>
 <string name="BannedModeratorNote">Moderator Note: %s</string>
-<string name="BannedGuidelines"><![CDATA[Please abide by the <a href=\"https://en.help.roblox.com/hc/en-us/articles/203313410-ROBLOX-Rules-of-Conduct\">ROBLOX Community Guidelines</a> so that ROBLOX can be fun for users of all ages.]]></string>
+<string name="BannedGuidelines"><![CDATA[Please abide by the <a href=\"https://en.help.namehere.com/hc/en-us/articles/203313410-NAMEHERE-Rules-of-Conduct\">NAMEHERE Community Guidelines</a> so that NAMEHERE can be fun for users of all ages.]]></string>
 <string name="BannedLengthAndEndDate">Your account has been banned for %1$d days. You may reactive it after %2$s.</string>
-<string name="BannedAppeals"><![CDATA[If you wish to appeal, please send an email to <a href=\"mailto:appeals@roblox.com?Subject=Ban%20Appeal\">appeals@roblox.com</a>.]]></string>
-<string name="BannedWarningInstructions"><![CDATA[You must login at <a href=\"http://www.roblox.com\">www.roblox.com</a> to re-activate your account.]]></string>
+<string name="BannedAppeals"><![CDATA[If you wish to appeal, please send an email to <a href=\"mailto:appeals@namehere.com?Subject=Ban%20Appeal\">appeals@namehere.com</a>.]]></string>
+<string name="BannedWarningInstructions"><![CDATA[You must login at <a href=\"http://www.namehere.com\">www.namehere.com</a> to re-activate your account.]]></string>
 <string name="Banned1Day">Banned for 1 Day</string>
 <string name="Banned3Day">Banned for 3 Days</string>
 <string name="Banned7Day">Banned for 7 Days</string>
@@ -313,7 +313,7 @@
 <string name="BannedWarning">Warning</string>
 <string name="BannedDelete">Account Deleted</string>
 <string name="BannedDeletedMessage">Your account has been terminated.</string>
-<string name="BannedDeletedFirstLine">Our content monitors have determined that your behavior at ROBLOX has been in violation of our Terms of Service.</string>
+<string name="BannedDeletedFirstLine">Our content monitors have determined that your behavior at NAMEHERE has been in violation of our Terms of Service.</string>
 <string name="BannedDefault">Account Unavailable</string>
 
 <!-- Settings page -->
@@ -409,13 +409,13 @@
 <string name="ValuePageFriends">Find your friends, send them messages (just kidding), and view their profiles. Sign up to make new friends!</string>
 <string name="ValuePageMessages">Talk to your friends and view your message history. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
 <string name="ValuePageMore">Access your profile, manage your groups, and trade with your friends. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</string>
-<string name="ValuePageCatalog">Choose from thousands of different hats, shirts, and gear that will make your Roblox character truly unique!</string>
+<string name="ValuePageCatalog">Choose from thousands of different hats, shirts, and gear that will make your NAMEHERE character truly unique!</string>
 
 <string name="Working">Working...</string>
 <string name="ChangeEmailAddTitleUnder13">ADD PARENT\'S EMAIL</string>
     <string name="FailedContactCS">Fatal error! Please try again later, and contact customer support if problem persists.</string>
-    <string name="CreateUsernameExistingRbx"><![CDATA[To link to an existing ROBLOX account, log in and go to Settings -> More.]]></string>
-    <string name="CreateUsernameChooseHint">Choose your ROBLOX username:</string>
+    <string name="CreateUsernameExistingRbx"><![CDATA[To link to an existing NAMEHERE account, log in and go to Settings -> More.]]></string>
+    <string name="CreateUsernameChooseHint">Choose your NAMEHERE username:</string>
     <string name="LoggingInSpinnerText">Logging in...</string>
     <string name="LoginInvalidUsername">Username does not exist!</string>
     <string name="LoginInvalidPassword">Wrong password!</string>

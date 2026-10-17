@@ -362,7 +362,7 @@ public:
         return sum;
     }
 };
-// ROBLOX
+// NAMEHERE
 /**
  Interpolates a property according to a piecewise linear spline.  This provides
  C0 continuity but the derivatives are not smooth.  

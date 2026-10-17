@@ -73,7 +73,7 @@
   <ItemDefinitionGroup>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="..\Roblox.PrepForUpload\readme.txt" />
+    <Text Include="..\NAMEHERE.PrepForUpload\readme.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RCCService.PrepForUpload\RCCService.PrepForUpload.vcxproj">

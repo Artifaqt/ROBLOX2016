@@ -339,7 +339,7 @@ function createGui()
 	-- Loading Gui
 	local loadingFrame = Instance.new("Frame")
 	loadingFrame.Name = "LoadingFrame"
-	loadingFrame.Style = Enum.FrameStyle.RobloxRound
+	loadingFrame.Style = Enum.FrameStyle.NAMEHERERound
 	loadingFrame.Size = UDim2.new(0,350,0,60)
 	loadingFrame.Visible = false
 	loadingFrame.Position = UDim2.new(0.5,-175,0.5,-30)
@@ -367,7 +367,7 @@ function createGui()
 	recentsFrame.Parent = currStampGui
 
 	local recentButtonOne = Instance.new("ImageButton")
-	recentButtonOne.Style = Enum.ButtonStyle.RobloxButton
+	recentButtonOne.Style = Enum.ButtonStyle.NAMEHEREButton
 	recentButtonOne.Name = "RecentButtonOne"
 	recentButtonOne.Size = UDim2.new(0,50,0,50)
 	recentButtonOne.Parent = recentsFrame

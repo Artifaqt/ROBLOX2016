@@ -67,7 +67,7 @@ HRESULT WebBrowserAxDialog::ShowContextMenu(DWORD dwID, POINT *ppt, IUnknown *pc
 	return E_NOTIMPL;
 }
 
-#define ROBLOX_BROWSERFLAGS \
+#define NAMEHERE_BROWSERFLAGS \
 	DOCHOSTUIFLAG_DISABLE_HELP_MENU |\
 	DOCHOSTUIFLAG_ENABLE_FORMS_AUTOCOMPLETE |\
 	DOCHOSTUIFLAG_THEME |\
@@ -80,7 +80,7 @@ HRESULT WebBrowserAxDialog::GetHostInfo(DOCHOSTUIINFO *pInfo)
 {
 	pInfo->dwFlags |= 
 		DOCHOSTUIFLAG_NO3DBORDER | 
-		ROBLOX_BROWSERFLAGS |
+		NAMEHERE_BROWSERFLAGS |
 		0;
 
 	return S_OK;
@@ -302,12 +302,12 @@ DWORD ThreadDoUploadVideo(shared_ptr<RBX::DataModel> dataModel, bool siteSEO, st
 				"<media:title type=\"plain\">" + videoTitle + "</media:title>\r\n"
 				"<media:description type=\"plain\">\r\n"
 				"" + videoSEOInfo + "\r\n"
-				"For more games visit http://www.roblox.com\r\n"
+				"For more games visit http://www.namehere.com\r\n"
 				"</media:description>\r\n"
 				"<media:category\r\n"
 				"scheme=\"http://gdata.youtube.com/schemas/2007/categories.cat\">Games\r\n"
 				"</media:category>\r\n"
-				"<media:keywords>ROBLOX, video, free game, online virtual world</media:keywords>\r\n"
+				"<media:keywords>NAMEHERE, video, free game, online virtual world</media:keywords>\r\n"
 				"</media:group>\r\n"
 				"</entry>\r\n"
 				"--f93dcbA3\r\n"
@@ -361,7 +361,7 @@ DWORD ThreadDoUploadVideo(shared_ptr<RBX::DataModel> dataModel, bool siteSEO, st
 		http.additionalHeaders["Authorization"] = "AuthSub token=\"" + youtubeToken + "\"";
 		http.additionalHeaders["GData-Version"] = "2";
 		http.additionalHeaders["X-GData-Key"] = "key=AI39si5sZKe6qAobFgnT9UFGXq9bBO7mUCsK3_cWy_LJmgKDtl-GOMHNNV_Bh7Jk7KqDX7vI8D30jFHwnu8RJcDmcJN47yPW7A";
-		http.additionalHeaders["Slug"] = "roblox.avi";
+		http.additionalHeaders["Slug"] = "namehere.avi";
 		http.additionalHeaders["Connection"] = "close";
 		http.additionalHeaders["Content-Length"] = RBX::format("%d", buffer.str().length());
 
@@ -398,7 +398,7 @@ void WebBrowserAxDialog::DoUploadVideo(std::string token, std::string title, std
 		siteSEO = false;
 		if (placeId > 0) 
 		{
-			videoSEOInfo = format_string("To play this game, please visit: http://www.roblox.com/item.aspx?id=%d&amp;rbx_source=youtube&amp;rbx_medium=uservideo", placeId);
+			videoSEOInfo = format_string("To play this game, please visit: http://www.namehere.com/item.aspx?id=%d&amp;rbx_source=youtube&amp;rbx_medium=uservideo", placeId);
 		} else {
 			videoSEOInfo = seostr;
 		}
@@ -411,7 +411,7 @@ void WebBrowserAxDialog::DoUploadVideo(std::string token, std::string title, std
 
 	videoTitle = titelString;
 	if (videoTitle.length() == 0)
-		videoTitle = "ROBLOX ROCKS!";
+		videoTitle = "NAMEHERE ROCKS!";
 
 	youtubeToken = token;
 	

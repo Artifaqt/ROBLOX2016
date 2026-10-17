@@ -501,7 +501,7 @@ void RBX::Reflection::TypedPropertyDescriptor<class G3D::Vector2>::readValue(Des
 template<>
 void RBX::Reflection::TypedPropertyDescriptor<class G3D::Vector2>::writeValue(const DescribedBase* instance, XmlElement* element) const
 {
-	// Write the data out in accordance with ROBLOX Schema
+	// Write the data out in accordance with NAMEHERE Schema
 
 	XmlElement* xElement = element->addChild(tag_X);
 	XmlElement* yElement = element->addChild(tag_Y);
@@ -1062,7 +1062,7 @@ void RBX::Reflection::TypedPropertyDescriptor<G3D::Vector2int16>::readValue(Desc
 template<>
 void RBX::Reflection::TypedPropertyDescriptor<G3D::Vector2int16>::writeValue(const DescribedBase* instance, XmlElement* element) const
 {
-	// Write the data out in accordance with ROBLOX Schema
+	// Write the data out in accordance with NAMEHERE Schema
 
 	XmlElement* xElement = element->addChild(tag_X);
 	XmlElement* yElement = element->addChild(tag_Y);
@@ -1322,7 +1322,7 @@ void RBX::Reflection::TypedPropertyDescriptor<G3D::Rect2D>::readValue(DescribedB
 template<>
 void RBX::Reflection::TypedPropertyDescriptor<G3D::Rect2D>::writeValue(const DescribedBase* instance, XmlElement* element) const
 {
-    // Write the data out in accordance with ROBLOX Schema
+    // Write the data out in accordance with NAMEHERE Schema
     
     XmlElement* minElement = element->addChild(tag_Min);
     XmlElement* maxElement = element->addChild(tag_Max);
@@ -1401,7 +1401,7 @@ void RBX::Reflection::TypedPropertyDescriptor<RBX::UDim>::readValue(DescribedBas
 template<>
 void RBX::Reflection::TypedPropertyDescriptor<RBX::UDim>::writeValue(const DescribedBase* instance, XmlElement* element) const
 {
-	// Write the data out in accordance with ROBLOX Schema
+	// Write the data out in accordance with NAMEHERE Schema
 
 	XmlElement* sElement = element->addChild(tag_S);
 	XmlElement* oElement = element->addChild(tag_O);
@@ -1472,7 +1472,7 @@ void RBX::Reflection::TypedPropertyDescriptor<RBX::UDim2>::readValue(DescribedBa
 template<>
 void RBX::Reflection::TypedPropertyDescriptor<RBX::UDim2>::writeValue(const DescribedBase* instance, XmlElement* element) const
 {
-	// Write the data out in accordance with ROBLOX Schema
+	// Write the data out in accordance with NAMEHERE Schema
 
 	XmlElement* xsElement = element->addChild(tag_XS);
 	XmlElement* xoElement = element->addChild(tag_XO);
@@ -1541,7 +1541,7 @@ void RBX::Reflection::TypedPropertyDescriptor<RBX::Faces>::readValue(DescribedBa
 template<>
 void RBX::Reflection::TypedPropertyDescriptor<RBX::Faces>::writeValue(const DescribedBase* instance, XmlElement* element) const
 {
-	// Write the data out in accordance with ROBLOX Schema
+	// Write the data out in accordance with NAMEHERE Schema
 
 	XmlElement* facesElement = element->addChild(tag_faces);
 
@@ -1604,7 +1604,7 @@ void RBX::Reflection::TypedPropertyDescriptor<RBX::Axes>::readValue(DescribedBas
 template<>
 void RBX::Reflection::TypedPropertyDescriptor<RBX::Axes>::writeValue(const DescribedBase* instance, XmlElement* element) const
 {
-	// Write the data out in accordance with ROBLOX Schema
+	// Write the data out in accordance with NAMEHERE Schema
 
 	XmlElement* axesElement = element->addChild(tag_axes);
 
@@ -1689,7 +1689,7 @@ void RBX::Reflection::TypedPropertyDescriptor<G3D::Color3>::readValue(DescribedB
 template<>
 void RBX::Reflection::TypedPropertyDescriptor<G3D::Color3>::writeValue(const DescribedBase* instance, XmlElement* element) const
 {
-	// Write the data out in accordance with ROBLOX Schema
+	// Write the data out in accordance with NAMEHERE Schema
 
 	G3D::Color3uint8 v = G3D::Color3uint8(getValue(instance));
 	element->setValue(v.asUInt32());
@@ -1830,7 +1830,7 @@ void TypedPropertyDescriptor<BrickColor>::readValue(DescribedBase* instance, con
 template<>
 void TypedPropertyDescriptor<BrickColor>::writeValue(const DescribedBase* instance, XmlElement* element) const
 {
-	// Write the data out in accordance with ROBLOX Schema
+	// Write the data out in accordance with NAMEHERE Schema
 	element->setValue(getValue(instance).asInt());
 }
 

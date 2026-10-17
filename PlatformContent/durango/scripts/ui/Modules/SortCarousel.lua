@@ -3,7 +3,7 @@
 			// Creates a sort carousel with data for the sort
 ]]
 local CoreGui = Game:GetService("CoreGui")
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 
 local EventHub = require(Modules:FindFirstChild('EventHub'))

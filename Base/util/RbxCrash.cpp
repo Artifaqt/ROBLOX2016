@@ -3,7 +3,7 @@
  *  MacClient
  *
  *  Created by elebel on 7/20/10.
- *  Copyright 2010 Roblox. All rights reserved.
+ *  Copyright 2010 NAMEHERE. All rights reserved.
  *
  */
 

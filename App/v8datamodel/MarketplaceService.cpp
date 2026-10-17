@@ -6,7 +6,7 @@
 #include "Network/Players.h"
 #include "Util/LuaWebService.h"
 #include "Util/Analytics.h"
-#include "Util/RobloxGoogleAnalytics.h"
+#include "Util/NAMEHEREGoogleAnalytics.h"
 #include "v8xml/WebParser.h"
 #include <boost/algorithm/string.hpp>
 
@@ -34,30 +34,30 @@ namespace RBX
 
     REFLECTION_BEGIN();
 	// backend
-	static Reflection::BoundFuncDesc<MarketplaceService, void(int, int, bool)> func_signalPromptProductFinished(&MarketplaceService::signalPromptProductPurchaseFinished, "SignalPromptProductPurchaseFinished", "userId", "productId", "success", Security::RobloxScript);
-	static Reflection::BoundFuncDesc<MarketplaceService, void(shared_ptr<Instance>, int, bool)> func_signalPromptPurchaseFinished(&MarketplaceService::signalPromptPurchaseFinished, "SignalPromptPurchaseFinished", "player", "assetId", "success", Security::RobloxScript);
+	static Reflection::BoundFuncDesc<MarketplaceService, void(int, int, bool)> func_signalPromptProductFinished(&MarketplaceService::signalPromptProductPurchaseFinished, "SignalPromptProductPurchaseFinished", "userId", "productId", "success", Security::NAMEHEREScript);
+	static Reflection::BoundFuncDesc<MarketplaceService, void(shared_ptr<Instance>, int, bool)> func_signalPromptPurchaseFinished(&MarketplaceService::signalPromptPurchaseFinished, "SignalPromptPurchaseFinished", "player", "assetId", "success", Security::NAMEHEREScript);
 
-	static Reflection::RemoteEventDesc<MarketplaceService, void(shared_ptr<Instance>, int, bool, MarketplaceService::CurrencyType)> event_promptPurchaseRequested(&MarketplaceService::promptPurchaseRequested, "PromptPurchaseRequested", "player", "assetId", "equipIfPurchased", "currencyType", Security::RobloxScript, Reflection::RemoteEventCommon::SCRIPTING, Reflection::RemoteEventCommon::BROADCAST);
-	static Reflection::RemoteEventDesc<MarketplaceService, void(shared_ptr<Instance>, int, bool, MarketplaceService::CurrencyType)> event_promptProductPurchaseRequested(&MarketplaceService::promptProductPurchaseRequested, "PromptProductPurchaseRequested", "player", "productId", "equipIfPurchased", "currencyType", Security::RobloxScript, Reflection::RemoteEventCommon::SCRIPTING, Reflection::RemoteEventCommon::BROADCAST);
+	static Reflection::RemoteEventDesc<MarketplaceService, void(shared_ptr<Instance>, int, bool, MarketplaceService::CurrencyType)> event_promptPurchaseRequested(&MarketplaceService::promptPurchaseRequested, "PromptPurchaseRequested", "player", "assetId", "equipIfPurchased", "currencyType", Security::NAMEHEREScript, Reflection::RemoteEventCommon::SCRIPTING, Reflection::RemoteEventCommon::BROADCAST);
+	static Reflection::RemoteEventDesc<MarketplaceService, void(shared_ptr<Instance>, int, bool, MarketplaceService::CurrencyType)> event_promptProductPurchaseRequested(&MarketplaceService::promptProductPurchaseRequested, "PromptProductPurchaseRequested", "player", "productId", "equipIfPurchased", "currencyType", Security::NAMEHEREScript, Reflection::RemoteEventCommon::SCRIPTING, Reflection::RemoteEventCommon::BROADCAST);
 
-	static Reflection::BoundFuncDesc<MarketplaceService, void(std::string, int, int)> func_signalClientPurchaseSuccess(&MarketplaceService::signalClientPurchaseSuccess, "SignalClientPurchaseSuccess", "ticket", "playerId", "productId", Security::RobloxScript);
-	static Reflection::RemoteEventDesc<MarketplaceService, void(std::string, int, int)> event_clientPurchaseSuccess(&MarketplaceService::clientPurchaseSuccess, "ClientPurchaseSuccess", "ticket", "playerId", "productId", Security::RobloxScript, Reflection::RemoteEventCommon::SCRIPTING, Reflection::RemoteEventCommon::CLIENT_SERVER);
-	static Reflection::RemoteEventDesc<MarketplaceService, void(shared_ptr<const Reflection::ValueTable>)> event_serverPurchaseVerification(&MarketplaceService::serverPurchaseVerification, "ServerPurchaseVerification", "serverResponseTable", Security::RobloxScript, Reflection::RemoteEventCommon::SCRIPTING, Reflection::RemoteEventCommon::BROADCAST);
+	static Reflection::BoundFuncDesc<MarketplaceService, void(std::string, int, int)> func_signalClientPurchaseSuccess(&MarketplaceService::signalClientPurchaseSuccess, "SignalClientPurchaseSuccess", "ticket", "playerId", "productId", Security::NAMEHEREScript);
+	static Reflection::RemoteEventDesc<MarketplaceService, void(std::string, int, int)> event_clientPurchaseSuccess(&MarketplaceService::clientPurchaseSuccess, "ClientPurchaseSuccess", "ticket", "playerId", "productId", Security::NAMEHEREScript, Reflection::RemoteEventCommon::SCRIPTING, Reflection::RemoteEventCommon::CLIENT_SERVER);
+	static Reflection::RemoteEventDesc<MarketplaceService, void(shared_ptr<const Reflection::ValueTable>)> event_serverPurchaseVerification(&MarketplaceService::serverPurchaseVerification, "ServerPurchaseVerification", "serverResponseTable", Security::NAMEHEREScript, Reflection::RemoteEventCommon::SCRIPTING, Reflection::RemoteEventCommon::BROADCAST);
 
-	static Reflection::RemoteEventDesc<MarketplaceService, void(shared_ptr<Instance>, std::string)> event_promptThirdPartyPurchaseRequested(&MarketplaceService::promptThirdPartyPurchaseRequested, "PromptThirdPartyPurchaseRequested", "player", "productId", Security::Roblox, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::BROADCAST);
+	static Reflection::RemoteEventDesc<MarketplaceService, void(shared_ptr<Instance>, std::string)> event_promptThirdPartyPurchaseRequested(&MarketplaceService::promptThirdPartyPurchaseRequested, "PromptThirdPartyPurchaseRequested", "player", "productId", Security::NAMEHERE, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::BROADCAST);
     
-    static Reflection::RemoteEventDesc<MarketplaceService, void(shared_ptr<Instance>, std::string)> event_promptNativePurchaseRequested(&MarketplaceService::promptNativePurchaseRequested, "PromptNativePurchaseRequested", "player", "productId", Security::Roblox, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::BROADCAST);
+    static Reflection::RemoteEventDesc<MarketplaceService, void(shared_ptr<Instance>, std::string)> event_promptNativePurchaseRequested(&MarketplaceService::promptNativePurchaseRequested, "PromptNativePurchaseRequested", "player", "productId", Security::NAMEHERE, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::BROADCAST);
 
 	// frontend
     
-    // used by core script to automatically convert app store product purchases into roblox items
-    static Reflection::BoundFuncDesc<MarketplaceService, void(shared_ptr<Instance>, std::string)> func_PromptNativePurchase(&MarketplaceService::promptNativePurchase, "PromptNativePurchase", "player", "productId", Security::RobloxScript);
-	static Reflection::RemoteEventDesc<MarketplaceService, void(shared_ptr<Instance>, std::string, bool)> event_PromptNativePurchaseFinished(&MarketplaceService::nativePurchaseFinished, "NativePurchaseFinished", "player","productId","wasPurchased", Security::RobloxScript, Reflection::RemoteEventCommon::SCRIPTING, Reflection::RemoteEventCommon::CLIENT_SERVER);
+    // used by core script to automatically convert app store product purchases into namehere items
+    static Reflection::BoundFuncDesc<MarketplaceService, void(shared_ptr<Instance>, std::string)> func_PromptNativePurchase(&MarketplaceService::promptNativePurchase, "PromptNativePurchase", "player", "productId", Security::NAMEHEREScript);
+	static Reflection::RemoteEventDesc<MarketplaceService, void(shared_ptr<Instance>, std::string, bool)> event_PromptNativePurchaseFinished(&MarketplaceService::nativePurchaseFinished, "NativePurchaseFinished", "player","productId","wasPurchased", Security::NAMEHEREScript, Reflection::RemoteEventCommon::SCRIPTING, Reflection::RemoteEventCommon::CLIENT_SERVER);
     
     
-    // used by some roblox created games to do direct purchases from app stores
-	static Reflection::BoundFuncDesc<MarketplaceService, void(shared_ptr<Instance>, std::string)> func_PromptTPPurchase(&MarketplaceService::promptThirdPartyPurchase, "PromptThirdPartyPurchase", "player", "productId", Security::RobloxPlace);
-	static Reflection::RemoteEventDesc<MarketplaceService, void(shared_ptr<Instance>, std::string, std::string, bool)> event_PromptTPPurchaseFinished(&MarketplaceService::thirdPartyPurchaseFinished, "ThirdPartyPurchaseFinished", "player","productId","receipt","wasPurchased", Security::RobloxPlace, Reflection::RemoteEventCommon::SCRIPTING, Reflection::RemoteEventCommon::CLIENT_SERVER);
+    // used by some namehere created games to do direct purchases from app stores
+	static Reflection::BoundFuncDesc<MarketplaceService, void(shared_ptr<Instance>, std::string)> func_PromptTPPurchase(&MarketplaceService::promptThirdPartyPurchase, "PromptThirdPartyPurchase", "player", "productId", Security::NAMEHEREPlace);
+	static Reflection::RemoteEventDesc<MarketplaceService, void(shared_ptr<Instance>, std::string, std::string, bool)> event_PromptTPPurchaseFinished(&MarketplaceService::thirdPartyPurchaseFinished, "ThirdPartyPurchaseFinished", "player","productId","receipt","wasPurchased", Security::NAMEHEREPlace, Reflection::RemoteEventCommon::SCRIPTING, Reflection::RemoteEventCommon::CLIENT_SERVER);
 
     
     // rbx dev purchasing calls
@@ -68,9 +68,9 @@ namespace RBX
 	static Reflection::RemoteEventDesc<MarketplaceService, void(shared_ptr<Instance>, int, bool)> event_promptPurchaseFinished(&MarketplaceService::promptPurchaseFinished, "PromptPurchaseFinished", "player", "assetId", "isPurchased", Security::None, Reflection::RemoteEventCommon::SCRIPTING, Reflection::RemoteEventCommon::BROADCAST);
 	static Reflection::RemoteEventDesc<MarketplaceService, void(int, int, bool)> event_promptProductPurchaseFinished(&MarketplaceService::promptProductPurchaseFinished, "PromptProductPurchaseFinished", "userId", "productId", "isPurchased", Security::None, Reflection::RemoteEventCommon::Attributes::deprecated(Reflection::RemoteEventCommon::SCRIPTING, NULL), Reflection::RemoteEventCommon::BROADCAST);
 
-    static Reflection::RemoteEventDesc<MarketplaceService, void(shared_ptr<const Reflection::Tuple>)> event_ClientLuaDialogRequested(&MarketplaceService::clientLuaDialogRequested, "ClientLuaDialogRequested", "arguments", Security::RobloxScript, Reflection::RemoteEventCommon::SCRIPTING, Reflection::RemoteEventCommon::CLIENT_SERVER);
-	static Reflection::RemoteEventDesc<MarketplaceService, void(bool, shared_ptr<Instance>)> event_luaDialogCallbackSignal(&MarketplaceService::luaDialogCallbackSignal, "LuaDialogCallbackSignal", "value", "player", Security::RobloxScript, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::CLIENT_SERVER);
-	static Reflection::BoundFuncDesc<MarketplaceService, void(bool)> func_signalServerLuaDialogClosed(&MarketplaceService::signalServerLuaDialogClosed, "SignalServerLuaDialogClosed", "value", Security::RobloxScript);
+    static Reflection::RemoteEventDesc<MarketplaceService, void(shared_ptr<const Reflection::Tuple>)> event_ClientLuaDialogRequested(&MarketplaceService::clientLuaDialogRequested, "ClientLuaDialogRequested", "arguments", Security::NAMEHEREScript, Reflection::RemoteEventCommon::SCRIPTING, Reflection::RemoteEventCommon::CLIENT_SERVER);
+	static Reflection::RemoteEventDesc<MarketplaceService, void(bool, shared_ptr<Instance>)> event_luaDialogCallbackSignal(&MarketplaceService::luaDialogCallbackSignal, "LuaDialogCallbackSignal", "value", "player", Security::NAMEHEREScript, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::CLIENT_SERVER);
+	static Reflection::BoundFuncDesc<MarketplaceService, void(bool)> func_signalServerLuaDialogClosed(&MarketplaceService::signalServerLuaDialogClosed, "SignalServerLuaDialogClosed", "value", Security::NAMEHEREScript);
     
     static Reflection::BoundYieldFuncDesc<MarketplaceService, shared_ptr<Instance>()>
         func_getDeveloperProductsAsync(&MarketplaceService::getDeveloperProductsAsync, "GetDeveloperProductsAsync", Security::None);
@@ -920,7 +920,7 @@ namespace RBX
 				currencyName = "Ticket";
 			}
 
-			RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, 
+			NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, 
 				mk->receiptProcessingEnabledByUser ? "BuyDeveloperProduct" : "BuyDeveloperProduct_AutoAccepted",
 				currencyName, std::max(0, currencySpent));
 		}

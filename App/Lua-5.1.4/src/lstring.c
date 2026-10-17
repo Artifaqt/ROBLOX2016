@@ -103,7 +103,7 @@ Udata *luaS_newudata (lua_State *L, size_t s, Table *e) {
   u->uv.len = s;
   u->uv.metatable = NULL;
   u->uv.env = e;
-  // ROBLOX:
+  // NAMEHERE:
   u->uv.may_gc = true;
   /* chain it on udata list (after main thread) */
   u->uv.next = G(L)->mainthread->next;

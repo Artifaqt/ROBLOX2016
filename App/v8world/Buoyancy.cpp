@@ -89,7 +89,7 @@ namespace RBX
 		{
 			// Buoyant force:			Fb = p_water * grav_constant * Volume_displaced
 			// Can be expanded into:	Fb = p_o * g * V / (p_w/p_o)
-			// Unfortunately legacy Roblox never knew the correct mass of an object, so what the hell?
+			// Unfortunately legacy NAMEHERE never knew the correct mass of an object, so what the hell?
 			fullBuoyancy.y = - floaterPrim->getConstBody()->getMass() * (Units::kmsAccelerationToRbx( RBX::Constants::getKmsGravity() ) / floaterPrim->getSpecificGravity());
 		}
 	}

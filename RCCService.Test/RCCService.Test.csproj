@@ -68,7 +68,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <Compile Include="RobloxTestRigClient.cs" />
+    <Compile Include="NAMEHERETestRigClient.cs" />
     <Compile Include="Lists.cs" />
     <Compile Include="LuaScripts.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -94,17 +94,17 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\Client.LegacyAssemblies\Grid\Roblox.Grid.Common\Roblox.Grid.Common.csproj">
+    <ProjectReference Include="..\..\Client.LegacyAssemblies\Grid\NAMEHERE.Grid.Common\NAMEHERE.Grid.Common.csproj">
       <Project>{DC7F620E-40D7-41F9-A569-2401AB1B9EAF}</Project>
-      <Name>Roblox.Grid.Common</Name>
+      <Name>NAMEHERE.Grid.Common</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Client.LegacyAssemblies\Roblox.Common.Web\Roblox.Common.Web.csproj">
+    <ProjectReference Include="..\..\Client.LegacyAssemblies\NAMEHERE.Common.Web\NAMEHERE.Common.Web.csproj">
       <Project>{B7BAF271-C2A3-4945-B75E-11F3F34EE4DC}</Project>
-      <Name>Roblox.Common.Web</Name>
+      <Name>NAMEHERE.Common.Web</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\Client.LegacyAssemblies\Roblox.Common\Roblox.Common.csproj">
+    <ProjectReference Include="..\..\Client.LegacyAssemblies\NAMEHERE.Common\NAMEHERE.Common.csproj">
       <Project>{31C4415B-A946-47BD-83FE-AE13FBFB1324}</Project>
-      <Name>Roblox.Common</Name>
+      <Name>NAMEHERE.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

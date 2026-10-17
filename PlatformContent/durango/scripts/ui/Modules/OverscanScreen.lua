@@ -1,4 +1,4 @@
--- Written by Kip Turner, Copyright ROBLOX 2015
+-- Written by Kip Turner, Copyright NAMEHERE 2015
 
 local TextService = game:GetService('TextService')
 
@@ -11,7 +11,7 @@ pcall(function() PlatformService = game:GetService('PlatformService') end)
 
 local GameOptionsSettings = settings():FindFirstChild("Game Options")
 
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 
 local Utility = require(Modules:FindFirstChild('Utility'))

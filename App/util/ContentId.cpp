@@ -157,7 +157,7 @@ namespace RBX
 	{
 		boost::scoped_array<char> url(new char[id.length()+1]);
 
-		// remove any spaces since HTParse stops parsing at the first space and we need to handle "http://www.roblox.com/asset/?id= 1818"
+		// remove any spaces since HTParse stops parsing at the first space and we need to handle "http://www.namehere.com/asset/?id= 1818"
 		char* urlIter = url.get();
 		for (size_t i = 0; i < id.length(); ++i)
 		{
@@ -195,7 +195,7 @@ namespace RBX
             std::string host = parsed.host();
             std::string path = parsed.path();
 
-            static const std::string testsite_domain = "robloxlabs.com";
+            static const std::string testsite_domain = "nameherelabs.com";
 
             const RBX::Url baseUrlParsed = RBX::Url::fromString(baseUrl);
 
@@ -209,7 +209,7 @@ namespace RBX
                         if (baseUrlParsed.isSubdomainOf(testsite_domain)
                             && !parsed.isSubdomainOf(testsite_domain))
                         {
-                            host = "assetgame.roblox.com";
+                            host = "assetgame.namehere.com";
                         }
                         else
                         {
@@ -238,7 +238,7 @@ namespace RBX
                         else
                         {
                             scheme = "http";
-                            host = "www.roblox.com";
+                            host = "www.namehere.com";
                         }
                     }
 
@@ -278,13 +278,13 @@ namespace RBX
 
             if (boost::istarts_with(path, paths[i]) && (path.size() == pathLength || path[pathLength] == '?'))
             {
-                static const char* domain = ".robloxlabs.com";
+                static const char* domain = ".nameherelabs.com";
 
                 if (DFFlag::UrlReconstructToAssetGame)
                 {
                     // Allow assets from prod to be used on test sites
                     if (baseUrl.find(domain) != std::string::npos && host.find(domain) == std::string::npos)
-                        id = "http://www.roblox.com/" + path;
+                        id = "http://www.namehere.com/" + path;
                     else
                         id = baseUrl + (baseUrl[baseUrl.size()-1] != '/' ? "/" : "") + path;
 
@@ -306,11 +306,11 @@ namespace RBX
                 }
                 else
                 {
-                    size_t robloxLabsPos = host.find(domain);
-                    if (robloxLabsPos != std::string::npos)
+                    size_t namehereLabsPos = host.find(domain);
+                    if (namehereLabsPos != std::string::npos)
                         id = baseUrl + "/" + path;
                     else
-                        id = "http://www.roblox.com/" + path;
+                        id = "http://www.namehere.com/" + path;
                 }
 
                 return true;

@@ -340,7 +340,7 @@
 		56F916F4197DBA9B002AFFF8 /* libcrypto.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcrypto.a; path = "darwin/x86/openssl/openssl-1.0.2c/lib/libcrypto.a"; sourceTree = CONTRIB_PATH; };
 		56F916F5197DBA9B002AFFF8 /* libssl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libssl.a; path = "darwin/x86/openssl/openssl-1.0.2c/lib/libssl.a"; sourceTree = CONTRIB_PATH; };
 		56F91715197DBACA002AFFF8 /* libcurl.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libcurl.a; path = "darwin/x86/curl/curl-7.43.0/lib/libcurl.a"; sourceTree = CONTRIB_PATH; };
-		9449C4581BD966320008AD0B /* StdAfx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StdAfx.h; path = ../RobloxMac/StdAfx.h; sourceTree = "<group>"; };
+		9449C4581BD966320008AD0B /* StdAfx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StdAfx.h; path = ../NAMEHEREMac/StdAfx.h; sourceTree = "<group>"; };
 		9449C53D1BD9C2A50008AD0B /* libz.1.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.dylib; path = ../../../../../../../../usr/lib/libz.1.dylib; sourceTree = "<group>"; };
 		9479ADFA1BD8627A0096F1A7 /* CoreScriptConverter */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = CoreScriptConverter; sourceTree = BUILT_PRODUCTS_DIR; };
 		9479AE1B1BD862B20096F1A7 /* cscmain.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = cscmain.cpp; sourceTree = "<group>"; };
@@ -528,7 +528,7 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		9449C4991BD96A0C0008AD0B /* ROBLOX Engine */ = {
+		9449C4991BD96A0C0008AD0B /* NAMEHERE Engine */ = {
 			isa = PBXGroup;
 			children = (
 				EA1FA71B1291B3C6000D5B71 /* Rendering */,
@@ -539,7 +539,7 @@
 				EA0D730A1293406C00C510A8 /* Network.xcodeproj */,
 				F4B88FFE14100BF400E0B03D /* Log.xcodeproj */,
 			);
-			name = "ROBLOX Engine";
+			name = "NAMEHERE Engine";
 			sourceTree = "<group>";
 		};
 		9479AE1A1BD862940096F1A7 /* CoreScriptConverter */ = {
@@ -586,7 +586,7 @@
 			isa = PBXGroup;
 			children = (
 				9479AE1A1BD862940096F1A7 /* CoreScriptConverter */,
-				9449C4991BD96A0C0008AD0B /* ROBLOX Engine */,
+				9449C4991BD96A0C0008AD0B /* NAMEHERE Engine */,
 				27DB5DAC134CC8E800F058D7 /* Frameworks */,
 				EA1FA6B61291B20A000D5B71 /* 3rd Party */,
 				EA1FA73D1291BE95000D5B71 /* Products */,
@@ -620,7 +620,7 @@
 				94CF82251BD9649700BF40EA /* PBXTargetDependency */,
 			);
 			name = CoreScriptConverter;
-			productName = RobloxTest;
+			productName = NAMEHERETest;
 			productReference = 9479ADFA1BD8627A0096F1A7 /* CoreScriptConverter */;
 			productType = "com.apple.product-type.tool";
 		};

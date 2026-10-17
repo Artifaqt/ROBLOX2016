@@ -1,11 +1,11 @@
 --[[
 			// PurchasePackagePrompt.lua
 			// Kip Turner
-			// Copyright Roblox 2015
+			// Copyright NAMEHERE 2015
 ]]
 
 local CoreGui = game:GetService("CoreGui")
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 local ContextActionService = game:GetService("ContextActionService")
 local GuiService = game:GetService('GuiService')

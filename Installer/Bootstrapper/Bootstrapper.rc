@@ -98,7 +98,7 @@ END
 
 IDD_MAIN DIALOGEX 0, 0, 207, 61
 STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Roblox"
+CAPTION "NAMEHERE"
 FONT 10, "Segoe UI", 400, 0, 0x0
 BEGIN
     PUSHBUTTON      "Cancel",IDCANCEL,147,37,50,14,NOT WS_VISIBLE
@@ -141,12 +141,12 @@ BEGIN
     BEGIN
         BLOCK "040904b0"
         BEGIN
-            VALUE "CompanyName", "ROBLOX Corporation"
-            VALUE "FileDescription", "Roblox"
+            VALUE "CompanyName", "NAMEHERE Corporation"
+            VALUE "FileDescription", "NAMEHERE"
             VALUE "FileVersion", "1, 6, 3, 172"
-            VALUE "LegalCopyright", "(C) 2012 ROBLOX Corporation.  All rights reserved."
-            VALUE "OriginalFilename", "Roblox.exe"
-            VALUE "ProductName", "Roblox Bootstrapper"
+            VALUE "LegalCopyright", "(C) 2012 NAMEHERE Corporation.  All rights reserved."
+            VALUE "OriginalFilename", "NAMEHERE.exe"
+            VALUE "ProductName", "NAMEHERE Bootstrapper"
             VALUE "ProductVersion", "1, 6, 0, 0"
         END
     END
@@ -167,7 +167,7 @@ IDB_BTN_OK_ON           BITMAP                  "assets\\btn_ok-ON.bmp"
 IDB_BTN_CANCEL          BITMAP                  "assets\\btn_cancel.bmp"
 IDB_BTN_CANCEL_ON       BITMAP                  "assets\\btn_cancel-ON.bmp"
 IDB_LOGO                BITMAP                  "assets\\logo_meatball@1x.bmp"
-IDB_STUDIO_LOGO         BITMAP                  "assets\\logo_robloxstudio@1x.bmp"
+IDB_STUDIO_LOGO         BITMAP                  "assets\\logo_nameherestudio@1x.bmp"
 IDB_BTN_LAUNCH_STUDIO   BITMAP                  "assets\\btn_launchstudio.bmp"
 IDB_BTN_LAUNCH_STUDIO_ON BITMAP                  "assets\\btn_launchstudio-ON.bmp"
 IDB_BTN_DEV             BITMAP                  "assets\\txt_backto@1x.bmp"
@@ -182,11 +182,11 @@ IDB_CLIENT_TEXT         BITMAP                  "assets\\txt_success-player@1x.b
 
 STRINGTABLE 
 BEGIN
-    IDS_INSTALLHOST         "setup.roblox.com"
-    IDS_BASEHOST            "www.roblox.com"
-    IDS_SUCCESS1            "ROBLOX IS SUCCESSFULLY INSTALLED!"
+    IDS_INSTALLHOST         "setup.namehere.com"
+    IDS_BASEHOST            "www.namehere.com"
+    IDS_SUCCESS1            "NAMEHERE IS SUCCESSFULLY INSTALLED!"
     IDS_SUCCESS2            "Just click the ""Play"" button on any game to join the action!"
-    IDS_STUDIO_SUCCESS1     "ROBLOX STUDIO IS SUCCESSFULLY INSTALLED!"
+    IDS_STUDIO_SUCCESS1     "NAMEHERE STUDIO IS SUCCESSFULLY INSTALLED!"
     IDS_STUDIO_SUCCESS2     "Click ""Launch Studio"" to make your new game!"
 END
 

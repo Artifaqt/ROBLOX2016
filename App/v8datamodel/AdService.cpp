@@ -20,10 +20,10 @@ namespace RBX
 	const char* const sAdService = "AdService";
     
     REFLECTION_BEGIN();
-	static Reflection::RemoteEventDesc<AdService, void(int, UserInputService::Platform, bool)> event_sendServerRecordImpression(&AdService::sendServerRecordImpression, "SendServerRecordImpression", "userId", "platform", "wasSuccessful", Security::Roblox, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::CLIENT_SERVER);
+	static Reflection::RemoteEventDesc<AdService, void(int, UserInputService::Platform, bool)> event_sendServerRecordImpression(&AdService::sendServerRecordImpression, "SendServerRecordImpression", "userId", "platform", "wasSuccessful", Security::NAMEHERE, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::CLIENT_SERVER);
 
-	static Reflection::RemoteEventDesc<AdService, void(bool, int, std::string)> event_sendClientAdVerificationResults(&AdService::sendClientVideoAdVerificationResults, "ClientAdVerificationResults", "canShowAd", "userId", "errorMessage", Security::Roblox, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::BROADCAST);
-    static Reflection::RemoteEventDesc<AdService, void(int, UserInputService::Platform)> event_serverAdVerification(&AdService::sendServerVideoAdVerification, "ServerAdVerification", "userId", "platform", Security::Roblox, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::CLIENT_SERVER);
+	static Reflection::RemoteEventDesc<AdService, void(bool, int, std::string)> event_sendClientAdVerificationResults(&AdService::sendClientVideoAdVerificationResults, "ClientAdVerificationResults", "canShowAd", "userId", "errorMessage", Security::NAMEHERE, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::BROADCAST);
+    static Reflection::RemoteEventDesc<AdService, void(int, UserInputService::Platform)> event_serverAdVerification(&AdService::sendServerVideoAdVerification, "ServerAdVerification", "userId", "platform", Security::NAMEHERE, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::CLIENT_SERVER);
     
     static Reflection::BoundFuncDesc<AdService, void()> func_showVideoAd(&AdService::showVideoAd, "ShowVideoAd", Security::None);
     static Reflection::EventDesc<AdService, void(bool)> event_videoClosed(&AdService::videoAdClosedSignal, "VideoAdClosed", "adShown");

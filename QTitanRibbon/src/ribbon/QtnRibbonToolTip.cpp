@@ -399,7 +399,7 @@ QSize RibbonToolTip::sizeHint() const
 
     if (drawTitle)
     {
-		// BEGIN ROBLOX CHANGES
+		// BEGIN NAMEHERE CHANGES
 		QFont titleFont(font());
 		titleFont.setBold(true);
 		QFontMetrics titleFM(titleFont);
@@ -414,7 +414,7 @@ QSize RibbonToolTip::sizeHint() const
 		szTitle = QSize(rcTitle.width() + fm.width(QLatin1Char('x'))*2 + 4, rcTitle.height() + 20);
 		*/
 
-		// END ROBLOX CHANGES
+		// END NAMEHERE CHANGES
     }
 
     if (drawImage)

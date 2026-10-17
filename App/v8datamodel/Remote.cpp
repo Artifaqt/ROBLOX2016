@@ -1,4 +1,4 @@
-/* Copyright 2011 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2011 NAMEHERE Corporation, All Rights Reserved */
 #include "stdafx.h"
 
 #include "V8DataModel/Remote.h"
@@ -6,19 +6,19 @@
 #include "Network/Players.h"
 #include "FastLog.h"
 
-#include "util/RobloxGoogleAnalytics.h"
+#include "util/NAMEHEREGoogleAnalytics.h"
 
 DYNAMIC_FASTINTVARIABLE(RemoteDelayedQueueLimit, 256)
 
 namespace {
 	static void sendRemoteFunctionStatsOnServer(const char* function)
 	{
-		RBX::RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "RemoteFunction", function);
+		RBX::NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "RemoteFunction", function);
 	}
 
 	static void sendRemoteEventStatsOnServer(const char* function)
 	{
-		RBX::RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "RemoteEvent", function);
+		RBX::NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "RemoteEvent", function);
 	}
 
 } // namespace

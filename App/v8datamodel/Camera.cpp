@@ -64,7 +64,7 @@ static Reflection::BoundFuncDesc<Camera, float(void)> func_getTiltSpeed(&Camera:
 static Reflection::BoundFuncDesc<Camera, float(void)> func_getPanSpeed(&Camera::getPanSpeed, "GetPanSpeed", Security::None);
 
 static Reflection::BoundFuncDesc<Camera, void(Camera::CameraPanMode)> func_setCameraPanMode(&Camera::setCameraPanMode, "SetCameraPanMode", "mode", Camera::CAMERAPANMODE_CLASSIC, Security::None);
-static Reflection::BoundFuncDesc<Camera, bool(float)> func_zoom(&Camera::zoom, "Zoom", "distance", Security::RobloxScript);
+static Reflection::BoundFuncDesc<Camera, bool(float)> func_zoom(&Camera::zoom, "Zoom", "distance", Security::NAMEHEREScript);
 
 static Reflection::BoundFuncDesc<Camera, void(int)> func_panUnits(&Camera::panUnits, "PanUnits", "units", Security::None);
 static Reflection::BoundFuncDesc<Camera, bool(int)> func_tiltUnits(&Camera::tiltUnits, "TiltUnits", "units", Security::None);
@@ -72,7 +72,7 @@ static Reflection::BoundFuncDesc<Camera, bool(int)> func_tiltUnits(&Camera::tilt
 static Reflection::BoundFuncDesc<Camera, void(CoordinateFrame, CoordinateFrame, float)> func_interpolateCamera(&Camera::beginCameraInterpolation, "Interpolate", "endPos", "endFocus", "duration", Security::None);
 static Reflection::EventDesc<Camera, void()> event_doneInterpolating(&Camera::interpolationFinishedSignal, "InterpolationFinished");
 
-static Reflection::EventDesc<Camera, void(bool)> event_firstPersonTransition(&Camera::firstPersonTransitionSignal, "FirstPersonTransition", "entering", Security::RobloxPlace);
+static Reflection::EventDesc<Camera, void(bool)> event_firstPersonTransition(&Camera::firstPersonTransitionSignal, "FirstPersonTransition", "entering", Security::NAMEHEREPlace);
 
 static Reflection::PropDescriptor<Camera, bool> desc_HeadLocked("HeadLocked", category_Data, &Camera::getHeadLocked, &Camera::setHeadLocked);
 static Reflection::BoundFuncDesc<Camera, CoordinateFrame()> func_GetRenderCFrame(&Camera::getRenderingCoordinateFrameLua, "GetRenderCFrame", Security::None);

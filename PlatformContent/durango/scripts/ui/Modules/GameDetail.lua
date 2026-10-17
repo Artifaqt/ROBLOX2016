@@ -2,7 +2,7 @@
 			// GameDetail.lua
 ]]
 local CoreGui = Game:GetService("CoreGui")
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 local GuiService = game:GetService('GuiService')
 local ContextActionService = game:GetService("ContextActionService")
@@ -555,7 +555,7 @@ local function CreateGameDetail(placeId, placeName, iconId, gameData)
 		Size = UDim2.new(0, 32, 0, 32);
 		Position = UDim2.new(0, 0, 0, CreatorText.Position.Y.Offset + 34 - 14);
 		BackgroundTransparency = 1;
-		Image = 'rbxasset://textures/ui/Shell/Icons/RobloxIcon32.png';
+		Image = 'rbxasset://textures/ui/Shell/Icons/NAMEHEREIcon32.png';
 		Parent = MoreDetailsContent;
 	}
 	local CreatorNameText = LastUpdatedText:Clone()

@@ -2,7 +2,7 @@
 * Original file by the_viking, fixed by R√¥mulo Fernandes, fixed by Emmanuel Nars
 * Should emulate windows finddata structure
 */
-#if (defined(__GNUC__)  || defined(__GCCXML__)) && !defined(_WIN32) && !RBX_PLATFORM_IOS // ROBLOX
+#if (defined(__GNUC__)  || defined(__GCCXML__)) && !defined(_WIN32) && !RBX_PLATFORM_IOS // NAMEHERE
 #include "_FindFirst.h"
 #include "DS_List.h"
 

@@ -3,13 +3,13 @@
 			// API for all web endpoints
 			// Calls are async
 
-			// Any calls to roblox.com need to use game:HttpGetAynsc() and game:HttpPostAynsc()
+			// Any calls to namehere.com need to use game:HttpGetAynsc() and game:HttpPostAynsc()
 				// use rbxGetAsync() and rbxPostAsync()
-			// Any calls to api.roblox.com should use HttpRbxApiService
+			// Any calls to api.namehere.com should use HttpRbxApiService
 				// use rbxApiGetAsync() and rbxApiPostAsync()
 
 			// NOTE: You cannot currently get thumbnails with this API (please see the Thumbnail module), because
-			// Roblox GUIs cannot accept rbxcnd.com for the Image property.
+			// NAMEHERE GUIs cannot accept rbxcnd.com for the Image property.
 ]]
 
 --[[ Services ]]--
@@ -582,7 +582,7 @@ end
 			// Returns true if the user owns the asset, otherwise, returns false
 ]]
 function Http.GetUserOwnsAssetAsync(userId, assetId)
-	-- local BaseUrl = 'http://api.sitetest2.robloxlabs.com/'
+	-- local BaseUrl = 'http://api.sitetest2.nameherelabs.com/'
 	return rbxApiGetAsync(BaseUrl..'ownership/hasasset?userId='..tostring(userId)..'&assetId='..tostring(assetId), false)
 end
 
@@ -627,7 +627,7 @@ end
 function Http.GetUserOwnedPackagesAsync(userId, currentPage)
 	currentPage = currentPage or 1
 	local packageAssetIdType = 32
-	-- return rbxGetAsync('http://www.sitetest2.robloxlabs.com/' ..'users/inventory/list-json?userId='..tostring(userId)..
+	-- return rbxGetAsync('http://www.sitetest2.nameherelabs.com/' ..'users/inventory/list-json?userId='..tostring(userId)..
 	-- 	'&assetTypeId='..tostring(packageAssetIdType)..'&pageNumber='..tostring(currentPage))
 	return rbxGetAsync(BaseUrl..'users/inventory/list-json?userId='..tostring(userId)..
 		'&assetTypeId='..tostring(packageAssetIdType)..'&pageNumber='..tostring(currentPage))
@@ -651,7 +651,7 @@ function Http.PostWearUserOutfitAsync(id)
 end
 
 function Http.PostWearAssetAsync(assetId)
-	--local BaseUrl = 'http://api.gametest5.robloxlabs.com/'
+	--local BaseUrl = 'http://api.gametest5.nameherelabs.com/'
 	return rbxApiPostAsync('appearance/set-clothing?assetIds='..tostring(assetId), '', false)
 end
 
@@ -685,14 +685,14 @@ function Http.PurchaseProductAsync(productId, expectedPrice, expectedSellerId, e
 	print('PurchaseProductAsync:' , formattedUrl)
 	return rbxPostAsync(formattedUrl, '')
 	-- path, params, contentType)
-	-- return http://www.roblox.com/API/Item.ashx?rqtype=purchase&productID=24805065&expectedCurrency=1&expectedPrice=88&expectedSellerID=1
+	-- return http://www.namehere.com/API/Item.ashx?rqtype=purchase&productID=24805065&expectedCurrency=1&expectedPrice=88&expectedSellerID=1
 end
 
 
 
 -- Sample response:
 --[=[
-	{Products = {{AssetTypeId = 32, IconImageAssetId = 0, IsNew = false, Updated = '2015-08-03T22:26:25.447Z', IsLimitedUnique = false, ProductId = 9187002, MinimumMembershipLevel = 1, Created = '2011-08-05T21:50:20.67Z', Creator = {Name = 'ROBLOX', Id = 1}, IsLimited = false, ContentRatingTypeId = 0, AssetId = 58537634, IsPublicDomain = false, Name = 'Knight of the Splintered Sky', IsForSale = true, Description = 'He fights bravely along side his brothers and the Knights of Redcliff to defeat the evil Korblox and their zombies.', PriceInRobux = 1000, Sales = 19}}}
+	{Products = {{AssetTypeId = 32, IconImageAssetId = 0, IsNew = false, Updated = '2015-08-03T22:26:25.447Z', IsLimitedUnique = false, ProductId = 9187002, MinimumMembershipLevel = 1, Created = '2011-08-05T21:50:20.67Z', Creator = {Name = 'NAMEHERE', Id = 1}, IsLimited = false, ContentRatingTypeId = 0, AssetId = 58537634, IsPublicDomain = false, Name = 'Knight of the Splintered Sky', IsForSale = true, Description = 'He fights bravely along side his brothers and the Knights of Redcliff to defeat the evil Korblox and their zombies.', PriceInRobux = 1000, Sales = 19}}}
 --]=]
 function Http.GetXboxProductsAsync(startIndex, count)
 	startIndex = startIndex or 0

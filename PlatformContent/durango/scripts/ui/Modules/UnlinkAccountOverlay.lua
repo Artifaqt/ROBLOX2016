@@ -4,7 +4,7 @@
 				// Confirmation overlay for when you unlink your account
 ]]
 local CoreGui = Game:GetService("CoreGui")
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 local GuiService = game:GetService('GuiService')
 local ContextActionService = game:GetService("ContextActionService")

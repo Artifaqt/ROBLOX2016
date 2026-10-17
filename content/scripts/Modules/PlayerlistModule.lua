@@ -24,13 +24,13 @@ while not Players.LocalPlayer do
 	wait()
 end
 local Player = Players.LocalPlayer
-local RobloxGui = CoreGui:WaitForChild('RobloxGui')
+local NAMEHEREGui = CoreGui:WaitForChild('NAMEHEREGui')
 
-RobloxGui:WaitForChild("Modules"):WaitForChild("TenFootInterface")
-local TenFootInterface = require(RobloxGui.Modules.TenFootInterface)
+NAMEHEREGui:WaitForChild("Modules"):WaitForChild("TenFootInterface")
+local TenFootInterface = require(NAMEHEREGui.Modules.TenFootInterface)
 local isTenFootInterface = TenFootInterface:IsEnabled()
 
-local playerDropDownModule = require(RobloxGui.Modules:WaitForChild("PlayerDropDown"))
+local playerDropDownModule = require(NAMEHEREGui.Modules:WaitForChild("PlayerDropDown"))
 local blockingUtility = playerDropDownModule:CreateBlockingUtility()
 local playerDropDown = playerDropDownModule:CreatePlayerDropDown()
 
@@ -130,15 +130,15 @@ if isTenFootInterface then
 	TEXT_STROKE_TRANSPARENCY = 1
 	TILE_SPACING = 5
 end
-local SHADOW_IMAGE = 'rbxasset://textures/ui/PlayerList/TileShadowMissingTop.png'--'http://www.roblox.com/asset?id=286965900'
+local SHADOW_IMAGE = 'rbxasset://textures/ui/PlayerList/TileShadowMissingTop.png'--'http://www.namehere.com/asset?id=286965900'
 local SHADOW_SLICE_SIZE = 5
 local SHADOW_SLICE_RECT = Rect.new(SHADOW_SLICE_SIZE+1, SHADOW_SLICE_SIZE+1, SHADOW_SLICE_SIZE*2-1, SHADOW_SLICE_SIZE*2-1)
 
 local ADMINS = {	-- Admins with special icons
-    ['7210880'] = 'http://www.roblox.com/asset/?id=134032333', -- Jeditkacheff
-    ['13268404'] = 'http://www.roblox.com/asset/?id=113059239', -- Sorcus
-    ['261'] = 'http://www.roblox.com/asset/?id=105897927', -- shedlestky
-    ['20396599'] = 'http://www.roblox.com/asset/?id=161078086', -- Robloxsai
+    ['7210880'] = 'http://www.namehere.com/asset/?id=134032333', -- Jeditkacheff
+    ['13268404'] = 'http://www.namehere.com/asset/?id=113059239', -- Sorcus
+    ['261'] = 'http://www.namehere.com/asset/?id=105897927', -- shedlestky
+    ['20396599'] = 'http://www.namehere.com/asset/?id=161078086', -- NAMEHEREsai
 }
 
 local ABUSES = {
@@ -292,7 +292,7 @@ local function setAvatarIconAsync(player, iconImage)
 
 	local thumbnailLoader = nil
 	pcall(function()
-		thumbnailLoader = require(RobloxGui.Modules.ThumbnailLoader)
+		thumbnailLoader = require(NAMEHEREGui.Modules.ThumbnailLoader)
 	end)
 
 	local isFinalSuccess = false
@@ -384,7 +384,7 @@ end
 
 Container.BackgroundTransparency = 1
 Container.Visible = false
-Container.Parent = RobloxGui
+Container.Parent = NAMEHEREGui
 
 -- Scrolling Frame
 local noSelectionObject = Instance.new("Frame")
@@ -1501,7 +1501,7 @@ local function resizePlayerList()
 	clampCanvasPosition()
 end
 
-RobloxGui.Changed:connect(function(property)
+NAMEHEREGui.Changed:connect(function(property)
 	if property == 'AbsoluteSize' then
 		spawn(function()	-- must spawn because F11 delays when abs size is set
 			resizePlayerList()
@@ -1537,9 +1537,9 @@ end
 if IsServerFollowers and not isTenFootInterface then
 	-- spawn so we don't block script
 	spawn(function()
-		local RobloxReplicatedStorage = game:GetService('RobloxReplicatedStorage')
-		RemoveEvent_OnFollowRelationshipChanged = RobloxReplicatedStorage:WaitForChild('FollowRelationshipChanged')
-		RemoteFunc_GetFollowRelationships = RobloxReplicatedStorage:WaitForChild('GetFollowRelationships')
+		local NAMEHEREReplicatedStorage = game:GetService('NAMEHEREReplicatedStorage')
+		RemoveEvent_OnFollowRelationshipChanged = NAMEHEREReplicatedStorage:WaitForChild('FollowRelationshipChanged')
+		RemoteFunc_GetFollowRelationships = NAMEHEREReplicatedStorage:WaitForChild('GetFollowRelationships')
 
 		RemoveEvent_OnFollowRelationshipChanged.OnClientEvent:connect(function(result)
 			setFollowRelationshipsView(result)

@@ -50,7 +50,7 @@ local function CreateButtons(frame, buttons, yPos, ySize)
 		if obj["Style"] then
 			button.Style = obj.Style
 		else
-			button.Style = Enum.ButtonStyle.RobloxButton
+			button.Style = Enum.ButtonStyle.NAMEHEREButton
 		end
 		if obj["ZIndex"] then
 			button.ZIndex = obj.ZIndex
@@ -116,7 +116,7 @@ t.CreateStyledMessageDialog = function(title, message, style, buttons)
 	frame.Position = UDim2.new(0.25, 0, 0.5, -72.5)
 	frame.Name = "MessageDialog"
 	frame.Active = true
-	frame.Style = Enum.FrameStyle.RobloxRound	
+	frame.Style = Enum.FrameStyle.NAMEHERERound	
 	
 	local styleImage = Instance.new("ImageLabel")
 	styleImage.Name = "StyleImage"
@@ -124,13 +124,13 @@ t.CreateStyledMessageDialog = function(title, message, style, buttons)
 	styleImage.Position = UDim2.new(0,5,0,15)
 	if style == "error" or style == "Error" then
 		styleImage.Size = UDim2.new(0, 71, 0, 71)
-		styleImage.Image = "http://www.roblox.com/asset/?id=42565285"
+		styleImage.Image = "http://www.namehere.com/asset/?id=42565285"
 	elseif style == "notify" or style == "Notify" then
 		styleImage.Size = UDim2.new(0, 71, 0, 71)
-		styleImage.Image = "http://www.roblox.com/asset/?id=42604978"
+		styleImage.Image = "http://www.namehere.com/asset/?id=42604978"
 	elseif style == "confirm" or style == "Confirm" then
 		styleImage.Size = UDim2.new(0, 74, 0, 76)
-		styleImage.Image = "http://www.roblox.com/asset/?id=42557901"
+		styleImage.Image = "http://www.namehere.com/asset/?id=42557901"
 	else
 		return t.CreateMessageDialog(title,message,buttons)
 	end
@@ -176,7 +176,7 @@ t.CreateMessageDialog = function(title, message, buttons)
 	frame.Position = UDim2.new(0.25, 0, 0.25, 0)
 	frame.Name = "MessageDialog"
 	frame.Active = true
-	frame.Style = Enum.FrameStyle.RobloxRound
+	frame.Style = Enum.FrameStyle.NAMEHERERound
 
 	local titleLabel = Instance.new("TextLabel")
 	titleLabel.Name = "Title"
@@ -241,7 +241,7 @@ t.CreateScrollingDropDownMenu = function(onSelectedCallback, size, position, bas
 	currentSelectionName.TextColor3 = Color3.new(0.5, 0.5, 0.5)
 	currentSelectionName.TextWrap = true
 	currentSelectionName.ZIndex = baseZIndex
-	currentSelectionName.Style = Enum.ButtonStyle.RobloxRoundDropdownButton
+	currentSelectionName.Style = Enum.ButtonStyle.NAMEHERERoundDropdownButton
 	currentSelectionName.Text = "Choose One"
 	currentSelectionName.Parent = frame
 	dropDownMenu.CurrentSelectionButton = currentSelectionName
@@ -371,7 +371,7 @@ t.CreateScrollingDropDownMenu = function(onSelectedCallback, size, position, bas
 		scrollingBackground.Size = UDim2.new(1, 0, 0, currentSelectionName.AbsoluteSize.y)
 		scrollingBackground.Position = UDim2.new(0, 0, 0, 28)
 		scrollingBackground.BackgroundColor3 = Color3.new(1, 1, 1)
-		scrollingBackground.Style = Enum.ButtonStyle.RobloxRoundDropdownButton
+		scrollingBackground.Style = Enum.ButtonStyle.NAMEHERERoundDropdownButton
 		scrollingBackground.ZIndex = baseZIndex + 1
 		scrollingBackground.Text = ""
 		scrollingBackground.Visible = false
@@ -429,7 +429,7 @@ t.CreateScrollingDropDownMenu = function(onSelectedCallback, size, position, bas
 	return dropDownMenu
 end
 
-t.CreateDropDownMenu = function(items, onSelect, forRoblox, whiteSkin, baseZ)
+t.CreateDropDownMenu = function(items, onSelect, forNAMEHERE, whiteSkin, baseZ)
 	local baseZIndex = 0
 	if (type(baseZ) == "number") then
 		baseZIndex = baseZ
@@ -459,9 +459,9 @@ t.CreateDropDownMenu = function(items, onSelect, forRoblox, whiteSkin, baseZ)
 	dropDownMenu.BackgroundTransparency = 1
 	dropDownMenu.AutoButtonColor = true
 	if (whiteSkin) then
-		dropDownMenu.Style = Enum.ButtonStyle.RobloxRoundDropdownButton
+		dropDownMenu.Style = Enum.ButtonStyle.NAMEHERERoundDropdownButton
 	else
-		dropDownMenu.Style = Enum.ButtonStyle.RobloxButton
+		dropDownMenu.Style = Enum.ButtonStyle.NAMEHEREButton
 	end
 	dropDownMenu.Size = UDim2.new(1,0,1,0)
 	dropDownMenu.Parent = frame
@@ -475,7 +475,7 @@ t.CreateDropDownMenu = function(items, onSelect, forRoblox, whiteSkin, baseZ)
 		dropDownIcon.Size = UDim2.new(0,16,0,12)
 		dropDownIcon.Position = UDim2.new(1,-17,0.5, -6)
 	else
-		dropDownIcon.Image = "http://www.roblox.com/asset/?id=45732894"
+		dropDownIcon.Image = "http://www.namehere.com/asset/?id=45732894"
 		dropDownIcon.Size = UDim2.new(0,11,0,6)
 		dropDownIcon.Position = UDim2.new(1,-11,0.5, -2)
 	end
@@ -497,9 +497,9 @@ t.CreateDropDownMenu = function(items, onSelect, forRoblox, whiteSkin, baseZ)
 	droppedDownMenu.BackgroundTransparency = 1
 	--droppedDownMenu.AutoButtonColor = true
 	if (whiteSkin) then
-		droppedDownMenu.Style = Enum.ButtonStyle.RobloxRoundDropdownButton
+		droppedDownMenu.Style = Enum.ButtonStyle.NAMEHERERoundDropdownButton
 	else
-		droppedDownMenu.Style = Enum.ButtonStyle.RobloxButton
+		droppedDownMenu.Style = Enum.ButtonStyle.NAMEHEREButton
 	end
 	droppedDownMenu.Visible = false
 	droppedDownMenu.Active = true	--Blocks clicks
@@ -740,8 +740,8 @@ t.CreateDropDownMenu = function(items, onSelect, forRoblox, whiteSkin, baseZ)
 	for i,item in ipairs(items) do
 		-- needed to maintain local scope for items in event listeners below
 		local button = choiceButton:clone()
-		if forRoblox then
-			button.RobloxLocked = true
+		if forNAMEHERE then
+			button.NAMEHERELocked = true
 		end		
 		button.Text = item
 		button.Parent = droppedDownMenu
@@ -1737,7 +1737,7 @@ t.CreateScrollingFrame = function(orderList,scrollStyle)
 	local scrollStamp = 0
 		
 	local scrollDrag = Instance.new("ImageButton")
-	scrollDrag.Image = "http://www.roblox.com/asset/?id=61367186"
+	scrollDrag.Image = "http://www.namehere.com/asset/?id=61367186"
 	scrollDrag.Size = UDim2.new(1, 0, 0, 16)
 	scrollDrag.BackgroundTransparency = 1
 	scrollDrag.Name = "ScrollDrag"
@@ -2440,7 +2440,7 @@ t.CreateTutorial = function(name, tutorialKey, createButtons)
 
 	local transitionFrame = Instance.new("Frame")
 	transitionFrame.Name = "TransitionFrame"
-	transitionFrame.Style = Enum.FrameStyle.RobloxRound
+	transitionFrame.Style = Enum.FrameStyle.NAMEHERERound
 	transitionFrame.Size = UDim2.new(0.6, 0, 0.6, 0)
 	transitionFrame.Position = UDim2.new(0.2, 0, 0.2, 0)
 	transitionFrame.Visible = false
@@ -2515,7 +2515,7 @@ end
 local function CreateBasicTutorialPage(name, handleResize, skipTutorial, giveDoneButton)
 	local frame = Instance.new("Frame")
 	frame.Name = "TutorialPage"
-	frame.Style = Enum.FrameStyle.RobloxRound
+	frame.Style = Enum.FrameStyle.NAMEHERERound
 	frame.Size = UDim2.new(0.6, 0, 0.6, 0)
 	frame.Position = UDim2.new(0.2, 0, 0.2, 0)
 	frame.Visible = false
@@ -2555,7 +2555,7 @@ local function CreateBasicTutorialPage(name, handleResize, skipTutorial, giveDon
 	if giveDoneButton then
 		local doneButton = Instance.new("TextButton")
 		doneButton.Name = "DoneButton"
-		doneButton.Style = Enum.ButtonStyle.RobloxButtonDefault
+		doneButton.Style = Enum.ButtonStyle.NAMEHEREButtonDefault
 		doneButton.Text = "Done"
 		doneButton.TextColor3 = Color3.new(1,1,1)
 		doneButton.Font = Enum.Font.ArialBold
@@ -2582,7 +2582,7 @@ local function CreateBasicTutorialPage(name, handleResize, skipTutorial, giveDon
 	nextButton.TextColor3 = Color3.new(1,1,1)
 	nextButton.Font = Enum.Font.Arial
 	nextButton.FontSize = Enum.FontSize.Size18
-	nextButton.Style = Enum.ButtonStyle.RobloxButtonDefault
+	nextButton.Style = Enum.ButtonStyle.NAMEHEREButtonDefault
 	nextButton.Size = UDim2.new(0,80, 0, 32)
 	nextButton.Position = UDim2.new(0.5, 5, 1, -32)
 	nextButton.Active = false
@@ -2595,7 +2595,7 @@ local function CreateBasicTutorialPage(name, handleResize, skipTutorial, giveDon
 	prevButton.TextColor3 = Color3.new(1,1,1)
 	prevButton.Font = Enum.Font.Arial
 	prevButton.FontSize = Enum.FontSize.Size18
-	prevButton.Style = Enum.ButtonStyle.RobloxButton
+	prevButton.Style = Enum.ButtonStyle.NAMEHEREButton
 	prevButton.Size = UDim2.new(0,80, 0, 32)
 	prevButton.Position = UDim2.new(0.5, -85, 1, -32)
 	prevButton.Active = false
@@ -2849,7 +2849,7 @@ t.CreateSetPanel = function(userIdsForSets, objectSelected, dialogClosed, size, 
 
 		local waterFrame = Instance.new("Frame")
 		waterFrame.Name = "WaterFrame"
-		waterFrame.Style = Enum.FrameStyle.RobloxSquare
+		waterFrame.Style = Enum.FrameStyle.NAMEHERESquare
 		waterFrame.Size = UDim2.new(0,150,0,110)
 		waterFrame.Visible = false
 
@@ -2917,7 +2917,7 @@ t.CreateSetPanel = function(userIdsForSets, objectSelected, dialogClosed, size, 
 		else
 			setPanel.Size = UDim2.new(0.6, -58, 0.64, 0)
 		end
-		setPanel.Style = Enum.FrameStyle.RobloxRound
+		setPanel.Style = Enum.FrameStyle.NAMEHERERound
 		setPanel.ZIndex = 6
 		setPanel.Parent = setGui
 		
@@ -3007,7 +3007,7 @@ t.CreateSetPanel = function(userIdsForSets, objectSelected, dialogClosed, size, 
 			cancelButton.Name = "CancelButton"
 			cancelButton.Position = UDim2.new(1,-32,0,-2)
 			cancelButton.Size = UDim2.new(0,34,0,34)
-			cancelButton.Style = Enum.ButtonStyle.RobloxButtonDefault
+			cancelButton.Style = Enum.ButtonStyle.NAMEHEREButtonDefault
 			cancelButton.ZIndex = 6
 			cancelButton.Text = ""
 			cancelButton.Modal = true
@@ -3017,7 +3017,7 @@ t.CreateSetPanel = function(userIdsForSets, objectSelected, dialogClosed, size, 
 				local cancelImage = Instance.new("ImageLabel")
 				cancelImage.Name = "CancelImage"
 				cancelImage.BackgroundTransparency = 1
-				cancelImage.Image = "http://www.roblox.com/asset/?id=54135717"
+				cancelImage.Image = "http://www.namehere.com/asset/?id=54135717"
 				cancelImage.Position = UDim2.new(0,-2,0,-2)
 				cancelImage.Size = UDim2.new(0,16,0,16)
 				cancelImage.ZIndex = 6
@@ -3112,7 +3112,7 @@ t.CreateSetPanel = function(userIdsForSets, objectSelected, dialogClosed, size, 
 		local button = Instance.new("TextButton")
 		button.Name = "Button"
 		button.Text = ""
-		button.Style = Enum.ButtonStyle.RobloxButton
+		button.Style = Enum.ButtonStyle.NAMEHEREButton
 		button.Position = UDim2.new(0.025,0,0.025,0)
 		button.Size = UDim2.new(0.95,0,0.95,0)
 		button.ZIndex = 6
@@ -3219,7 +3219,7 @@ t.CreateSetPanel = function(userIdsForSets, objectSelected, dialogClosed, size, 
 	local function createDropDownMenuButton(parent)
 		local dropDownButton = Instance.new("ImageButton")
 		dropDownButton.Name = "DropDownButton"
-		dropDownButton.Image = "http://www.roblox.com/asset/?id=67581509"
+		dropDownButton.Image = "http://www.namehere.com/asset/?id=67581509"
 		dropDownButton.BackgroundTransparency = 1
 		dropDownButton.Size = UDim2.new(0,16,0,16)
 		dropDownButton.Position = UDim2.new(1,-24,0,6)
@@ -3651,24 +3651,24 @@ t.CreateTerrainMaterialSelector = function(size,position)
 	-- we so need a better way to do this
 	for i,v in pairs(materialNames) do
 		materialToImageMap[v] = {}
-		if v == "Grass" then materialToImageMap[v].Regular = "http://www.roblox.com/asset/?id=56563112"
-		elseif v == "Sand" then materialToImageMap[v].Regular = "http://www.roblox.com/asset/?id=62356652"
-		elseif v == "Brick" then materialToImageMap[v].Regular = "http://www.roblox.com/asset/?id=65961537"
-		elseif v == "Granite" then materialToImageMap[v].Regular = "http://www.roblox.com/asset/?id=67532153"
-		elseif v == "Asphalt" then materialToImageMap[v].Regular = "http://www.roblox.com/asset/?id=67532038"
-		elseif v == "Iron" then materialToImageMap[v].Regular = "http://www.roblox.com/asset/?id=67532093"
-		elseif v == "Aluminum" then materialToImageMap[v].Regular = "http://www.roblox.com/asset/?id=67531995"
-		elseif v == "Gold" then materialToImageMap[v].Regular = "http://www.roblox.com/asset/?id=67532118"
-		elseif v == "Plastic (red)" then materialToImageMap[v].Regular = "http://www.roblox.com/asset/?id=67531848"
-		elseif v == "Plastic (blue)" then materialToImageMap[v].Regular = "http://www.roblox.com/asset/?id=67531924"
-		elseif v == "Plank" then materialToImageMap[v].Regular = "http://www.roblox.com/asset/?id=67532015"
-		elseif v == "Log" then materialToImageMap[v].Regular = "http://www.roblox.com/asset/?id=67532051"
-		elseif v == "Gravel" then materialToImageMap[v].Regular = "http://www.roblox.com/asset/?id=67532206"
-		elseif v == "Cinder Block" then materialToImageMap[v].Regular = "http://www.roblox.com/asset/?id=67532103"
-		elseif v == "Stone Wall" then materialToImageMap[v].Regular = "http://www.roblox.com/asset/?id=67531804"
-		elseif v == "Concrete" then materialToImageMap[v].Regular = "http://www.roblox.com/asset/?id=67532059"
-		elseif v == "Water" then materialToImageMap[v].Regular = "http://www.roblox.com/asset/?id=81407474"
-		else materialToImageMap[v].Regular = "http://www.roblox.com/asset/?id=66887593" -- fill in the rest here!!
+		if v == "Grass" then materialToImageMap[v].Regular = "http://www.namehere.com/asset/?id=56563112"
+		elseif v == "Sand" then materialToImageMap[v].Regular = "http://www.namehere.com/asset/?id=62356652"
+		elseif v == "Brick" then materialToImageMap[v].Regular = "http://www.namehere.com/asset/?id=65961537"
+		elseif v == "Granite" then materialToImageMap[v].Regular = "http://www.namehere.com/asset/?id=67532153"
+		elseif v == "Asphalt" then materialToImageMap[v].Regular = "http://www.namehere.com/asset/?id=67532038"
+		elseif v == "Iron" then materialToImageMap[v].Regular = "http://www.namehere.com/asset/?id=67532093"
+		elseif v == "Aluminum" then materialToImageMap[v].Regular = "http://www.namehere.com/asset/?id=67531995"
+		elseif v == "Gold" then materialToImageMap[v].Regular = "http://www.namehere.com/asset/?id=67532118"
+		elseif v == "Plastic (red)" then materialToImageMap[v].Regular = "http://www.namehere.com/asset/?id=67531848"
+		elseif v == "Plastic (blue)" then materialToImageMap[v].Regular = "http://www.namehere.com/asset/?id=67531924"
+		elseif v == "Plank" then materialToImageMap[v].Regular = "http://www.namehere.com/asset/?id=67532015"
+		elseif v == "Log" then materialToImageMap[v].Regular = "http://www.namehere.com/asset/?id=67532051"
+		elseif v == "Gravel" then materialToImageMap[v].Regular = "http://www.namehere.com/asset/?id=67532206"
+		elseif v == "Cinder Block" then materialToImageMap[v].Regular = "http://www.namehere.com/asset/?id=67532103"
+		elseif v == "Stone Wall" then materialToImageMap[v].Regular = "http://www.namehere.com/asset/?id=67531804"
+		elseif v == "Concrete" then materialToImageMap[v].Regular = "http://www.namehere.com/asset/?id=67532059"
+		elseif v == "Water" then materialToImageMap[v].Regular = "http://www.namehere.com/asset/?id=81407474"
+		else materialToImageMap[v].Regular = "http://www.namehere.com/asset/?id=66887593" -- fill in the rest here!!
 		end
 	end
 
@@ -3771,11 +3771,11 @@ t.CreateTerrainMaterialSelector = function(size,position)
 end
 
 t.CreateLoadingFrame = function(name,size,position)
-	game:GetService("ContentProvider"):Preload("http://www.roblox.com/asset/?id=35238053")
+	game:GetService("ContentProvider"):Preload("http://www.namehere.com/asset/?id=35238053")
 
 	local loadingFrame = Instance.new("Frame")
 	loadingFrame.Name = "LoadingFrame"
-	loadingFrame.Style = Enum.FrameStyle.RobloxRound
+	loadingFrame.Style = Enum.FrameStyle.NAMEHERERound
 
 	if size then loadingFrame.Size = size
 	else loadingFrame.Size = UDim2.new(0,300,0,160) end
@@ -3792,7 +3792,7 @@ t.CreateLoadingFrame = function(name,size,position)
 
 		local loadingGreenBar = Instance.new("ImageLabel")
 		loadingGreenBar.Name = "LoadingGreenBar"
-		loadingGreenBar.Image = "http://www.roblox.com/asset/?id=35238053"
+		loadingGreenBar.Image = "http://www.namehere.com/asset/?id=35238053"
 		loadingGreenBar.Position = UDim2.new(0,0,0,0)
 		loadingGreenBar.Size = UDim2.new(0,0,1,0)
 		loadingGreenBar.Visible = false
@@ -3817,7 +3817,7 @@ t.CreateLoadingFrame = function(name,size,position)
 	cancelButton.FontSize = Enum.FontSize.Size18
 	cancelButton.TextColor3 = Color3.new(1,1,1)
 	cancelButton.Text = "Cancel"
-	cancelButton.Style = Enum.ButtonStyle.RobloxButton
+	cancelButton.Style = Enum.ButtonStyle.NAMEHEREButton
 	cancelButton.Parent = loadingFrame
 
 	local loadingName = Instance.new("TextLabel")
@@ -4016,7 +4016,7 @@ t.CreatePluginFrame = function (name,size,position,scrollable,parent)
 	minimizeBigButton.Position = UDim2.new(0.5,-50,0.5,-20)
 	minimizeBigButton.Name = "MinimizeButton"
 	minimizeBigButton.Size = UDim2.new(0,100,0,40)
-	minimizeBigButton.Style = Enum.ButtonStyle.RobloxButton
+	minimizeBigButton.Style = Enum.ButtonStyle.NAMEHEREButton
 	minimizeBigButton.Font = Enum.Font.ArialBold
 	minimizeBigButton.FontSize = Enum.FontSize.Size18
 	minimizeBigButton.TextColor3 = Color3.new(1,1,1)

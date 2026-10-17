@@ -3,13 +3,13 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Roblox.Grid.Rcc;
-using Roblox.Grid;
+using NAMEHERE.Grid.Rcc;
+using NAMEHERE.Grid;
 using System.IO;
 using System.Threading;
 using System.Diagnostics;
 using Microsoft.Ccr.Core;
-using Roblox.Common;
+using NAMEHERE.Common;
 
 namespace RCCService.Test
 {
@@ -27,7 +27,7 @@ namespace RCCService.Test
 
             serviceUri = RCCLauncher.FindOrStartRCCService();
 
-            using (RCCServiceSoap service = Roblox.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port))
+            using (RCCServiceSoap service = NAMEHERE.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port))
             {
                 job = new Job();
                 job.category = 1;
@@ -45,7 +45,7 @@ namespace RCCService.Test
         [TestCleanup()]
         public void MyTestCleanup()
         {
-            using (RCCServiceSoap service = Roblox.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port))
+            using (RCCServiceSoap service = NAMEHERE.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port))
             {
                 service.CloseJob(job.id);
             }
@@ -57,7 +57,7 @@ namespace RCCService.Test
             failure = 0;
             for (int i = 0; i < 25; i++)
             {
-                Roblox.CcrService.Singleton.SpawnIterator(AsyncExecuteEx);
+                NAMEHERE.CcrService.Singleton.SpawnIterator(AsyncExecuteEx);
             }
             while (done != 25)
             {
@@ -72,9 +72,9 @@ namespace RCCService.Test
             failure = 0;
             for (int i = 0; i < 100; i++)
             {
-                Roblox.CcrService.Singleton.SpawnIterator(AsyncExecuteEx);
+                NAMEHERE.CcrService.Singleton.SpawnIterator(AsyncExecuteEx);
                 if(i%5 == 0)
-                    Roblox.CcrService.Singleton.SpawnIterator(AsyncLongOpenJob);
+                    NAMEHERE.CcrService.Singleton.SpawnIterator(AsyncLongOpenJob);
             }
             while (done != 100)
             {
@@ -87,7 +87,7 @@ namespace RCCService.Test
         {
             for (int i = 0; i < 1000; i++)
             {
-                using (RCCServiceSoap service = Roblox.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port))
+                using (RCCServiceSoap service = NAMEHERE.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port))
                 {
                     ScriptExecution script = Lua.NewScript("Monitor",
                     "return 'foo'");
@@ -105,7 +105,7 @@ namespace RCCService.Test
         {
             for (int i = 0; i < 1000; i++)
             {
-                using (RCCServiceSoap service = Roblox.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port))
+                using (RCCServiceSoap service = NAMEHERE.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port))
                 {
                     ScriptExecution script = Lua.NewScript("Monitor",
                         "return 'foo'");
@@ -130,8 +130,8 @@ namespace RCCService.Test
             ScriptExecution script = Lua.NewScript("Madrak's Place",
                 "i = 0 while i < 1000000 do i = i + 1 end");
 
-            var result = new PortSet<Roblox.Grid.Rcc.LuaValue[], Exception>();
-            var service = Roblox.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port);
+            var result = new PortSet<NAMEHERE.Grid.Rcc.LuaValue[], Exception>();
+            var service = NAMEHERE.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port);
             try
             {
                 AsyncHelper.Call(
@@ -151,7 +151,7 @@ namespace RCCService.Test
             yield return (Choice)result;
 
             var result2 = new SuccessFailurePort();
-            service = Roblox.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port);
+            service = NAMEHERE.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port);
             try
             {
                 AsyncHelper.Call(
@@ -182,8 +182,8 @@ namespace RCCService.Test
                     ScriptExecution script = Lua.NewScript("Monitor",
                         "return 'foo'");
 
-                    var result = new PortSet<Roblox.Grid.Rcc.LuaValue[], Exception>();
-                    var service = Roblox.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port);
+                    var result = new PortSet<NAMEHERE.Grid.Rcc.LuaValue[], Exception>();
+                    var service = NAMEHERE.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port);
                     try
                     {
                         AsyncHelper.Call(
@@ -211,7 +211,7 @@ namespace RCCService.Test
                         System.Threading.Interlocked.Increment(ref failure);
                         yield break;
                     }
-                    Roblox.Grid.Rcc.LuaValue[] luaResult = result.Test<Roblox.Grid.Rcc.LuaValue[]>();
+                    NAMEHERE.Grid.Rcc.LuaValue[] luaResult = result.Test<NAMEHERE.Grid.Rcc.LuaValue[]>();
                     //if (luaResult.Length != 1 || luaResult[0].type != LuaType.LUA_TSTRING || luaResult[0].value != "foo")
                     //{
                     //    System.Threading.Interlocked.Increment(ref failure);
@@ -219,7 +219,7 @@ namespace RCCService.Test
                     //}
 
                     var result2 = new PortSet<double, Exception>();
-                    service = Roblox.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port);
+                    service = NAMEHERE.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port);
                     try
                     {
                         AsyncHelper.Call(

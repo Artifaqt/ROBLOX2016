@@ -4,7 +4,7 @@
 //
 //  Created by Ben Tkacheff on 3/6/13.
 //
-//  Copyright 2003-2013 ROBLOX Corporation, All Rights Reserved
+//  Copyright 2003-2013 NAMEHERE Corporation, All Rights Reserved
 //
 // Summary:
 // This is for input objects that we use in events exposed to lua

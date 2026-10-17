@@ -1,4 +1,4 @@
-//Script for testing basic Roblox iOS App fuctionality on iPhone/iPod Touch on GT2 (CI build)
+//Script for testing basic NAMEHERE iOS App fuctionality on iPhone/iPod Touch on GT2 (CI build)
 
 
 var target = UIATarget.localTarget();

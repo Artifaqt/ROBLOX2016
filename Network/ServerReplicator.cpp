@@ -1,4 +1,4 @@
-/* Copyright 2003-2006 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2006 NAMEHERE Corporation, All Rights Reserved */
 
 #include "ServerReplicator.h"
 #include "Server.h"
@@ -40,14 +40,14 @@
 #include "Script/ModuleScript.h"
 #include "script/script.h"
 #include "util/http.h"
-#include "util/RobloxGoogleAnalytics.h"
+#include "util/NAMEHEREGoogleAnalytics.h"
 #include "util/xxhash.h"
 #include "rbx/Crypt.h"
 #include "FastLog.h"
 #include "Network/NetworkOwner.h"
 #include "Util/Statistics.h"
 #include "ConcurrentRakPeer.h"
-#include "RobloxServicesTools.h"
+#include "NAMEHEREServicesTools.h"
 
 #include "rbx/boost.hpp"
 
@@ -292,12 +292,12 @@ using namespace RBX;
 using namespace RBX::Network;
 
 REFLECTION_BEGIN();
-static Reflection::BoundCallbackDesc<FilterResult(shared_ptr<Instance>, shared_ptr<Instance>)> desc_filterNew("NewFilter", &ServerReplicator::filterNew, "newItem", "parent", Security::RobloxPlace);
-static Reflection::BoundCallbackDesc<FilterResult(shared_ptr<Instance>)> desc_filterDelete("DeleteFilter", &ServerReplicator::filterDelete, "deletingItem", Security::RobloxPlace);
-static Reflection::BoundCallbackDesc<FilterResult(shared_ptr<Instance>, std::string, Reflection::Variant)> desc_filterProperty("PropertyFilter", &ServerReplicator::filterProperty, "changingItem", "member", "value", Security::RobloxPlace);
-static Reflection::BoundCallbackDesc<FilterResult(shared_ptr<Instance>, std::string)> desc_filterEvent("EventFilter", &ServerReplicator::filterEvent, "firingItem", "event", Security::RobloxPlace);
-static Reflection::BoundFuncDesc<ServerReplicator, void(bool)> desc_SetBasicFilteringEnabled(&ServerReplicator::setBasicFilteringEnabled, "SetBasicFilteringEnabled", "value", Security::RobloxPlace);
-static Reflection::BoundFuncDesc<ServerReplicator, void()> desc_PreventTerrainChanges(&ServerReplicator::preventTerrainChanges, "PreventTerrainChanges", Security::RobloxPlace);
+static Reflection::BoundCallbackDesc<FilterResult(shared_ptr<Instance>, shared_ptr<Instance>)> desc_filterNew("NewFilter", &ServerReplicator::filterNew, "newItem", "parent", Security::NAMEHEREPlace);
+static Reflection::BoundCallbackDesc<FilterResult(shared_ptr<Instance>)> desc_filterDelete("DeleteFilter", &ServerReplicator::filterDelete, "deletingItem", Security::NAMEHEREPlace);
+static Reflection::BoundCallbackDesc<FilterResult(shared_ptr<Instance>, std::string, Reflection::Variant)> desc_filterProperty("PropertyFilter", &ServerReplicator::filterProperty, "changingItem", "member", "value", Security::NAMEHEREPlace);
+static Reflection::BoundCallbackDesc<FilterResult(shared_ptr<Instance>, std::string)> desc_filterEvent("EventFilter", &ServerReplicator::filterEvent, "firingItem", "event", Security::NAMEHEREPlace);
+static Reflection::BoundFuncDesc<ServerReplicator, void(bool)> desc_SetBasicFilteringEnabled(&ServerReplicator::setBasicFilteringEnabled, "SetBasicFilteringEnabled", "value", Security::NAMEHEREPlace);
+static Reflection::BoundFuncDesc<ServerReplicator, void()> desc_PreventTerrainChanges(&ServerReplicator::preventTerrainChanges, "PreventTerrainChanges", Security::NAMEHEREPlace);
 static Reflection::EventDesc<ServerReplicator, void(int, bool, int)> event_TicketProcessed(&ServerReplicator::remoteTicketProcessedSignal, "TicketProcessed", "userId", "isAuthenticated", "protocolVersion");
 REFLECTION_END();
 
@@ -1501,7 +1501,7 @@ void CheatHandlingServerReplicator::processNetPmcResponseItem(RakNet::BitStream&
             {
                 players->onRemoteSysStats(remotePlayer->getUserID(), "1920x1200", "WorldEdit");
             }
-            RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "SecurityException", "NetPmc Error P2.");
+            NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "SecurityException", "NetPmc Error P2.");
         }
     }
 }
@@ -1603,7 +1603,7 @@ void CheatHandlingServerReplicator::decodeHashItem(PmcHashContainer& netHashes, 
     if (DFFlag::US27664p3 && ((numItems < kNumberOfHashes) || (hashInitialized && (numItems != lastHashes.size()))))
     {
         players->onRemoteSysStats(remotePlayer->getUserID(), "1920x1200", "jesper");
-        RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "SecurityException", "invalid number of hashes");
+        NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "SecurityException", "invalid number of hashes");
         return;
     }
 
@@ -1672,14 +1672,14 @@ void CheatHandlingServerReplicator::processHashValue(const PmcHashContainer& net
     unsigned int goldChecks = RBX::Network::Players::checkGoldMemHashes(hashes);
 
     // Two additional items are sent in the same packet.  Check these items here.
-    static const size_t kRobloxTextBase = 0x401000;
-    static const size_t kRobloxSizeEstimate = 0x2000000;
-    if (hashes[numItems-1] != kRobloxTextBase || hashes[numItems-2] > kRobloxSizeEstimate)
+    static const size_t kNAMEHERETextBase = 0x401000;
+    static const size_t kNAMEHERESizeEstimate = 0x2000000;
+    if (hashes[numItems-1] != kNAMEHERETextBase || hashes[numItems-2] > kNAMEHERESizeEstimate)
     {
         if (DFFlag::US29001p1 && !reportedRangeError)
         {
             reportedRangeError = true;
-            RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "SecurityException", "Range has been modified");
+            NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "SecurityException", "Range has been modified");
         }
         if (DFFlag::US29001p2)
         {
@@ -1711,7 +1711,7 @@ void CheatHandlingServerReplicator::processHashValuePost(const unsigned long lon
             if (!reportedInvalid)
             {
                 reportedInvalid = true;
-                RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "SecurityException", "FuzzyToken Tamper, v3");
+                NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "SecurityException", "FuzzyToken Tamper, v3");
             }
             if (DFFlag::US28814)
             {
@@ -1730,7 +1730,7 @@ void CheatHandlingServerReplicator::processHashValuePost(const unsigned long lon
             msgStream << "FuzzyToken Exploit Detection v3: ";
             msgStream << std::hex << hackFlagsLower;
             std::string msg = msgStream.str();
-            RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "SecurityException", msg.c_str());
+            NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "SecurityException", msg.c_str());
         }
 
         bool skippedPacket = (nonce - hashNonce == 2);
@@ -1991,7 +1991,7 @@ void CheatHandlingServerReplicator::doRemoteSysStats(unsigned int sendStats, uns
         configMask |= getSecurityMask(configString, kReportChar, &configError);
         if (configMask & mask)
         {
-            RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "SecurityException", details);
+            NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "SecurityException", details);
         }
     }
     if (configError)
@@ -2013,7 +2013,7 @@ void CheatHandlingServerReplicator::doDelayedSysStats(unsigned int sendStats, un
         configMask |= getSecurityMask(DFString::US30605p1, kReportChar, &configError);
         if (configMask & mask)
         {
-            RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "SecurityException", details);
+            NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "SecurityException", details);
         }
     }
     if (configError)
@@ -2044,7 +2044,7 @@ void CheatHandlingServerReplicator::processHashStats(unsigned int hashStats)
             msgStream << "MemHashError: ";
             msgStream << std::hex << hashStats;
             std::string msg = msgStream.str();
-            RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "SecurityException", msg.c_str());
+            NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "SecurityException", msg.c_str());
         }
     }
     if (configError)
@@ -2071,7 +2071,7 @@ void CheatHandlingServerReplicator::processGoldHashStats(unsigned int hashStats)
             msgStream << "GoldMemHashError: ";
             msgStream << std::hex << hashStats;
             std::string msg = msgStream.str();
-            RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "SecurityException", msg.c_str());
+            NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "SecurityException", msg.c_str());
         }
     }
     if (configError)
@@ -2300,7 +2300,7 @@ void CheatHandlingServerReplicator::sendNetPmcChallenge()
         {
             players->onRemoteSysStats(remotePlayer->getUserID(), "1920x1200", "Guardian");
         }
-        RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "SecurityException", "NetPmc Pending P7.");
+        NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "SecurityException", "NetPmc Pending P7.");
 
         // additional reporting
         if (!reportedNetPmcSent )
@@ -2643,7 +2643,7 @@ void ServerReplicator::writeChangedRefProperty(const Instance* instance,
 	{
 		if (pendingCharaterRequest && (pendingCharaterRequest == instance) && (desc.name == "Character"))
 		{
-			RobloxGoogleAnalytics::trackUserTiming(GA_CATEGORY_GAME, "ProcessRequestCharacterTime", (Time::nowFast()-pendingCharacterRequestStartTime).msec(), "Replicate");
+			NAMEHEREGoogleAnalytics::trackUserTiming(GA_CATEGORY_GAME, "ProcessRequestCharacterTime", (Time::nowFast()-pendingCharacterRequestStartTime).msec(), "Replicate");
 			pendingCharaterRequest = NULL; 
 		}
 	}

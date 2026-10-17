@@ -241,7 +241,7 @@ inline G3D::Color3 operator* (const G3D::Color3& c, G3D::Color1& s) {
     return c * s.value;
 }
 
-std::ostream& operator<<(std::ostream& os, const Color3&); // ROBLOX - Added for boost App.Unit Test
+std::ostream& operator<<(std::ostream& os, const Color3&); // NAMEHERE - Added for boost App.Unit Test
 
 //----------------------------------------------------------------------------
 inline Color3::Color3 () {

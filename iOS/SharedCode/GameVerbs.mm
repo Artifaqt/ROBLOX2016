@@ -3,20 +3,20 @@
  *  iOS
  *
  *  Created on 5/19/14
- *  Copyright 2014 ROBLOX. All rights reserved.
+ *  Copyright 2014 NAMEHERE. All rights reserved.
  *
  */
 
 #import "PlaceLauncher.h"
 
 #include "GameVerbs.h"
-#include "RobloxView.h"
+#include "NAMEHEREView.h"
 
 #include "v8datamodel/GameBasicSettings.h"
 
-LeaveGameVerb::LeaveGameVerb(RobloxView *pRobloxView, VerbContainer* container) : 
+LeaveGameVerb::LeaveGameVerb(NAMEHEREView *pNAMEHEREView, VerbContainer* container) : 
 	Verb(container, "Exit")
-	,robloxView(pRobloxView)
+	,namehereView(pNAMEHEREView)
 {
 }
 

@@ -361,9 +361,9 @@ RibbonDefaultGroupButton::RibbonDefaultGroupButton(QWidget* parent, RibbonGroup*
 
 RibbonDefaultGroupButton::~RibbonDefaultGroupButton()
 {
-	// BEGIN ROBLOX CHANGES
+	// BEGIN NAMEHERE CHANGES
 	QObject::disconnect(m_ribbonGroup, SIGNAL(hidePopup()), this, SLOT(resetPopopGroup()));
-	// END ROBLOX CHANGES
+	// END NAMEHERE CHANGES
     if (m_eventLoop)
         m_eventLoop->exit();
 }
@@ -389,9 +389,9 @@ void RibbonDefaultGroupButton::resetReducedGroup()
 
 void RibbonDefaultGroupButton::resetPopopGroup()
 {
-	// BEGIN ROBLOX CHANGES
+	// BEGIN NAMEHERE CHANGES
 	QObject::disconnect(m_ribbonGroup, SIGNAL(hidePopup()), this, SLOT(resetPopopGroup()));
-	// END ROBLOX CHANGES
+	// END NAMEHERE CHANGES
     if (m_eventLoop)
         m_eventLoop->exit(); 
     m_hasPopup = false;
@@ -470,9 +470,9 @@ void RibbonDefaultGroupButton::mousePressEvent(QMouseEvent* event)
                 QEventLoop eventLoop;
                 m_eventLoop = &eventLoop;
                 (void) eventLoop.exec();
-				// BEGIN ROBLOX CHANGES
+				// BEGIN NAMEHERE CHANGES
                 //QObject::disconnect(m_ribbonGroup, SIGNAL(hidePopup()), this, SLOT(resetPopopGroup()));
-				// END ROBLOX CHANGES
+				// END NAMEHERE CHANGES
                 m_eventLoop = Q_NULL;
                 return;
             }
@@ -482,10 +482,10 @@ void RibbonDefaultGroupButton::mousePressEvent(QMouseEvent* event)
 
 void RibbonDefaultGroupButton::mouseReleaseEvent(QMouseEvent* event)
 {
-	// BEGIN ROBLOX CHANGES
+	// BEGIN NAMEHERE CHANGES
 	//m_hasPopup = false;
     m_hasPopup = QApplication::activePopupWidget();
-	// END ROBLOX CHANGES
+	// END NAMEHERE CHANGES
     QToolButton::mouseReleaseEvent(event);
 }
 

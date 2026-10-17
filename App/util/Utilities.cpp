@@ -15,9 +15,9 @@ DYNAMIC_FASTINTVARIABLE(ExternalHttpRequestSizeLimitKB, 1024)
 DYNAMIC_FASTINTVARIABLE(ExternalHttpResponseSizeLimitKB, 4096)
 
 
-const std::string RBX::Http::kGameSessionHeaderKey = "Roblox-Session-Id";
-const std::string RBX::Http::kGameIdHeaderKey = "Roblox-Game-Id";
-const std::string RBX::Http::kPlaceIdHeaderKey = "Roblox-Place-Id";
+const std::string RBX::Http::kGameSessionHeaderKey = "NAMEHERE-Session-Id";
+const std::string RBX::Http::kGameIdHeaderKey = "NAMEHERE-Game-Id";
+const std::string RBX::Http::kPlaceIdHeaderKey = "NAMEHERE-Place-Id";
 const std::string RBX::Http::kRequesterHeaderKey = "Requester";
 const std::string RBX::Http::kPlayerCountHeaderKey = "PlayerCount";
 const std::string RBX::Http::kAccessHeaderKey = "accesskey";

@@ -181,7 +181,7 @@ private:
     static void _mul(const Matrix3& A, const Matrix3& B, Matrix3& out);
 public:
 
-	// ROBLOX
+	// NAMEHERE
 	inline static void fastMul(const Matrix3& A, const Matrix3& B, Matrix3& out) {
 		_mul(A, B, out);
 	}
@@ -284,7 +284,7 @@ public:
 
     static Matrix3 fromAxisAngleFast(const Vector3& _normalizedAxis, float fRadians);
 	
-	// ROBLOX
+	// NAMEHERE
 	static Matrix3 fromAxisAngle(const Vector3& _axis, float fRadians) {
 		return fromAxisAngleFast(_axis.direction(),  fRadians);
 	}
@@ -324,7 +324,7 @@ public:
 
     static const float EPSILON; 
 
-    // ROBLOX NOTE:
+    // NAMEHERE NOTE:
     // The folowing G3D comment is wrong. Arseny prove this by compiling code
     // and checking the pointers are the same, also by reading assembly. I keep the comment here
     // for the future generations.

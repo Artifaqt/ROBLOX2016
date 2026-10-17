@@ -28,7 +28,7 @@ local WaitingToSave = false
 
 local PlaceId = game.PlaceId
 local Url = ContentProviderService.BaseUrl
-local UrlBase = Url:match('^http://www\.(.-)/?$') -- Turns "http://www.gametest1.robloxlabs.com/" into "gametest1.robloxlabs.com"
+local UrlBase = Url:match('^http://www\.(.-)/?$') -- Turns "http://www.gametest1.nameherelabs.com/" into "gametest1.nameherelabs.com"
 local ApiProxyUrl = 'https://api.' ..  UrlBase
 local DataFarmProtocol = 'http'
 local DataFarmUsesHttpsFlagExists, DataFarmUsesHttpsFlagValue = pcall(function () return settings():GetFFlag("DataFarmUsesHttps") end)

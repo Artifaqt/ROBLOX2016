@@ -1,4 +1,4 @@
-/* Copyright 2014 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2014 NAMEHERE Corporation, All Rights Reserved */
 #include "stdafx.h"
 
 #include "V8DataModel/PartOperation.h"
@@ -41,13 +41,13 @@ namespace RBX
 bool PartOperation::renderCollisionData = false;
 using namespace Reflection;
 
-const Reflection::PropDescriptor<PartOperation, BinaryString> PartOperation::desc_ChildData("ChildData", category_Data, &PartOperation::getChildData, &PartOperation::setChildData, Reflection::PropertyDescriptor::CLUSTER, Security::Roblox);
-const Reflection::PropDescriptor<PartOperation, BinaryString> PartOperation::desc_MeshData("MeshData", category_Data, &PartOperation::getMeshData, &PartOperation::setMeshData, Reflection::PropertyDescriptor::STREAMING, Security::Roblox);
-const Reflection::PropDescriptor<PartOperation, BinaryString> PartOperation::desc_PhysicsData("PhysicsData", category_Data, &PartOperation::getPhysicsData, &PartOperation::setPhysicsData, Reflection::PropertyDescriptor::STREAMING, Security::Roblox);
-const Reflection::PropDescriptor<PartOperation, Vector3> PartOperation::desc_InitialSize("InitialSize", category_Data, &PartOperation::getInitialSize, &PartOperation::setInitialSize, Reflection::PropertyDescriptor::STREAMING, Security::Roblox);
+const Reflection::PropDescriptor<PartOperation, BinaryString> PartOperation::desc_ChildData("ChildData", category_Data, &PartOperation::getChildData, &PartOperation::setChildData, Reflection::PropertyDescriptor::CLUSTER, Security::NAMEHERE);
+const Reflection::PropDescriptor<PartOperation, BinaryString> PartOperation::desc_MeshData("MeshData", category_Data, &PartOperation::getMeshData, &PartOperation::setMeshData, Reflection::PropertyDescriptor::STREAMING, Security::NAMEHERE);
+const Reflection::PropDescriptor<PartOperation, BinaryString> PartOperation::desc_PhysicsData("PhysicsData", category_Data, &PartOperation::getPhysicsData, &PartOperation::setPhysicsData, Reflection::PropertyDescriptor::STREAMING, Security::NAMEHERE);
+const Reflection::PropDescriptor<PartOperation, Vector3> PartOperation::desc_InitialSize("InitialSize", category_Data, &PartOperation::getInitialSize, &PartOperation::setInitialSize, Reflection::PropertyDescriptor::STREAMING, Security::NAMEHERE);
 const Reflection::PropDescriptor<PartOperation, bool> PartOperation::desc_UsePartColor("UsePartColor", category_Data, &PartOperation::getUsePartColor, &PartOperation::setUsePartColor);
-const Reflection::EnumPropDescriptor<PartOperation, PartOperation::FormFactor> PartOperation::desc_FormFactor("FormFactor", category_Data, &PartOperation::getFormFactor, &PartOperation::setFormFactor, Reflection::PropertyDescriptor::STREAMING, Security::Roblox);
-const Reflection::PropDescriptor<PartOperation, ContentId> PartOperation::desc_AssetId("AssetId", category_Data, &PartOperation::getAssetId, &PartOperation::setAssetId, Reflection::PropertyDescriptor::STREAMING, Security::Roblox);
+const Reflection::EnumPropDescriptor<PartOperation, PartOperation::FormFactor> PartOperation::desc_FormFactor("FormFactor", category_Data, &PartOperation::getFormFactor, &PartOperation::setFormFactor, Reflection::PropertyDescriptor::STREAMING, Security::NAMEHERE);
+const Reflection::PropDescriptor<PartOperation, ContentId> PartOperation::desc_AssetId("AssetId", category_Data, &PartOperation::getAssetId, &PartOperation::setAssetId, Reflection::PropertyDescriptor::STREAMING, Security::NAMEHERE);
 const Reflection::EnumPropDescriptor<PartOperation, CollisionFidelity> PartOperation::prop_CollisionFidelity("CollisionFidelity", category_Behavior, &PartOperation::getCollisionFidelity, &PartOperation::setCollisionFidelity, Reflection::PropertyDescriptor::PUBLIC_SERIALIZED);
 
 namespace Reflection {

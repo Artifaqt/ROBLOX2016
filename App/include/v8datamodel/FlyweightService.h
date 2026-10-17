@@ -1,4 +1,4 @@
-/* Copyright 2014 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2014 NAMEHERE Corporation, All Rights Reserved */
 #pragma once
 
 #include "Util/BinaryString.h"
@@ -31,11 +31,11 @@ namespace RBX
 	extern const char *const sFlyweightService;
 
 	class FlyweightService
-		: public DescribedCreatable<FlyweightService, Instance, sFlyweightService, Reflection::ClassDescriptor::PERSISTENT, Security::Roblox>
+		: public DescribedCreatable<FlyweightService, Instance, sFlyweightService, Reflection::ClassDescriptor::PERSISTENT, Security::NAMEHERE>
 		, public Service
 	{
 	protected:
-		typedef DescribedCreatable<FlyweightService, Instance, sFlyweightService, Reflection::ClassDescriptor::PERSISTENT, Security::Roblox> Super;
+		typedef DescribedCreatable<FlyweightService, Instance, sFlyweightService, Reflection::ClassDescriptor::PERSISTENT, Security::NAMEHERE> Super;
 		typedef boost::unordered_map<std::string, InstanceStringData> FlyweightInstanceMap;
 
 		FlyweightInstanceMap instanceMap;

@@ -1,4 +1,4 @@
-/* Copyright 2003-2007 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2007 NAMEHERE Corporation, All Rights Reserved */
 
 #include "stdafx.h"
 
@@ -54,7 +54,7 @@ void DumpErrorUploader::Upload(const std::string& url)
     hMutex = CreateMutex( 
         NULL,                        // default security descriptor
         TRUE,                       // own the mutex
-        TEXT("RobloxCrashDumpUploaderMutex"));  // object name
+        TEXT("NAMEHERECrashDumpUploaderMutex"));  // object name
 
     if (hMutex == NULL) 
 	{
@@ -64,7 +64,7 @@ void DumpErrorUploader::Upload(const std::string& url)
 	{
         if ( GetLastError() == ERROR_ALREADY_EXISTS ) 
 		{
-			RBX::StandardOut::singleton()->printf(RBX::MESSAGE_INFO, "RobloxCrashDumpUploaderMutex already exists. Not uploading logs.");
+			RBX::StandardOut::singleton()->printf(RBX::MESSAGE_INFO, "NAMEHERECrashDumpUploaderMutex already exists. Not uploading logs.");
 			return;
 		}
 	}

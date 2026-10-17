@@ -17,7 +17,7 @@ class DataModel;
 class RunService;
 class View;
 
-class RobloxCriticalSection
+class NAMEHERECriticalSection
 {
 public:
 	int callers;
@@ -25,7 +25,7 @@ public:
 	std::string olderCaller;
 	ATL::CCriticalSection diSection;
 
-	RobloxCriticalSection() : callers(0)
+	NAMEHERECriticalSection() : callers(0)
 	{
 	}
 };
@@ -41,7 +41,7 @@ class UserInput : public UserInputBase
 
 	rbx::signals::scoped_connection steppedConnection;
 
-	mutable RobloxCriticalSection diSection;
+	mutable NAMEHERECriticalSection diSection;
 
 	// Mouse Stuff
 	bool isMouseCaptured;			// poor man's tracker of button state

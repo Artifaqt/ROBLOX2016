@@ -199,7 +199,7 @@ HBITMAP CStudioProgressDialog::getDevLinkBitmap(bool hover)
 void CStudioProgressDialog::LaunchStudio()
 {
 	if (BootstrapperQTStudio* studio_bs = dynamic_cast<BootstrapperQTStudio*>(bs))
-		studio_bs->StartRobloxApp(false);
+		studio_bs->StartNAMEHEREApp(false);
 }
 
 void CStudioProgressDialog::OpenDevelopPage()

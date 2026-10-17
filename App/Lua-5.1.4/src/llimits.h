@@ -87,13 +87,13 @@ typedef LUAI_UACNUMBER l_uacNumber;
 */
 typedef lu_int32 Instruction;
 
-// Roblox: this is used to indicate an instruction that is obfuscated.
+// NAMEHERE: this is used to indicate an instruction that is obfuscated.
 struct InstructionV
 {
     Instruction v;
 };
 
-// Roblox: this is part of an optimization.  It is a partially decoded 
+// NAMEHERE: this is part of an optimization.  It is a partially decoded 
 // instruction that has at least the op field in plaintext.
 struct InstructionP
 {

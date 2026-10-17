@@ -1,4 +1,4 @@
-/* Copyright 2003-2006 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2006 NAMEHERE Corporation, All Rights Reserved */
 
 #pragma once
 
@@ -11,7 +11,7 @@
 
 namespace RBX {
 
-	// A collection of official ROBLOX colors
+	// A collection of official NAMEHERE colors
 	class BrickColor
 	{
 		class BrickMap;
@@ -194,38 +194,38 @@ namespace RBX {
 			brick_363 = 363,
 			brick_364 = 364,
 			brick_365 = 365,
-			roblox_1001 = 1001,
-			roblox_1002 = 1002,
-			roblox_1003 = 1003,
-			roblox_1004 = 1004,
-			roblox_1005 = 1005,
-			roblox_1006 = 1006,
-			roblox_1007 = 1007,
-			roblox_1008 = 1008,
-			roblox_1009 = 1009,
-			roblox_1010 = 1010,
-			roblox_1011 = 1011,
-			roblox_1012 = 1012,
-			roblox_1013 = 1013,
-			roblox_1014 = 1014,
-			roblox_1015 = 1015,
-			roblox_1016 = 1016,
-			roblox_1017 = 1017,
-			roblox_1018 = 1018,
-			roblox_1019 = 1019,
-			roblox_1020 = 1020,
-			roblox_1021 = 1021,
-			roblox_1022 = 1022,
-			roblox_1023 = 1023,
-			roblox_1024 = 1024,
-			roblox_1025 = 1025,
-			roblox_1026 = 1026,
-			roblox_1027 = 1027,
-			roblox_1028 = 1028,
-			roblox_1029 = 1029,
-			roblox_1030 = 1030,
-			roblox_1031 = 1031,
-			roblox_1032 = 1032
+			namehere_1001 = 1001,
+			namehere_1002 = 1002,
+			namehere_1003 = 1003,
+			namehere_1004 = 1004,
+			namehere_1005 = 1005,
+			namehere_1006 = 1006,
+			namehere_1007 = 1007,
+			namehere_1008 = 1008,
+			namehere_1009 = 1009,
+			namehere_1010 = 1010,
+			namehere_1011 = 1011,
+			namehere_1012 = 1012,
+			namehere_1013 = 1013,
+			namehere_1014 = 1014,
+			namehere_1015 = 1015,
+			namehere_1016 = 1016,
+			namehere_1017 = 1017,
+			namehere_1018 = 1018,
+			namehere_1019 = 1019,
+			namehere_1020 = 1020,
+			namehere_1021 = 1021,
+			namehere_1022 = 1022,
+			namehere_1023 = 1023,
+			namehere_1024 = 1024,
+			namehere_1025 = 1025,
+			namehere_1026 = 1026,
+			namehere_1027 = 1027,
+			namehere_1028 = 1028,
+			namehere_1029 = 1029,
+			namehere_1030 = 1030,
+			namehere_1031 = 1031,
+			namehere_1032 = 1032
 		};
 		Number number;
 		typedef std::vector< BrickColor > Colors;

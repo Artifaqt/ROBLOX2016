@@ -1,7 +1,7 @@
 --[[ 
 	This script controls the gui the player sees in regards to his or her health.
 	Can be turned with Game.StarterGui:SetCoreGuiEnabled(Enum.CoreGuiType.Health,false)
-	Copyright ROBLOX 2014. Written by Ben Tkacheff.
+	Copyright NAMEHERE 2014. Written by Ben Tkacheff.
 --]]
 
 ---------------------------------------------------------------------
@@ -37,7 +37,7 @@ local characterAddedConnection = nil
 local greenBarImage = "rbxasset://textures/ui/Health-BKG-Center.png"
 local greenBarImageLeft = "rbxasset://textures/ui/Health-BKG-Left-Cap.png"
 local greenBarImageRight = "rbxasset://textures/ui/Health-BKG-Right-Cap.png"
-local hurtOverlayImage = "http://www.roblox.com/asset/?id=34854607"
+local hurtOverlayImage = "http://www.namehere.com/asset/?id=34854607"
 
 game:GetService("ContentProvider"):Preload(greenBarImage)
 game:GetService("ContentProvider"):Preload(hurtOverlayImage)
@@ -54,7 +54,7 @@ local capWidth = 7
 
 function CreateGui()
 	if HealthGui and #HealthGui:GetChildren() > 0 then 
-		HealthGui.Parent = game:GetService("CoreGui").RobloxGui
+		HealthGui.Parent = game:GetService("CoreGui").NAMEHEREGui
 		return 
 	end
 
@@ -145,7 +145,7 @@ function CreateGui()
 	healthBarRight.Parent = healthBar
 	healthBarRight.ImageColor3 = greenColor
 
-	HealthGui.Parent = game:GetService("CoreGui").RobloxGui
+	HealthGui.Parent = game:GetService("CoreGui").NAMEHEREGui
 end
 
 function UpdateGui(health)

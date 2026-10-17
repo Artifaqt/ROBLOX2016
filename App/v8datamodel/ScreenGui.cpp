@@ -61,7 +61,7 @@ namespace RBX {
             // if we have core gui set up, get it's absolute size and use that (instead of 800x600)
             if(CoreGuiService* coreGui = ServiceProvider::create<CoreGuiService>(newProvider))
             {
-                if (shared_ptr<RBX::ScreenGui> coreScreenGui = coreGui->getRobloxScreenGui())
+                if (shared_ptr<RBX::ScreenGui> coreScreenGui = coreGui->getNAMEHEREScreenGui())
                 {
                     if (coreScreenGui.get() != this)
                     {

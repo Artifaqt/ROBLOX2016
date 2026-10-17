@@ -152,12 +152,12 @@ void CLegacyDialog::DisplayError(const char* message, const char* exceptionText)
 		text += "\n\nDetails: ";
 		text += exceptionText;
 	}
-	MessageBox(convert_s2w(text).c_str(), _T("Roblox"), MB_OK | MB_ICONERROR);
+	MessageBox(convert_s2w(text).c_str(), _T("NAMEHERE"), MB_OK | MB_ICONERROR);
 }
 
 void CLegacyDialog::FinalMessage(const char* message)
 {
-	MessageBox(convert_s2w(message).c_str(), _T("Roblox"), MB_OK);
+	MessageBox(convert_s2w(message).c_str(), _T("NAMEHERE"), MB_OK);
 }
 
 void CLegacyDialog::SetCancelEnabled(bool state)

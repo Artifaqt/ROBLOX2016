@@ -1,4 +1,4 @@
-/* Copyright 2003-2005 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2005 NAMEHERE Corporation, All Rights Reserved */
 
 #pragma once
 
@@ -159,7 +159,7 @@ private:
 
 	bool archivable;
 	bool isParentLocked;
-	bool robloxLocked;
+	bool namehereLocked;
 	bool isSettingParent;
 	
 	boost::flyweight<std::string> name;
@@ -207,7 +207,7 @@ public:
 
 	static const Reflection::PropDescriptor<Instance, std::string> desc_Name;
 	static const Reflection::RefPropDescriptor<Instance, Instance> propParent;
-	static const Reflection::PropDescriptor<Instance, bool> propRobloxLocked;
+	static const Reflection::PropDescriptor<Instance, bool> propNAMEHERELocked;
 
 	enum CombinedSignalType
 	{
@@ -342,8 +342,8 @@ public:
 	static Instance* getRootAncestor(Instance* instance) { return instance ? instance->getRootAncestor() : NULL; }
 	static const Instance* getRootAncestor(const Instance* instance) { return instance ? instance->getRootAncestor() : NULL; }
 
-	bool getRobloxLocked() const { return robloxLocked; }
-	void setRobloxLocked(bool value);
+	bool getNAMEHERELocked() const { return namehereLocked; }
+	void setNAMEHERELocked(bool value);
 
 	bool contains(const Instance* child) const;		// Recursive. Also returns true if this==child
 

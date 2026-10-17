@@ -403,7 +403,7 @@ function CreateStandardButton(name,
 		button.Size = size
 	end
 	
-	button.Style = Enum.ButtonStyle.RobloxButton
+	button.Style = Enum.ButtonStyle.NAMEHEREButton
 
 	button.TextColor3 = buttonTextColor
 	button.Font = buttonFont
@@ -834,7 +834,7 @@ function ConfirmationPopup.Create(confirmText,
 	popup.confirmationFrame.Name = "ConfirmationFrame"
 	popup.confirmationFrame.Size = UDim2.new(0, 280, 0, 140)
 	popup.confirmationFrame.Position = UDim2.new(.5, -popup.confirmationFrame.Size.X.Offset/2, 0.5, -popup.confirmationFrame.Size.Y.Offset/2)
-	popup.confirmationFrame.Style = Enum.FrameStyle.RobloxRound
+	popup.confirmationFrame.Style = Enum.FrameStyle.NAMEHERERound
 	popup.confirmLabel = CreateStandardLabel("ConfirmLabel", UDim2.new(0,0,0,15), UDim2.new(1, 0, 0, 24), confirmText, popup.confirmationFrame)
 	popup.confirmLabel.FontSize = Enum.FontSize.Size18
 	popup.confirmLabel.TextXAlignment = Enum.TextXAlignment.Center

@@ -7,7 +7,7 @@ Global
 	GlobalSection(TeamFoundationVersionControl) = preSolution
 		SccNumberOfProjects = 2
 		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
-		SccTeamFoundationServer = https://tfs.roblox.com:8081/
+		SccTeamFoundationServer = https://tfs.namehere.com:8081/
 		SccLocalPath0 = .
 		SccProjectUniqueName1 = ScriptSigner\\ScriptSigner.csproj
 		SccProjectName1 = ScriptSigner

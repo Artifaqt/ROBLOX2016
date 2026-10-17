@@ -32,35 +32,35 @@ FASTFLAG(UserAllCamerasInLua)
 
 namespace RBX {
 
-class RobloxCritSecLoc
+class NAMEHERECritSecLoc
 {
-	RobloxCriticalSection& robloxCriticalSection;
+	NAMEHERECriticalSection& namehereCriticalSection;
 	CCritSecLock lock;
 
 public:
-	RobloxCritSecLoc( RobloxCriticalSection& cs, const std::string& location)
-		: robloxCriticalSection(cs)
+	NAMEHERECritSecLoc( NAMEHERECriticalSection& cs, const std::string& location)
+		: namehereCriticalSection(cs)
 		, lock(cs.diSection)
 	{
 // should compile away the string manipulations
 #ifdef __RBX_NOT_RELEASE
 		// Show THESE ASSERTS TO David/Erik - they imply multiple entry points
 		// to User Input Object - trying to track down
-		RBXASSERT(robloxCriticalSection.callers == 0);
-		robloxCriticalSection.callers++;
-		robloxCriticalSection.olderCaller = robloxCriticalSection.recentCaller;
-		robloxCriticalSection.recentCaller = location;
+		RBXASSERT(namehereCriticalSection.callers == 0);
+		namehereCriticalSection.callers++;
+		namehereCriticalSection.olderCaller = namehereCriticalSection.recentCaller;
+		namehereCriticalSection.recentCaller = location;
 #endif
 	}
 
-	~RobloxCritSecLoc()
+	~NAMEHERECritSecLoc()
 	{
 // should compile away the string manipulations
 #ifdef __RBX_NOT_RELEASE
-		RBXASSERT(robloxCriticalSection.callers == 1);
-		robloxCriticalSection.callers--;
-		robloxCriticalSection.recentCaller = "";
-		robloxCriticalSection.olderCaller = "";
+		RBXASSERT(namehereCriticalSection.callers == 1);
+		namehereCriticalSection.callers--;
+		namehereCriticalSection.recentCaller = "";
+		namehereCriticalSection.olderCaller = "";
 #endif
 	}
 };
@@ -101,7 +101,7 @@ UserInput::UserInput(HWND wnd, shared_ptr<RBX::Game> game, View* view)
 										(VOID**)&diPtr,
 										NULL ) ) )
 	{
-		MessageBoxA(NULL, "ROBLOX could not initialize input. Please make sure you have a mouse and keyboard plugged in.", "ROBLOX", MB_OK);
+		MessageBoxA(NULL, "NAMEHERE could not initialize input. Please make sure you have a mouse and keyboard plugged in.", "NAMEHERE", MB_OK);
 		return;
 	}
 
@@ -172,13 +172,13 @@ void UserInput::createMouse()
 	HRESULT hr;
 	if (FAILED(hr = diPtr->CreateDevice( GUID_SysMouse, &diMousePtr, NULL)))
 	{
-		MessageBoxA(NULL, "Could not find a mouse! ROBLOX requires a mouse.", "ROBLOX", MB_OK);
+		MessageBoxA(NULL, "Could not find a mouse! NAMEHERE requires a mouse.", "NAMEHERE", MB_OK);
 		return;
 	}
 
 	if (FAILED(hr = diMousePtr->SetDataFormat(&c_dfDIMouse2)))
 	{
-		MessageBoxA(NULL, "Could not find a mouse (data format failed)! ROBLOX requires a mouse.", "ROBLOX", MB_OK);
+		MessageBoxA(NULL, "Could not find a mouse (data format failed)! NAMEHERE requires a mouse.", "NAMEHERE", MB_OK);
 		return;
 	}
 
@@ -186,7 +186,7 @@ void UserInput::createMouse()
 	getDiProp(dipdw);
 	if (FAILED(hr = diMousePtr->SetProperty(DIPROP_BUFFERSIZE, &dipdw.diph)))
 	{
-		MessageBoxA(NULL, "Could not find a mouse (set property failed)! ROBLOX requires a mouse.", "ROBLOX", MB_OK);
+		MessageBoxA(NULL, "Could not find a mouse (set property failed)! NAMEHERE requires a mouse.", "NAMEHERE", MB_OK);
 		return;
 	}
 }
@@ -197,13 +197,13 @@ void UserInput::createKeyboard()
 
 	if (FAILED(hr = diPtr->CreateDevice(GUID_SysKeyboard, &diKeyboardPtr, NULL)))
 	{
-		MessageBoxA(NULL, "Could not find a keyboard! ROBLOX requires a keyboard.", "ROBLOX", MB_OK);
+		MessageBoxA(NULL, "Could not find a keyboard! NAMEHERE requires a keyboard.", "NAMEHERE", MB_OK);
 		return;
 	}
 
 	if (FAILED(hr = diKeyboardPtr->SetDataFormat(&c_dfDIKeyboard)))
 	{
-		MessageBoxA(NULL, "Could not find a keyboard (data format failed)! ROBLOX requires a keyboard.", "ROBLOX", MB_OK);
+		MessageBoxA(NULL, "Could not find a keyboard (data format failed)! NAMEHERE requires a keyboard.", "NAMEHERE", MB_OK);
 		return;
 	}
 
@@ -211,7 +211,7 @@ void UserInput::createKeyboard()
 	getDiProp(dipdw);
 	if (FAILED(hr = diKeyboardPtr->SetProperty(DIPROP_BUFFERSIZE, &dipdw.diph)))
 	{
-		MessageBoxA(NULL, "Could not find a keyboard (set property failed)! ROBLOX requires a keyboard.", "ROBLOX", MB_OK);
+		MessageBoxA(NULL, "Could not find a keyboard (set property failed)! NAMEHERE requires a keyboard.", "NAMEHERE", MB_OK);
 		return;
 	}
 }
@@ -236,7 +236,7 @@ void UserInput::setKeyboardDesiredInternal(bool set)
 
 void UserInput::setKeyboardDesired(bool set)
 {
-	RobloxCritSecLoc lock(diSection, "setKeyboardDesired");
+	NAMEHERECritSecLoc lock(diSection, "setKeyboardDesired");
 	setKeyboardDesiredInternal(set);
 }
 
@@ -385,7 +385,7 @@ void UserInput::postUserInputMessage(UINT uMsg, WPARAM wParam, LPARAM lParam)
 void UserInput::processUserInputMessage(UINT uMsg, WPARAM wParam,
 										LPARAM lParam)
 {
-	RobloxCritSecLoc lock(diSection, "ProcessUserInputMessage");
+	NAMEHERECritSecLoc lock(diSection, "ProcessUserInputMessage");
 
 	if (uMsg == WM_MOUSEMOVE)
 	{
@@ -903,7 +903,7 @@ G3D::Vector2 UserInput::getWindowsCursorPositionInternal()
 
 G3D::Vector2 UserInput::getCursorPosition()
 {
-	RobloxCritSecLoc lock(diSection, "getCursorPosition");
+	NAMEHERECritSecLoc lock(diSection, "getCursorPosition");
 	return getCursorPositionInternal();
 }
 
@@ -930,7 +930,7 @@ bool UserInput::keyDown(KeyCode code) const
 
 void UserInput::setKeyState(RBX::KeyCode code, RBX::ModCode modCode, char modifiedKey, bool isDown)
 {
-	RobloxCritSecLoc lock(diSection, "setKeyState");
+	NAMEHERECritSecLoc lock(diSection, "setKeyState");
 	externallyForcedKeyDown = isDown ? code : 0;
 }
 
@@ -945,7 +945,7 @@ void UserInput::reacquireKeyboard()
 
 void UserInput::processInput()
 {
-	RobloxCritSecLoc lock(diSection, "processInput");
+	NAMEHERECritSecLoc lock(diSection, "processInput");
 	updateKeyboard();
 
 	if (isMouseAcquired)

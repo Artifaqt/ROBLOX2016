@@ -326,7 +326,7 @@ local function getBoundingBoxInWorldCoordinates(partOrModel)
 end
 
 local function getTargetPartBoundingBox(targetPart)
-	if targetPart.Parent:FindFirstChild("RobloxModel") ~= nil then
+	if targetPart.Parent:FindFirstChild("NAMEHEREModel") ~= nil then
 		return getBoundingBox2(targetPart.Parent)
 	else
 		return getBoundingBox2(targetPart)
@@ -334,7 +334,7 @@ local function getTargetPartBoundingBox(targetPart)
 end
 
 local function getMouseTargetCFrame(targetPart)
-	if targetPart.Parent:FindFirstChild("RobloxModel") ~= nil then
+	if targetPart.Parent:FindFirstChild("NAMEHEREModel") ~= nil then
 		if targetPart.Parent:IsA("Tool") then return targetPart.Parent.Handle.CFrame
 		else return targetPart.Parent:GetModelCFrame() end
 	else
@@ -346,7 +346,7 @@ local function isBlocker(part) -- returns whether or not we want to cancel the s
 	if not part then return false end
 	if not part.Parent then return false end
 	if part:FindFirstChild("Humanoid") then return false end
-	if part:FindFirstChild("RobloxStamper") or part:FindFirstChild("RobloxModel") then return true end
+	if part:FindFirstChild("NAMEHEREStamper") or part:FindFirstChild("NAMEHEREModel") then return true end
 	if part:IsA("Part") and not part.CanCollide then return false end
 	if part == game:GetService("Lighting") then return false end
 	return isBlocker(part.Parent)
@@ -660,7 +660,7 @@ t.GetStampModel = function(assetId, terrainShape, useAssetVersionId)
 		if cellType == 3 then
 			local inverseCornerWedgeMesh = Instance.new("SpecialMesh")
 			inverseCornerWedgeMesh.MeshType = "FileMesh"
-			inverseCornerWedgeMesh.MeshId = "http://www.roblox.com/asset/?id=66832495"
+			inverseCornerWedgeMesh.MeshId = "http://www.namehere.com/asset/?id=66832495"
 			inverseCornerWedgeMesh.Scale = Vector3.new(2, 2, 2)
 			inverseCornerWedgeMesh.Parent = newTerrainPiece
 		end
@@ -743,14 +743,14 @@ t.GetStampModel = function(assetId, terrainShape, useAssetVersionId)
 	end
 	
 	-- ...and tag all inserted models for subsequent origin identification
-	-- if no RobloxModel tag already exists, then add it.
-	if root:FindFirstChild("RobloxModel") == nil then
+	-- if no NAMEHEREModel tag already exists, then add it.
+	if root:FindFirstChild("NAMEHEREModel") == nil then
 		local stringTag = Instance.new("BoolValue", root)
-		stringTag.Name = "RobloxModel"
+		stringTag.Name = "NAMEHEREModel"
 
-		if root:FindFirstChild("RobloxStamper") == nil then
+		if root:FindFirstChild("NAMEHEREStamper") == nil then
 			local stringTag2 = Instance.new("BoolValue", root)
-			stringTag2.Name = "RobloxStamper"
+			stringTag2.Name = "NAMEHEREStamper"
 		end
 	end
 	
@@ -1105,8 +1105,8 @@ t.SetupStamperDragger = function(modelToStamp, Mouse, StampInModel, AllowedStamp
 
 		-- auto break joints code
 		if Mouse and Mouse.Target and Mouse.Target.Parent then
-			local modelInfo = Mouse.Target:FindFirstChild("RobloxModel")
-			if not modelInfo then modelInfo = Mouse.Target.Parent:FindFirstChild("RobloxModel") end
+			local modelInfo = Mouse.Target:FindFirstChild("NAMEHEREModel")
+			if not modelInfo then modelInfo = Mouse.Target.Parent:FindFirstChild("NAMEHEREModel") end
 			
 			local myModelInfo = stampData.CurrentParts:FindFirstChild("UnstampableFaces")
 
@@ -1153,7 +1153,7 @@ t.SetupStamperDragger = function(modelToStamp, Mouse, StampInModel, AllowedStamp
 
 		-- most common mouse inactive error occurs here, so check mouse active one more time in a pcall
 		if not pcall(function() 
-				if Mouse and Mouse.Target and Mouse.Target.Parent:FindFirstChild("RobloxModel") == nil then 
+				if Mouse and Mouse.Target and Mouse.Target.Parent:FindFirstChild("NAMEHEREModel") == nil then 
 					return
 				else
 					return
@@ -1166,7 +1166,7 @@ t.SetupStamperDragger = function(modelToStamp, Mouse, StampInModel, AllowedStamp
 			return
 		end
 
-		if Mouse and Mouse.Target and Mouse.Target.Parent:FindFirstChild("RobloxModel") == nil then
+		if Mouse and Mouse.Target and Mouse.Target.Parent:FindFirstChild("NAMEHEREModel") == nil then
 			game.JointsService:SetJoinAfterMoveTarget(Mouse.Target)
 		else
 			game.JointsService:SetJoinAfterMoveTarget(nil)
@@ -1880,22 +1880,22 @@ t.SetupStamperDragger = function(modelToStamp, Mouse, StampInModel, AllowedStamp
 				end
 			end
 			-- ...and tag all inserted models for subsequent origin identification
-			-- if no RobloxModel tag already exists, then add it.
-			if stampData.CurrentParts:FindFirstChild("RobloxModel") == nil then
+			-- if no NAMEHEREModel tag already exists, then add it.
+			if stampData.CurrentParts:FindFirstChild("NAMEHEREModel") == nil then
 				local stringTag = Instance.new("BoolValue", stampData.CurrentParts)
-				stringTag.Name = "RobloxModel"
+				stringTag.Name = "NAMEHEREModel"
 
-				if stampData.CurrentParts:FindFirstChild("RobloxStamper") == nil then
+				if stampData.CurrentParts:FindFirstChild("NAMEHEREStamper") == nil then
 					local stringTag2 = Instance.new("BoolValue", stampData.CurrentParts)
-					stringTag2.Name = "RobloxStamper"
+					stringTag2.Name = "NAMEHEREStamper"
 				end
 			end
 
 		else
 			stampData.CurrentParts:BreakJoints()
-			if stampData.CurrentParts:FindFirstChild("RobloxStamper") == nil then
+			if stampData.CurrentParts:FindFirstChild("NAMEHEREStamper") == nil then
 				local stringTag2 = Instance.new("BoolValue", stampData.CurrentParts)
-				stringTag2.Name = "RobloxStamper"
+				stringTag2.Name = "NAMEHEREStamper"
 			end
 		end
 				
@@ -1941,10 +1941,10 @@ t.SetupStamperDragger = function(modelToStamp, Mouse, StampInModel, AllowedStamp
 		stampData.SurfaceTypeTable = nil
 
 		-- ...and tag all inserted models for subsequent origin identification
-		-- if no RobloxModel tag already exists, then add it.
-		if stampData.CurrentParts:FindFirstChild("RobloxModel") == nil then
+		-- if no NAMEHEREModel tag already exists, then add it.
+		if stampData.CurrentParts:FindFirstChild("NAMEHEREModel") == nil then
 			local stringTag = Instance.new("BoolValue", stampData.CurrentParts)
-			stringTag.Name = "RobloxModel"
+			stringTag.Name = "NAMEHEREModel"
 		end
 
 		-- and make sure we don't delete it, now that it's not a ghost part
@@ -2057,7 +2057,7 @@ t.SetupStamperDragger = function(modelToStamp, Mouse, StampInModel, AllowedStamp
 		
 		pcall(function() mouseTarget = Mouse.Target end)
 
-		if mouseTarget and mouseTarget.Parent:FindFirstChild("RobloxModel") == nil then
+		if mouseTarget and mouseTarget.Parent:FindFirstChild("NAMEHEREModel") == nil then
 			game.JointsService:SetJoinAfterMoveTarget(mouseTarget)
 		else
 			game.JointsService:SetJoinAfterMoveTarget(nil)

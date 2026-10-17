@@ -23,17 +23,17 @@ Settings
 ----------------------------------------------------------------------------
 Default locations:
 
-AppSettings.xml:           <<Module directory>> (e.g. sibling file to %SystemDrive%/Program Files (x86)/Roblox/Versions/virsion-[####]/RobloxApp.exe)
+AppSettings.xml:           <<Module directory>> (e.g. sibling file to %SystemDrive%/Program Files (x86)/NAMEHERE/Versions/virsion-[####]/NAMEHEREApp.exe)
 
 Content Folder:            <<Module directory>>\Content
 
-Cache Folder:              CSIDL_COMMON_APPDATA\Roblox\Cache\
+Cache Folder:              CSIDL_COMMON_APPDATA\NAMEHERE\Cache\
 
-Log files:                 CSIDL_LOCAL_APPDATA\Roblox\logs\
+Log files:                 CSIDL_LOCAL_APPDATA\NAMEHERE\logs\
 
-Alternate log files:       CSIDL_COMMON_APPDATA\Roblox\logs\
+Alternate log files:       CSIDL_COMMON_APPDATA\NAMEHERE\logs\
 
-User IDESettings.xml:      CSIDL_LOCAL_APPDATA\Roblox\
+User IDESettings.xml:      CSIDL_LOCAL_APPDATA\NAMEHERE\
 
 
 ----------------------------------------------------------------------------
@@ -55,7 +55,7 @@ Determining the content folder (in order of priority):
 ----------------------------------------------------------
 Determining CrashReport (in order of priority):
 
-	1) HKEY_CURRENT_USER\Software\ROBLOX Corporation\Roblox	CrashReport (REG_DWORD)
+	1) HKEY_CURRENT_USER\Software\NAMEHERE Corporation\NAMEHERE	CrashReport (REG_DWORD)
 	
 	2) TRUE
 
@@ -63,7 +63,7 @@ Determining CrashReport (in order of priority):
 ----------------------------------------------------------
 Determining SilentCrashReport (in order of priority):
 
-	1) HKEY_CURRENT_USER\Software\ROBLOX Corporation\Roblox	SilentCrashReport (REG_DWORD)
+	1) HKEY_CURRENT_USER\Software\NAMEHERE Corporation\NAMEHERE	SilentCrashReport (REG_DWORD)
 	
     2) AppSettings.xml:   Settings->SilentCrashReport
 

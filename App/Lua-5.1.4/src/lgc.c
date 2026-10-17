@@ -457,7 +457,7 @@ static void GCTM (lua_State *L) {
   makewhite(g, o);
   tm = fasttm(L, udata->uv.metatable, TM_GC);
   if (tm != NULL) {
-	  // ROBLOX:
+	  // NAMEHERE:
 	  if (!udata->uv.may_gc)
 		  return;
 

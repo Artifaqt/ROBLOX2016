@@ -23,8 +23,8 @@ RakNetSocket::~RakNetSocket()
 	}
 #endif
 
-    // BEGIN ROBLOX CHANGES
+    // BEGIN NAMEHERE CHANGES
     // If this fixes an issue, then there may be a multiple-deletion bug.
     s = static_cast<SOCKET>(-1);
-    // END ROBLOX CHANGES
+    // END NAMEHERE CHANGES
 }

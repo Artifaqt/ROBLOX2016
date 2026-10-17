@@ -96,9 +96,9 @@ namespace Qtitan
     public:
         virtual QSize sizeHint() const;
         using QWidget::addAction;
-		// BEGIN ROBLOX CHANGES
+		// BEGIN NAMEHERE CHANGES
 		void recalcWidths();
-		// END ROBLOX CHANGES
+		// END NAMEHERE CHANGES
 
     Q_SIGNALS:
         /*! \internal */

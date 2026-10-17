@@ -1,4 +1,4 @@
-//Script for testing basic Roblox iOS App fuctionality on iPad on GT2 (internal build)
+//Script for testing basic NAMEHERE iOS App fuctionality on iPad on GT2 (internal build)
 
 
 var target = UIATarget.localTarget();
@@ -53,7 +53,7 @@ target.logElementTree();
 
 //Select test environment
 
-wheel.selectValue("http://www.gametest2.robloxlabs.com/"); //selecting test environment
+wheel.selectValue("http://www.gametest2.nameherelabs.com/"); //selecting test environment
 
 UIALogger.logMessage("Test Environment: " + wheel.value()); //log current selected environment
 

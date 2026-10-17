@@ -5,8 +5,8 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Roblox.Grid.Rcc;
-using Roblox.Grid;
+using NAMEHERE.Grid.Rcc;
+using NAMEHERE.Grid;
 using System.IO;
 using System.Threading;
 using System.Diagnostics;
@@ -98,7 +98,7 @@ namespace RCCService.Test
 
             public void AquireService()
             {
-                service = Roblox.Grid.Common.GridServiceUtils.GetService(uri.Host, uri.Port);
+                service = NAMEHERE.Grid.Common.GridServiceUtils.GetService(uri.Host, uri.Port);
                 service.Timeout = webRequestTimeout;
                 service.CloseAllJobs(); // cleanup potential crumbs from failed previous run
             }
@@ -111,7 +111,7 @@ namespace RCCService.Test
                 // try to re-join all the games that we used to be in
                 foreach (GameInfo gi in games)
                 {
-                    Roblox.Grid.Rcc.Job job = new Roblox.Grid.Rcc.Job();
+                    NAMEHERE.Grid.Rcc.Job job = new NAMEHERE.Grid.Rcc.Job();
                     job.expirationInSeconds = Math.Max(2 * 60 * 60, webRequestTimeout / 1000);
                     job.category = 0;
 
@@ -167,7 +167,7 @@ namespace RCCService.Test
 
             private void JoinGameWorker(GameInfo newgame)
             {
-                Roblox.Grid.Rcc.Job job = new Roblox.Grid.Rcc.Job();
+                NAMEHERE.Grid.Rcc.Job job = new NAMEHERE.Grid.Rcc.Job();
                 job.expirationInSeconds = Math.Max(2 * 60 * 60, webRequestTimeout / 1000);
                 job.category = 0;
                 job.id = newgame.id;
@@ -412,7 +412,7 @@ namespace RCCService.Test
 
             try // try/finalluy block to make sure we dispose the serverService and the clientService
             {
-                serverService = Roblox.Grid.Common.GridServiceUtils.GetService(serverUri.Host, serverUri.Port);
+                serverService = NAMEHERE.Grid.Common.GridServiceUtils.GetService(serverUri.Host, serverUri.Port);
                 serverService.Timeout = p.webRequestTimeout;
                 serverService.CloseAllJobs(); // cleanup potential crumbs from failed previous run
                 foreach (ClientManager c in rccclients)
@@ -420,7 +420,7 @@ namespace RCCService.Test
                     c.AquireService();
                 }
 
-                Roblox.Grid.Rcc.Job job = new Roblox.Grid.Rcc.Job();
+                NAMEHERE.Grid.Rcc.Job job = new NAMEHERE.Grid.Rcc.Job();
                 job.expirationInSeconds = Math.Max(2 * 60 * 60, p.webRequestTimeout / 1000);
                 job.category = 0;
 

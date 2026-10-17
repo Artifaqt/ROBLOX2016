@@ -1,4 +1,4 @@
-/* Copyright 2003-2007 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2007 NAMEHERE Corporation, All Rights Reserved */
 #include "stdafx.h"
 
 #include "Humanoid/Humanoid.h"
@@ -143,7 +143,7 @@ static Reflection::EnumPropDescriptor<Humanoid, RBX::Camera::CameraMode> prop_Ca
 
 static Reflection::BoundFuncDesc<Humanoid, void(float)> func_TakeDamage(&Humanoid::takeDamage, "TakeDamage", "amount", Security::None);
 static Reflection::BoundFuncDesc<Humanoid, void(float)> dep_TakeDamage(&Humanoid::takeDamage, "takeDamage", "amount", Security::None, Reflection::Descriptor::Attributes::deprecated(func_TakeDamage));
-static Reflection::BoundFuncDesc<Humanoid, void(bool)> func_SetClickToWalkEnabled(&Humanoid::setClickToWalkEnabled, "SetClickToWalkEnabled","enabled", Security::RobloxScript);
+static Reflection::BoundFuncDesc<Humanoid, void(bool)> func_SetClickToWalkEnabled(&Humanoid::setClickToWalkEnabled, "SetClickToWalkEnabled","enabled", Security::NAMEHEREScript);
 static Reflection::BoundFuncDesc<Humanoid, void(Vector3, shared_ptr<Instance>)> func_MoveTo(&Humanoid::moveTo2, "MoveTo", "location", "part", shared_ptr<Instance>(), Security::None);
 static Reflection::EventDesc<Humanoid, void(bool)> event_MoveToFinished(&Humanoid::moveToFinishedSignal, "MoveToFinished", "reached");
 
@@ -185,7 +185,7 @@ static Reflection::EventDesc<Humanoid, void(Humanoid::Status)> event_StatusRemov
 static Reflection::EventDesc<Humanoid, void(std::string)> event_CustomStatusAdded(&Humanoid::customStatusAddedSignal, "CustomStatusAdded", "status", Reflection::Descriptor::Attributes::deprecated());
 static Reflection::EventDesc<Humanoid, void(std::string)> event_CustomStatusRemoved(&Humanoid::customStatusRemovedSignal, "CustomStatusRemoved", "status", Reflection::Descriptor::Attributes::deprecated());
 
-static Reflection::RemoteEventDesc<Humanoid, void(shared_ptr<Instance>)> desc_serverEquipTool(&Humanoid::serverEquipToolSignal, "ServerEquipTool", "tool", Security::Roblox, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::CLIENT_SERVER);
+static Reflection::RemoteEventDesc<Humanoid, void(shared_ptr<Instance>)> desc_serverEquipTool(&Humanoid::serverEquipToolSignal, "ServerEquipTool", "tool", Security::NAMEHERE, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::CLIENT_SERVER);
 
 static Reflection::EnumPropDescriptor<Humanoid, Humanoid::NameOcclusion> prop_NameOcclusion("NameOcclusion", category_Data, &Humanoid::getNameOcclusion, &Humanoid::setNameOcclusion);
 static Reflection::EnumPropDescriptor<Humanoid, Humanoid::HumanoidDisplayDistanceType> prop_DisplayDistanceType("DisplayDistanceType", category_Data, &Humanoid::getDisplayDistanceType, &Humanoid::setDisplayDistanceType);
@@ -718,7 +718,7 @@ shared_ptr<JointInstance> newJoint(bool animated)
 void Humanoid::setRigType(HumanoidRigType type)
 { 
 	try {
-		RBX::Security::Context::current().requirePermission(RBX::Security::RobloxScript, "setRigType");
+		RBX::Security::Context::current().requirePermission(RBX::Security::NAMEHEREScript, "setRigType");
 	} 
 	catch (RBX::base_exception& e) 
 	{

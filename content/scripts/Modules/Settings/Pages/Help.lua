@@ -12,27 +12,27 @@ local PC_TABLE_SPACING = 4
 
 -------------- SERVICES --------------
 local CoreGui = game:GetService("CoreGui")
-local RobloxGui = CoreGui:WaitForChild("RobloxGui")
+local NAMEHEREGui = CoreGui:WaitForChild("NAMEHEREGui")
 local UserInputService = game:GetService("UserInputService")
 local GuiService = game:GetService("GuiService")
 
 ----------- UTILITIES --------------
-local utility = require(RobloxGui.Modules.Settings.Utility)
+local utility = require(NAMEHEREGui.Modules.Settings.Utility)
 
 ------------ Variables -------------------
 local PageInstance = nil
-RobloxGui:WaitForChild("Modules"):WaitForChild("TenFootInterface")
-local isTenFootInterface = require(RobloxGui.Modules.TenFootInterface):IsEnabled()
+NAMEHEREGui:WaitForChild("Modules"):WaitForChild("TenFootInterface")
+local isTenFootInterface = require(NAMEHEREGui.Modules.TenFootInterface):IsEnabled()
 
 ----------- CLASS DECLARATION --------------
 
 local function Initialize()
-	local settingsPageFactory = require(RobloxGui.Modules.Settings.SettingsPageFactory)
+	local settingsPageFactory = require(NAMEHEREGui.Modules.Settings.SettingsPageFactory)
 	local this = settingsPageFactory:CreateNewPage()
 	this.HelpPages = {}
 
 	-- TODO: Change dev console script to parent this to somewhere other than an engine created gui
-	local ControlFrame = RobloxGui:WaitForChild('ControlFrame')
+	local ControlFrame = NAMEHEREGui:WaitForChild('ControlFrame')
 	local ToggleDevConsoleBindableFunc = ControlFrame:WaitForChild('ToggleDevConsole')
 	local lastInputType = nil
 
@@ -192,7 +192,7 @@ local function Initialize()
 		camFrame.Position = UDim2.new(0,0,charMoveFrame.Size.Y.Scale,charMoveFrame.Size.Y.Offset + rowOffset)
 		camFrame.Parent = parentFrame
 
-		local menuFrame = createPCGroup("Menu Items", {		[1] = {["ROBLOX Menu"] = "ESC"}, 
+		local menuFrame = createPCGroup("Menu Items", {		[1] = {["NAMEHERE Menu"] = "ESC"}, 
 														 	[2] = {["Backpack"] = "~"},
 															[3] = {["Playerlist"] = "TAB"},
 															[4] = {["Chat"] = "/"} })
@@ -253,7 +253,7 @@ local function Initialize()
 			createGamepadLabel("Move", UDim2.new(0,-80,0.31,-textVerticalSize/2), UDim2.new(0,46,0,textVerticalSize))
 			createGamepadLabel("Menu Navigation", UDim2.new(0,-50,0.46,-textVerticalSize/2), UDim2.new(0,164,0,textVerticalSize))
 			createGamepadLabel("Use Tool", UDim2.new(0.96,0,0,-textVerticalSize/2), UDim2.new(0,73,0,textVerticalSize))
-			createGamepadLabel("ROBLOX Menu", UDim2.new(0.96,0,0.15,-textVerticalSize/2), UDim2.new(0,122,0,textVerticalSize))
+			createGamepadLabel("NAMEHERE Menu", UDim2.new(0.96,0,0.15,-textVerticalSize/2), UDim2.new(0,122,0,textVerticalSize))
 			createGamepadLabel("Back", UDim2.new(0.96,0,0.31,-textVerticalSize/2), UDim2.new(0,43,0,textVerticalSize))
 			createGamepadLabel("Jump", UDim2.new(0.96,0,0.46,-textVerticalSize/2), UDim2.new(0,49,0,textVerticalSize))
 			createGamepadLabel("Rotate Camera", UDim2.new(1,0,0.62,-textVerticalSize/2), UDim2.new(0,132,0,textVerticalSize))
@@ -264,7 +264,7 @@ local function Initialize()
 			createGamepadLabel("Move", UDim2.new(-0.08,0,0.31,-textVerticalSize/2), UDim2.new(0,46,0,textVerticalSize))
 			createGamepadLabel("Menu Navigation", UDim2.new(-0.125,0,0.46,-textVerticalSize/2), UDim2.new(0,164,0,textVerticalSize))
 			createGamepadLabel("Use Tool", UDim2.new(0.96,0,0,-textVerticalSize/2), UDim2.new(0,73,0,textVerticalSize))
-			createGamepadLabel("ROBLOX Menu", UDim2.new(0.9,0,0.15,-textVerticalSize/2), UDim2.new(0,122,0,textVerticalSize))
+			createGamepadLabel("NAMEHERE Menu", UDim2.new(0.9,0,0.15,-textVerticalSize/2), UDim2.new(0,122,0,textVerticalSize))
 			createGamepadLabel("Back", UDim2.new(1.01,0,0.31,-textVerticalSize/2), UDim2.new(0,43,0,textVerticalSize))
 			createGamepadLabel("Jump", UDim2.new(0.91,0,0.46,-textVerticalSize/2), UDim2.new(0,49,0,textVerticalSize))
 			createGamepadLabel("Rotate Camera", UDim2.new(0.91,0,0.62,-textVerticalSize/2), UDim2.new(0,132,0,textVerticalSize))

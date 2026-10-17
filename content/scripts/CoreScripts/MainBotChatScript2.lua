@@ -67,8 +67,8 @@ local characterWanderedOffSize = 350
 local conversationTimedOut =        "Chat ended because you didn't reply"
 local conversationTimedOutSize = 350
 
-local RobloxReplicatedStorage = game:GetService('RobloxReplicatedStorage')
-local setDialogInUseEvent = RobloxReplicatedStorage:WaitForChild("SetDialogInUse")
+local NAMEHEREReplicatedStorage = game:GetService('NAMEHEREReplicatedStorage')
+local setDialogInUseEvent = NAMEHEREReplicatedStorage:WaitForChild("SetDialogInUse")
 
 local player
 local screenGui
@@ -82,11 +82,11 @@ local touchControlGui = nil
 
 local gui = nil
 waitForChild(game,"CoreGui")
-waitForChild(game:GetService("CoreGui"),"RobloxGui")
+waitForChild(game:GetService("CoreGui"),"NAMEHEREGui")
 
-game:GetService("CoreGui").RobloxGui:WaitForChild("Modules"):WaitForChild("TenFootInterface")
-local isTenFootInterface = require(game:GetService("CoreGui").RobloxGui.Modules.TenFootInterface):IsEnabled()
-local utility = require(game:GetService("CoreGui").RobloxGui.Modules.Settings.Utility)
+game:GetService("CoreGui").NAMEHEREGui:WaitForChild("Modules"):WaitForChild("TenFootInterface")
+local isTenFootInterface = require(game:GetService("CoreGui").NAMEHEREGui.Modules.TenFootInterface):IsEnabled()
+local utility = require(game:GetService("CoreGui").NAMEHEREGui.Modules.Settings.Utility)
 local isSmallTouchScreen = utility:IsSmallTouchScreen()
 
 if isTenFootInterface then
@@ -99,10 +99,10 @@ elseif isSmallTouchScreen then
 	FRAME_WIDTH = 250
 end
 
-if game:GetService("CoreGui").RobloxGui:FindFirstChild("ControlFrame") then
-	gui = game:GetService("CoreGui").RobloxGui.ControlFrame
+if game:GetService("CoreGui").NAMEHEREGui:FindFirstChild("ControlFrame") then
+	gui = game:GetService("CoreGui").NAMEHEREGui.ControlFrame
 else
-	gui = game:GetService("CoreGui").RobloxGui
+	gui = game:GetService("CoreGui").NAMEHEREGui
 end
 local touchEnabled = game:GetService("UserInputService").TouchEnabled
 
@@ -124,7 +124,7 @@ function createChatNotificationGui()
 	chatNotificationGui.SizeOffset = Vector2.new(0,0)
 	chatNotificationGui.StudsOffset = Vector3.new(0, 3.7, 0)
 	chatNotificationGui.Enabled = true
-	chatNotificationGui.RobloxLocked = true
+	chatNotificationGui.NAMEHERELocked = true
 	chatNotificationGui.Active = true
 
 	local button = Instance.new("ImageButton")
@@ -134,7 +134,7 @@ function createChatNotificationGui()
 	button.Position = UDim2.new(0, 0, 0, 0)
 	button.Size = UDim2.new(1, 0, 1, 0)
 	button.Image = ""
-	button.RobloxLocked = true
+	button.NAMEHERELocked = true
 	button.Parent = chatNotificationGui
 
 	local icon = Instance.new("ImageLabel")
@@ -143,7 +143,7 @@ function createChatNotificationGui()
 	icon.Size = UDim2.new(1, 0, 1, 0)
 	icon.Image = ""
 	icon.BackgroundTransparency = 1
-	icon.RobloxLocked = true
+	icon.NAMEHERELocked = true
 	icon.Parent = button
 	
 	local activationButton = Instance.new("ImageLabel")
@@ -153,7 +153,7 @@ function createChatNotificationGui()
 	activationButton.Image = "rbxasset://textures/ui/Settings/Help/XButtonDark.png"
 	activationButton.BackgroundTransparency = 1
 	activationButton.Visible = false
-	activationButton.RobloxLocked = true
+	activationButton.NAMEHERELocked = true
 	activationButton.Parent = button
 end
 
@@ -216,7 +216,7 @@ function createMessageDialog()
 	text.FontSize = Enum.FontSize.Size14
 	text.BackgroundTransparency = 1
 	text.TextColor3 = Color3.new(1,1,1)
-	text.RobloxLocked = true
+	text.NAMEHERELocked = true
 	text.Parent = messageDialog
 end
 
@@ -341,7 +341,7 @@ function newChoice()
 	frame.MouseLeave:connect(function() frame.BackgroundTransparency = 1 end)
 	frame.SelectionImageObject = dummyFrame
 	frame.MouseButton1Click:connect(function() selectChoice(frame) end)
-	frame.RobloxLocked = true
+	frame.NAMEHERELocked = true
 
 	local prompt = Instance.new("TextLabel")
 	prompt.Name = "UserPrompt"
@@ -353,7 +353,7 @@ function newChoice()
 	prompt.TextXAlignment = Enum.TextXAlignment.Left
 	prompt.TextYAlignment = Enum.TextYAlignment.Center
 	prompt.TextWrap = true
-	prompt.RobloxLocked = true
+	prompt.NAMEHERELocked = true
 	prompt.Parent = frame
 
 	local selectionButton = Instance.new("ImageLabel")
@@ -363,7 +363,7 @@ function newChoice()
 	selectionButton.Image = "rbxasset://textures/ui/Settings/Help/AButtonLightSmall.png"
 	selectionButton.BackgroundTransparency = 1
 	selectionButton.Visible = false
-	selectionButton.RobloxLocked = true
+	selectionButton.NAMEHERELocked = true
 	selectionButton.Parent = frame
 	
 	return frame
@@ -385,14 +385,14 @@ function initialize(parent)
 	mainFrame.Visible = false
 
 	for n, obj in pairs(choices) do
-      obj.RobloxLocked = true
+      obj.NAMEHERELocked = true
 		obj.Parent = mainFrame
 	end
 	
-	lastChoice.RobloxLocked = true
+	lastChoice.NAMEHERELocked = true
 	lastChoice.Parent = mainFrame
 
-	mainFrame.RobloxLocked = true
+	mainFrame.NAMEHERELocked = true
 	mainFrame.Parent = parent
 end
 
@@ -570,7 +570,7 @@ function addDialog(dialog)
 			local chatGui = chatNotificationGui:clone()
 			chatGui.Enabled = not dialog.InUse
 			chatGui.Adornee = dialog.Parent
-			chatGui.RobloxLocked = true
+			chatGui.NAMEHERELocked = true
 
 			chatGui.Parent = game:GetService("CoreGui")
 			
@@ -631,7 +631,7 @@ function onLoad()
 
   --print("Creating MessageDialog")
   createMessageDialog()
-  messageDialog.RobloxLocked = true
+  messageDialog.NAMEHERELocked = true
   messageDialog.Parent = gui
 
   if not filterEnabledFixActive then
@@ -647,7 +647,7 @@ function onLoad()
   frame.Position = UDim2.new(0,0,0,0)
   frame.Size = UDim2.new(0,0,0,0)
   frame.BackgroundTransparency = 1
-  frame.RobloxLocked = true
+  frame.NAMEHERELocked = true
   game:GetService("GuiService"):AddSelectionParent("RBXDialogGroup", frame)
 
   if (touchEnabled and not isSmallTouchScreen) then

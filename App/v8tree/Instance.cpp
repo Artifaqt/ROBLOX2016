@@ -1,4 +1,4 @@
-/* Copyright 2003-2005 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2005 NAMEHERE Corporation, All Rights Reserved */
 #include "stdafx.h"
 
 #include "V8Tree/Instance.h"
@@ -46,13 +46,13 @@ static Reflection::BoundFuncDesc<Instance, bool(shared_ptr<Instance>)> func_isAn
 static Reflection::BoundFuncDesc<Instance, std::string(int)> func_GetReadableId(&Instance::getReadableDebugId, "GetDebugId", "scopeLength", 4, Security::Plugin);
 static Reflection::PropDescriptor<Instance, std::string> prop_className("ClassName", category_Data, &Instance::getClassNameStr, NULL, Reflection::PropertyDescriptor::UI);
 static Reflection::PropDescriptor<Instance, std::string> prop_classNameDeprecated("className", category_Data, &Instance::getClassNameStr, NULL, Reflection::PropertyDescriptor::Attributes::deprecated(prop_className));
-static Reflection::PropDescriptor<Instance, int> prop_dataCost("DataCost", category_Data, &Instance::getPersistentDataCost, NULL, Reflection::PropertyDescriptor::UI, Security::RobloxPlace);
+static Reflection::PropDescriptor<Instance, int> prop_dataCost("DataCost", category_Data, &Instance::getPersistentDataCost, NULL, Reflection::PropertyDescriptor::UI, Security::NAMEHEREPlace);
 
 static Reflection::BoundYieldFuncDesc<Instance, shared_ptr<Instance>(std::string)> func_WaitForChild(&Instance::waitForChild, "WaitForChild", "childName", Security::None);
 
 const Reflection::PropDescriptor<Instance, std::string> Instance::desc_Name("Name", category_Data, &Instance::getName, &Instance::setName);
 const Reflection::RefPropDescriptor<Instance, Instance> Instance::propParent("Parent", category_Data, &Instance::getParentDangerous, &Instance::setParent, Reflection::PropertyDescriptor::UI);
-const Reflection::PropDescriptor<Instance, bool> Instance::propRobloxLocked("RobloxLocked", category_Data, &Instance::getRobloxLocked, &Instance::setRobloxLocked, Reflection::PropertyDescriptor::SCRIPTING, Security::Plugin);
+const Reflection::PropDescriptor<Instance, bool> Instance::propNAMEHERELocked("NAMEHERELocked", category_Data, &Instance::getNAMEHERELocked, &Instance::setNAMEHERELocked, Reflection::PropertyDescriptor::SCRIPTING, Security::Plugin);
 
 Reflection::EventDesc<
 	Instance, 
@@ -846,7 +846,7 @@ Instance::Instance()
 	,name("Instance")
 	,archivable(true)
 	,isParentLocked(false)
-	,robloxLocked(false)
+	,namehereLocked(false)
 	,isSettingParent(false)
 {
 }
@@ -856,7 +856,7 @@ Instance::Instance(const char* name)
 	,name(name)
 	,archivable(true)
 	,isParentLocked(false)
-	,robloxLocked(false)
+	,namehereLocked(false)
 	,isSettingParent(false)
 {
 }
@@ -923,13 +923,13 @@ void Instance::setName(const std::string& value)
 	}
 }
 
-void Instance::setRobloxLocked(bool value)
+void Instance::setNAMEHERELocked(bool value)
 {
-	if(robloxLocked != value){
-		robloxLocked = value;
-		raisePropertyChanged(propRobloxLocked);
+	if(namehereLocked != value){
+		namehereLocked = value;
+		raisePropertyChanged(propNAMEHERELocked);
 	}
-    void (Instance::* thisFunction)(bool) = &Instance::setRobloxLocked;
+    void (Instance::* thisFunction)(bool) = &Instance::setNAMEHERELocked;
     checkRbxCaller<kCallCheckCodeOnly, callCheckSetApiFlag<kRbxLockedApiOffset> >(
         reinterpret_cast<void*>((void*&)(thisFunction)));
 }

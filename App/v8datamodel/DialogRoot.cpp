@@ -29,7 +29,7 @@ static Reflection::EnumPropDescriptor<DialogRoot, DialogRoot::DialogPurpose> pro
 static Reflection::EnumPropDescriptor<DialogRoot, DialogRoot::DialogTone> prop_DialogTone("Tone", category_Data, &DialogRoot::getDialogTone, &DialogRoot::setDialogTone);
 static Reflection::PropDescriptor<DialogRoot, float> prop_ConversationDistance("ConversationDistance", category_Data,  &DialogRoot::getConversationDistance, &DialogRoot::setConversationDistance);
 static Reflection::PropDescriptor<DialogRoot, bool> prop_InUse("InUse", category_Data,  &DialogRoot::getInUse, &DialogRoot::setInUse, Reflection::PropertyDescriptor::SCRIPTING);
-static Reflection::BoundFuncDesc<DialogRoot, void(shared_ptr<Instance>, shared_ptr<Instance>)>  func_signalDialogChoice(&DialogRoot::signalDialogChoice, "SignalDialogChoiceSelected", "player", "dialogChoice", Security::RobloxScript);
+static Reflection::BoundFuncDesc<DialogRoot, void(shared_ptr<Instance>, shared_ptr<Instance>)>  func_signalDialogChoice(&DialogRoot::signalDialogChoice, "SignalDialogChoiceSelected", "player", "dialogChoice", Security::NAMEHEREScript);
 
 static Reflection::RemoteEventDesc<DialogRoot, void(shared_ptr<Instance>, shared_ptr<Instance>)> event_DialogChoiceSelected(&DialogRoot::dialogChoiceSelected, "DialogChoiceSelected", "player", "dialogChoice", Security::None, Reflection::RemoteEventCommon::SCRIPTING, Reflection::RemoteEventCommon::BROADCAST);
 REFLECTION_END();

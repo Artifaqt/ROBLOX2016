@@ -1,4 +1,4 @@
-/* Copyright 2003-2007 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2007 NAMEHERE Corporation, All Rights Reserved */
 #include "stdafx.h"
 
 #include "V8DataModel/Tool.h"
@@ -1129,7 +1129,7 @@ void Tool::setToolTip(std::string value)
 	if(value.size() > ContentFilter::MAX_CONTENT_FILTER_SIZE)																										
 		value = value.substr(0, ContentFilter::MAX_CONTENT_FILTER_SIZE);																									
 																																									
-	if(!ProfanityFilter::ContainsProfanity(value) || getRobloxLocked())
+	if(!ProfanityFilter::ContainsProfanity(value) || getNAMEHERELocked())
 	{																									
 		if(toolTip != value)
 		{																																

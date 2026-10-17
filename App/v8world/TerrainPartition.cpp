@@ -1,4 +1,4 @@
-/* Copyright 2003-2011 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2011 NAMEHERE Corporation, All Rights Reserved */
 #include "stdafx.h"
 
 #include "V8World/TerrainPartition.h"

@@ -1,4 +1,4 @@
-/* Copyright 2003-2005 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2005 NAMEHERE Corporation, All Rights Reserved */
 #include "stdafx.h"
 
 #include "V8World/Assembly.h"
@@ -221,7 +221,7 @@ void Assembly::setPhysics(const G3D::Array<CompactCFrame>& motorAngles, const PV
 			if(MotorJoint::isMotorJoint(assemblyMotors[i]))
 			{
 				MotorJoint* m1d = rbx_static_cast<MotorJoint*>(assemblyMotors[i]);
-				// TODO: Put this assertion back in and debug http://roblox.onjira.com/browse/CLIENT-250
+				// TODO: Put this assertion back in and debug http://namehere.onjira.com/browse/CLIENT-250
 				//RBXASSERT(G3D::fuzzyEq(fabs(motorAngles[i].getAxis().z), 1.0f));
 
 				RBXASSERT(motorAngles[i].translation.isZero());

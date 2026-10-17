@@ -16,7 +16,7 @@ namespace RBX
 			sfInexactCFrame = 1 << 2
 		};
 		
-		static const char kMagicHeader[] = "<roblox!";
+		static const char kMagicHeader[] = "<namehere!";
 		
 		void serialize(std::ostream& out, const Instance* root, unsigned int flags = 0, const Instance::SaveFilter saveFilter = Instance::SAVE_ALL);
 		void serialize(std::ostream& out, const Instances& instances, unsigned int flags = 0);

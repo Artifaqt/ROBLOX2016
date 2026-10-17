@@ -4,7 +4,7 @@
 			// Global error codes
 ]]
 local CoreGui = Game:GetService("CoreGui")
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 
 local Strings = require(Modules:FindFirstChild('LocalizedStrings'))
@@ -41,7 +41,7 @@ local Errors =
 	{
 		CannotJoinGame = { Title = "An Error Occured", Msg = "Cannot join games from studio.", Code = 401 };
 		StillInDev = { Title = "An Error Occured", Msg = "This feature is still in development.", Code = 402 };
-		FeatureNotAvailableInStudio = { Title =  "An Error Occured", Msg = "This feature is not available in Roblox Studio.", Code = 403 };
+		FeatureNotAvailableInStudio = { Title =  "An Error Occured", Msg = "This feature is not available in NAMEHERE Studio.", Code = 403 };
 	};
 
 	PackageEquip =
@@ -78,8 +78,8 @@ local Errors =
 		[7] = { Title = Strings:LocalizedString("ErrorOccurredTitle"), Msg = Strings:LocalizedString("LinkFlooded"), Code = 908 };
 		[8] = { Title = Strings:LocalizedString("ErrorOccurredTitle"), Msg = Strings:LocalizedString("LinkLeaseLocked"), Code = 909 };
 		[9] = { Title = Strings:LocalizedString("ErrorOccurredTitle"), Msg = Strings:LocalizedString("LinkAccountLinkingDisabled"), Code = 910 };
-		[10] = { Title = Strings:LocalizedString("ErrorOccurredTitle"), Msg = Strings:LocalizedString("LinkInvalidRobloxUser"), Code = 911 };
-		[11] = { Title = Strings:LocalizedString("ErrorOccurredTitle"), Msg = Strings:LocalizedString("LinkRobloxUserAlreadyLinked"), Code = 912 };
+		[10] = { Title = Strings:LocalizedString("ErrorOccurredTitle"), Msg = Strings:LocalizedString("LinkInvalidNAMEHEREUser"), Code = 911 };
+		[11] = { Title = Strings:LocalizedString("ErrorOccurredTitle"), Msg = Strings:LocalizedString("LinkNAMEHEREUserAlreadyLinked"), Code = 912 };
 		[12] = { Title = Strings:LocalizedString("ErrorOccurredTitle"), Msg = Strings:LocalizedString("LinkXboxUserAlreadyLinked"), Code = 913 };
 		[13] = { Title = Strings:LocalizedString("ErrorOccurredTitle"), Msg = Strings:LocalizedString("LinkIllegalChildAccountLinking"), Code = 914 };
 		[14] = { Title = Strings:LocalizedString("ErrorOccurredTitle"), Msg = Strings:LocalizedString("LinkInvalidPassword"), Code = 915 };

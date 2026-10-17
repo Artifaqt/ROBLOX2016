@@ -1,9 +1,9 @@
 /* 
   Localizable.strings
-  RobloxMobile
+  NAMEHEREMobile
 
   Created by Ben Tkacheff on 11/7/12.
-  Copyright (c) 2012 ROBLOX. All rights reserved.
+  Copyright (c) 2012 NAMEHERE. All rights reserved.
 */
 
 // Loading screen messages
@@ -55,7 +55,7 @@
 "EntryIncorrectBody" = "One or more of the fields are incorrect or empty.";
 "VerifyWord" = "Confirm Password";
 "VerifyRequirements" = "Retype Password";
-"SignupFinePrint" = "By tapping 'Sign up' above, you are agreeing to our <a href='http://www.roblox.com/info/terms-of-service'>Terms of Service</a>, <a href='http://www.roblox.com/info/EULA.htm'>Licensing Agreement</a>, and <a href='http://www.roblox.com/Info/Privacy.aspx?layout=null'>Privacy Policy</a>.";
+"SignupFinePrint" = "By tapping 'Sign up' above, you are agreeing to our <a href='http://www.namehere.com/info/terms-of-service'>Terms of Service</a>, <a href='http://www.namehere.com/info/EULA.htm'>Licensing Agreement</a>, and <a href='http://www.namehere.com/Info/Privacy.aspx?layout=null'>Privacy Policy</a>.";
 "ErrorCannotLoginAfterSignup" = "Your account has been successfully created but an unexpected error has occurred, please log in with your new username and password to continue.";
 "DoneWord" = "Done";
 "NextWord" = "Next";
@@ -105,9 +105,9 @@
 "NoWord" = "No";
 
 // Social Sign Up strings
-"SelectUserNameWord" = "Choose a ROBLOX username.";
+"SelectUserNameWord" = "Choose a NAMEHERE username.";
 "SelectUserNameDescriptionPhrase" = "This will be how your name appears in games and how people can find you.";
-"AlreadyHaveARobloxAccountPhrase" = "If you already have an existing ROBLOX account,  hit 'Cancel' and log in with your normal account. Then link your account in the Settings.";
+"AlreadyHaveANAMEHEREAccountPhrase" = "If you already have an existing NAMEHERE account,  hit 'Cancel' and log in with your normal account. Then link your account in the Settings.";
 "YouAreAlmostDonePhrase" = "You are almost done!";
 "SocialWord" = "Social";
 "SignInSocialWord" = "Sign In With Facebook";
@@ -146,7 +146,7 @@
 "SocialConnectErrorCouldNotParseError" = "Your account could not be added. It may be connected to another account.";
 "SocialConnectErrorNoUser" = "An unexpected error occurred while connecting your account. Your information could not be found. Please try again.";
 "SocialConnectErrorUnexpectedError" = "An unexpected error occurred while attempting to connect this social account. Please try again later.";
-"SocialDisconnectErrorGigya" = "An error occurred attempting to disconnect from your ROBLOX account. Please refresh your information and try again.";
+"SocialDisconnectErrorGigya" = "An error occurred attempting to disconnect from your NAMEHERE account. Please refresh your information and try again.";
 "SocialDisconnectErrorUnsupportedProvider" = "An error occurred. It appears that this social network is not supported.";
 "SocialDisconnectErrorForbiddenWithoutPW" = "Your account does not have a password. You cannot disconnect your social account without first adding a password to your account.";
 "SocialDisconnectErrorServiceUnavailable" = "This feature is temporarily unavailable. Please try again later.";
@@ -179,7 +179,7 @@
 "MessagesWord" = "Messages";
 "CommunityWord" = "Community";
 "YouAreCurrentlyLoggedInAs" = "You are currently signed in as a guest";
-"WelcomeToRoblox" = "Welcome to ROBLOX!";
+"WelcomeToNAMEHERE" = "Welcome to NAMEHERE!";
 "SignupButton" = "Sign up";
 "LoginButton" = "Login";
 "YouMustLogin" = "Create an account or sign in to access this feature";
@@ -201,7 +201,7 @@
 // AboutController string
 "AboutWord" = "About";
 "CloseWord" = "Close";
-"LegalText" = "ROBLOX, 'Online Building Toy', characters, logos, names, and all related indicia are trademarks of ROBLOX Corporation ©2013. US Patents 7,874,921. Patents pending. Contact us at info@roblox.com";
+"LegalText" = "NAMEHERE, 'Online Building Toy', characters, logos, names, and all related indicia are trademarks of NAMEHERE Corporation ©2013. US Patents 7,874,921. Patents pending. Contact us at info@namehere.com";
 "TermsOfService" = "Terms of Service";
 "LicensingAgreement" = "Licensing Agreement";
 "PrivacyPolicy" = "Privacy Policy";
@@ -220,7 +220,7 @@
 // Game Launch Error strings
 "GeneralGameStartError" = "There was an error starting this game.";
 "MemoryError" = "We're sorry, this place uses too many parts for your device";
-"ConnectionError" = "ROBLOX requires Internet connection";
+"ConnectionError" = "NAMEHERE requires Internet connection";
 "ConnectionErrorGameEnded" = "Cannot join this game because it has ended";
 "ConnectionErrorGameFull" = "Cannot join this game because it is full";
 "ConnectionErrorGameDisabled" = "Cannot join this game because it is disabled";
@@ -231,14 +231,14 @@
 "InvalidUsernameOrPw" = "Invalid username or password";
 "TooManyAttempts" = "Too many attempts - please try after 5 minutes";
 "NeedsExternalLogin" = "Your user account has issues, please try logging in using Safari or any other browser";
-"UnsupportedDevicePlayError" = "ROBLOX Mobile currently supports Games on iPhone 4+, iPad 2+, and iPod touch 5th gen.";
-"BannedMessage" = "You are banned from using ROBLOX \nfrom %@ \nto %@. \nReason: %@ \nPlease try logging in using Safari.";
-"BannedForeverMessage" = "You are banned permanently from using ROBLOX \nfrom %@. \nReason: %@.";
+"UnsupportedDevicePlayError" = "NAMEHERE Mobile currently supports Games on iPhone 4+, iPad 2+, and iPod touch 5th gen.";
+"BannedMessage" = "You are banned from using NAMEHERE \nfrom %@ \nto %@. \nReason: %@ \nPlease try logging in using Safari.";
+"BannedForeverMessage" = "You are banned permanently from using NAMEHERE \nfrom %@. \nReason: %@.";
 
 // Button words
 "CancelWord" = "Cancel";
 "LogoutWord" = "Logout";
-"RobloxWord" = "ROBLOX";
+"NAMEHEREWord" = "NAMEHERE";
 "OkWord" = "Ok";
 "OkayWord" = "Okay";
 
@@ -247,12 +247,12 @@
 "WarnTooManyParts" = "This place has %d parts (%d is recommended)";
 
 // Purchasing strings
-"CannotMakePurchase" = "We are sorry, you cannot make purchases at this time. If this problem persists contact info@roblox.com";
-"HavePendingTransactionError" = "You already have pending transactions, please try again after some time. You may need to restart your device. If this problem persists contact info@roblox.com";
+"CannotMakePurchase" = "We are sorry, you cannot make purchases at this time. If this problem persists contact info@namehere.com";
+"HavePendingTransactionError" = "You already have pending transactions, please try again after some time. You may need to restart your device. If this problem persists contact info@namehere.com";
 "TransactionFailedTitle" = "Purchase failed";
-"TransactionFailedBody" = "Purchase failed, please contact info@roblox.com with your Apple receipt";
-"UserNeedsToSignIn" = "ROBLOX User %@ needs to login to complete the pending transaction before you can buy. You may need to restart your device. If this problem persists contact info@roblox.com";
-"AnyUserNeedsToSignIn" = "Please login to complete the pending transaction. If this problem persists contact info@roblox.com";
+"TransactionFailedBody" = "Purchase failed, please contact info@namehere.com with your Apple receipt";
+"UserNeedsToSignIn" = "NAMEHERE User %@ needs to login to complete the pending transaction before you can buy. You may need to restart your device. If this problem persists contact info@namehere.com";
+"AnyUserNeedsToSignIn" = "Please login to complete the pending transaction. If this problem persists contact info@namehere.com";
 "AppPurchasingDisabledTitle" = "In-App Purchasing disabled";
 "CannotPurchaseBecauseParentalControl" = "You are not able to make purchases.  Check your parental control settings and try again later.";
 "SessionExpired" = "Session Expired, Please logout and log back in to do the purchase";
@@ -271,9 +271,9 @@
 "PurchasingLimit" = "Sorry, your transaction cannot be completed at this time, as you have reached a transaction limit.";
 
 // App Rating Strings
-"RatingString" = "If you enjoy using ROBLOX, would you please rate it? It wont take more than a minute. If you are having issues or problems, please email support at support@roblox.com.";
-"RatingTitle" = "Rate ROBLOX";
-"RatingYesButton" = "Rate ROBLOX";
+"RatingString" = "If you enjoy using NAMEHERE, would you please rate it? It wont take more than a minute. If you are having issues or problems, please email support at support@namehere.com.";
+"RatingTitle" = "Rate NAMEHERE";
+"RatingYesButton" = "Rate NAMEHERE";
 "RatingNoThanksButton" = "No, Thanks";
 "RatingRemindMeLaterButton" = "Remind me later";
 
@@ -281,25 +281,25 @@
 "BuildWord" = "Build";
 
 // Cookies
-"CookiesClearedMessage" = "ROBLOX Cookies are cleared";
+"CookiesClearedMessage" = "NAMEHERE Cookies are cleared";
 "ClearCookiesWord" = "Clear Cookies";
 
-// Roblox Developer
-"RobloxDevSuccessfulPair" = "Successfuly Paired with %@";
-"RobloxDevPairFailure" = "Did not pair with Studio, did you put in the right code?";
-"RobloxDevPairFailureTimeout" = "Could not find ROBLOX Studio. Please make sure you are on the same network as ROBLOX studio.";
+// NAMEHERE Developer
+"NAMEHEREDevSuccessfulPair" = "Successfuly Paired with %@";
+"NAMEHEREDevPairFailure" = "Did not pair with Studio, did you put in the right code?";
+"NAMEHEREDevPairFailureTimeout" = "Could not find NAMEHERE Studio. Please make sure you are on the same network as NAMEHERE studio.";
 "EnterHerePhrase" = "4-digit number";
 "PairWord" = "Pair";
-"RbxDevPairingInstructions" = "Enter ROBLOX Dev Code\n from ROBLOX Studio to connect";
-"RbxDevWaiting" = "Waiting for ROBLOX Studio Connection. From ROBLOX Studio go to the \"Test\" tab, then click \"Start\" with the Server checkbox enabled.";
-"RbxDevConnectionCreated" = "ROBLOX Studio connection created, waiting for setup...";
-"RbxDevStudioFound" = "ROBLOX Studio found, creating connection...";
+"RbxDevPairingInstructions" = "Enter NAMEHERE Dev Code\n from NAMEHERE Studio to connect";
+"RbxDevWaiting" = "Waiting for NAMEHERE Studio Connection. From NAMEHERE Studio go to the \"Test\" tab, then click \"Start\" with the Server checkbox enabled.";
+"RbxDevConnectionCreated" = "NAMEHERE Studio connection created, waiting for setup...";
+"RbxDevStudioFound" = "NAMEHERE Studio found, creating connection...";
 "RbxDevFinalizing" = "Finalizing some things...";
-"RbxDevPressConnect" = "Please press the connect button when you have a server running in ROBLOX Studio.";
+"RbxDevPressConnect" = "Please press the connect button when you have a server running in NAMEHERE Studio.";
 "PairHelpStep1TitleString" = "Step 1";
 "PairHelpStep2TitleString" = "Step 2";
 "PairHelpStep3TitleString" = "Step 3";
-"PairHelpStep1String" = "Click on the 'Pair Test Device' icon under the 'Test' Menu in ROBLOX Studio. Make sure your device and the computer are on the same local network.";
+"PairHelpStep1String" = "Click on the 'Pair Test Device' icon under the 'Test' Menu in NAMEHERE Studio. Make sure your device and the computer are on the same local network.";
 "PairHelpStep2String" = "Enter the 4 digit code into the Developer App on your device. You will get a message in Studio and on your device when paired succesfully.";
 "PairHelpStep3String" = "Start a server in Studio and join it using your test device.";
 
@@ -411,7 +411,7 @@
 "ChangeEmailExample" = "email@example.com";
 "ChangeEmailVerb" = "Attempting to change email account.";
 "PasswordCurrentWord" = "Current Password";
-"PasswordCurrentPhrase" = "Type your current ROBLOX password";
+"PasswordCurrentPhrase" = "Type your current NAMEHERE password";
 "PasswordNewWord" = "New Password";
 "PasswordConfirmWord" = "Confirm Password";
 "PasswordConfirmPhrase" = "Retype your new password";
@@ -433,9 +433,9 @@
 "LogOutBody" = "Are you sure you want to log out?";
 
 // About Info
-"InfoWord" = "About ROBLOX";
-"InfoDisclaimerPhrase" = "ROBLOX, \"Online Building Toy\", characters, logos, names, and all related indicia are trademarks of ROBLOX Corporation, ©2015. Patents pending. ROBLOX is not sponsored, authorized or endorsed by any producer of plastic building bricks, including The LEGO Group, MEGA Brands, and K'Nex, and no resemblance to the products of these companies is intended. Use of this site signifies your acceptance of the Terms and Conditions.";
-"HomeFinePrintWords" =  "<a href='http://www.roblox.com/info/terms-of-service'>Terms of Service</a>, <a href='http://www.roblox.com/info/EULA.htm'>Licensing Agreement</a>, <a href='http://www.roblox.com/Info/Privacy.aspx?layout=null'>Privacy Policy</a>";
+"InfoWord" = "About NAMEHERE";
+"InfoDisclaimerPhrase" = "NAMEHERE, \"Online Building Toy\", characters, logos, names, and all related indicia are trademarks of NAMEHERE Corporation, ©2015. Patents pending. NAMEHERE is not sponsored, authorized or endorsed by any producer of plastic building bricks, including The LEGO Group, MEGA Brands, and K'Nex, and no resemblance to the products of these companies is intended. Use of this site signifies your acceptance of the Terms and Conditions.";
+"HomeFinePrintWords" =  "<a href='http://www.namehere.com/info/terms-of-service'>Terms of Service</a>, <a href='http://www.namehere.com/info/EULA.htm'>Licensing Agreement</a>, <a href='http://www.namehere.com/Info/Privacy.aspx?layout=null'>Privacy Policy</a>";
 
 
 // Searching

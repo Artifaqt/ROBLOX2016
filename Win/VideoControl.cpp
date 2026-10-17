@@ -1,6 +1,6 @@
 /**
  * VideoControl.cpp
- * Copyright (c) 2013 ROBLOX Corp. All Rights Reserved.
+ * Copyright (c) 2013 NAMEHERE Corp. All Rights Reserved.
  */
 
 #include "stdafx.h"
@@ -11,7 +11,7 @@
 #include <d3d9.h>
 #include <d3dx9.h>
 
-// Roblox Headers
+// NAMEHERE Headers
 #include "v8datamodel/ContentProvider.h"
 #include "v8datamodel/GameSettings.h"
 #include "util/FileSystem.h"

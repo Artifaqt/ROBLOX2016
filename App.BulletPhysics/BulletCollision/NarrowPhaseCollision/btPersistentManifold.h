@@ -28,7 +28,7 @@ struct btCollisionResult;
 ///maximum contact breaking and merging threshold
 extern btScalar gContactBreakingThreshold;
 
-// ROBLOX HOOKS
+// NAMEHERE HOOKS
 extern btScalar gContactThresholdOrthogonalFactor;
 extern btScalar gContactThresholdOrthogonalActivateFactor;
 

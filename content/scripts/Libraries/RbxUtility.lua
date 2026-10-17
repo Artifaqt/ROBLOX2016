@@ -829,7 +829,7 @@ end
 ------------------------------------------------------------------------------------------------------------------------
 ------------------------------------------------------------------------------------------------------------------------
 --[[
-A "Create" function for easy creation of Roblox instances. The function accepts a string which is the classname of
+A "Create" function for easy creation of NAMEHERE instances. The function accepts a string which is the classname of
 the object to be created. The function then returns another function which either accepts accepts no arguments, in 
 which case it simply creates an object of the given type, or a table argument that may contain several types of data, 
 in which case it mutates the object in varying ways depending on the nature of the aggregate data. These are the
@@ -1073,7 +1073,7 @@ t.Help =
 			       "Arguments: None. "..
 			       "Returns: None. "..
 			       "Description: This call disconnects all handlers attacched to this function, note however, it "..
-			       "does NOT make waiting code continue, as is the behavior of normal Roblox events. This method "..
+			       "does NOT make waiting code continue, as is the behavior of normal NAMEHERE events. This method "..
 			       "can also be called on the connection object which is returned from Signal:connect to only "..
 			       "disconnect a single handler, as opposed to this method, which will disconnect all handlers."
 		end

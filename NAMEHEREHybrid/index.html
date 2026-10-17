@@ -1,0 +1,44 @@
+<html>
+<head>
+	<script src="NAMEHEREHybrid.js"></script>
+</head>
+<body>
+	<script>
+        function showShare()
+        {
+            NAMEHERE.Hybrid.Social.presentShareDialog(
+                "My nice namehere game",
+                "http://www.namehere.com/Tiny-Tanks-ALPHA-place?id=204990346",
+                "http://images.rbxcdn.com/f76c76889f4b167ca1f27edc27eb8146.png",
+                null
+            );
+        }
+
+		function playGame()
+		{
+			NAMEHERE.Hybrid.Game.startWithPlaceID("204990346", function() {
+				NAMEHERE.Hybrid.Dialogs.alert("Thanks for playing!");
+			});
+		}
+
+        function trySupports()
+        {
+        	NAMEHERE.Hybrid.Social.supports("presentShareDialog", function(result) {
+        		alert("Supports: " + result);
+        	});
+        }
+	</script>
+	<br/>
+	<br/>
+	<br/>
+	<input value="Show" type="button" onclick="showShare()">
+	<br/>
+	<br/>
+	<br/>
+	<input id="myButton" value="Play game" type="button" onclick="playGame()">
+	<br/>
+	<br/>
+	<br/>
+	<input id="myButton" value="Supports" type="button" onclick="trySupports()">
+</body>
+</html>

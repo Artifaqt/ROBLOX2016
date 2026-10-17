@@ -279,16 +279,16 @@ bool RibbonPagePrivate::setGroupsLayout(int width)
 
         totalWidth += currGroupWidth + 2;
 
-		// BEGIN ROBLOX CHANGES
+		// BEGIN NAMEHERE CHANGES
         //if (totalWidth > width)
         //    return false;
-		// END ROBLOX CHANGES
+		// END NAMEHERE CHANGES
     }
 
-	// BEGIN ROBLOX CHANGES
+	// BEGIN NAMEHERE CHANGES
 	if (totalWidth > width)
 		return false;
-	// END ROBLOX CHANGES
+	// END NAMEHERE CHANGES
 
     return true;
 }

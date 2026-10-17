@@ -5,15 +5,15 @@
       location = "group:../CoreScriptConverter2/CoreScriptConverter.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:../iOS/RobloxMobile.xcodeproj">
+      location = "group:../iOS/NAMEHEREMobile.xcodeproj">
    </FileRef>
    <FileRef
       location = "group:../MacClient.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:../RobloxStudio/RobloxStudio.xcodeproj">
+      location = "group:../NAMEHEREStudio/NAMEHEREStudio.xcodeproj">
    </FileRef>
    <FileRef
-      location = "group:../Installer/BootstrapperMac/Roblox/Roblox.xcodeproj">
+      location = "group:../Installer/BootstrapperMac/NAMEHERE/NAMEHERE.xcodeproj">
    </FileRef>
 </Workspace>

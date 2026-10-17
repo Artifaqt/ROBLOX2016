@@ -11,7 +11,7 @@
 #include "RakPeer.h"
 #include "RakNetTypes.h"
 
-//Roblox
+//NAMEHERE
 #include "FastLog.h"
 LOGGROUP(RakNetDisconnect)
 
@@ -954,12 +954,12 @@ void RakPeer::Shutdown( unsigned int blockDuration, unsigned char orderingChanne
 
 	endThreads = true;
 
-	// BEGIN ROBLOX CHANGES
+	// BEGIN NAMEHERE CHANGES
 #ifdef RBX_PLATFORM_IOS
     // Ignore SIGPIPE, causing operations on closed sockets to return error codes instead
 	signal(SIGPIPE, SIG_IGN);
 #endif
-	// END ROBLOX CHANGES
+	// END NAMEHERE CHANGES
 
 	// Get recvfrom to unblock
 	for (i=0; i < socketList.Size(); i++)
@@ -1051,12 +1051,12 @@ void RakPeer::Shutdown( unsigned int blockDuration, unsigned char orderingChanne
 
 	ResetSendReceipt();
     
-    // BEGIN ROBLOX CHANGES
+    // BEGIN NAMEHERE CHANGES
 #ifdef RBX_PLATFORM_IOS
     // If we set SIGPIPE to SIG_IGN above, reset to default behavior
 	signal(SIGPIPE, SIG_DFL);
 #endif
-	// END ROBLOX CHANGES
+	// END NAMEHERE CHANGES
 }
 
 // --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
@@ -1383,7 +1383,7 @@ Packet* RakPeer::Receive( void )
 			}
 		}
 
-		if (packet) // ROBLOX, enclose this loop in if statement, previous loop might already processed this packet
+		if (packet) // NAMEHERE, enclose this loop in if statement, previous loop might already processed this packet
 		{
 			for (i=0; i < pluginListNTS.Size(); i++)
 			{
@@ -1472,7 +1472,7 @@ void RakPeer::CloseConnection( const AddressOrGUID target, bool sendDisconnectio
 	// 12/14/09 Return ID_CONNECTION_LOST when calling CloseConnection with sendDisconnectionNotification==false, elsewise it is never returned
 	if (sendDisconnectionNotification==false && GetConnectionState(target)==IS_CONNECTED)
 	{
-		//Roblox
+		//NAMEHERE
 		FASTLOG(FLog::RakNetDisconnect, "RakNet: CloseConnection");
 
 		Packet *packet=AllocPacket(sizeof( char ), _FILE_AND_LINE_);
@@ -5341,21 +5341,21 @@ bool RakPeer::RunUpdateCycle( RakNet::TimeUS timeNS, RakNet::Time timeMS, BitStr
 
 	// remoteSystemList in network thread
 
-////// ROBLOX:
+////// NAMEHERE:
 	unsigned int count = 0;
 	bool newStartingIndexAssigned = false;
 	activeSystemListIndex = startingActiveSystemListIndex;
 
-	// ROBLOX:
+	// NAMEHERE:
 	while (count < activeSystemListSize)
 	{
-		// ROBLOX:
+		// NAMEHERE:
 		if ((activeSystemListIndex+1) >= activeSystemListSize)
 			activeSystemListIndex = -1;
 
 		count++;
 		activeSystemListIndex++;
-		// END ROBLOX
+		// END NAMEHERE
 
 		// I'm using systemAddress from remoteSystemList but am not locking it because this loop is called very frequently and it doesn't
 		// matter if we miss or do an extra update.  The reliability layers themselves never care which player they are associated with
@@ -5393,7 +5393,7 @@ bool RakPeer::RunUpdateCycle( RakNet::TimeUS timeNS, RakNet::Time timeMS, BitStr
 				}
 			}
 
-			// Roblox: bool bufferEmpty = 
+			// NAMEHERE: bool bufferEmpty = 
 			bool bufferEmpty = remoteSystem->reliabilityLayer.Update( remoteSystem->rakNetSocket->s, systemAddress, remoteSystem->MTUSize, timeNS, maxOutgoingBPS, pluginListNTS, &rnr, remoteSystem->rakNetSocket->remotePortRakNetWasStartedOn_PS3_PSP2, remoteSystem->rakNetSocket->extraSocketOptions, updateBitStream ); // systemAddress only used for the internet simulator test
 
 			// Check for failure conditions
@@ -5416,7 +5416,7 @@ bool RakPeer::RunUpdateCycle( RakNet::TimeUS timeNS, RakNet::Time timeMS, BitStr
 					|| remoteSystem->connectMode==RemoteSystemStruct::DISCONNECT_ASAP || remoteSystem->connectMode==RemoteSystemStruct::DISCONNECT_ON_NO_ACK)
 				{
 
-					// Roblox
+					// NAMEHERE
 					FASTLOG(FLog::RakNetDisconnect, "Raknet: connection lost");
 					FASTLOG3(FLog::RakNetDisconnect, "Raknet: connection lost: connectMode: %d, timeMS:%u, connectionTime %u", remoteSystem->connectMode, timeMS, remoteSystem->connectionTime);
 					FASTLOG2(FLog::RakNetDisconnect, "Raknet: connection lost: AckTimeout %d, IsOutgoingDataWaiting %d", remoteSystem->reliabilityLayer.AckTimeout(timeMS) ? 1 : 0, remoteSystem->reliabilityLayer.IsOutgoingDataWaiting() ? 1 : 0);
@@ -5451,7 +5451,7 @@ bool RakPeer::RunUpdateCycle( RakNet::TimeUS timeNS, RakNet::Time timeMS, BitStr
 				continue;
 			}
 
-			///// Roblox:
+			///// NAMEHERE:
 			if (!bufferEmpty && !newStartingIndexAssigned)
 			{
 				if (startingActiveSystemListIndex != activeSystemListIndex)
@@ -5460,7 +5460,7 @@ bool RakPeer::RunUpdateCycle( RakNet::TimeUS timeNS, RakNet::Time timeMS, BitStr
 					newStartingIndexAssigned = true;
 				}
 			}
-			//// End Roblox
+			//// End NAMEHERE
 
 			// Ping this guy if it is time to do so
 			if ( remoteSystem->connectMode==RemoteSystemStruct::CONNECTED && timeMS > remoteSystem->nextPingTime && ( occasionalPing || remoteSystem->lowestPing == (unsigned short)-1 ) )

@@ -18,7 +18,7 @@
         android:gravity="top"
         android:orientation="horizontal" >
 
-        <com.roblox.client.RbxKeyboard
+        <com.namehere.client.RbxKeyboard
             android:id="@+id/gl_edit_text"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -27,7 +27,7 @@
             android:layout_marginTop="36dp">
 
             <requestFocus />
-        </com.roblox.client.RbxKeyboard>
+        </com.namehere.client.RbxKeyboard>
     </LinearLayout>
 
 </FrameLayout>

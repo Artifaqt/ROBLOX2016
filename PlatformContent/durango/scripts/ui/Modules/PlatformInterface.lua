@@ -1,4 +1,4 @@
--- Written by Kip Turner, Copyright ROBLOX 2015
+-- Written by Kip Turner, Copyright NAMEHERE 2015
 
 -- Platform Interface
 

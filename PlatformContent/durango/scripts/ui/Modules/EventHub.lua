@@ -1,4 +1,4 @@
--- Written by Kyler Mulherin, Copyright ROBLOX 2015
+-- Written by Kyler Mulherin, Copyright NAMEHERE 2015
 local listeners = {}
 --listeners is a table that holds arrays of listener objects
 --Ex - listeners["login"] = { Listener , Listener, Listener }

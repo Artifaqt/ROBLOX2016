@@ -53,7 +53,7 @@ namespace HttpTools
 		{
 			if (site->ReplaceCdnTxt()) {
 				std::string host = site->InstallHost();
-				std::string prod ("setup.roblox.com");
+				std::string prod ("setup.namehere.com");
 				if (host.compare(prod) == 0) {
 					cdnHost = "setup.rbxcdn.com";
 					validCdnHost = true;
@@ -235,7 +235,7 @@ namespace HttpTools
 		const bool isSecure = u.GetScheme() == ATL_URL_SCHEME_HTTPS;
 
 		// Initialize the User Agent
-		WININETHINTERNET session = InternetOpen(L"Roblox/WinInet", PRE_CONFIG_INTERNET_ACCESS, NULL, NULL, 0);
+		WININETHINTERNET session = InternetOpen(L"NAMEHERE/WinInet", PRE_CONFIG_INTERNET_ACCESS, NULL, NULL, 0);
 		if (!session) 
 		{
 			throw std::runtime_error("httpGetString - InternetOpen ERROR");
@@ -308,7 +308,7 @@ namespace HttpTools
 		#endif
 
 		// Initialize the User Agent
-		CInternet session = InternetOpen(_T("Roblox/WinInet"), PRE_CONFIG_INTERNET_ACCESS, NULL, NULL, 0);
+		CInternet session = InternetOpen(_T("NAMEHERE/WinInet"), PRE_CONFIG_INTERNET_ACCESS, NULL, NULL, 0);
 		if (!session)
 			throw std::runtime_error(format_string("InternetOpen failed for %s http://%s%s, Error Code: %d", method, host.c_str(), path.c_str(), GetLastError()).c_str());
 

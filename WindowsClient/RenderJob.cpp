@@ -20,11 +20,11 @@ FASTFLAG(RenderLowLatencyLoop)
 
 namespace RBX {
 
-RenderJob::RenderJob(View* robloxView, 
+RenderJob::RenderJob(View* namehereView, 
 					 FunctionMarshaller* marshaller,
 					 boost::shared_ptr<DataModel> dataModel)
 	: BaseRenderJob(CRenderSettingsItem::singleton().getMinFrameRate(), CRenderSettingsItem::singleton().getMaxFrameRate(), dataModel)
-	, robloxView(robloxView)
+	, namehereView(namehereView)
 	, marshaller(marshaller)
 	, stopped(0)
 	, prepareBeginEvent(false)
@@ -104,7 +104,7 @@ static void scheduleRenderPerform(const weak_ptr<RenderJob>& selfWeak, ViewBase*
 
 TaskScheduler::StepResult RenderJob::stepDataModelJob(const Stats& stats)
 {
-	shared_ptr<DataModel> dm = robloxView->getDataModel();
+	shared_ptr<DataModel> dm = namehereView->getDataModel();
 	if (!dm || stopped)
 		return TaskScheduler::Done;
 
@@ -126,7 +126,7 @@ TaskScheduler::StepResult RenderJob::stepDataModelJob(const Stats& stats)
 
 	double timeJobStart = Time::nowFastSec();
 
-	ViewBase* view = robloxView->GetGfxView();
+	ViewBase* view = namehereView->GetGfxView();
 
 	if (FFlag::RenderLowLatencyLoop)
 	{
@@ -149,11 +149,11 @@ TaskScheduler::StepResult RenderJob::stepDataModelJob(const Stats& stats)
 	else
 	{
 		{
-			DataModel::scoped_write_request request(robloxView->getDataModel().get());
+			DataModel::scoped_write_request request(namehereView->getDataModel().get());
 
 			view->updateVR();
 
-			float secondsElapsed = robloxView->GetGfxView()->getFrameRateManager()->GetFrameTimeStats().getLatest() / 1000.f;
+			float secondsElapsed = namehereView->GetGfxView()->getFrameRateManager()->GetFrameTimeStats().getLatest() / 1000.f;
 
 			dm->renderStep(secondsElapsed);	
 
@@ -175,7 +175,7 @@ TaskScheduler::StepResult RenderJob::stepDataModelJob(const Stats& stats)
 std::string RenderJob::getMetric(const std::string& metric) const
 {
 	if (metric == "Graphics Mode") 
-		return RBX::Reflection::EnumDesc<CRenderSettings::GraphicsMode>::singleton().convertToString(robloxView->GetLatchedGraphicsMode());
+		return RBX::Reflection::EnumDesc<CRenderSettings::GraphicsMode>::singleton().convertToString(namehereView->GetLatchedGraphicsMode());
 
 	if  (metric == "Render") {
 		boost::format fmt("%.1f/s %d%%");
@@ -183,7 +183,7 @@ std::string RenderJob::getMetric(const std::string& metric) const
 		return fmt.str();
 	}
 
-	ViewBase* view = robloxView->GetGfxView();
+	ViewBase* view = namehereView->GetGfxView();
 	RBX::FrameRateManager* frm = view ? view->getFrameRateManager() : 0;
 	if(frm) {
 		if (metric == "FRM")						return (frm && frm->IsBlockCullingEnabled()) ? "On" : "Off";
@@ -199,7 +199,7 @@ std::string RenderJob::getMetric(const std::string& metric) const
 // Return information (via IMetric interface, probable asker was DataModel)
 double RenderJob::getMetricValue(const std::string& metric) const
 {
-	ViewBase* view = robloxView->GetGfxView();
+	ViewBase* view = namehereView->GetGfxView();
 
 	if (metric == "Render Duty")				return averageDutyCycle();
 	if (metric == "Render FPS")					return averageStepsPerSecond();

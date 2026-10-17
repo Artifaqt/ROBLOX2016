@@ -1,4 +1,4 @@
-/* Copyright 2003-2005 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2005 NAMEHERE Corporation, All Rights Reserved */
 #include "stdafx.h"
 
 #include "V8World/BulletShapeContact.h"
@@ -135,7 +135,7 @@ void BulletShapeContact::updateClosestFeatures()
 
 	deleteConnectors(polyConnectors);		// any remaining not matched
 		
-	// set bullet's manifold point references back to roblox kernel connectors
+	// set bullet's manifold point references back to namehere kernel connectors
 	for (size_t i = 0; i < newConnectors.size(); ++i)
 	{
 		btManifoldArray manifoldArray;

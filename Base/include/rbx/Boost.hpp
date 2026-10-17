@@ -1,11 +1,11 @@
-/* Copyright 2003-2005 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2005 NAMEHERE Corporation, All Rights Reserved */
 
 #pragma once
 
 #include <algorithm>	// defines std::min and std::max before Windows.h takes over
 
 #include "boost/config/user.hpp"
-#ifndef ROBLOX_BOOST_CONFIGS
+#ifndef NAMEHERE_BOOST_CONFIGS
 #error	// Please re-get the full boost directory
 #endif
 #include "boost/shared_ptr.hpp"

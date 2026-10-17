@@ -190,7 +190,7 @@ LUA_API void  (lua_getfield) (lua_State *L, int idx, const char *k);
 LUA_API void  (lua_rawget) (lua_State *L, int idx);
 LUA_API void  (lua_rawgeti) (lua_State *L, int idx, int n);
 LUA_API void  (lua_createtable) (lua_State *L, int narr, int nrec);
-// ROBLOX
+// NAMEHERE
 LUA_API void  (lua_setreadonly) (lua_State *L, int idx, bool value);
 LUA_API void *(lua_newuserdata) (lua_State *L, size_t sz);
 LUA_API int   (lua_getmetatable) (lua_State *L, int objindex);
@@ -325,9 +325,9 @@ LUA_API void lua_setlevel	(lua_State *from, lua_State *to);
 #define LUA_HOOKLINE	2
 #define LUA_HOOKCOUNT	3
 #define LUA_HOOKTAILRET 4
-// BEGIN ROBLOX CHANGES
+// BEGIN NAMEHERE CHANGES
 #define LUA_HOOKERROR	5
-// END ROBLOX CHANGES
+// END NAMEHERE CHANGES
 
 
 /*
@@ -337,9 +337,9 @@ LUA_API void lua_setlevel	(lua_State *from, lua_State *to);
 #define LUA_MASKRET	(1 << LUA_HOOKRET)
 #define LUA_MASKLINE	(1 << LUA_HOOKLINE)
 #define LUA_MASKCOUNT	(1 << LUA_HOOKCOUNT)
-// BEGIN ROBLOX CHANGES
+// BEGIN NAMEHERE CHANGES
 #define LUA_MASKERROR	(1 << LUA_HOOKERROR)
-// END ROBLOX CHANGES
+// END NAMEHERE CHANGES
 
 typedef struct lua_Debug lua_Debug;  /* activation record */
 

@@ -8,7 +8,7 @@
 			// assign the final thumbnail
 ]]
 local CoreGui = Game:GetService("CoreGui")
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 local ContentProvider = game:GetService('ContentProvider')
 
@@ -51,7 +51,7 @@ ThumbnailLoader.AssetType = {
 }
 
 --[[
-	imageObject - a roblox gui image object (ImageLabel, ImageButton)
+	imageObject - a namehere gui image object (ImageLabel, ImageButton)
 	assetId 	- the id of the asset you want an image for
 	size 		- a ThumbnailLoader.Sizes
 	assetType 	- a ThumbnailLoader.AssetType

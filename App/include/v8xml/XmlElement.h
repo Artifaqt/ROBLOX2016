@@ -32,9 +32,9 @@ typedef RBX::Name XmlTag;
 extern const RBX::Name& value_IDREF_null;
 extern const RBX::Name& value_IDREF_nil;
 
-// TODO: Put these in a file that knows about the Roblox schema
+// TODO: Put these in a file that knows about the NAMEHERE schema
 extern const XmlTag& name_root;
-extern const XmlTag& tag_roblox;
+extern const XmlTag& tag_namehere;
 extern const XmlTag& name_xsinil;
 extern const XmlTag& name_xsitype;
 extern const XmlTag& tag_xmlnsxsi;

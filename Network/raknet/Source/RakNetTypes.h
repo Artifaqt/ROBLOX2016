@@ -17,7 +17,7 @@
 #include "WindowsIncludes.h"
 #include "XBox360Includes.h"
 
-// roblox
+// namehere
 #include <string>
 #include <boost/functional/hash.hpp>
 
@@ -253,7 +253,7 @@ struct RAK_DLL_EXPORT SystemAddress
 	/// Returns if two system addresses have the same IP (port is not checked)
 	bool EqualsExcludingPort( const SystemAddress& right ) const;
 
-	// Roblox
+	// NAMEHERE
 	// Get binary address
 	unsigned long GetBinaryAddress(void) const;
 
@@ -286,7 +286,7 @@ struct RAK_DLL_EXPORT SystemAddress
 	/// \internal Used internally for fast lookup. Optional (use -1 to do regular lookup). Don't transmit this.
 	SystemIndex systemIndex;
 
-	// roblox
+	// namehere
 	friend std::size_t hash_value(SystemAddress const& systemAddress)
 	{
 		std::size_t seed = 0;

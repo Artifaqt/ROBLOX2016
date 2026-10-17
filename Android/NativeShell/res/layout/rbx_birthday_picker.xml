@@ -30,7 +30,7 @@
             android:spinnerMode="dropdown"
             android:layout_margin="3dp"
             android:dropDownVerticalOffset="0.1dp"
-            style="@style/Theme.Roblox.DefaultSpinner"
+            style="@style/Theme.NAMEHERE.DefaultSpinner"
             android:popupBackground="@drawable/rbx_bg_spinner_outline"
             android:contentDescription="rbxBirthdayMonthSpinner"/>
     </RelativeLayout>
@@ -49,7 +49,7 @@
             android:spinnerMode="dropdown"
             android:layout_margin="3dp"
             android:dropDownVerticalOffset="0.1dp"
-            style="@style/Theme.Roblox.DefaultSpinner"
+            style="@style/Theme.NAMEHERE.DefaultSpinner"
             android:popupBackground="@drawable/rbx_bg_spinner_outline"
             android:contentDescription="rbxBirthdayDaySpinner"/>
         </RelativeLayout>
@@ -68,7 +68,7 @@
             android:spinnerMode="dropdown"
             android:layout_margin="3dp"
             android:dropDownVerticalOffset="0.1dp"
-            style="@style/Theme.Roblox.DefaultSpinner"
+            style="@style/Theme.NAMEHERE.DefaultSpinner"
             android:popupBackground="@drawable/rbx_bg_spinner_outline"
             android:contentDescription="rbxBirthdayYearSpinner"/>
         </RelativeLayout>

@@ -10,11 +10,11 @@ local BUTTON_SPACING = 10
 
 -------------- SERVICES --------------
 local CoreGui = game:GetService("CoreGui")
-local RobloxGui = CoreGui:WaitForChild("RobloxGui")
+local NAMEHEREGui = CoreGui:WaitForChild("NAMEHEREGui")
 local GuiService = game:GetService("GuiService")
 
 ----------- UTILITIES --------------
-local utility = require(RobloxGui.Modules.Settings.Utility)
+local utility = require(NAMEHEREGui.Modules.Settings.Utility)
 
 ------------ Variables -------------------
 local PageInstance = nil
@@ -22,7 +22,7 @@ local PageInstance = nil
 ----------- CLASS DECLARATION --------------
 
 local function Initialize()
-	local settingsPageFactory = require(RobloxGui.Modules.Settings.SettingsPageFactory)
+	local settingsPageFactory = require(NAMEHEREGui.Modules.Settings.SettingsPageFactory)
 	local this = settingsPageFactory:CreateNewPage()
 	
 	------ TAB CUSTOMIZATION -------

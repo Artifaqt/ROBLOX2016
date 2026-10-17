@@ -43,7 +43,7 @@
 		</dict>
 	</dict>
 	<key>CFBundleIdentifier</key>
-	<string>com.roblox.robloxipad</string>
+	<string>com.namehere.namehereipad</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
@@ -55,7 +55,7 @@
 	<key>CFBundleVersion</key>
 	<string>1.0</string>
 	<key>RbxBaseUrl</key>
-	<string>http://www.roblox.com</string>
+	<string>http://www.namehere.com</string>
 	<key>UIPrerenderedIcon</key>
 	<true/>
 	<key>UIStatusBarHidden</key>

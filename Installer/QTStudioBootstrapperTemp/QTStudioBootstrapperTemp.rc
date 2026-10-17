@@ -101,7 +101,7 @@ END
 
 IDD_MAIN DIALOGEX 0, 0, 207, 61
 STYLE DS_SETFONT | DS_MODALFRAME | DS_SETFOREGROUND | DS_CENTER | WS_POPUP | WS_CAPTION | WS_SYSMENU
-CAPTION "Roblox"
+CAPTION "NAMEHERE"
 FONT 10, "Segoe UI", 400, 0, 0x0
 BEGIN
     LTEXT           "Please wait ...",IDC_MESSAGE,33,11,136,8
@@ -143,12 +143,12 @@ BEGIN
     BEGIN
         BLOCK "040904b0"
         BEGIN
-            VALUE "CompanyName", "Roblox Corporation"
-            VALUE "FileDescription", "Roblox"
+            VALUE "CompanyName", "NAMEHERE Corporation"
+            VALUE "FileDescription", "NAMEHERE"
             VALUE "FileVersion", "1, 6, 1, 151"
-            VALUE "LegalCopyright", "(C) 2012 ROBLOX Corporation.  All rights reserved."
-            VALUE "OriginalFilename", "Roblox.exe"
-            VALUE "ProductName", "Roblox Bootstrapper"
+            VALUE "LegalCopyright", "(C) 2012 NAMEHERE Corporation.  All rights reserved."
+            VALUE "OriginalFilename", "NAMEHERE.exe"
+            VALUE "ProductName", "NAMEHERE Bootstrapper"
             VALUE "ProductVersion", "1, 6, 0, 0"
         END
     END
@@ -166,8 +166,8 @@ END
 
 STRINGTABLE 
 BEGIN
-    IDS_INSTALLHOST         "setup.roblox.com"
-    IDS_BASEHOST            "www.roblox.com"
+    IDS_INSTALLHOST         "setup.namehere.com"
+    IDS_BASEHOST            "www.namehere.com"
 END
 
 #endif    // English (U.S.) resources

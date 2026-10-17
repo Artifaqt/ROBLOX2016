@@ -68,11 +68,11 @@ BEGIN
     BEGIN
         BLOCK "040904e4"
         BEGIN
-            VALUE "CompanyName", "ROBLOX Corporation"
-            VALUE "FileDescription", "ROBLOX Compute Cloud Service"
+            VALUE "CompanyName", "NAMEHERE Corporation"
+            VALUE "FileDescription", "NAMEHERE Compute Cloud Service"
             VALUE "FileVersion", "0, 75, 0, 691"
             VALUE "InternalName", "RCCService.exe"
-            VALUE "LegalCopyright", "© 2013 ROBLOX Corporation.  All rights reserved."
+            VALUE "LegalCopyright", "© 2013 NAMEHERE Corporation.  All rights reserved."
             VALUE "OriginalFilename", "RCCService.exe"
             VALUE "ProductName", "RCC Service"
             VALUE "ProductVersion", "0, 75, 0, 0"

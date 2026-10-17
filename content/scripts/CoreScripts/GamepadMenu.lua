@@ -12,7 +12,7 @@ local InputService = game:GetService('UserInputService')
 local ContextActionService = game:GetService('ContextActionService')
 local HttpService = game:GetService('HttpService')
 local StarterGui = game:GetService('StarterGui')
-local GuiRoot = CoreGuiService:WaitForChild('RobloxGui')
+local GuiRoot = CoreGuiService:WaitForChild('NAMEHEREGui')
 --[[ END OF SERVICES ]]
 
 --[[ MODULES ]]

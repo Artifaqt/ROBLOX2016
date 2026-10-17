@@ -106,7 +106,7 @@ UIALogger.logMessage("##teamcity[testSuiteStarted name='Smoke Test for v" + vers
 
 
 // Select the test environment (GT1)
-wheel.selectValue("http://www.gametest1.robloxlabs.com/");
+wheel.selectValue("http://www.gametest1.nameherelabs.com/");
 UIALogger.logMessage("Test Environment: " + wheel.value());
 
 

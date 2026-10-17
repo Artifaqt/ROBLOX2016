@@ -126,7 +126,7 @@ extern void dprintf( const char* fmt, ... );
                                         }
                                         else
                                         {
-                                            entry->robloxUid = itUserId->second.cast<int>();
+                                            entry->namehereUid = itUserId->second.cast<int>();
                                             entry->state.store(Ready);
                                         }
                                     }

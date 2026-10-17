@@ -1,6 +1,6 @@
 /**	
-  Roblox
-  This is not the G3D 8.0 GCamera, instead it is from the old G3D release modified by Roblox.
+  NAMEHERE
+  This is not the G3D 8.0 GCamera, instead it is from the old G3D release modified by NAMEHERE.
   @file RbxCamera.h
 
   @maintainer Morgan McGuire, matrix@graphics3d.com

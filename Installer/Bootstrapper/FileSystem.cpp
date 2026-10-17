@@ -6,20 +6,20 @@
 #include "ATLPath.h"
 
 
-std::wstring FileSystem::getSpecialFolder(FolderType folder, bool create, const char* subDirectory, bool appendRoblox)
+std::wstring FileSystem::getSpecialFolder(FolderType folder, bool create, const char* subDirectory, bool appendNAMEHERE)
 {
-	std::string robloxDir = "";
-	if (appendRoblox)
+	std::string namehereDir = "";
+	if (appendNAMEHERE)
 	{
-		robloxDir = "\\Roblox";
+		namehereDir = "\\NAMEHERE";
 	}
 		
 	switch (folder)
 	{
-	case RobloxUserPrograms:
-	case RobloxProgramFiles:
+	case NAMEHEREUserPrograms:
+	case NAMEHEREProgramFiles:
 		// TODO: Nuke "(Test)" when we go to production
-		//robloxDir += " (Test)";
+		//namehereDir += " (Test)";
 		break;
 	}
 	
@@ -30,22 +30,22 @@ std::wstring FileSystem::getSpecialFolder(FolderType folder, bool create, const 
 		switch (folder)
 		{
 		case AppData:
-		case RobloxUserApplicationData: // %LOCALAPPDATA% (%USERPROFILE%\AppData\Local)
+		case NAMEHEREUserApplicationData: // %LOCALAPPDATA% (%USERPROFILE%\AppData\Local)
 			folderID = FOLDERID_LocalAppData;
 			break;
-		case RobloxUserApplicationDataLow: // %USERPROFILE%\AppData\LocalLow
+		case NAMEHEREUserApplicationDataLow: // %USERPROFILE%\AppData\LocalLow
 			folderID = FOLDERID_LocalAppDataLow;
 			break;
-		case RobloxCommonApplicationData: // %ALLUSERSPROFILE% (%ProgramData%, %SystemDrive%\ProgramData)
+		case NAMEHERECommonApplicationData: // %ALLUSERSPROFILE% (%ProgramData%, %SystemDrive%\ProgramData)
 			folderID = FOLDERID_ProgramData;
 			break;
-		case RobloxUserPrograms: // %APPDATA%\Microsoft\Windows\Start Menu\Programs
+		case NAMEHEREUserPrograms: // %APPDATA%\Microsoft\Windows\Start Menu\Programs
 			folderID = FOLDERID_Programs;
 			break;
-		case RobloxProgramFiles: // %ProgramFiles% (%SystemDrive%\Program Files)
+		case NAMEHEREProgramFiles: // %ProgramFiles% (%SystemDrive%\Program Files)
 			folderID = FOLDERID_ProgramFilesX86;
 			break;
-		case RobloxCommonPrograms: //%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs	
+		case NAMEHERECommonPrograms: //%ALLUSERSPROFILE%\Microsoft\Windows\Start Menu\Programs	
 			folderID = FOLDERID_CommonPrograms;
 			break;
 		case Desktop: // %PUBLIC%\Desktop
@@ -64,7 +64,7 @@ std::wstring FileSystem::getSpecialFolder(FolderType folder, bool create, const 
 		{
 			CString s = lppwstrPath;
 
-			s += robloxDir.c_str();
+			s += namehereDir.c_str();
 			s += "\\";
 			if (create)
 				if (!::CreateDirectory(s, NULL) && ::GetLastError()!=ERROR_ALREADY_EXISTS)
@@ -84,29 +84,29 @@ std::wstring FileSystem::getSpecialFolder(FolderType folder, bool create, const 
 	}
 
 	DWORD flags = create ? CSIDL_FLAG_CREATE : 0;
-	std::wstring s = convert_s2w(robloxDir);
+	std::wstring s = convert_s2w(namehereDir);
 	if (subDirectory)
 		s += convert_s2w(subDirectory);
 
 	int csidl;
 	switch (folder)
 	{
-	case RobloxUserApplicationData:
+	case NAMEHEREUserApplicationData:
 		csidl = CSIDL_LOCAL_APPDATA;
 		break;
-	case RobloxUserApplicationDataLow:
+	case NAMEHEREUserApplicationDataLow:
 		csidl = CSIDL_LOCAL_APPDATA;
 		break;
-	case RobloxCommonApplicationData:
+	case NAMEHERECommonApplicationData:
 		csidl = CSIDL_COMMON_APPDATA;
 		break;
-	case RobloxUserPrograms:
+	case NAMEHEREUserPrograms:
 		csidl = CSIDL_PROGRAMS;
 		break;
-	case RobloxCommonPrograms:
+	case NAMEHERECommonPrograms:
 		csidl = CSIDL_COMMON_PROGRAMS;
 		break;
-	case RobloxProgramFiles:
+	case NAMEHEREProgramFiles:
 		csidl = CSIDL_PROGRAM_FILES;
 		break;
 	case Desktop:

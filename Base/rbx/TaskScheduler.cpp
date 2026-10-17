@@ -221,7 +221,7 @@ TaskScheduler::TaskScheduler()
 ,nonCyclicJobsToDo(0)
 ,lastCyclcTimestamp(Time::now<Time::Fast>())
 {
-	runningJobCounterThread.reset(new boost::thread(RBX::thread_wrapper(boost::bind(&TaskScheduler::sampleRunningJobCount, this), "Roblox sampleRunningJobCount")));
+	runningJobCounterThread.reset(new boost::thread(RBX::thread_wrapper(boost::bind(&TaskScheduler::sampleRunningJobCount, this), "NAMEHERE sampleRunningJobCount")));
 
 	// Publish the fast flag out to the schedulers API so that it can be overridden by specific clients.
 	// E.g. this is not yet something to be done on the server.

@@ -1,4 +1,4 @@
-/* Copyright 2003-2013 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2013 NAMEHERE Corporation, All Rights Reserved */
 //
 //  ContextActionService.h
 //  App
@@ -177,7 +177,7 @@ namespace RBX {
         FunctionMap functionMap;
 		FunctionVector functionVector;
 
-		// these are used for ROBLOX context binds (For ROBLOX menu, etc.)
+		// these are used for NAMEHERE context binds (For NAMEHERE menu, etc.)
 		FunctionMap coreFunctionMap;
 		FunctionVector coreFunctionVector;
         

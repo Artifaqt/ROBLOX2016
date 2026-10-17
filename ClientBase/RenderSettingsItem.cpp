@@ -1,12 +1,12 @@
 /**
  * RenderSettingsItem.cpp
- * Copyright (c) 2013 ROBLOX Corp. All Rights Reserved.
+ * Copyright (c) 2013 NAMEHERE Corp. All Rights Reserved.
  */
 
 #include "stdafx.h"
 #include "RenderSettingsItem.h"
 
-// Roblox Headers
+// NAMEHERE Headers
 #include "v8datamodel/DebugSettings.h"
 #include "v8datamodel/GameBasicSettings.h"
 #include "V8DataModel/PartInstance.h"

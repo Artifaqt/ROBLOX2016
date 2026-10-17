@@ -1530,7 +1530,7 @@ namespace RBX
 			MemoryOutputStream stream("End");
 			
 			// This footer is required for the Web code to validate that the file is not truncated
-			const char* footer = "</roblox>";
+			const char* footer = "</namehere>";
 			
 			stream.write(footer, strlen(footer));
 			

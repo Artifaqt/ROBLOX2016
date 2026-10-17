@@ -24,7 +24,7 @@ namespace RBX {
 	static Reflection::BoundFuncDesc<BadgeService, void(std::string)> func_SetDisabledUrl(&BadgeService::setIsBadgeDisabledUrl,	"SetIsBadgeDisabledUrl","url", Security::LocalUser);
 	static Reflection::BoundFuncDesc<BadgeService, void(std::string)> func_SetLegalUrl(&BadgeService::setIsBadgeLegalUrl,		"SetIsBadgeLegalUrl",  "url", Security::LocalUser);
 	
-	static Reflection::RemoteEventDesc<BadgeService, void(std::string, int, int)> event_BadgeAwarded(&BadgeService::badgeAwardedSignal, "BadgeAwarded", "message", "userId", "badgeId", Security::RobloxScript, Reflection::RemoteEventCommon::SCRIPTING, Reflection::RemoteEventCommon::BROADCAST);
+	static Reflection::RemoteEventDesc<BadgeService, void(std::string, int, int)> event_BadgeAwarded(&BadgeService::badgeAwardedSignal, "BadgeAwarded", "message", "userId", "badgeId", Security::NAMEHEREScript, Reflection::RemoteEventCommon::SCRIPTING, Reflection::RemoteEventCommon::BROADCAST);
     REFLECTION_END();
 
 	BadgeService::BadgeService()
@@ -132,7 +132,7 @@ namespace RBX {
 	{
 		if(!Workspace::serverIsPresent(this)){
 			//Throw a friendly exception to the users that they can't get badges during user games
-			StandardOut::singleton()->printf(MESSAGE_WARNING, "Sorry, badges can only be queried by the Roblox game servers");
+			StandardOut::singleton()->printf(MESSAGE_WARNING, "Sorry, badges can only be queried by the NAMEHERE game servers");
 			resumeFunction(false);
 			return;
 		}
@@ -212,7 +212,7 @@ namespace RBX {
 	{
 		if(!Workspace::serverIsPresent(this)){
 			//Throw a friendly exception to the users that they can't get badges during user games
-			StandardOut::singleton()->printf(MESSAGE_WARNING, "Sorry, badges can only be tested if they are disabled on Roblox game servers");
+			StandardOut::singleton()->printf(MESSAGE_WARNING, "Sorry, badges can only be tested if they are disabled on NAMEHERE game servers");
 			resumeFunction(true);
 			return;
 		}
@@ -370,7 +370,7 @@ namespace RBX {
 	{
 		if(!Workspace::serverIsPresent(this)){
 			//Throw a friendly exception to the users that they can't get badges during user games
-			StandardOut::singleton()->printf(MESSAGE_WARNING, "Sorry, badges can only be awarded by Roblox game servers");
+			StandardOut::singleton()->printf(MESSAGE_WARNING, "Sorry, badges can only be awarded by NAMEHERE game servers");
 			resumeFunction(false);
 			return;
 		}

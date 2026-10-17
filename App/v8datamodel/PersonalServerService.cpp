@@ -13,12 +13,12 @@ static Reflection::BoundFuncDesc<PersonalServerService, void(std::string)> func_
 static Reflection::BoundFuncDesc<PersonalServerService, void(std::string)> func_SetPersonalServerSetRankUrl(&PersonalServerService::setPersonalServerSetRankUrl, "SetPersonalServerSetRankUrl", "personalServerSetRankUrl", Security::LocalUser);
 static Reflection::BoundFuncDesc<PersonalServerService, void(std::string)> func_SetPersonalServerBuildToolsUrl(&PersonalServerService::setPersonalServerRoleSetsUrl, "SetPersonalServerRoleSetsUrl", "personalServerRoleSetsUrl", Security::LocalUser);
 
-static Reflection::BoundFuncDesc<PersonalServerService, void(shared_ptr<Instance>)> func_Promote(&PersonalServerService::promote, "Promote", "player", Security::RobloxScript);
-static Reflection::BoundFuncDesc<PersonalServerService, void(shared_ptr<Instance>)> func_Demote(&PersonalServerService::demote, "Demote", "player", Security::RobloxScript);
+static Reflection::BoundFuncDesc<PersonalServerService, void(shared_ptr<Instance>)> func_Promote(&PersonalServerService::promote, "Promote", "player", Security::NAMEHEREScript);
+static Reflection::BoundFuncDesc<PersonalServerService, void(shared_ptr<Instance>)> func_Demote(&PersonalServerService::demote, "Demote", "player", Security::NAMEHEREScript);
 
-static Reflection::BoundYieldFuncDesc<PersonalServerService, std::string(int)>	func_GetRoleSets(&PersonalServerService::getWebRoleSets, "GetRoleSets", "placeId", Security::RobloxScript);
+static Reflection::BoundYieldFuncDesc<PersonalServerService, std::string(int)>	func_GetRoleSets(&PersonalServerService::getWebRoleSets, "GetRoleSets", "placeId", Security::NAMEHEREScript);
 
-static Reflection::PropDescriptor<PersonalServerService, std::string> prop_roleSets("RoleSets", category_Behavior, &PersonalServerService::getRoleSets, &PersonalServerService::setRoleSets, Reflection::PropertyDescriptor::SCRIPTING, Security::RobloxScript);
+static Reflection::PropDescriptor<PersonalServerService, std::string> prop_roleSets("RoleSets", category_Behavior, &PersonalServerService::getRoleSets, &PersonalServerService::setRoleSets, Reflection::PropertyDescriptor::SCRIPTING, Security::NAMEHEREScript);
 REFLECTION_END();
 
 namespace Reflection {

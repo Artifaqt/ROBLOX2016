@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.roblox.client.components.RbxLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.namehere.client.components.RbxLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/fragment_login_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,4 +15,4 @@
         android:weightSum="10"> <!-- Controls the width of the card -->
 
     </LinearLayout>
-</com.roblox.client.components.RbxLinearLayout>
+</com.namehere.client.components.RbxLinearLayout>

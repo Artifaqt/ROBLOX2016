@@ -7,7 +7,7 @@
  
  @created 2002-07-12
  @edited  2006-02-21
- // ROBLOX: from the old g3d (previous to upgrade to g3d 8.0). This version make our code happier.
+ // NAMEHERE: from the old g3d (previous to upgrade to g3d 8.0). This version make our code happier.
  // It doesn't requires to have unit() vectors. 
  // We should fix this and remove de need of thise file in the future and use the G3D ones.
  */

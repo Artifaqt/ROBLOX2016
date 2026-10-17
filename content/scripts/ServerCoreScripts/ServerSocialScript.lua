@@ -12,7 +12,7 @@
 local HttpService = game:GetService('HttpService')
 local HttpRbxApiService = game:GetService('HttpRbxApiService')
 local Players = game:GetService('Players')
-local RobloxReplicatedStorage = game:GetService('RobloxReplicatedStorage')
+local NAMEHEREReplicatedStorage = game:GetService('NAMEHEREReplicatedStorage')
 local RunService = game:GetService('RunService')
 
 local GET_MULTI_FOLLOW = "user/multi-following-exists"
@@ -22,15 +22,15 @@ local PlayerToRelationshipMap = {}
 --[[ Remotes ]]--
 local RemoteEvent_FollowRelationshipChanged = Instance.new('RemoteEvent')
 RemoteEvent_FollowRelationshipChanged.Name = "FollowRelationshipChanged"
-RemoteEvent_FollowRelationshipChanged.Parent = RobloxReplicatedStorage
+RemoteEvent_FollowRelationshipChanged.Parent = NAMEHEREReplicatedStorage
 
 local RemoteEvent_NewFollower = Instance.new("RemoteEvent")
 RemoteEvent_NewFollower.Name = "NewFollower"
-RemoteEvent_NewFollower.Parent = RobloxReplicatedStorage
+RemoteEvent_NewFollower.Parent = NAMEHEREReplicatedStorage
 
 local RemoteFunc_GetFollowRelationships = Instance.new('RemoteFunction')
 RemoteFunc_GetFollowRelationships.Name = "GetFollowRelationships"
-RemoteFunc_GetFollowRelationships.Parent = RobloxReplicatedStorage
+RemoteFunc_GetFollowRelationships.Parent = NAMEHEREReplicatedStorage
 
 --[[ Helper Functions ]]--
 local function decodeJSON(json)

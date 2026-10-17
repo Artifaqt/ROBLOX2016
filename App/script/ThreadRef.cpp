@@ -143,7 +143,7 @@ const char* Bridge<boost::intrusive_ptr<WeakThreadRef::Node> >::className = "Wea
 
 boost::intrusive_ptr<WeakThreadRef::Node> WeakThreadRef::Node::create(lua_State* thread)
 {
-	RobloxExtraSpace* space = RobloxExtraSpace::get(thread);
+	NAMEHEREExtraSpace* space = NAMEHEREExtraSpace::get(thread);
 
 	space->createNewNode();
 
@@ -154,7 +154,7 @@ boost::intrusive_ptr<WeakThreadRef::Node> WeakThreadRef::Node::create(lua_State*
 
 WeakThreadRef::Node* WeakThreadRef::Node::get(lua_State* thread)
 {
-	return RobloxExtraSpace::get(thread)->getNode();
+	return NAMEHEREExtraSpace::get(thread)->getNode();
 }
 
 namespace RBX
@@ -305,10 +305,10 @@ static int callGenericAsyncFunctionBridge (lua_State *L)
 
 	shared_ptr<Reflection::Tuple> args = LuaArguments::getValues(L);
 
-	(*f)(args, boost::bind(&onAsyncResult, ThreadRef(L), weak_from(RobloxExtraSpace::get(L)->context()), _1));
+	(*f)(args, boost::bind(&onAsyncResult, ThreadRef(L), weak_from(NAMEHEREExtraSpace::get(L)->context()), _1));
 
-	RBXASSERT(!RobloxExtraSpace::get(L)->yieldCaptured);
-	RobloxExtraSpace::get(L)->yieldCaptured = true;
+	RBXASSERT(!NAMEHEREExtraSpace::get(L)->yieldCaptured);
+	NAMEHEREExtraSpace::get(L)->yieldCaptured = true;
 
 	return lua_yield(L, 0);
 }

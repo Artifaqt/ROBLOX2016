@@ -86,7 +86,7 @@ void* LuaAllocator::alloc(void *ud, void *ptr, size_t osize, size_t nsize)
 bool LuaAllocator::hasSpace(const long diff)
 {
 	if (heapLimit > 0 && diff > 0 && diff + heapSize > heapLimit &&
-		(RBX::Security::Context::current().identity == RBX::Security::GameScript_ || RBX::Security::Context::current().identity == RBX::Security::RobloxGameScript_) )
+		(RBX::Security::Context::current().identity == RBX::Security::GameScript_ || RBX::Security::Context::current().identity == RBX::Security::NAMEHEREGameScript_) )
 		return false;
 	return true;
 }

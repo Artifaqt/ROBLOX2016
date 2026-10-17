@@ -1,14 +1,14 @@
 //
 //  LoadingGameController.h
-//  RobloxMobile
+//  NAMEHEREMobile
 //
 //  Created by Ben Tkacheff on 11/19/13.
-//  Copyright (c) 2013 ROBLOX. All rights reserved.
+//  Copyright (c) 2013 NAMEHERE. All rights reserved.
 //
 
-#import "RobloxPageViewController.h"
+#import "NAMEHEREPageViewController.h"
 
-@interface LaunchViewController : RobloxPageViewController
+@interface LaunchViewController : NAMEHEREPageViewController
 {
 }
 

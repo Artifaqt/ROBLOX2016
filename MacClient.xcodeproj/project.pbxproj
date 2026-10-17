@@ -7,9 +7,9 @@
 	objects = {
 
 /* Begin PBXAggregateTarget section */
-		5238961512F3389000D4DE3D /* RobloxPlayer.zip */ = {
+		5238961512F3389000D4DE3D /* NAMEHEREPlayer.zip */ = {
 			isa = PBXAggregateTarget;
-			buildConfigurationList = 5238962312F338B500D4DE3D /* Build configuration list for PBXAggregateTarget "RobloxPlayer.zip" */;
+			buildConfigurationList = 5238962312F338B500D4DE3D /* Build configuration list for PBXAggregateTarget "NAMEHEREPlayer.zip" */;
 			buildPhases = (
 				1F2F4F9E1328023300031750 /* Generate dSYM */,
 				1F0F90EE1326C4C100E984D0 /* Breakpad */,
@@ -21,8 +21,8 @@
 			dependencies = (
 				5238962612F338E700D4DE3D /* PBXTargetDependency */,
 			);
-			name = RobloxPlayer.zip;
-			productName = Roblox.dmg;
+			name = NAMEHEREPlayer.zip;
+			productName = NAMEHERE.dmg;
 		};
 /* End PBXAggregateTarget section */
 
@@ -179,12 +179,12 @@
 		E7CFF4BD129AF7F300530485 /* MemoryTests.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E7CFF12F129AE4E300530485 /* MemoryTests.cpp */; };
 		E9E376B017FAE2C70004855A /* LuaDebugger.cpp in Sources */ = {isa = PBXBuildFile; fileRef = E9E3768A17FAE2B80004855A /* LuaDebugger.cpp */; };
 		EA35DC8312F9F98B002BA06F /* GameVerbs.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EA35DC8212F9F98B002BA06F /* GameVerbs.cpp */; };
-		EA74C5CC130340C9002A026E /* RobloxView.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA74C5CB130340C9002A026E /* RobloxView.mm */; };
-		EA7F410912B2E91300A7159A /* RobloxPlayer.htm in Resources */ = {isa = PBXBuildFile; fileRef = EA7F410712B2E90900A7159A /* RobloxPlayer.htm */; };
-		EAC8905412B6CBC30004091E /* RobloxOgreView.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAC8904D12B6CBB40004091E /* RobloxOgreView.mm */; };
+		EA74C5CC130340C9002A026E /* NAMEHEREView.mm in Sources */ = {isa = PBXBuildFile; fileRef = EA74C5CB130340C9002A026E /* NAMEHEREView.mm */; };
+		EA7F410912B2E91300A7159A /* NAMEHEREPlayer.htm in Resources */ = {isa = PBXBuildFile; fileRef = EA7F410712B2E90900A7159A /* NAMEHEREPlayer.htm */; };
+		EAC8905412B6CBC30004091E /* NAMEHEREOgreView.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAC8904D12B6CBB40004091E /* NAMEHEREOgreView.mm */; };
 		EAE0C55B12B0161C0061876F /* MainMenu.xib in Resources */ = {isa = PBXBuildFile; fileRef = EAE0C53112B014220061876F /* MainMenu.xib */; };
 		EAE0C55C12B0161C0061876F /* plugins.cfg in Resources */ = {isa = PBXBuildFile; fileRef = EAE0C53212B014220061876F /* plugins.cfg */; };
-		EAE0C55D12B0161C0061876F /* Roblox.icns in Resources */ = {isa = PBXBuildFile; fileRef = EAE0C53312B014220061876F /* Roblox.icns */; };
+		EAE0C55D12B0161C0061876F /* NAMEHERE.icns in Resources */ = {isa = PBXBuildFile; fileRef = EAE0C53312B014220061876F /* NAMEHERE.icns */; };
 		EAE0C66012B0172F0061876F /* libApp.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA0D72FC12933FDC00C510A8 /* libApp.a */; };
 		EAE0C66112B017340061876F /* libBase.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA0D730512933FF300C510A8 /* libBase.a */; };
 		EAE0C66212B017390061876F /* libNetwork-d.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA0D73121293406C00C510A8 /* libNetwork-d.a */; };
@@ -194,14 +194,14 @@
 		EAE0C66712B0177C0061876F /* libRbxG3D.a in Frameworks */ = {isa = PBXBuildFile; fileRef = EA1FA76D1291BFA2000D5B71 /* libRbxG3D.a */; };
 		EAE0C66912B017E00061876F /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA47CCE4129364EC0076BC7B /* Cocoa.framework */; };
 		EAE0C66A12B017E80061876F /* Carbon.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EA47CCF3129365FF0076BC7B /* Carbon.framework */; };
-		EAE0C66C12B0183B0061876F /* RobloxPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAE0C53F12B015260061876F /* RobloxPlayer.cpp */; };
-		EAE0C66D12B0183F0061876F /* RobloxPlayerAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAE0C55412B015680061876F /* RobloxPlayerAppDelegate.mm */; };
-		EAE0C66E12B018450061876F /* RobloxView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAE0C54112B015330061876F /* RobloxView.cpp */; };
+		EAE0C66C12B0183B0061876F /* NAMEHEREPlayer.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAE0C53F12B015260061876F /* NAMEHEREPlayer.cpp */; };
+		EAE0C66D12B0183F0061876F /* NAMEHEREPlayerAppDelegate.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAE0C55412B015680061876F /* NAMEHEREPlayerAppDelegate.mm */; };
+		EAE0C66E12B018450061876F /* NAMEHEREView.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAE0C54112B015330061876F /* NAMEHEREView.cpp */; };
 		EAE0C66F12B018480061876F /* FunctionMarshaller.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAE0C54712B015440061876F /* FunctionMarshaller.cpp */; };
 		EAE0C67012B0184A0061876F /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = EAE0C54D12B015510061876F /* main.m */; };
-		EAED7D3512F11B9400026F71 /* Roblox.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAED7D3212F11B9400026F71 /* Roblox.cpp */; };
-		EAED7D3612F11B9400026F71 /* Roblox.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAED7D3412F11B9400026F71 /* Roblox.mm */; };
-		EAF4215812B064FC00720FDE /* roblox.html in Resources */ = {isa = PBXBuildFile; fileRef = EAF4215612B064E200720FDE /* roblox.html */; };
+		EAED7D3512F11B9400026F71 /* NAMEHERE.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAED7D3212F11B9400026F71 /* NAMEHERE.cpp */; };
+		EAED7D3612F11B9400026F71 /* NAMEHERE.mm in Sources */ = {isa = PBXBuildFile; fileRef = EAED7D3412F11B9400026F71 /* NAMEHERE.mm */; };
+		EAF4215812B064FC00720FDE /* namehere.html in Resources */ = {isa = PBXBuildFile; fileRef = EAF4215612B064E200720FDE /* namehere.html */; };
 		EAF931AD12B82EC700DE2773 /* UserInput.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAF931A512B82EBB00DE2773 /* UserInput.cpp */; };
 		EAF931BB12B82EF100DE2773 /* UserInputUtil.cpp in Sources */ = {isa = PBXBuildFile; fileRef = EAF931B812B82EE900DE2773 /* UserInputUtil.cpp */; };
 		F467AB2515058214009A7CC7 /* ClusterReplicationTest.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F467AB2415058214009A7CC7 /* ClusterReplicationTest.cpp */; };
@@ -450,7 +450,7 @@
 			containerPortal = EAF082231291B1B900B34F14 /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = EA1FA73B1291BE95000D5B71;
-			remoteInfo = Roblox;
+			remoteInfo = NAMEHERE;
 		};
 		524F2A7D14EDCECC00581C13 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -912,15 +912,15 @@
 
 /* Begin PBXFileReference section */
 		10A66F8715D2F1BF00A0A938 /* boost.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = boost.xcodeproj; path = boostlibs/boost.xcodeproj; sourceTree = "<group>"; };
-		10CBCBDC15A3697A001A5E64 /* StdAfx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StdAfx.h; path = RobloxMac/StdAfx.h; sourceTree = "<group>"; };
+		10CBCBDC15A3697A001A5E64 /* StdAfx.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = StdAfx.h; path = NAMEHEREMac/StdAfx.h; sourceTree = "<group>"; };
 		1F0FE99A12C016BC00BF9F51 /* content */ = {isa = PBXFileReference; lastKnownFileType = folder; path = content; sourceTree = "<group>"; };
 		1F3B36FA12B960D300032B70 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = System/Library/Frameworks/ApplicationServices.framework; sourceTree = SDKROOT; };
 		1F3B370212B9618000032B70 /* IOKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IOKit.framework; path = System/Library/Frameworks/IOKit.framework; sourceTree = SDKROOT; };
-		1F45BC6016388276006B3BAE /* Tests */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Tests; path = RobloxTest/Tests; sourceTree = "<group>"; };
+		1F45BC6016388276006B3BAE /* Tests */ = {isa = PBXFileReference; lastKnownFileType = folder; name = Tests; path = NAMEHERETest/Tests; sourceTree = "<group>"; };
 		1F595C4812C3D5C600593A43 /* WebSerializerTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = WebSerializerTest.cpp; path = App.UnitTest/WebSerializerTest.cpp; sourceTree = "<group>"; };
 		1F595C4912C3D5C600593A43 /* XmlElement.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = XmlElement.cpp; path = App.UnitTest/XmlElement.cpp; sourceTree = "<group>"; };
 		1F67ADEE12DCE7F800FC5C89 /* trie.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = trie.cpp; path = Base.UnitTest/trie.cpp; sourceTree = "<group>"; };
-		1F68AC741B0F96AF00546880 /* libfmod.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfmod.dylib; path = RobloxStudio/../fmod/mac/libfmod.dylib; sourceTree = "<group>"; };
+		1F68AC741B0F96AF00546880 /* libfmod.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfmod.dylib; path = NAMEHEREStudio/../fmod/mac/libfmod.dylib; sourceTree = "<group>"; };
 		1F6C02A018A02E4700D774F7 /* libGfxCore.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGfxCore.a; path = Rendering/GfxCore/build/Debug/libGfxCore.a; sourceTree = "<group>"; };
 		1F6C02C618A02EAE00D774F7 /* libGfxRender.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; name = libGfxRender.a; path = Rendering/GfxRender/build/Debug/libGfxRender.a; sourceTree = "<group>"; };
 		1F6C02C818A02F1900D774F7 /* GfxRender.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GfxRender.xcodeproj; path = Rendering/GfxRender/GfxRender.xcodeproj; sourceTree = "<group>"; };
@@ -945,12 +945,12 @@
 		1FE3085412BC1BA2006433FC /* make_shared.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = make_shared.cpp; path = Base.UnitTest/make_shared.cpp; sourceTree = "<group>"; };
 		1FE3085512BC1BA2006433FC /* signals.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = signals.cpp; path = Base.UnitTest/signals.cpp; sourceTree = "<group>"; };
 		1FE3085612BC1BA2006433FC /* Time.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Time.cpp; path = Base.UnitTest/Time.cpp; sourceTree = "<group>"; };
-		1FF570061B0E9BFE00637601 /* libfmod.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfmod.dylib; path = RobloxStudio/../fmod/mac/libfmod.dylib; sourceTree = "<group>"; };
-		1FF570271B0E9C2A00637601 /* libfmod.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfmod.dylib; path = RobloxStudio/../fmod/mac/libfmod.dylib; sourceTree = "<group>"; };
+		1FF570061B0E9BFE00637601 /* libfmod.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfmod.dylib; path = NAMEHEREStudio/../fmod/mac/libfmod.dylib; sourceTree = "<group>"; };
+		1FF570271B0E9C2A00637601 /* libfmod.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libfmod.dylib; path = NAMEHEREStudio/../fmod/mac/libfmod.dylib; sourceTree = "<group>"; };
 		392510DE19808D94007725D2 /* App.BulletPhysics.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = App.BulletPhysics.xcodeproj; path = App.BulletPhysics/App.BulletPhysics.xcodeproj; sourceTree = "<group>"; };
 		4281E60319806844002F5A98 /* LuaVMClient.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = LuaVMClient.cpp; path = App/script/LuaVMClient.cpp; sourceTree = "<group>"; };
-		5212682E12FBD4C8008ABF9B /* GameVerbs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameVerbs.cpp; path = RobloxMac/GameVerbs.cpp; sourceTree = "<group>"; };
-		5212682F12FBD4C8008ABF9B /* GameVerbs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameVerbs.h; path = RobloxMac/GameVerbs.h; sourceTree = "<group>"; };
+		5212682E12FBD4C8008ABF9B /* GameVerbs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameVerbs.cpp; path = NAMEHEREMac/GameVerbs.cpp; sourceTree = "<group>"; };
+		5212682F12FBD4C8008ABF9B /* GameVerbs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameVerbs.h; path = NAMEHEREMac/GameVerbs.h; sourceTree = "<group>"; };
 		5224672F131EB5DC00578348 /* copyrights.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = copyrights.txt; sourceTree = "<group>"; };
 		5271C1BF130E4A6600A67314 /* atomic.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = atomic.cpp; path = Base.UnitTest/atomic.cpp; sourceTree = "<group>"; };
 		5271C1C0130E4A6600A67314 /* intrusive_ptr.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = intrusive_ptr.cpp; path = Base.UnitTest/intrusive_ptr.cpp; sourceTree = "<group>"; };
@@ -961,13 +961,13 @@
 		52E14FA715992161007F99D5 /* NetworkSecurity.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NetworkSecurity.cpp; path = App.UnitTest/NetworkSecurity.cpp; sourceTree = "<group>"; };
 		52E14FA915992180007F99D5 /* RemoteSignal.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RemoteSignal.cpp; path = App.UnitTest/RemoteSignal.cpp; sourceTree = "<group>"; };
 		52E14FAB15992198007F99D5 /* SettingsURL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SettingsURL.cpp; path = App.UnitTest/SettingsURL.cpp; sourceTree = "<group>"; };
-		52E37D7714EDAD1400CE2CB2 /* RobloxTest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = RobloxTest; sourceTree = BUILT_PRODUCTS_DIR; };
-		52E37D8A14EDAD8F00CE2CB2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = RobloxTest/main.cpp; sourceTree = "<group>"; };
-		52E37D8B14EDAD8F00CE2CB2 /* Tests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Tests.cpp; path = RobloxTest/Tests.cpp; sourceTree = "<group>"; };
-		52ECA47212EE3C8500FAF033 /* CMCrashReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMCrashReporter.h; path = RobloxMac/CMCrashReporter.h; sourceTree = "<group>"; };
-		52ECA47312EE3C8500FAF033 /* CMCrashReporter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CMCrashReporter.mm; path = RobloxMac/CMCrashReporter.mm; sourceTree = "<group>"; };
-		52ECA47412EE3C8500FAF033 /* CMCrashReporterGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMCrashReporterGlobal.h; path = RobloxMac/CMCrashReporterGlobal.h; sourceTree = "<group>"; };
-		52ECA47512EE3C8500FAF033 /* CMCrashReporterGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMCrashReporterGlobal.m; path = RobloxMac/CMCrashReporterGlobal.m; sourceTree = "<group>"; };
+		52E37D7714EDAD1400CE2CB2 /* NAMEHERETest */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = NAMEHERETest; sourceTree = BUILT_PRODUCTS_DIR; };
+		52E37D8A14EDAD8F00CE2CB2 /* main.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = main.cpp; path = NAMEHERETest/main.cpp; sourceTree = "<group>"; };
+		52E37D8B14EDAD8F00CE2CB2 /* Tests.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Tests.cpp; path = NAMEHERETest/Tests.cpp; sourceTree = "<group>"; };
+		52ECA47212EE3C8500FAF033 /* CMCrashReporter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMCrashReporter.h; path = NAMEHEREMac/CMCrashReporter.h; sourceTree = "<group>"; };
+		52ECA47312EE3C8500FAF033 /* CMCrashReporter.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = CMCrashReporter.mm; path = NAMEHEREMac/CMCrashReporter.mm; sourceTree = "<group>"; };
+		52ECA47412EE3C8500FAF033 /* CMCrashReporterGlobal.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CMCrashReporterGlobal.h; path = NAMEHEREMac/CMCrashReporterGlobal.h; sourceTree = "<group>"; };
+		52ECA47512EE3C8500FAF033 /* CMCrashReporterGlobal.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = CMCrashReporterGlobal.m; path = NAMEHEREMac/CMCrashReporterGlobal.m; sourceTree = "<group>"; };
 		52ECABA712EE96FE00FAF033 /* Test.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = Test.html; sourceTree = "<group>"; };
 		564FE9FC19953E2300BEEAB8 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
 		567B4B9019F6FD5F002AEDF5 /* HttpCacheEntryTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HttpCacheEntryTest.cpp; path = App.UnitTest/HttpCacheEntryTest.cpp; sourceTree = "<group>"; };
@@ -980,10 +980,10 @@
 		7F209967133A893600DCE888 /* homeButton.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = homeButton.png; sourceTree = "<group>"; };
 		94337F041A786795003490E1 /* SDLGameController.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = SDLGameController.cpp; path = ClientShared/SDLGameController.cpp; sourceTree = "<group>"; };
 		94337F051A786795003490E1 /* SDLGameController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = SDLGameController.h; path = ClientShared/SDLGameController.h; sourceTree = "<group>"; };
-		9464B85717FA0CD30017FDE0 /* RbxWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RbxWebView.h; path = RobloxMac/RbxWebView.h; sourceTree = "<group>"; };
-		9464B85817FA0CD30017FDE0 /* RbxWebView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = RbxWebView.mm; path = RobloxMac/RbxWebView.mm; sourceTree = "<group>"; };
-		9464B85917FA0CD30017FDE0 /* RBXWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBXWindow.h; path = RobloxMac/RBXWindow.h; sourceTree = "<group>"; };
-		9464B85A17FA0CD30017FDE0 /* RBXWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBXWindow.m; path = RobloxMac/RBXWindow.m; sourceTree = "<group>"; };
+		9464B85717FA0CD30017FDE0 /* RbxWebView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RbxWebView.h; path = NAMEHEREMac/RbxWebView.h; sourceTree = "<group>"; };
+		9464B85817FA0CD30017FDE0 /* RbxWebView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = RbxWebView.mm; path = NAMEHEREMac/RbxWebView.mm; sourceTree = "<group>"; };
+		9464B85917FA0CD30017FDE0 /* RBXWindow.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RBXWindow.h; path = NAMEHEREMac/RBXWindow.h; sourceTree = "<group>"; };
+		9464B85A17FA0CD30017FDE0 /* RBXWindow.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = RBXWindow.m; path = NAMEHEREMac/RBXWindow.m; sourceTree = "<group>"; };
 		9464B88117FA0D160017FDE0 /* ObjectiveCUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObjectiveCUtilities.h; path = iOS/SharedCode/ObjectiveCUtilities.h; sourceTree = "<group>"; };
 		9464B88217FA0D200017FDE0 /* RbxWebView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = RbxWebView.xib; sourceTree = "<group>"; };
 		94B30FEA1612471F00103E2B /* DataModelSerialize.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = DataModelSerialize.cpp; path = ClientShared/DataModelSerialize.cpp; sourceTree = "<group>"; };
@@ -1040,39 +1040,39 @@
 		EA0D72FD12933FF300C510A8 /* Base.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Base.xcodeproj; path = Base/Base.xcodeproj; sourceTree = "<group>"; };
 		EA0D730A1293406C00C510A8 /* Network.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Network.xcodeproj; path = Network/Network.xcodeproj; sourceTree = "<group>"; };
 		EA1A5C181295D92000B6AD4E /* libcrypto.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libcrypto.dylib; path = usr/lib/libcrypto.dylib; sourceTree = SDKROOT; };
-		EA1FA73C1291BE95000D5B71 /* RobloxPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = RobloxPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		EA1FA73C1291BE95000D5B71 /* NAMEHEREPlayer.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NAMEHEREPlayer.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		EA1FA7491291BF52000D5B71 /* AppDraw.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = AppDraw.xcodeproj; path = Rendering/AppDraw/AppDraw.xcodeproj; sourceTree = "<group>"; };
 		EA1FA7531291BF66000D5B71 /* G3D.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = G3D.xcodeproj; path = Rendering/g3d/G3D.xcodeproj; sourceTree = "<group>"; };
 		EA1FA7651291BFA2000D5B71 /* RbxG3D.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = RbxG3D.xcodeproj; path = Rendering/RbxG3D/RbxG3D.xcodeproj; sourceTree = "<group>"; };
 		EA1FA76F1291BFB5000D5B71 /* GfxBase.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = GfxBase.xcodeproj; path = Rendering/GfxBase/GfxBase.xcodeproj; sourceTree = "<group>"; };
-		EA35DC8112F9F98B002BA06F /* GameVerbs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameVerbs.h; path = RobloxMac/GameVerbs.h; sourceTree = "<group>"; };
-		EA35DC8212F9F98B002BA06F /* GameVerbs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameVerbs.cpp; path = RobloxMac/GameVerbs.cpp; sourceTree = "<group>"; };
+		EA35DC8112F9F98B002BA06F /* GameVerbs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = GameVerbs.h; path = NAMEHEREMac/GameVerbs.h; sourceTree = "<group>"; };
+		EA35DC8212F9F98B002BA06F /* GameVerbs.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = GameVerbs.cpp; path = NAMEHEREMac/GameVerbs.cpp; sourceTree = "<group>"; };
 		EA47CCE4129364EC0076BC7B /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		EA47CCF3129365FF0076BC7B /* Carbon.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Carbon.framework; path = System/Library/Frameworks/Carbon.framework; sourceTree = SDKROOT; };
-		EA74C5CB130340C9002A026E /* RobloxView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = RobloxView.mm; path = RobloxMac/RobloxView.mm; sourceTree = "<group>"; };
-		EA7F410712B2E90900A7159A /* RobloxPlayer.htm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = RobloxPlayer.htm; sourceTree = "<group>"; };
-		EAC8904C12B6CBB40004091E /* RobloxOgreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RobloxOgreView.h; path = RobloxMac/RobloxOgreView.h; sourceTree = "<group>"; };
-		EAC8904D12B6CBB40004091E /* RobloxOgreView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = RobloxOgreView.mm; path = RobloxMac/RobloxOgreView.mm; sourceTree = "<group>"; };
+		EA74C5CB130340C9002A026E /* NAMEHEREView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NAMEHEREView.mm; path = NAMEHEREMac/NAMEHEREView.mm; sourceTree = "<group>"; };
+		EA7F410712B2E90900A7159A /* NAMEHEREPlayer.htm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = NAMEHEREPlayer.htm; sourceTree = "<group>"; };
+		EAC8904C12B6CBB40004091E /* NAMEHEREOgreView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NAMEHEREOgreView.h; path = NAMEHEREMac/NAMEHEREOgreView.h; sourceTree = "<group>"; };
+		EAC8904D12B6CBB40004091E /* NAMEHEREOgreView.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NAMEHEREOgreView.mm; path = NAMEHEREMac/NAMEHEREOgreView.mm; sourceTree = "<group>"; };
 		EAE0C53112B014220061876F /* MainMenu.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainMenu.xib; sourceTree = "<group>"; };
 		EAE0C53212B014220061876F /* plugins.cfg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = plugins.cfg; sourceTree = "<group>"; };
-		EAE0C53312B014220061876F /* Roblox.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = Roblox.icns; sourceTree = "<group>"; };
-		EAE0C53F12B015260061876F /* RobloxPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RobloxPlayer.cpp; path = RobloxMac/RobloxPlayer.cpp; sourceTree = "<group>"; };
-		EAE0C54112B015330061876F /* RobloxView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RobloxView.cpp; path = RobloxMac/RobloxView.cpp; sourceTree = "<group>"; };
-		EAE0C54212B015330061876F /* RobloxView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RobloxView.h; path = RobloxMac/RobloxView.h; sourceTree = "<group>"; };
-		EAE0C54712B015440061876F /* FunctionMarshaller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FunctionMarshaller.cpp; path = RobloxMac/FunctionMarshaller.cpp; sourceTree = "<group>"; };
-		EAE0C54812B015440061876F /* FunctionMarshaller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FunctionMarshaller.h; path = RobloxMac/FunctionMarshaller.h; sourceTree = "<group>"; };
-		EAE0C54D12B015510061876F /* main.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = main.m; path = RobloxMac/main.m; sourceTree = "<group>"; };
-		EAE0C55312B015680061876F /* RobloxPlayerAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RobloxPlayerAppDelegate.h; path = RobloxMac/RobloxPlayerAppDelegate.h; sourceTree = "<group>"; };
-		EAE0C55412B015680061876F /* RobloxPlayerAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = RobloxPlayerAppDelegate.mm; path = RobloxMac/RobloxPlayerAppDelegate.mm; sourceTree = "<group>"; };
-		EAED7D3212F11B9400026F71 /* Roblox.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = Roblox.cpp; path = RobloxMac/Roblox.cpp; sourceTree = "<group>"; };
-		EAED7D3312F11B9400026F71 /* Roblox.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = Roblox.h; path = RobloxMac/Roblox.h; sourceTree = "<group>"; };
-		EAED7D3412F11B9400026F71 /* Roblox.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = Roblox.mm; path = RobloxMac/Roblox.mm; sourceTree = "<group>"; };
-		EAEEAFAA12B012FF007458A6 /* RobloxPlayer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "RobloxPlayer-Info.plist"; sourceTree = "<group>"; };
-		EAF4215612B064E200720FDE /* roblox.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = roblox.html; sourceTree = "<group>"; };
-		EAF931A512B82EBB00DE2773 /* UserInput.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UserInput.cpp; path = RobloxMac/UserInput.cpp; sourceTree = "<group>"; };
-		EAF931A612B82EBB00DE2773 /* UserInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInput.h; path = RobloxMac/UserInput.h; sourceTree = "<group>"; };
-		EAF931B812B82EE900DE2773 /* UserInputUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UserInputUtil.cpp; path = RobloxMac/UserInputUtil.cpp; sourceTree = "<group>"; };
-		EAF931B912B82EE900DE2773 /* UserInputUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInputUtil.h; path = RobloxMac/UserInputUtil.h; sourceTree = "<group>"; };
+		EAE0C53312B014220061876F /* NAMEHERE.icns */ = {isa = PBXFileReference; lastKnownFileType = image.icns; path = NAMEHERE.icns; sourceTree = "<group>"; };
+		EAE0C53F12B015260061876F /* NAMEHEREPlayer.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NAMEHEREPlayer.cpp; path = NAMEHEREMac/NAMEHEREPlayer.cpp; sourceTree = "<group>"; };
+		EAE0C54112B015330061876F /* NAMEHEREView.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NAMEHEREView.cpp; path = NAMEHEREMac/NAMEHEREView.cpp; sourceTree = "<group>"; };
+		EAE0C54212B015330061876F /* NAMEHEREView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NAMEHEREView.h; path = NAMEHEREMac/NAMEHEREView.h; sourceTree = "<group>"; };
+		EAE0C54712B015440061876F /* FunctionMarshaller.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = FunctionMarshaller.cpp; path = NAMEHEREMac/FunctionMarshaller.cpp; sourceTree = "<group>"; };
+		EAE0C54812B015440061876F /* FunctionMarshaller.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = FunctionMarshaller.h; path = NAMEHEREMac/FunctionMarshaller.h; sourceTree = "<group>"; };
+		EAE0C54D12B015510061876F /* main.m */ = {isa = PBXFileReference; explicitFileType = sourcecode.cpp.objcpp; fileEncoding = 4; name = main.m; path = NAMEHEREMac/main.m; sourceTree = "<group>"; };
+		EAE0C55312B015680061876F /* NAMEHEREPlayerAppDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NAMEHEREPlayerAppDelegate.h; path = NAMEHEREMac/NAMEHEREPlayerAppDelegate.h; sourceTree = "<group>"; };
+		EAE0C55412B015680061876F /* NAMEHEREPlayerAppDelegate.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NAMEHEREPlayerAppDelegate.mm; path = NAMEHEREMac/NAMEHEREPlayerAppDelegate.mm; sourceTree = "<group>"; };
+		EAED7D3212F11B9400026F71 /* NAMEHERE.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NAMEHERE.cpp; path = NAMEHEREMac/NAMEHERE.cpp; sourceTree = "<group>"; };
+		EAED7D3312F11B9400026F71 /* NAMEHERE.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NAMEHERE.h; path = NAMEHEREMac/NAMEHERE.h; sourceTree = "<group>"; };
+		EAED7D3412F11B9400026F71 /* NAMEHERE.mm */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.objcpp; name = NAMEHERE.mm; path = NAMEHEREMac/NAMEHERE.mm; sourceTree = "<group>"; };
+		EAEEAFAA12B012FF007458A6 /* NAMEHEREPlayer-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "NAMEHEREPlayer-Info.plist"; sourceTree = "<group>"; };
+		EAF4215612B064E200720FDE /* namehere.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = namehere.html; sourceTree = "<group>"; };
+		EAF931A512B82EBB00DE2773 /* UserInput.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UserInput.cpp; path = NAMEHEREMac/UserInput.cpp; sourceTree = "<group>"; };
+		EAF931A612B82EBB00DE2773 /* UserInput.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInput.h; path = NAMEHEREMac/UserInput.h; sourceTree = "<group>"; };
+		EAF931B812B82EE900DE2773 /* UserInputUtil.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = UserInputUtil.cpp; path = NAMEHEREMac/UserInputUtil.cpp; sourceTree = "<group>"; };
+		EAF931B912B82EE900DE2773 /* UserInputUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = UserInputUtil.h; path = NAMEHEREMac/UserInputUtil.h; sourceTree = "<group>"; };
 		F467AB2415058214009A7CC7 /* ClusterReplicationTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ClusterReplicationTest.cpp; path = App.UnitTest/ClusterReplicationTest.cpp; sourceTree = "<group>"; };
 		F488FD5B1511104800D3D0D7 /* ClusterDeprecatedPropertyTest.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = ClusterDeprecatedPropertyTest.cpp; path = App.UnitTest/ClusterDeprecatedPropertyTest.cpp; sourceTree = "<group>"; };
 		F4B88FFE14100BF400E0B03D /* Log.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Log.xcodeproj; path = Log/Log.xcodeproj; sourceTree = "<group>"; };
@@ -1316,7 +1316,7 @@
 			children = (
 				52D3A56D14ED9E590033CC1E /* Base */,
 				52D3A56E14ED9E600033CC1E /* App */,
-				52E37D7D14EDAD5700CE2CB2 /* RobloxTest */,
+				52E37D7D14EDAD5700CE2CB2 /* NAMEHERETest */,
 			);
 			name = Test;
 			sourceTree = "<group>";
@@ -1339,7 +1339,7 @@
 			name = App;
 			sourceTree = "<group>";
 		};
-		52E37D7D14EDAD5700CE2CB2 /* RobloxTest */ = {
+		52E37D7D14EDAD5700CE2CB2 /* NAMEHERETest */ = {
 			isa = PBXGroup;
 			children = (
 				1F45BC6016388276006B3BAE /* Tests */,
@@ -1348,7 +1348,7 @@
 				94B30FEA1612471F00103E2B /* DataModelSerialize.cpp */,
 				56A2C56D17E78FA90026D19D /* StringConv.cpp */,
 			);
-			name = RobloxTest;
+			name = NAMEHERETest;
 			sourceTree = "<group>";
 		};
 		C8AC6B5A18FF13750057506F /* Products */ = {
@@ -1491,10 +1491,10 @@
 		EA1FA73D1291BE95000D5B71 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				EA1FA73C1291BE95000D5B71 /* RobloxPlayer.app */,
+				EA1FA73C1291BE95000D5B71 /* NAMEHEREPlayer.app */,
 				E7CFF125129AE4A200530485 /* App.UnitTest */,
 				1FE3083C12BC19B5006433FC /* Base.UnitTest */,
-				52E37D7714EDAD1400CE2CB2 /* RobloxTest */,
+				52E37D7714EDAD1400CE2CB2 /* NAMEHERETest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -1541,15 +1541,15 @@
 				9464B88217FA0D200017FDE0 /* RbxWebView.xib */,
 				7F209967133A893600DCE888 /* homeButton.png */,
 				5224672F131EB5DC00578348 /* copyrights.txt */,
-				EA7F410712B2E90900A7159A /* RobloxPlayer.htm */,
+				EA7F410712B2E90900A7159A /* NAMEHEREPlayer.htm */,
 				EAE0C53112B014220061876F /* MainMenu.xib */,
-				EAF4215612B064E200720FDE /* roblox.html */,
+				EAF4215612B064E200720FDE /* namehere.html */,
 				EAE0C53212B014220061876F /* plugins.cfg */,
-				EAE0C53312B014220061876F /* Roblox.icns */,
+				EAE0C53312B014220061876F /* NAMEHERE.icns */,
 				52ECABA712EE96FE00FAF033 /* Test.html */,
 			);
 			name = Resources;
-			path = RobloxMac/Resources;
+			path = NAMEHEREMac/Resources;
 			sourceTree = "<group>";
 		};
 		EAE0C53B12B014EE0061876F /* Other Sources */ = {
@@ -1563,10 +1563,10 @@
 				EAE0C54712B015440061876F /* FunctionMarshaller.cpp */,
 				EA35DC8112F9F98B002BA06F /* GameVerbs.h */,
 				EA35DC8212F9F98B002BA06F /* GameVerbs.cpp */,
-				EAE0C53F12B015260061876F /* RobloxPlayer.cpp */,
-				EAE0C54212B015330061876F /* RobloxView.h */,
-				EAE0C54112B015330061876F /* RobloxView.cpp */,
-				EA74C5CB130340C9002A026E /* RobloxView.mm */,
+				EAE0C53F12B015260061876F /* NAMEHEREPlayer.cpp */,
+				EAE0C54212B015330061876F /* NAMEHEREView.h */,
+				EAE0C54112B015330061876F /* NAMEHEREView.cpp */,
+				EA74C5CB130340C9002A026E /* NAMEHEREView.mm */,
 				EAF931A512B82EBB00DE2773 /* UserInput.cpp */,
 				EAF931A612B82EBB00DE2773 /* UserInput.h */,
 				EAF931B812B82EE900DE2773 /* UserInputUtil.cpp */,
@@ -1584,22 +1584,22 @@
 				9464B85817FA0CD30017FDE0 /* RbxWebView.mm */,
 				9464B85917FA0CD30017FDE0 /* RBXWindow.h */,
 				9464B85A17FA0CD30017FDE0 /* RBXWindow.m */,
-				EAED7D3312F11B9400026F71 /* Roblox.h */,
-				EAED7D3212F11B9400026F71 /* Roblox.cpp */,
-				EAED7D3412F11B9400026F71 /* Roblox.mm */,
+				EAED7D3312F11B9400026F71 /* NAMEHERE.h */,
+				EAED7D3212F11B9400026F71 /* NAMEHERE.cpp */,
+				EAED7D3412F11B9400026F71 /* NAMEHERE.mm */,
 				52ECA47212EE3C8500FAF033 /* CMCrashReporter.h */,
 				52ECA47312EE3C8500FAF033 /* CMCrashReporter.mm */,
 				52ECA47412EE3C8500FAF033 /* CMCrashReporterGlobal.h */,
 				52ECA47512EE3C8500FAF033 /* CMCrashReporterGlobal.m */,
-				EAC8904C12B6CBB40004091E /* RobloxOgreView.h */,
-				EAC8904D12B6CBB40004091E /* RobloxOgreView.mm */,
-				EAE0C55312B015680061876F /* RobloxPlayerAppDelegate.h */,
-				EAE0C55412B015680061876F /* RobloxPlayerAppDelegate.mm */,
+				EAC8904C12B6CBB40004091E /* NAMEHEREOgreView.h */,
+				EAC8904D12B6CBB40004091E /* NAMEHEREOgreView.mm */,
+				EAE0C55312B015680061876F /* NAMEHEREPlayerAppDelegate.h */,
+				EAE0C55412B015680061876F /* NAMEHEREPlayerAppDelegate.mm */,
 			);
 			name = Classes;
 			sourceTree = "<group>";
 		};
-		EAEEAFA612B01238007458A6 /* Roblox */ = {
+		EAEEAFA612B01238007458A6 /* NAMEHERE */ = {
 			isa = PBXGroup;
 			children = (
 				4281E60319806844002F5A98 /* LuaVMClient.cpp */,
@@ -1609,7 +1609,7 @@
 				EAE0C53012B014220061876F /* Resources */,
 				10CBCBDC15A3697A001A5E64 /* StdAfx.h */,
 			);
-			name = Roblox;
+			name = NAMEHERE;
 			sourceTree = "<group>";
 		};
 		EAF082211291B1B900B34F14 = {
@@ -1631,8 +1631,8 @@
 				EA1FA6B61291B20A000D5B71 /* 3rd Party */,
 				EA1FA6C51291B240000D5B71 /* Contrib */,
 				EA1FA71B1291B3C6000D5B71 /* Rendering */,
-				EAEEAFA612B01238007458A6 /* Roblox */,
-				EAEEAFAA12B012FF007458A6 /* RobloxPlayer-Info.plist */,
+				EAEEAFA612B01238007458A6 /* NAMEHERE */,
+				EAEEAFAA12B012FF007458A6 /* NAMEHEREPlayer-Info.plist */,
 				EA1FA73D1291BE95000D5B71 /* Products */,
 				F4B88FFE14100BF400E0B03D /* Log.xcodeproj */,
 			);
@@ -1682,14 +1682,14 @@
 			productReference = 1FE3083C12BC19B5006433FC /* Base.UnitTest */;
 			productType = "com.apple.product-type.tool";
 		};
-		52E37D7614EDAD1400CE2CB2 /* RobloxTest */ = {
+		52E37D7614EDAD1400CE2CB2 /* NAMEHERETest */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 52E37D7C14EDAD4B00CE2CB2 /* Build configuration list for PBXNativeTarget "RobloxTest" */;
+			buildConfigurationList = 52E37D7C14EDAD4B00CE2CB2 /* Build configuration list for PBXNativeTarget "NAMEHERETest" */;
 			buildPhases = (
 				52E37D7414EDAD1400CE2CB2 /* Sources */,
 				52E37D7514EDAD1400CE2CB2 /* Frameworks */,
 				1FE250F5163605D40057FA39 /* CopyFiles */,
-				1F24A3E31822F0CE00779D12 /* Copy Content and RobloxTest */,
+				1F24A3E31822F0CE00779D12 /* Copy Content and NAMEHERETest */,
 			);
 			buildRules = (
 			);
@@ -1707,9 +1707,9 @@
 				524F2A8814EDCECC00581C13 /* PBXTargetDependency */,
 				524F2A8A14EDCF0B00581C13 /* PBXTargetDependency */,
 			);
-			name = RobloxTest;
-			productName = RobloxTest;
-			productReference = 52E37D7714EDAD1400CE2CB2 /* RobloxTest */;
+			name = NAMEHERETest;
+			productName = NAMEHERETest;
+			productReference = 52E37D7714EDAD1400CE2CB2 /* NAMEHERETest */;
 			productType = "com.apple.product-type.tool";
 		};
 		E7CFF124129AE4A200530485 /* App.UnitTest */ = {
@@ -1742,9 +1742,9 @@
 			productReference = E7CFF125129AE4A200530485 /* App.UnitTest */;
 			productType = "com.apple.product-type.tool";
 		};
-		EA1FA73B1291BE95000D5B71 /* RobloxPlayer */ = {
+		EA1FA73B1291BE95000D5B71 /* NAMEHEREPlayer */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = EA1FA7421291BE95000D5B71 /* Build configuration list for PBXNativeTarget "RobloxPlayer" */;
+			buildConfigurationList = EA1FA7421291BE95000D5B71 /* Build configuration list for PBXNativeTarget "NAMEHEREPlayer" */;
 			buildPhases = (
 				94D0F1C01BD9D2A8006A04C7 /* Run CoreScriptConverter */,
 				EA1FA7381291BE95000D5B71 /* Resources */,
@@ -1774,9 +1774,9 @@
 				EAEEAFA212B01218007458A6 /* PBXTargetDependency */,
 				F4B8934B1417DFDA00E0B03D /* PBXTargetDependency */,
 			);
-			name = RobloxPlayer;
-			productName = Roblox;
-			productReference = EA1FA73C1291BE95000D5B71 /* RobloxPlayer.app */;
+			name = NAMEHEREPlayer;
+			productName = NAMEHERE;
+			productReference = EA1FA73C1291BE95000D5B71 /* NAMEHEREPlayer.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -1872,11 +1872,11 @@
 			);
 			projectRoot = "";
 			targets = (
-				EA1FA73B1291BE95000D5B71 /* RobloxPlayer */,
+				EA1FA73B1291BE95000D5B71 /* NAMEHEREPlayer */,
 				1FE3083B12BC19B5006433FC /* Base.UnitTest */,
 				E7CFF124129AE4A200530485 /* App.UnitTest */,
-				52E37D7614EDAD1400CE2CB2 /* RobloxTest */,
-				5238961512F3389000D4DE3D /* RobloxPlayer.zip */,
+				52E37D7614EDAD1400CE2CB2 /* NAMEHERETest */,
+				5238961512F3389000D4DE3D /* NAMEHEREPlayer.zip */,
 			);
 		};
 /* End PBXProject section */
@@ -2225,12 +2225,12 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EA7F410912B2E91300A7159A /* RobloxPlayer.htm in Resources */,
+				EA7F410912B2E91300A7159A /* NAMEHEREPlayer.htm in Resources */,
 				EAE0C55B12B0161C0061876F /* MainMenu.xib in Resources */,
 				9464B88317FA0D200017FDE0 /* RbxWebView.xib in Resources */,
-				EAF4215812B064FC00720FDE /* roblox.html in Resources */,
+				EAF4215812B064FC00720FDE /* namehere.html in Resources */,
 				EAE0C55C12B0161C0061876F /* plugins.cfg in Resources */,
-				EAE0C55D12B0161C0061876F /* Roblox.icns in Resources */,
+				EAE0C55D12B0161C0061876F /* NAMEHERE.icns in Resources */,
 				52ECABA812EE96FE00FAF033 /* Test.html in Resources */,
 				52246730131EB5DC00578348 /* copyrights.txt in Resources */,
 				7F209968133A893600DCE888 /* homeButton.png in Resources */,
@@ -2253,7 +2253,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "/usr/libexec/PlistBuddy -c \"print :CFBundleShortVersionString\" \"$CONFIGURATION_BUILD_DIR/stripped/RobloxPlayer.app/Contents/Info.plist\" | sed -e 's/[.]/, /g' > \"$CONFIGURATION_BUILD_DIR/MacClientVersion.txt\"";
+			shellScript = "/usr/libexec/PlistBuddy -c \"print :CFBundleShortVersionString\" \"$CONFIGURATION_BUILD_DIR/stripped/NAMEHEREPlayer.app/Contents/Info.plist\" | sed -e 's/[.]/, /g' > \"$CONFIGURATION_BUILD_DIR/MacClientVersion.txt\"";
 		};
 		1F0F90EE1326C4C100E984D0 /* Breakpad */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2269,7 +2269,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# assign the breakpad dir\nBREAKPAD_DIR=\"$CONFIGURATION_BUILD_DIR/breakpad\"\nAPP_TARGET=RobloxPlayer\nFRAMEWORKS_DIR=\"/System/Library/Frameworks/\"\n\nBINARIES=( \"$FRAMEWORKS_DIR/AppKit.framework/AppKit\" \"$FRAMEWORKS_DIR/CoreFoundation.framework/CoreFoundation\" \"$FRAMEWORKS_DIR/Foundation.framework/Foundation\" \"$CONFIGURATION_BUILD_DIR/$APP_TARGET.app\" )\nTARGETS=( \"AppKit\" \"CoreFoundation\" \"Foundation\" \"$APP_TARGET\" )\n\n# remove and recreate the breakpad directory for a fresh export\nrm -rf \"$BREAKPAD_DIR\"\nif [ -e \"$CONFIGURATION_BUILD_DIR/breakpad.zip\" ]\nthen\nrm \"$CONFIGURATION_BUILD_DIR/breakpad.zip\"\nfi\nmkdir \"$BREAKPAD_DIR\"\n\nfor((i = 0; i < ${#BINARIES[@]}; i++))\n    do\n\t# check if we operate on the dsym or the contents\n\tBINARY=\"test\"\n\tTARGET=\"${TARGETS[$i]}\"\n\tif [ -e \"${BINARIES[$i]}.dSym\" ]\n\tthen\n    BINARY=\"${BINARIES[$i]}.dSym\"\n\telif [ -e \"${BINARIES[$i]}/Contents/MacOS/$TARGET\" ]\n\tthen\n    BINARY=\"${BINARIES[$i]}/Contents/MacOS/$TARGET\"\n\telse\n    BINARY=\"${BINARIES[$i]}\"\n\tfi\n\t\n\t# dump symbols from the binary to the breakpad\n\t\"$CONTRIB_PATH/google-breakpad/19OCT2015/bin/mac/dump_syms\" -a i386 \"$BINARY\" > \"$BREAKPAD_DIR/$TARGET.breakpad\"\n    echo \"Dumping $SRCROOT/google-breakpad/19OCT2015/bin/mac/dump_syms on $BINARY to $BREAKPAD_DIR/$TARGET.breakpad\"\n    \n\t# pull the breakpad label from the header of the breakpad file\n\tLABEL=`head -n 1 \"$BREAKPAD_DIR/$TARGET.breakpad\" | awk '{print $4}'`\n    \n\t# create directory according to the header label\n\tmkdir -p \"$BREAKPAD_DIR/$TARGET/$LABEL/\"\n    \n\t# move the breakpad file\n\tmv \"$BREAKPAD_DIR/$TARGET.breakpad\" \"$BREAKPAD_DIR/$TARGET/$LABEL/$TARGET.sym\"\n    done\n    \n    # zip the breakpad directory\n    ditto -c -k --keepParent --zlibCompressionLevel 9 \"$BREAKPAD_DIR\" \"$CONFIGURATION_BUILD_DIR/breakpad.zip\"";
+			shellScript = "# assign the breakpad dir\nBREAKPAD_DIR=\"$CONFIGURATION_BUILD_DIR/breakpad\"\nAPP_TARGET=NAMEHEREPlayer\nFRAMEWORKS_DIR=\"/System/Library/Frameworks/\"\n\nBINARIES=( \"$FRAMEWORKS_DIR/AppKit.framework/AppKit\" \"$FRAMEWORKS_DIR/CoreFoundation.framework/CoreFoundation\" \"$FRAMEWORKS_DIR/Foundation.framework/Foundation\" \"$CONFIGURATION_BUILD_DIR/$APP_TARGET.app\" )\nTARGETS=( \"AppKit\" \"CoreFoundation\" \"Foundation\" \"$APP_TARGET\" )\n\n# remove and recreate the breakpad directory for a fresh export\nrm -rf \"$BREAKPAD_DIR\"\nif [ -e \"$CONFIGURATION_BUILD_DIR/breakpad.zip\" ]\nthen\nrm \"$CONFIGURATION_BUILD_DIR/breakpad.zip\"\nfi\nmkdir \"$BREAKPAD_DIR\"\n\nfor((i = 0; i < ${#BINARIES[@]}; i++))\n    do\n\t# check if we operate on the dsym or the contents\n\tBINARY=\"test\"\n\tTARGET=\"${TARGETS[$i]}\"\n\tif [ -e \"${BINARIES[$i]}.dSym\" ]\n\tthen\n    BINARY=\"${BINARIES[$i]}.dSym\"\n\telif [ -e \"${BINARIES[$i]}/Contents/MacOS/$TARGET\" ]\n\tthen\n    BINARY=\"${BINARIES[$i]}/Contents/MacOS/$TARGET\"\n\telse\n    BINARY=\"${BINARIES[$i]}\"\n\tfi\n\t\n\t# dump symbols from the binary to the breakpad\n\t\"$CONTRIB_PATH/google-breakpad/19OCT2015/bin/mac/dump_syms\" -a i386 \"$BINARY\" > \"$BREAKPAD_DIR/$TARGET.breakpad\"\n    echo \"Dumping $SRCROOT/google-breakpad/19OCT2015/bin/mac/dump_syms on $BINARY to $BREAKPAD_DIR/$TARGET.breakpad\"\n    \n\t# pull the breakpad label from the header of the breakpad file\n\tLABEL=`head -n 1 \"$BREAKPAD_DIR/$TARGET.breakpad\" | awk '{print $4}'`\n    \n\t# create directory according to the header label\n\tmkdir -p \"$BREAKPAD_DIR/$TARGET/$LABEL/\"\n    \n\t# move the breakpad file\n\tmv \"$BREAKPAD_DIR/$TARGET.breakpad\" \"$BREAKPAD_DIR/$TARGET/$LABEL/$TARGET.sym\"\n    done\n    \n    # zip the breakpad directory\n    ditto -c -k --keepParent --zlibCompressionLevel 9 \"$BREAKPAD_DIR\" \"$CONFIGURATION_BUILD_DIR/breakpad.zip\"";
 		};
 		1F0F90FA1326C55700E984D0 /* Create Stripped Product */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2277,17 +2277,17 @@
 			files = (
 			);
 			inputPaths = (
-				$CONFIGURATION_BUILD_DIR/RobloxPlayer.app/Contents/MacOS/RobloxPlayer,
+				$CONFIGURATION_BUILD_DIR/NAMEHEREPlayer.app/Contents/MacOS/NAMEHEREPlayer,
 			);
 			name = "Create Stripped Product";
 			outputPaths = (
-				$CONFIGURATION_BUILD_DIR/stripped/RobloxPlayer.app/Contents/MacOS/RobloxPlayer,
+				$CONFIGURATION_BUILD_DIR/stripped/NAMEHEREPlayer.app/Contents/MacOS/NAMEHEREPlayer,
 				$CONFIGURATION_BUILD_DIR/stripped/symbols.txt,
 				$CONFIGURATION_BUILD_DIR/symbols.txt,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\nrm -f -dr \"$CONFIGURATION_BUILD_DIR/stripped\"\nmkdir \"$CONFIGURATION_BUILD_DIR/stripped\"\ncp -R \"$CONFIGURATION_BUILD_DIR/RobloxPlayer.app\" \"$CONFIGURATION_BUILD_DIR/stripped/RobloxPlayer.app\"\n\n# Remove unnecessary ARCH\n\n#3rd Party\nlipo \"${CONFIGURATION_BUILD_DIR}/RobloxPlayer.app/Contents/Frameworks/libfmod.dylib\" -thin i386 -output \"${CONFIGURATION_BUILD_DIR}/stripped/RobloxPlayer.app/Contents/Frameworks/libfmod.dylib\"\n\nstrip -u -r \"$CONFIGURATION_BUILD_DIR/stripped/RobloxPlayer.app/Contents/MacOS/RobloxPlayer\"\nstrip -u -r -x \"$CONFIGURATION_BUILD_DIR/stripped/RobloxPlayer.app/Contents/Frameworks/libLog.dylib\"\n\nnm \"$CONFIGURATION_BUILD_DIR/stripped/RobloxPlayer.app/Contents/MacOS/RobloxPlayer\" > \"$CONFIGURATION_BUILD_DIR/stripped/symbols.txt\"\nnm \"$CONFIGURATION_BUILD_DIR/RobloxPlayer.app/Contents/MacOS/RobloxPlayer\" > \"$CONFIGURATION_BUILD_DIR/symbols.txt\"\n\nnm \"$CONFIGURATION_BUILD_DIR/stripped/RobloxPlayer.app/Contents/Frameworks/libLog.dylib\" > \"$CONFIGURATION_BUILD_DIR/stripped/logsymbols.txt\"\nnm \"$CONFIGURATION_BUILD_DIR/RobloxPlayer.app/Contents//Frameworks/libLog.dylib\" > \"$CONFIGURATION_BUILD_DIR/logsymbols.txt\"\n";
+			shellScript = "\nrm -f -dr \"$CONFIGURATION_BUILD_DIR/stripped\"\nmkdir \"$CONFIGURATION_BUILD_DIR/stripped\"\ncp -R \"$CONFIGURATION_BUILD_DIR/NAMEHEREPlayer.app\" \"$CONFIGURATION_BUILD_DIR/stripped/NAMEHEREPlayer.app\"\n\n# Remove unnecessary ARCH\n\n#3rd Party\nlipo \"${CONFIGURATION_BUILD_DIR}/NAMEHEREPlayer.app/Contents/Frameworks/libfmod.dylib\" -thin i386 -output \"${CONFIGURATION_BUILD_DIR}/stripped/NAMEHEREPlayer.app/Contents/Frameworks/libfmod.dylib\"\n\nstrip -u -r \"$CONFIGURATION_BUILD_DIR/stripped/NAMEHEREPlayer.app/Contents/MacOS/NAMEHEREPlayer\"\nstrip -u -r -x \"$CONFIGURATION_BUILD_DIR/stripped/NAMEHEREPlayer.app/Contents/Frameworks/libLog.dylib\"\n\nnm \"$CONFIGURATION_BUILD_DIR/stripped/NAMEHEREPlayer.app/Contents/MacOS/NAMEHEREPlayer\" > \"$CONFIGURATION_BUILD_DIR/stripped/symbols.txt\"\nnm \"$CONFIGURATION_BUILD_DIR/NAMEHEREPlayer.app/Contents/MacOS/NAMEHEREPlayer\" > \"$CONFIGURATION_BUILD_DIR/symbols.txt\"\n\nnm \"$CONFIGURATION_BUILD_DIR/stripped/NAMEHEREPlayer.app/Contents/Frameworks/libLog.dylib\" > \"$CONFIGURATION_BUILD_DIR/stripped/logsymbols.txt\"\nnm \"$CONFIGURATION_BUILD_DIR/NAMEHEREPlayer.app/Contents//Frameworks/libLog.dylib\" > \"$CONFIGURATION_BUILD_DIR/logsymbols.txt\"\n";
 		};
 		1F24A3BC1822D13D00779D12 /* Manualy copy Resource folder Hack for XCode 5 */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2304,7 +2304,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp -rf \"${SRCROOT}/content\" \"${CONFIGURATION_BUILD_DIR}/RobloxPlayer.app/Contents/Resources\"\ncp -rf \"${SRCROOT}/shaders\" \"${CONFIGURATION_BUILD_DIR}/RobloxPlayer.app/Contents/Resources\"\nmkdir -p \"${CONFIGURATION_BUILD_DIR}/RobloxPlayer.app/Contents/Resources/PlatformContent\"\ncp -rf \"${SRCROOT}/PlatformContent/pc\" \"${CONFIGURATION_BUILD_DIR}/RobloxPlayer.app/Contents/Resources/PlatformContent/pc\"\n\n";
+			shellScript = "cp -rf \"${SRCROOT}/content\" \"${CONFIGURATION_BUILD_DIR}/NAMEHEREPlayer.app/Contents/Resources\"\ncp -rf \"${SRCROOT}/shaders\" \"${CONFIGURATION_BUILD_DIR}/NAMEHEREPlayer.app/Contents/Resources\"\nmkdir -p \"${CONFIGURATION_BUILD_DIR}/NAMEHEREPlayer.app/Contents/Resources/PlatformContent\"\ncp -rf \"${SRCROOT}/PlatformContent/pc\" \"${CONFIGURATION_BUILD_DIR}/NAMEHEREPlayer.app/Contents/Resources/PlatformContent/pc\"\n\n";
 		};
 		1F24A3E21822EF3400779D12 /* Copy content */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2320,21 +2320,21 @@
 			shellPath = /bin/sh;
 			shellScript = "cp -rf \"${SRCROOT}/content\" \"${CONFIGURATION_BUILD_DIR}\"\n\nmkdir -p \"${CONFIGURATION_BUILD_DIR}/PlatformContent\"\ncp -rf \"${SRCROOT}/PlatformContent/pc\" \"${CONFIGURATION_BUILD_DIR}/PlatformContent/pc\"\n";
 		};
-		1F24A3E31822F0CE00779D12 /* Copy Content and RobloxTest */ = {
+		1F24A3E31822F0CE00779D12 /* Copy Content and NAMEHERETest */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 				"$(SRCROOT)/content",
-				"$(SRCROOT)/RobloxTest/Tests",
+				"$(SRCROOT)/NAMEHERETest/Tests",
 			);
-			name = "Copy Content and RobloxTest";
+			name = "Copy Content and NAMEHERETest";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "cp -rf \"${SRCROOT}/content\" \"${CONFIGURATION_BUILD_DIR}\"\nmkdir -p \"${CONFIGURATION_BUILD_DIR}/PlatformContent\"\ncp -rf \"${SRCROOT}/PlatformContent/pc\" \"${CONFIGURATION_BUILD_DIR}/PlatformContent/pc\"\n\ncp -rf \"${SRCROOT}/RobloxTest/Tests\" \"${CONFIGURATION_BUILD_DIR}\"\n";
+			shellScript = "cp -rf \"${SRCROOT}/content\" \"${CONFIGURATION_BUILD_DIR}\"\nmkdir -p \"${CONFIGURATION_BUILD_DIR}/PlatformContent\"\ncp -rf \"${SRCROOT}/PlatformContent/pc\" \"${CONFIGURATION_BUILD_DIR}/PlatformContent/pc\"\n\ncp -rf \"${SRCROOT}/NAMEHERETest/Tests\" \"${CONFIGURATION_BUILD_DIR}\"\n";
 		};
 		1F2F4F9E1328023300031750 /* Generate dSYM */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2342,31 +2342,31 @@
 			files = (
 			);
 			inputPaths = (
-				$CONFIGURATION_BUILD_DIR/RobloxPlayer.app/Contents/MacOS/RobloxPlayer,
+				$CONFIGURATION_BUILD_DIR/NAMEHEREPlayer.app/Contents/MacOS/NAMEHEREPlayer,
 			);
 			name = "Generate dSYM";
 			outputPaths = (
-				$CONFIGURATION_BUILD_DIR/RobloxPlayer.app.dSYM,
+				$CONFIGURATION_BUILD_DIR/NAMEHEREPlayer.app.dSYM,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# GenerateDSYMFile for RobloxPlayer\nBINARIES=( \"$CONFIGURATION_BUILD_DIR/RobloxPlayer.app/Contents/MacOS/RobloxPlayer\" \"$CONFIGURATION_BUILD_DIR/RobloxPlayer.app/Contents/Frameworks/libLog.dylib\" \"$CONFIGURATION_BUILD_DIR/RobloxPlayer.app/Contents/Frameworks/libfmod.dylib\")\nOUTPUTS=( \"$CONFIGURATION_BUILD_DIR/RobloxPlayer.app.dSYM\" \"$CONFIGURATION_BUILD_DIR/libLog.dSYM\" \"$CONFIGURATION_BUILD_DIR/libfmod.dSYM\" )\n\nfor i in 0\ndo\ndsymutil --arch=i386 \"${BINARIES[$i]}\" -o \"${OUTPUTS[$i]}\"\ndone";
+			shellScript = "# GenerateDSYMFile for NAMEHEREPlayer\nBINARIES=( \"$CONFIGURATION_BUILD_DIR/NAMEHEREPlayer.app/Contents/MacOS/NAMEHEREPlayer\" \"$CONFIGURATION_BUILD_DIR/NAMEHEREPlayer.app/Contents/Frameworks/libLog.dylib\" \"$CONFIGURATION_BUILD_DIR/NAMEHEREPlayer.app/Contents/Frameworks/libfmod.dylib\")\nOUTPUTS=( \"$CONFIGURATION_BUILD_DIR/NAMEHEREPlayer.app.dSYM\" \"$CONFIGURATION_BUILD_DIR/libLog.dSYM\" \"$CONFIGURATION_BUILD_DIR/libfmod.dSYM\" )\n\nfor i in 0\ndo\ndsymutil --arch=i386 \"${BINARIES[$i]}\" -o \"${OUTPUTS[$i]}\"\ndone";
 		};
 		1FCC42471305EB8A0029C4E6 /* Run install_name_tool Script */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
-			comments = "This is to change the linkages location embedded inside the executable about information on where to pick up the dylibs from\nThe linkages location information reside in the dylib which can be seen with following command\n\notool -L libtbb.dylib\n\nWhen the executable links with the dylibs, it reads the location information from this dylibs & embeds it inside of exe.\nNow when you run this exe it knows where to pick up this dylibs\n\nWhat we are doing here is keeping the dylib unchanged & still pointing to the current working directory, for libtbb you will see with otool on 1st line it will just say libtbb\nIt should be @executable_path/../Frameworks/libtbb.dylib\n\nWe add this information to the unix RobloxPlayere exe with following commands & just ignore the stale information inside the dylibs\n------------------------------------------------------------------------------------------------------------------------------------\nWe can get away by just changing the Unix Executable to say where to pick the dylibs, no need to do any other steps except this\nChanging the executable to (Note RobloxPlayer is the Unix Executable) (This is automated with this Script which runs after generating the exe)\n\ninstall_name_tool -change libtbb.dylib @executable_path/../Frameworks/libtbb.dylib RobloxPlayer\n\nTo read the linkages in exe\notool -L RobloxPlayer\n------------------------------------------------------------------------------------------------------------------------------------\n\nAdditional Info\n\nTo see what is the location where the dylib should go:\n\notool -L libtbb.dylib\n\n\n\nThe 1st line tells you where it should go\n\n\n\nIf you want to change it to go inside the package contents of app into Frameworks then issue following command on the dylibs you want to change\n\n\n\nGo to the contrib tbb directory where you have this original dylibs & issue following commands\n\nto change the location where the exe should look to pick it up from\n\nI am in contrib/TBB/tbb_mac/lib\n\ninstall_name_tool -id @executable_path/../Frameworks/libtbb.dylib libtbb.dylib\n\n\n\nNow when this is installed in the package contents the exe will know to pick it from Frameworks.\n\nMake sure the copy location is also inside of Frameworks (ie. this file resides in Frameworks)\n\n\n\ninstall_name_tool -id libtbb.dylib \"${CONFIGURATION_BUILD_DIR}/libtbb.dylib\"\n-------------------------------------------------------------------------------------------------------------------------------------\n\n\n\n";
+			comments = "This is to change the linkages location embedded inside the executable about information on where to pick up the dylibs from\nThe linkages location information reside in the dylib which can be seen with following command\n\notool -L libtbb.dylib\n\nWhen the executable links with the dylibs, it reads the location information from this dylibs & embeds it inside of exe.\nNow when you run this exe it knows where to pick up this dylibs\n\nWhat we are doing here is keeping the dylib unchanged & still pointing to the current working directory, for libtbb you will see with otool on 1st line it will just say libtbb\nIt should be @executable_path/../Frameworks/libtbb.dylib\n\nWe add this information to the unix NAMEHEREPlayere exe with following commands & just ignore the stale information inside the dylibs\n------------------------------------------------------------------------------------------------------------------------------------\nWe can get away by just changing the Unix Executable to say where to pick the dylibs, no need to do any other steps except this\nChanging the executable to (Note NAMEHEREPlayer is the Unix Executable) (This is automated with this Script which runs after generating the exe)\n\ninstall_name_tool -change libtbb.dylib @executable_path/../Frameworks/libtbb.dylib NAMEHEREPlayer\n\nTo read the linkages in exe\notool -L NAMEHEREPlayer\n------------------------------------------------------------------------------------------------------------------------------------\n\nAdditional Info\n\nTo see what is the location where the dylib should go:\n\notool -L libtbb.dylib\n\n\n\nThe 1st line tells you where it should go\n\n\n\nIf you want to change it to go inside the package contents of app into Frameworks then issue following command on the dylibs you want to change\n\n\n\nGo to the contrib tbb directory where you have this original dylibs & issue following commands\n\nto change the location where the exe should look to pick it up from\n\nI am in contrib/TBB/tbb_mac/lib\n\ninstall_name_tool -id @executable_path/../Frameworks/libtbb.dylib libtbb.dylib\n\n\n\nNow when this is installed in the package contents the exe will know to pick it from Frameworks.\n\nMake sure the copy location is also inside of Frameworks (ie. this file resides in Frameworks)\n\n\n\ninstall_name_tool -id libtbb.dylib \"${CONFIGURATION_BUILD_DIR}/libtbb.dylib\"\n-------------------------------------------------------------------------------------------------------------------------------------\n\n\n\n";
 			files = (
 			);
 			inputPaths = (
-				"${CONFIGURATION_BUILD_DIR}/RobloxPlayer.app/Contents/MacOS/RobloxPlayer",
+				"${CONFIGURATION_BUILD_DIR}/NAMEHEREPlayer.app/Contents/MacOS/NAMEHEREPlayer",
 			);
 			name = "Run install_name_tool Script";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "# Change the look up for all 3rd Part dylibs\ninstall_name_tool -change ./libfmod.dylib @executable_path/../Frameworks/libfmod.dylib \"${CONFIGURATION_BUILD_DIR}/RobloxPlayer.app/Contents/MacOS/RobloxPlayer\"\ninstall_name_tool -change ./libLog.dylib @executable_path/../Frameworks/libLog.dylib \"${CONFIGURATION_BUILD_DIR}/RobloxPlayer.app/Contents/MacOS/RobloxPlayer\"";
+			shellScript = "# Change the look up for all 3rd Part dylibs\ninstall_name_tool -change ./libfmod.dylib @executable_path/../Frameworks/libfmod.dylib \"${CONFIGURATION_BUILD_DIR}/NAMEHEREPlayer.app/Contents/MacOS/NAMEHEREPlayer\"\ninstall_name_tool -change ./libLog.dylib @executable_path/../Frameworks/libLog.dylib \"${CONFIGURATION_BUILD_DIR}/NAMEHEREPlayer.app/Contents/MacOS/NAMEHEREPlayer\"";
 		};
 		27F7B66C13393EE3001191CC /* Generate MD5 */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2380,7 +2380,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "rm -f \"$CONFIGURATION_BUILD_DIR/MD5.txt\"\nmd5 \"$CONFIGURATION_BUILD_DIR/stripped/RobloxPlayer.app/Contents/MacOS/RobloxPlayer\" > \"$CONFIGURATION_BUILD_DIR/MD5.txt\"";
+			shellScript = "rm -f \"$CONFIGURATION_BUILD_DIR/MD5.txt\"\nmd5 \"$CONFIGURATION_BUILD_DIR/stripped/NAMEHEREPlayer.app/Contents/MacOS/NAMEHEREPlayer\" > \"$CONFIGURATION_BUILD_DIR/MD5.txt\"";
 		};
 		5238961412F3389000D4DE3D /* Zip */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2388,15 +2388,15 @@
 			files = (
 			);
 			inputPaths = (
-				"$(CONFIGURATION_BUILD_DIR)/Roblox.app",
+				"$(CONFIGURATION_BUILD_DIR)/NAMEHERE.app",
 			);
 			name = Zip;
 			outputPaths = (
-				"$(CONFIGURATION_BUILD_DIR)/RobloxPlayer.zip",
+				"$(CONFIGURATION_BUILD_DIR)/NAMEHEREPlayer.zip",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "ditto -c -k --keepParent --zlibCompressionLevel 9 \"$CONFIGURATION_BUILD_DIR/stripped/RobloxPlayer.app\" \"$CONFIGURATION_BUILD_DIR/RobloxPlayer.zip\"";
+			shellScript = "ditto -c -k --keepParent --zlibCompressionLevel 9 \"$CONFIGURATION_BUILD_DIR/stripped/NAMEHEREPlayer.app\" \"$CONFIGURATION_BUILD_DIR/NAMEHEREPlayer.zip\"";
 		};
 		94D0F1C01BD9D2A8006A04C7 /* Run CoreScriptConverter */ = {
 			isa = PBXShellScriptBuildPhase;
@@ -2525,11 +2525,11 @@
 			files = (
 				EAE0C67012B0184A0061876F /* main.m in Sources */,
 				EAE0C66F12B018480061876F /* FunctionMarshaller.cpp in Sources */,
-				EAC8905412B6CBC30004091E /* RobloxOgreView.mm in Sources */,
-				EAE0C66C12B0183B0061876F /* RobloxPlayer.cpp in Sources */,
+				EAC8905412B6CBC30004091E /* NAMEHEREOgreView.mm in Sources */,
+				EAE0C66C12B0183B0061876F /* NAMEHEREPlayer.cpp in Sources */,
 				9464B85B17FA0CD30017FDE0 /* RbxWebView.mm in Sources */,
-				EAE0C66D12B0183F0061876F /* RobloxPlayerAppDelegate.mm in Sources */,
-				EAE0C66E12B018450061876F /* RobloxView.cpp in Sources */,
+				EAE0C66D12B0183F0061876F /* NAMEHEREPlayerAppDelegate.mm in Sources */,
+				EAE0C66E12B018450061876F /* NAMEHEREView.cpp in Sources */,
 				EAF931AD12B82EC700DE2773 /* UserInput.cpp in Sources */,
 				EAF931BB12B82EF100DE2773 /* UserInputUtil.cpp in Sources */,
 				52ECA47612EE3C8500FAF033 /* CMCrashReporter.mm in Sources */,
@@ -2537,10 +2537,10 @@
 				94337F061A786795003490E1 /* SDLGameController.cpp in Sources */,
 				9464B85C17FA0CD30017FDE0 /* RBXWindow.m in Sources */,
 				4281E60419806844002F5A98 /* LuaVMClient.cpp in Sources */,
-				EAED7D3512F11B9400026F71 /* Roblox.cpp in Sources */,
-				EAED7D3612F11B9400026F71 /* Roblox.mm in Sources */,
+				EAED7D3512F11B9400026F71 /* NAMEHERE.cpp in Sources */,
+				EAED7D3612F11B9400026F71 /* NAMEHERE.mm in Sources */,
 				EA35DC8312F9F98B002BA06F /* GameVerbs.cpp in Sources */,
-				EA74C5CC130340C9002A026E /* RobloxView.mm in Sources */,
+				EA74C5CC130340C9002A026E /* NAMEHEREView.mm in Sources */,
 				F4B9B3141304D9E3009E1DF0 /* RenderSettingsItem.cpp in Sources */,
 				9F5A301315DAB74A009E9471 /* MachineConfiguration.cpp in Sources */,
 				94B30FEB1612471F00103E2B /* DataModelSerialize.cpp in Sources */,
@@ -2608,7 +2608,7 @@
 		};
 		5238962612F338E700D4DE3D /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = EA1FA73B1291BE95000D5B71 /* RobloxPlayer */;
+			target = EA1FA73B1291BE95000D5B71 /* NAMEHEREPlayer */;
 			targetProxy = 5238962512F338E700D4DE3D /* PBXContainerItemProxy */;
 		};
 		524F2A7E14EDCECC00581C13 /* PBXTargetDependency */ = {
@@ -2856,7 +2856,7 @@
 				COPY_PHASE_STRIP = NO;
 				GCC_DYNAMIC_NO_PIC = NO;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				PRODUCT_NAME = Roblox.dmg;
+				PRODUCT_NAME = NAMEHERE.dmg;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -2868,7 +2868,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				PRODUCT_NAME = Roblox.dmg;
+				PRODUCT_NAME = NAMEHERE.dmg;
 				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
@@ -2918,7 +2918,7 @@
 					"$(SRCROOT)/fmod/mac",
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = RobloxTest;
+				PRODUCT_NAME = NAMEHERETest;
 				SDKROOT = macosx;
 				VALID_ARCHS = i386;
 			};
@@ -2968,7 +2968,7 @@
 					"$(SRCROOT)/fmod/mac",
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = RobloxTest;
+				PRODUCT_NAME = NAMEHERETest;
 				SDKROOT = macosx;
 				VALID_ARCHS = i386;
 				ZERO_LINK = NO;
@@ -3039,7 +3039,7 @@
 					"$(CONTRIB_PATH)/SDL2.0.4/include",
 					fmod/include,
 				);
-				INFOPLIST_FILE = "RobloxPlayer-Info.plist";
+				INFOPLIST_FILE = "NAMEHEREPlayer-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -3060,7 +3060,7 @@
 					"-headerpad_max_install_names",
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = RobloxPlayer;
+				PRODUCT_NAME = NAMEHEREPlayer;
 				SDKROOT = macosx;
 				SEPARATE_STRIP = NO;
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -3212,7 +3212,7 @@
 					"$(SRCROOT)/fmod/mac",
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = RobloxTest;
+				PRODUCT_NAME = NAMEHERETest;
 				SDKROOT = macosx;
 				VALID_ARCHS = i386;
 				ZERO_LINK = NO;
@@ -3226,7 +3226,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				GCC_ENABLE_FIX_AND_CONTINUE = NO;
 				MACOSX_DEPLOYMENT_TARGET = 10.6;
-				PRODUCT_NAME = Roblox.dmg;
+				PRODUCT_NAME = NAMEHERE.dmg;
 				SDKROOT = macosx;
 				ZERO_LINK = NO;
 			};
@@ -3387,7 +3387,7 @@
 					"$(CONTRIB_PATH)/SDL2.0.4/include",
 					fmod/include,
 				);
-				INFOPLIST_FILE = "RobloxPlayer-Info.plist";
+				INFOPLIST_FILE = "NAMEHEREPlayer-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -3413,7 +3413,7 @@
 					"-headerpad_max_install_names",
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = RobloxPlayer;
+				PRODUCT_NAME = NAMEHEREPlayer;
 				SDKROOT = macosx;
 			};
 			name = Debug;
@@ -3455,7 +3455,7 @@
 					"$(CONTRIB_PATH)/SDL2.0.4/include",
 					fmod/include,
 				);
-				INFOPLIST_FILE = "RobloxPlayer-Info.plist";
+				INFOPLIST_FILE = "NAMEHEREPlayer-Info.plist";
 				INSTALL_PATH = "$(HOME)/Applications";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/../Frameworks";
 				LIBRARY_SEARCH_PATHS = (
@@ -3476,7 +3476,7 @@
 					"-headerpad_max_install_names",
 				);
 				PREBINDING = NO;
-				PRODUCT_NAME = RobloxPlayer;
+				PRODUCT_NAME = NAMEHEREPlayer;
 				SDKROOT = macosx;
 				SEPARATE_STRIP = NO;
 				STRIP_INSTALLED_PRODUCT = NO;
@@ -3541,7 +3541,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		5238962312F338B500D4DE3D /* Build configuration list for PBXAggregateTarget "RobloxPlayer.zip" */ = {
+		5238962312F338B500D4DE3D /* Build configuration list for PBXAggregateTarget "NAMEHEREPlayer.zip" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				5238961612F3389100D4DE3D /* Debug */,
@@ -3551,7 +3551,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		52E37D7C14EDAD4B00CE2CB2 /* Build configuration list for PBXNativeTarget "RobloxTest" */ = {
+		52E37D7C14EDAD4B00CE2CB2 /* Build configuration list for PBXNativeTarget "NAMEHERETest" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				52E37D7914EDAD1400CE2CB2 /* Debug */,
@@ -3571,7 +3571,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		EA1FA7421291BE95000D5B71 /* Build configuration list for PBXNativeTarget "RobloxPlayer" */ = {
+		EA1FA7421291BE95000D5B71 /* Build configuration list for PBXNativeTarget "NAMEHEREPlayer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				EA1FA7401291BE95000D5B71 /* Debug */,

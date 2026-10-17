@@ -15,11 +15,11 @@ namespace RBX
     const char* const sLoginService = "LoginService";
     
     REFLECTION_BEGIN();
-    static Reflection::BoundFuncDesc<LoginService, void(void)> func_PromptLogin(&LoginService::promptLogin, "PromptLogin", Security::Roblox);
-    static Reflection::BoundFuncDesc<LoginService, void(void)> func_Logout(&LoginService::logout, "Logout", Security::Roblox);
+    static Reflection::BoundFuncDesc<LoginService, void(void)> func_PromptLogin(&LoginService::promptLogin, "PromptLogin", Security::NAMEHERE);
+    static Reflection::BoundFuncDesc<LoginService, void(void)> func_Logout(&LoginService::logout, "Logout", Security::NAMEHERE);
     
-    static Reflection::EventDesc<LoginService, void(std::string)> event_SignupFinished(&LoginService::loginSucceededSignal, "LoginSucceeded", "username", Security::Roblox);
-    static Reflection::EventDesc<LoginService, void(std::string)> event_LoginFinished(&LoginService::loginFailedSignal, "LoginFailed", "loginError" , Security::Roblox);
+    static Reflection::EventDesc<LoginService, void(std::string)> event_SignupFinished(&LoginService::loginSucceededSignal, "LoginSucceeded", "username", Security::NAMEHERE);
+    static Reflection::EventDesc<LoginService, void(std::string)> event_LoginFinished(&LoginService::loginFailedSignal, "LoginFailed", "loginError" , Security::NAMEHERE);
     REFLECTION_END();
     
     LoginService::LoginService()

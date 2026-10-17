@@ -2,7 +2,7 @@
 			// UnlinkAccountScreen.lua
 ]]
 local CoreGui = Game:GetService("CoreGui")
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 
 local ContextActionService = game:GetService('ContextActionService')
@@ -29,8 +29,8 @@ local function createUnlinkAccountScreen()
 
 	this:SetTitle(string.upper(Strings:LocalizedString("AccountSettingsTitle")))
 	local gamerTag = UserData:GetDisplayName() or ""
-	local robloxName = UserData:GetRobloxName() or ""
-	local linkedAsPhrase = string.format(Strings:LocalizedString('LinkedAsPhrase'), gamerTag, robloxName)
+	local namehereName = UserData:GetNAMEHEREName() or ""
+	local linkedAsPhrase = string.format(Strings:LocalizedString('LinkedAsPhrase'), gamerTag, namehereName)
 	local unlinkButtonText = string.format(Strings:LocalizedString("UnlinkGamerTagPhrase"), gamerTag)
 
 	local dummySelection = Utility.Create'Frame'

@@ -169,7 +169,7 @@ TEST_CORRECT_PATHS_RES test_correct_paths_array_for_face_command(hOBJ out_obj,
 	#define MAXINT    32767  
 #endif
 
-// ROBLOX change
+// NAMEHERE change
 // #if (SG_CURRENT_PLATFORM==SG_PLATFORM_IOS)
 // if sgFloat == float
 	 #define MAXsgFloat   FLT_MAX

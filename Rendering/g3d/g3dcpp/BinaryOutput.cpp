@@ -17,7 +17,7 @@
 #include <stdexcept>
 #include <cstring>
 
-#if defined(G3D_LINUX) || defined(G3D_IOS) || defined(G3D_ANDROID) // ROBLOX
+#if defined(G3D_LINUX) || defined(G3D_IOS) || defined(G3D_ANDROID) // NAMEHERE
 #    include <errno.h>
 #endif
 

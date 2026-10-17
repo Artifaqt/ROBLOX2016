@@ -52,7 +52,7 @@ Reflection::BoundProp<float> prop_overscanPY("OverscanPY", category_Video, &Game
 Reflection::BoundProp<bool> prop_hardwareMouse("HardwareMouse", "Input", &GameSettings::hardwareMouse);
 
 static const Reflection::EnumPropDescriptor<GameSettings, GameSettings::VideoQuality> prop_videoSettings("VideoQuality", category_Video, &GameSettings::getVideoQualitySetting, &GameSettings::setVideoQualitySetting);
-static Reflection::EventDesc<GameSettings, void(bool)> event_videoRecordingRequest(&GameSettings::videoRecordingSignal, "VideoRecordingChangeRequest","recording",Security::RobloxScript);
+static Reflection::EventDesc<GameSettings, void(bool)> event_videoRecordingRequest(&GameSettings::videoRecordingSignal, "VideoRecordingChangeRequest","recording",Security::NAMEHEREScript);
 Reflection::BoundProp<bool> prop_videoCaptureEnabled("VideoCaptureEnabled", category_Video, &GameSettings::videoCaptureEnabled);
 REFLECTION_END();
 

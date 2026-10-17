@@ -24,12 +24,12 @@
 
 #include "lauxlib.h"
 
-// BEGIN ROBLOX CHANGES
+// BEGIN NAMEHERE CHANGES
 #include "Util/ProtectedString.h"
 #include "Util/MD5Hasher.h"
 #include "V8DataModel/DataModel.h"
 #include "V8DataModel/HackDefines.h"
-// END ROBLOX CHANGES
+// END NAMEHERE CHANGES
 
 #define FREELIST_REF	0	/* free list of references */
 
@@ -62,7 +62,7 @@ LUALIB_API int luaL_argerror (lua_State *L, int narg, const char *extramsg) {
                         narg, ar.name, extramsg);
 }
 
-const char* luaL_roblox_typename(lua_State *L, unsigned int index) {
+const char* luaL_namehere_typename(lua_State *L, unsigned int index) {
 	if (lua_isuserdata(L, index)) {
 		if (lua_getmetatable(L, index)) { /* on failure, doesn't push anything */
 			lua_pushstring(L, "__type");
@@ -85,7 +85,7 @@ const char* luaL_roblox_typename(lua_State *L, unsigned int index) {
 
 LUALIB_API int luaL_typerror (lua_State *L, int narg, const char *tname) {
   const char *msg = lua_pushfstring(L, "%s expected, got %s",
-                                    tname, luaL_roblox_typename(L, narg));
+                                    tname, luaL_namehere_typename(L, narg));
   return luaL_argerror(L, narg, msg);
 }
 

@@ -1,9 +1,9 @@
-/* Copyright 2003-2009 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2009 NAMEHERE Corporation, All Rights Reserved */
 
 #include "Dictionary.h"
 #include "stringcompressor.h"
 #include "streaming.h"
-#include "util/RobloxGoogleAnalytics.h"
+#include "util/NAMEHEREGoogleAnalytics.h"
 #include <boost/functional/hash/hash.hpp>
 
 namespace RBX { 

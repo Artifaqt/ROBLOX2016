@@ -152,8 +152,8 @@ namespace RBX {
     RBX::Color3 UserInputService::DrawMoveColor = RBX::Color3(0,1,0);
     
     REFLECTION_BEGIN();
-	// ROBLOX Only functions/events/props
-	static Reflection::BoundFuncDesc<UserInputService, UserInputService::Platform(void)> func_getPlatform(&UserInputService::getPlatformLua, "GetPlatform", Security::RobloxScript);
+	// NAMEHERE Only functions/events/props
+	static Reflection::BoundFuncDesc<UserInputService, UserInputService::Platform(void)> func_getPlatform(&UserInputService::getPlatformLua, "GetPlatform", Security::NAMEHEREScript);
 
 	static Reflection::BoundFuncDesc<UserInputService, InputObject::UserInputType()> func_getLastInputType(&UserInputService::getLastInputType, "GetLastInputType", Security::None);
 	static Reflection::EventDesc<UserInputService, void(InputObject::UserInputType)> event_lastInputTypeChanged(&UserInputService::lastInputTypeChangedSignal, "LastInputTypeChanged", "lastInputType", Security::None);
@@ -214,7 +214,7 @@ namespace RBX {
 
 	// Mouse Stuff
 	static const Reflection::PropDescriptor<UserInputService, bool>  prop_mouseIconEnabled("MouseIconEnabled", category_Data, &UserInputService::getMouseIconEnabled, &UserInputService::setMouseIconEnabled);
-	static const Reflection::EnumPropDescriptor<UserInputService, UserInputService::OverrideMouseIconBehavior>  prop_overrideMouseIconBehavior("OverrideMouseIconBehavior", category_Data, &UserInputService::getOverrideMouseIconBehavior, &UserInputService::setOverrideMouseIconBehavior, Reflection::PropertyDescriptor::SCRIPTING, Security::RobloxScript);
+	static const Reflection::EnumPropDescriptor<UserInputService, UserInputService::OverrideMouseIconBehavior>  prop_overrideMouseIconBehavior("OverrideMouseIconBehavior", category_Data, &UserInputService::getOverrideMouseIconBehavior, &UserInputService::setOverrideMouseIconBehavior, Reflection::PropertyDescriptor::SCRIPTING, Security::NAMEHEREScript);
 	static const Reflection::EnumPropDescriptor<UserInputService, UserInputService::MouseType>  prop_mouseType("MouseBehavior", category_Data, &UserInputService::getMouseType, &UserInputService::setMouseType);
     
 	// Keyboard Stuff
@@ -419,28 +419,28 @@ namespace RBX {
 	}
 	rbx::signal<void(shared_ptr<Instance>, bool)>* UserInputService::getInputBeganEvent(bool whatever)
 	{
-		return RBX::Security::Context::current().hasPermission(RBX::Security::RobloxScript) ? &coreInputBeganEvent : &inputBeganEvent;
+		return RBX::Security::Context::current().hasPermission(RBX::Security::NAMEHEREScript) ? &coreInputBeganEvent : &inputBeganEvent;
 	}
 	rbx::signal<void(shared_ptr<Instance>, bool)>* UserInputService::getInputChangedEvent(bool whatever)
 	{
-		return RBX::Security::Context::current().hasPermission(RBX::Security::RobloxScript) ? &coreInputUpdatedEvent : &inputUpdatedEvent;
+		return RBX::Security::Context::current().hasPermission(RBX::Security::NAMEHEREScript) ? &coreInputUpdatedEvent : &inputUpdatedEvent;
 	}
 	rbx::signal<void(shared_ptr<Instance>, bool)>* UserInputService::getInputEndedEvent(bool whatever)
 	{
-		return RBX::Security::Context::current().hasPermission(RBX::Security::RobloxScript) ? &coreInputEndedEvent : &inputEndedEvent;
+		return RBX::Security::Context::current().hasPermission(RBX::Security::NAMEHEREScript) ? &coreInputEndedEvent : &inputEndedEvent;
 	}
 
 	rbx::signal<void(shared_ptr<Instance>, bool)>* UserInputService::getTouchBeganEvent(bool whatever)
 	{
-		return RBX::Security::Context::current().hasPermission(RBX::Security::RobloxScript) ? &coreTouchStartedEvent : &touchStartedEvent;
+		return RBX::Security::Context::current().hasPermission(RBX::Security::NAMEHEREScript) ? &coreTouchStartedEvent : &touchStartedEvent;
 	}
 	rbx::signal<void(shared_ptr<Instance>, bool)>* UserInputService::getTouchChangedEvent(bool whatever)
 	{
-		return RBX::Security::Context::current().hasPermission(RBX::Security::RobloxScript) ? &coreTouchMovedEvent : &touchMovedEvent;
+		return RBX::Security::Context::current().hasPermission(RBX::Security::NAMEHEREScript) ? &coreTouchMovedEvent : &touchMovedEvent;
 	}
 	rbx::signal<void(shared_ptr<Instance>, bool)>* UserInputService::getTouchEndedEvent(bool whatever)
 	{
-		return RBX::Security::Context::current().hasPermission(RBX::Security::RobloxScript) ? &coreTouchEndedEvent : &touchEndedEvent;
+		return RBX::Security::Context::current().hasPermission(RBX::Security::NAMEHEREScript) ? &coreTouchEndedEvent : &touchEndedEvent;
 	}
     
     UserInputService::Platform UserInputService::getPlatform()
@@ -668,7 +668,7 @@ namespace RBX {
                     shared_ptr<DataModel> dataModel = shared_from(DataModel::get(this));
                     if (CoreGuiService* cgs = dataModel->find<CoreGuiService>())
                     {
-                        if (Instance* parent = cgs->findFirstChildByName("RobloxGui"))
+                        if (Instance* parent = cgs->findFirstChildByName("NAMEHEREGui"))
                         {
                             newFrame->setParent(parent);
                         }
@@ -1276,7 +1276,7 @@ namespace RBX {
         {
             if (CoreGuiService* cgs = dataModel->find<CoreGuiService>())
             {
-                if (Instance* parent = cgs->findFirstChildByName("RobloxGui"))
+                if (Instance* parent = cgs->findFirstChildByName("NAMEHEREGui"))
                 {
                     if (Instance* controlFrame = parent->findFirstChildByName("ControlFrame"))
                     {

@@ -20,38 +20,38 @@ const char* const sTextureTrail = "TextureTrail";
 Reflection::RefPropDescriptor<TextureTrail, PartInstance>
 TextureTrail::prop_From("From", category_Data,
 		&TextureTrail::getFrom, &TextureTrail::setFrom,
-		Reflection::PropertyDescriptor::STANDARD, Security::RobloxPlace);
+		Reflection::PropertyDescriptor::STANDARD, Security::NAMEHEREPlace);
 
 Reflection::RefPropDescriptor<TextureTrail, PartInstance>
 TextureTrail::prop_To("To", category_Data,
 		&TextureTrail::getTo, &TextureTrail::setTo,
-		Reflection::PropertyDescriptor::STANDARD, Security::RobloxPlace);
+		Reflection::PropertyDescriptor::STANDARD, Security::NAMEHEREPlace);
 
 Reflection::PropDescriptor<TextureTrail, TextureId>
 TextureTrail::prop_Texture("Texture", category_Appearance,
 		&TextureTrail::getTexture, &TextureTrail::setTexture,
-		Reflection::PropertyDescriptor::STANDARD, Security::RobloxPlace);
+		Reflection::PropertyDescriptor::STANDARD, Security::NAMEHEREPlace);
 
 Reflection::PropDescriptor<TextureTrail, Vector2>
 TextureTrail::prop_TextureSize("TextureSize", category_Appearance,
 		&TextureTrail::getTextureSize, &TextureTrail::setTextureSize,
-		Reflection::PropertyDescriptor::STANDARD, Security::RobloxPlace);
+		Reflection::PropertyDescriptor::STANDARD, Security::NAMEHEREPlace);
 
 Reflection::PropDescriptor<TextureTrail, float>
 TextureTrail::prop_Velocity("Velocity", category_Data,
 		&TextureTrail::getVelocity, &TextureTrail::setVelocity,
-		Reflection::PropertyDescriptor::STANDARD, Security::RobloxPlace);
+		Reflection::PropertyDescriptor::STANDARD, Security::NAMEHEREPlace);
 
 Reflection::PropDescriptor<TextureTrail, float>
 TextureTrail::prop_StudsBetweenTextures("StudsBetweenTextures", category_Data,
 		&TextureTrail::getStudsBetweenTextures,
 		&TextureTrail::setStudsBetweenTextures,
-		Reflection::PropertyDescriptor::STANDARD, Security::RobloxPlace);
+		Reflection::PropertyDescriptor::STANDARD, Security::NAMEHEREPlace);
 
 Reflection::PropDescriptor<TextureTrail, float>
 TextureTrail::prop_CycleOffset("CycleOffset", category_Data,
 		&TextureTrail::getCycleOffset, &TextureTrail::setCycleOffset,
-		Reflection::PropertyDescriptor::STANDARD, Security::RobloxPlace);
+		Reflection::PropertyDescriptor::STANDARD, Security::NAMEHEREPlace);
 
 TextureTrail::TextureTrail()
 	: DescribedCreatable<TextureTrail, GuiBase3d, sTextureTrail>(sTextureTrail),

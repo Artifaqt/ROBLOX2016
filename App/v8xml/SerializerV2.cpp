@@ -1,4 +1,4 @@
-/* Copyright 2003-2005 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2005 NAMEHERE Corporation, All Rights Reserved */
 #include "stdafx.h"
 
 #include "V8Xml/SerializerV2.h"
@@ -48,7 +48,7 @@ public:
 			RBXASSERT(foundString);
 //			RBXASSERT(idMap.find(s)==idMap.end());		// This is in BugHost for Erik - implies we are writing references multiple times
 														// See this file to make the assert pop:
-														// game.Workspace:insertContent("http://roblox.com/asset/?id=2286288")
+														// game.Workspace:insertContent("http://namehere.com/asset/?id=2286288")
 
 			idMap[s].linkTo(shared_from(source));
 			if (source)
@@ -157,7 +157,7 @@ void SerializerV2::loadXML(std::istream& stream, RBX::DataModel* dataModel)
 	TextXmlParser machine(stream.rdbuf());
 	std::auto_ptr<XmlElement> root(machine.parse());
 	
-	if (root->getTag() == tag_roblox) 
+	if (root->getTag() == tag_namehere) 
 	{
 		if(const XmlAttribute* version = root->findAttribute(tag_version))
         {
@@ -182,7 +182,7 @@ void SerializerV2::loadXML(std::istream& stream, RBX::DataModel* dataModel)
 	else
 	{
 		schemaVersionLoading = 1;
-		throw std::runtime_error("SerializerV2::loadXML ill-formed XML. No Roblox tag");
+		throw std::runtime_error("SerializerV2::loadXML ill-formed XML. No NAMEHERE tag");
 	}
 
 	// Should we need to do this???
@@ -218,7 +218,7 @@ void SerializerV2::loadInstancesXML(const XmlElement* root, Instances& result, I
 	//       Find a way of combining these code chunks
 	bool v4model = false;
 
-	if (root->getTag() == tag_roblox) {
+	if (root->getTag() == tag_namehere) {
 		const XmlAttribute* version = root->findAttribute(tag_version);
 		if (version!=NULL && version->getValue(schemaVersionLoading) && schemaVersionLoading >= 4) {
 			v4model = true;
@@ -247,16 +247,16 @@ XmlElement* SerializerV2::newRootElement(const std::string& type)
 {
 	static const XmlTag& tag_xmlnsxmime = Name::declare("xmlns:xmime");
 
-	XmlElement* root = new XmlElement(tag_roblox);
+	XmlElement* root = new XmlElement(tag_namehere);
 	root->addAttribute(tag_xmlnsxmime, "http://www.w3.org/2005/05/xmlmime");
 	root->addAttribute(tag_xmlnsxsi, "http://www.w3.org/2001/XMLSchema-instance");
-	root->addAttribute(tag_xsinoNamespaceSchemaLocation, "http://www.roblox.com/roblox.xsd");
+	root->addAttribute(tag_xsinoNamespaceSchemaLocation, "http://www.namehere.com/namehere.xsd");
 	root->addAttribute(tag_version, SerializerV2::CURRENT_SCHEMA_VERSION);
 	if(!type.empty()){
 		root->addAttribute(tag_assettype, type);
 	}
 
-	// Used for schema validation with Roblox.xsd:
+	// Used for schema validation with NAMEHERE.xsd:
 	root->addChild(new XmlElement(tag_External, &value_IDREF_null));
 	root->addChild(new XmlElement(tag_External, &value_IDREF_nil));
 

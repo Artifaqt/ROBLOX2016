@@ -39,7 +39,7 @@ public:
     Vector2int16() : x(0), y(0) {}
     Vector2int16(G3D::int16 _x, G3D::int16 _y) : x(_x), y(_y){}
     Vector2int16(const class Vector2& v);
-//ROBLOX
+//NAMEHERE
 	Vector2int16(int coordinate[2]);
 //=====
 
@@ -115,7 +115,7 @@ public:
     Vector2int16 min(const Vector2int16& v) const {
         return Vector2int16(iMin(x, v.x), iMin(y, v.y));
     }
-// ROBLOX
+// NAMEHERE
 	Vector2int16 operator* (float fScalar) const
 	{
 		return Vector2int16(int(this->x * fScalar), int(this->y * fScalar));

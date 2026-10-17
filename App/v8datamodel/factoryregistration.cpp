@@ -1,4 +1,4 @@
-/* Copyright 2003-2010 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2010 NAMEHERE Corporation, All Rights Reserved */
 #include "stdafx.h"
 
 #include "V8DataModel/factoryregistration.h"
@@ -203,7 +203,7 @@
 #include "RbxG3D/RbxTime.h"
 #include "v8datamodel/InputObject.h"
 #include "v8datamodel/ReplicatedStorage.h"
-#include "v8datamodel/RobloxReplicatedStorage.h"
+#include "v8datamodel/NAMEHEREReplicatedStorage.h"
 #include "v8datamodel/ReplicatedFirst.h"
 #include "v8datamodel/ServerScriptService.h"
 #include "v8datamodel/ServerStorage.h"
@@ -548,7 +548,7 @@ RBX_REGISTER_CLASS(SpotLight);
 RBX_REGISTER_CLASS(SurfaceLight);
 RBX_REGISTER_CLASS(LoginService);
 RBX_REGISTER_CLASS(ReplicatedStorage);
-RBX_REGISTER_CLASS(RobloxReplicatedStorage);
+RBX_REGISTER_CLASS(NAMEHEREReplicatedStorage);
 RBX_REGISTER_CLASS(ServerScriptService);
 RBX_REGISTER_CLASS(ServerStorage);
 RBX_REGISTER_CLASS(RemoteFunction);

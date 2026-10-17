@@ -1,19 +1,19 @@
 //
 //  GameViewController.m
-//  RobloxMobile
+//  NAMEHEREMobile
 //
 //  Created by Ben Tkacheff on 11/20/12.
-//  Copyright (c) 2012 ROBLOX. All rights reserved.
+//  Copyright (c) 2012 NAMEHERE. All rights reserved.
 //
 
 #import "GameViewController.h"
 #import "LoginManager.h"
-#import "RobloxInfo.h"
+#import "NAMEHEREInfo.h"
 #import "StoreManager.h"
 #import "AppDelegate.h"
 #import "UIScreen+PortraitBounds.h"
 #import "PlaceLauncher.h"
-#import "RobloxNotifications.h"
+#import "NAMEHERENotifications.h"
 
 #include "v8datamodel/LoginService.h"
 #include "v8datamodel/GuiService.h"
@@ -67,7 +67,7 @@ DYNAMIC_FASTSTRINGVARIABLE(AdColonyZoneId, "vz073fd9a8cf0c447cbc");
     [super viewDidLoad];
 	// Do any additional setup after loading the view.
     
-    NSDictionary* dictionary = [NSDictionary dictionaryWithObjectsAndKeys: [RobloxInfo getUserAgentString], @"UserAgent", nil];
+    NSDictionary* dictionary = [NSDictionary dictionaryWithObjectsAndKeys: [NAMEHEREInfo getUserAgentString], @"UserAgent", nil];
     [[NSUserDefaults standardUserDefaults] registerDefaults:dictionary];
 }
 

@@ -1,9 +1,9 @@
 //
 //  Teleporter.h
-//  RobloxMobile
+//  NAMEHEREMobile
 //
 //  Created by Ben Tkacheff on 1/30/13.
-//  Copyright (c) 2013 ROBLOX. All rights reserved.
+//  Copyright (c) 2013 NAMEHERE. All rights reserved.
 //
 
 #import "PlaceLauncher.h"

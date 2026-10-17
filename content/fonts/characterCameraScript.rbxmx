@@ -1,4 +1,4 @@
-<roblox xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.roblox.com/roblox.xsd" version="4">
+<namehere xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.namehere.com/namehere.xsd" version="4">
 	<External>null</External>
 	<External>nil</External>
 <Item class="LocalScript" referent="RBX3C5D0BEBF6ED413EA31B5A5E9C0B72A7">
@@ -274,7 +274,7 @@ end
 		<Properties>
 			<Content name="LinkedSource"><null></null></Content>
 			<string name="Name">ClickToMove</string>
-			<ProtectedString name="Source"><![CDATA[-- Written By Kip Turner, Copyright Roblox 2014
+			<ProtectedString name="Source"><![CDATA[-- Written By Kip Turner, Copyright NAMEHERE 2014
 
 
 local UIS = game:GetService("UserInputService")
@@ -646,7 +646,7 @@ local function doAutoJump()
 	end
 
 	local rayLength = 1.5;
-	-- This is how high a ROBLOXian jumps from the mid point of his torso
+	-- This is how high a NAMEHEREian jumps from the mid point of his torso
 	local jumpHeight = 7.0;
 
 	local torso = GetTorso()
@@ -4261,4 +4261,4 @@ return CreateTransparencyController
 		</Properties>
 	</Item>
 </Item>
-</roblox>
+</namehere>

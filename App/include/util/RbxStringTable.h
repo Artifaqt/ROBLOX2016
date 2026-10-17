@@ -23,7 +23,7 @@ enum StringIDs {
 	EnableToCreateNewThread = 9, //Unable to create new thread
 	ScriptStr = 10, //Script
 	Rocky = 11,//rocky
-	HasGamePassLuaWarning = 12, //Game passes can only be queried by a Script running on a ROBLOX game server
-	NoTeleportInStudio = 13, //Teleporting while using ROBLOX Studio is not permitted
+	HasGamePassLuaWarning = 12, //Game passes can only be queried by a Script running on a NAMEHERE game server
+	NoTeleportInStudio = 13, //Teleporting while using NAMEHERE Studio is not permitted
 	LoadingScreenScriptPath = 14, // The path to the script that creates the loading gui
 };

@@ -1,20 +1,20 @@
 //
 //  UserInfo.m
-//  RobloxMobile
+//  NAMEHEREMobile
 //
 //  Created by David York on 10/9/12.
-//  Copyright (c) 2012 ROBLOX. All rights reserved.
+//  Copyright (c) 2012 NAMEHERE. All rights reserved.
 //
 
 #import "UserInfo.h"
-#import "RobloxInfo.h"
+#import "NAMEHEREInfo.h"
 #import "LoginManager.h"
-#import "RobloxGoogleAnalytics.h"
-#import "RobloxAlert.h"
+#import "NAMEHEREGoogleAnalytics.h"
+#import "NAMEHEREAlert.h"
 #import "KeychainItemWrapper.h"
-#import "RobloxData.h"
+#import "NAMEHEREData.h"
 #import "NSDictionary+Parsing.h"
-#import "RobloxNotifications.h"
+#import "NAMEHERENotifications.h"
 #import "RBXFunctions.h"
 
 #include "util/StandardOut.h"
@@ -115,7 +115,7 @@ NSString* convertToFriendlyString(NSNumber* original);
         [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"LastUserIDLoggedIn"];
         
         //clear out the keychain item password
-        KeychainItemWrapper *keychainItem = [[KeychainItemWrapper alloc] initWithIdentifier:[[[NSBundle mainBundle] bundleIdentifier] stringByAppendingString:@"RobloxLogin"]  accessGroup:nil];
+        KeychainItemWrapper *keychainItem = [[KeychainItemWrapper alloc] initWithIdentifier:[[[NSBundle mainBundle] bundleIdentifier] stringByAppendingString:@"NAMEHERELogin"]  accessGroup:nil];
         [keychainItem setObject:@"" forKey:(__bridge id)kSecValueData];
         
         //notify others that we've logged out
@@ -138,7 +138,7 @@ NSString* convertToFriendlyString(NSNumber* original);
         return;
     
     NSString* urlString;
-    urlString = [[RobloxInfo getBaseUrl] stringByAppendingString:@"mobileapi/userinfo"];
+    urlString = [[NAMEHEREInfo getBaseUrl] stringByAppendingString:@"mobileapi/userinfo"];
     urlString = [urlString stringByReplacingOccurrencesOfString:@"http:" withString:@"https:"];
     
     
@@ -148,7 +148,7 @@ NSString* convertToFriendlyString(NSNumber* original);
                                                               cachePolicy:NSURLRequestReloadIgnoringCacheData
                                                           timeoutInterval:60*7];
     
-    [RobloxInfo setDefaultHTTPHeadersForRequest:theRequest];
+    [NAMEHEREInfo setDefaultHTTPHeadersForRequest:theRequest];
     [theRequest setHTTPMethod:@"GET"];
     
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
@@ -201,12 +201,12 @@ NSString* convertToFriendlyString(NSNumber* original);
          if (bFail && _userLoggedIn)
          {
              // clean up
-             [[LoginManager sharedInstance] logoutRobloxUser];
+             [[LoginManager sharedInstance] logoutNAMEHEREUser];
              
              [[NSNotificationCenter defaultCenter] postNotificationName:RBX_NOTIFY_LOGGED_OUT object:self userInfo:nil];
              
-             [RobloxGoogleAnalytics setPageViewTracking:@"Logout/Success"];
-             [RobloxAlert RobloxAlertWithMessage:NSLocalizedString(@"Unknown Login Failure", nil)];
+             [NAMEHEREGoogleAnalytics setPageViewTracking:@"Logout/Success"];
+             [NAMEHEREAlert NAMEHEREAlertWithMessage:NSLocalizedString(@"Unknown Login Failure", nil)];
          }
          
      }];
@@ -214,8 +214,8 @@ NSString* convertToFriendlyString(NSNumber* original);
 }
 -(void)UpdateAccountInfo
 {
-#ifndef ROBLOX_DEVELOPER
-    [RobloxData fetchMyAccountWithCompletion:^(RBXUserAccount* account)
+#ifndef NAMEHERE_DEVELOPER
+    [NAMEHEREData fetchMyAccountWithCompletion:^(RBXUserAccount* account)
      {
          _userOver13 = account ? account.userAbove13 : NO;
          self.username = account ? account.userName : nil;
@@ -223,10 +223,10 @@ NSString* convertToFriendlyString(NSNumber* original);
          //NSNumber* ageBracket = account ? account.ageBracket : nil;
          self.userId = account ? account.userId : nil;
      }];
-    [RobloxData fetchAccountNotificationsWithCompletion:^(RBXUserAccountNotifications *notifications) {
+    [NAMEHEREData fetchAccountNotificationsWithCompletion:^(RBXUserAccountNotifications *notifications) {
         self.accountNotifications = notifications;
     }];
-    [RobloxData fetchUserHasSetPasswordWithCompletion:^(bool isSet) {
+    [NAMEHEREData fetchUserHasSetPasswordWithCompletion:^(bool isSet) {
         self.userHasSetPassword = isSet;
     }];
 #endif

@@ -2,7 +2,7 @@
 		Filename: TenFootInterface.lua
 		Written by: jeditkacheff
 		Version 1.0
-		Description: Setups up some special UI for ROBLOX TV gaming
+		Description: Setups up some special UI for NAMEHERE TV gaming
 --]]
 -------------- CONSTANTS --------------
 local HEALTH_GREEN_COLOR = Color3.new(27/255, 252/255, 107/255)
@@ -12,7 +12,7 @@ local FORCE_TEN_FOOT_INTERFACE = false
 
 -------------- SERVICES --------------
 local CoreGui = game:GetService("CoreGui")
-local RobloxGui = CoreGui:WaitForChild("RobloxGui")
+local NAMEHEREGui = CoreGui:WaitForChild("NAMEHEREGui")
 local UserInputService = game:GetService("UserInputService")
 local GuiService = game:GetService("GuiService")
 
@@ -64,7 +64,7 @@ local function CreateModule()
 				Image = "";
 				Active = false;
 				BackgroundTransparency = 1;
-				Parent = RobloxGui;
+				Parent = NAMEHEREGui;
 			};
 		end
 	end

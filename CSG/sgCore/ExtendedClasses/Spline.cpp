@@ -326,7 +326,7 @@ bool	sgCSpline::ApplyTempMatrix()
 		{
 			D_PLANE plane;
 
-	      // ROBLOX change
+	      // NAMEHERE change
           //#if (SG_CURRENT_PLATFORM==SG_PLATFORM_IOS)
 			sgFloat savingEpsD = eps_d;
 			eps_d *=100.0;    //  fix for sgFloat = float  (not double )
@@ -342,7 +342,7 @@ bool	sgCSpline::ApplyTempMatrix()
 				assert(0);
 				obj->status &= ~ST_FLAT;
 			}
-	        // ROBLOX change
+	        // NAMEHERE change
 			//#if (SG_CURRENT_PLATFORM==SG_PLATFORM_IOS)
                eps_d =savingEpsD;
 			 //#endif

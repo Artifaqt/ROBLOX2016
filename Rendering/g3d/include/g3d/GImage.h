@@ -224,7 +224,7 @@ public:
     inline uint8* byte() {
         return m_byte;
     }
-// ROBLOX
+// NAMEHERE
     G3D::Color4uint8 getPixel(int x, int y) const;
 	void setPixel(int x, int y, G3D::Color4uint8 val);
   /**
@@ -289,7 +289,7 @@ private:
 
 public:
 
-// ROBLOX: moved from private to public
+// NAMEHERE: moved from private to public
     /**
      Given [maybe] a filename, memory buffer, and [maybe] a format, 
      returns the most likely format of this file.
@@ -344,7 +344,7 @@ public:
      is passed as a reference parameter for speed.
      */
     void stripAlpha(GImage& output) const;
-// ROBLOX
+// NAMEHERE
     GImage stripAlpha() const;
     void   setColorAlphaTest(const Color4uint8& color);
 // ======
@@ -384,7 +384,7 @@ public:
         int srcY, 
         int srcWidth,
         int srcHeight);
-// ROBLOX
+// NAMEHERE
 	static bool rotateAndPasteSubImage(
         GImage &dest, GImage &src,
 		int destX, int destY, int srcX, int srcY, int srcWidth, int srcHeight, int rotation);

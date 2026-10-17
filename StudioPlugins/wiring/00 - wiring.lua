@@ -36,15 +36,15 @@ local BASE_WIRE_RADIUS = 0.0625
 local HOVER_WIRE_COLOR = BrickColor.new("Really red")
 local HOVER_WIRE_RADIUS = 0.125
 local SOURCE_BUTTON_TEXT_COLOR = Color3.new(1, .5, 0)
-local SOURCE_BUTTON_ICON_TEXTURE = "http://www.roblox.com/asset/?id=55130296"
-local SOURCE_BUTTON_ICON_HOVER_TEXTURE = "http://www.roblox.com/asset/?id=56953981"
+local SOURCE_BUTTON_ICON_TEXTURE = "http://www.namehere.com/asset/?id=55130296"
+local SOURCE_BUTTON_ICON_HOVER_TEXTURE = "http://www.namehere.com/asset/?id=56953981"
 local SINK_BUTTON_TEXT_COLOR = Color3.new(0, 1, 0)
-local SINK_BUTTON_ICON_TEXTURE = "http://www.roblox.com/asset/?id=55130274"
-local SINK_BUTTON_ICON_HOVER_TEXTURE = "http://www.roblox.com/asset/?id=56953950"
+local SINK_BUTTON_ICON_TEXTURE = "http://www.namehere.com/asset/?id=55130274"
+local SINK_BUTTON_ICON_HOVER_TEXTURE = "http://www.namehere.com/asset/?id=56953950"
 local SELECT_CONNECTION = nil
-local DOWN_ARROW_TEXTURE = "http://www.roblox.com/asset/?id=48972653"
-local SOURCE_BADGE_TEXTURE = "http://www.roblox.com/asset/?id=60730993"
-local SINK_BADGE_TEXTURE = "http://www.roblox.com/asset/?id=61334830"
+local DOWN_ARROW_TEXTURE = "http://www.namehere.com/asset/?id=48972653"
+local SOURCE_BADGE_TEXTURE = "http://www.namehere.com/asset/?id=60730993"
+local SINK_BADGE_TEXTURE = "http://www.namehere.com/asset/?id=61334830"
 local PENDING_LEAVE_CALLBACK = nil
 local receiverTable = {}
 local eventTable = {}
@@ -393,7 +393,7 @@ end
 
 function handleTerminal(screenGui, terminal, getAttached)
 	local frame = Instance.new("Frame", screenGui)
-	frame.Style = Enum.FrameStyle.RobloxRound
+	frame.Style = Enum.FrameStyle.NAMEHERERound
 	frame.Visible = true
 	local yOffset = 0
 	local maxX = 0
@@ -535,7 +535,7 @@ end
 
 function handleContainer(screenGui, root)
 	local frame = Instance.new("Frame", screenGui)
-	frame.Style = Enum.FrameStyle.RobloxRound
+	frame.Style = Enum.FrameStyle.NAMEHERERound
 	frame.Visible = true
 	local yOffset = 0
 	local maxX = 0
@@ -626,7 +626,7 @@ function handleStoredTerminal(screenGui)
 	if storedTerminal == nil then return end
 
 	local frame = Instance.new("Frame", screenGui)
-	frame.Style = Enum.FrameStyle.RobloxRound
+	frame.Style = Enum.FrameStyle.NAMEHERERound
 	frame.Visible = true
 	local yOffset = 0
 	local maxX = 0

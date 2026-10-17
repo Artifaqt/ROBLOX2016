@@ -1,4 +1,4 @@
--- Written by Kip Turner, Copyright ROBLOX 2015
+-- Written by Kip Turner, Copyright NAMEHERE 2015
 
 local CoreGui = Game:GetService("CoreGui")
 local GuiService = game:GetService('GuiService')
@@ -6,7 +6,7 @@ local PlayersService = game:GetService("Players")
 local ContextActionService = game:GetService("ContextActionService")
 local UserInputService = game:GetService("UserInputService")
 
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 
 local AccountManager = require(Modules:FindFirstChild('AccountManager'))
@@ -57,15 +57,15 @@ local function CreateHomePane(parent)
 		Parent = parent;
 	}
 
-		local RobloxLogo = Utility.Create'ImageLabel'
+		local NAMEHERELogo = Utility.Create'ImageLabel'
 		{
-			Name = 'RobloxLogo';
+			Name = 'NAMEHERELogo';
 			BackgroundTransparency = 1;
 			Size = UDim2.new(0, 594, 0, 199);
-			Image = 'rbxasset://textures/ui/Shell/Icons/ROBLOXSplashLogo.png';
+			Image = 'rbxasset://textures/ui/Shell/Icons/NAMEHERESplashLogo.png';
 			Parent = EngagementScreenContainer;
 		}
-		Utility.CalculateAnchor(RobloxLogo, UDim2.new(0.5,0,0.5,0), Utility.Enum.Anchor.Center)
+		Utility.CalculateAnchor(NAMEHERELogo, UDim2.new(0.5,0,0.5,0), Utility.Enum.Anchor.Center)
 
 		local AnyButtonHint = Utility.Create'TextLabel'
 		{
@@ -76,13 +76,13 @@ local function CreateHomePane(parent)
 			FontSize = GlobalSettings.ButtonSize;
 			Size = UDim2.new(0,0,0,0);
 			BackgroundTransparency = 1;
-			Parent = RobloxLogo;
+			Parent = NAMEHERELogo;
 		};
 		Utility.CalculateAnchor(AnyButtonHint, UDim2.new(0.5,0,0,415), Utility.Enum.Anchor.Center)
 
 	local function beginAuthenticationAsync(gamePad)
 		local authResult = nil
-		local hasRobloxCredentialsResult = nil
+		local hasNAMEHERECredentialsResult = nil
 		local function auth()
 			authResult = AccountManager:BeginAuthenticationAsync(gamePad)
 			if not authResult then
@@ -91,27 +91,27 @@ local function CreateHomePane(parent)
 			end
 
 			if authResult == AccountManager.AuthResults.Success then
-				hasRobloxCredentialsResult = AccountManager:HasRobloxCredentialsAsync()
+				hasNAMEHERECredentialsResult = AccountManager:HasNAMEHERECredentialsAsync()
 			end
 		end
 
 		local loader = LoadingWidget(
-			{ Parent = RobloxLogo, Position = UDim2.new(0.5, 0, 0, 415) }, { auth })
+			{ Parent = NAMEHERELogo, Position = UDim2.new(0.5, 0, 0, 415) }, { auth })
 		loader:AwaitFinished()
 		loader:Cleanup()
 		loader = nil
 
 		print("beginAuthenticationAsync has completed with code:", authResult)
 		if authResult == AccountManager.AuthResults.Success then
-			if hasRobloxCredentialsResult == AccountManager.AuthResults.Success then
+			if hasNAMEHERECredentialsResult == AccountManager.AuthResults.Success then
 				EventHub:dispatchEvent(EventHub.Notifications["AuthenticationSuccess"])
-			elseif hasRobloxCredentialsResult == AccountManager.AuthResults.UsernamePasswordNotSet then
+			elseif hasNAMEHERECredentialsResult == AccountManager.AuthResults.UsernamePasswordNotSet then
 				local setAccountCredentialsScreen = SetAccountCredentialsScreen(Strings:LocalizedString("SetCredentialsTitle"),
 					Strings:LocalizedString("SetCredentialsPhrase"), Strings:LocalizedString("SetCredentialsWord"))
 				setAccountCredentialsScreen:SetParent(EngagementScreenContainer.Parent)
 				ScreenManager:OpenScreen(setAccountCredentialsScreen, true)
 			else
-				local err = Errors.Authentication[hasRobloxCredentialsResult] or Errors.Default
+				local err = Errors.Authentication[hasNAMEHERECredentialsResult] or Errors.Default
 				ScreenManager:OpenScreen(ErrorOverlay(err), false)
 			end
 		elseif authResult == AccountManager.AuthResults.AccountUnlinked then

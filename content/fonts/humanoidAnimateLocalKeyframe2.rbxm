@@ -1,4 +1,4 @@
-<roblox xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.roblox.com/roblox.xsd" version="4">
+<namehere xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.namehere.com/namehere.xsd" version="4">
 	<External>null</External>
 	<External>nil</External>
 	<Item class="LocalScript" referent="RBXC49238CC391A40B0B08D3C0989F85A53">
@@ -33,63 +33,63 @@ local currentAnimSpeed = 1.0
 local animTable = {}
 local animNames = { 
 	idle = 	{	
-				{ id = "http://www.roblox.com/asset/?id=180435571", weight = 9 },
-				{ id = "http://www.roblox.com/asset/?id=180435792", weight = 1 }
+				{ id = "http://www.namehere.com/asset/?id=180435571", weight = 9 },
+				{ id = "http://www.namehere.com/asset/?id=180435792", weight = 1 }
 			},
 	walk = 	{ 	
-				{ id = "http://www.roblox.com/asset/?id=180426354", weight = 10 } 
+				{ id = "http://www.namehere.com/asset/?id=180426354", weight = 10 } 
 			}, 
 	run = 	{
 				{ id = "run.xml", weight = 10 } 
 			}, 
 	jump = 	{
-				{ id = "http://www.roblox.com/asset/?id=125750702", weight = 10 } 
+				{ id = "http://www.namehere.com/asset/?id=125750702", weight = 10 } 
 			}, 
 	fall = 	{
-				{ id = "http://www.roblox.com/asset/?id=180436148", weight = 10 } 
+				{ id = "http://www.namehere.com/asset/?id=180436148", weight = 10 } 
 			}, 
 	climb = {
-				{ id = "http://www.roblox.com/asset/?id=180436334", weight = 10 } 
+				{ id = "http://www.namehere.com/asset/?id=180436334", weight = 10 } 
 			}, 
 	sit = 	{
-				{ id = "http://www.roblox.com/asset/?id=178130996", weight = 10 } 
+				{ id = "http://www.namehere.com/asset/?id=178130996", weight = 10 } 
 			},	
 	toolnone = {
-				{ id = "http://www.roblox.com/asset/?id=182393478", weight = 10 } 
+				{ id = "http://www.namehere.com/asset/?id=182393478", weight = 10 } 
 			},
 	toolslash = {
-				{ id = "http://www.roblox.com/asset/?id=129967390", weight = 10 } 
+				{ id = "http://www.namehere.com/asset/?id=129967390", weight = 10 } 
 --				{ id = "slash.xml", weight = 10 } 
 			},
 	toollunge = {
-				{ id = "http://www.roblox.com/asset/?id=129967478", weight = 10 } 
+				{ id = "http://www.namehere.com/asset/?id=129967478", weight = 10 } 
 			},
 	wave = {
-				{ id = "http://www.roblox.com/asset/?id=128777973", weight = 10 } 
+				{ id = "http://www.namehere.com/asset/?id=128777973", weight = 10 } 
 			},
 	point = {
-				{ id = "http://www.roblox.com/asset/?id=128853357", weight = 10 } 
+				{ id = "http://www.namehere.com/asset/?id=128853357", weight = 10 } 
 			},
 	dance1 = {
-				{ id = "http://www.roblox.com/asset/?id=182435998", weight = 10 }, 
-				{ id = "http://www.roblox.com/asset/?id=182491037", weight = 10 }, 
-				{ id = "http://www.roblox.com/asset/?id=182491065", weight = 10 } 
+				{ id = "http://www.namehere.com/asset/?id=182435998", weight = 10 }, 
+				{ id = "http://www.namehere.com/asset/?id=182491037", weight = 10 }, 
+				{ id = "http://www.namehere.com/asset/?id=182491065", weight = 10 } 
 			},
 	dance2 = {
-				{ id = "http://www.roblox.com/asset/?id=182436842", weight = 10 }, 
-				{ id = "http://www.roblox.com/asset/?id=182491248", weight = 10 }, 
-				{ id = "http://www.roblox.com/asset/?id=182491277", weight = 10 } 
+				{ id = "http://www.namehere.com/asset/?id=182436842", weight = 10 }, 
+				{ id = "http://www.namehere.com/asset/?id=182491248", weight = 10 }, 
+				{ id = "http://www.namehere.com/asset/?id=182491277", weight = 10 } 
 			},
 	dance3 = {
-				{ id = "http://www.roblox.com/asset/?id=182436935", weight = 10 }, 
-				{ id = "http://www.roblox.com/asset/?id=182491368", weight = 10 }, 
-				{ id = "http://www.roblox.com/asset/?id=182491423", weight = 10 } 
+				{ id = "http://www.namehere.com/asset/?id=182436935", weight = 10 }, 
+				{ id = "http://www.namehere.com/asset/?id=182491368", weight = 10 }, 
+				{ id = "http://www.namehere.com/asset/?id=182491423", weight = 10 } 
 			},
 	laugh = {
-				{ id = "http://www.roblox.com/asset/?id=129423131", weight = 10 } 
+				{ id = "http://www.namehere.com/asset/?id=129423131", weight = 10 } 
 			},
 	cheer = {
-				{ id = "http://www.roblox.com/asset/?id=129423030", weight = 10 } 
+				{ id = "http://www.namehere.com/asset/?id=129423030", weight = 10 } 
 			},
 }
 local dances = {"dance1", "dance2", "dance3"}
@@ -339,7 +339,7 @@ end
 function onRunning(speed)
 	if speed>0.01 then
 		playAnimation("walk", 0.1, Humanoid)
-		if currentAnimInstance and currentAnimInstance.AnimationId == "http://www.roblox.com/asset/?id=180426354" then
+		if currentAnimInstance and currentAnimInstance.AnimationId == "http://www.namehere.com/asset/?id=180426354" then
 			setAnimationSpeed(speed / 14.5)
 		end
 		pose = "Running"
@@ -558,7 +558,7 @@ end
 			</Properties>
 			<Item class="Animation" referent="RBXDB67065FB85E4931999CB515B5F2012A">
 				<Properties>
-					<Content name="AnimationId"><url>http://www.roblox.com/asset/?id=180435571</url></Content>
+					<Content name="AnimationId"><url>http://www.namehere.com/asset/?id=180435571</url></Content>
 					<string name="Name">Animation1</string>
 				</Properties>
 				<Item class="NumberValue" referent="RBX9C1D89D976924979BDD8B81DA97BE114">
@@ -570,7 +570,7 @@ end
 			</Item>
 			<Item class="Animation" referent="RBXEEE171AA4C1C4802A98EA849C0B0A8AC">
 				<Properties>
-					<Content name="AnimationId"><url>http://www.roblox.com/asset/?id=180435792</url></Content>
+					<Content name="AnimationId"><url>http://www.namehere.com/asset/?id=180435792</url></Content>
 					<string name="Name">Animation2</string>
 				</Properties>
 				<Item class="NumberValue" referent="RBX37B140D9414C4473A5F27F7880B0EC4E">
@@ -588,7 +588,7 @@ end
 			</Properties>
 			<Item class="Animation" referent="RBX45D6152C54FA4EF7B0F9CBF069550557">
 				<Properties>
-					<Content name="AnimationId"><url>http://www.roblox.com/asset/?id=180426354</url></Content>
+					<Content name="AnimationId"><url>http://www.namehere.com/asset/?id=180426354</url></Content>
 					<string name="Name">WalkAnim</string>
 				</Properties>
 			</Item>
@@ -600,7 +600,7 @@ end
 			</Properties>
 			<Item class="Animation" referent="RBXA37336981B6E454C90E45A7F01515966">
 				<Properties>
-					<Content name="AnimationId"><url>http://www.roblox.com/asset/?id=180426354</url></Content>
+					<Content name="AnimationId"><url>http://www.namehere.com/asset/?id=180426354</url></Content>
 					<string name="Name">RunAnim</string>
 				</Properties>
 			</Item>
@@ -612,7 +612,7 @@ end
 			</Properties>
 			<Item class="Animation" referent="RBXDB0FB6EAF0A94640AD7C222F7E4E39F4">
 				<Properties>
-					<Content name="AnimationId"><url>http://www.roblox.com/asset/?id=125750702</url></Content>
+					<Content name="AnimationId"><url>http://www.namehere.com/asset/?id=125750702</url></Content>
 					<string name="Name">JumpAnim</string>
 				</Properties>
 			</Item>
@@ -624,7 +624,7 @@ end
 			</Properties>
 			<Item class="Animation" referent="RBX94C1F5C954294A889B341487BAC89356">
 				<Properties>
-					<Content name="AnimationId"><url>http://www.roblox.com/asset/?id=180436334</url></Content>
+					<Content name="AnimationId"><url>http://www.namehere.com/asset/?id=180436334</url></Content>
 					<string name="Name">ClimbAnim</string>
 				</Properties>
 			</Item>
@@ -636,7 +636,7 @@ end
 			</Properties>
 			<Item class="Animation" referent="RBX6B27C35810754C93915CA4FE34E8EB95">
 				<Properties>
-					<Content name="AnimationId"><url>http://www.roblox.com/asset/?id=182393478</url></Content>
+					<Content name="AnimationId"><url>http://www.namehere.com/asset/?id=182393478</url></Content>
 					<string name="Name">ToolNoneAnim</string>
 				</Properties>
 			</Item>
@@ -648,7 +648,7 @@ end
 			</Properties>
 			<Item class="Animation" referent="RBX0766704DC00944A88D7F0204B7AD2177">
 				<Properties>
-					<Content name="AnimationId"><url>http://www.roblox.com/asset/?id=180436148</url></Content>
+					<Content name="AnimationId"><url>http://www.namehere.com/asset/?id=180436148</url></Content>
 					<string name="Name">FallAnim</string>
 				</Properties>
 			</Item>
@@ -660,10 +660,10 @@ end
 			</Properties>
 			<Item class="Animation" referent="RBXBEBAA19B49FE45FB9D852B2290377C2C">
 				<Properties>
-					<Content name="AnimationId"><url>http://www.roblox.com/asset/?id=178130996</url></Content>
+					<Content name="AnimationId"><url>http://www.namehere.com/asset/?id=178130996</url></Content>
 					<string name="Name">SitAnim</string>
 				</Properties>
 			</Item>
 		</Item>
 	</Item>
-</roblox>
+</namehere>

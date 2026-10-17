@@ -1,4 +1,4 @@
-/* Copyright 2014 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2014 NAMEHERE Corporation, All Rights Reserved */
 #include "stdafx.h"
 
 #include "V8DataModel/PartOperationAsset.h"
@@ -12,7 +12,7 @@
 #include "RBX/RbxTime.h"
 #include "Util/BinaryString.h"
 #include "Util/NormalId.h"
-#include "Util/RobloxGoogleAnalytics.h"
+#include "Util/NAMEHEREGoogleAnalytics.h"
 #include "Util/SurfaceType.h"
 #include "Util/stringbuffer.h"
 #include "V8DataModel/PartInstance.h"
@@ -38,8 +38,8 @@ namespace RBX
 {
 using namespace Reflection;
 
-const Reflection::PropDescriptor<PartOperationAsset, BinaryString> PartOperationAsset::desc_ChildData("ChildData", category_Data, &PartOperationAsset::getChildData, &PartOperationAsset::setChildData, Reflection::PropertyDescriptor::CLUSTER, Security::Roblox);
-const Reflection::PropDescriptor<PartOperationAsset, BinaryString> PartOperationAsset::desc_MeshData("MeshData", category_Data, &PartOperationAsset::getMeshData, &PartOperationAsset::setMeshData, Reflection::PropertyDescriptor::STREAMING, Security::Roblox);
+const Reflection::PropDescriptor<PartOperationAsset, BinaryString> PartOperationAsset::desc_ChildData("ChildData", category_Data, &PartOperationAsset::getChildData, &PartOperationAsset::setChildData, Reflection::PropertyDescriptor::CLUSTER, Security::NAMEHERE);
+const Reflection::PropDescriptor<PartOperationAsset, BinaryString> PartOperationAsset::desc_MeshData("MeshData", category_Data, &PartOperationAsset::getMeshData, &PartOperationAsset::setMeshData, Reflection::PropertyDescriptor::STREAMING, Security::NAMEHERE);
 
 const char* const sPartOperationAsset = "PartOperationAsset";
 
@@ -77,7 +77,7 @@ void publishPartOperations(shared_ptr<Instance> descendant, RBX::Time startTime,
 				return;
 
 			RBX::ContentId contentId = partOperation->getAssetId();
-			RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_STUDIO, "RemoveLeftoverCSGData", contentId.c_str());
+			NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_STUDIO, "RemoveLeftoverCSGData", contentId.c_str());
 
 			DataModel* dataModel = DataModel::get(partOperation.get());
 
@@ -126,7 +126,7 @@ void publishPartOperations(shared_ptr<Instance> descendant, RBX::Time startTime,
 
         if (!dictionaryService->isHashKey(meshKey.value()) || !nrDictionaryService->isHashKey(childKey.value()))
         {
-            RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_STUDIO, "PublishCSGFailure", "HashKeyNotFound");
+            NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_STUDIO, "PublishCSGFailure", "HashKeyNotFound");
             return;
         }
 
@@ -187,7 +187,7 @@ bool PartOperationAsset::publishAll(DataModel* dataModel, int timeoutMills)
 
     dataModel->visitDescendants(boost::bind(&publishPartOperations, _1, startPublish, timeoutMills));
 
-    RobloxGoogleAnalytics::trackUserTiming(GA_CATEGORY_STUDIO, "SolidModelPublishAll", static_cast<int>((RBX::Time::nowFast() - startPublish).msec()));
+    NAMEHEREGoogleAnalytics::trackUserTiming(GA_CATEGORY_STUDIO, "SolidModelPublishAll", static_cast<int>((RBX::Time::nowFast() - startPublish).msec()));
 
 	CSGDictionaryService* dictionaryService = ServiceProvider::find< CSGDictionaryService >(dataModel);
 	NonReplicatedCSGDictionaryService* nrDictionaryService = ServiceProvider::find<NonReplicatedCSGDictionaryService>(dataModel);
@@ -208,7 +208,7 @@ bool PartOperationAsset::publishSelection(DataModel* dataModel, int timeoutMills
         publishPartOperations(*iter, startPublish, timeoutMills);
     }
 
-    RobloxGoogleAnalytics::trackUserTiming(GA_CATEGORY_STUDIO, "SolidModelPublishSelection", static_cast<int>((RBX::Time::nowFast() - startPublish).msec()));
+    NAMEHEREGoogleAnalytics::trackUserTiming(GA_CATEGORY_STUDIO, "SolidModelPublishSelection", static_cast<int>((RBX::Time::nowFast() - startPublish).msec()));
 
 	CSGDictionaryService* dictionaryService = ServiceProvider::find< CSGDictionaryService >(dataModel);
 	NonReplicatedCSGDictionaryService* nrDictionaryService = ServiceProvider::find<NonReplicatedCSGDictionaryService>(dataModel);

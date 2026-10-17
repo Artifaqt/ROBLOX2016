@@ -1,4 +1,4 @@
-/* Copyright 2003-2014 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2014 NAMEHERE Corporation, All Rights Reserved */
 #include "stdafx.h"
 
 #include "Util/Sound.h"
@@ -125,20 +125,20 @@ namespace RBX
 		}
 
 		// both ogg and mp3 containers allow mostly arbitrary data before a sync word.
-		// People were uploading audio as a model/plugin.  This requires "<roblox" 
+		// People were uploading audio as a model/plugin.  This requires "<namehere" 
 		static bool isFileModel(const char* filename)
 		{
 			std::ifstream is(utf8_decode(filename).c_str(), std::ios_base::in | std::ios_base::binary);
 			char buf[7];
 			is.read(buf,7);
-			return (0 == strncmp(buf, "<roblox", 7));
+			return (0 == strncmp(buf, "<namehere", 7));
 		}
 
 		static bool isMemModel(const std::string* data)
 		{
 			if (data->size() > 7)
 			{
-				return (0 == strncmp(data->c_str(), "<roblox", 7));
+				return (0 == strncmp(data->c_str(), "<namehere", 7));
 			}
 			return false;
 		}

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Settings>
-  <BaseUrl>http://www.gametest2.robloxlabs.com/</BaseUrl>
+  <BaseUrl>http://www.gametest2.nameherelabs.com/</BaseUrl>
   <ContentFolder>..\..\..\content</ContentFolder>
   <SilentCrashReport>0</SilentCrashReport>
   <HideChatWindow>0</HideChatWindow>

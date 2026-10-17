@@ -12,13 +12,13 @@
 #include "atlpath.h"
 #include "atlsync.h"
 #include "format_string.h"
-#include "ShutdownRobloxApp.h"
+#include "ShutdownNAMEHEREApp.h"
 #include "shellapi.h"
 #include "ShutdownDialog.h"
 #include "MD5Hasher.h"
 #include "SharedLauncher.h"
 #include "StringConv.h"
-#include "RobloxServicesTools.h"
+#include "NAMEHEREServicesTools.h"
 
 #include <boost/thread/thread.hpp>
 #include <boost/bind.hpp>
@@ -106,7 +106,7 @@ public:
 					{
 						LLOG_ENTRY(bootstrapper->logger, "CSimpleModule::WinMain Waiting for bootstrapper to finish in silent mode");
 						bool result = bootstrapper->WaitForCompletion();
-						LLOG_ENTRY1(bootstrapper->logger, "CSimpleModule::WinMain - robloxReady, wait timeout = %d", result);
+						LLOG_ENTRY1(bootstrapper->logger, "CSimpleModule::WinMain - namehereReady, wait timeout = %d", result);
 					}
 					else
 					{
@@ -180,7 +180,7 @@ public:
 				else
 				{
 					CString message;
-					message.Format(_T("An error occured and Roblox cannot continue.\n\n%S"), e.what());
+					message.Format(_T("An error occured and NAMEHERE cannot continue.\n\n%S"), e.what());
 					::MessageBox(NULL, message, _T("Error"), MB_OK | MB_ICONEXCLAMATION);
 				}
 				result = -1;
@@ -299,7 +299,7 @@ Bootstrapper::Bootstrapper(HINSTANCE hInstance)
 :hInstance(hInstance),
 dialog(CMainDialog::Create(hInstance)),
 mainThreadId(::GetCurrentThreadId()),
-robloxAppArgs(_T("-browser")),	// By default start RobloxApp.exe as a web browser
+namehereAppArgs(_T("-browser")),	// By default start NAMEHEREApp.exe as a web browser
 force(false),
 isUninstall(false),
 isNop(false),
@@ -320,7 +320,7 @@ exitCode(0),
 fullCheck(false),
 silentMode(false),
 dontStartApp(false),
-robloxReady(FALSE, FALSE, NULL, NULL),
+namehereReady(FALSE, FALSE, NULL, NULL),
 noRun(false),
 waitOnStart(true),
 launchedAppHwnd(NULL),
@@ -712,8 +712,8 @@ void Bootstrapper::initialize()
 
 		if (CookiesEngine::getCookiesFilePath().empty())
 		{
-			std::wstring dir = FileSystem::getSpecialFolder(FileSystem::RobloxUserApplicationDataLow, true, NULL, NULL);
-			// lets make sure that we have roblox dir at this point
+			std::wstring dir = FileSystem::getSpecialFolder(FileSystem::NAMEHEREUserApplicationDataLow, true, NULL, NULL);
+			// lets make sure that we have namehere dir at this point
 			try 
 			{
 				createDirectory(dir.c_str());
@@ -807,7 +807,7 @@ void Bootstrapper::postLogFile(bool uploadApp)
 					std::wstring file = simple_logger<wchar_t>::get_tmp_path() + std::wstring(files[0].cFileName);
 					{
 						std::fstream data(file.c_str(), std::ios_base::app);
-						data << "Info: RobloxAppLog" << "\n";
+						data << "Info: NAMEHEREAppLog" << "\n";
 						data << corrID << ": " << reportStatGuid << "\n";
 						data.flush();
 					}
@@ -912,7 +912,7 @@ void Bootstrapper::parseCmdLine()
 		{
 			LOG_ENTRY("option: ide");
 			windowDelay = 1;
-            robloxAppArgs = convert_s2w(SharedLauncher::IDEArgument);
+            namehereAppArgs = convert_s2w(SharedLauncher::IDEArgument);
 			if (i+1 < __argc && __targv[i+1][0]!='-')
 			{
 				++i;
@@ -922,11 +922,11 @@ void Bootstrapper::parseCmdLine()
 				HANDLE hFile = ::FindFirstFile(__targv[i], &FileInformation);
 				if (hFile != INVALID_HANDLE_VALUE)
 				{
-					robloxAppArgs += _T(" ");
-					robloxAppArgs += convert_s2w(SharedLauncher::FileLocationArgument);
-					robloxAppArgs += _T(" \"");
-					robloxAppArgs += __targv[i];
-					robloxAppArgs += _T("\"");
+					namehereAppArgs += _T(" ");
+					namehereAppArgs += convert_s2w(SharedLauncher::FileLocationArgument);
+					namehereAppArgs += _T(" \"");
+					namehereAppArgs += __targv[i];
+					namehereAppArgs += _T("\"");
 				}
 			}
 		}
@@ -957,28 +957,28 @@ void Bootstrapper::parseCmdLine()
 		{
 			LOG_ENTRY("option: browser");
 			windowDelay = 1;
-			robloxAppArgs = _T("-browser");
+			namehereAppArgs = _T("-browser");
 		}
 		else if (CAtlModule::WordCmpI(arg1, _T("-uninstall"))==0)
 		{
 			LOG_ENTRY("option: Uninstall");
 			isUninstall = true;
-			robloxAppArgs = _T("");
+			namehereAppArgs = _T("");
 		}
 		else if (CAtlModule::WordCmpI(arg1, _T("-install"))==0)
 		{
 			LOG_ENTRY("option: Install");
 			requestedInstall = true;
-			// Just update/install roblox, but don't run it
-			robloxAppArgs = _T("");
+			// Just update/install namehere, but don't run it
+			namehereAppArgs = _T("");
 			windowDelay = 10;
 		}
 		else if(CAtlModule::WordCmpI(arg1, _T("-failIfNotUpToDate"))==0)
 		{
 			LOG_ENTRY("option: FailIfNotUpToDate");
-			//Just check roblox version number, and return "success (0)" if it is up to date
+			//Just check namehere version number, and return "success (0)" if it is up to date
 			isFailIfNotUpToDate = true;
-			robloxAppArgs = _T("");
+			namehereAppArgs = _T("");
 			windowDelay = 10;
 		}
 		else if (CAtlModule::WordCmpI(arg1, _T("-force"))==0)
@@ -994,14 +994,14 @@ void Bootstrapper::parseCmdLine()
 		else if (CAtlModule::WordCmpI(arg1, _T("-prePlay"))==0)
 		{
 			LOG_ENTRY("option: prePlay");
-			robloxAppArgs = _T("-nop");
+			namehereAppArgs = _T("-nop");
 			isNop = true;
 		}
 		else if (!ProcessArg(__targv, i, __argc))
         {
-            if ( !robloxAppArgs.empty() )
-			    robloxAppArgs += _T(" ");
-            robloxAppArgs += arg1;
+            if ( !namehereAppArgs.empty() )
+			    namehereAppArgs += _T(" ");
+            namehereAppArgs += arg1;
 		}
 	}
 }
@@ -1062,7 +1062,7 @@ boost::shared_ptr<Bootstrapper> Bootstrapper::Create(HINSTANCE hInstance, Bootst
 			CTimedMutexLock l1(m1);
 			if (l1.Lock(1) == WAIT_TIMEOUT)
 			{
-				LLOG_ENTRY(result->logger, "No bg update, Roblox App is running");
+				LLOG_ENTRY(result->logger, "No bg update, NAMEHERE App is running");
 				return result;
 			}
 
@@ -1188,8 +1188,8 @@ void Bootstrapper::RegisterUninstall(const TCHAR *productName)
 
 	std::wstring uninstallString = format_string(_T("\"%s%s\" -uninstall%s"), programDirectory().c_str(), GetBootstrapperFileName().c_str(), perUser ? _T("") : _T(" -alluser"));
 	throwHRESULT (keyProductCode.SetStringValue(_T("UninstallString"), uninstallString.c_str(), REG_EXPAND_SZ), "Failed to set UninstallString key");
-	throwHRESULT (keyProductCode.SetStringValue(_T("Publisher"), _T("ROBLOX Corporation")), "Failed to set Publisher key");
-	throwHRESULT (keyProductCode.SetStringValue(_T("URLInfoAbout"), _T("http://www.roblox.com")), "Failed to set URLInfoAbout key");
+	throwHRESULT (keyProductCode.SetStringValue(_T("Publisher"), _T("NAMEHERE Corporation")), "Failed to set Publisher key");
+	throwHRESULT (keyProductCode.SetStringValue(_T("URLInfoAbout"), _T("http://www.namehere.com")), "Failed to set URLInfoAbout key");
 	throwHRESULT (keyProductCode.SetStringValue(_T("Comments"), convert_s2w(installVersion).c_str()), "Failed to set Comments key");
 	throwHRESULT (keyProductCode.SetStringValue(_T("InstallLocation"), programDirectory().c_str()), "Failed to set InstallLocation key");
 	throwHRESULT (keyProductCode.SetDWORDValue(_T("NoModify"), 1), "Failed to set NoModify key");
@@ -1235,7 +1235,7 @@ void Bootstrapper::RegisterProtocolHandler(const std::wstring& protocolScheme, c
 
 	// register the protocol handler scheme
 	CRegKey key = CreateKey(isPerUser() ? HKEY_CURRENT_USER : HKEY_LOCAL_MACHINE, (_T("SOFTWARE\\Classes\\") + protocolScheme).c_str());
-	throwHRESULT(key.SetStringValue(_T(""), _T("URL: Roblox Protocol")), format_string("failed to set value for protocol"));
+	throwHRESULT(key.SetStringValue(_T(""), _T("URL: NAMEHERE Protocol")), format_string("failed to set value for protocol"));
 	throwHRESULT(key.SetStringValue(_T("URL Protocol"), _T("")), format_string("failed to set value for protocol"));
 
 	CreateKey(key, _T("DefaultIcon"), exePath.c_str());
@@ -1295,7 +1295,7 @@ void Bootstrapper::validateAndFixChromeState()
 		if (iter->name.IsString())
 		{
 			std::string name = iter->name.GetString();
-			if (name.find("roblox") != std::string::npos)
+			if (name.find("namehere") != std::string::npos)
 			{
 				if (iter->value.GetBool())
 					found = true;
@@ -1359,7 +1359,7 @@ void Bootstrapper::validateAndFixChromeState()
 			if (retried)
 			{
 				int res = dialog->MessageBox(
-					_T("Roblox might not launch correctly if Chrome is open or running in the background during installation.\n\n")
+					_T("NAMEHERE might not launch correctly if Chrome is open or running in the background during installation.\n\n")
 					_T("Automatically shutdown all instances of Chrome and continue?"), _T("Warning"), MB_YESNOCANCEL);
 
 				if (res == IDYES)
@@ -1579,7 +1579,7 @@ std::wstring Bootstrapper::programDirectory() const
 
 std::wstring Bootstrapper::baseProgramDirectory(bool isPerUser) const
 {
-	return FileSystem::getSpecialFolder(isPerUser ? FileSystem::RobloxUserApplicationData : FileSystem::RobloxProgramFiles, true, "Versions");
+	return FileSystem::getSpecialFolder(isPerUser ? FileSystem::NAMEHEREUserApplicationData : FileSystem::NAMEHEREProgramFiles, true, "Versions");
 }
 
 std::wstring Bootstrapper::programDirectory(bool isPerUser) const
@@ -1660,7 +1660,7 @@ bool Bootstrapper::checkBootstrapperVersion()
 	moduleVersionNumber = vi.GetFileVersionAsString();
 	LOG_ENTRY1("module file version: %s", moduleVersionNumber.c_str());
 
-	message("Connecting to ROBLOX...");
+	message("Connecting to NAMEHERE...");
 	try
 	{
 		installVersion = fetchVersionGuid(); // TODO: Why is this setting the installVersion?
@@ -1709,7 +1709,7 @@ bool Bootstrapper::checkBootstrapperVersion()
 		std::wstring newBootstrapper;
 
 		// Lets kill task before updating and installing
-		UninstallRobloxUpdater();
+		UninstallNAMEHEREUpdater();
 
 		try
 		{
@@ -1742,7 +1742,7 @@ bool Bootstrapper::checkBootstrapperVersion()
 
 			try
 			{
-				message("Getting the latest Roblox...");
+				message("Getting the latest NAMEHERE...");
 
 				// We could use an "exe" extension, but hiding the type isn't a bad idea?
 				newBootstrapper = simple_logger<wchar_t>::get_temp_filename(_T("tmp"));
@@ -1759,7 +1759,7 @@ bool Bootstrapper::checkBootstrapperVersion()
 				{
 					std::ofstream bootstrapperFile(newBootstrapper.c_str(), std::ios::binary);
 					// this we might need during rollback, lets be on safe side
-					HttpTools::httpGetCdn(this, installHost, format_string("/%s-Roblox.exe", installVersion.c_str()), std::string(), bootstrapperFile, false, boost::bind(&Bootstrapper::dummyProgress, _1, _2));
+					HttpTools::httpGetCdn(this, installHost, format_string("/%s-NAMEHERE.exe", installVersion.c_str()), std::string(), bootstrapperFile, false, boost::bind(&Bootstrapper::dummyProgress, _1, _2));
 				}
 			}
 
@@ -1788,7 +1788,7 @@ bool Bootstrapper::checkBootstrapperVersion()
 
 void Bootstrapper::writeAppSettings()
 {
-	message("Configuring ROBLOX...");
+	message("Configuring NAMEHERE...");
 
 	std::wstring appSettings(programDirectory() + _T("AppSettings.xml"));
 	std::ofstream file(appSettings.c_str());
@@ -1808,14 +1808,14 @@ void Bootstrapper::CreateShortcuts(bool forceDesktopIconCreation, const TCHAR *l
 	{
 		LOG_ENTRY4("Bootstrapper::CreateShortcuts force = %d, link = '%S', exeName = '%S', params = '%S'", forceDesktopIconCreation, linkName, exeName, params);
 		std::wstring exePath = GetSelfName();
-		createRobloxShortcut(logger, isPerUser(), linkName, exePath.c_str(), params, false, true);
-		createRobloxShortcut(logger, isPerUser(), linkName, exePath.c_str(), params, true, forceDesktopIconCreation);
+		createNAMEHEREShortcut(logger, isPerUser(), linkName, exePath.c_str(), params, false, true);
+		createNAMEHEREShortcut(logger, isPerUser(), linkName, exePath.c_str(), params, true, forceDesktopIconCreation);
 
 		long start = GetTickCount();
 		std::wstring desktop = FileSystem::getSpecialFolder(FileSystem::Desktop, false, NULL, NULL);
 		std::wstring versionedPath = programDirectory();
 		std::wstring unversionedPath = baseProgramDirectory(isPerUser());
-		updateExistingRobloxShortcuts(logger, isPerUser(), desktop.c_str(), exeName, versionedPath.c_str(), unversionedPath.c_str());
+		updateExistingNAMEHEREShortcuts(logger, isPerUser(), desktop.c_str(), exeName, versionedPath.c_str(), unversionedPath.c_str());
 
 		// if user pinned our R link to task bar or start menu we want update that link as well
 		if (IsWin7())
@@ -1823,22 +1823,22 @@ void Bootstrapper::CreateShortcuts(bool forceDesktopIconCreation, const TCHAR *l
 			std::wstring folder = FileSystem::getSpecialFolder(FileSystem::RoamingAppData, false, NULL, NULL);
 		
 			std::wstring taskBar = folder + _T("Microsoft\\Internet Explorer\\Quick Launch\\User Pinned\\TaskBar\\");
-			updateExistingRobloxShortcuts(logger, isPerUser(), taskBar.c_str(), exeName, versionedPath.c_str(), unversionedPath.c_str());
+			updateExistingNAMEHEREShortcuts(logger, isPerUser(), taskBar.c_str(), exeName, versionedPath.c_str(), unversionedPath.c_str());
 
 			std::wstring startMenu = folder + _T("Microsoft\\Internet Explorer\\Quick Launch\\User Pinned\\StartMenu\\");
-			updateExistingRobloxShortcuts(logger, isPerUser(), startMenu.c_str(), exeName, versionedPath.c_str(), unversionedPath.c_str());
+			updateExistingNAMEHEREShortcuts(logger, isPerUser(), startMenu.c_str(), exeName, versionedPath.c_str(), unversionedPath.c_str());
 		}
 		else if (IsWinXP()) //WinXP
 		{
 			std::wstring folder = FileSystem::getSpecialFolder(FileSystem::AppData, false, NULL, NULL);
 			folder += _T("Microsoft\\Internet Explorer\\Quick Launch\\");
-			updateExistingRobloxShortcuts(logger, isPerUser(), folder.c_str(), exeName, versionedPath.c_str(), unversionedPath.c_str());
+			updateExistingNAMEHEREShortcuts(logger, isPerUser(), folder.c_str(), exeName, versionedPath.c_str(), unversionedPath.c_str());
 		}
 		else // Win Vista case
 		{
 			std::wstring folder = FileSystem::getSpecialFolder(FileSystem::RoamingAppData, false, NULL, NULL);
 			folder += _T("Microsoft\\Internet Explorer\\Quick Launch\\");
-			updateExistingRobloxShortcuts(logger, isPerUser(), folder.c_str(), exeName, versionedPath.c_str(), unversionedPath.c_str());
+			updateExistingNAMEHEREShortcuts(logger, isPerUser(), folder.c_str(), exeName, versionedPath.c_str(), unversionedPath.c_str());
 		}
 		
 		long end = GetTickCount();
@@ -1864,7 +1864,7 @@ void Bootstrapper::CreateShortcuts(bool forceDesktopIconCreation, const TCHAR *l
 LPCWSTR LOW_INTEGRITY_SDDL_SACL_W = L"S:(ML;;NW;;;LW)";
  
 // http://www.codeproject.com/KB/vista-security/PMSurvivalGuide.aspx#creatingipc
-// This function lets RobloxProxy.dll access the mutex
+// This function lets NAMEHEREProxy.dll access the mutex
 
 bool SetObjectToLowIntegrity(HANDLE hObject, SE_OBJECT_TYPE type = SE_KERNEL_OBJECT)
 {
@@ -1917,7 +1917,7 @@ void Bootstrapper::checkOSPrerequisit()
 	osvi.dwOSVersionInfoSize = sizeof(OSVERSIONINFOEX);
 	osvi.dwMajorVersion = 5;
 	osvi.dwMinorVersion = 1;
-	osvi.wServicePackMajor = 1;	// Roblox requires WinXP SP1 because it links to WinHttp
+	osvi.wServicePackMajor = 1;	// NAMEHERE requires WinXP SP1 because it links to WinHttp
 	osvi.wServicePackMinor = 0;
 
 	DWORDLONG dwlConditionMask = 0;
@@ -1932,7 +1932,7 @@ void Bootstrapper::checkOSPrerequisit()
 
 	LOG_ENTRY("checkOSPrerequisit failed");
 	if (windowed)
-		dialog->DisplayError("Roblox requires Microsoft Windows XP SP1 or greater", NULL);
+		dialog->DisplayError("NAMEHERE requires Microsoft Windows XP SP1 or greater", NULL);
 	throw installer_error_exception(installer_error_exception::OsPrerequisite);
 }
 
@@ -1942,7 +1942,7 @@ void Bootstrapper::checkCPUPrerequisit()
 	{
 		LOG_ENTRY("checkCPUPrerequisit failed");
 	    if (windowed)
-		    dialog->DisplayError("Roblox requires SSE2 support", NULL);
+		    dialog->DisplayError("NAMEHERE requires SSE2 support", NULL);
 		throw installer_error_exception(installer_error_exception::CpuPrerequisite);
 	}
 }
@@ -1955,7 +1955,7 @@ void Bootstrapper::checkDirectXPrerequisit()
 	{
 		log << "checkDirectXPrerequisit failed\n"; log.flush();
 		if (windowed)
-			dialog->DisplayError("Roblox requires DirectX 9.0 or greater", NULL);
+			dialog->DisplayError("NAMEHERE requires DirectX 9.0 or greater", NULL);
 		throw installer_error_exception(installer_error_exception::DirectxPrerequisite);
 	}
 #endif
@@ -1967,7 +1967,7 @@ void Bootstrapper::checkIEPrerequisit()
 	{
 		LOG_ENTRY("checkIEPrerequisit failed");
 		if (windowed)
-			dialog->DisplayError("Roblox requires Microsoft Internet Explorer 6.0 or greater", NULL);
+			dialog->DisplayError("NAMEHERE requires Microsoft Internet Explorer 6.0 or greater", NULL);
 		throw installer_error_exception(installer_error_exception::IePrerequisite);
 	}
 }
@@ -2014,12 +2014,12 @@ bool Bootstrapper::isDirectXUpToDate()
 	return true;
 }
 
-void Bootstrapper::shutdownRobloxApp(std::wstring appExeName)
+void Bootstrapper::shutdownNAMEHEREApp(std::wstring appExeName)
 {
 	int time = 0;
-	ShutdownRobloxApp s(hInstance, appExeName, boost::bind(&CMainDialog::GetHWnd, dialog.get()), 15, boost::bind(&Bootstrapper::shutdownProgress, this, boost::ref(time), _1, _2));
+	ShutdownNAMEHEREApp s(hInstance, appExeName, boost::bind(&CMainDialog::GetHWnd, dialog.get()), 15, boost::bind(&Bootstrapper::shutdownProgress, this, boost::ref(time), _1, _2));
 	if(s.run()){
-		//If we have to close Roblox, show the "updating" dialog right away
+		//If we have to close NAMEHERE, show the "updating" dialog right away
 		dialog->ShowWindow(CMainDialog::WindowSomethingInterestingShow);
 	}
 	dialog->SetMarquee(true);
@@ -2137,7 +2137,7 @@ void Bootstrapper::checkDiskSpace()
 	::GetDiskFreeSpaceEx(programDirectory().c_str(), &freeBytesAvailableToCaller, NULL, NULL);
 	if (freeBytesAvailableToCaller.QuadPart < 40*1e6)
 	{
-		dialog->DisplayError("There is not enough room on your disk to install Roblox. Please free up some space and try again.", NULL);
+		dialog->DisplayError("There is not enough room on your disk to install NAMEHERE. Please free up some space and try again.", NULL);
 		throw installer_error_exception(installer_error_exception::DiskSpacePrerequisite);
 	}
 }
@@ -2146,7 +2146,7 @@ void Bootstrapper::run()
 {
 	srand(GetTickCount());
 	
-	if (!robloxAppArgs.empty())
+	if (!namehereAppArgs.empty())
 		setLatestProcess();
 
 	if (isNop)
@@ -2155,7 +2155,7 @@ void Bootstrapper::run()
 	::CoInitialize(NULL);
 
 	// TODO remove this code next iteration
-	UninstallRobloxUpdater();
+	UninstallNAMEHEREUpdater();
 
     try
     {
@@ -2202,15 +2202,15 @@ void Bootstrapper::run()
 			LOG_ENTRY("Error: IsNetworkAlive failed");
 			if (windowed && isLatestProcess())
 			{
-				CString message = _T("Roblox cannot connect to the Internet\n\nDoes your computer have a working network connection?  Is antivirus software preventing Roblox from accessing the Internet?");
-				if (!robloxAppArgs.empty())
+				CString message = _T("NAMEHERE cannot connect to the Internet\n\nDoes your computer have a working network connection?  Is antivirus software preventing NAMEHERE from accessing the Internet?");
+				if (!namehereAppArgs.empty())
 				{
-					message += _T("\n\nIf you continue Roblox may not work properly.");
+					message += _T("\n\nIf you continue NAMEHERE may not work properly.");
 					// TODO: CTaskDialog should use nice command buttons
 					if (dialog->MessageBox(message, _T("Error"), MB_OKCANCEL | MB_ICONEXCLAMATION)==IDOK)
 					{
 						installVersion = queryInstalledVersion();
-						StartRobloxApp(false);
+						StartNAMEHEREApp(false);
 					}
 				}
 				else
@@ -2238,14 +2238,14 @@ void Bootstrapper::run()
 
 			if (windowed && isLatestProcess())
 			{
-				CString message = _T("Cannot connect to the Roblox website.\n\nIs antivirus software preventing Roblox from accessing the Internet?");
-				if (!robloxAppArgs.empty())
+				CString message = _T("Cannot connect to the NAMEHERE website.\n\nIs antivirus software preventing NAMEHERE from accessing the Internet?");
+				if (!namehereAppArgs.empty())
 				{
-					message += _T("\n\nIf you continue Roblox may not work properly.");
+					message += _T("\n\nIf you continue NAMEHERE may not work properly.");
 					if (dialog->MessageBox(message, _T("Error"), MB_OKCANCEL | MB_ICONEXCLAMATION)==IDOK)
 					{
 						installVersion = queryInstalledVersion();
-						StartRobloxApp(false);
+						StartNAMEHEREApp(false);
 					}
 				}
 				else
@@ -2262,7 +2262,7 @@ void Bootstrapper::run()
 			if(queryInstalledVersion() != installVersion) 
 				throw non_zero_exit_exception();
 
-			LOG_ENTRY("Roblox is up to date, returning success");
+			LOG_ENTRY("NAMEHERE is up to date, returning success");
 			goto done;
 		}
 
@@ -2343,18 +2343,18 @@ void Bootstrapper::run()
 			}
 			else
 			{
-				// if the system is indicating we have roblox installed, try and find the exe
-				HANDLE robloxAppFile;
-				WIN32_FIND_DATA robloxAppFileData;
-				robloxAppFile = FindFirstFile((programDirectory() + GetRobloxAppFileName()).c_str(), &robloxAppFileData);
+				// if the system is indicating we have namehere installed, try and find the exe
+				HANDLE namehereAppFile;
+				WIN32_FIND_DATA namehereAppFileData;
+				namehereAppFile = FindFirstFile((programDirectory() + GetNAMEHEREAppFileName()).c_str(), &namehereAppFileData);
 
-				LOG_ENTRY1("RobloxAppFileName = %S", GetRobloxAppFileName().c_str());
+				LOG_ENTRY1("NAMEHEREAppFileName = %S", GetNAMEHEREAppFileName().c_str());
 				LOG_ENTRY1("programDirectory = %S", programDirectory().c_str());
 
-				// if RobloxApp.exe is not found in the indicated install folder, force uninstall/install
-				if ((robloxAppFile == INVALID_HANDLE_VALUE))
+				// if NAMEHEREApp.exe is not found in the indicated install folder, force uninstall/install
+				if ((namehereAppFile == INVALID_HANDLE_VALUE))
 				{
-					LOG_ENTRY1("%S not found, forcing reinstall.", GetRobloxAppFileName().c_str());
+					LOG_ENTRY1("%S not found, forcing reinstall.", GetNAMEHEREAppFileName().c_str());
 					force = true;
 				}
 				else
@@ -2367,13 +2367,13 @@ void Bootstrapper::run()
 
 						if (ValidateInstalledExeVersion())
 						{
-							LOG_ENTRY("RobloxApp version mismatch, forcing reinstall.");
+							LOG_ENTRY("NAMEHEREApp version mismatch, forcing reinstall.");
 							force = true;
 						}
 					}
 				}
 
-				::FindClose(robloxAppFile);
+				::FindClose(namehereAppFile);
 			}
 		}
 	
@@ -2405,7 +2405,7 @@ void Bootstrapper::run()
 
 			if (!perUser)
 			{
-				uninstall(true);	// first uninstall per-user Roblox
+				uninstall(true);	// first uninstall per-user NAMEHERE
 			}
 
 			if (isUninstall)
@@ -2470,7 +2470,7 @@ void Bootstrapper::run()
 				}
 			}
 			else{
-				//Roblox is already installed
+				//NAMEHERE is already installed
 				//If it is installed for all users
 				if(adminInstallDetected)
 				{
@@ -2499,15 +2499,15 @@ void Bootstrapper::run()
 		}
 
 		checkCancel();
-		if (!robloxAppArgs.empty() && isLatestProcess())
-			StartRobloxApp(isNewInstall);
+		if (!namehereAppArgs.empty() && isLatestProcess())
+			StartNAMEHEREApp(isNewInstall);
 
 		LOG_ENTRY("Done!");
 	}
 	catch (non_zero_exit_exception&)
 	{
 		exitCode = 1;
-		LOG_ENTRY("Roblox is not up to date, returning failure");
+		LOG_ENTRY("NAMEHERE is not up to date, returning failure");
 	}
 	catch (silent_exception&)
 	{
@@ -2542,7 +2542,7 @@ done:
 	else
 	{
 		LOG_ENTRY("Setting up finish event in silent mode");
-		robloxReady.Set();
+		namehereReady.Set();
 	}
 
 	LOG_ENTRY("Fully Done!");
@@ -2678,7 +2678,7 @@ void Bootstrapper::uninstall(bool isPerUser)
 
 	LOG_ENTRY1("Uninstall %s", (isPerUser ? "per user" : "all users"));
 
-	shutdownRobloxApp(GetRobloxAppFileName());
+	shutdownNAMEHEREApp(GetNAMEHEREAppFileName());
 
 	LOG_ENTRY1("Deleting HKCU\\Software\\%S", GetRegistryPath().c_str());
 
@@ -2724,10 +2724,10 @@ void Bootstrapper::uninstall(bool isPerUser)
 	// final cleanup when we have no more components installed -- nuke all shortcuts
 	if (finalCleanup) 
 	{
-		std::wstring folder = getRobloxProgramsFolder(logger, isPerUser);
+		std::wstring folder = getNAMEHEREProgramsFolder(logger, isPerUser);
 		if (!folder.empty())
 		{
-			LOG_ENTRY1("Deleting roblox shortcuts folder = %S", folder.c_str());
+			LOG_ENTRY1("Deleting namehere shortcuts folder = %S", folder.c_str());
 			deleteDirectory(folder, false);
 		}
 
@@ -2756,7 +2756,7 @@ void Bootstrapper::deleteVersionsDirectoryContents()
 	try
 	{
 		// Clear out old versions as much as possible
-		std::wstring dir = FileSystem::getSpecialFolder(perUser ? FileSystem::RobloxUserApplicationData : FileSystem::RobloxProgramFiles, true, "Versions");
+		std::wstring dir = FileSystem::getSpecialFolder(perUser ? FileSystem::NAMEHEREUserApplicationData : FileSystem::NAMEHEREProgramFiles, true, "Versions");
 		deleteDirectory(dir, true);
 	}
 	catch (cancel_exception&)
@@ -2788,7 +2788,7 @@ void Bootstrapper::deleteVersionFolder(std::string version)
 		return;
 	}
 
-	std::wstring dir = FileSystem::getSpecialFolder(perUser ? FileSystem::RobloxUserApplicationData : FileSystem::RobloxProgramFiles, false, "Versions");
+	std::wstring dir = FileSystem::getSpecialFolder(perUser ? FileSystem::NAMEHEREUserApplicationData : FileSystem::NAMEHEREProgramFiles, false, "Versions");
 	if (dir.empty())
 	{
 		return;
@@ -2818,7 +2818,7 @@ void Bootstrapper::DeleteOldVersionsDirectories()
 	try
 	{
 		// Clear out old versions as much as possible
-		std::wstring dir = FileSystem::getSpecialFolder(perUser ? FileSystem::RobloxUserApplicationData : FileSystem::RobloxProgramFiles, false, "Versions");
+		std::wstring dir = FileSystem::getSpecialFolder(perUser ? FileSystem::NAMEHEREUserApplicationData : FileSystem::NAMEHEREProgramFiles, false, "Versions");
 		if (dir.empty())
 			return;
 		WIN32_FIND_DATA FileInformation;             // File information
@@ -2996,12 +2996,12 @@ void Bootstrapper::install()
 			if (!perUser && !IsAdminRunning())
 			{
 				if (windowed)
-					dialog->DisplayError("On this machine you must install Roblox using an Administrator account", NULL);
+					dialog->DisplayError("On this machine you must install NAMEHERE using an Administrator account", NULL);
 				throw installer_error_exception(installer_error_exception::AdminAccountRequired);
 			}
 		}
 
-		shutdownRobloxApp(GetRobloxAppFileName());
+		shutdownNAMEHEREApp(GetNAMEHEREAppFileName());
 		checkCancel();
 
         std::string text = "Configuring " + convert_w2s(GetFriendlyName());
@@ -3146,7 +3146,7 @@ void Bootstrapper::setLatestProcess()
 {
 	int pid = _getpid();
 
-	const std::string latestProcessName = format_string("www.roblox.com/%s/%s/latestProcess", installHost.c_str(), Type().c_str());
+	const std::string latestProcessName = format_string("www.namehere.com/%s/%s/latestProcess", installHost.c_str(), Type().c_str());
 
 	latestProcess.Attach(CreateFileMapping(
 			 INVALID_HANDLE_VALUE,    // use paging file
@@ -3246,7 +3246,7 @@ void Bootstrapper::forceUninstallMFCStudio()
 
         // execute command
         CProcessInformation pi;
-	    CreateProcess(uninstall_path.c_str(),_T(""),pi); // Launch the uninstaller RobloxStudio.exe -uninstall
+	    CreateProcess(uninstall_path.c_str(),_T(""),pi); // Launch the uninstaller NAMEHEREStudio.exe -uninstall
 
         // make sure the stub is deleted
         LOG_ENTRY1("Bootstrapper::forceUninstallMFCStudio - deleting studio stub: %S",filePath.c_str());

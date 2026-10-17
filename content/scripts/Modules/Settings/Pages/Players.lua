@@ -6,7 +6,7 @@
 --]]
 -------------- SERVICES --------------
 local CoreGui = game:GetService("CoreGui")
-local RobloxGui = CoreGui:WaitForChild("RobloxGui")
+local NAMEHEREGui = CoreGui:WaitForChild("NAMEHEREGui")
 local GuiService = game:GetService("GuiService")
 local PlayersService = game:GetService('Players')
 local HttpService = game:GetService('HttpService')
@@ -16,9 +16,9 @@ local Settings = UserSettings()
 local GameSettings = Settings.GameSettings
 
 ----------- UTILITIES --------------
-RobloxGui:WaitForChild("Modules"):WaitForChild("TenFootInterface")
-local utility = require(RobloxGui.Modules.Settings.Utility)
-local isTenFootInterface = require(RobloxGui.Modules.TenFootInterface):IsEnabled()
+NAMEHEREGui:WaitForChild("Modules"):WaitForChild("TenFootInterface")
+local utility = require(NAMEHEREGui.Modules.Settings.Utility)
+local isTenFootInterface = require(NAMEHEREGui.Modules.TenFootInterface):IsEnabled()
 
 ------------ Constants -------------------
 local frameDefaultTransparency = .85
@@ -30,7 +30,7 @@ local localPlayer = PlayersService.LocalPlayer
 
 ----------- CLASS DECLARATION --------------
 local function Initialize()
-	local settingsPageFactory = require(RobloxGui.Modules.Settings.SettingsPageFactory)
+	local settingsPageFactory = require(NAMEHEREGui.Modules.Settings.SettingsPageFactory)
 	local this = settingsPageFactory:CreateNewPage()
 
 	local playerLabelFakeSelection = Instance.new('ImageLabel')
@@ -180,7 +180,7 @@ local function Initialize()
 	end)
 
 	if utility:IsSmallTouchScreen() then
-		local spaceFor3Buttons = RobloxGui.AbsoluteSize.x >= 720	-- else there is only space for 2
+		local spaceFor3Buttons = NAMEHEREGui.AbsoluteSize.x >= 720	-- else there is only space for 2
 
 		local resetFunc = function()
 			this.HubRef:SwitchToPage(this.HubRef.ResetCharacterPage, false, 1)
@@ -274,7 +274,7 @@ local function Initialize()
 					table.insert(existingPlayerLabels, index, frame)
 				end
 				frame.Name = 'PlayerLabel'..player.Name
-				frame.Icon.Image = 'http://www.roblox.com/Thumbs/Avatar.ashx?x=100&y=100&userId='..math.max(1, player.userId)
+				frame.Icon.Image = 'http://www.namehere.com/Thumbs/Avatar.ashx?x=100&y=100&userId='..math.max(1, player.userId)
 				frame.NameLabel.Text = player.Name
 				frame.ImageTransparency = frameDefaultTransparency
 

@@ -1,4 +1,4 @@
-/* Copyright 2003-2005 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2005 NAMEHERE Corporation, All Rights Reserved */
 #include "stdafx.h"
 
 #include "V8DataModel/GuiBuilder.h"
@@ -356,27 +356,27 @@ void GuiBuilder::buildLuaGui()
 	controls->setName("ControlFrame");
 	controls->setBackgroundTransparency(1);
 	controls->setSize(UDim2(1,0,1,0));
-	controls->setRobloxLocked(true);
+	controls->setNAMEHERELocked(true);
 
 	shared_ptr<Frame> bottomLeftControl = Creatable<Instance>::create<Frame>();
 	bottomLeftControl->setSize(UDim2(0,130,0,46));
 	bottomLeftControl->setPosition(UDim2(0,0,1,-46));
 	bottomLeftControl->setBackgroundTransparency(1);
 	bottomLeftControl->setName("BottomLeftControl");
-	bottomLeftControl->setRobloxLocked(true);
+	bottomLeftControl->setNAMEHERELocked(true);
 
 	shared_ptr<Frame> bottomRightControl = Creatable<Instance>::create<Frame>();
 	bottomRightControl->setSize(UDim2(0,180,0,41));
 	bottomRightControl->setPosition(UDim2(1,-180,1,-41));
 	bottomRightControl->setBackgroundTransparency(1);
 	bottomRightControl->setName("BottomRightControl");
-	bottomRightControl->setRobloxLocked(true);
+	bottomRightControl->setNAMEHERELocked(true);
 
 	shared_ptr<Frame> topLeftControl = Creatable<Instance>::create<Frame>();
 	topLeftControl->setSize(UDim2(0.05f,0,0.05f,0));
 	topLeftControl->setBackgroundTransparency(1);
 	topLeftControl->setName("TopLeftControl");
-	Instance::propRobloxLocked.set(topLeftControl.get(),true);
+	Instance::propNAMEHERELocked.set(topLeftControl.get(),true);
     
 
 	//////////////////////// COREGUI SETUP //////////////////////////////////////

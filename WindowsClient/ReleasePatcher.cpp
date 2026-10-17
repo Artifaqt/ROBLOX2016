@@ -255,7 +255,7 @@ __declspec(code_seg(".zero")) bool getImportThunkSection(const SectionPtrVector&
     }
 
     // need to open the _original_ file (not the one modified by VMProtect)
-    TCHAR name[MAX_PATH]; // assumed to be RobloxPlayerBeta.exe
+    TCHAR name[MAX_PATH]; // assumed to be NAMEHEREPlayerBeta.exe
     GetModuleFileName(GetModuleHandle(NULL), name, sizeof(name)/sizeof(TCHAR));
     std::string pathName(name);
     std::stringstream modifiedName;
@@ -274,9 +274,9 @@ __declspec(code_seg(".zero")) bool getImportThunkSection(const SectionPtrVector&
         return false;
     }
 
-    // need to read RobloxPlayerBetaRaw to get the original table.
+    // need to read NAMEHEREPlayerBetaRaw to get the original table.
     // assume the .text and .rdata sections are in the same locations.
-    // change ".rdata" to point to the locations in RobloxPlayerBetaRaw.exe
+    // change ".rdata" to point to the locations in NAMEHEREPlayerBetaRaw.exe
     DWORD base = reinterpret_cast<DWORD>(&rawBinary[0]);
     rdataVa = rdataVa + base;
     std::vector<BYTE> buffer(rdataSize);

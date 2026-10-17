@@ -10,7 +10,7 @@
 #include "V8DataModel/Stats.h"
 #include "FastLog.h"
 #include "format_string.h"
-#include "RobloxServicesTools.h"
+#include "NAMEHEREServicesTools.h"
 #include <rapidjson/document.h>
 #include "v8xml/WebParser.h"
 
@@ -18,7 +18,7 @@
 
 using namespace RBX;
 
-const char* MachineIdUploader::kBannedMachineMessage = "Roblox cannot startup. User code = 0x1.";
+const char* MachineIdUploader::kBannedMachineMessage = "NAMEHERE cannot startup. User code = 0x1.";
 static const char* kMacAddressKey = "macAddresses";
 
 LOGGROUP(MachineIdUploader)

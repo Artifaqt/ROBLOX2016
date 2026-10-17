@@ -15,10 +15,10 @@
 #include "SimpleJSON.h"
 #include "util/FileSystem.h"
 #include "rbx/rbxTime.h"
-#include "RobloxServicesTools.h"
+#include "NAMEHEREServicesTools.h"
 
 #include "v8xml/WebParser.h"
-#include "util/RobloxGoogleAnalytics.h"
+#include "util/NAMEHEREGoogleAnalytics.h"
 
 #include <boost/algorithm/string/predicate.hpp>
 
@@ -278,7 +278,7 @@ std::string LoadABTestFromString(const std::string& responseData)
 
  			if(value > 0 && !locked) 
  			{
- 				RBX::RobloxGoogleAnalytics::setExperimentVariation(it->first, value);
+ 				RBX::NAMEHEREGoogleAnalytics::setExperimentVariation(it->first, value);
  			}
 		}
 
@@ -345,7 +345,7 @@ void ReportStatisticPost(const std::string& baseUrl, const std::string& id, cons
 {
 	try
 	{
-		std::string idStr = std::string("ROBLOXAPP ") + std::string(id);
+		std::string idStr = std::string("NAMEHEREAPP ") + std::string(id);
 		idStr = RBX::Http::urlEncode(idStr);
 		
 		std::stringstream request;

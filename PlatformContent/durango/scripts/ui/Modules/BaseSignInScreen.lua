@@ -4,7 +4,7 @@
 				// Creates a base screen to be used for account linking and sign in
 ]]
 local CoreGui = game:GetService("CoreGui")
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 
 local AssetManager = require(Modules:FindFirstChild('AssetManager'))
@@ -19,7 +19,7 @@ local Utility = require(Modules:FindFirstChild('Utility'))
 local PlatformService = nil
 pcall(function() PlatformService = game:GetService('PlatformService') end)
 
-local TERMS_OF_SERVICE_URI = "https://en.help.roblox.com/hc/en-us/articles/205358110"
+local TERMS_OF_SERVICE_URI = "https://en.help.namehere.com/hc/en-us/articles/205358110"
 
 local function createBaseAccountScreen()
 	local this = BaseScreen()
@@ -169,7 +169,7 @@ local function createBaseAccountScreen()
 		UDim2.new(0, ToSButton.Position.X.Offset + ToSButton.Size.X.Offset + 5,
 			      0, tosButtonY))
 	PrivacyButton.MouseButton1Click:connect(function()
-		TryLaunchUri("http://www.roblox.com/info/Privacy.aspx")
+		TryLaunchUri("http://www.namehere.com/info/Privacy.aspx")
 	end)
 --]]
 

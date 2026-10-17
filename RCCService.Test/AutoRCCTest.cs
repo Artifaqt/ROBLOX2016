@@ -3,8 +3,8 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Roblox.Grid.Rcc;
-using Roblox.Grid;
+using NAMEHERE.Grid.Rcc;
+using NAMEHERE.Grid;
 using System.Diagnostics;
 using System.IO;
 
@@ -168,9 +168,9 @@ namespace RCCService.Test
         {
             int PASS = 1;
             // local RBXL directory:
-            //string placedir = @"C:\\Documents and Settings\\ROBLOX\\Desktop\\RBXL\\RBX-Test.rbxl";
+            //string placedir = @"C:\\Documents and Settings\\NAMEHERE\\Desktop\\RBXL\\RBX-Test.rbxl";
             // local path for Dan's machine:
-            //string placedir = @"C:\\Documents and Settings\\ROBLOX\\Desktop\\RBXL\\";       // where the repository rbxl are grabbed from
+            //string placedir = @"C:\\Documents and Settings\\NAMEHERE\\Desktop\\RBXL\\";       // where the repository rbxl are grabbed from
             // path in repository for auto build machine:
             //string placedir = @"..\\..\\..\\..\\Trunk\\Client\\RCCService.Test\\Resources";
             //string placedir = @"C:\\Users\\Administrator\\AppData\\Local\\Temp\\Doblox2\\Trunk\\Client\\RCCService.Test\\TestRBXLFiles";
@@ -218,7 +218,7 @@ namespace RCCService.Test
             foreach (string fileName in fileEntries)
             {
 
-                using (RCCServiceSoap service = Roblox.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port))
+                using (RCCServiceSoap service = NAMEHERE.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port))
                 {
 
                     ScriptExecution script = new ScriptExecution();
@@ -226,7 +226,7 @@ namespace RCCService.Test
                     script.script = Resources.LoadAndRun;       // see resources(.resx) textfile LoadAndRun for test script
                     script.arguments = Lua.NewArgs(fileName);
 
-                    Roblox.Grid.Rcc.Job job = new Roblox.Grid.Rcc.Job();
+                    NAMEHERE.Grid.Rcc.Job job = new NAMEHERE.Grid.Rcc.Job();
                     job.id = "OpenAndRunRBXLFile";
                     job.expirationInSeconds = 60;      // Sets the timeout of this test.  Will fail if result is not set by this time.
                     job.category = 0;

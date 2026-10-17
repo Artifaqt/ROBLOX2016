@@ -8,7 +8,7 @@ LOGVARIABLE(Verbs, 0)
 LOGVARIABLE(Plugins, 0)
 LOGVARIABLE(COMCalls, 1)
 LOGVARIABLE(FullWindowMessages, 0)
-LOGVARIABLE(RobloxWndInit, 1)
+LOGVARIABLE(NAMEHEREWndInit, 1)
 LOGVARIABLE(CrashReporterInit, 1)
 
 // Studio

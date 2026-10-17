@@ -57,7 +57,7 @@ class Bootstrapper : public boost::enable_shared_from_this<Bootstrapper>, public
 
 	bool silentMode;
 	// only used if silentMode is true, which means we don't show dialog at all
-	CEvent robloxReady;
+	CEvent namehereReady;
 	// this mean that bootstrapper should not run anything except preDeploy
 	bool noRun;
 	bool waitOnStart;
@@ -126,7 +126,7 @@ class Bootstrapper : public boost::enable_shared_from_this<Bootstrapper>, public
 	void uninstall(bool isPerUser);
 
 	bool checkBootstrapperVersion();
-	void shutdownRobloxApp(std::wstring appExeName);
+	void shutdownNAMEHEREApp(std::wstring appExeName);
 	void checkDiskSpace();
 	bool shutdownProgress(int& time, int pos, int max);
 	void deleteVersionFolder(std::string version);
@@ -159,7 +159,7 @@ protected:
 	CRegKey classesKey;
 
 	//TODO move this into client part
-	std::wstring robloxAppArgs;	// If empty, then don't launch RobloxApp.exe
+	std::wstring namehereAppArgs;	// If empty, then don't launch NAMEHEREApp.exe
 
 	InfluxDb influxDb;
 
@@ -180,8 +180,8 @@ protected:
 	virtual void createDialog() {} ;
 
 	// lets make sure that this guy will be 100% client only (RCC won't run this code)
-	virtual HRESULT SheduleRobloxUpdater() { return S_OK; };
-	virtual HRESULT UninstallRobloxUpdater() { return S_OK; };
+	virtual HRESULT SheduleNAMEHEREUpdater() { return S_OK; };
+	virtual HRESULT UninstallNAMEHEREUpdater() { return S_OK; };
 	// will load settings from server
 	virtual void LoadSettings() {}
 	virtual bool CanRunBgTask() { return true; }
@@ -257,7 +257,7 @@ public:
 	bool hasLegacyStudioDesktopShortcut();
 	bool isSilentMode() const { return silentMode; }
 	bool isWindowed() const { return windowed; }
-	bool WaitForCompletion() { DWORD result = WaitForSingleObject(robloxReady, 30*60*1000); return (result == WAIT_TIMEOUT); }
+	bool WaitForCompletion() { DWORD result = WaitForSingleObject(namehereReady, 30*60*1000); return (result == WAIT_TIMEOUT); }
 	int ExitCode() const { return exitCode; }
 	void cleanKey(const std::wstring regPathToDelete, CRegKey &hk);
 	std::string BrowserTrackerId() { return browserTrackerId; }
@@ -304,11 +304,11 @@ public:
 
 	virtual void DoInstallApp() {};
 	virtual void DoUninstallApp(CRegKey &hk) {}; //component specific uninstall actions
-	virtual std::wstring GetRobloxAppFileName() const { return std::wstring(_T("")); }
+	virtual std::wstring GetNAMEHEREAppFileName() const { return std::wstring(_T("")); }
 	virtual std::wstring GetBootstrapperFileName() const { return std::wstring(_T("")); }
 	virtual std::wstring GetProductCodeKey() const { return std::wstring(_T("")); }
 	virtual void DeployComponents(bool isUpdating, bool commitData) {};
-	virtual void StartRobloxApp(bool fromInstall) {}
+	virtual void StartNAMEHEREApp(bool fromInstall) {}
 	virtual bool IsPlayMode() { return false; }
 	virtual bool HasUnhideGuid() {return false; }
 	virtual bool ProcessProtocolHandlerArgs(const std::map<std::wstring, std::wstring>& args) { return false; }

@@ -4,7 +4,7 @@
 			// Creates a base screen with breadcrumbs and title. Do not use for a pane/tab
 ]]
 local CoreGui = Game:GetService("CoreGui")
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 
 local ContextActionService = game:GetService("ContextActionService")

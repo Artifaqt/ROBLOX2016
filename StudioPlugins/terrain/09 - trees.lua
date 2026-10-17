@@ -45,8 +45,8 @@ Leaves.CanCollide = false
 Leaves.BrickColor = BrickColor.new("Dark green")
 local leafmesh = Instance.new("SpecialMesh")
 leafmesh.MeshType = "FileMesh"
-leafmesh.MeshId = "http://www.roblox.com/asset/?id=1290033"
-leafmesh.TextureId = "http://www.roblox.com/asset/?id=2861779" 
+leafmesh.MeshId = "http://www.namehere.com/asset/?id=1290033"
+leafmesh.TextureId = "http://www.namehere.com/asset/?id=2861779" 
 leafmesh.Parent = Leaves
 Instance.new("CylinderMesh",Base)
 

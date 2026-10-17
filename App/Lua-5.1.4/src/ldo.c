@@ -88,7 +88,7 @@ static void resetstack (lua_State *L, int status) {
   L->errorJmp = NULL;
 }
 
-// ROBLOX
+// NAMEHERE
 class lua_exception : public std::exception
 {
 	friend void luaD_throw (lua_State*, int);
@@ -441,7 +441,7 @@ static void resume (lua_State *L, void *ud) {
       if (luaD_poscall(L, firstArg))  /* complete it... */
         L->top = L->ci->top;  /* and correct top if not multiple results */
 
-      /* ROBLOX: if the thread started with a C call there is no remaining Lua work to execute so just bail out */
+      /* NAMEHERE: if the thread started with a C call there is no remaining Lua work to execute so just bail out */
       if (isFirstCall) {
         return;
       }

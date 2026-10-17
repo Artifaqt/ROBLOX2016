@@ -276,7 +276,7 @@ static int singlematch (int c, const char *p, const char *ep) {
 }
 
 
-// ROBLOX CHANGES: matchdepth parameter
+// NAMEHERE CHANGES: matchdepth parameter
 static const char *match (int matchdepth, MatchState *ms, const char *s, const char *p);
 
 static const char *matchbalance (MatchState *ms, const char *s,
@@ -298,7 +298,7 @@ static const char *matchbalance (MatchState *ms, const char *s,
   return NULL;  /* string ends out of balance */
 }
 
-// ROBLOX CHANGES: matchdepth parameter
+// NAMEHERE CHANGES: matchdepth parameter
 static const char *max_expand (int matchdepth, MatchState *ms, const char *s,
                                  const char *p, const char *ep) {
   ptrdiff_t i = 0;  /* counts maximum expand for item */
@@ -313,7 +313,7 @@ static const char *max_expand (int matchdepth, MatchState *ms, const char *s,
   return NULL;
 }
 
-// ROBLOX CHANGES: matchdepth parameter
+// NAMEHERE CHANGES: matchdepth parameter
 static const char *min_expand (int matchdepth, MatchState *ms, const char *s,
                                  const char *p, const char *ep) {
   for (;;) {
@@ -326,7 +326,7 @@ static const char *min_expand (int matchdepth, MatchState *ms, const char *s,
   }
 }
 
-// ROBLOX CHANGES: matchdepth parameter
+// NAMEHERE CHANGES: matchdepth parameter
 static const char *start_capture (int matchdepth, MatchState *ms, const char *s,
                                     const char *p, int what) {
   const char *res;
@@ -340,7 +340,7 @@ static const char *start_capture (int matchdepth, MatchState *ms, const char *s,
   return res;
 }
 
-// ROBLOX CHANGES: matchdepth parameter
+// NAMEHERE CHANGES: matchdepth parameter
 static const char *end_capture (int matchdepth, MatchState *ms, const char *s,
                                   const char *p) {
   int l = capture_to_close(ms);
@@ -362,13 +362,13 @@ static const char *match_capture (MatchState *ms, const char *s, int l) {
   else return NULL;
 }
 
-// BEGIN ROBLOX CHANGES
+// BEGIN NAMEHERE CHANGES
 DYNAMIC_FASTFLAGVARIABLE(LuaStrlibLimitMatchDepth, true)
 
 static const char *match (int matchdepth, MatchState *ms, const char *s, const char *p) {
   if (DFFlag::LuaStrlibLimitMatchDepth && matchdepth++ > LUAI_MAXCCALLS)
     luaL_error(ms->L, "pattern too complex");
-// END ROBLOX CHANGES
+// END NAMEHERE CHANGES
   init: /* using goto's to optimize tail recursion */
   switch (*p) {
     case '(': {  /* start capture */
@@ -525,7 +525,7 @@ static int str_find_aux (lua_State *L, int find) {
     do {
       const char *res;
       ms.level = 0;
-      // ROBLOX CHANGES: matchdepth argument
+      // NAMEHERE CHANGES: matchdepth argument
       if ((res=match(0, &ms, s1, p)) != NULL) {
         if (find) {
           lua_pushinteger(L, s1-s+1);  /* start */
@@ -566,7 +566,7 @@ static int gmatch_aux (lua_State *L) {
        src++) {
     const char *e;
     ms.level = 0;
-    // ROBLOX CHANGES: matchdepth argument
+    // NAMEHERE CHANGES: matchdepth argument
     if ((e = match(0, &ms, src, p)) != NULL) {
       lua_Integer newstart = e-s;
       if (e == src) newstart++;  /* empty match? go at least one position */
@@ -669,7 +669,7 @@ static int str_gsub (lua_State *L) {
   while (n < max_s) {
     const char *e;
     ms.level = 0;
-    // ROBLOX CHANGES: matchdepth argument
+    // NAMEHERE CHANGES: matchdepth argument
     e = match(0, &ms, src, p);
     if (e) {
       n++;

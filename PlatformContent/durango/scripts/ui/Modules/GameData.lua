@@ -5,7 +5,7 @@
 			// the details of that game
 ]]
 local CoreGui = Game:GetService("CoreGui")
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 
 local Http = require(Modules:FindFirstChild('Http'))
@@ -41,7 +41,7 @@ function GameData:GetFilteredGameName(gameName, creatorName)
 	if ConvertMyPlaceNameInXboxAppFlag and gameName and type(gameName) == 'string' then
 		local tempUsername = self:ExtractGeneratedUsername(gameName)
 		if tempUsername then
-			local realUsername = creatorName or UserData:GetRobloxName()
+			local realUsername = creatorName or UserData:GetNAMEHEREName()
 			if realUsername then
 				local newGameName = string.gsub(gameName, tempUsername, realUsername, 1)
 				if newGameName then

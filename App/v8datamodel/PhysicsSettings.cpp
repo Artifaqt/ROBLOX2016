@@ -1,4 +1,4 @@
-/* Copyright 2003-2005 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2005 NAMEHERE Corporation, All Rights Reserved */
 #include "stdafx.h"
 
 #include "V8DataModel/PhysicsSettings.h"
@@ -15,7 +15,7 @@
 
 const char *const RBX::sPhysicsSettings = "PhysicsSettings";
 
-// Don't show tree in release mode - has ROBLOX specific secrets as to how we do assembly
+// Don't show tree in release mode - has NAMEHERE specific secrets as to how we do assembly
 
 #ifdef _DEBUG
 	#define __RBX_SECRET_DEBUGGING

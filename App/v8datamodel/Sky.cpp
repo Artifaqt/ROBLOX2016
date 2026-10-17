@@ -4,7 +4,7 @@
 
 #include "g3d/gimage.h"
 #include "util/standardout.h"
-#include "Util/RobloxGoogleAnalytics.h"
+#include "Util/NAMEHEREGoogleAnalytics.h"
 #include "v8datamodel/contentprovider.h"
 
 const char* const RBX::sSky = "Sky";
@@ -31,7 +31,7 @@ static void sendSkyBoxStats(const TextureId& texId)
 {
     std::string idStr = texId.getAssetId();
     if (!idStr.empty())
-        RBX::RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "SkyBox", texId.getAssetId().c_str());
+        RBX::NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "SkyBox", texId.getAssetId().c_str());
 }
 
 Sky::Sky()

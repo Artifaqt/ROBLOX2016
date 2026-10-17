@@ -2,7 +2,7 @@
 			// SignInScreen.lua
 ]]
 local CoreGui = Game:GetService("CoreGui")
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 
 local GuiService = game:GetService('GuiService')
@@ -63,15 +63,15 @@ local function createSignInScreen()
 		BackgroundTransparency = 1;
 		Visible = false;
 	}
-	local RobloxLogo = Utility.Create'ImageLabel'
+	local NAMEHERELogo = Utility.Create'ImageLabel'
 	{
-		Name = "RobloxLogo";
+		Name = "NAMEHERELogo";
 		Size = UDim2.new(0, 594, 0, 199);
 		BackgroundTransparency = 1;
-		Image = 'rbxasset://textures/ui/Shell/Icons/ROBLOXSplashLogo.png';
+		Image = 'rbxasset://textures/ui/Shell/Icons/NAMEHERESplashLogo.png';
 		Parent = Container;
 	}
-	Utility.CalculateAnchor(RobloxLogo, UDim2.new(0.5,0,0.5,0), Utility.Enum.Anchor.Center)
+	Utility.CalculateAnchor(NAMEHERELogo, UDim2.new(0.5,0,0.5,0), Utility.Enum.Anchor.Center)
 
 	local FadeInFrame = Utility.Create'Frame'
 	{
@@ -172,7 +172,7 @@ local function createSignInScreen()
 		Container.Parent = newParent
 	end
 	function this:Show()
-		Utility.CalculateAnchor(RobloxLogo, UDim2.new(0.5,0,0.5,0), Utility.Enum.Anchor.Center)
+		Utility.CalculateAnchor(NAMEHERELogo, UDim2.new(0.5,0,0.5,0), Utility.Enum.Anchor.Center)
 		Container.Visible = true
 		animateOnShow()
 	end

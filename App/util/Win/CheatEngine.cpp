@@ -13,7 +13,7 @@ string literals and API calls will look like in a disassembler.
 
 #include "util/CheatEngine.h"
 #include "V8DataModel/HackDefines.h"
-#include "util/RobloxGoogleAnalytics.h"
+#include "util/NAMEHEREGoogleAnalytics.h"
 #include <psapi.h>
 #include <TlHelp32.h>
 
@@ -653,7 +653,7 @@ namespace RBX
         }
 
         // need another fake string here.  this also appears in the client.
-        RobloxGoogleAnalytics::trackUserTiming(GA_CATEGORY_GAME, GA_CLIENT_START, cePerfTime.msec(), "Process hotfixes");
+        NAMEHEREGoogleAnalytics::trackUserTiming(GA_CATEGORY_GAME, GA_CLIENT_START, cePerfTime.msec(), "Process hotfixes");
 
         return RBX::TaskScheduler::Done;
     }

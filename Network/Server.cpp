@@ -1,4 +1,4 @@
-/* Copyright 2003-2006 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2006 NAMEHERE Corporation, All Rights Reserved */
 
 #include "Server.h"
 
@@ -14,7 +14,7 @@
 #include "Script/ModuleScript.h"
 #include "Script/script.h"
 #include "Util/http.h"
-#include "Util/RobloxGoogleAnalytics.h"
+#include "Util/NAMEHEREGoogleAnalytics.h"
 #include "Util/Statistics.h"
 #include "Util/SoundService.h"
 #include "V8DataModel/DataModel.h"
@@ -61,13 +61,13 @@ static Reflection::BoundFuncDesc<Server, void(int, int)> server_startFunction(&S
 static Reflection::BoundFuncDesc<Server, void(int)> f_disconnect(&Server::stop, "Stop", "blockDuration", 1000, Security::LocalUser);
 static Reflection::BoundFuncDesc<Server, int()> f_GetClientCount(&Server::getClientCount, "GetClientCount", Security::LocalUser);
 static Reflection::PropDescriptor<Server, int> prop_Port("Port", category_Data, &Server::getPort, NULL);
-static Reflection::BoundFuncDesc<Server, void(bool)> func_SetIsPlayerAuthenticationRequired(&Server::setIsPlayerAuthenticationRequired, "SetIsPlayerAuthenticationRequired", "value", Security::Roblox);
-static Reflection::BoundFuncDesc<Server, void()> func_ConfigureAsCloudEditServer(&Server::configureAsCloudEditServer, "ConfigureAsCloudEditServer", Security::Roblox);
+static Reflection::BoundFuncDesc<Server, void(bool)> func_SetIsPlayerAuthenticationRequired(&Server::setIsPlayerAuthenticationRequired, "SetIsPlayerAuthenticationRequired", "value", Security::NAMEHERE);
+static Reflection::BoundFuncDesc<Server, void()> func_ConfigureAsCloudEditServer(&Server::configureAsCloudEditServer, "ConfigureAsCloudEditServer", Security::NAMEHERE);
 
 static Reflection::EventDesc<Server, void(shared_ptr<Instance>, FilterResult, shared_ptr<Instance>, std::string)> desc_dataBasicFiltered(&Server::dataBasicFilteredSignal, "DataBasicFiltered", "peer", "result", "instance", "member", Security::LocalUser);
 static Reflection::EventDesc<Server, void(shared_ptr<Instance>, FilterResult, shared_ptr<Instance>, std::string)> desc_dataCustomFiltered(&Server::dataCustomFilteredSignal, "DataCustomFiltered", "peer", "result", "instance", "member", Security::LocalUser);
 
-Reflection::EventDesc<Server, void(std::string, shared_ptr<Instance>)> event_IncommingConnection(&Server::incommingConnectionSignal, "IncommingConnection", "peer", "replicator", Security::RobloxScript);
+Reflection::EventDesc<Server, void(std::string, shared_ptr<Instance>)> event_IncommingConnection(&Server::incommingConnectionSignal, "IncommingConnection", "peer", "replicator", Security::NAMEHEREScript);
 REFLECTION_END();
 
 static const int maxClients = 128;
@@ -297,7 +297,7 @@ void Server::start(int port, int threadSleepTime)
 	DataModel *dataModel = DataModel::get(this);
 
 	int startupMillis = static_cast<int>((Time::nowFast() - dataModel->getDataModelInitTime()).msec());
-	RobloxGoogleAnalytics::trackUserTiming(GA_CATEGORY_GAME, "ServerStartTime", startupMillis);
+	NAMEHEREGoogleAnalytics::trackUserTiming(GA_CATEGORY_GAME, "ServerStartTime", startupMillis);
 
 	if(DFFlag::DebugDisableTimeoutDisconnect)
 		rakPeer->rawPeer()->SetTimeoutTime(10*60*1000, UNASSIGNED_SYSTEM_ADDRESS);
@@ -344,11 +344,11 @@ static void reportCloudEditGA(const char* label, int value = 0)
 {
 	if (DFFlag::CloudEditGARespectsThrottling)
 	{
-		RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "CloudEdit", label, value);
+		NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "CloudEdit", label, value);
 	}
 	else
 	{
-		RobloxGoogleAnalytics::trackEventWithoutThrottling(GA_CATEGORY_GAME, "CloudEdit", label, value);
+		NAMEHEREGoogleAnalytics::trackEventWithoutThrottling(GA_CATEGORY_GAME, "CloudEdit", label, value);
 	}
 }
 
@@ -450,7 +450,7 @@ void Server::onServiceProvider(ServiceProvider* oldProvider, ServiceProvider* ne
 			TaskScheduler::singleton().add(networkOwnerJob);
 		}
 
-		RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "PlaceID", "none", dataModel->getPlaceID());
+		NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "PlaceID", "none", dataModel->getPlaceID());
 
 
 		if (0 == dataModel->getPlaceID())
@@ -469,7 +469,7 @@ void Server::onWorkspaceLoaded()
 	Workspace *workspace = ServiceProvider::find<Workspace>(this);
 
 	if (workspace->getNetworkStreamingEnabled())
-		RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "NetworkStreamingEnabled");
+		NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "NetworkStreamingEnabled");
 
 	{
 		MegaClusterInstance *megaCluster = Instance::fastDynamicCast<MegaClusterInstance>(workspace->getTerrain());
@@ -480,11 +480,11 @@ void Server::onWorkspaceLoaded()
 
             if (megaCluster->isSmooth())
 			{
-				RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "SmoothTerrain", placeId);
+				NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "SmoothTerrain", placeId);
 			}
 			else
 			{
-				RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "LegacyTerrain", placeId);
+				NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "LegacyTerrain", placeId);
 			}
 		}
 	}

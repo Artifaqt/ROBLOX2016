@@ -1,6 +1,6 @@
-// BEGIN ROBLOX CODE
+// BEGIN NAMEHERE CODE
 #pragma once
-// END ROBLOX CODE
+// END NAMEHERE CODE
 
 #include "RakNetDefines.h"
 

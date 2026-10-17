@@ -1,4 +1,4 @@
-/* Copyright 2003-2005 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2005 NAMEHERE Corporation, All Rights Reserved */
 
 #ifndef _4B0F5828DADB441bA2D2FDCBCB5538A6
 #define _4B0F5828DADB441bA2D2FDCBCB5538A6

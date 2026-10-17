@@ -1,9 +1,9 @@
 //
 //  iOSSettingsService.cpp
-//  RobloxMobile
+//  NAMEHEREMobile
 //
 //  Created by Ganesh Agrawal on 10/30/12.
-//  Copyright (c) 2012 ROBLOX. All rights reserved.
+//  Copyright (c) 2012 NAMEHERE. All rights reserved.
 //
 
 #include "iOSSettingsService.h"
@@ -32,7 +32,7 @@ IMPL_DATA(iPod5_MaximumIdealParts, 0);
 IMPL_DATA(iPhone4s_MaximumIdealParts, 0); // References iPhone model #5 (aka iPhone 4s)
 IMPL_DATA(iPhone5_MaximumIdealParts, 0);  // References iPhone model #6 (aka iPhone 5)
 IMPL_DATA(TimeIntervalBetweenRobuxPurchaseInMinutes, 10);// 10 Minutes
-IMPL_DATA(RobloxHDTimeIntervalBetweenRobuxPurchaseInMinutes, 0);// 0 Minutes
+IMPL_DATA(NAMEHEREHDTimeIntervalBetweenRobuxPurchaseInMinutes, 0);// 0 Minutes
 IMPL_DATA(TimeIntervalBetweenBCPurchaseInMinutes, 60*24);// 24 Hours
 IMPL_DATA(TimeIntervalBetweenCatalogPurchaseInMinutes, 10);// 10 Minutes
 IMPL_DATA(TimeLimitForBillingServiceRetriesBeforeGivingUp, 48); // 48 Hours, Keep retrying with billing service for 48 hours
@@ -44,8 +44,8 @@ IMPL_DATA(CrashLoggingLevel, 4); // No Messages = 4, Error Only = 3, Error & War
 IMPL_DATA(CrashlyticsPercentage, 100);
 
 // Set by Default to Empty as we do not want to pollute either our Test account or Prod account
-// Test GA Account Roblox Mobile App (Testing) use  : "UA-42322750-2"
-// Prod GA Account ROBLOX Mobile App (prod) use     : "UA-42322750-1", This is set on client settings on www.roblox.com
+// Test GA Account NAMEHERE Mobile App (Testing) use  : "UA-42322750-2"
+// Prod GA Account NAMEHERE Mobile App (prod) use     : "UA-42322750-1", This is set on client settings on www.namehere.com
 IMPL_DATA(iOSGoogleAnalyticsAccount2, "UA-42322750-1");
 IMPL_DATA(iOSGoogleAnalyticsSampleRate, 100);
 

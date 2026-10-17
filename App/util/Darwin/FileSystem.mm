@@ -57,7 +57,7 @@ namespace RBX {
 
 			path = pwd->pw_dir;
 			
-			std::string s = "Roblox/";
+			std::string s = "NAMEHERE/";
 			
 			if (subDirectory) {
 				s += subDirectory;
@@ -104,7 +104,7 @@ namespace RBX {
         
         boost::filesystem::path path = s;
         path /= "Logs";
-        path /= "Roblox";
+        path /= "NAMEHERE";
         
         boost::system::error_code ec;
         if (!boost::filesystem::exists(path, ec))

@@ -1272,7 +1272,7 @@ void Matrix3::toAxisAngle (Vector3& rkAxis, float& rfRadians) const {
     }
 }
 
-// ROBLOX
+// NAMEHERE
 Matrix3 Matrix3::fromAxisAngleFast(const Vector3& _normalizedAxis, float fRadians) {
    
 //==============

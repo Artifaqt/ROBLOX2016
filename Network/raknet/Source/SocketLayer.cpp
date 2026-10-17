@@ -638,7 +638,7 @@ SOCKET SocketLayer::CreateBoundSocket_Old( unsigned short port, bool blockingSoc
 		}
 		dwIOError = GetLastError();
 		LPVOID messageBuffer;
-#if defined(RBX_PLATFORM_DURANGO) // Roblox Change
+#if defined(RBX_PLATFORM_DURANGO) // NAMEHERE Change
 		// something has gone wrong here...
 		RAKNET_DEBUG_PRINTF( "gethostname failed:Error code - %d\n", dwIOError );
         (void)messageBuffer;
@@ -1583,7 +1583,7 @@ void GetMyIP_Win32( SystemAddress addresses[MAXIMUM_NUMBER_OF_INTERNAL_IDS] )
 		DWORD dwIOError = GetLastError();
 		LPVOID messageBuffer;
 
-#if defined(RBX_PLATFORM_DURANGO) // Roblox Change
+#if defined(RBX_PLATFORM_DURANGO) // NAMEHERE Change
 		// WinRT
 		(void)messageBuffer;
 		// something has gone wrong here...
@@ -1636,7 +1636,7 @@ void GetMyIP_Win32( SystemAddress addresses[MAXIMUM_NUMBER_OF_INTERNAL_IDS] )
 	#ifdef _WIN32
 		DWORD dwIOError = GetLastError();
 		LPVOID messageBuffer;
-#if defined(RBX_PLATFORM_DURANGO) // Roblox Change
+#if defined(RBX_PLATFORM_DURANGO) // NAMEHERE Change
 		// WinRT
 		(void)messageBuffer;
 		// something has gone wrong here...

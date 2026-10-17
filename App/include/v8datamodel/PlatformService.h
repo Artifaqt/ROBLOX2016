@@ -13,7 +13,7 @@ namespace RBX {
     {
         GameJoin_Normal,   // id = place ID
         GameJoin_Instance, // id = game instance ID
-        GameJoin_Follow,   // id = roblox player ID -or- playerName = name of the player to follow. non-empty playerName takes precedence
+        GameJoin_Follow,   // id = namehere player ID -or- playerName = name of the player to follow. non-empty playerName takes precedence
 		GameJoin_PMPCreator, // id = placeID		
         GameJoin_PartyLeader, // id not used
         GameJoin_Party,    // id not used
@@ -35,7 +35,7 @@ namespace RBX {
     enum AwardResult
     {
         Award_OK        = 0, // ok
-        Award_Fail      = 1, // tried sending but failed, (net/xblive/roblox error)
+        Award_Fail      = 1, // tried sending but failed, (net/xblive/namehere error)
         Award_NotFound  = 2, // Achievement not found
         Award_NoUser    = 3, // user not logged in
     };
@@ -53,8 +53,8 @@ namespace RBX {
 		AccountAuth_Flooded					= 7,
 		AccountAuth_LeaseLocked				= 8,
 		AccountAuth_AccountLinkingDisabled	= 9,
-		AccountAuth_InvalidRobloxUser		= 10,
-		AccountAuth_RobloxUserAlreadyLinked	= 11,
+		AccountAuth_InvalidNAMEHEREUser		= 10,
+		AccountAuth_NAMEHEREUserAlreadyLinked	= 11,
 		AccountAuth_XboxUserAlreadyLinked	= 12,
 		AccountAuth_IllegalChildAccountLinking = 13,
 		AccountAuth_InvalidPassword			= 14,
@@ -86,7 +86,7 @@ namespace RBX {
 		PurchaseResult_Error = -1,			// Unknown error?
 		PurchaseResult_Success = 0,			// user successful purchase on platform; still needs transaction resolution on web
 		PurchaseResult_UserCancelled = 1,	// user cancelled the purchase request from platform ui
-		PurchaseResult_ConsumeRequestFail = 2,	//issues with roblox resolving purchase
+		PurchaseResult_ConsumeRequestFail = 2,	//issues with namehere resolving purchase
 		PurchaseResult_RobuxUpdated = 3,	//	
 		PurcahseResult_NoActionNeeded		//
 	};
@@ -122,8 +122,8 @@ namespace RBX {
 		// performs account linking for user
 		virtual int		performAccountLink(const std::string& accountName, const std::string& password, std::string* response) = 0;
 		virtual int		performUnlinkAccount(std::string* response) = 0;
-		virtual int		performSetRobloxCredentials(const std::string& accountName, const std::string& password, std::string* response) = 0;
-		virtual AccountAuthResult	performHasRobloxCredentials() = 0;
+		virtual int		performSetNAMEHERECredentials(const std::string& accountName, const std::string& password, std::string* response) = 0;
+		virtual AccountAuthResult	performHasNAMEHERECredentials() = 0;
 		virtual AccountAuthResult	performHasLinkedAccount() = 0;
 
         // launches a new game
@@ -201,7 +201,7 @@ namespace RBX {
 		virtual int		getPlatformPartyMembers(shared_ptr<Reflection::ValueArray> result) = 0;
 
 		// request the MPSD members from XboxLiveServices
-		// result = list of MPSD members by {XUID: RobloxId} pairs
+		// result = list of MPSD members by {XUID: NAMEHEREId} pairs
 		virtual int		getInGamePlayers(shared_ptr<Reflection::ValueArray> result) = 0;
 
 		// request to make a purchase of a Robux ammount
@@ -278,9 +278,9 @@ namespace RBX {
 		
 		void beginAccountLink(std::string accountName, std::string password, boost::function<void(int)> resumeFunction, boost::function<void(std::string)> errorFunction);
 		void beginUnlinkAccount(boost::function<void(int)> resumeFunction, boost::function<void(std::string)> errorFunction);
-		void beginSetRobloxCredentials(std::string accountName, std::string password, boost::function<void(int)> resumeFunction, boost::function<void(std::string)> errorFunction);
+		void beginSetNAMEHERECredentials(std::string accountName, std::string password, boost::function<void(int)> resumeFunction, boost::function<void(std::string)> errorFunction);
 		void beginHasLinkedAccount(boost::function<void(int)> resumeFunction, boost::function<void(std::string)> errorFunction);
-		void beginHasRobloxCredentials(boost::function<void(int)> resumeFunction, boost::function<void(std::string)> errorFunction);
+		void beginHasNAMEHERECredentials(boost::function<void(int)> resumeFunction, boost::function<void(std::string)> errorFunction);
         void showKeyBoard(std::string title, std::string description, std::string defaultText, XboxKeyBoardType keyboardType);
 
 		void beginGetPMPCreatorId(boost::function<void(int)> resumeFunction, boost::function<void(std::string)> errorFunction);

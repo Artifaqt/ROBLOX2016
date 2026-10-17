@@ -1,9 +1,9 @@
 //
 //  LoginManager.m
-//  RobloxMobile
+//  NAMEHEREMobile
 //
 //  Created by Ben Tkacheff on 4/19/13.
-//  Copyright (c) 2013 ROBLOX. All rights reserved.
+//  Copyright (c) 2013 NAMEHERE. All rights reserved.
 //
 
 #import "LoginManager.h"
@@ -19,12 +19,12 @@
 #import "RBCaptchaViewController.h"
 #import "RBCaptchaV2ViewController.h"
 #import "Reachability.h"
-#import "RobloxAlert.h"
-#import "RobloxGoogleAnalytics.h"
-#import "RobloxInfo.h"
-#import "RobloxNotifications.h"
-#import "RobloxWebUtility.h"
-#import "RobloxXSRFRequest.h"
+#import "NAMEHEREAlert.h"
+#import "NAMEHEREGoogleAnalytics.h"
+#import "NAMEHEREInfo.h"
+#import "NAMEHERENotifications.h"
+#import "NAMEHEREWebUtility.h"
+#import "NAMEHEREXSRFRequest.h"
 #import "RBXFunctions.h"
 #import "SessionReporter.h"
 #import "SignupVerifier.h"
@@ -158,7 +158,7 @@ DYNAMIC_FASTFLAGVARIABLE(EnableLoginLogoutSignupWithApi, false);
     
     //construct the url
     //NOTE- APPEND A TRAILING SLASH IN THE URL TO ENSURE THAT JSON IS RETURNED -Kyler (10/12/2015)
-    NSString* loginUrlString = [[RobloxInfo getSecureBaseUrl] stringByAppendingString:@"/mobileapi/login/"];
+    NSString* loginUrlString = [[NAMEHEREInfo getSecureBaseUrl] stringByAppendingString:@"/mobileapi/login/"];
     NSURL *url = [NSURL URLWithString: loginUrlString];
     NSDate* startingTime = [NSDate date];
     
@@ -171,7 +171,7 @@ DYNAMIC_FASTFLAGVARIABLE(EnableLoginLogoutSignupWithApi, false);
     NSString *postData = [NSString stringWithFormat:@"username=%@&password=%@", encodedUserName, encodedPassword];
     NSString *length = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
     
-    [RobloxInfo setDefaultHTTPHeadersForRequest:theRequest];
+    [NAMEHEREInfo setDefaultHTTPHeadersForRequest:theRequest];
     [theRequest setValue:length forHTTPHeaderField:@"Content-Length"];
     [theRequest setHTTPMethod:@"POST"];
     [theRequest setHTTPBody:[postData dataUsingEncoding:NSASCIIStringEncoding]];
@@ -345,7 +345,7 @@ DYNAMIC_FASTFLAGVARIABLE(EnableLoginLogoutSignupWithApi, false);
                 if (!status)
                 {
                     //Analytics information
-                    [RobloxGoogleAnalytics setPageViewTracking:[NSString stringWithFormat:@"Login/Failure/NoStatus"]];
+                    [NAMEHEREGoogleAnalytics setPageViewTracking:[NSString stringWithFormat:@"Login/Failure/NoStatus"]];
                     analyticsResult = RBXAResultFailure;
                     analyticsError = RBXAErrorJSONReadFailure;
                     message = NSLocalizedString(@"SocialGigyaErrorNotifyLoginJSONParse", nil);
@@ -369,7 +369,7 @@ DYNAMIC_FASTFLAGVARIABLE(EnableLoginLogoutSignupWithApi, false);
                     currentPlayer.encodedUsername = [userLoginInfo objectForKey:ENCODED_USERNAME_KEY];
                     
                     //analytic tracking
-                    [RobloxGoogleAnalytics setPageViewTracking:@"Login/Success"];
+                    [NAMEHEREGoogleAnalytics setPageViewTracking:@"Login/Success"];
                     [[NSUserDefaults standardUserDefaults] setObject:@"NO" forKey:@"isGameCenterUser"];
                     [[CrashReporter sharedInstance] logStringKeyValue:@"UserName" withValue: [currentPlayer username]];
                     analyticsResult = RBXAResultSuccess;
@@ -380,7 +380,7 @@ DYNAMIC_FASTFLAGVARIABLE(EnableLoginLogoutSignupWithApi, false);
                 else // something went wrong with login, convey message to user
                 {
                     //Analytics information
-                    [RobloxGoogleAnalytics setPageViewTracking:[NSString stringWithFormat:@"Login/Failure/%@", status]];
+                    [NAMEHEREGoogleAnalytics setPageViewTracking:[NSString stringWithFormat:@"Login/Failure/%@", status]];
                     analyticsResult = RBXAResultFailure;
                     
                     
@@ -530,7 +530,7 @@ DYNAMIC_FASTFLAGVARIABLE(EnableLoginLogoutSignupWithApi, false);
         return;
     }
     
-    NSString* loginUrlString = [[RobloxInfo getApiBaseUrl] stringByAppendingString:@"/login/v1/"];
+    NSString* loginUrlString = [[NAMEHEREInfo getApiBaseUrl] stringByAppendingString:@"/login/v1/"];
     NSURL *url = [NSURL URLWithString: loginUrlString];
     NSDate* startTime = [NSDate date];
     
@@ -543,7 +543,7 @@ DYNAMIC_FASTFLAGVARIABLE(EnableLoginLogoutSignupWithApi, false);
     NSString *postData = [NSString stringWithFormat:@"username=%@&password=%@", encodedUserName, encodedPassword];
     NSString *length = [NSString stringWithFormat:@"%lu", (unsigned long)[postData length]];
     
-    [RobloxInfo setDefaultHTTPHeadersForRequest:theRequest];
+    [NAMEHEREInfo setDefaultHTTPHeadersForRequest:theRequest];
     [theRequest setValue:length forHTTPHeaderField:@"Content-Length"];
     [theRequest setHTTPMethod:@"POST"];
     [theRequest setHTTPBody:[postData dataUsingEncoding:NSASCIIStringEncoding]];
@@ -667,8 +667,8 @@ DYNAMIC_FASTFLAGVARIABLE(EnableLoginLogoutSignupWithApi, false);
 - (void) getUserAccountInfoForContext:(RBXAnalyticsContextName)context completionHandler:(LoginManagerCompletionBlock)loginV2CompletionHandler
 {
     //construct the url
-    // https://api.sitetest2.robloxlabs.com/users/account-info
-    NSString* loginUrlString = [[RobloxInfo getApiBaseUrl] stringByAppendingString:@"/users/account-info"];
+    // https://api.sitetest2.nameherelabs.com/users/account-info
+    NSString* loginUrlString = [[NAMEHEREInfo getApiBaseUrl] stringByAppendingString:@"/users/account-info"];
     NSURL *url = [NSURL URLWithString: loginUrlString];
     NSDate* startTime = [NSDate date];
     
@@ -697,7 +697,7 @@ DYNAMIC_FASTFLAGVARIABLE(EnableLoginLogoutSignupWithApi, false);
                                                              AgeBracket = 0;
                                                              Email =     {
                                                                  IsVerified = 1;
-                                                                 Value = "kmulherin@roblox.com";
+                                                                 Value = "kmulherin@namehere.com";
                                                              };
                                                              HasPasswordSet = 1;
                                                              Username = iMightBeLying;
@@ -804,8 +804,8 @@ DYNAMIC_FASTFLAGVARIABLE(EnableLoginLogoutSignupWithApi, false);
 - (void) getUserBalancesForContext:(RBXAnalyticsContextName)context completionHandler:(LoginManagerCompletionBlock)loginV2CompletionHandler
 {
     //construct the url
-    // https://api.sitetest2.robloxlabs.com/my/balance
-    NSString* loginUrlString = [[RobloxInfo getApiBaseUrl] stringByAppendingString:@"/my/balance/"];
+    // https://api.sitetest2.nameherelabs.com/my/balance
+    NSString* loginUrlString = [[NAMEHEREInfo getApiBaseUrl] stringByAppendingString:@"/my/balance/"];
     NSURL *url = [NSURL URLWithString: loginUrlString];
     NSDate* startTime = [NSDate date];
     
@@ -918,7 +918,7 @@ DYNAMIC_FASTFLAGVARIABLE(EnableLoginLogoutSignupWithApi, false);
 -(BOOL) hasLoginCredentials         {
     //read the keychain and see if we have the appropriate things stored there
     if ([LoginManager sessionLoginEnabled] == NO) {
-        KeychainItemWrapper* loginKeychain = [[KeychainItemWrapper alloc] initWithIdentifier:[[[NSBundle mainBundle] bundleIdentifier] stringByAppendingString:@"RobloxLogin"]  accessGroup:nil];
+        KeychainItemWrapper* loginKeychain = [[KeychainItemWrapper alloc] initWithIdentifier:[[[NSBundle mainBundle] bundleIdentifier] stringByAppendingString:@"NAMEHERELogin"]  accessGroup:nil];
         NSString* username = [loginKeychain objectForKey:(__bridge id)kSecAttrAccount];
         NSString* pw = [loginKeychain objectForKey:(__bridge id)kSecValueData];
         bool hasUsername = username != nil && username.length > 0;
@@ -931,7 +931,7 @@ DYNAMIC_FASTFLAGVARIABLE(EnableLoginLogoutSignupWithApi, false);
 }
 -(BOOL) hasSocialLoginCredentials   {
     //read the keychain and see if we have the appropriate values stored there
-    KeychainItemWrapper* loginKeychain = [[KeychainItemWrapper alloc] initWithIdentifier:[[[NSBundle mainBundle] bundleIdentifier] stringByAppendingString:@"RobloxLogin"]  accessGroup:nil];
+    KeychainItemWrapper* loginKeychain = [[KeychainItemWrapper alloc] initWithIdentifier:[[[NSBundle mainBundle] bundleIdentifier] stringByAppendingString:@"NAMEHERELogin"]  accessGroup:nil];
     NSString* gigyaUID = [loginKeychain objectForKey:(__bridge id)kSecAttrDescription];
     GSSession* session = [Gigya session];
     
@@ -970,7 +970,7 @@ DYNAMIC_FASTFLAGVARIABLE(EnableLoginLogoutSignupWithApi, false);
     {
         //grab the username and password if it is stored
         //populate the UserInfo object with stored values
-        KeychainItemWrapper* loginKeychain = [[KeychainItemWrapper alloc] initWithIdentifier:[[[NSBundle mainBundle] bundleIdentifier] stringByAppendingString:@"RobloxLogin"]  accessGroup:nil];
+        KeychainItemWrapper* loginKeychain = [[KeychainItemWrapper alloc] initWithIdentifier:[[[NSBundle mainBundle] bundleIdentifier] stringByAppendingString:@"NAMEHERELogin"]  accessGroup:nil];
         [UserInfo CurrentPlayer].username = [loginKeychain objectForKey:(__bridge id)kSecAttrAccount];
         
         if ([[LoginManager sharedInstance] getRememberPassword])
@@ -1065,7 +1065,7 @@ DYNAMIC_FASTFLAGVARIABLE(EnableLoginLogoutSignupWithApi, false);
 }
 -(void) processBackground
 {
-    KeychainItemWrapper* loginKeychain = [[KeychainItemWrapper alloc] initWithIdentifier:[[[NSBundle mainBundle] bundleIdentifier] stringByAppendingString:@"RobloxLogin"]  accessGroup:nil];
+    KeychainItemWrapper* loginKeychain = [[KeychainItemWrapper alloc] initWithIdentifier:[[[NSBundle mainBundle] bundleIdentifier] stringByAppendingString:@"NAMEHERELogin"]  accessGroup:nil];
     if ([LoginManager sessionLoginEnabled] == NO) {
         //save username and password information
         //NSLog(@"Process Background...");
@@ -1279,7 +1279,7 @@ DYNAMIC_FASTFLAGVARIABLE(EnableLoginLogoutSignupWithApi, false);
         
         //Format a string for web arguments
         NSString* urlString = [NSString stringWithFormat:@"%@/social/postlogin?loginProvider=%@&loginProviderUID=%@&signatureTimestamp=%@&provider=%@&UID=%@&UIDSignature=%@%@",
-                               [[RobloxInfo getApiBaseUrl] stringByReplacingOccurrencesOfString:@"http://" withString:@"https://"],
+                               [[NAMEHEREInfo getApiBaseUrl] stringByReplacingOccurrencesOfString:@"http://" withString:@"https://"],
                                [[UserInfo CurrentPlayer] GigyaLoginProvider],
                                [[UserInfo CurrentPlayer] GigyaLoginProviderUID],
                                [[UserInfo CurrentPlayer] GigyaSignatureTimestamp],
@@ -1289,7 +1289,7 @@ DYNAMIC_FASTFLAGVARIABLE(EnableLoginLogoutSignupWithApi, false);
                                birthdayString];
         NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString]];
         [request setHTTPMethod:@"POST"];
-        [RobloxInfo setDefaultHTTPHeadersForRequest:request];
+        [NAMEHEREInfo setDefaultHTTPHeadersForRequest:request];
         
         [NSURLConnection sendAsynchronousRequest:request queue:self.requestQueue completionHandler:^(NSURLResponse *response, NSData *responseData, NSError *responseError)
          {
@@ -1363,7 +1363,7 @@ DYNAMIC_FASTFLAGVARIABLE(EnableLoginLogoutSignupWithApi, false);
                              }
                              else
                              {
-                                 //Why couldn't we determine if the user's Roblox identity?
+                                 //Why couldn't we determine if the user's NAMEHERE identity?
                                  analyticsResult = RBXAResultFailure;
                                  analyticsError = RBXAErrorUnknownLoginException;
                                  success = NO;
@@ -1488,7 +1488,7 @@ DYNAMIC_FASTFLAGVARIABLE(EnableLoginLogoutSignupWithApi, false);
     
     //Format a string for web arguments
     NSString* urlString = [NSString stringWithFormat:@"%@/social/signup?username=%@&gigyaUID=%@&birthday=%@&gender=%@%@",
-                           [[RobloxInfo getApiBaseUrl] stringByReplacingOccurrencesOfString:@"http://" withString:@"https://"],
+                           [[NAMEHEREInfo getApiBaseUrl] stringByReplacingOccurrencesOfString:@"http://" withString:@"https://"],
                            username ? username : @"null",
                            gigyaUID ? gigyaUID : @"null",
                            birthdayString ? birthdayString : @"null",
@@ -1496,7 +1496,7 @@ DYNAMIC_FASTFLAGVARIABLE(EnableLoginLogoutSignupWithApi, false);
                            playerEmail ? [@"&email=" stringByAppendingString:playerEmail] : @""];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"POST"];
-    [RobloxInfo setDefaultHTTPHeadersForRequest:request];
+    [NAMEHEREInfo setDefaultHTTPHeadersForRequest:request];
     
     [NSURLConnection sendAsynchronousRequest:request queue:self.requestQueue completionHandler:^(NSURLResponse *response, NSData *responseData, NSError *responseError)
      {
@@ -1621,10 +1621,10 @@ DYNAMIC_FASTFLAGVARIABLE(EnableLoginLogoutSignupWithApi, false);
     /// 1ST) HIT SOCIAL GET UIDSIGNATURE AND TIMESTAMP
     ///////////////////////////////////////////////////////////////////////////////////////////////////
     NSDate* startTime1 = [NSDate date];
-    NSString* urlString = [[[RobloxInfo getApiBaseUrl] stringByReplacingOccurrencesOfString:@"http://" withString:@"https://"] stringByAppendingString:@"/social/get-uidsignature-timestamp"];
+    NSString* urlString = [[[NAMEHEREInfo getApiBaseUrl] stringByReplacingOccurrencesOfString:@"http://" withString:@"https://"] stringByAppendingString:@"/social/get-uidsignature-timestamp"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"GET"];
-    [RobloxInfo setDefaultHTTPHeadersForRequest:request];
+    [NAMEHEREInfo setDefaultHTTPHeadersForRequest:request];
     
     [NSURLConnection sendAsynchronousRequest:request queue:self.requestQueue completionHandler:
      ^(NSURLResponse *urlResponse, NSData *responseData, NSError *responseError)
@@ -1649,7 +1649,7 @@ DYNAMIC_FASTFLAGVARIABLE(EnableLoginLogoutSignupWithApi, false);
                      else if ([[responseObject stringForKey:@"status" withDefault:@" "] isEqualToString:@"success"])
                      {
                          //parse out some variables and hit notify login
-                         NSString* environment = [RobloxInfo getEnvironmentName:YES];
+                         NSString* environment = [NAMEHEREInfo getEnvironmentName:YES];
                          NSString* uid = [NSString stringWithFormat:@"%@_%@",environment,[UserInfo CurrentPlayer].userId ? [UserInfo CurrentPlayer].userId : @"null"];
                          NSString* uidSignature = [responseObject stringForKey:@"uidSignature" withDefault:@"null"];
                          NSString* timestamp = [responseObject stringForKey:@"timestamp" withDefault:@"null"];
@@ -2037,11 +2037,11 @@ DYNAMIC_FASTFLAGVARIABLE(EnableLoginLogoutSignupWithApi, false);
         }
     
         NSString* urlString = [NSString stringWithFormat:@"%@social/disconnect?provider=%@",
-                               [RobloxInfo getWWWBaseUrl],
+                               [NAMEHEREInfo getWWWBaseUrl],
                                providerName];
         
         
-        RobloxXSRFRequest* request = [[RobloxXSRFRequest alloc] initWithBaseURL:nil];
+        NAMEHEREXSRFRequest* request = [[NAMEHEREXSRFRequest alloc] initWithBaseURL:nil];
         [request XSRFPOST:urlString
                parameters:nil
                   success:^(AFHTTPRequestOperation *operation, id responseObject)
@@ -2106,10 +2106,10 @@ DYNAMIC_FASTFLAGVARIABLE(EnableLoginLogoutSignupWithApi, false);
 {
     NSDate* startingTime = [NSDate date];
     
-    NSString* urlString = [[RobloxInfo getWWWBaseUrl] stringByAppendingString:@"social/update-info"];
+    NSString* urlString = [[NAMEHEREInfo getWWWBaseUrl] stringByAppendingString:@"social/update-info"];
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:urlString]];
     [request setHTTPMethod:@"POST"];
-    [RobloxInfo setDefaultHTTPHeadersForRequest:request];
+    [NAMEHEREInfo setDefaultHTTPHeadersForRequest:request];
 
     [NSURLConnection sendAsynchronousRequest:request queue:self.requestQueue completionHandler:^(NSURLResponse *response, NSData *responseData, NSError *responseError)
      {
@@ -2218,7 +2218,7 @@ DYNAMIC_FASTFLAGVARIABLE(EnableLoginLogoutSignupWithApi, false);
 // 1) easier to search for all calls to logout and
 // 2) XCode's autocomplete was getting confused and directing the definition to Gigya's "logout" method of the exact same name.
 
-- (void) logoutRobloxUser
+- (void) logoutNAMEHEREUser
 {
     [self doSocialLogout];
     
@@ -2227,18 +2227,18 @@ DYNAMIC_FASTFLAGVARIABLE(EnableLoginLogoutSignupWithApi, false);
     [[NSUserDefaults standardUserDefaults] synchronize];
     
     if ([[self class] apiProxyEnabled] == YES) {
-        [self logoutRobloxUserV2];
+        [self logoutNAMEHEREUserV2];
         return;
     }
     
-    NSString* logoutUrlString = [[RobloxInfo getWWWBaseUrl] stringByAppendingString:@"mobileapi/logout"];
+    NSString* logoutUrlString = [[NAMEHEREInfo getWWWBaseUrl] stringByAppendingString:@"mobileapi/logout"];
 
     NSURL *url = [NSURL URLWithString: logoutUrlString];
     NSMutableURLRequest *theRequest = [NSMutableURLRequest requestWithURL:url
                                                               cachePolicy:NSURLRequestReloadIgnoringCacheData
                                                           timeoutInterval:60*7];
     
-    [RobloxInfo setDefaultHTTPHeadersForRequest:theRequest];
+    [NAMEHEREInfo setDefaultHTTPHeadersForRequest:theRequest];
     [theRequest setHTTPMethod:@"POST"];
     
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
@@ -2258,11 +2258,11 @@ DYNAMIC_FASTFLAGVARIABLE(EnableLoginLogoutSignupWithApi, false);
     
 }
 
-- (void) logoutRobloxUserV2
+- (void) logoutNAMEHEREUserV2
 {
-    NSString *logoutUrlString = [[RobloxInfo getApiBaseUrl] stringByAppendingString:@"/sign-out/v1/"];
+    NSString *logoutUrlString = [[NAMEHEREInfo getApiBaseUrl] stringByAppendingString:@"/sign-out/v1/"];
     
-    RobloxXSRFRequest* request = [[RobloxXSRFRequest alloc] initWithBaseURL:nil];
+    NAMEHEREXSRFRequest* request = [[NAMEHEREXSRFRequest alloc] initWithBaseURL:nil];
     [request XSRFPOST:logoutUrlString
            parameters:nil
               success:^(AFHTTPRequestOperation *operation, id responseObject)
@@ -2332,7 +2332,7 @@ DYNAMIC_FASTFLAGVARIABLE(EnableLoginLogoutSignupWithApi, false);
 +(NSArray *) cookies
 {
     // Set all the cookies from the cookie storage
-    NSArray* cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[NSURL URLWithString:[RobloxInfo getBaseUrl]]];
+    NSArray* cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:[NSURL URLWithString:[NAMEHEREInfo getBaseUrl]]];
     
     return cookies;
 }
@@ -2345,7 +2345,7 @@ DYNAMIC_FASTFLAGVARIABLE(EnableLoginLogoutSignupWithApi, false);
 
 +(void) updateCookiesInAppHttpLayer
 {
-    NSURL* baseUrl = [NSURL URLWithString:[RobloxInfo getBaseUrl]];
+    NSURL* baseUrl = [NSURL URLWithString:[NAMEHEREInfo getBaseUrl]];
     NSArray* cookies = [[NSHTTPCookieStorage sharedHTTPCookieStorage] cookiesForURL:baseUrl];
     std::stringstream cookieStream;
     bool firstCookie = true;
@@ -2402,15 +2402,15 @@ DYNAMIC_FASTFLAGVARIABLE(EnableLoginLogoutSignupWithApi, false);
         }
     }
 }
-+(void) clearAllRobloxCookie;
++(void) clearAllNAMEHERECookie;
 {
     //CAUTION: CALLING THIS FUNCTION REMOVES THE BROWSER TRACKER THAT THE AB-TEST MANAGER USES TO TRACK TEST ENROLLMENT
     
     NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
-    for (NSHTTPCookie *each in [[cookieStorage cookiesForURL:[NSURL URLWithString:[RobloxInfo getBaseUrl]]] copy])
+    for (NSHTTPCookie *each in [[cookieStorage cookiesForURL:[NSURL URLWithString:[NAMEHEREInfo getBaseUrl]]] copy])
         [cookieStorage deleteCookie:each];
     
-    for (NSHTTPCookie *each in [[cookieStorage cookiesForURL:[NSURL URLWithString:[RobloxInfo getDomainString]]] copy])
+    for (NSHTTPCookie *each in [[cookieStorage cookiesForURL:[NSURL URLWithString:[NAMEHEREInfo getDomainString]]] copy])
         [cookieStorage deleteCookie:each];
     
     [[UserInfo CurrentPlayer] setUserLoggedIn:NO];
@@ -2424,10 +2424,10 @@ DYNAMIC_FASTFLAGVARIABLE(EnableLoginLogoutSignupWithApi, false);
     NSHTTPCookieStorage *cookieStorage = [NSHTTPCookieStorage sharedHTTPCookieStorage];
     
     NSLog(@"\n\n\n\n***Cookie in Storage Start***\n");
-    for (NSHTTPCookie *each in [[cookieStorage cookiesForURL:[NSURL URLWithString:[RobloxInfo getBaseUrl]]] copy])
+    for (NSHTTPCookie *each in [[cookieStorage cookiesForURL:[NSURL URLWithString:[NAMEHEREInfo getBaseUrl]]] copy])
         NSLog(@"Name: %@ : Value: %@ Date: %@ Path: %@ Domain: %@ HTTP Only: %@\n\n", each.name, each.value, each.expiresDate, each.path, each.domain, (each.isHTTPOnly ? @"True" : @"False"));
     
-    for (NSHTTPCookie *each in [[cookieStorage cookiesForURL:[NSURL URLWithString:[RobloxInfo getDomainString]]] copy])
+    for (NSHTTPCookie *each in [[cookieStorage cookiesForURL:[NSURL URLWithString:[NAMEHEREInfo getDomainString]]] copy])
         NSLog(@"Name: %@ : Value: %@ Date: %@ Path: %@ Domain: %@ HTTP Only: %@\n\n", each.name, each.value, each.expiresDate, each.path, each.domain, (each.isHTTPOnly ? @"True" : @"False"));
     
     

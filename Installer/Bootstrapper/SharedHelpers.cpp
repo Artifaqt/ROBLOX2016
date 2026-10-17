@@ -193,7 +193,7 @@ void deleteCurVersionKeys(simple_logger<wchar_t> &logger, bool isPerUser, const 
 {
 	CRegKey key;
 	LOG_ENTRY("deleteCurVersionKeys");
-	if(!FAILED(key.Open(isPerUser ? HKEY_CURRENT_USER : HKEY_LOCAL_MACHINE, _T("Software\\ROBLOX Corporation\\Roblox"), KEY_WRITE)))
+	if(!FAILED(key.Open(isPerUser ? HKEY_CURRENT_USER : HKEY_LOCAL_MACHINE, _T("Software\\NAMEHERE Corporation\\NAMEHERE"), KEY_WRITE)))
 	{
 		LOG_ENTRY("deleteCurVersionKeys - key Opened");
 		key.DeleteValue(buildVersionKey(component).c_str());
@@ -205,7 +205,7 @@ void setCurrentVersion(simple_logger<wchar_t> &logger, bool isPerUser, const TCH
 {
 	CRegKey key;
 	LOG_ENTRY3("setCurrentVersion - opening write registry key component=%S, version=%S, url=%S", componentCode, version, baseUrl);
-	if (ERROR_SUCCESS == key.Create(isPerUser ? HKEY_CURRENT_USER : HKEY_LOCAL_MACHINE, _T("Software\\ROBLOX Corporation\\Roblox")))
+	if (ERROR_SUCCESS == key.Create(isPerUser ? HKEY_CURRENT_USER : HKEY_LOCAL_MACHINE, _T("Software\\NAMEHERE Corporation\\NAMEHERE")))
 	{
 		std::wstring vKey = buildVersionKey(componentCode);
 		std::wstring uKey = buildUrlKey(componentCode);
@@ -226,7 +226,7 @@ void getCurrentVersion(simple_logger<wchar_t> &logger, bool isPerUser, const TCH
 	LOG_ENTRY1("getCurrentVersion - opening read registry key component=%S", componentCode);
 	version[0] = 0;
 	baseUrl[0] = 0;
-	if (ERROR_SUCCESS == key.Open(isPerUser ? HKEY_CURRENT_USER : HKEY_LOCAL_MACHINE, _T("Software\\ROBLOX Corporation\\Roblox"), KEY_READ))
+	if (ERROR_SUCCESS == key.Open(isPerUser ? HKEY_CURRENT_USER : HKEY_LOCAL_MACHINE, _T("Software\\NAMEHERE Corporation\\NAMEHERE"), KEY_READ))
 	{
 		std::wstring vKey = buildVersionKey(componentCode);
 		std::wstring uKey = buildUrlKey(componentCode);
@@ -276,7 +276,7 @@ std::wstring getQTStudioCode()
 void appendEnvironmentToProtocolScheme(std::wstring& scheme, const std::string baseUrl)
 {
 	std::vector<std::string> baseHostUrlParts = splitOn(baseUrl, '.');
-	if (baseHostUrlParts[1] != "roblox")
+	if (baseHostUrlParts[1] != "namehere")
 	{
 		scheme += convert_s2w("-" + baseHostUrlParts[1]);
 	}
@@ -284,7 +284,7 @@ void appendEnvironmentToProtocolScheme(std::wstring& scheme, const std::string b
 
 std::wstring getPlayerProtocolScheme(const std::string& baseUrl)
 {
-	std::wstring scheme = _T("roblox-player");
+	std::wstring scheme = _T("namehere-player");
 
 	appendEnvironmentToProtocolScheme(scheme, baseUrl);
 
@@ -293,7 +293,7 @@ std::wstring getPlayerProtocolScheme(const std::string& baseUrl)
 
 std::wstring getQTStudioProtocolScheme(const std::string& baseUrl)
 {
-	std::wstring scheme = _T("roblox-studio");
+	std::wstring scheme = _T("namehere-studio");
 
 	appendEnvironmentToProtocolScheme(scheme, baseUrl);
 
@@ -302,7 +302,7 @@ std::wstring getQTStudioProtocolScheme(const std::string& baseUrl)
 
 std::wstring getStudioRegistrySubPath()
 {
-	return _T("StudioRobloxReg");
+	return _T("StudioNAMEHEREReg");
 }
 
 std::wstring getStudioRegistryPath()
@@ -312,7 +312,7 @@ std::wstring getStudioRegistryPath()
 
 std::wstring getQTStudioRegistrySubPath()
 {
-	return _T("StudioQTRobloxReg");
+	return _T("StudioQTNAMEHEREReg");
 }
 
 std::wstring getQTStudioRegistryPath()
@@ -344,12 +344,12 @@ static void createShortcut(const TCHAR *linkFileName, const TCHAR *exePath, cons
 	throwHRESULT(ppf->Save(linkFileName, TRUE), "IPersistFile Save failed");
 }
 
-void createRobloxShortcut(simple_logger<wchar_t> &logger, bool isPerUser, const TCHAR *linkFileName, const TCHAR *exePath, const TCHAR *args, bool desktop, bool forceCreate)
+void createNAMEHEREShortcut(simple_logger<wchar_t> &logger, bool isPerUser, const TCHAR *linkFileName, const TCHAR *exePath, const TCHAR *args, bool desktop, bool forceCreate)
 {
 	std::wstring shortcutsDirectory;
 	if (!desktop)
 	{
-		shortcutsDirectory = FileSystem::getSpecialFolder(isPerUser ? FileSystem::RobloxUserPrograms : FileSystem::RobloxCommonPrograms, true);
+		shortcutsDirectory = FileSystem::getSpecialFolder(isPerUser ? FileSystem::NAMEHEREUserPrograms : FileSystem::NAMEHERECommonPrograms, true);
 	}
 	else
 	{
@@ -381,7 +381,7 @@ void createRobloxShortcut(simple_logger<wchar_t> &logger, bool isPerUser, const 
 // exeName: name of executable to which shortcut points
 // exeFolderPath: path to exeName
 // baseFolderPath: path to unversioned programs
-void updateExistingRobloxShortcuts(
+void updateExistingNAMEHEREShortcuts(
     simple_logger<wchar_t>& logger, 
     bool                    isPerUser, 
     const TCHAR*            folder, 
@@ -439,14 +439,14 @@ void updateExistingRobloxShortcuts(
 				// they wanted to launch studio (approx 04/2012 we only had one executable for player/studio)
 
 				bool isMFCStudio = (StrCmp(exeName, _T(STUDIOBOOTSTAPPERNAME)) == 0); // true if we're updating for MFC studio
-				LOG_ENTRY1("updateExistingRobloxShortcuts isStudio = %d", isMFCStudio);
+				LOG_ENTRY1("updateExistingNAMEHEREShortcuts isStudio = %d", isMFCStudio);
 
-				if (StrStr(foundFilePath, _T("Roblox.exe")))
+				if (StrStr(foundFilePath, _T("NAMEHERE.exe")))
 				{
 					// this shortcut points to the player
 					TCHAR args[MAX_PATH];
 					// detect if this shortcut is really a studio shortcut by looking at its arguments
-					throwHRESULT(psl->GetArguments(args, MAX_PATH), "updateExistingRobloxShortcuts - GetArgument Failed");
+					throwHRESULT(psl->GetArguments(args, MAX_PATH), "updateExistingNAMEHEREShortcuts - GetArgument Failed");
 					bool isIdeLink = (StrStr(args, _T("ide")) != 0);
 					if (isIdeLink && isMFCStudio)
 					{
@@ -521,16 +521,16 @@ bool hasDesktopShortcut(simple_logger<wchar_t> &logger, const TCHAR *shortcutNam
 	return false;
 }
 
-std::wstring getRobloxProgramsFolder(simple_logger<wchar_t> &logger, bool isPerUser)
+std::wstring getNAMEHEREProgramsFolder(simple_logger<wchar_t> &logger, bool isPerUser)
 {
-	return FileSystem::getSpecialFolder(isPerUser ? FileSystem::RobloxUserPrograms : FileSystem::RobloxCommonPrograms, false);
+	return FileSystem::getSpecialFolder(isPerUser ? FileSystem::NAMEHEREUserPrograms : FileSystem::NAMEHERECommonPrograms, false);
 }
 
 bool hasProgramShortcut(simple_logger<wchar_t> &logger, bool isPerUser, const TCHAR *shortcutName)
 {
 	LOG_ENTRY1("hasProgramShortcut - %S", shortcutName);
 
-	std::wstring shortcutsDirectory = getRobloxProgramsFolder(logger, isPerUser);
+	std::wstring shortcutsDirectory = getNAMEHEREProgramsFolder(logger, isPerUser);
 	if (!shortcutsDirectory.empty())
 	{
 		CString szLinkName;
@@ -565,7 +565,7 @@ void deleteProgramsShortcut(simple_logger<wchar_t> &logger, bool isPerUser, cons
 {
 	LOG_ENTRY1("deleteProgramsShortcut - %S", shortcutName);
 
-	std::wstring shortcutsDirectory = FileSystem::getSpecialFolder(isPerUser ? FileSystem::RobloxUserPrograms : FileSystem::RobloxCommonPrograms, false);
+	std::wstring shortcutsDirectory = FileSystem::getSpecialFolder(isPerUser ? FileSystem::NAMEHEREUserPrograms : FileSystem::NAMEHERECommonPrograms, false);
 	if (!shortcutsDirectory.empty())
 	{
 		CString szLinkName;

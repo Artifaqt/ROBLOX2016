@@ -120,7 +120,7 @@ bool CoordinateFrame::fuzzyEq(const CoordinateFrame& other) const {
     return true;
 }
 
-// ROBLOX
+// NAMEHERE
 bool CoordinateFrame::fuzzyEq(const CoordinateFrame& other, double absepsilon) const {
 
     for (int c = 0; c < 3; ++c) {
@@ -177,7 +177,7 @@ std::string CoordinateFrame::toXML() const {
         0.0, 0.0, 0.0, 1.0);
 }
 
-//ROBLOX
+//NAMEHERE
 #if 0
 Plane CoordinateFrame::toObjectSpace(const Plane& p) const {
     Vector3 N, P;
@@ -220,7 +220,7 @@ Triangle CoordinateFrame::toObjectSpace(const Triangle& t) const {
         pointToObjectSpace(t.vertex(2)));
 }
 
-//ROBLOX
+//NAMEHERE
 Line CoordinateFrame::toWorldSpace(const Line& l) const {
     return Line::fromPointAndUnitDirection(pointToWorldSpace(l.point()), vectorToWorldSpace(l.direction()));
 }

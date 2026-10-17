@@ -44,7 +44,7 @@ in another .cpp file with IMPLEMENT_VISTA_TOOLS defined, as shown above.)
 
 MODIFICATIONS:
 	v.1.0 (2006-Dec-16) created by Andrei Belogortseff.
-	v.2.0 (2008-Aug-04) Erik Cassel: Removed most of the APIs Roblox doesn't need. Query functions remain
+	v.2.0 (2008-Aug-04) Erik Cassel: Removed most of the APIs NAMEHERE doesn't need. Query functions remain
 
 */
 

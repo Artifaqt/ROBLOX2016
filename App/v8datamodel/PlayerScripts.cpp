@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-/* Copyright 2003-2014 ROBLOX Corporation, All Rights Reserved  */
+/* Copyright 2003-2014 NAMEHERE Corporation, All Rights Reserved  */
 #include "V8DataModel/PlayerScripts.h"
 #include "V8DataModel/Workspace.h"
 #include "V8DataModel/StarterPlayerService.h"

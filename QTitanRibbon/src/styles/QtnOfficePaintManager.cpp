@@ -385,17 +385,17 @@ bool OfficePaintManager::drawPanelTipLabel(const QStyleOption* opt, QPainter* p,
 /*! \internal */
 bool OfficePaintManager::drawControlEdit(const QStyleOption* opt, QPainter* p, const QWidget* w) const
 {
-	// BEGIN ROBLOX CHANGES
+	// BEGIN NAMEHERE CHANGES
     //Q_UNUSED(w)
-	// END ROBLOX CHANGES
+	// END NAMEHERE CHANGES
     QTN_D_STYLE(const OfficeStyle)
 
     if (const QStyleOptionFrame* panel = qstyleoption_cast<const QStyleOptionFrame*>(opt)) 
     {
-		// BEGIN ROBLOX CHANGES
+		// BEGIN NAMEHERE CHANGES
         if(w && !qobject_cast<const QComboBox*>(w->parentWidget()))
 		//if(!qobject_cast<const QComboBox*>(w->parentWidget()))
-		// END ROBLOX CHANGES
+		// END NAMEHERE CHANGES
         {
             bool enabled  = opt->state & QStyle::State_Enabled;
             bool selected = opt->state & QStyle::State_MouseOver;
@@ -1901,9 +1901,9 @@ bool OfficePaintManager2013::drawIndicatorCheckRadioButton(QStyle::PrimitiveElem
 /*! \internal */
 bool OfficePaintManager2013::drawPanelButtonCommand(const QStyleOption* opt, QPainter* p, const QWidget* w) const
 {
-	// BEGIN ROBLOX CHANGES
+	// BEGIN NAMEHERE CHANGES
     // Q_UNUSED(w);
-	// END ROBLOX CHANGES
+	// END NAMEHERE CHANGES
     QTN_D_STYLE(OfficeStyle)
     if (const QStyleOptionButton* btn = qstyleoption_cast<const QStyleOptionButton*>(opt)) 
     {
@@ -1912,12 +1912,12 @@ bool OfficePaintManager2013::drawPanelButtonCommand(const QStyleOption* opt, QPa
         bool selected = opt->state & QStyle::State_MouseOver;
         bool pressed  = opt->state & QStyle::State_Sunken;
 //        bool defaultBtn = btn->features & QStyleOptionButton::DefaultButton;
-		// BEGIN ROBLOX CHANGES
+		// BEGIN NAMEHERE CHANGES
 		bool hasStyleSheet = w ? !w->styleSheet().isEmpty() : false;
-		// END ROBLOX CHANGES
+		// END NAMEHERE CHANGES
         if (enabled)
         {
-			// BEGIN ROBLOX CHANGES
+			// BEGIN NAMEHERE CHANGES
 			if (hasStyleSheet)
 			{
 				QColor color = btn->palette.brush(QPalette::Window).color();
@@ -1925,7 +1925,7 @@ bool OfficePaintManager2013::drawPanelButtonCommand(const QStyleOption* opt, QPa
 					color = color.lighter(110);
 				p->fillRect(opt->rect, color);
 			}
-			// END ROBLOX CHANGES
+			// END NAMEHERE CHANGES
             else if (pressed)
             {
                 if (!checked)
@@ -1962,17 +1962,17 @@ bool OfficePaintManager2013::drawPanelTipLabel(const QStyleOption* opt, QPainter
 /*! \internal */
 bool OfficePaintManager2013::drawControlEdit(const QStyleOption* opt, QPainter* p, const QWidget* w) const
 {
-	// BEGIN ROBLOX CHANGES
+	// BEGIN NAMEHERE CHANGES
     //Q_UNUSED(w)
-	// END ROBLOX CHANGES
+	// END NAMEHERE CHANGES
     QTN_D_STYLE(const OfficeStyle)
 
     if (const QStyleOptionFrame* panel = qstyleoption_cast<const QStyleOptionFrame*>(opt)) 
     {
-		// BEGIN ROBLOX CHANGES
+		// BEGIN NAMEHERE CHANGES
         if(w && !qobject_cast<const QComboBox*>(w->parentWidget()))
 		//if(!qobject_cast<const QComboBox*>(w->parentWidget()))
-		// BEGIN ROBLOX CHANGES
+		// BEGIN NAMEHERE CHANGES
         {
             bool enabled  = opt->state & QStyle::State_Enabled;
 //            bool hasFocus = opt->state & QStyle::State_HasFocus;

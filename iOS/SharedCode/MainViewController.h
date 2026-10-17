@@ -7,7 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
-#include "RobloxView.h"
+#include "NAMEHEREView.h"
 
 @class GameViewController;
 
@@ -16,7 +16,7 @@
     UIWindow* ogreWindow;
     UIView* ogreView;
     GameViewController* ogreViewController;
-    RobloxView* rbxView;
+    NAMEHEREView* rbxView;
     
     UIViewController* lastNonGameController;
 }
@@ -35,8 +35,8 @@
 -(GameViewController*) getOgreViewController;
 -(void) setOgreViewController:(GameViewController*) value;
 
--(void) setRobloxView:(RobloxView*) newRbxView;
--(RobloxView*) getRobloxView;
+-(void) setNAMEHEREView:(NAMEHEREView*) newRbxView;
+-(NAMEHEREView*) getNAMEHEREView;
 
 -(void) setLastNonGameController:(UIViewController*) lastController;
 -(UIViewController*) getLastNonGameController;

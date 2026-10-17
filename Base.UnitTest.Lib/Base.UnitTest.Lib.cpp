@@ -91,7 +91,7 @@ namespace RBX { namespace Test {
 	{
 		if (arg.find("--help") == 0)
 		{
-			std::cout << "ROBLOX custom arguments:\n";
+			std::cout << "NAMEHERE custom arguments:\n";
 			std::cout << "   --fflags=true|false - override all FFlag values\n";
 			return false;
 		}

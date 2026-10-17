@@ -28,15 +28,15 @@
         android:textIsSelectable="true"
         android:textSize="20sp" />
 
-    <com.roblox.client.components.CustomSwipeRefreshLayout
+    <com.namehere.client.components.CustomSwipeRefreshLayout
         xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/swipe_container"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
-        <com.roblox.hybrid.RBHybridWebView
+        <com.namehere.hybrid.RBHybridWebView
             android:id="@+id/web_view"
             android:layout_width="match_parent"
             android:layout_height="fill_parent" />
-    </com.roblox.client.components.CustomSwipeRefreshLayout>
+    </com.namehere.client.components.CustomSwipeRefreshLayout>
 </LinearLayout>
 
