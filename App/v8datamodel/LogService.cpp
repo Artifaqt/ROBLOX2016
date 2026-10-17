@@ -1,4 +1,4 @@
-/* Copyright 2014 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2014 NAMEHERE Corporation, All Rights Reserved */
 #include "stdafx.h"
 
 #include "V8DataModel/LogService.h"
@@ -6,12 +6,12 @@
 #include "Network/Player.h"
 #include "Network/Players.h"
 #include "Util/LuaWebService.h"
-#include "Util/RobloxGoogleAnalytics.h"
+#include "Util/NAMEHEREGoogleAnalytics.h"
 #include "Util/ScopedAssign.h"
 #include "script/ScriptContext.h"
 #include "V8DataModel/Remote.h"
 #include "util/Analytics.h"
-#include "RobloxServicesTools.h"
+#include "NAMEHEREServicesTools.h"
 
 #include <iostream>
 
@@ -43,22 +43,22 @@ namespace RBX {
     static Reflection::BoundFuncDesc<LogService, shared_ptr<const Reflection::ValueArray>() > func_GetLogHistory(
         &LogService::getLogHistory, "GetLogHistory", Security::None);
     static Reflection::BoundFuncDesc<LogService, void()> func_RequestServerOutput(
-        &LogService::requestServerOutput, "RequestServerOutput", Security::RobloxScript);
+        &LogService::requestServerOutput, "RequestServerOutput", Security::NAMEHEREScript);
 	static Reflection::BoundFuncDesc<LogService, void(std::string)> func_executeScript(
-		&LogService::executeScript, "ExecuteScript", "source", Security::RobloxScript);
+		&LogService::executeScript, "ExecuteScript", "source", Security::NAMEHEREScript);
     
     // Events and properties
     static Reflection::EventDesc<LogService, void(std::string, MessageType)> event_OutputMessage(
         &LogService::outputMessageSignal, "MessageOut", "message", "messageType");
     static Reflection::RemoteEventDesc<LogService, void(std::string, MessageType, int)> event_ServerOutputMessage(
         &LogService::serverOutputMessageSignal, "ServerMessageOut", "message", "messageType", "timestamp",
-        Security::RobloxScript, Reflection::RemoteEventCommon::SCRIPTING, Reflection::RemoteEventCommon::CLIENT_SERVER);
+        Security::NAMEHEREScript, Reflection::RemoteEventCommon::SCRIPTING, Reflection::RemoteEventCommon::CLIENT_SERVER);
     static Reflection::RemoteEventDesc<LogService, void(shared_ptr<Instance>)> event_RequestServerOutputSignal(
         &LogService::requestServerOutputSignal, "RequestServerOutputSignal", "requestingPlayer",
-        Security::Roblox, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::CLIENT_SERVER);
+        Security::NAMEHERE, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::CLIENT_SERVER);
 	static Reflection::RemoteEventDesc<LogService, void(shared_ptr<Instance>, std::string)> event_requestScriptExecutionSignal(
 		&LogService::requestScriptExecutionSignal, "RequestScriptExecutionSignal", "requestingPlayer", "source",
-		Security::Roblox, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::CLIENT_SERVER);
+		Security::NAMEHERE, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::CLIENT_SERVER);
     REFLECTION_END();
 
     static void raiseServerEventFromMessage(shared_ptr<LogService> logService,
@@ -98,7 +98,7 @@ namespace RBX {
 
     shared_ptr<const Reflection::ValueArray> LogService::getLogHistory()
     {
-        RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "GetLogHistory", 
+        NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "GetLogHistory", 
             format("%d", DataModel::get(this)->getPlaceID()).c_str());
 
         shared_ptr<Reflection::ValueArray> result = rbx::make_shared<Reflection::ValueArray>();
@@ -174,7 +174,7 @@ namespace RBX {
         std::string::size_type offset = 0;
         std::string::size_type offsetSaved = 0;
 
-        // prefilter the string and exit if http and (roblox or rbxcdn) is not found.
+        // prefilter the string and exit if http and (namehere or rbxcdn) is not found.
         std::string lowerText = text;
         std::transform(lowerText.begin(), lowerText.end(), lowerText.begin(), tolower);
         const std::string& lower = lowerText;
@@ -184,7 +184,7 @@ namespace RBX {
             return changeMask;
 
         offsetSaved = offset;
-        offset = lower.find("roblox", offset);
+        offset = lower.find("namehere", offset);
         if (offset == std::string::npos)
         {
             offset = lower.find("rbxcdn", offsetSaved);
@@ -354,9 +354,9 @@ namespace RBX {
 		{
 			if (shared_ptr<Network::Player> p = weakPlayer.lock())
             {
-                RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "SendingServerLogHistory", 
+                NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "SendingServerLogHistory", 
                     format("%d", DataModel::get(logService.get())->getPlaceID()).c_str());
-                RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "CreatorReadingServerLogs",
+                NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "CreatorReadingServerLogs",
                     format("%d", p->getUserID()).c_str());
 
                 logService->playerReceivingServerLogs = p;

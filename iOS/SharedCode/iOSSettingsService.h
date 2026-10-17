@@ -1,13 +1,13 @@
 //
 //  iOSSettingsService.h
-//  RobloxMobile
+//  NAMEHEREMobile
 //
 //  Created by Ganesh Agrawal on 10/30/12.
-//  Copyright (c) 2012 ROBLOX. All rights reserved.
+//  Copyright (c) 2012 NAMEHERE. All rights reserved.
 //
 
-#ifndef __RobloxMobile__iOSSettingsService__
-#define __RobloxMobile__iOSSettingsService__
+#ifndef __NAMEHEREMobile__iOSSettingsService__
+#define __NAMEHEREMobile__iOSSettingsService__
 
 #include "v8datamodel/FastLogSettings.h"
 #include "util/Statistics.h"
@@ -55,7 +55,7 @@ public:
     DECLARE_DATA_STRING(iOSGoogleAnalyticsAccount2)
     DECLARE_DATA_INT(iOSGoogleAnalyticsSampleRate)
     DECLARE_DATA_INT(TimeIntervalBetweenRobuxPurchaseInMinutes)
-    DECLARE_DATA_INT(RobloxHDTimeIntervalBetweenRobuxPurchaseInMinutes)
+    DECLARE_DATA_INT(NAMEHEREHDTimeIntervalBetweenRobuxPurchaseInMinutes)
     DECLARE_DATA_INT(TimeIntervalBetweenBCPurchaseInMinutes)
     DECLARE_DATA_INT(TimeIntervalBetweenCatalogPurchaseInMinutes)
     DECLARE_DATA_INT(TimeLimitForBillingServiceRetriesBeforeGivingUp)
@@ -97,4 +97,4 @@ public:
     END_DATA_MAP();
 };
 
-#endif /* defined(__RobloxMobile__iOSSettingsService__) */
+#endif /* defined(__NAMEHEREMobile__iOSSettingsService__) */

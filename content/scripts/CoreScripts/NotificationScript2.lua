@@ -2,7 +2,7 @@
 		Filename: NotificationScript2.lua
 		Version 1.1
 		Written by: jmargh
-		Description: Handles notification gui for the following in game ROBLOX events
+		Description: Handles notification gui for the following in game NAMEHERE events
 			Badge Awarded
 			Player Points Awarded
 			Friend Request Recieved/New Friend
@@ -21,7 +21,7 @@ local TeleportService = game:GetService('TeleportService')
 local HttpService = game:GetService("HttpService")
 local ContextActionService = game:GetService("ContextActionService")
 local CoreGui = game:GetService("CoreGui")
-local RobloxGui = CoreGui:WaitForChild("RobloxGui")
+local NAMEHEREGui = CoreGui:WaitForChild("NAMEHEREGui")
 local Settings = UserSettings()
 local GameSettings = Settings.GameSettings
 
@@ -47,8 +47,8 @@ local BindableEvent_SendNotification = Instance.new('BindableFunction')
 BindableEvent_SendNotification.Name = "SendNotification"
 BindableEvent_SendNotification.Parent = RbxGui
 local isPaused = false
-RobloxGui:WaitForChild("Modules"):WaitForChild("TenFootInterface")
-local isTenFootInterface = require(RobloxGui.Modules.TenFootInterface):IsEnabled()
+NAMEHEREGui:WaitForChild("Modules"):WaitForChild("TenFootInterface")
+local isTenFootInterface = require(NAMEHEREGui.Modules.TenFootInterface):IsEnabled()
 
 local pointsNotificationsActive = true
 local badgesNotificationsActive = true
@@ -64,9 +64,9 @@ local TWEEN_TIME = 0.35
 local DEFAULT_NOTIFICATION_DURATION = 5
 
 --[[ Images ]]--
-local PLAYER_POINTS_IMG = 'http://www.roblox.com/asset?id=206410433'
-local BADGE_IMG = 'http://www.roblox.com/asset?id=206410289'
-local FRIEND_IMAGE = 'http://www.roblox.com/thumbs/avatar.ashx?userId='
+local PLAYER_POINTS_IMG = 'http://www.namehere.com/asset?id=206410433'
+local BADGE_IMG = 'http://www.namehere.com/asset?id=206410289'
+local FRIEND_IMAGE = 'http://www.namehere.com/thumbs/avatar.ashx?userId='
 
 --[[ Gui Creation ]]--
 local function createFrame(name, size, position, bgt)
@@ -139,7 +139,7 @@ local PopupAcceptButton = Instance.new('TextButton')
 PopupAcceptButton.Name = "PopupAcceptButton"
 PopupAcceptButton.Size = UDim2.new(0, 100, 0, 50)
 PopupAcceptButton.Position = UDim2.new(0.5, -102, 1, -58)
-PopupAcceptButton.Style = Enum.ButtonStyle.RobloxRoundButton
+PopupAcceptButton.Style = Enum.ButtonStyle.NAMEHERERoundButton
 PopupAcceptButton.Font = Enum.Font.SourceSansBold
 PopupAcceptButton.FontSize = Enum.FontSize.Size24
 PopupAcceptButton.TextColor3 = Color3.new(1, 1, 1)
@@ -345,8 +345,8 @@ end
 
 -- New follower notification
 spawn(function()
-	local RobloxReplicatedStorage = game:GetService('RobloxReplicatedStorage')
-	local RemoteEvent_NewFollower = RobloxReplicatedStorage:WaitForChild('NewFollower')
+	local NAMEHEREReplicatedStorage = game:GetService('NAMEHEREReplicatedStorage')
+	local RemoteEvent_NewFollower = NAMEHEREReplicatedStorage:WaitForChild('NewFollower')
 	--
 	RemoteEvent_NewFollower.OnClientEvent:connect(function(followerRbxPlayer)
 		sendNotifcation("New Follower", followerRbxPlayer.Name.." is now following you!",
@@ -557,7 +557,7 @@ else
 end
 
 if not isTenFootInterface then
-	local gamepadMenu = RobloxGui:WaitForChild("CoreScripts/GamepadMenu")
+	local gamepadMenu = NAMEHEREGui:WaitForChild("CoreScripts/GamepadMenu")
 	local gamepadNotifications = gamepadMenu:FindFirstChild("GamepadNotifications")
 	while not gamepadNotifications do
 		wait()
@@ -593,7 +593,7 @@ if not isTenFootInterface then
 			ContextActionService:BindCoreAction("LeaveNotificationSelection", leaveNotificationFunc, false, Enum.KeyCode.ButtonB)
 		else
 			isPaused = false
-			local utility = require(RobloxGui.Modules.Settings.Utility)
+			local utility = require(NAMEHEREGui.Modules.Settings.Utility)
 			local okPressedFunc = function() end
 			utility:ShowAlert("You have no notifications", "Ok", settingsHub, okPressedFunc, true)
 		end
@@ -610,7 +610,7 @@ end
 
 local UserInputService = game:GetService('UserInputService')
 local Platform = UserInputService:GetPlatform()
-local Modules = RobloxGui:FindFirstChild('Modules')
+local Modules = NAMEHEREGui:FindFirstChild('Modules')
 if Platform == Enum.Platform.XBoxOne then
 	-- Platform hook for controller connection events
 	-- Displays overlay to user on controller connection lost

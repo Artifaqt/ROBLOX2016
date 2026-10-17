@@ -813,7 +813,7 @@ bool   CBREPTriangulator::TriangulateOneNP(short piece, int& triangles_count)
 		}
 		else
 		{
-            // ROBLOX CHANGE
+            // NAMEHERE CHANGE
             // Use one index for verts that are coincident.
             // Fixes crash in Shewchuk's Triangle.
             for (int i = 0; i < m_segments_count; i++)
@@ -868,7 +868,7 @@ bool   CBREPTriangulator::TriangulateOneNP(short piece, int& triangles_count)
                     m_segments_buffer[2*i + 1] = indexB;
                 }
             }
-            // END ROBLOX CHANGE
+            // END NAMEHERE CHANGE
 
 			tmpFT.face_triangulator = new CTriangulator;
 			tmpFT.face_triangulator->SetAllPoints(m_nodes_count, m_nodes_buffer,

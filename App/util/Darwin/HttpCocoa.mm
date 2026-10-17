@@ -91,7 +91,7 @@ static NSURL* createSanitizedURL(std::string url)
 
 @implementation MacHttpController
 
-static NSString* kHttpRunLoopMode = @"RobloxHttpController";
+static NSString* kHttpRunLoopMode = @"NAMEHEREHttpController";
 
 @synthesize url;
 
@@ -206,7 +206,7 @@ static NSString* kHttpRunLoopMode = @"RobloxHttpController";
     extern NSString* getUserAgentString();
     [request setValue:getUserAgentString() forHTTPHeaderField:@"User-Agent"];
 #else
-    [request setValue:@"Roblox/Darwin" forHTTPHeaderField:@"User-Agent"];
+    [request setValue:@"NAMEHERE/Darwin" forHTTPHeaderField:@"User-Agent"];
 #endif
 
 	[self configureRequest:request];
@@ -303,7 +303,7 @@ static NSString* kHttpRunLoopMode = @"RobloxHttpController";
     if (kCFCoreFoundationVersionNumber < kCFCoreFoundationVersionNumber10_8)
     {
         if ([protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust])
-            return [protectionSpace.host rangeOfString:@".robloxlabs.com"].location != NSNotFound;
+            return [protectionSpace.host rangeOfString:@".nameherelabs.com"].location != NSNotFound;
     }
     return NO;
 }
@@ -313,7 +313,7 @@ static NSString* kHttpRunLoopMode = @"RobloxHttpController";
     if (kCFCoreFoundationVersionNumber < kCFCoreFoundationVersionNumber10_8)
     {
         if ([challenge.protectionSpace.authenticationMethod isEqualToString:NSURLAuthenticationMethodServerTrust] &&
-            ([challenge.protectionSpace.host rangeOfString:@".robloxlabs.com"].location != NSNotFound))
+            ([challenge.protectionSpace.host rangeOfString:@".nameherelabs.com"].location != NSNotFound))
         {
             // trust the credentials...
             [challenge.sender useCredential:[NSURLCredential credentialForTrust:challenge.protectionSpace.serverTrust] forAuthenticationChallenge:challenge];
@@ -327,7 +327,7 @@ static NSString* kHttpRunLoopMode = @"RobloxHttpController";
 
 @end
 
-int rbx_isRobloxSite(const char* url)
+int rbx_isNAMEHERESite(const char* url)
 {
     NSAutoreleasePool * pool = [[NSAutoreleasePool alloc] init];
 
@@ -348,18 +348,18 @@ int rbx_isRobloxSite(const char* url)
     }
     
 	NSRange textRange;
-	textRange =[host rangeOfString:@".roblox.com"];
-    bool isRobloxUrl = textRange.location != NSNotFound;
+	textRange =[host rangeOfString:@".namehere.com"];
+    bool isNAMEHEREUrl = textRange.location != NSNotFound;
     
-    if (!isRobloxUrl)
+    if (!isNAMEHEREUrl)
     {
-        textRange =[host rangeOfString:@".robloxlabs.com"];
-        isRobloxUrl = textRange.location != NSNotFound;
+        textRange =[host rangeOfString:@".nameherelabs.com"];
+        isNAMEHEREUrl = textRange.location != NSNotFound;
     }
     
     [pool drain];
     
-	return isRobloxUrl;
+	return isNAMEHEREUrl;
 }
 
 int rbx_isMoneySite(const char* url)

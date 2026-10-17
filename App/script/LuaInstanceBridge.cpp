@@ -76,8 +76,8 @@ int ObjectBridge::newInstance(lua_State *thread)
 		shared_ptr<Instance> parent = ObjectBridge::getInstance(thread, 2);
 		if (parent)
 		{
-			// only allow parenting to roblox locked objects if we are in the right permission level 
-			if (parent->getRobloxLocked())
+			// only allow parenting to namehere locked objects if we are in the right permission level 
+			if (parent->getNAMEHERELocked())
 				RBX::Security::Context::current().requirePermission(RBX::Security::Plugin, "Parent in Instance.new()");
 
 			instance->setParent(parent.get());
@@ -334,7 +334,7 @@ static const char* PropertyNameCorrection(const shared_ptr<Instance>& object, co
 {
 	if ( name[0] == 's' ) {
 		if(strcmp(name,"size") == 0){
-			ScriptContext::getContext(L).camelCaseViolation(object, name, RobloxExtraSpace::get(L)->script.lock());
+			ScriptContext::getContext(L).camelCaseViolation(object, name, NAMEHEREExtraSpace::get(L)->script.lock());
 			return "Size";
 		}
 	}
@@ -425,7 +425,7 @@ namespace RBX { namespace Lua {
 		if (EventDescriptor* signal = object->findSignalDescriptor(name))
 		{
 			object->securityCheck(securityContext);
-			if (object->getRobloxLocked())
+			if (object->getNAMEHERELocked())
 				securityContext.requirePermission(RBX::Security::Plugin, name);
 
 			EventInstance evt = { signal, object };
@@ -439,7 +439,7 @@ namespace RBX { namespace Lua {
 			if (child!=NULL)
 			{
 				object->securityCheck(securityContext);
-				if (object->getRobloxLocked())
+				if (object->getNAMEHERELocked())
 					securityContext.requirePermission(RBX::Security::Plugin, name);
 				ObjectBridge::push(L, shared_from(child));
 				return 1;
@@ -455,7 +455,7 @@ namespace RBX { namespace Lua {
             if (name2[0]!=name[0] && !RBX::Name::lookup(name2).empty())
             {
                 int result = on_index(object, name2.c_str(), L);
-                ScriptContext::getContext(L).camelCaseViolation(object, name, RobloxExtraSpace::get(L)->script.lock());
+                ScriptContext::getContext(L).camelCaseViolation(object, name, NAMEHEREExtraSpace::get(L)->script.lock());
                 return result;
             }
         }
@@ -886,8 +886,8 @@ void callAsyncCallback(Lua::WeakFunctionRef function, shared_ptr<const Tuple> ar
             continuations.success = boost::bind(callAsyncCallbackSuccess, resumeFunction, _1);
             continuations.error = boost::bind(callAsyncCallbackError, errorFunction, _1);
 
-            RBXASSERT(RobloxExtraSpace::get(callbackThread.get())->continuations.get() == NULL);
-            RobloxExtraSpace::get(callbackThread.get())->continuations.reset(new Lua::Continuations(continuations));
+            RBXASSERT(NAMEHEREExtraSpace::get(callbackThread.get())->continuations.get() == NULL);
+            NAMEHEREExtraSpace::get(callbackThread.get())->continuations.reset(new Lua::Continuations(continuations));
 
             break;
         }
@@ -968,7 +968,7 @@ void Bridge< shared_ptr<Instance>, false >::on_newindex(shared_ptr<Instance>& ob
 		const PropertyDescriptor& desc = *prop;
 		if (desc==Instance::propParent)
 		{
-			if(instance->getRobloxLocked())
+			if(instance->getNAMEHERELocked())
 				securityContext.requirePermission(RBX::Security::Plugin, desc.name.c_str());
 
 			if(!object->getDescriptor().isScriptCreatable())
@@ -977,7 +977,7 @@ void Bridge< shared_ptr<Instance>, false >::on_newindex(shared_ptr<Instance>& ob
 			shared_ptr<Instance> parent = ObjectBridge::getInstance(L, 3);
 			if (instance->getParent() != parent.get())
 			{
-				if((parent && parent->getRobloxLocked()) || (instance->getParent() && instance->getParent()->getRobloxLocked())){
+				if((parent && parent->getNAMEHERELocked()) || (instance->getParent() && instance->getParent()->getNAMEHERELocked())){
 					//To add or remove a node from a locked parent, it requires permission
 					securityContext.requirePermission(RBX::Security::Plugin, desc.name.c_str());
 				}
@@ -990,7 +990,7 @@ void Bridge< shared_ptr<Instance>, false >::on_newindex(shared_ptr<Instance>& ob
 		}
 		else
 		{
-			if(instance->getRobloxLocked())
+			if(instance->getNAMEHERELocked())
 				securityContext.requirePermission(RBX::Security::Plugin, desc.name.c_str());
 
 			assignLuaValue(Property(*prop, instance), L, 3, securityContext);
@@ -1000,7 +1000,7 @@ void Bridge< shared_ptr<Instance>, false >::on_newindex(shared_ptr<Instance>& ob
 
 	if (CallbackDescriptor* callback = object->findCallbackDescriptor(name))
 	{
-		if(instance->getRobloxLocked())
+		if(instance->getNAMEHERELocked())
 			securityContext.requirePermission(RBX::Security::Plugin, callback->name.c_str());
 
 		assignLuaCallback(Callback(*callback, object.get()), L, 3);
@@ -1032,8 +1032,8 @@ int ObjectBridge::callMemberFunction(lua_State *L)
 
 	instance->securityCheck(securityContext);
 
-	// only don't call roblox locked objects if they are under core gui (this is a service we control, and roblox locked was designed for this class)
-	if ( instance->getRobloxLocked() && instance->isDescendantOf(ServiceProvider::find<CoreGuiService>(instance.get())) )
+	// only don't call namehere locked objects if they are under core gui (this is a service we control, and namehere locked was designed for this class)
+	if ( instance->getNAMEHERELocked() && instance->isDescendantOf(ServiceProvider::find<CoreGuiService>(instance.get())) )
 		securityContext.requirePermission(RBX::Security::Plugin, desc->name.c_str());
 
 	// Make sure the function is truly a member of the object
@@ -1061,7 +1061,7 @@ protected:
 	{
 		if (ThreadRef thread = threadRef->lock())
 		{
-			if (Continuations* continuations = RobloxExtraSpace::get(thread)->continuations.get()) {
+			if (Continuations* continuations = NAMEHEREExtraSpace::get(thread)->continuations.get()) {
 				if (continuations->error)
 				{
 					lua_pushstring(thread, message);
@@ -1070,7 +1070,7 @@ protected:
 				}
 			}
 
-            RBX::ScriptContext* context = RobloxExtraSpace::get(thread)->context();
+            RBX::ScriptContext* context = NAMEHEREExtraSpace::get(thread)->context();
 
             if (context)
             {
@@ -1132,7 +1132,7 @@ public:
 			return immediateResults;	// the return already happened
 
 		//Capture the yield. The callbacks will handle it
-		RobloxExtraSpace::get(L)->yieldCaptured = true;
+		NAMEHEREExtraSpace::get(L)->yieldCaptured = true;
 
 		return lua_yield(L, 0);
 	}
@@ -1194,7 +1194,7 @@ int ObjectBridge::callMemberYieldFunction(lua_State *L) {
 
 	instance->securityCheck(securityContext);
 
-	if (instance->getRobloxLocked())
+	if (instance->getNAMEHERELocked())
 		securityContext.requirePermission(RBX::Security::Plugin, desc->name.c_str());
 
 	// Make sure the function is truly a member of the object

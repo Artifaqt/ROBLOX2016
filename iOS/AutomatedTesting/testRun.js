@@ -67,7 +67,7 @@ function passTest(testName)
 
 
 // Select the test environment (GT1)
-wheel.selectValue("http://www.gametest1.robloxlabs.com/");
+wheel.selectValue("http://www.gametest1.nameherelabs.com/");
 UIALogger.logMessage("Test Environment: " + wheel.value());
 
 startTest("Open About Page");

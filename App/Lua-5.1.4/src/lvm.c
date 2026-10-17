@@ -31,7 +31,7 @@
 
 static FORCEINLINE void lua_rbx_encoding_check(lua_State* L, Instruction i)
 {
-  /* roblox: this is a basic added security check.  The c argument is normally unused.
+  /* namehere: this is a basic added security check.  The c argument is normally unused.
   ** we can use it to create an artificial difference to the lua vm and detect injected
   ** bytecode. */
 #if !defined(RBX_STUDIO_BUILD) && !defined(RBX_RCC_SECURITY) && !defined(RBX_TEST_BUILD)
@@ -149,7 +149,7 @@ void luaV_settable (lua_State *L, const TValue *t, TValue *key, StkId val) {
     if (ttistable(t)) {  /* `t' is a table? */
       Table *h = hvalue(t);
       TValue *oldval = luaH_set(L, h, key); /* do a primitive set */
-	  // ROBLOX
+	  // NAMEHERE
 	  if ( h->readonly )
 		  luaG_runerror(L, "Attempt to modify a readonly table");
       if (!ttisnil(oldval) ||  /* result is no nil? */

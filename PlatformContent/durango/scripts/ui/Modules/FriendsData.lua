@@ -9,7 +9,7 @@
 					like the person you're selecting going offline, etc..
 ]]
 local CoreGui = game:GetService("CoreGui")
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 local Players = game:GetService('Players')
 local HttpService = game:GetService('HttpService')
@@ -49,11 +49,11 @@ local updateEventCns = {}
 
 local function filterXboxFriends(friendsData)
 	local titleId = PlatformService and tostring(PlatformService:GetTitleId()) or ''
-	local onlineRobloxFriendsData = {}
-	local onlineRobloxFriendsUserIds = {}
+	local onlineNAMEHEREFriendsData = {}
+	local onlineNAMEHEREFriendsUserIds = {}
 	local onlineFriendsData = {}
-	-- filter into two list, those online in roblox and those online
-	-- for those online, also get their roblox userId
+	-- filter into two list, those online in namehere and those online
+	-- for those online, also get their namehere userId
 	for i = 1, #friendsData do
 		local data = friendsData[i]
 		if data["status"] and data["status"] == STATUS.ONLINE then
@@ -62,8 +62,8 @@ local function filterXboxFriends(friendsData)
 				local richTbl = data["rich"]
 				richTbl = richTbl[#richTbl]
 				if richTbl["titleId"] == titleId then
-					table.insert(onlineRobloxFriendsData, data)
-					table.insert(onlineRobloxFriendsUserIds, data["robloxuid"])
+					table.insert(onlineNAMEHEREFriendsData, data)
+					table.insert(onlineNAMEHEREFriendsUserIds, data["namehereuid"])
 				else
 					table.insert(onlineFriendsData, data)
 				end
@@ -71,27 +71,27 @@ local function filterXboxFriends(friendsData)
 		end
 	end
 
-	-- now get roblox friends presence in roblox
-	local robloxPresence = {}
-	if #onlineRobloxFriendsUserIds > 0 then
+	-- now get namehere friends presence in namehere
+	local nameherePresence = {}
+	if #onlineNAMEHEREFriendsUserIds > 0 then
 		local jsonTable = {}
-		jsonTable["userIds"] = onlineRobloxFriendsUserIds
+		jsonTable["userIds"] = onlineNAMEHEREFriendsUserIds
 		local jsonPostBody = HttpService:JSONEncode(jsonTable)
-		robloxPresence = Http.GetUsersOnlinePresenceAsync(jsonPostBody)
-		if robloxPresence and robloxPresence["UserPresences"] then
-			robloxPresence = robloxPresence["UserPresences"]
+		nameherePresence = Http.GetUsersOnlinePresenceAsync(jsonPostBody)
+		if nameherePresence and nameherePresence["UserPresences"] then
+			nameherePresence = nameherePresence["UserPresences"]
 		end
 	end
 
-	-- now append roblox presence data to each users data
-	for i = 1, #onlineRobloxFriendsData do
-		if robloxPresence[i] then
-			local data = onlineRobloxFriendsData[i]
+	-- now append namehere presence data to each users data
+	for i = 1, #onlineNAMEHEREFriendsData do
+		if nameherePresence[i] then
+			local data = onlineNAMEHEREFriendsData[i]
 			-- make sure we have the right person
-			for j = 1, #robloxPresence do
-				local rbxPresenceData = robloxPresence[j]
+			for j = 1, #nameherePresence do
+				local rbxPresenceData = nameherePresence[j]
 				local rbxUserId = rbxPresenceData["VisitorId"]
-				if rbxUserId == data["robloxuid"] then
+				if rbxUserId == data["namehereuid"] then
 					if rbxPresenceData["IsOnline"] == true then
 						local placeId = rbxPresenceData["PlaceId"]
 						local lastLocation = rbxPresenceData["LastLocation"]
@@ -115,15 +115,15 @@ local function filterXboxFriends(friendsData)
 						data["LastLocation"] = lastLocation
 					end
 					-- remove from list and gtfo
-					table.remove(robloxPresence, j)
+					table.remove(nameherePresence, j)
 					break
 				end
 			end
 		end
 	end
 
-	-- now sort those in roblox
-	table.sort(onlineRobloxFriendsData, function(a, b)
+	-- now sort those in namehere
+	table.sort(onlineNAMEHEREFriendsData, function(a, b)
 		if a["PlaceId"] and b["PlaceId"] then
 			return a["display"] < b["display"]
 		end
@@ -144,10 +144,10 @@ local function filterXboxFriends(friendsData)
 
 	-- now concat tables
 	for i = 1, #onlineFriendsData do
-		onlineRobloxFriendsData[#onlineRobloxFriendsData + 1] = onlineFriendsData[i]
+		onlineNAMEHEREFriendsData[#onlineNAMEHEREFriendsData + 1] = onlineFriendsData[i]
 	end
 
-	return onlineRobloxFriendsData
+	return onlineNAMEHEREFriendsData
 end
 
 --[[
@@ -156,7 +156,7 @@ end
 			// xuid - number, xbox user id
 			// gamertage - string, users gamertag
 			// display - string, users display name (depends on user settings, could be same as gamertag)
-			// robloxuid - number, users roblox userId
+			// namehereuid - number, users namehere userId
 			// status - string (Online, Away, Offline, Unknown)
 			// rich - array of rich presence, might currently be empty?
 				// timestamp - number, UTC timestamp of record
@@ -180,7 +180,7 @@ end
 
 local function getOnlineFriends()
 	if UserSettings().GameSettings:InStudioMode() then
--- Roblox Friends - leaving this in for testing purposes in studio
+-- NAMEHERE Friends - leaving this in for testing purposes in studio
 		local result = Http.GetOnlineFriendsAsync()
 		if not result then
 			-- TODO: Error code

@@ -321,7 +321,7 @@ BOOST_AUTO_TEST_SUITE(WebParser)
 
 		{
 			response = "<Value Type=\"instance\">"
-	"<roblox xmlns:xmime=\"http://www.w3.org/2005/05/xmlmime\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"http://www.roblox.com/roblox.xsd\" version=\"4\">"
+	"<namehere xmlns:xmime=\"http://www.w3.org/2005/05/xmlmime\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"http://www.namehere.com/namehere.xsd\" version=\"4\">"
 	"<External>null</External>								"
 	"<External>nil</External>								"
 	"<Item class=\"Part\" referent=\"RBX0\">				"
@@ -395,7 +395,7 @@ BOOST_AUTO_TEST_SUITE(WebParser)
 	"		</Vector3>																		  "
 	"	</Properties>																		   "
 	"</Item>																				   "
-	"</roblox>"
+	"</namehere>"
 	"</Value>";
 			std::auto_ptr<std::istream> stream(new std::istringstream(response));
 			BOOST_CHECK(RBX::WebParser::parseWebGenericResponse(*stream, value));
@@ -404,7 +404,7 @@ BOOST_AUTO_TEST_SUITE(WebParser)
 
 		{
 			response = "<Value Type=\"instance\">"
-	"<roblox xmlns:xmime=\"http://www.w3.org/2005/05/xmlmime\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"http://www.roblox.com/roblox.xsd\" version=\"4\">"
+	"<namehere xmlns:xmime=\"http://www.w3.org/2005/05/xmlmime\" xmlns:xsi=\"http://www.w3.org/2001/XMLSchema-instance\" xsi:noNamespaceSchemaLocation=\"http://www.namehere.com/namehere.xsd\" version=\"4\">"
 	"<External>null</External>								"
 	"<External>nil</External>								"
 	"<Item class=\"Part\" referent=\"RBX0\">				"
@@ -549,7 +549,7 @@ BOOST_AUTO_TEST_SUITE(WebParser)
 	"		</Vector3>																		  "
 	"	</Properties>																		   "
 	"</Item>																				   "
-	"</roblox>"
+	"</namehere>"
 	"</Value>";
 			std::auto_ptr<std::istream> stream(new std::istringstream(response));
 			BOOST_CHECK(!RBX::WebParser::parseWebGenericResponse(*stream, value));

@@ -175,7 +175,7 @@ public:
 	/// \param[in] time current system time
 	/// \param[in] maxBitsPerSecond if non-zero, enforces that outgoing bandwidth does not exceed this amount
 	/// \param[in] messageHandlerList A list of registered plugins
-	/// Roblox: return bool indicating if we send everything from our bufffer
+	/// NAMEHERE: return bool indicating if we send everything from our bufffer
 	bool Update( SOCKET s, SystemAddress &systemAddress, int MTUSize, CCTimeType time,
 		unsigned bitsPerSecondLimit,
 		DataStructures::List<PluginInterface2*> &messageHandlerList,

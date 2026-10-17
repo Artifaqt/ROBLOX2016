@@ -89,7 +89,7 @@ public:
 	virtual Rect2D getViewport() const = 0;
 
 	// Hack - buffering the GuiRect here - ultimately need to clip the
-	// "User Gui Space" with the ROBLOX Gui stuff.
+	// "User Gui Space" with the NAMEHERE Gui stuff.
 	void setUserGuiInset(const Vector4& value) { userGuiInset = value; }
 
 	Rect2D getUserGuiRect() const

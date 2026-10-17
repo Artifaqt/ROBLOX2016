@@ -1,4 +1,4 @@
-/* Copyright 2003-2005 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2005 NAMEHERE Corporation, All Rights Reserved */
 #include "stdafx.h"
 
 #include "V8DataModel/PluginManager.h"
@@ -37,7 +37,7 @@ static Reflection::BoundFuncDesc<Plugin, Reflection::Variant(std::string)> func_
     "key", Security::Plugin);
 static Reflection::BoundFuncDesc<Plugin, int()> func_getStudioUserId(&Plugin::getStudioUserId, "GetStudioUserId", Security::Plugin);
 static Reflection::EventDesc<Plugin, void() > desc_Plugin_Deactivation(&Plugin::deactivationSignal, "Deactivation", Security::Plugin);
-static Reflection::BoundFuncDesc<Plugin, void(void)> func_saveSelectedToRoblox(&Plugin::saveSelectedToRoblox, "SaveSelectedToRoblox", Security::Plugin);
+static Reflection::BoundFuncDesc<Plugin, void(void)> func_saveSelectedToNAMEHERE(&Plugin::saveSelectedToNAMEHERE, "SaveSelectedToNAMEHERE", Security::Plugin);
 
 //CSG
 static Reflection::BoundFuncDesc<Plugin, shared_ptr<Instance>( shared_ptr<const Instances> )> plugin_Union( &Plugin::csgUnion, "Union", "objects", Security::Plugin );
@@ -256,9 +256,9 @@ shared_ptr<Instance> Plugin::createToolbar(std::string name)
 	return pluginManager->createToolbar(this, name);
 }
 
-void Plugin::saveSelectedToRoblox()
+void Plugin::saveSelectedToNAMEHERE()
 {
-    pluginManager->getStudioHost()->uiAction("saveToRobloxAction");
+    pluginManager->getStudioHost()->uiAction("saveToNAMEHEREAction");
 }
 
 shared_ptr<Instance> Plugin::getMouseLua()
@@ -409,7 +409,7 @@ void PluginManager::startModelPluginScripts(DataModel* dataModel)
 
 int PluginManager::createPlugin(lua_State* L)
 {
-	DataModel* dm = DataModel::get(RobloxExtraSpace::get(L)->context());
+	DataModel* dm = DataModel::get(NAMEHEREExtraSpace::get(L)->context());
 	RBXASSERT(dm);
 	shared_ptr<Plugin> p = Creatable<Instance>::create<Plugin>();
 	p->setPluginManager(this);

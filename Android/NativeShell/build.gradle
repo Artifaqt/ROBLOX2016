@@ -70,9 +70,9 @@ android {
     signingConfigs {
         packageRelease {
             keyAlias 'seriously_do_not_delete_this_file'
-            keyPassword 'Sa4e63uCh4$robloxAndroid$'
-            storeFile file('../robloxAndroidPK_DO_NOT_DELETE')
-            storePassword 'Sa4e63uCh4$robloxAndroid$'
+            keyPassword 'Sa4e63uCh4$namehereAndroid$'
+            storeFile file('../namehereAndroidPK_DO_NOT_DELETE')
+            storePassword 'Sa4e63uCh4$namehereAndroid$'
         }
     }
     compileSdkVersion 23
@@ -179,19 +179,19 @@ android {
 
     productFlavors {
         dev {
-            applicationId "com.roblox.client.dev"
+            applicationId "com.namehere.client.dev"
             ext.betaDistributionReleaseNotes = getReleaseNotes()
             ext.betaDistributionGroupAliases = getReleaseGroups()
             buildConfigField "boolean", "USE_AMAZON_PURCHASING", "false"
         }
         pub {
-            applicationId "com.roblox.client"
+            applicationId "com.namehere.client"
             ext.betaDistributionReleaseNotes = getReleaseNotes()
             ext.betaDistributionGroupAliases = getReleaseGroups()
             buildConfigField "boolean", "USE_AMAZON_PURCHASING", "false"
         }
         amazon {
-            applicationId "com.roblox.client"
+            applicationId "com.namehere.client"
             ext.betaDistributionReleaseNotes = getReleaseNotes()
             ext.betaDistributionGroupAliases = getReleaseGroups()
             buildConfigField "boolean", "USE_AMAZON_PURCHASING", "true"

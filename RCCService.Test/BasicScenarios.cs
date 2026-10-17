@@ -5,8 +5,8 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Roblox.Grid.Rcc;
-using Roblox.Grid;
+using NAMEHERE.Grid.Rcc;
+using NAMEHERE.Grid;
 using System.Diagnostics;
 using System.IO;
 
@@ -76,13 +76,13 @@ namespace RCCService.Test
         [TestMethod]
         public void TestStartStopJob()
         {
-            using (RCCServiceSoap service = Roblox.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port))
+            using (RCCServiceSoap service = NAMEHERE.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port))
             {
                 ScriptExecution script = new ScriptExecution();
                 script.name = "Test";
                 script.script = "return 'Hello World! ' .. ...";
                 script.arguments = Lua.NewArgs("0");
-                Roblox.Grid.Rcc.Job job = new Roblox.Grid.Rcc.Job(); // ScriptJob(0, timeout, script);
+                NAMEHERE.Grid.Rcc.Job job = new NAMEHERE.Grid.Rcc.Job(); // ScriptJob(0, timeout, script);
                 job.id = "TestStartStopJob";
                 job.expirationInSeconds = 11111;
                 job.category = 0;
@@ -100,12 +100,12 @@ namespace RCCService.Test
         [TestMethod]
         public void TestLoadPlace()
         {
-            using (LuaScripts.pushBaseUrl("http://gametest.roblox.com/"))
+            using (LuaScripts.pushBaseUrl("http://gametest.namehere.com/"))
             {
 
-                using (RCCServiceSoap service = Roblox.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port))
+                using (RCCServiceSoap service = NAMEHERE.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port))
                 {
-                    Roblox.Grid.Rcc.Job job = new Roblox.Grid.Rcc.Job(); // ScriptJob(0, timeout, script);
+                    NAMEHERE.Grid.Rcc.Job job = new NAMEHERE.Grid.Rcc.Job(); // ScriptJob(0, timeout, script);
                     job.id = "TestLoadPlace";
                     job.expirationInSeconds = 11111;
                     job.category = 0;
@@ -126,9 +126,9 @@ namespace RCCService.Test
         [TestMethod]
         public void TestLoadModel()
         {
-            using (RCCServiceSoap service = Roblox.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port))
+            using (RCCServiceSoap service = NAMEHERE.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port))
             {
-                Roblox.Grid.Rcc.Job job = new Roblox.Grid.Rcc.Job(); // ScriptJob(0, timeout, script);
+                NAMEHERE.Grid.Rcc.Job job = new NAMEHERE.Grid.Rcc.Job(); // ScriptJob(0, timeout, script);
                 job.id = "TestLoadModel";
                 job.expirationInSeconds = 11111;
                 job.category = 0;
@@ -136,7 +136,7 @@ namespace RCCService.Test
                 {
                     service.OpenJob(job, Lua.EmptyScript);
 
-                    LuaValue[] result = service.Execute(job.id, Lua.NewScript("LoadUnload", LuaScripts.LoadUnload, "http://www.roblox.com/asset/?id=4446382"));
+                    LuaValue[] result = service.Execute(job.id, Lua.NewScript("LoadUnload", LuaScripts.LoadUnload, "http://www.namehere.com/asset/?id=4446382"));
 
                 }
                 finally
@@ -149,9 +149,9 @@ namespace RCCService.Test
         [TestMethod]
         public void TestStartGame()
         {
-            using (RCCServiceSoap service = Roblox.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port))
+            using (RCCServiceSoap service = NAMEHERE.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port))
             {
-                Roblox.Grid.Rcc.Job job = new Roblox.Grid.Rcc.Job(); // ScriptJob(0, timeout, script);
+                NAMEHERE.Grid.Rcc.Job job = new NAMEHERE.Grid.Rcc.Job(); // ScriptJob(0, timeout, script);
                 job.id = "TestStartGame";
                 job.expirationInSeconds = 11111;
                 job.category = 0;
@@ -174,9 +174,9 @@ namespace RCCService.Test
         public void TestJobTimeout()
         {
             //TestContext.AddResultFile("result.txt");
-            using (RCCServiceSoap service = Roblox.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port))
+            using (RCCServiceSoap service = NAMEHERE.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port))
             {
-                Roblox.Grid.Rcc.Job job = new Roblox.Grid.Rcc.Job(); // ScriptJob(0, timeout, script);
+                NAMEHERE.Grid.Rcc.Job job = new NAMEHERE.Grid.Rcc.Job(); // ScriptJob(0, timeout, script);
                 job.id = "TestGetDiagnostics";
                 job.expirationInSeconds = 1; //expire in 1 second
                 job.category = 0;
@@ -208,9 +208,9 @@ namespace RCCService.Test
         public void TestGetDiagnostics()
         {
             //TestContext.AddResultFile("result.txt");
-            using (RCCServiceSoap service = Roblox.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port))
+            using (RCCServiceSoap service = NAMEHERE.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port))
             {
-                Roblox.Grid.Rcc.Job job = new Roblox.Grid.Rcc.Job(); // ScriptJob(0, timeout, script);
+                NAMEHERE.Grid.Rcc.Job job = new NAMEHERE.Grid.Rcc.Job(); // ScriptJob(0, timeout, script);
                 job.id = "TestGetDiagnostics";
                 job.expirationInSeconds = 11111;
                 job.category = 0;
@@ -231,9 +231,9 @@ namespace RCCService.Test
         [TestMethod]
         public void TestStressLoadModel()
         {
-            using (RCCServiceSoap service = Roblox.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port))
+            using (RCCServiceSoap service = NAMEHERE.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port))
             {
-                Roblox.Grid.Rcc.Job job = new Roblox.Grid.Rcc.Job(); // ScriptJob(0, timeout, script);
+                NAMEHERE.Grid.Rcc.Job job = new NAMEHERE.Grid.Rcc.Job(); // ScriptJob(0, timeout, script);
                 job.id = "TestStressLoadModel";
                 job.expirationInSeconds = 11111;
                 job.category = 0;
@@ -242,7 +242,7 @@ namespace RCCService.Test
 
                 for (int i = 0; i < 100; i++)
                 {
-                    LuaValue[] result = service.Execute(job.id, Lua.NewScript("LoadUnload", LuaScripts.LoadUnload, "http://www.roblox.com/asset/?id=4446382"));
+                    LuaValue[] result = service.Execute(job.id, Lua.NewScript("LoadUnload", LuaScripts.LoadUnload, "http://www.namehere.com/asset/?id=4446382"));
                 }
 
                 service.CloseJob(job.id);

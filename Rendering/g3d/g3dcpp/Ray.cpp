@@ -1,5 +1,5 @@
 /**
- ROBLOX - We are not using the G3D 8.0 G3D::Ray, intstead we are using the RBX:RbxRay from old G3D.
+ NAMEHERE - We are not using the G3D 8.0 G3D::Ray, intstead we are using the RBX:RbxRay from old G3D.
  @file Ray.cpp 
  
  @maintainer Morgan McGuire, http://graphics.cs.williams.edu

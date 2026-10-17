@@ -1,14 +1,14 @@
 //
 //  GameKitHelper.m
-//  RobloxMobile
+//  NAMEHEREMobile
 //
 //  Created by Ganesh on 5/2/14.
-//  Copyright (c) 2014 ROBLOX. All rights reserved.
+//  Copyright (c) 2014 NAMEHERE. All rights reserved.
 //
 
 #import "GameKitHelper.h"
 #import "OnlineGameViewController.h"
-#import "RobloxInfo.h"
+#import "NAMEHEREInfo.h"
 #import "LoginManager.h"
 
 
@@ -91,7 +91,7 @@
                 // Apple server errored out
                 if (error)
                 {
-                    [[LoginManager sharedInstance] logoutRobloxUser];
+                    [[LoginManager sharedInstance] logoutNAMEHEREUser];
                     NSLog(@"Apple Game Center Server Errored out: %@", error.description);
                     [[NSNotificationCenter defaultCenter] postNotificationName:gameCenterDisabledNotification object:self userInfo:nil];
                 }
@@ -112,12 +112,12 @@
                     
                     
                     
-                    //https://api.sitetest3.robloxlabs.com/apple-game-center/authorize?playerId=G:2030020262&signature=V9GPDkwA+k3BYfiYLbauEwkTZP8yiw2YEJKFdmCukcyKmsTQZmvT4WAqbRL6QNrqLzXAn41veo9Tg6XWjv0WgXm7bPXNzTkIXjmLBUHXg0Y8cogxr8bQe+ClNev0FMgmU9eX+kcYdFy4U0124KdmRYYobq2e1RViiI4pM9oqWFg3DQ+rouAqIK15S3zXAM4ZaUt+qYFnqApp0nlOjL3vZCtrwybCrWphx6SWoWOOa3RtZ44vl/F192bFumw2/KFt6mwOgOWlVn5Fvk55gIJ0faQs96/0MFhpskkHr5e2ZYjhlXU78e63m2GplZlDcjs6s/Zo3yTVhJiKu0W3byRulg==&publicKeyUrl=https://sandbox.gc.apple.com/public-key/gc-sb.cer&salt=12NX6A==&timestamp=1400192105946&bundleid=com.roblox.Age-of-Kings
+                    //https://api.sitetest3.nameherelabs.com/apple-game-center/authorize?playerId=G:2030020262&signature=V9GPDkwA+k3BYfiYLbauEwkTZP8yiw2YEJKFdmCukcyKmsTQZmvT4WAqbRL6QNrqLzXAn41veo9Tg6XWjv0WgXm7bPXNzTkIXjmLBUHXg0Y8cogxr8bQe+ClNev0FMgmU9eX+kcYdFy4U0124KdmRYYobq2e1RViiI4pM9oqWFg3DQ+rouAqIK15S3zXAM4ZaUt+qYFnqApp0nlOjL3vZCtrwybCrWphx6SWoWOOa3RtZ44vl/F192bFumw2/KFt6mwOgOWlVn5Fvk55gIJ0faQs96/0MFhpskkHr5e2ZYjhlXU78e63m2GplZlDcjs6s/Zo3yTVhJiKu0W3byRulg==&publicKeyUrl=https://sandbox.gc.apple.com/public-key/gc-sb.cer&salt=12NX6A==&timestamp=1400192105946&bundleid=com.namehere.Age-of-Kings
                     
                     
-                    // URL for sigin of Game Center user, assuming the GameCenter equivalent account is already created with Roblox
+                    // URL for sigin of Game Center user, assuming the GameCenter equivalent account is already created with NAMEHERE
                     NSString* finalURL =[NSString stringWithFormat:@"%@/apple/game-center/signin?playerId=%@&signature=%@&bundleid=%@&publicKeyUrl=%@&salt=%@&timestamp=%@"
-                                         , [RobloxInfo getApiBaseUrl]
+                                         , [NAMEHEREInfo getApiBaseUrl]
                                          , [localPlayer.playerID urlEncodeUsingEncoding:NSUTF8StringEncoding]
                                          , [[signature base64EncodedStringWithOptions:0] urlEncodeUsingEncoding:NSUTF8StringEncoding]
                                          , [[[NSBundle mainBundle] bundleIdentifier] urlEncodeUsingEncoding:NSUTF8StringEncoding]
@@ -130,7 +130,7 @@
                    
 #if 0
                     NSLog(@" URL: %@", finalURL);
-                    NSLog(@"UserAgent: %@", [RobloxInfo getUserAgentString]);
+                    NSLog(@"UserAgent: %@", [NAMEHEREInfo getUserAgentString]);
 #endif
      
                     NSURL *url = [NSURL URLWithString: finalURL];
@@ -141,11 +141,11 @@
                     
                     
                     
-                    [RobloxInfo setDefaultHTTPHeadersForRequest:theRequest];
+                    [NAMEHEREInfo setDefaultHTTPHeadersForRequest:theRequest];
                     [theRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
                     [theRequest setHTTPMethod:@"POST"];
                     
-                    // Make the signin request with Roblox servers
+                    // Make the signin request with NAMEHERE servers
                     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
                     [NSURLConnection sendAsynchronousRequest:theRequest queue:queue completionHandler:
                      ^(NSURLResponse *response, NSData *receiptResponseData, NSError *error)
@@ -163,10 +163,10 @@
                                  NSNumber * n = [dict valueForKey:@"success"];
                                  BOOL success = [n boolValue];
                                  
-                                 if (success) // GC User exists on Roblox Server, do the Login
+                                 if (success) // GC User exists on NAMEHERE Server, do the Login
                                  {
 #if 0
-                                     NSArray * all = [NSHTTPCookie cookiesWithResponseHeaderFields:[urlResponse allHeaderFields] forURL:[NSURL URLWithString:[RobloxInfo getBaseUrl]]];
+                                     NSArray * all = [NSHTTPCookie cookiesWithResponseHeaderFields:[urlResponse allHeaderFields] forURL:[NSURL URLWithString:[NAMEHEREInfo getBaseUrl]]];
                                      NSLog(@"\n\n\n****Cookies Recd Start****\n");
                                      for (NSHTTPCookie *each in all)
                                      {
@@ -175,12 +175,12 @@
                                      NSLog(@"\n****Cookies Recd End****\n\n\n");
 #endif
                                      [[LoginManager sharedInstance] doGameCenterLogin];
-                                 } // GC User exists on Roblox Server, do the Login
-                                 else // GC User do not exist exists on Roblox Server, do a sign up on Roblox servers by creating account
+                                 } // GC User exists on NAMEHERE Server, do the Login
+                                 else // GC User do not exist exists on NAMEHERE Server, do a sign up on NAMEHERE servers by creating account
                                  {
                                      // Try doing a signup now
                                      NSString* finalURL =[NSString stringWithFormat:@"%@/apple/game-center/signup?playerId=%@&isUnderAge=%@&signature=%@&bundleid=%@&publicKeyUrl=%@&salt=%@&timestamp=%@"
-                                                          , [RobloxInfo getApiBaseUrl]
+                                                          , [NAMEHEREInfo getApiBaseUrl]
                                                           , [localPlayer.playerID urlEncodeUsingEncoding:NSUTF8StringEncoding]
                                                           , localPlayer.isUnderage ? @"true" : @"false"
                                                           , [[signature base64EncodedStringWithOptions:0] urlEncodeUsingEncoding:NSUTF8StringEncoding]
@@ -194,7 +194,7 @@
                                      
 #if 0
                                      NSLog(@" URL: %@", finalURL);
-                                     NSLog(@"UserAgent: %@", [RobloxInfo getUserAgentString]);
+                                     NSLog(@"UserAgent: %@", [NAMEHEREInfo getUserAgentString]);
 #endif
                                      
                                      NSURL *url = [NSURL URLWithString: finalURL];
@@ -204,7 +204,7 @@
                                                                                             timeoutInterval:60*7];
                                      
                                      
-                                     [RobloxInfo setDefaultHTTPHeadersForRequest:theRequest];
+                                     [NAMEHEREInfo setDefaultHTTPHeadersForRequest:theRequest];
                                      [theRequest setValue:@"application/x-www-form-urlencoded" forHTTPHeaderField:@"Content-Type"];
                                      [theRequest setHTTPMethod:@"POST"];
                                      
@@ -228,7 +228,7 @@
                                                   if (success) // successful sign up, do a login
                                                   {
 #if 0
-                                                      NSArray * all = [NSHTTPCookie cookiesWithResponseHeaderFields:[urlResponse allHeaderFields] forURL:[NSURL URLWithString:[RobloxInfo getBaseUrl]]];
+                                                      NSArray * all = [NSHTTPCookie cookiesWithResponseHeaderFields:[urlResponse allHeaderFields] forURL:[NSURL URLWithString:[NAMEHEREInfo getBaseUrl]]];
                                                       NSLog(@"\n\n\n****Cookies Recd Start****\n");
                                                       for (NSHTTPCookie *each in all)
                                                       {
@@ -241,14 +241,14 @@
                                                   else // unsuccessful with signup
                                                   {
                                                       [[NSNotificationCenter defaultCenter] postNotificationName:gameCenterDisabledNotification object:self userInfo:nil];
-                                                      [[LoginManager sharedInstance] logoutRobloxUser];
+                                                      [[LoginManager sharedInstance] logoutNAMEHEREUser];
                                                   } // unsuccessful with signup
                                               }
                                               else // Error processsing json data from our servers
                                               {
-                                                  NSLog(@"Error in GC JSON Data with Roblox Signup: %@", [error description]);
+                                                  NSLog(@"Error in GC JSON Data with NAMEHERE Signup: %@", [error description]);
                                                   [[NSNotificationCenter defaultCenter] postNotificationName:gameCenterDisabledNotification object:self userInfo:nil];
-                                                  [[LoginManager sharedInstance] logoutRobloxUser];
+                                                  [[LoginManager sharedInstance] logoutNAMEHEREUser];
                                               } // Error processsing json data from our servers
                                               
                                           } // successful response
@@ -256,16 +256,16 @@
                                           {
                                               NSLog(@"GC Failed Response Code %d", [urlResponse statusCode]);
                                               [[NSNotificationCenter defaultCenter] postNotificationName:gameCenterDisabledNotification object:self userInfo:nil];
-                                              [[LoginManager sharedInstance] logoutRobloxUser];
+                                              [[LoginManager sharedInstance] logoutNAMEHEREUser];
                                           }
                                       }]; // Got response
-                                 } // GC User do not exist exists on Roblox Server, do a sign up on Roblox servers by creating account
+                                 } // GC User do not exist exists on NAMEHERE Server, do a sign up on NAMEHERE servers by creating account
                              } // No Error processsing json data from our servers
                              else // Error processsing json data from our servers
                              {
-                                 NSLog(@"Error in GC JSON Data from Roblox Servers: %@", [error description]);
+                                 NSLog(@"Error in GC JSON Data from NAMEHERE Servers: %@", [error description]);
                                  [[NSNotificationCenter defaultCenter] postNotificationName:gameCenterDisabledNotification object:self userInfo:nil];
-                                 [[LoginManager sharedInstance] logoutRobloxUser];
+                                 [[LoginManager sharedInstance] logoutNAMEHEREUser];
                              } // Error processsing json data from our servers
                              
                          } // Successful 200 Status Code
@@ -273,9 +273,9 @@
                          {
                              NSLog(@"GC Failed Response Code %d", [urlResponse statusCode]);
                              [[NSNotificationCenter defaultCenter] postNotificationName:gameCenterDisabledNotification object:self userInfo:nil];
-                             [[LoginManager sharedInstance] logoutRobloxUser];
+                             [[LoginManager sharedInstance] logoutNAMEHEREUser];
                          }
-                     }]; // Make the signin request with Roblox servers
+                     }]; // Make the signin request with NAMEHERE servers
 
                 } // Apple Server cert generation successful
                 
@@ -284,7 +284,7 @@
         }        // Apple has auntheticated the GC User
         else if(viewController) // Apple is going to ask the user to enter the user name and passord for GC
         {
-            [[LoginManager sharedInstance] logoutRobloxUser];
+            [[LoginManager sharedInstance] logoutNAMEHEREUser];
             NSLog(@"Ask to login with Game Center");
             [self presentViewController:viewController];
         } else // Apple has decided not to show the GC login after user has dismissed three times with cancel

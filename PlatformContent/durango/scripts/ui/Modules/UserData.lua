@@ -8,7 +8,7 @@
 				Remove all friends stuff and move to new module
 ]]
 local CoreGui = game:GetService("CoreGui")
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 local Players = game:GetService('Players')
 local HttpService = game:GetService('HttpService')
@@ -53,15 +53,15 @@ local function verifyHasLinkedAccountAsync()
 	currentUserData["LinkedAccountResult"] = result
 end
 
-local function verifyHasRobloxCredentialsAsync()
-	local result = AccountManager:HasRobloxCredentialsAsync()
+local function verifyHasNAMEHERECredentialsAsync()
+	local result = AccountManager:HasNAMEHERECredentialsAsync()
 
 	while result ~= AccountManager.AuthResults.Success and result ~= AccountManager.AuthResults.UsernamePasswordNotSet do
-		result = AccountManager:HasRobloxCredentialsAsync()
+		result = AccountManager:HasNAMEHERECredentialsAsync()
 		wait(CONSTANT_RETRY_TIME)
 	end
 
-	currentUserData["RobloxCredentialsResult"] = result
+	currentUserData["NAMEHERECredentialsResult"] = result
 end
 
 function UserData:Initialize()
@@ -75,7 +75,7 @@ function UserData:Initialize()
 		local localPlayer = getLocalPlayer()
 		currentUserData["Gamertag"] = "InStudioNoGamertag"
 		currentUserData["RbxUid"] = localPlayer.userId
-		currentUserData["RobloxName"] = localPlayer.Name
+		currentUserData["NAMEHEREName"] = localPlayer.Name
 		spawn(function()
 			setVoteCountAsync()
 		end)
@@ -83,16 +83,16 @@ function UserData:Initialize()
 		local userInfo = PlatformService:GetPlatformUserInfo()
 		if userInfo then
 			currentUserData["Gamertag"] = userInfo["Gamertag"]
-			currentUserData["RbxUid"] = userInfo["RobloxUserId"]
+			currentUserData["RbxUid"] = userInfo["NAMEHEREUserId"]
 		else
 			currentUserData["Gamertag"] = Players.LocalPlayer.Name
 		end
 
 		spawn(setVoteCountAsync)
 		spawn(verifyHasLinkedAccountAsync)
-		spawn(verifyHasRobloxCredentialsAsync)
+		spawn(verifyHasNAMEHERECredentialsAsync)
 		spawn(function()
-			currentUserData["RobloxName"] = Players:GetNameFromUserIdAsync(currentUserData["RbxUid"])
+			currentUserData["NAMEHEREName"] = Players:GetNameFromUserIdAsync(currentUserData["RbxUid"])
 		end)
 	end
 end
@@ -113,19 +113,19 @@ function UserData:GetDisplayName()
 	return currentUserData["Gamertag"]
 end
 
-function UserData:GetRobloxName()
+function UserData:GetNAMEHEREName()
 	if not currentUserData then
-		print("Error: UserData:GetRobloxName() - UserData has not been initialized. Don't do that!")
+		print("Error: UserData:GetNAMEHEREName() - UserData has not been initialized. Don't do that!")
 		return nil
 	end
-	return currentUserData["RobloxName"]
+	return currentUserData["NAMEHEREName"]
 end
 
-function UserData:SetRobloxName(name)
+function UserData:SetNAMEHEREName(name)
 	if currentUserData then
-		currentUserData["RobloxName"] = name
+		currentUserData["NAMEHEREName"] = name
 		spawn(function()
-			currentUserData["RobloxName"] = Players:GetNameFromUserIdAsync(currentUserData["RbxUid"])
+			currentUserData["NAMEHEREName"] = Players:GetNameFromUserIdAsync(currentUserData["RbxUid"])
 		end)
 	end
 end
@@ -169,8 +169,8 @@ function UserData:HasLinkedAccount()
 end
 
 -- returns true, false or nil in the case of error
-function UserData:HasRobloxCredentials()
-	local result = currentUserData["RobloxCredentialsResult"]
+function UserData:HasNAMEHERECredentials()
+	local result = currentUserData["NAMEHERECredentialsResult"]
 	if result == AccountManager.AuthResults.Success then
 		return true
 	elseif result == AccountManager.AuthResults.UsernamePasswordNotSet then
@@ -180,8 +180,8 @@ function UserData:HasRobloxCredentials()
 	end
 end
 
-function UserData:SetHasRobloxCredentials(value)
-	currentUserData["RobloxCredentialsResult"] = value
+function UserData:SetHasNAMEHERECredentials(value)
+	currentUserData["NAMEHERECredentialsResult"] = value
 end
 
 function UserData:Reset()

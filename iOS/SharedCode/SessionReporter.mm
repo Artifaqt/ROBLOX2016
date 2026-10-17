@@ -1,19 +1,19 @@
 //
 //  SessionReporter.m
-//  RobloxMobile
+//  NAMEHEREMobile
 //
 //  Created by Ganesh Agrawal on 7/12/13.
-//  Copyright (c) 2013 ROBLOX. All rights reserved.
+//  Copyright (c) 2013 NAMEHERE. All rights reserved.
 //
 
 #import "SessionReporter.h"
-#import "RobloxGoogleAnalytics.h"
-#import "RobloxInfo.h"
+#import "NAMEHEREGoogleAnalytics.h"
+#import "NAMEHEREInfo.h"
 #import "PlaceLauncher.h"
 #import "UserInfo.h"
 #import "iOSSettingsService.h"
-#import "RobloxMemoryManager.h"
-#import "RobloxNotifications.h"
+#import "NAMEHEREMemoryManager.h"
+#import "NAMEHERENotifications.h"
 #import "RBXFunctions.h"
 #import "v8datamodel/Stats.h"
 #import "NSDictionary+Parsing.h"
@@ -64,11 +64,11 @@ static int calculateSessionDataEveryMilliSeconds = 100;
     points.addPoint("SessionReport" , [eventType UTF8String]);
     
 
-    [RobloxGoogleAnalytics setEventTracking:@"SessionReport" withAction:eventType withLabel:[NSString stringWithFormat:@"%ld", (long)placeId] withValue:playTime];
+    [NAMEHEREGoogleAnalytics setEventTracking:@"SessionReport" withAction:eventType withLabel:[NSString stringWithFormat:@"%ld", (long)placeId] withValue:playTime];
     
     NSString *appVersion = [[NSUserDefaults standardUserDefaults] stringForKey:@"LastRunningAppVersion"];
     if (!appVersion)
-        appVersion  = [RobloxInfo appVersion];
+        appVersion  = [NAMEHEREInfo appVersion];
     
     if ([[NSUserDefaults standardUserDefaults] objectForKey:@"LastUserLoggedIn"])
     {
@@ -78,17 +78,17 @@ static int calculateSessionDataEveryMilliSeconds = 100;
     }
     
     if([eventType isEqualToString:@APP_STATUS_CRASH])
-        [RobloxGoogleAnalytics  setEventTracking:@"CrashCountByUser"
+        [NAMEHEREGoogleAnalytics  setEventTracking:@"CrashCountByUser"
                                 withAction:appVersion
                                 withLabel:[[NSUserDefaults standardUserDefaults] stringForKey:@"LastUserLoggedIn"]
                                 withValue:0];
     
    
-    NSString *gameStateString = [[NSUserDefaults standardUserDefaults] stringForKey:@"RobloxGameState"];
-    NSString *appStateString = [[NSUserDefaults standardUserDefaults] stringForKey:@"RobloxAppState"];
+    NSString *gameStateString = [[NSUserDefaults standardUserDefaults] stringForKey:@"NAMEHEREGameState"];
+    NSString *appStateString = [[NSUserDefaults standardUserDefaults] stringForKey:@"NAMEHEREAppState"];
     if (gameStateString || appStateString)
     {
-        NSString * crashStateString = [[NSUserDefaults standardUserDefaults] stringForKey:(gameStateString ? @"RobloxGameState" : @"RobloxAppState")];
+        NSString * crashStateString = [[NSUserDefaults standardUserDefaults] stringForKey:(gameStateString ? @"NAMEHEREGameState" : @"NAMEHEREAppState")];
 
         points.addPoint("GameState" , [crashStateString UTF8String]);
         points.addPoint("FreeMemoryKB" , (int)[[NSUserDefaults standardUserDefaults] integerForKey:@KEY_FREE_MEMORY]);
@@ -112,19 +112,19 @@ static int calculateSessionDataEveryMilliSeconds = 100;
         }
     }
     
-    points.report("iOS-RobloxPlayer-SessionReport", DFInt::iOSInfluxHundredthsPercentage);
+    points.report("iOS-NAMEHEREPlayer-SessionReport", DFInt::iOSInfluxHundredthsPercentage);
     
     if ([eventType isEqualToString:@APP_STATUS_CRASH] && [[NSUserDefaults standardUserDefaults] integerForKey:@KEY_FREE_MEMORY] < (DFInt::GenerateOutOfMemoryReportIfBelowMB * 1024) && gameStateString)
         eventType = [gameStateString isEqualToString:@"inGame"] ?  @APP_OUT_OF_MEM_IN_GAME : @APP_OUT_OF_MEM_ON_LOAD;
     
-    NSString* apiUrl = [NSString stringWithFormat:@"%@/game/sessions/report?placeId=%ld&eventType=%@", [RobloxInfo getApiBaseUrl], (long)placeId, eventType];
+    NSString* apiUrl = [NSString stringWithFormat:@"%@/game/sessions/report?placeId=%ld&eventType=%@", [NAMEHEREInfo getApiBaseUrl], (long)placeId, eventType];
     NSURL *url = [NSURL URLWithString: apiUrl];
     
     NSMutableURLRequest *theRequest = [NSMutableURLRequest  requestWithURL:url
                                                             cachePolicy:NSURLRequestReloadIgnoringCacheData
                                                             timeoutInterval:60*7];
     
-    [RobloxInfo setDefaultHTTPHeadersForRequest:theRequest];
+    [NAMEHEREInfo setDefaultHTTPHeadersForRequest:theRequest];
     [theRequest setHTTPMethod:@"POST"];
     
     NSOperationQueue *queue = [[NSOperationQueue alloc] init];
@@ -232,20 +232,20 @@ static int calculateSessionDataEveryMilliSeconds = 100;
                 [analyticsPayload setObject:username forKey:@"username"];
             
             // Browser Tracker Id
-            if (![RBXFunctions isEmpty:[RobloxData browserTrackerId]])
-                [analyticsPayload setObject:[RobloxData browserTrackerId] forKey:@"browserTrackerId"];
+            if (![RBXFunctions isEmpty:[NAMEHEREData browserTrackerId]])
+                [analyticsPayload setObject:[NAMEHEREData browserTrackerId] forKey:@"browserTrackerId"];
             
             // App Version
-            if (![RBXFunctions isEmpty:[RobloxInfo appVersion]])
-                [analyticsPayload setObject:[RobloxInfo appVersion] forKey:@"appVersion"];
+            if (![RBXFunctions isEmpty:[NAMEHEREInfo appVersion]])
+                [analyticsPayload setObject:[NAMEHEREInfo appVersion] forKey:@"appVersion"];
             
             // Device Type
-            if (![RBXFunctions isEmpty:[RobloxInfo deviceType]])
-                [analyticsPayload setObject:[RobloxInfo deviceType] forKey:@"deviceType"];
+            if (![RBXFunctions isEmpty:[NAMEHEREInfo deviceType]])
+                [analyticsPayload setObject:[NAMEHEREInfo deviceType] forKey:@"deviceType"];
             
             // OS Version
-            if (![RBXFunctions isEmpty:[RobloxInfo deviceOSVersion]])
-                [analyticsPayload setObject:[RobloxInfo deviceOSVersion] forKey:@"deviceOSVersion"];
+            if (![RBXFunctions isEmpty:[NAMEHEREInfo deviceOSVersion]])
+                [analyticsPayload setObject:[NAMEHEREInfo deviceOSVersion] forKey:@"deviceOSVersion"];
             
             //HTTP Response Code
             if (responseCode)
@@ -479,7 +479,7 @@ static int calculateSessionDataEveryMilliSeconds = 100;
     if (GAContextName)
     {
         NSString* GAReportString = (result == RBXAResultSuccess) ? @"Success" : [[RBXEventReporter sharedInstance] nameForError:errorName];
-        [RobloxGoogleAnalytics setEventTracking:GAContextName
+        [NAMEHEREGoogleAnalytics setEventTracking:GAContextName
                                      withAction:GAReportString
                                       withLabel:[NSString stringWithFormat:@"%ld", (long)responseCode]
                                       withValue:0];
@@ -495,14 +495,14 @@ static int calculateSessionDataEveryMilliSeconds = 100;
         case APPLICATION_FRESH_START:
         {
             
-            NSString *gameStateString = [[NSUserDefaults standardUserDefaults] stringForKey:@"RobloxGameState"];
-            NSString *appStateString = [[NSUserDefaults standardUserDefaults] stringForKey:@"RobloxAppState"];
+            NSString *gameStateString = [[NSUserDefaults standardUserDefaults] stringForKey:@"NAMEHEREGameState"];
+            NSString *appStateString = [[NSUserDefaults standardUserDefaults] stringForKey:@"NAMEHEREAppState"];
     
             if (gameStateString || appStateString)
             {
-                NSString * crashStateString = [[NSUserDefaults standardUserDefaults] stringForKey:(gameStateString ? @"RobloxGameState" : @"RobloxAppState")];
+                NSString * crashStateString = [[NSUserDefaults standardUserDefaults] stringForKey:(gameStateString ? @"NAMEHEREGameState" : @"NAMEHEREAppState")];
                 
-                [RobloxGoogleAnalytics debugCounterIncrement:crashStateString];
+                [NAMEHEREGoogleAnalytics debugCounterIncrement:crashStateString];
                 
                 // create "terminated_gameStateString" string if needed
                 if (appStateString && [appStateString isEqualToString:@"terminated"])
@@ -513,27 +513,27 @@ static int calculateSessionDataEveryMilliSeconds = 100;
                 
                 NSString *appVersion = [[NSUserDefaults standardUserDefaults] stringForKey:@"LastRunningAppVersion"];
                 if (!appVersion)
-                    appVersion  = [RobloxInfo appVersion];
+                    appVersion  = [NAMEHEREInfo appVersion];
                 
-                [RobloxGoogleAnalytics  setEventTracking:@"CrashState"
+                [NAMEHEREGoogleAnalytics  setEventTracking:@"CrashState"
                                         withAction:appVersion
                                         withLabel:crashStateString
                                         withValue:0];
                 
                 // MemState reporting
-                NSString *memMgrStateString = [[NSUserDefaults standardUserDefaults] stringForKey:@"RobloxMemMgrState"];
+                NSString *memMgrStateString = [[NSUserDefaults standardUserDefaults] stringForKey:@"NAMEHEREMemMgrState"];
                 if (memMgrStateString)
                 {
                     
-                    [RobloxGoogleAnalytics  setEventTracking:@"RobloxMemMgrState"
+                    [NAMEHEREGoogleAnalytics  setEventTracking:@"NAMEHEREMemMgrState"
                                                   withAction:appVersion
                                                    withLabel:memMgrStateString
                                                    withValue:0];
                     
-                    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"RobloxMemMgrState"];
+                    [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"NAMEHEREMemMgrState"];
                     
                     if ([memMgrStateString isEqualToString:@"Bouncer"])
-                        [[RobloxMemoryManager sharedInstance] memBouncerCrashed];
+                        [[NAMEHEREMemoryManager sharedInstance] memBouncerCrashed];
                 }
                 
                 if (gameStateString)
@@ -546,15 +546,15 @@ static int calculateSessionDataEveryMilliSeconds = 100;
                         // Do not report to Stats if the Player did not crash, we do similar on Mac/PC/Android
                         // App Crash will not be considered into MTBF
                         [self pushSessionData:@APP_STATUS_CRASH PlaceId:placeId GamePlayTime:gamePlayTime];
-                        RBX::Analytics::EphemeralCounter::reportCounter("iOS-ROBLOXPlayer-Crash", 1, true);
-                        RBX::Analytics::EphemeralCounter::reportCounter("ROBLOXPlayer-Crash", 1, true);
+                        RBX::Analytics::EphemeralCounter::reportCounter("iOS-NAMEHEREPlayer-Crash", 1, true);
+                        RBX::Analytics::EphemeralCounter::reportCounter("NAMEHEREPlayer-Crash", 1, true);
                     }
                 }
                 else
                     [self pushSessionData:@APP_STATUS_CRASH PlaceId:0 GamePlayTime:0];
 
                 
-                [RobloxGoogleAnalytics setEventTracking:@APP_STATUS_CRASH withAction:@"UserAgent" withLabel:[RobloxInfo getUserAgentString] withValue:0];
+                [NAMEHEREGoogleAnalytics setEventTracking:@APP_STATUS_CRASH withAction:@"UserAgent" withLabel:[NAMEHEREInfo getUserAgentString] withValue:0];
                 
                 
                 
@@ -564,11 +564,11 @@ static int calculateSessionDataEveryMilliSeconds = 100;
             
             gameStateString = nil;
             appStateString = nil;
-            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"RobloxGameState"];
-            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"RobloxAppState"];
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"NAMEHEREGameState"];
+            [[NSUserDefaults standardUserDefaults] removeObjectForKey:@"NAMEHEREAppState"];
             [[NSUserDefaults standardUserDefaults] synchronize];
             
-            [[NSUserDefaults standardUserDefaults] setObject:[RobloxInfo appVersion] forKey:@"LastRunningAppVersion"];
+            [[NSUserDefaults standardUserDefaults] setObject:[NAMEHEREInfo appVersion] forKey:@"LastRunningAppVersion"];
             
             // Since we have reported the last session data time to clear it up.
             [self clearSession];
@@ -593,7 +593,7 @@ static int calculateSessionDataEveryMilliSeconds = 100;
             [self clearSession];
             
             //Scenario where user was in game, double clicked the home buton & then came back quickly and still in Game.
-            NSString *gameStateString = [[NSUserDefaults standardUserDefaults] stringForKey:@"RobloxGameState"];
+            NSString *gameStateString = [[NSUserDefaults standardUserDefaults] stringForKey:@"NAMEHEREGameState"];
             if([gameStateString isEqualToString:@"inGame"])
             {
                 [[NSUserDefaults standardUserDefaults] setDouble:[[NSDate date] timeIntervalSince1970] forKey:@KEY_GAME_START_TIME];
@@ -654,7 +654,7 @@ static int calculateSessionDataEveryMilliSeconds = 100;
             [[NSUserDefaults standardUserDefaults] synchronize];
             
             
-            iOSSettingsService * iosSettings = [[RobloxWebUtility sharedInstance] getCachediOSSettings];
+            iOSSettingsService * iosSettings = [[NAMEHEREWebUtility sharedInstance] getCachediOSSettings];
             calculateSessionDataEveryMilliSeconds = iosSettings->GetValueCalculateSessionReportEveryMilliSeconds();
             
             
@@ -698,7 +698,7 @@ static int calculateSessionDataEveryMilliSeconds = 100;
             {
                 if (hasPlayData)
                 {
-                    [RobloxInfo reportMaxMemoryUsedForPlaceID:placeId];
+                    [NAMEHEREInfo reportMaxMemoryUsedForPlaceID:placeId];
                     [self pushSessionData:@APP_STATUS_SUCCESS PlaceId:placeId GamePlayTime:gamePlayTime];
                 }
                 

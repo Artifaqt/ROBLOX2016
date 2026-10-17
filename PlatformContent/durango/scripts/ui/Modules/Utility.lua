@@ -1,4 +1,4 @@
--- Written by Kip Turner, Copyright ROBLOX 2015
+-- Written by Kip Turner, Copyright NAMEHERE 2015
 local RunService = game:GetService('RunService')
 local GuiService = game:GetService('GuiService')
 
@@ -452,7 +452,7 @@ do
 		end
 	end
 	function Util.FindAssetsInModel(object, baseUrl)
-		baseUrl = baseUrl or 'http://www.roblox.com/asset/?id='
+		baseUrl = baseUrl or 'http://www.namehere.com/asset/?id='
 		local result = {}
 		findAssetsHelper(object, result, baseUrl)
 		return result

@@ -147,10 +147,10 @@ namespace RBX
 					}
 					else if(type == "instance")
 					{
-						if(const XmlElement* robloxRoot = valueElement->findFirstChildByTag(tag_roblox)){
+						if(const XmlElement* namehereRoot = valueElement->findFirstChildByTag(tag_namehere)){
 							Serializer serializer;
 							Instances instances;
-							serializer.loadInstancesFromText(robloxRoot, instances);
+							serializer.loadInstancesFromText(namehereRoot, instances);
 							if(instances.size() == 1)
 							{
 								value = instances[0];

@@ -63,7 +63,7 @@
     <ClCompile Include="ProgressDialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\ClientShared\RobloxServicesTools.cpp">
+    <ClCompile Include="..\..\ClientShared\NAMEHEREServicesTools.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="SharedHelpers.cpp">
@@ -72,7 +72,7 @@
     <ClCompile Include="ShutdownDialog.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="ShutdownRobloxApp.cpp">
+    <ClCompile Include="ShutdownNAMEHEREApp.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="stdafx.cpp">
@@ -146,7 +146,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Roblox.inf">
+    <None Include="NAMEHERE.inf">
       <Filter>Source Files</Filter>
     </None>
     <None Include="cabsdk\BIN\CABARC.EXE">
@@ -217,7 +217,7 @@
     <ClInclude Include="Resource.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\..\ClientShared\RobloxServicesTools.h">
+    <ClInclude Include="..\..\ClientShared\NAMEHEREServicesTools.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="SharedHelpers.h">
@@ -226,7 +226,7 @@
     <ClInclude Include="ShutdownDialog.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="ShutdownRobloxApp.h">
+    <ClInclude Include="ShutdownNAMEHEREApp.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="stdafx.h">

@@ -25,7 +25,7 @@
 #include <cstdarg>
 #include <assert.h>
 
-// ROBLOX
+// NAMEHERE
 #include "../../RbxG3D/include/RbxG3D/RbxRay.h"
 // ====
 
@@ -81,7 +81,7 @@ public:
     }
 
     bool fuzzyEq(const CoordinateFrame& other) const;
-	// ROBLOX
+	// NAMEHERE
 	bool fuzzyEq(const CoordinateFrame& other, double absepsilon) const;
 	// =====
 
@@ -175,7 +175,7 @@ public:
         return Vector4(rotation * Vector3(v.x, v.y, v.z) + translation * v.w, v.w);
     }
 
-	//ROBLOX
+	//NAMEHERE
 	Line toWorldSpace(const Line& l) const;
 	//======
 	
@@ -217,7 +217,7 @@ public:
 
     class Ray toObjectSpace(const Ray& r) const;
 	
-	// ROBLOX
+	// NAMEHERE
 	RBX::RbxRay toObjectSpace(const RBX::RbxRay& r) const;
 	// ======
 
@@ -282,7 +282,7 @@ public:
                                pointToWorldSpace(other.translation));
     }
 	
-	// ROBLOX Added by DB
+	// NAMEHERE Added by DB
 	inline static void mul(const CoordinateFrame& a, const CoordinateFrame& b, CoordinateFrame& answer)
 	{
 		Matrix3::fastMul(a.rotation, b.rotation, answer.rotation);
@@ -337,7 +337,7 @@ public:
         const CoordinateFrame&  other,
         float                   alpha) const;
 
-	// Roblox
+	// NAMEHERE
 	CoordinateFrame nlerp(
 		const CoordinateFrame&  other,
 		float                   alpha) const;

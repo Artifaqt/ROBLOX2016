@@ -44,7 +44,7 @@ public:
       Constructs a line from two (not equal) points.
      */
     static Line fromTwoPoints(const Vector3 &point1, const Vector3 &point2) {
-        // ROBLOX
+        // NAMEHERE
 		//return Line(point1, point2 - point1);
 		return Line(point1, (point2 - point1).direction());
 		// =====
@@ -55,13 +55,13 @@ public:
       Creates a line from a point and a (nonzero) direction.
      */
     static Line fromPointAndDirection(const Vector3& point, const Vector3& direction) {
-        //ROBLOX
+        //NAMEHERE
 		//return Line(point, direction);
 		  return Line(point, direction.direction());
 		// =====
     }
 	
-	// ROBLOX
+	// NAMEHERE
 	static Line fromPointAndUnitDirection(const Vector3& point, const Vector3& unitDirection) {
         return Line(point, unitDirection);
     }
@@ -104,7 +104,7 @@ public:
         float m;
         return closestPoint(B, m);
     }
-	// ROBLOX
+	// NAMEHERE
 	bool static parallel(const Line& line0, const Line& line1, float epsilon) {
 		Vector3 crossAxis = line0.direction().cross(line1.direction());
 		return (crossAxis.squaredMagnitude() < (epsilon * epsilon));

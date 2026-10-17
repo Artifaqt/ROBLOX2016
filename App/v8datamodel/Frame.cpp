@@ -16,11 +16,11 @@ namespace RBX
 	{
 		addPair(Frame::CUSTOM_STYLE, "Custom");
 		addPair(Frame::BLUE_CHAT_STYLE, "ChatBlue");
-		addPair(Frame::ROBLOX_SQUARE_STYLE, "RobloxSquare");
-		addPair(Frame::ROBLOX_ROUND_STYLE, "RobloxRound");
+		addPair(Frame::NAMEHERE_SQUARE_STYLE, "NAMEHERESquare");
+		addPair(Frame::NAMEHERE_ROUND_STYLE, "NAMEHERERound");
 		addPair(Frame::GREEN_CHAT_STYLE, "ChatGreen");
 		addPair(Frame::RED_CHAT_STYLE, "ChatRed");
-		addPair(Frame::ROBLOX_DROPSHADOW_STYLE, "DropShadow");
+		addPair(Frame::NAMEHERE_DROPSHADOW_STYLE, "DropShadow");
 	}
 	}//namespace Reflection
 
@@ -40,9 +40,9 @@ namespace RBX
 			case Frame::GREEN_CHAT_STYLE:
 			case Frame::RED_CHAT_STYLE:
 				return Scale9Rect2D(getRect2D(), 17, 60);
-			case Frame::ROBLOX_SQUARE_STYLE:
-			case Frame::ROBLOX_ROUND_STYLE:
-			case Frame::ROBLOX_DROPSHADOW_STYLE:
+			case Frame::NAMEHERE_SQUARE_STYLE:
+			case Frame::NAMEHERE_ROUND_STYLE:
+			case Frame::NAMEHERE_DROPSHADOW_STYLE:
 				return Scale9Rect2D(getRect2D(), 8, 21);
 			default:
 				RBXASSERT(0);
@@ -99,21 +99,21 @@ namespace RBX
 			render2dScale9Impl2(adorn, sRed, image, rect, clippingObject, color);
 			break;
 		}
-		case Frame::ROBLOX_SQUARE_STYLE:
+		case Frame::NAMEHERE_SQUARE_STYLE:
 		{
 			Rect2D rect;
 			setBackgroundTransparency(0.0f);
 			render2dScale9Impl(adorn, sBlackSquare, Vector2int16(7,7), Vector2(14,14), image, rect, clippingObject);
 			break;
 		}
-		case Frame::ROBLOX_ROUND_STYLE:
+		case Frame::NAMEHERE_ROUND_STYLE:
 		{
 			Rect2D rect;
 			setBackgroundTransparency(0.0f);
 			render2dScale9Impl(adorn, sBlackRound, Vector2int16(7,7), Vector2(14,14), image, rect, clippingObject);
 			break;
 		}
-		case Frame::ROBLOX_DROPSHADOW_STYLE:
+		case Frame::NAMEHERE_DROPSHADOW_STYLE:
 		{
 			Rect2D rect;
 			setBackgroundTransparency(0.0f);

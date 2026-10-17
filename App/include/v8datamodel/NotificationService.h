@@ -1,6 +1,6 @@
 //
 //  NotificationService.h
-//  Copyright ROBLOX Corp 2014
+//  Copyright NAMEHERE Corp 2014
 //
 //  Created by Ganesh Agrawal on 5/15/14.
 //

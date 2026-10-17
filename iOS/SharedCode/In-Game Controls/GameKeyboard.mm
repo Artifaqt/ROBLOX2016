@@ -1,15 +1,15 @@
 //
 //  GameKeyboard.m
-//  RobloxMobile
+//  NAMEHEREMobile
 //
 //  Created by Ben Tkacheff on 10/23/12.
-//  Copyright (c) 2012 ROBLOX. All rights reserved.
+//  Copyright (c) 2012 NAMEHERE. All rights reserved.
 //
 
 #import "GameKeyboard.h"
 #import "UIScreen+PortraitBounds.h"
 #include "v8datamodel/InputObject.h"
-#import "RobloxInfo.h"
+#import "NAMEHEREInfo.h"
 
 #define TEXTVIEWHEIGHT 28
 
@@ -84,7 +84,7 @@ static void runExternalReleaseFocus(shared_ptr<RBX::TextBox> currentTextbox) {
 
 -(void)keyboardWillChangeFrame:(NSNotification *) notification
 {
-    if (![RobloxInfo isDeviceOSVersionPreiOS8])
+    if (![NAMEHEREInfo isDeviceOSVersionPreiOS8])
     {
         dispatch_async(dispatch_get_main_queue(),^{
             //use information pulled from the notification to reposition the keyboard

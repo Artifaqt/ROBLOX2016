@@ -1,9 +1,9 @@
 //
 //  GameKitHelper.h
-//  RobloxMobile
+//  NAMEHEREMobile
 //
 //  Created by Ganesh on 5/2/14.
-//  Copyright (c) 2014 ROBLOX. All rights reserved.
+//  Copyright (c) 2014 NAMEHERE. All rights reserved.
 //
 
 //   Include the GameKit framework

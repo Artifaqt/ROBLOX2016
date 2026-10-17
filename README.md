@@ -1,6 +1,6 @@
-# Roblox
+# NAMEHERE
 
-This is a version of Roblox from 2016 with its source code fixed. The base used is from git.rip, from https://git.rip/exconfidential/roblox/roblox.
+This is a version of NAMEHERE from 2016 with its source code fixed. The base used is from git.rip, from https://git.rip/exconfidential/namehere/namehere.
 
 ## Warning(s)
 
@@ -24,16 +24,16 @@ You will need the following to compile, for Windows:
 ```sh
 $ ./configure -make nmake -platform win32-msvc2015 -prefix ${path}\Library\Qt -opensource -confirm-license -opengl desktop -nomake examples -nomake tests -webkit -xmlpatterns
 ```
-4. Example command if I kept the repository in `D:\Roblox\Source`:
+4. Example command if I kept the repository in `D:\NAMEHERE\Source`:
 ```sh
-$ ./configure -make nmake -platform win32-msvc2015 -prefix D:\Roblox\Source\Library\Qt -opensource -confirm-license -opengl desktop -nomake examples -nomake tests -webkit -xmlpatterns
+$ ./configure -make nmake -platform win32-msvc2015 -prefix D:\NAMEHERE\Source\Library\Qt -opensource -confirm-license -opengl desktop -nomake examples -nomake tests -webkit -xmlpatterns
 ```
 5. That will configure everything. Once it is finished, run `nmake`. If you get an error for `rc` not being recognized, add your SDK to PATH.
 6. It should eventually stop and break somewhere, but by that time, you will have all the libraries you need.
 7. Congratulations! You *partially* compiled Qt.
 
-### Main Roblox projects
-Simply open up Roblox.sln and build. Everything listed as able to compile will compile, unless you're doing something wrong.
+### Main NAMEHERE projects
+Simply open up NAMEHERE.sln and build. Everything listed as able to compile will compile, unless you're doing something wrong.
 
 ## Libraries
 Library names suffixed with an asterisk (\*) denote a library that is currently out of date.
@@ -71,10 +71,10 @@ This is a complete and comprehensive list of all the major changes made to the o
 	- [x] RbxTestHooks
 	- [ ] Base.UnitTest
 	- [ ] App.UnitTest
-	- [x] RobloxStudio
+	- [x] NAMEHEREStudio
 	- [x] Log
 	- [x] WindowsClient
-	- [ ] RobloxTest
+	- [ ] NAMEHERETest
 	- [x] GfxCore
 	- [x] GfxRender
 	- [x] CSG
@@ -85,15 +85,15 @@ This is a complete and comprehensive list of all the major changes made to the o
 	- [ ] XboxClient
 	- [ ] Bootstrapper
 	- [ ] BootstrapperClient
-	- [x] RobloxProxy
-	- [x] NPRobloxProxy
+	- [x] NAMEHEREProxy
+	- [x] NPNAMEHEREProxy
 	- [ ] BootstrapperQTStudio
 	- [ ] BootstrapperRCCService
 	- [ ] RCCServiceArbiter
-	- [x] RobloxModelAnalyzer
+	- [x] NAMEHEREModelAnalyzer
 	- [ ] Extract RbxDebug source files from bin/obj files
 	- [ ] MacClient
-	- [ ] RobloxMac
+	- [ ] NAMEHEREMac
 	- [ ] Android
 	- [ ] iOS
 - [ ] Backported features

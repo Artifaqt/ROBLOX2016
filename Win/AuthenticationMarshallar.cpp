@@ -35,7 +35,7 @@ std::string AuthenticationMarshallar::Authenticate(const char* url, const char* 
 {
 	try
 	{
-		// Post our ticket back to Roblox to suggest a re-authentication
+		// Post our ticket back to NAMEHERE to suggest a re-authentication
 		std::string result;
 		{
 			RBX::Http http(buildUrl(url, ticket).c_str());

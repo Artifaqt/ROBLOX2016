@@ -17,7 +17,7 @@
 #include "util/ThreadPool.h"
 #include "v8datamodel/Stats.h"
 #include "v8datamodel/DebugSettings.h"
-#include "util/RobloxGoogleAnalytics.h"
+#include "util/NAMEHEREGoogleAnalytics.h"
 
 #include <sys/types.h>
 #include <sys/stat.h>
@@ -68,8 +68,8 @@ using namespace RBX::HttpPlatformImpl;
 
 namespace
 {
-static std::string robloxCookieOverrideDomain;
-static std::string robloxCookieOverride;
+static std::string namehereCookieOverrideDomain;
+static std::string namehereCookieOverride;
 
 static std::string proxyHost = "";
 static long proxyPort = 0;
@@ -955,7 +955,7 @@ public:
                         boost::mutex::scoped_lock lock(mutex);
                         for (std::string line; std::getline(logBuffer, line); )
                         {
-                            RobloxGoogleAnalytics::sendEventRoblox("CURLE_SSL_CONNECT_ERROR", "custom", Http::urlEncode(line).c_str());
+                            NAMEHEREGoogleAnalytics::sendEventNAMEHERE("CURLE_SSL_CONNECT_ERROR", "custom", Http::urlEncode(line).c_str());
                         }
                     }
                     }
@@ -1167,7 +1167,7 @@ void init(Http::CookieSharingPolicy cookieSharingPolicy)
         logCurlError(NULL, "CURLSHOPT_SHARE", curl_share_setopt(gCurlsh.get(), CURLSHOPT_SHARE, CURL_LOCK_DATA_DNS));
         logCurlError(NULL, "CURLSHOPT_SHARE", curl_share_setopt(gCurlsh.get(), CURLSHOPT_SHARE, CURL_LOCK_DATA_SSL_SESSION));
         
-        setCookiesForDomain(robloxCookieOverrideDomain, robloxCookieOverride);
+        setCookiesForDomain(namehereCookieOverrideDomain, namehereCookieOverride);
 
         {
             boost::function0<void> f = boost::bind(&CacheStatistics::initializeCachingThreadHandler);
@@ -1193,7 +1193,7 @@ void setCookiesForDomain(const std::string& domain, const std::string& cookies)
             return;
         
         // Do Domain trimming only for BaseURL's, only trim www. or m.,
-        // This allows to propogate cookies accross www, m, web, api for all roblox baseURL sub domains
+        // This allows to propogate cookies accross www, m, web, api for all namehere baseURL sub domains
         std::string trimmedDomain = domain;
         if (DFFlag::HttpCurlDomainTrimmingWithBaseURL)
         {
@@ -1258,8 +1258,8 @@ void setCookiesForDomain(const std::string& domain, const std::string& cookies)
     }
     else
     {
-        robloxCookieOverrideDomain = domain;
-        robloxCookieOverride = cookies;
+        namehereCookieOverrideDomain = domain;
+        namehereCookieOverride = cookies;
     }
 }
 

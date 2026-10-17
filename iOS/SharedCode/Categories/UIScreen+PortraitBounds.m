@@ -1,9 +1,9 @@
 //
 //  UIScreen+PortraitSize.m
-//  RobloxMobile
+//  NAMEHEREMobile
 //
 //  Created by Ariel Lichtin on 9/9/14.
-//  Copyright (c) 2014 ROBLOX. All rights reserved.
+//  Copyright (c) 2014 NAMEHERE. All rights reserved.
 //
 
 #import "UIScreen+PortraitBounds.h"

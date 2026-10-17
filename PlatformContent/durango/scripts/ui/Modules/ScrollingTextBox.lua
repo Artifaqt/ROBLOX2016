@@ -7,7 +7,7 @@
 			// NOTE: Add any api needed to further expand this module
 ]]
 local CoreGui = Game:GetService("CoreGui")
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 local GuiService = game:GetService('GuiService')
 

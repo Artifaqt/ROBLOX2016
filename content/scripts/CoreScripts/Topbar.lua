@@ -1,7 +1,7 @@
 --[[
 	// FileName: Topbar.lua
 	// Written by: SolarCrane
-	// Description: Code for lua side Top Menu items in ROBLOX.
+	// Description: Code for lua side Top Menu items in NAMEHERE.
 ]]
 
 
@@ -24,7 +24,7 @@ local HEALTH_GREEN_COLOR = Color3.new(27/255, 252/255, 107/255)
 
 local HEALTH_PERCANTAGE_FOR_OVERLAY = 5 / 100
 
-local HURT_OVERLAY_IMAGE = "http://www.roblox.com/asset/?id=34854607"
+local HURT_OVERLAY_IMAGE = "http://www.namehere.com/asset/?id=34854607"
 
 local DEBOUNCE_TIME = 0.25
 
@@ -66,7 +66,7 @@ while Player == nil do
 	Player = PlayersService.LocalPlayer
 end
 
-local GuiRoot = CoreGuiService:WaitForChild('RobloxGui')
+local GuiRoot = CoreGuiService:WaitForChild('NAMEHEREGui')
 
 local TenFootInterface = require(GuiRoot.Modules.TenFootInterface)
 local isTenFootInterface = TenFootInterface:IsEnabled()
@@ -662,9 +662,9 @@ end
 --- SETTINGS ---
 local function CreateSettingsIcon(topBarInstance)
 	local MenuModule = nil
-	game.CoreGui.RobloxGui.Modules:WaitForChild("Settings")
-	game.CoreGui.RobloxGui.Modules.Settings:WaitForChild("SettingsHub")
-	MenuModule = require(game.CoreGui.RobloxGui.Modules.Settings.SettingsHub)
+	game.CoreGui.NAMEHEREGui.Modules:WaitForChild("Settings")
+	game.CoreGui.NAMEHEREGui.Modules.Settings:WaitForChild("SettingsHub")
+	MenuModule = require(game.CoreGui.NAMEHEREGui.Modules.Settings.SettingsHub)
 
 	local settingsIconButton = Util.Create'ImageButton'
 	{

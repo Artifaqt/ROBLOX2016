@@ -1,22 +1,22 @@
 //
 //  CrashReporter.m
-//  RobloxMobile
+//  NAMEHEREMobile
 //
 //  Created by Ganesh Agrawal on 6/25/13.
-//  Copyright (c) 2013 ROBLOX. All rights reserved.
+//  Copyright (c) 2013 NAMEHERE. All rights reserved.
 //
 
 #import "CrashReporter.h"
-#import "RobloxCachedFlags.h"
-#import "RobloxWebUtility.h"
+#import "NAMEHERECachedFlags.h"
+#import "NAMEHEREWebUtility.h"
 #import "util/standardout.h"
 #import "ObjectiveCUtilities.h"
 #include "FastLog.h"
-#import "RobloxGoogleAnalytics.h"
+#import "NAMEHEREGoogleAnalytics.h"
 #import <Crashlytics/Crashlytics.h>
 
 // DO NOT RELEASE WITH TESTING ENABLED FOR APP STORE SUBMIT
-//#define ROBLOX_TESTING 1
+//#define NAMEHERE_TESTING 1
 
 @implementation CrashReporter
 
@@ -111,11 +111,11 @@ static void fastLogMesage(FLog::Channel id, const char* message)
 
 - (void) setup
 {
-    [[RobloxCachedFlags sharedInstance] sync];
+    [[NAMEHERECachedFlags sharedInstance] sync];
     
     
-    NSString *gameStateString = [[NSUserDefaults standardUserDefaults] stringForKey:@"RobloxGameState"];
-    NSString *appStateString = [[NSUserDefaults standardUserDefaults] stringForKey:@"RobloxAppState"];
+    NSString *gameStateString = [[NSUserDefaults standardUserDefaults] stringForKey:@"NAMEHEREGameState"];
+    NSString *appStateString = [[NSUserDefaults standardUserDefaults] stringForKey:@"NAMEHEREAppState"];
     
     // clear out if we cleanly exited
     if ([appStateString isEqualToString:@"inBackground"] || [appStateString isEqualToString:@"terminated"] )
@@ -141,7 +141,7 @@ static void fastLogMesage(FLog::Channel id, const char* message)
     int rnd = (rand() % 100) + 1;
     
     NSInteger pctCrashlytics = 0;
-    BOOL bCrashlytics = [[RobloxCachedFlags sharedInstance] getInt:@"CrashlyticsPercentage" withValue:&pctCrashlytics];
+    BOOL bCrashlytics = [[NAMEHERECachedFlags sharedInstance] getInt:@"CrashlyticsPercentage" withValue:&pctCrashlytics];
 
     if (bCrashlytics && pctCrashlytics > 0)
     {
@@ -173,7 +173,7 @@ static void fastLogMesage(FLog::Channel id, const char* message)
     RBX::MessageType messageType = message.type;
     dispatch_async(dispatch_get_global_queue(DISPATCH_QUEUE_PRIORITY_LOW, 0), ^{
         
-        iOSSettingsService * iosSettings = [[RobloxWebUtility sharedInstance] getCachediOSSettings];
+        iOSSettingsService * iosSettings = [[NAMEHEREWebUtility sharedInstance] getCachediOSSettings];
         int tfLoggingLevel = iosSettings->GetValueCrashLoggingLevel();
         
         if ( messageType >= tfLoggingLevel )

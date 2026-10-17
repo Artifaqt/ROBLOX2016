@@ -1,5 +1,5 @@
 local scriptContext = game:GetService("ScriptContext")
-local rbxGui = Game:GetService("CoreGui"):FindFirstChild("RobloxGui")
+local rbxGui = Game:GetService("CoreGui"):FindFirstChild("NAMEHEREGui")
 
 scriptContext:AddCoreScriptLocal("CoreScripts/AppHome", rbxGui)
 

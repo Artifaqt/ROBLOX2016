@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.roblox.client.components.RbxTextView xmlns:android="http://schemas.android.com/apk/res/android"
+<com.namehere.client.components.RbxTextView xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="fill_parent"
     android:layout_height="fill_parent"
     android:id="@+id/rbxSpinnerItem"
@@ -8,4 +8,4 @@
     android:textAlignment="center"
     android:textSize="20sp"
     android:padding="5dp"
-    style="@style/Theme.Roblox.StandardFontLight"/>
+    style="@style/Theme.NAMEHERE.StandardFontLight"/>

@@ -27,7 +27,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:src="@drawable/roblox_logo"/>
+                android:src="@drawable/namehere_logo"/>
         </LinearLayout>
         <LinearLayout
             android:layout_width="match_parent"
@@ -41,7 +41,7 @@
                 android:layout_height="35dp"
                 style="@android:style/Widget.ProgressBar.Small"
                 android:indeterminateDrawable="@drawable/rbx_spinner_splash" />
-            <com.roblox.client.components.RbxTextView
+            <com.namehere.client.components.RbxTextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="Loading..."

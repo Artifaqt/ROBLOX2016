@@ -111,7 +111,7 @@ bool SystemAddress::EqualsExcludingPort( const SystemAddress& right ) const
 		;
 }
 
-// Roblox
+// NAMEHERE
 unsigned long SystemAddress::GetBinaryAddress(void) const
 {
 //#if RAKNET_SUPPORT_IPV6==1

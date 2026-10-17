@@ -1,4 +1,4 @@
-/* Copyright 2003-2006 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2006 NAMEHERE Corporation, All Rights Reserved */
 
 
 // third time's the charm
@@ -29,10 +29,10 @@
 
 #include <boost/algorithm/string.hpp>
 
-FASTSTRINGVARIABLE(ClientExternalBrowserUserAgent, "Roblox/WinInet")
+FASTSTRINGVARIABLE(ClientExternalBrowserUserAgent, "NAMEHERE/WinInet")
 
-#define ROBLOX_URL_IDENTIFIER "roblox.com/"
-#define ROBLOXLABS_URL_IDENTIFIER ".robloxlabs.com/"
+#define NAMEHERE_URL_IDENTIFIER "namehere.com/"
+#define NAMEHERELABS_URL_IDENTIFIER ".nameherelabs.com/"
 
 #pragma comment (lib, "Ws2_32.lib")
 
@@ -212,24 +212,24 @@ bool RBX::Network::isTrustedContent(const char* url)
 	std::string urlString(url);
 	boost::algorithm::to_lower(urlString);
 
-    bool isRobloxLabsUrl = false;
-	size_t foundPos = urlString.find(ROBLOX_URL_IDENTIFIER);
+    bool isNAMEHERELabsUrl = false;
+	size_t foundPos = urlString.find(NAMEHERE_URL_IDENTIFIER);
 	if(foundPos == std::string::npos)
     {
-        foundPos = urlString.find(ROBLOXLABS_URL_IDENTIFIER);
+        foundPos = urlString.find(NAMEHERELABS_URL_IDENTIFIER);
         if(foundPos == std::string::npos)
             return false;
         
-        isRobloxLabsUrl = true;
+        isNAMEHERELabsUrl = true;
     }
     
 	urlString = urlString.substr(foundPos,std::string::npos); // remove all of string before URL_IDENTIFIER
     
      // put our iterator at end of URL_IDENTIFIER
-    if(isRobloxLabsUrl)
-        foundPos = sizeof(ROBLOXLABS_URL_IDENTIFIER) - 1;
+    if(isNAMEHERELabsUrl)
+        foundPos = sizeof(NAMEHERELABS_URL_IDENTIFIER) - 1;
     else
-        foundPos = sizeof(ROBLOX_URL_IDENTIFIER) - 1;
+        foundPos = sizeof(NAMEHERE_URL_IDENTIFIER) - 1;
 
 	while(foundPos < urlString.size() && (urlString[foundPos] == '\\' || urlString[foundPos] == '/'))
 		++foundPos;

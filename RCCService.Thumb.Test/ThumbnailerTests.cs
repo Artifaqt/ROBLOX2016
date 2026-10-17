@@ -3,13 +3,13 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Roblox.Grid.Rcc;
-using Roblox.Grid;
+using NAMEHERE.Grid.Rcc;
+using NAMEHERE.Grid;
 using System.Diagnostics;
 using System.IO;
 using RCCService.Test;
 using Microsoft.Ccr.Core;
-using Roblox;
+using NAMEHERE;
 
 namespace RCCService.Test.Thumb
 {
@@ -85,15 +85,15 @@ namespace RCCService.Test.Thumb
             {
                 var result = new PortSet<LuaValue[], Exception>();
                 TimeSpan timeout = TimeSpan.FromMinutes(THUMBNAIL_JOB_TIMEOUT);
-                Roblox.Grid.Rcc.Job job = new Roblox.Grid.Rcc.Job(); // ScriptJob(0, timeout, script);
+                NAMEHERE.Grid.Rcc.Job job = new NAMEHERE.Grid.Rcc.Job(); // ScriptJob(0, timeout, script);
                 job.id = "TestToolThumJob " + Guid.NewGuid();
                 job.expirationInSeconds = (int)timeout.TotalSeconds;
                 job.category = 0;
                 RCCServiceSoap service = null;
                 try
                 {
-                    service = Roblox.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port);
-                    Roblox.Common.AsyncHelper.Call(service.BeginBatchJobEx, job, script, service.EndBatchJobEx, result, timeout, service.Dispose );
+                    service = NAMEHERE.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port);
+                    NAMEHERE.Common.AsyncHelper.Call(service.BeginBatchJobEx, job, script, service.EndBatchJobEx, result, timeout, service.Dispose );
                 }
                 catch (Exception)
                 {
@@ -135,9 +135,9 @@ namespace RCCService.Test.Thumb
         }
         public void RunScript(ScriptExecution script)
         {
-            using (RCCServiceSoap service = Roblox.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port))
+            using (RCCServiceSoap service = NAMEHERE.Grid.Common.GridServiceUtils.GetService(serviceUri.Host, serviceUri.Port))
             {
-                Roblox.Grid.Rcc.Job job = new Roblox.Grid.Rcc.Job(); // ScriptJob(0, timeout, script);
+                NAMEHERE.Grid.Rcc.Job job = new NAMEHERE.Grid.Rcc.Job(); // ScriptJob(0, timeout, script);
                 job.id = "TestToolThumJob" + DateTime.Now.ToString() + "_" + DateTime.Now.Millisecond.ToString();
                 job.expirationInSeconds = (int)TimeSpan.FromMinutes(THUMBNAIL_JOB_TIMEOUT).TotalSeconds;
                 job.category = 0;
@@ -231,7 +231,7 @@ namespace RCCService.Test.Thumb
         [TestMethod]
         public void TestNewHeadThumbOnGT1()
         {
-            using (LuaScripts.pushBaseUrl("http://www.gametest1.robloxlabs.com/"))
+            using (LuaScripts.pushBaseUrl("http://www.gametest1.nameherelabs.com/"))
             {
                 RunScript(LuaScripts.MakeHeadScript(8330578, 1024, 1024));  // Peabody head
             }
@@ -240,14 +240,14 @@ namespace RCCService.Test.Thumb
         [TestMethod]
         public void TestShirtThumbOnGT1()
         {
-            using (LuaScripts.pushBaseUrl("http://www.gametest1.robloxlabs.com/"))
+            using (LuaScripts.pushBaseUrl("http://www.gametest1.nameherelabs.com/"))
             {
                 RunScript(LuaScripts.MakeCustomThumbScript(LuaScripts.ShirtScript,
-                    "http://www.gametest1.robloxlabs.com/asset/?id=81522820",
+                    "http://www.gametest1.nameherelabs.com/asset/?id=81522820",
                     "PNG",
                     1024, 1024,
                     LuaScripts.getBaseUrl(),
-                    "http://www.roblox.com/asset/?id=242902171"));  //Roblox'S avatar
+                    "http://www.namehere.com/asset/?id=242902171"));  //NAMEHERE'S avatar
 
             }
         }
@@ -270,7 +270,7 @@ namespace RCCService.Test.Thumb
         {
             {
                 RunScript(LuaScripts.MakeCustomThumbScript(LuaScripts.AvatarThumbScript,
-                    "http://www.roblox.com/Asset/AvatarAccoutrements.ashx?userId=1127502",
+                    "http://www.namehere.com/Asset/AvatarAccoutrements.ashx?userId=1127502",
                     LuaScripts.getBaseUrl(),
                     "PNG",
                     1024, 1024));  //RENDERMAN'S avatar
@@ -280,27 +280,27 @@ namespace RCCService.Test.Thumb
         [TestMethod]
         public void TestMeshModelOnGT1()
         {
-            using (LuaScripts.pushBaseUrl("http://www.gametest1.roblox.com/"))
+            using (LuaScripts.pushBaseUrl("http://www.gametest1.namehere.com/"))
             {
                 RunScript(LuaScripts.MakeCustomThumbScript(LuaScripts.BodyPartScript,
-                    "http://www.gametest1.roblox.com/Bear-Torso-item?id=25308616",
-                    "http://www.gametest1.roblox.com/",
+                    "http://www.gametest1.namehere.com/Bear-Torso-item?id=25308616",
+                    "http://www.gametest1.namehere.com/",
                     "PNG",
                     1024, 1024,
-                    "http://www.gametest1.roblox.com/Asset/?id=1785197"));
+                    "http://www.gametest1.namehere.com/Asset/?id=1785197"));
             }
         }
         [TestMethod]
-        public void TestRobloxAvatarThumbOnGT1()
+        public void TestNAMEHEREAvatarThumbOnGT1()
         {
-            using (LuaScripts.pushBaseUrl("http://www.gametest1.robloxlabs.com/"))
+            using (LuaScripts.pushBaseUrl("http://www.gametest1.nameherelabs.com/"))
             {
                 RunScript(LuaScripts.MakeCustomThumbScript(LuaScripts.AvatarThumbScript,
-                    "http://www.gametest1.robloxlabs.com/Asset/AvatarAccoutrements.ashx?userId=1",
+                    "http://www.gametest1.nameherelabs.com/Asset/AvatarAccoutrements.ashx?userId=1",
                     LuaScripts.getBaseUrl(),
                     "PNG",
                     1024, 1024,
-                    "http://www.roblox.com/Asset/AvatarAccoutrements.ashx?userId=504316"));  //Roblox'S avatar
+                    "http://www.namehere.com/Asset/AvatarAccoutrements.ashx?userId=504316"));  //NAMEHERE'S avatar
             }
         }
 
@@ -309,11 +309,11 @@ namespace RCCService.Test.Thumb
         {
             {
                 RunScript(LuaScripts.MakeCustomThumbScript(LuaScripts.BodyPartScript,
-                    "http://www.roblox.com/Bear-Torso-item?id=25004305",
-                    "http://www.roblox.com/",
+                    "http://www.namehere.com/Bear-Torso-item?id=25004305",
+                    "http://www.namehere.com/",
                     "PNG",
                     1024, 1024,
-                    "http://www.roblox.com/Asset/?id=1785197"));  //RENDERMAN'S avatar
+                    "http://www.namehere.com/Asset/?id=1785197"));  //RENDERMAN'S avatar
             }
         }
 
@@ -321,7 +321,7 @@ namespace RCCService.Test.Thumb
         public void TestBrightEyesAvatarThumb()
         {
             RunScript(LuaScripts.MakeCustomThumbScript(LuaScripts.AvatarThumbScript,
-                "http://www.roblox.com/Asset/AvatarAccoutrements.ashx?userId=504316",
+                "http://www.namehere.com/Asset/AvatarAccoutrements.ashx?userId=504316",
                     LuaScripts.getBaseUrl(),
                     "PNG",
                     1024, 1024));  
@@ -331,7 +331,7 @@ namespace RCCService.Test.Thumb
         public void TestTheLastBunnyAvatarThumb()
         {
             RunScript(LuaScripts.MakeCustomThumbScript(LuaScripts.AvatarThumbScript,
-                "http://www.roblox.com/Asset/AvatarAccoutrements.ashx?userId=4052914",
+                "http://www.namehere.com/Asset/AvatarAccoutrements.ashx?userId=4052914",
                     LuaScripts.getBaseUrl(),
                     "PNG",
                     1024, 1024));
@@ -352,7 +352,7 @@ namespace RCCService.Test.Thumb
         [TestMethod]
         public void TestGearWithCameraOnGT1()
         {
-            using (LuaScripts.pushBaseUrl("http://www.gametest1.roblox.com/"))
+            using (LuaScripts.pushBaseUrl("http://www.gametest1.namehere.com/"))
             {
                 RunScript(LuaScripts.MakeGearThumbScript(73089239, 0, 1024, 1024));
             }

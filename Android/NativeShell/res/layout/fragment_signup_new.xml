@@ -1,4 +1,4 @@
-<com.roblox.client.components.RbxLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.namehere.client.components.RbxLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:id="@+id/fragment_sign_up_background"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -14,4 +14,4 @@
         android:weightSum="10">
 
     </LinearLayout>
-</com.roblox.client.components.RbxLinearLayout>
+</com.namehere.client.components.RbxLinearLayout>

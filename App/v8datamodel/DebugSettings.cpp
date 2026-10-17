@@ -1,4 +1,4 @@
-/* Copyright 2003-2005 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2005 NAMEHERE Corporation, All Rights Reserved */
 #include "stdafx.h"
 
 #include "V8DataModel/DebugSettings.h"
@@ -104,12 +104,12 @@ EnumDesc<Time::SampleMethod>::EnumDesc()
 }//namespace Reflection
 }//namespace RBX
 
-std::string DebugSettings::robloxVersion = "?";
-std::string DebugSettings::robloxProductName = "?";
+std::string DebugSettings::namehereVersion = "?";
+std::string DebugSettings::namehereProductName = "?";
 
 REFLECTION_BEGIN();
-static Reflection::PropDescriptor<DebugSettings, std::string> prop_RobloxVersion("RobloxVersion", "Profile", &DebugSettings::getRobloxVersion, NULL);
-static Reflection::PropDescriptor<DebugSettings, std::string> prop_RobloxProductName("RobloxProductName", "Profile", &DebugSettings::getRobloxProductName, NULL);
+static Reflection::PropDescriptor<DebugSettings, std::string> prop_NAMEHEREVersion("NAMEHEREVersion", "Profile", &DebugSettings::getNAMEHEREVersion, NULL);
+static Reflection::PropDescriptor<DebugSettings, std::string> prop_NAMEHEREProductName("NAMEHEREProductName", "Profile", &DebugSettings::getNAMEHEREProductName, NULL);
 static Reflection::PropDescriptor<DebugSettings, float> prop_getVertexShaderModel("VertexShaderModel", "Profile", &DebugSettings::getVertexShaderModel, NULL);
 static Reflection::PropDescriptor<DebugSettings, float> prop_getPixelShaderModel("PixelShaderModel", "Profile", &DebugSettings::getPixelShaderModel, NULL);
 static Reflection::PropDescriptor<DebugSettings, int> prop_videoMemory("VideoMemory", "Profile", &DebugSettings::videoMemory, NULL);
@@ -149,9 +149,9 @@ static Reflection::PropDescriptor<DebugSettings, int> prop_AltCdnSuccesses("AltC
 static Reflection::PropDescriptor<DebugSettings, int> prop_AltCdnFailures("AltCdnFailureCount", "Performance", &DebugSettings::getAlternateCdnFailureCount, NULL);
 static Reflection::PropDescriptor<DebugSettings, int> prop_blockMeshMapSize("BlockMeshSize", "Performance", &DebugSettings::getBlockMeshMapCount, NULL);
 static Reflection::PropDescriptor<DebugSettings, double> prop_LastCdnFailureTimeSpan("LastCdnFailureTimeSpan", "Performance", &DebugSettings::getLastCdnFailureTimeSpan, NULL);
-static Reflection::PropDescriptor<DebugSettings, int> prop_robloxSuccesses("RobloxSuccessCount", "Performance", &DebugSettings::getRobloxSuccessCount, NULL);
-static Reflection::PropDescriptor<DebugSettings, int> prop_robloxFailures("RobloxFailureCount", "Performance", &DebugSettings::getRobloxFalureCount, NULL);
-static Reflection::PropDescriptor<DebugSettings, double> prop_robloxResponce("RobloxRespoceTime", "Performance", &DebugSettings::getRobloxResponce, NULL);
+static Reflection::PropDescriptor<DebugSettings, int> prop_namehereSuccesses("NAMEHERESuccessCount", "Performance", &DebugSettings::getNAMEHERESuccessCount, NULL);
+static Reflection::PropDescriptor<DebugSettings, int> prop_namehereFailures("NAMEHEREFailureCount", "Performance", &DebugSettings::getNAMEHEREFalureCount, NULL);
+static Reflection::PropDescriptor<DebugSettings, double> prop_namehereResponce("NAMEHERERespoceTime", "Performance", &DebugSettings::getNAMEHEREResponce, NULL);
 static Reflection::PropDescriptor<DebugSettings, double> prop_cdnReponce("CdnResponceTime", "Performance", &DebugSettings::getCdnRespoce, NULL);
 static Reflection::BoundFuncDesc<DebugSettings, shared_ptr<const Reflection::Tuple>()> prop_ResetCdnFailures(&DebugSettings::resetCdnFailureCounts, "ResetCdnFailureCounts", Security::LocalUser);
 
@@ -354,22 +354,22 @@ long DebugSettings::getAlternateCdnFailureCount() const
 {
 	return Http::alternateCdnFailureCount;
 }
-long DebugSettings::getRobloxSuccessCount() const
+long DebugSettings::getNAMEHERESuccessCount() const
 {
-	return Http::robloxSuccessCount;
+	return Http::namehereSuccessCount;
 }
-long DebugSettings::getRobloxFalureCount() const
+long DebugSettings::getNAMEHEREFalureCount() const
 {
-	return Http::robloxFailureCount;
+	return Http::namehereFailureCount;
 }
-double DebugSettings::getRobloxResponce() const
+double DebugSettings::getNAMEHEREResponce() const
 {
-	if (!Http::getRobloxResponceLock())
+	if (!Http::getNAMEHEREResponceLock())
 	{
 		return 0;
 	}
-	RBX::mutex::scoped_lock lock(*Http::getRobloxResponceLock());
-	return Http::robloxResponce.getStats().average;
+	RBX::mutex::scoped_lock lock(*Http::getNAMEHEREResponceLock());
+	return Http::namehereResponce.getStats().average;
 }
 
 double DebugSettings::getCdnRespoce() const
@@ -389,15 +389,15 @@ shared_ptr<const Reflection::Tuple> DebugSettings::resetCdnFailureCounts()
 	result->values[1] = Http::cdnFailureCount.swap(0);
 	result->values[2] = Http::alternateCdnSuccessCount.swap(0);
 	result->values[3] = Http::alternateCdnFailureCount.swap(0);
-	result->values[4] = Http::robloxSuccessCount.swap(0);
-	result->values[5] = Http::robloxFailureCount.swap(0);
+	result->values[4] = Http::namehereSuccessCount.swap(0);
+	result->values[5] = Http::namehereFailureCount.swap(0);
 
 	{
-		if (Http::getRobloxResponceLock())
+		if (Http::getNAMEHEREResponceLock())
 		{
-			RBX::mutex::scoped_lock lock(*Http::getRobloxResponceLock());
-			result->values[6] = Http::robloxResponce.getStats().average;
-			Http::robloxResponce.clear();
+			RBX::mutex::scoped_lock lock(*Http::getNAMEHEREResponceLock());
+			result->values[6] = Http::namehereResponce.getStats().average;
+			Http::namehereResponce.clear();
 		}
 		else
 		{

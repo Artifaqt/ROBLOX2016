@@ -1,14 +1,14 @@
 //
 //  NotificationHelper.m
-//  RobloxMobile
+//  NAMEHEREMobile
 //
 //  Created by Ganesh on 5/14/14.
-//  Copyright (c) 2014 ROBLOX. All rights reserved.
+//  Copyright (c) 2014 NAMEHERE. All rights reserved.
 //
 
 #import <UIKit/UIKit.h>
 #import "NotificationHelper.h"
-#import "RobloxWebUtility.h"
+#import "NAMEHEREWebUtility.h"
 #import <UIKit/UIKit.h>
 
 @implementation NotificationHelper
@@ -154,7 +154,7 @@
     
     if (pendingNotifications.count != 0)
     {
-        iOSSettingsService * iosSettings = [[RobloxWebUtility sharedInstance] getCachediOSSettings];
+        iOSSettingsService * iosSettings = [[NAMEHEREWebUtility sharedInstance] getCachediOSSettings];
         int maxNotificationsPerUser = iosSettings->GetValueMaxLocalNotificationsPerUserID();
         int maxNotifications = iosSettings->GetValueMaxLocalNotifications();
         

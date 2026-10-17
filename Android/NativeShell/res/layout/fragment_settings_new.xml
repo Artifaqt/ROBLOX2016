@@ -19,60 +19,60 @@
             android:background="@color/white"
             android:id="@+id/top" >
 
-            <com.roblox.client.components.RbxGenderPicker
+            <com.namehere.client.components.RbxGenderPicker
                 android:layout_width="375dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="100dp"
-                style="@style/Theme.Roblox.StandardFontRegular" />
+                style="@style/Theme.NAMEHERE.StandardFontRegular" />
 
-            <com.roblox.client.components.RbxBirthdayPicker
+            <com.namehere.client.components.RbxBirthdayPicker
                 android:layout_width="375dp"
                 android:layout_height="50dp"
                 android:layout_gravity="center"
                 android:layout_marginTop="30dp"
-                style="@style/Theme.Roblox.StandardFontLight" />
+                style="@style/Theme.NAMEHERE.StandardFontLight" />
 
-            <com.roblox.client.components.RbxButton
+            <com.namehere.client.components.RbxButton
                 android:layout_width="250dp"
                 android:layout_height="50dp"
                 android:text="Test Button"
                 android:id="@+id/button"
                 android:layout_gravity="center"
                 android:layout_marginTop="100dp"
-                style="@style/Theme.Roblox.Button.Flat.White" />
-            <com.roblox.client.components.RbxButton
+                style="@style/Theme.NAMEHERE.Button.Flat.White" />
+            <com.namehere.client.components.RbxButton
                 android:layout_width="250dp"
                 android:layout_height="100dp"
                 android:text="Longer Test Button"
                 android:id="@+id/button2"
                 android:layout_gravity="center"
-                style="@style/Theme.Roblox.Button.Flat.Blue"
+                style="@style/Theme.NAMEHERE.Button.Flat.Blue"
                 android:layout_marginTop="10dp" />
-            <com.roblox.client.components.RbxEditText
+            <com.namehere.client.components.RbxEditText
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 custom:hintText="New password"
                 custom:errorText="Passwords don't match"
-                style="@style/Theme.Roblox.EditText"
+                style="@style/Theme.NAMEHERE.EditText"
                 android:layout_marginTop="10dp" />
-            <com.roblox.client.components.RbxEditText
+            <com.namehere.client.components.RbxEditText
                 android:layout_width="250dp"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 custom:hintText="Username"
                 custom:errorText="Username contains invalid characters"
                 custom:hintTextLong="Username (6-20 characters, no spaces)"
-                style="@style/Theme.Roblox.EditText"
+                style="@style/Theme.NAMEHERE.EditText"
                 android:layout_marginTop="30dp"/>
-            <com.roblox.client.components.RbxButton
+            <com.namehere.client.components.RbxButton
                 android:layout_width="250dp"
                 android:layout_height="50dp"
                 android:text="Longer Test Button"
                 android:id="@+id/button3"
                 android:layout_gravity="center"
-                style="@style/Theme.Roblox.Button.Flat.Blue"
+                style="@style/Theme.NAMEHERE.Button.Flat.Blue"
                 android:layout_marginTop="10dp" />
             <!--android:fontFamily="sans-serif-light"-->
             <!--android:textColor="@color/RbxGray3"-->

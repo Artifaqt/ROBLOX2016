@@ -6,7 +6,7 @@ Go to AndroidManifest.xml and remove the following line:
 It is under:  
 
     <activity
-        android:name="com.roblox.client.ActivityGlView"
+        android:name="com.namehere.client.ActivityGlView"
 
 Then go to ActivityGlView in onCreate() and set:
 

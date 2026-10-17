@@ -3,7 +3,7 @@
 //  Network
 //
 //  Created by Martin Robaszewski on 5/2/13.
-//  Copyright (c) 2013 Roblox Inc. All rights reserved.
+//  Copyright (c) 2013 NAMEHERE Inc. All rights reserved.
 //
 
 #ifndef Network_StreamingUtil_h

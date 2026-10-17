@@ -1,4 +1,4 @@
-/* Copyright 2003-2005 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2005 NAMEHERE Corporation, All Rights Reserved */
 #include "stdafx.h"
 
 #include "Util/IndexBox.h"
@@ -158,7 +158,7 @@ void IndexBox::getEdge(
 }
 
 
-// TODO - update to newer Vector4::set() function when ROBLOX using latest G3D
+// TODO - update to newer Vector4::set() function when NAMEHERE using latest G3D
 
 void tempSetV4(const Vector3& v, float _w, Vector4& set)
 {

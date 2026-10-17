@@ -286,7 +286,7 @@ namespace RBX
         RBX::Timer<RBX::Time::Precise> timer;
         
         static const std::wstring userAgentHeader   = L"User-Agent";
-        static const std::wstring userAgentValue    = s2ws(Http::rbxUserAgent) + L" ROBLOX Xbox App 1.0.0";
+        static const std::wstring userAgentValue    = s2ws(Http::rbxUserAgent) + L" NAMEHERE Xbox App 1.0.0";
         static const std::wstring accessKeyHeader   = L"XboxAccessKey";
         static const std::wstring accessKeyValue    = L"b9309a51-7b54-458c-ad73-7b2c287497e2";
         static const std::wstring contentTypeHeader = L"Content-Type";
@@ -340,7 +340,7 @@ namespace RBX
         sysTime += (__int64)10000000 * 3600 * 24 * 365 * 100;
 
         XHR_COOKIE site1Cookie = {};
-        site1Cookie.pwszUrl = L".sitetest1.robloxlabs.com/";
+        site1Cookie.pwszUrl = L".sitetest1.nameherelabs.com/";
         site1Cookie.pwszName = L"SnickerdoodleConstraint";
         site1Cookie.pwszValue = L"";
         site1Cookie.ftExpires = (FILETIME&)sysTime;
@@ -449,7 +449,7 @@ namespace RBX{ namespace HttpPlatformImpl {
 void init(Http::CookieSharingPolicy cookieSharingPolicy) { RBXASSERT(0); }
 void setCookiesForDomain(const std::string& domain, const std::string& cookies) { RBXASSERT(0); }
 void getCookiesForDomain(const std::string& domain, std::string& cookies) { RBXASSERT(0); }
-boost::filesystem::path getRobloxCookieJarPath() { RBXASSERT(0); return ""; }
+boost::filesystem::path getNAMEHERECookieJarPath() { RBXASSERT(0); return ""; }
 void setProxy(const std::string& host, long port) { RBXASSERT(0); }
 void perform(HttpOptions& options, std::string& response) { RBXASSERT(0); }
 

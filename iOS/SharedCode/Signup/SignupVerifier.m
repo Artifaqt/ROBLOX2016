@@ -1,9 +1,9 @@
 //
 //  SignupVerifier.m
-//  RobloxMobile
+//  NAMEHEREMobile
 //
 //  Created by Ben Tkacheff on 2/5/13.
-//  Copyright (c) 2013 ROBLOX. All rights reserved.
+//  Copyright (c) 2013 NAMEHERE. All rights reserved.
 //
 
 #import "SignupVerifier.h"
@@ -16,9 +16,9 @@
 #import "NSDictionary+Parsing.h"
 #import "RBXEventReporter.h"
 #import "RBXFunctions.h"
-#import "RobloxData.h"
-#import "RobloxInfo.h"
-#import "RobloxWebUtility.h"
+#import "NAMEHEREData.h"
+#import "NAMEHEREInfo.h"
+#import "NAMEHEREWebUtility.h"
 #import "SessionReporter.h"
 #import "UserInfo.h"
 
@@ -59,10 +59,10 @@ NSString* s10 = @"B7YpO";
     if(self = [super init])
     {
         // have to use www base url
-        NSString* baseUrl = [[RobloxInfo getBaseUrl] stringByReplacingOccurrencesOfString:@"://m." withString:@"://www."];
+        NSString* baseUrl = [[NAMEHEREInfo getBaseUrl] stringByReplacingOccurrencesOfString:@"://m." withString:@"://www."];
         baseUrl = [baseUrl stringByReplacingOccurrencesOfString:@"http" withString:@"https"];
         
-        iOSSettingsService * iosSettings = [[RobloxWebUtility sharedInstance] getCachediOSSettings];
+        iOSSettingsService * iosSettings = [[NAMEHEREWebUtility sharedInstance] getCachediOSSettings];
         bool bSignUpWithHash = iosSettings->GetValueSignUpWithHash();
         
         if(bSignUpWithHash)
@@ -125,7 +125,7 @@ NSString* s10 = @"B7YpO";
     else
     {
         //check the server if the username is not blacklisted
-        [RobloxData checkIfBlacklistedEmail:email
+        [NAMEHEREData checkIfBlacklistedEmail:email
                                  completion:^(BOOL isBlacklisted)
         {
             if (!isBlacklisted)
@@ -248,19 +248,19 @@ NSString* s10 = @"B7YpO";
     if ([self usingNewSignupRules])
     {
         //call the new endpoint
-        [RobloxData checkIfValidUsername:username
+        [NAMEHEREData checkIfValidUsername:username
                               completion:callbackBlock];
     }
     else
     {
         //call the old endpoint
-        [RobloxData oldCheckIfValidUsername:username
+        [NAMEHEREData oldCheckIfValidUsername:username
                                  completion:callbackBlock];
     }
 }
 - (void) getAlternateUsername:(NSString *)username completion:(SignupVerifierCompletionHandler)handler
 {
-    [RobloxData recommendUsername:username
+    [NAMEHEREData recommendUsername:username
                        completion:^(BOOL success, NSString *newUsername)
      {
          if (success)
@@ -293,13 +293,13 @@ NSString* s10 = @"B7YpO";
 
     if (password.length < 8)
     {
-        handler(NO, NSLocalizedString([RobloxInfo thisDeviceIsATablet] ? @"PasswordWrong" : @"PasswordWrongShort", nil));
+        handler(NO, NSLocalizedString([NAMEHEREInfo thisDeviceIsATablet] ? @"PasswordWrong" : @"PasswordWrongShort", nil));
         return;
     }
     
     if (password.length > 20)
     {
-        handler(NO, NSLocalizedString([RobloxInfo thisDeviceIsATablet] ? @"PasswordWrong" : @"PasswordWrongLong", nil));
+        handler(NO, NSLocalizedString([NAMEHEREInfo thisDeviceIsATablet] ? @"PasswordWrong" : @"PasswordWrongLong", nil));
         return;
     }
     
@@ -330,13 +330,13 @@ NSString* s10 = @"B7YpO";
     //check the server if we have a valid password
     if ([self usingNewSignupRules])
     {
-        [RobloxData checkIfValidPassword:password
+        [NAMEHEREData checkIfValidPassword:password
                                 username:username
                               completion:callbackBlock];
     }
     else
     {
-        [RobloxData oldCheckIfValidPassword:password
+        [NAMEHEREData oldCheckIfValidPassword:password
                                    username:username
                                  completion:callbackBlock];
     }
@@ -405,18 +405,18 @@ NSString* s10 = @"B7YpO";
                                      gender == GENDER_GIRL ? @"female" : @"male",
                                      escapedBirthString];
     
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[[RobloxInfo getApiBaseUrl] stringByAppendingString:@"/signup/v1/"]]];
+    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:[[NAMEHEREInfo getApiBaseUrl] stringByAppendingString:@"/signup/v1/"]]];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[formattedSignUpArgs dataUsingEncoding:NSUTF8StringEncoding]];
-    [RobloxInfo setDefaultHTTPHeadersForRequest:request];
+    [NAMEHEREInfo setDefaultHTTPHeadersForRequest:request];
     
-    iOSSettingsService * iosSettings = [[RobloxWebUtility sharedInstance] getCachediOSSettings];
+    iOSSettingsService * iosSettings = [[NAMEHEREWebUtility sharedInstance] getCachediOSSettings];
     bool bSignUpWithHash = iosSettings->GetValueSignUpWithHash();
     
     if(bSignUpWithHash)
     {
         NSString* s;
-        if([RobloxInfo isTestSite])
+        if([NAMEHEREInfo isTestSite])
             s = [NSString stringWithFormat:@"%@%@%@%@%@%@", s6, s7, s8, s9, s10, username];
         else
             s = [NSString stringWithFormat:@"%@%@%@%@%@%@", s1, s2, s3, s4, s5, username];
@@ -561,15 +561,15 @@ NSString* s10 = @"B7YpO";
     NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:self.signUpUrlString]];
     [request setHTTPMethod:@"POST"];
     [request setHTTPBody:[formattedSignUpArgs dataUsingEncoding:NSUTF8StringEncoding]];
-    [RobloxInfo setDefaultHTTPHeadersForRequest:request];
+    [NAMEHEREInfo setDefaultHTTPHeadersForRequest:request];
     
-    iOSSettingsService * iosSettings = [[RobloxWebUtility sharedInstance] getCachediOSSettings];
+    iOSSettingsService * iosSettings = [[NAMEHEREWebUtility sharedInstance] getCachediOSSettings];
     bool bSignUpWithHash = iosSettings->GetValueSignUpWithHash();
     
     if(bSignUpWithHash)
     {
         NSString* s;
-        if([RobloxInfo isTestSite])
+        if([NAMEHEREInfo isTestSite])
             s = [NSString stringWithFormat:@"%@%@%@%@%@%@", s6, s7, s8, s9, s10, username];
         else
             s = [NSString stringWithFormat:@"%@%@%@%@%@%@", s1, s2, s3, s4, s5, username];

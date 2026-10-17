@@ -4,11 +4,11 @@
 
 #include "V8DataModel/PartInstance.h"
 
-#include "Util/RobloxGoogleAnalytics.h"
+#include "Util/NAMEHEREGoogleAnalytics.h"
 
 static void sendLightingObjectsStats()
 {
-	RBX::RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "LightingObjects");
+	RBX::NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "LightingObjects");
 }
 
 namespace RBX {

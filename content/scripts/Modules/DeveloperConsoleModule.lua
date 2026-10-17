@@ -354,7 +354,7 @@ function DeveloperConsole.new(screenGui, permissions, messagesAndStats)
 	
 	
 	do -- Title
-		local title = Primitives.InvisibleTextLabel(handle, 'Title', "ROBLOX Developer Console")
+		local title = Primitives.InvisibleTextLabel(handle, 'Title', "NAMEHERE Developer Console")
 		title.Size = UDim2_new(1, -5, 1, 0)
 		title.Position = UDim2_new(0, 5, 0, 0)	
 		title.FontSize = Enum.FontSize.Size18
@@ -382,7 +382,7 @@ function DeveloperConsole.new(screenGui, permissions, messagesAndStats)
 	end
 	
 	do -- Create top right exit button
-		local exitButton, exitButtonImage = createCornerButton('Exit', 1, 0, 'http://www.roblox.com/asset/?id=261878266', 2/3)
+		local exitButton, exitButtonImage = createCornerButton('Exit', 1, 0, 'http://www.namehere.com/asset/?id=261878266', 2/3)
 		exitButton.AutoButtonColor = false
 		
 		local buttonEffectFunction = devConsole:CreateButtonEffectFunction(exitButton)
@@ -412,7 +412,7 @@ function DeveloperConsole.new(screenGui, permissions, messagesAndStats)
 	do -- Repositioning and Resizing
 		
 		do -- Create bottom right window resize button and activate resize dragging
-			local resizeButton, resizeButtonImage = createCornerButton('Resize', 1, 1, 'http://www.roblox.com/asset/?id=261880743', 1)
+			local resizeButton, resizeButtonImage = createCornerButton('Resize', 1, 1, 'http://www.namehere.com/asset/?id=261880743', 1)
 			resizeButtonImage.Position = UDim2_new(0, 0, 0, 0)
 			resizeButtonImage.Size = UDim2_new(1, 0, 1, 0)
 
@@ -500,7 +500,7 @@ function DeveloperConsole.new(screenGui, permissions, messagesAndStats)
 		local offset = (tabHeight - gearSize) / 2
 		optionsButton.Size = UDim2_new(0, Style.GearSize, 0, Style.GearSize)
 		optionsButton.Position = UDim2_new(1, -(Style.GearSize + offset + Style.HandleHeight), 0, Style.HandleHeight + offset)
-		local gear = Primitives.InvisibleImageLabel(optionsButton, 'Image', 'http://www.roblox.com/asset/?id=261882463')
+		local gear = Primitives.InvisibleImageLabel(optionsButton, 'Image', 'http://www.namehere.com/asset/?id=261882463')
 		--gear.ZIndex = ZINDEX + 1
 		local animationToggle = devConsole:GenerateOptionButtonAnimationToggle(interiorFrame, optionsButton, gear, tabContainer, optionsClippingFrame, optionsFrame)
 		local open = false
@@ -2371,14 +2371,14 @@ function Methods.CreateScrollbar(devConsole, rotation)
 		frame2.Visible = not visible
 	end
 	
-	local buttonUp = Primitives.ImageButton(frame, 'Up', 'http://www.roblox.com/asset/?id=261880783')
+	local buttonUp = Primitives.ImageButton(frame, 'Up', 'http://www.namehere.com/asset/?id=261880783')
 	scrollbar.ButtonUp = buttonUp
 	buttonUp.Size = UDim2_new(1, 0, 0, Style.HandleHeight)
 	buttonUp.Position = UDim2_new(0, 0, 0, -Style.HandleHeight - 1)
 	buttonUp.AutoButtonColor = false
 	devConsole:ConnectButtonHover(buttonUp, devConsole:CreateButtonEffectFunction(buttonUp))
 	
-	local buttonDown = Primitives.ImageButton(frame, 'Down', 'http://www.roblox.com/asset/?id=261880783')
+	local buttonDown = Primitives.ImageButton(frame, 'Down', 'http://www.namehere.com/asset/?id=261880783')
 	scrollbar.ButtonDown = buttonDown
 	buttonDown.Size = UDim2_new(1, 0, 0, Style.HandleHeight)
 	buttonDown.Position = UDim2_new(0, 0, 1, 1)
@@ -2393,7 +2393,7 @@ function Methods.CreateScrollbar(devConsole, rotation)
 	
 	bar.AutoButtonColor = false
 	
-	local grip = Primitives.InvisibleImageLabel(bar, 'Image', 'http://www.roblox.com/asset/?id=261904959')
+	local grip = Primitives.InvisibleImageLabel(bar, 'Image', 'http://www.namehere.com/asset/?id=261904959')
 	grip.Size = UDim2_new(0, 16, 0, 16)
 	grip.Position = UDim2_new(0.5, -8, 0.5, -8)
 

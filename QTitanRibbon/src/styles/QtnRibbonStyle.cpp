@@ -2581,7 +2581,7 @@ bool RibbonStyle::showToolTip(const QPoint& pos, QWidget* w)
                     posX = prevWidget->mapToGlobal(prevWidget->rect().topLeft()).x();
             }
 
-			// BEGIN ROBLOX CHANGES
+			// BEGIN NAMEHERE CHANGES
 			if (group->isReduced())
 			{
 				posY = group->mapToGlobal(group->rect().bottomRight()).y() + 2;
@@ -2595,7 +2595,7 @@ bool RibbonStyle::showToolTip(const QPoint& pos, QWidget* w)
 			//if (const RibbonPage* page = getParentWidget<RibbonPage>(w))
 			//		posY = page->mapToGlobal(page->rect().bottomRight()).y() + 2;
 
-			// END ROBLOX CHANGES
+			// END NAMEHERE CHANGES
         }
 
         QIcon icon;

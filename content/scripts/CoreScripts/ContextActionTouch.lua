@@ -1,5 +1,5 @@
 -- ContextActionTouch.lua
--- Copyright ROBLOX 2014, created by Ben Tkacheff
+-- Copyright NAMEHERE 2014, created by Ben Tkacheff
 -- this script controls ui and firing of lua functions that are bound in ContextActionService for touch inputs
 -- Essentially a user can bind a lua function to a key code, input type (mousebutton1 etc.) and this
 
@@ -12,8 +12,8 @@ local buttonVector = {}
 local buttonScreenGui = nil
 local buttonFrame = nil
 
-local ContextDownImage = "http://www.roblox.com/asset/?id=97166756"
-local ContextUpImage = "http://www.roblox.com/asset/?id=97166444"
+local ContextDownImage = "http://www.namehere.com/asset/?id=97166756"
+local ContextUpImage = "http://www.namehere.com/asset/?id=97166444"
 
 local oldTouches = {}
 
@@ -64,7 +64,7 @@ function setButtonSizeAndPosition(object)
 	local yOffset = 95
 
 	-- todo: better way to determine mobile sized screens
-	local onSmallScreen = (game:GetService("CoreGui").RobloxGui.AbsoluteSize.X < 600)
+	local onSmallScreen = (game:GetService("CoreGui").NAMEHEREGui.AbsoluteSize.X < 600)
 	if not onSmallScreen then
 		buttonSize = 85
 		xOffset = 40

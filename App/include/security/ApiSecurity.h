@@ -294,14 +294,14 @@ template<size_t kMaxDepth> FORCEINLINE uint32_t detectDllByExceptionChain(void* 
         // check for end of chain in ntdll.
         if (!(kFlags & Security::kCheckNoThreadInit) && (stkPtr[0] == 0xFFFFFFFF))
         {
-            // check if handler chain init in roblox. (equivalent to "addr - base >= size")
+            // check if handler chain init in namehere. (equivalent to "addr - base >= size")
             if ((stkPtr[kStackEndingArgIdx] + textEndNeg ) <= textSizeNeg)
             {
                 result |= 1 << (i*3);
             }
             break;
         }
-        // check if handler in roblox code. (equivalent to "addr - base >= size")
+        // check if handler in namehere code. (equivalent to "addr - base >= size")
         if ((stkPtr[kStackHandlerIdx] + textEndNeg ) <= textSizeNeg)
         {
             result |= 1 << (i*3 + 1);

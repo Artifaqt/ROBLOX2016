@@ -141,7 +141,7 @@ GLOBAL(void)
 jpeg_open_backing_store (j_common_ptr cinfo, backing_store_ptr info,
 			 long total_bytes_needed)
 {
-  if ((info->temp_file = tmpfile()) == NULL)    // Roblox Change 64bit
+  if ((info->temp_file = tmpfile()) == NULL)    // NAMEHERE Change 64bit
       ERREXITS(cinfo, JERR_TFILE_CREATE, "");
   info->read_backing_store = read_backing_store;
   info->write_backing_store = write_backing_store;

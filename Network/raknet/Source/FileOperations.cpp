@@ -46,14 +46,14 @@ bool WriteFileWithDirectories( const char *path, char *data, unsigned dataLength
 			{
 				pathCopy[ index ] = 0;
 
-	// BEING ROBLOX CHANGES
+	// BEING NAMEHERE CHANGES
 	#ifdef _WIN32
 				res = _mkdir( pathCopy );
 	#else
 	
 				res = mkdir( pathCopy, 0744 );
 	#endif
-	// END ROBLOX CHANGES
+	// END NAMEHERE CHANGES
 				if (res<0 && errno!=EEXIST && errno!=EACCES)
 				{
 					rakFree_Ex(pathCopy, _FILE_AND_LINE_ );
@@ -83,13 +83,13 @@ bool WriteFileWithDirectories( const char *path, char *data, unsigned dataLength
 	}
 	else
 	{
-// BEING ROBLOX CHANGES
+// BEING NAMEHERE CHANGES
 #ifdef _WIN32
 		res = _mkdir( pathCopy );
 #else
 		res = mkdir( pathCopy, 0744 );
 #endif
-// END ROBLOX CHANGES
+// END NAMEHERE CHANGES
 
 		if (res<0 && errno!=EEXIST)
 		{

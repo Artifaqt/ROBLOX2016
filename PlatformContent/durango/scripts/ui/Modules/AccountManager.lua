@@ -4,7 +4,7 @@
 			// Handles all account related functions
 ]]
 local CoreGui = Game:GetService("CoreGui")
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 
 local PlatformService = nil
@@ -27,8 +27,8 @@ AccountManager.AuthResults = {
 	Flooded = 7;
 	LeaseLocked = 8;
 	AccountLinkingDisabled = 9;
-	InvalidRobloxUser = 10;
-	RobloxUserAlreadyLinked = 11;
+	InvalidNAMEHEREUser = 10;
+	NAMEHEREUserAlreadyLinked = 11;
 	XboxUserAlreadyLinked = 12;
 	IllgealChildAccountLinking = 13;
 	InvalidPassword = 14;
@@ -103,30 +103,30 @@ function AccountManager:LinkAccountAsync(accountName, password)
 end
 
 -- used when setting credentials for a generated account
-function AccountManager:SetRobloxCredentialsAsync(accountName, password)
+function AccountManager:SetNAMEHERECredentialsAsync(accountName, password)
 	local success, result = pcall(function()
 		-- PlatformService may not exist on studio platform
-		return PlatformService:BeginSetRobloxCredentials(accountName, password)
+		return PlatformService:BeginSetNAMEHERECredentials(accountName, password)
 	end)
 	if not success then
-		print("AccountManager:SetRobloxCredentialsAsync() failed because", result)
+		print("AccountManager:SetNAMEHERECredentialsAsync() failed because", result)
 		result = AccountManager.AuthResults.Error
 	end
 
 	return result
 end
 
--- used when creating a new roblox account that is linked to the users xbox account
+-- used when creating a new namehere account that is linked to the users xbox account
 function AccountManager:GenerateAccountAsync(accountName, password)
 	local result = AccountManager:SignInAsync(Enum.UserInputType.Gamepad1)
 	if result == AccountManager.AuthResults.Success then
-		result = AccountManager:SetRobloxCredentialsAsync(accountName, password)
+		result = AccountManager:SetNAMEHERECredentialsAsync(accountName, password)
 	end
 
 	return result
 end
 
--- called when user has roblox credentials
+-- called when user has namehere credentials
 function AccountManager:UnlinkAccountAsync()
 	local success, result = pcall(function()
 		-- PlatformService may not exist on studio platform
@@ -157,17 +157,17 @@ function AccountManager:HasLinkedAccountAsync()
 	return result
 end
 
-function AccountManager:HasRobloxCredentialsAsync()
+function AccountManager:HasNAMEHERECredentialsAsync()
 	if UserSettings().GameSettings:InStudioMode() then
 		return AccountManager.AuthResults.Success
 	end
 
 	local success, result = pcall(function()
 		-- PlatformService may not exist on studio platform
-		return PlatformService:BeginHasRobloxCredentials()
+		return PlatformService:BeginHasNAMEHERECredentials()
 	end)
 	if not success then
-		print("AccountManager:HasRobloxCredentialsAsync() failed because", result)
+		print("AccountManager:HasNAMEHERECredentialsAsync() failed because", result)
 		result = AccountManager.AuthResults.Error
 	end
 

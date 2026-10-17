@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-/* Copyright 2003-2014 ROBLOX Corporation, All Rights Reserved  */
+/* Copyright 2003-2014 NAMEHERE Corporation, All Rights Reserved  */
 #include "V8Tree/Instance.h"
 #include "V8Tree/Service.h"
 #include "V8DataModel/StarterPlayerService.h"
@@ -10,7 +10,7 @@
 #include "Humanoid/Humanoid.h"
 #include "Network/Player.h"
 #include "Network/Players.h"
-#include "Util/RobloxGoogleAnalytics.h"
+#include "Util/NAMEHEREGoogleAnalytics.h"
 
 DYNAMIC_FASTFLAGVARIABLE(UseStarterPlayerCharacter, false)
 DYNAMIC_FASTFLAGVARIABLE(UseStarterPlayerCharacterScripts, false)
@@ -368,7 +368,7 @@ void StarterPlayerService::recordSettingsInGA() const
 			CameraMovement = "TouchCameraMoveModeUser";
 			break;
 	}
-	RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "DevTouchCameraMove", CameraMovement);
+	NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "DevTouchCameraMove", CameraMovement);
 
 	switch (touchMovementMode) {
 	case DEV_TOUCH_MOVEMENT_MODE_THUMBSTICK:
@@ -391,7 +391,7 @@ void StarterPlayerService::recordSettingsInGA() const
 		CharacterMovement = "TouchMovementModeUser";
 		break;
 	}
-	RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "DevTouchMovement", CharacterMovement);
+	NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "DevTouchMovement", CharacterMovement);
 
 	switch (computerCameraMovementMode) {
 		case DEV_COMPUTER_CAMERA_MOVEMENT_MODE_CLASSIC:
@@ -405,7 +405,7 @@ void StarterPlayerService::recordSettingsInGA() const
 			CameraMovement = "ComputerCameraMoveModeUser";
 			break;
 	}
-	RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "DevComputerCameraMove", CameraMovement);
+	NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "DevComputerCameraMove", CameraMovement);
 
 	switch (computerMovementMode) {
 	case DEV_COMPUTER_MOVEMENT_MODE_KBD_MOUSE:
@@ -422,12 +422,12 @@ void StarterPlayerService::recordSettingsInGA() const
 		CharacterMovement = "ComputerMovementModeUser";
 		break;
 	}
-	RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "DevComputerMovement", CharacterMovement);
+	NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "DevComputerMovement", CharacterMovement);
 
 	if (enableMouseLockOption) {
-		RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "DevComputerEnableMouseLock", "True");
+		NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "DevComputerEnableMouseLock", "True");
 	} else {
-		RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "DevComputerEnableMouseLock", "False");
+		NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "DevComputerEnableMouseLock", "False");
 	}
 
 	switch (cameraOcclusionMode) {
@@ -439,7 +439,7 @@ void StarterPlayerService::recordSettingsInGA() const
 		CameraOcclusion = "DevCameraOcclusionZoom";
 		break;
 	}
-	RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "DevCameraOcclusion", CameraOcclusion);
+	NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "DevCameraOcclusion", CameraOcclusion);
 }
 
 

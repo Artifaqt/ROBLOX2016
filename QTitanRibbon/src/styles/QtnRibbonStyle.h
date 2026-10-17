@@ -95,10 +95,10 @@ namespace Qtitan
         RibbonStyle(QMainWindow* mainWindow);
         virtual ~RibbonStyle();
 
-        // ROBLOX CHANGE START
+        // NAMEHERE CHANGE START
         static int getStyleVersion();
         static void setStyleVersion(int styleVersion);
-        // ROBLOX CHANGE END
+        // NAMEHERE CHANGE END
 
     public:
         virtual void polish(QApplication*);

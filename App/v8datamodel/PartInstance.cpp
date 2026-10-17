@@ -1,4 +1,4 @@
-/* Copyright 2003-2005 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2005 NAMEHERE Corporation, All Rights Reserved */
 #include "stdafx.h"
 
 #include "V8DataModel/PartInstance.h"
@@ -28,7 +28,7 @@
 #include "AppDraw/HitTest.h"
 #include "Util/Math.h"
 #include "Util/Color.h"
-#include "util/RobloxGoogleAnalytics.h"
+#include "util/NAMEHEREGoogleAnalytics.h"
 #include "Network/NetworkOwner.h"
 #include "G3D/CollisionDetection.h"
 #include "v8datamodel/PartCookie.h"
@@ -84,8 +84,8 @@ namespace
 
 		if (securityContext.identity == RBX::Security::LocalGUI_ ||
 			securityContext.identity == RBX::Security::GameScript_ ||
-			securityContext.identity == RBX::Security::GameScriptInRobloxPlace_ ||
-			securityContext.identity == RBX::Security::RobloxGameScript_ ||
+			securityContext.identity == RBX::Security::GameScriptInNAMEHEREPlace_ ||
+			securityContext.identity == RBX::Security::NAMEHEREGameScript_ ||
 #if defined(RBX_STUDIO_BUILD)
             securityContext.identity == RBX::Security::StudioPlugin ||
 #endif
@@ -622,7 +622,7 @@ bool PartInstance::partIsLegacyCustomPhysProperties(const PartInstance* part)
 
 void convertPartsToNewGANotify(DataModel* dataModel)
 {
-	RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "PartInstance_ConvertToNewPhysicalProp", 	
+	NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "PartInstance_ConvertToNewPhysicalProp", 	
 				boost::lexical_cast<std::string>(dataModel->getPlaceID()).c_str(), 0, false);
 }
 
@@ -2536,12 +2536,12 @@ void PartInstance::setNetworkOwnerScript(shared_ptr<Instance> playerInstance)
 		if (DataModel* dm = DataModel::get(this))
 		{
 			static boost::once_flag flag = BOOST_ONCE_INIT;
-			boost::call_once(flag, boost::bind(&RobloxGoogleAnalytics::trackEvent, GA_CATEGORY_GAME, "PartInstance_SetNetworkOwnerScript", 
+			boost::call_once(flag, boost::bind(&NAMEHEREGoogleAnalytics::trackEvent, GA_CATEGORY_GAME, "PartInstance_SetNetworkOwnerScript", 
 				boost::lexical_cast<std::string>(dm->getPlaceID()).c_str(), 0, false));
 
 			if (!player)
 			{
-				boost::call_once(flag, boost::bind(&RobloxGoogleAnalytics::trackEvent, GA_CATEGORY_GAME, "PartInstance_SetNetworkOwnerScript_TOSERVER", 
+				boost::call_once(flag, boost::bind(&NAMEHEREGoogleAnalytics::trackEvent, GA_CATEGORY_GAME, "PartInstance_SetNetworkOwnerScript_TOSERVER", 
 					boost::lexical_cast<std::string>(dm->getPlaceID()).c_str(), 0, false));
 			}
 		}
@@ -2580,7 +2580,7 @@ shared_ptr<Instance> PartInstance::getNetworkOwnerScript()
 			if (DataModel* dm = DataModel::get(this))
 			{
 				static boost::once_flag flag = BOOST_ONCE_INIT;
-				boost::call_once(flag, boost::bind(&RobloxGoogleAnalytics::trackEvent, GA_CATEGORY_GAME, "PartInstance_GetNetworkOwnerScript", 
+				boost::call_once(flag, boost::bind(&NAMEHEREGoogleAnalytics::trackEvent, GA_CATEGORY_GAME, "PartInstance_GetNetworkOwnerScript", 
 					boost::lexical_cast<std::string>(dm->getPlaceID()).c_str(), 0, false));
 			}
 
@@ -3174,7 +3174,7 @@ void RBX::TypedPropertyDescriptor<CoordinateFrame>::readValue(DescribedBase* ins
 template<>
 void RBX::TypedPropertyDescriptor<CoordinateFrame>::writeValue(const DescribedBase* instance, XmlElement* element) const
 {
-	// Write the data out in accordance with ROBLOX Schema
+	// Write the data out in accordance with NAMEHERE Schema
 	G3D::CoordinateFrame c = getValue(instance);
 	element->addChild(new XmlElement(tag_X, c.translation.x));
 	element->addChild(new XmlElement(tag_Y, c.translation.y));

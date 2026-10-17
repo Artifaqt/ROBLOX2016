@@ -115,7 +115,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>..\..\Library\SDK\Lib\Iphlpapi.lib;..\..\Library\SDK\Lib\taskschd.lib;..\..\Library\SDK\Lib\mstask.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)RobloxPlayerLauncher.exe</OutputFile>
+      <OutputFile>$(OutDir)NAMEHEREPlayerLauncher.exe</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX86</TargetMachine>
@@ -145,7 +145,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>..\..\Library\SDK\Lib\Iphlpapi.lib;..\..\Library\SDK\Lib\taskschd.lib;..\..\Library\SDK\Lib\mstask.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)RobloxPlayerLauncher.exe</OutputFile>
+      <OutputFile>$(OutDir)NAMEHEREPlayerLauncher.exe</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <TargetMachine>MachineX64</TargetMachine>
@@ -173,7 +173,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>..\..\Library\SDK\Lib\Iphlpapi.lib;..\..\Library\SDK\Lib\taskschd.lib;..\..\Library\SDK\Lib\mstask.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)RobloxPlayerLauncher.exe</OutputFile>
+      <OutputFile>$(OutDir)NAMEHEREPlayerLauncher.exe</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
@@ -206,7 +206,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>..\..\Library\SDK\Lib\Iphlpapi.lib;..\..\Library\SDK\Lib\taskschd.lib;..\..\Library\SDK\Lib\mstask.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)RobloxPlayerLauncher.exe</OutputFile>
+      <OutputFile>$(OutDir)NAMEHEREPlayerLauncher.exe</OutputFile>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
       <OptimizeReferences>true</OptimizeReferences>
@@ -270,13 +270,13 @@
     <Image Include="..\Bootstrapper\assets\btn_ok-ON.bmp" />
     <Image Include="..\Bootstrapper\assets\btn_ok.bmp" />
     <Image Include="..\Bootstrapper\assets\logo_meatball%401x.bmp" />
-    <Image Include="..\Bootstrapper\assets\logo_robloxstudio%401x.bmp" />
+    <Image Include="..\Bootstrapper\assets\logo_nameherestudio%401x.bmp" />
     <Image Include="..\Bootstrapper\assets\txt_backto%401x.bmp" />
     <Image Include="..\Bootstrapper\assets\txt_backto-ON%401x .bmp" />
     <Image Include="..\Bootstrapper\assets\txt_success%401x.bmp" />
     <Image Include="..\Bootstrapper\assets\txt_success-player%401x.bmp" />
     <Image Include="..\Bootstrapper\Bootstrapper.ico" />
-    <Image Include="assets\logo_robloxstudio%401x.bmp" />
+    <Image Include="assets\logo_nameherestudio%401x.bmp" />
     <Image Include="Bootstrapper.ico" />
   </ItemGroup>
   <ItemGroup>

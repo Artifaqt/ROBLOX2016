@@ -1,4 +1,4 @@
--- Written by Kip Turner, Copyright ROBLOX 2015
+-- Written by Kip Turner, Copyright NAMEHERE 2015
 
 local CoreGui = game:GetService("CoreGui")
 local ContextActionService = game:GetService("ContextActionService")
@@ -8,7 +8,7 @@ local UserInputService = game:GetService("UserInputService")
 local GuiService = game:GetService('GuiService')
 local TextService = game:GetService('TextService')
 
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 
 local Utility = require(Modules:FindFirstChild('Utility'))
@@ -66,13 +66,13 @@ local function CreateAppHub()
 	local StoreTab = AppTabDock:AddTab(AppTabDockItemModule(Strings:LocalizedString('CatalogWord'):upper(), StorePaneModule(PaneContainer)))
 
 
-	local RobloxLogo = Utility.Create'ImageLabel'
+	local NAMEHERELogo = Utility.Create'ImageLabel'
 	{
-		Name = 'RobloxLogo';
+		Name = 'NAMEHERELogo';
 		Size = UDim2.new(0, 232, 0, 56);
 		Position = UDim2.new(0,0,0,0);
 		BackgroundTransparency = 1;
-		Image = 'rbxasset://textures/ui/Shell/Icons/ROBLOXLogoSmall@1080.png';
+		Image = 'rbxasset://textures/ui/Shell/Icons/NAMEHERELogoSmall@1080.png';
 		Parent = HubContainer;
 	}
 

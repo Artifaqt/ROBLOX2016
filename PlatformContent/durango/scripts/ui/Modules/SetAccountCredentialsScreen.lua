@@ -2,7 +2,7 @@
 			// SetAccountCredentialsScreen.lua
 ]]
 local CoreGui = game:GetService("CoreGui")
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 
 local ContextActionService = game:GetService('ContextActionService')
@@ -71,7 +71,7 @@ local function createSetAccountCredentialsScreen(title, description, buttonText)
 
 			-- linked, set credentials
 			if result == AccountManager.AuthResults.Success then
-				result = AccountManager:SetRobloxCredentialsAsync(myUsername, myPassword)
+				result = AccountManager:SetNAMEHERECredentialsAsync(myUsername, myPassword)
 			-- unlinked, create new account and set credentials
 			elseif result == AccountManager.AuthResults.AccountUnlinked then
 				result = AccountManager:GenerateAccountAsync(myUsername, myPassword)

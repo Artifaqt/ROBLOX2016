@@ -15,8 +15,8 @@ RBX_LIB_DIR := release
 endif
 
 include $(CLEAR_VARS)
-LOCAL_MODULE := roblox
-LOCAL_SRC_FILES := ../../../../build/$(RBX_LIB_DIR)/libs/armeabi-v7a/libroblox.so
+LOCAL_MODULE := namehere
+LOCAL_SRC_FILES := ../../../../build/$(RBX_LIB_DIR)/libs/armeabi-v7a/libnamehere.so
 include $(PREBUILT_SHARED_LIBRARY)
 
 

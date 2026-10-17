@@ -14,8 +14,8 @@ static const char *stringsTable[] =
 		"Unable to create new thread", //EnableToCreateNewThread
 		"Script", //ScriptStr
 		"rocky", //Rocky
-		"Game passes can only be queried by a Script running on a ROBLOX game server", //HasGamePassLuaWarning
-		"Teleporting while using ROBLOX Studio is not permitted.", //NoTeleportInStudio
+		"Game passes can only be queried by a Script running on a NAMEHERE game server", //HasGamePassLuaWarning
+		"Teleporting while using NAMEHERE Studio is not permitted.", //NoTeleportInStudio
 		"fonts/LoadingScript.lua" //LoadingScreenScriptPath
     };
 

@@ -29,8 +29,8 @@ namespace RBX {
 		typedef enum { DontReport, Prompt, Report } ErrorReporting;
 		ErrorReporting errorReporting;
 
-		static std::string robloxVersion;
-		static std::string robloxProductName;
+		static std::string namehereVersion;
+		static std::string namehereProductName;
 
 		DebugSettings();
 		static Reflection::BoundProp<bool> prop_stackTracingEnabled;
@@ -77,8 +77,8 @@ namespace RBX {
 		int cpuSpeed() const; // MHz
 		int cpuCount() const;
 		std::string systemProductName() const;
-		std::string getRobloxVersion() const { RBXASSERT(!robloxVersion.empty()); return robloxVersion; }
-		std::string getRobloxProductName() const { RBXASSERT(!robloxProductName.empty()); return robloxProductName; }
+		std::string getNAMEHEREVersion() const { RBXASSERT(!namehereVersion.empty()); return namehereVersion; }
+		std::string getNAMEHEREProductName() const { RBXASSERT(!namehereProductName.empty()); return namehereProductName; }
 		std::string osVer() const;
 		int osPlatformId() const;
 		std::string osPlatform() const;
@@ -112,9 +112,9 @@ namespace RBX {
 		long getAlternateCdnSuccessCount() const;
 		long getAlternateCdnFailureCount() const;
 		double getLastCdnFailureTimeSpan() const;
-		long getRobloxSuccessCount() const;
-		long getRobloxFalureCount() const;
-		double getRobloxResponce() const;
+		long getNAMEHERESuccessCount() const;
+		long getNAMEHEREFalureCount() const;
+		double getNAMEHEREResponce() const;
 		double getCdnRespoce() const;
 		shared_ptr<const Reflection::Tuple> resetCdnFailureCounts();
 	};

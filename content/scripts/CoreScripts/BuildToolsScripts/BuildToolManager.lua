@@ -56,7 +56,7 @@ if not toolsArray then -- no one has made build tools yet, we get to!
 
 	local BaseUrl = game:GetService("ContentProvider").BaseUrl:lower()
 
-	if BaseUrl:find("www.roblox.com") or BaseUrl:find("gametest1") then
+	if BaseUrl:find("www.namehere.com") or BaseUrl:find("gametest1") then
 		table.insert(buildToolIds,73089166) -- PartSelectionTool
 		table.insert(buildToolIds,73089190) -- DeleteTool
 		table.insert(buildToolIds,73089204) -- CloneTool

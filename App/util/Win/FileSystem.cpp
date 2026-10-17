@@ -47,22 +47,22 @@ boost::filesystem::path getUserDirectory(bool create, FileSystemDir dir, const c
 	}
 
 	DWORD flags = create ? CSIDL_FLAG_CREATE : 0;
-    boost::filesystem::path robloxDir = "Roblox";
+    boost::filesystem::path namehereDir = "NAMEHERE";
 	if (subDirectory)
-		robloxDir /= subDirectory;
+		namehereDir /= subDirectory;
 
 	WCHAR pathBuffer[MAX_PATH];
 	HRESULT hr;
 	switch (dir)
 	{
 		case DirAppData:
-			hr = SHGetFolderPathAndSubDirW(NULL, CSIDL_LOCAL_APPDATA | flags, NULL, SHGFP_TYPE_CURRENT, robloxDir.native().c_str(), pathBuffer);
+			hr = SHGetFolderPathAndSubDirW(NULL, CSIDL_LOCAL_APPDATA | flags, NULL, SHGFP_TYPE_CURRENT, namehereDir.native().c_str(), pathBuffer);
 			break;
 		case DirPicture:
-			hr = SHGetFolderPathAndSubDirW(NULL, CSIDL_MYPICTURES | flags, NULL, SHGFP_TYPE_CURRENT, robloxDir.native().c_str(), pathBuffer);
+			hr = SHGetFolderPathAndSubDirW(NULL, CSIDL_MYPICTURES | flags, NULL, SHGFP_TYPE_CURRENT, namehereDir.native().c_str(), pathBuffer);
 			break;
 		case DirVideo:
-			hr = SHGetFolderPathAndSubDirW(NULL, CSIDL_MYVIDEO | flags, NULL, SHGFP_TYPE_CURRENT, robloxDir.native().c_str(), pathBuffer);
+			hr = SHGetFolderPathAndSubDirW(NULL, CSIDL_MYVIDEO | flags, NULL, SHGFP_TYPE_CURRENT, namehereDir.native().c_str(), pathBuffer);
 			break;
 		default:
 			RBXASSERT(false);
@@ -73,7 +73,7 @@ boost::filesystem::path getUserDirectory(bool create, FileSystemDir dir, const c
 	if ((hr!=S_OK) && (dir == DirAppData))
     {
 		// Try this one:
-		hr = SHGetFolderPathAndSubDirW(NULL, CSIDL_COMMON_APPDATA | flags, NULL, SHGFP_TYPE_CURRENT, robloxDir.native().c_str(), pathBuffer);
+		hr = SHGetFolderPathAndSubDirW(NULL, CSIDL_COMMON_APPDATA | flags, NULL, SHGFP_TYPE_CURRENT, namehereDir.native().c_str(), pathBuffer);
     }
 
 	if (hr==S_OK)

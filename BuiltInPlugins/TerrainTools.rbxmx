@@ -1,4 +1,4 @@
-<roblox xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.roblox.com/roblox.xsd" version="4">
+<namehere xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.namehere.com/namehere.xsd" version="4">
 	<External>null</External>
 	<External>nil</External>
 	<Item class="Model" referent="RBX3CC71DDB17D842A3B313B465F8D61360">
@@ -65,7 +65,7 @@ local plugins = {
 		button = utilityModule:GetUsingAsPlugin() and buttonCreator:CreateButton(
 			'Generate',									--button title
 			'Generate landscapes of terrain.',			--hover text
-			'http://www.roblox.com/asset/?id=236006872'	--button image
+			'http://www.namehere.com/asset/?id=236006872'	--button image
 		),
 		studioOnly = true,
 	},
@@ -73,7 +73,7 @@ local plugins = {
 		button = buttonCreator:CreateButton(
 			'Add',
 			'Click and hold to add terrain.',
-			'http://www.roblox.com/asset/?id=225328572'
+			'http://www.namehere.com/asset/?id=225328572'
 		),
 		usesMaterials = true,
 	},
@@ -81,14 +81,14 @@ local plugins = {
 		button = buttonCreator:CreateButton(
 			'Subtract',
 			'Click and hold to remove terrain.',
-			'http://www.roblox.com/asset/?id=225328818'
+			'http://www.namehere.com/asset/?id=225328818'
 		),
 	},
 	{name = 'Paint',
 		button = buttonCreator:CreateButton(
 			'Paint',
 			'Paint the material of the terrain.',
-			'http://www.roblox.com/asset/?id=225328954'
+			'http://www.namehere.com/asset/?id=225328954'
 		),
 		usesMaterials = true,
 	},
@@ -96,7 +96,7 @@ local plugins = {
 		button = buttonCreator:CreateButton(
 			'Grow',
 			'Click and hold to grow and expand terrain.',
-			'http://www.roblox.com/asset/?id=225329153'
+			'http://www.namehere.com/asset/?id=225329153'
 		),
 		usesMaterials = true,
 	},
@@ -104,21 +104,21 @@ local plugins = {
 		button = buttonCreator:CreateButton(
 			'Erode',
 			'Click and hold to erode and remove terrain.',
-			'http://www.roblox.com/asset/?id=225329301'
+			'http://www.namehere.com/asset/?id=225329301'
 		),
 	},
 	{name = 'Smooth',
 		button = buttonCreator:CreateButton(
 			'Smooth',
 			'Brush to smooth out rough or jagged terrain.',
-			'http://www.roblox.com/asset/?id=225329641'
+			'http://www.namehere.com/asset/?id=225329641'
 		),
 	},
 	{name = 'Region Editor',
 		button = buttonCreator:CreateButton(
 			'Regions',
 			'Manipulate regions of smooth terrain.',
-			'http://www.roblox.com/asset/?id=240631063'
+			'http://www.namehere.com/asset/?id=240631063'
 		),
 	},
 }
@@ -168,7 +168,7 @@ function FirstTimeSetUp()
 	local prevCameraType = game.Workspace.CurrentCamera.CameraType
 
 	--SUB SETTINGS--	(Non-userfacing Settings)
-	local resolution = 4			--This is the size of voxels on Roblox. Why is this a variable? ;)
+	local resolution = 4			--This is the size of voxels on NAMEHERE. Why is this a variable? ;)
 	local minSelectionSize = 1
 	local maxSelectionSize = 16
 	local clickThreshold = .1
@@ -178,14 +178,14 @@ function FirstTimeSetUp()
 		['Sphere'] = {
 			name = 'Sphere',
 			button = guiFrame:WaitForChild('ShapeButton1'),
-			image = 'http://www.roblox.com/asset/?id=225799533',
-			selectedImage = 'http://www.roblox.com/asset/?id=225801914',
+			image = 'http://www.namehere.com/asset/?id=225799533',
+			selectedImage = 'http://www.namehere.com/asset/?id=225801914',
 		},
 		['Box'] = {
 			name = 'Box',
 			button = guiFrame:WaitForChild('ShapeButton2'),
-			image = 'http://www.roblox.com/asset/?id=225799696',
-			selectedImage = 'http://www.roblox.com/asset/?id=225802254',
+			image = 'http://www.namehere.com/asset/?id=225799696',
+			selectedImage = 'http://www.namehere.com/asset/?id=225802254',
 		},
 	}
 	----------------
@@ -348,7 +348,7 @@ function FirstTimeSetUp()
 
 
 	function updatePlaneLock()
-		checkBox1.Style = forcePlaneLock and Enum.ButtonStyle.RobloxRoundButton or Enum.ButtonStyle.RobloxRoundDefaultButton
+		checkBox1.Style = forcePlaneLock and Enum.ButtonStyle.NAMEHERERoundButton or Enum.ButtonStyle.NAMEHERERoundDefaultButton
 		checkBox1.Text = (planeLock or forcePlaneLock) and 'X' or ''
 		checkBox1.AutoButtonColor = not forcePlaneLock
 		if not (planeLock or forcePlaneLock) then
@@ -361,7 +361,7 @@ function FirstTimeSetUp()
 	end)
 
 	function updateSnapToGrid()
-		checkBox2.Style = forceSnapToGrid and Enum.ButtonStyle.RobloxRoundButton or Enum.ButtonStyle.RobloxRoundDefaultButton
+		checkBox2.Style = forceSnapToGrid and Enum.ButtonStyle.NAMEHERERoundButton or Enum.ButtonStyle.NAMEHERERoundDefaultButton
 		checkBox2.Text = (snapToGrid or forceSnapToGrid) and 'X' or ''
 		checkBox2.AutoButtonColor = not forceSnapToGrid
 	end
@@ -375,7 +375,7 @@ function FirstTimeSetUp()
 		if forceDynamicMaterial then
 			isDynamic = forceDynamicMaterialTo
 		end
-		checkBox3.Style = forceDynamicMaterial and Enum.ButtonStyle.RobloxRoundButton or Enum.ButtonStyle.RobloxRoundDefaultButton
+		checkBox3.Style = forceDynamicMaterial and Enum.ButtonStyle.NAMEHERERoundButton or Enum.ButtonStyle.NAMEHERERoundDefaultButton
 		checkBox3.AutoButtonColor = not forceDynamicMaterial
 		checkBox3.Text = isDynamic and 'X' or ''
 		resizeGuiFrame()
@@ -395,7 +395,7 @@ function FirstTimeSetUp()
 		if forceIgnoreWater then
 			isIgnoreWater = forceIgnoreWaterTo
 		end
-		checkBox4.Style = forceIgnoreWater and Enum.ButtonStyle.RobloxRoundButton or Enum.ButtonStyle.RobloxRoundDefaultButton
+		checkBox4.Style = forceIgnoreWater and Enum.ButtonStyle.NAMEHERERoundButton or Enum.ButtonStyle.NAMEHERERoundDefaultButton
 		checkBox4.AutoButtonColor = not forceIgnoreWater
 		checkBox4.Text = isIgnoreWater and 'X' or ''
 	end
@@ -1309,7 +1309,7 @@ local currentTool = 'Create'
 regionEditButton = toolBar:CreateButton(
 	'Region Edit',	--button title
 	'Manipulate regions of smoothterrain.',	--hover text
-	'http://www.roblox.com/asset/?id=180084957'	--icon
+	'http://www.namehere.com/asset/?id=180084957'	--icon
 )
 regionEditButton.Click:connect(function()
 	if not on then
@@ -1358,7 +1358,7 @@ function FirstTimeSetUp()
 	----------------
 
 	--SUB SETTINGS--
-	local resolution = 4			--This is the size of voxels on Roblox. Why is this a variable? ;)
+	local resolution = 4			--This is the size of voxels on NAMEHERE. Why is this a variable? ;)
 	local textSelectColor = Color3.new(72/255, 145/255, 212/255)
 	local white = Color3.new(238/255, 238/255, 238/255)
 	local editColor1 = 'Institutional white'
@@ -1432,13 +1432,13 @@ function FirstTimeSetUp()
 
 	function setButton(newButton)
 		lockInMap()
-		buttonSelect.Style = newButton == 'Select' and Enum.ButtonStyle.RobloxRoundDropdownButton or Enum.ButtonStyle.RobloxRoundDefaultButton
+		buttonSelect.Style = newButton == 'Select' and Enum.ButtonStyle.NAMEHERERoundDropdownButton or Enum.ButtonStyle.NAMEHERERoundDefaultButton
 		buttonSelect.TextColor3 = newButton == 'Select' and textSelectColor or white
-		buttonMove.Style = newButton == 'Move' and Enum.ButtonStyle.RobloxRoundDropdownButton or Enum.ButtonStyle.RobloxRoundDefaultButton
+		buttonMove.Style = newButton == 'Move' and Enum.ButtonStyle.NAMEHERERoundDropdownButton or Enum.ButtonStyle.NAMEHERERoundDefaultButton
 		buttonMove.TextColor3 = newButton == 'Move' and textSelectColor or white
-		buttonResize.Style = newButton == 'Resize' and Enum.ButtonStyle.RobloxRoundDropdownButton or Enum.ButtonStyle.RobloxRoundDefaultButton
+		buttonResize.Style = newButton == 'Resize' and Enum.ButtonStyle.NAMEHERERoundDropdownButton or Enum.ButtonStyle.NAMEHERERoundDefaultButton
 		buttonResize.TextColor3 = newButton == 'Resize' and textSelectColor or white
-		buttonRotate.Style = newButton == 'Rotate' and Enum.ButtonStyle.RobloxRoundDropdownButton or Enum.ButtonStyle.RobloxRoundDefaultButton
+		buttonRotate.Style = newButton == 'Rotate' and Enum.ButtonStyle.NAMEHERERoundDropdownButton or Enum.ButtonStyle.NAMEHERERoundDefaultButton
 		buttonRotate.TextColor3 = newButton == 'Rotate' and textSelectColor or white
 		if newButton == 'Select' then
 			mode = 'Select'
@@ -3458,21 +3458,21 @@ return initialiseUtility]]></ProtectedString>
 
 
 local materialsTable = {	--Interface order is defined by order here
-	{enum = Enum.Material.Grass, image = 'http://www.roblox.com/asset/?id=225314676'},
-	{enum = Enum.Material.Sand, image = 'http://www.roblox.com/asset/?id=225315607'},
-	{enum = Enum.Material.Rock, image = 'http://www.roblox.com/asset/?id=225315178'},
-	{enum = Enum.Material.Water, image = 'http://www.roblox.com/asset/?id=225315529', forceIgnoreWater = true, forceIgnoreWaterTo = false},
-	{enum = Enum.Material.Ground, image = 'http://www.roblox.com/asset/?id=254542189'},
-	{enum = Enum.Material.Sandstone, image = 'http://www.roblox.com/asset/?id=254541350'},
-	{enum = Enum.Material.Slate, image = 'http://www.roblox.com/asset/?id=225315290'},
-	{enum = Enum.Material.Snow, image = 'http://www.roblox.com/asset/?id=254541898'},
-	{enum = Enum.Material.Mud, image = 'http://www.roblox.com/asset/?id=254541862'},
-	{enum = Enum.Material.Brick, image = 'http://www.roblox.com/asset/?id=225315419', forceSnapToGrid = true},
-	{enum = Enum.Material.Concrete, image = 'http://www.roblox.com/asset/?id=225314983'},
-	{enum = Enum.Material.Glacier, image = 'http://www.roblox.com/asset/?id=254541572'},
-	{enum = Enum.Material.WoodPlanks, image = 'http://www.roblox.com/asset/?id=225315705', forceSnapToGrid = true},
-	{enum = Enum.Material.CrackedLava, image = 'http://www.roblox.com/asset/?id=254541726'},
-	{enum = Enum.Material.Basalt, image = 'http://www.roblox.com/asset/?id=254542066'},
+	{enum = Enum.Material.Grass, image = 'http://www.namehere.com/asset/?id=225314676'},
+	{enum = Enum.Material.Sand, image = 'http://www.namehere.com/asset/?id=225315607'},
+	{enum = Enum.Material.Rock, image = 'http://www.namehere.com/asset/?id=225315178'},
+	{enum = Enum.Material.Water, image = 'http://www.namehere.com/asset/?id=225315529', forceIgnoreWater = true, forceIgnoreWaterTo = false},
+	{enum = Enum.Material.Ground, image = 'http://www.namehere.com/asset/?id=254542189'},
+	{enum = Enum.Material.Sandstone, image = 'http://www.namehere.com/asset/?id=254541350'},
+	{enum = Enum.Material.Slate, image = 'http://www.namehere.com/asset/?id=225315290'},
+	{enum = Enum.Material.Snow, image = 'http://www.namehere.com/asset/?id=254541898'},
+	{enum = Enum.Material.Mud, image = 'http://www.namehere.com/asset/?id=254541862'},
+	{enum = Enum.Material.Brick, image = 'http://www.namehere.com/asset/?id=225315419', forceSnapToGrid = true},
+	{enum = Enum.Material.Concrete, image = 'http://www.namehere.com/asset/?id=225314983'},
+	{enum = Enum.Material.Glacier, image = 'http://www.namehere.com/asset/?id=254541572'},
+	{enum = Enum.Material.WoodPlanks, image = 'http://www.namehere.com/asset/?id=225315705', forceSnapToGrid = true},
+	{enum = Enum.Material.CrackedLava, image = 'http://www.namehere.com/asset/?id=254541726'},
+	{enum = Enum.Material.Basalt, image = 'http://www.namehere.com/asset/?id=254542066'},
 }
 
 return materialsTable
@@ -3897,7 +3897,7 @@ return materialsTable
 						<int name="BorderSizePixel">0</int>
 						<bool name="ClipsDescendants">false</bool>
 						<bool name="Draggable">false</bool>
-						<Content name="Image"><url>http://www.roblox.com/asset/?id=225799533</url></Content>
+						<Content name="Image"><url>http://www.namehere.com/asset/?id=225799533</url></Content>
 						<Color3 name="ImageColor3">4294967295</Color3>
 						<Vector2 name="ImageRectOffset">
 							<X>0</X>
@@ -3957,7 +3957,7 @@ return materialsTable
 						<int name="BorderSizePixel">0</int>
 						<bool name="ClipsDescendants">false</bool>
 						<bool name="Draggable">false</bool>
-						<Content name="Image"><url>http://www.roblox.com/asset/?id=225799696</url></Content>
+						<Content name="Image"><url>http://www.namehere.com/asset/?id=225799696</url></Content>
 						<Color3 name="ImageColor3">4294967295</Color3>
 						<Vector2 name="ImageRectOffset">
 							<X>0</X>
@@ -6161,7 +6161,7 @@ end
 local currentMultiChoiceOpen = nil
 function closeMultiChoiceFrame()
 	if currentMultiChoiceOpen then
-		currentMultiChoiceOpen.Style = 'RobloxRoundDefaultButton'
+		currentMultiChoiceOpen.Style = 'NAMEHERERoundDefaultButton'
 	end
 	currentMultiChoiceOpen = nil
 	multipleChoiceFrame.Visible = false
@@ -6177,7 +6177,7 @@ function createMultiChoice(name, pos, parent, choices, setting, changedFunction)
 	button.MouseButton1Down:connect(function()
 		if currentMultiChoiceOpen ~= button then
 			currentMultiChoiceOpen = button
-			--button.Style = 'RobloxRoundButton'	--would be nice, but with autobuttoncolor, not so much.
+			--button.Style = 'NAMEHERERoundButton'	--would be nice, but with autobuttoncolor, not so much.
 			multipleChoiceFrame.TitleLabel.Text = name
 			for _,item in pairs(multipleChoiceFrame:GetChildren()) do
 				if string.sub(item.Name,1,6) == 'Choice' then
@@ -6514,7 +6514,7 @@ function findBiomeTransitionValue(biome,weight,value,averageValue)
 end
 
 function updatePausedButton()
-	pauseButton.Style = paused and 'RobloxRoundButton' or 'RobloxRoundDefaultButton'
+	pauseButton.Style = paused and 'NAMEHERERoundButton' or 'NAMEHERERoundDefaultButton'
 	pauseButton.Text = paused and 'Paused' or 'Pause'
 end
 
@@ -6861,4 +6861,4 @@ return {
 			</Properties>
 		</Item>
 	</Item>
-</roblox>
+</namehere>

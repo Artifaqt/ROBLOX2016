@@ -1,4 +1,4 @@
-<roblox xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.roblox.com/roblox.xsd" version="4">
+<namehere xmlns:xmime="http://www.w3.org/2005/05/xmlmime" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="http://www.namehere.com/namehere.xsd" version="4">
 	<External>null</External>
 	<External>nil</External>
 	<Item class="LocalScript" referent="RBX0">
@@ -269,7 +269,7 @@ end
       <Content name="LinkedSource">
         <null></null>
       </Content>
-      <string name="Name">RobloxTeam</string>
+      <string name="Name">NAMEHERETeam</string>
       <string name="Source">
         -- Now with exciting TeamColors HACK!
 
@@ -333,4 +333,4 @@ end
       <bool name="archivable">true</bool>
     </Properties>
   </Item>
-</roblox>
+</namehere>

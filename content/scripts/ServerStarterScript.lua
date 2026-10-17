@@ -12,7 +12,7 @@ while runService == nil or not runService:IsRunning() do
 end
 
 --[[ Services ]]--
-local RobloxReplicatedStorage = game:GetService('RobloxReplicatedStorage')
+local NAMEHEREReplicatedStorage = game:GetService('NAMEHEREReplicatedStorage')
 local ScriptContext = game:GetService('ScriptContext')
 
 --[[ Fast Flags ]]--
@@ -29,13 +29,13 @@ else
 	-- above script will create this now
 	RemoteEvent_NewFollower = Instance.new('RemoteEvent')
 	RemoteEvent_NewFollower.Name = "NewFollower"
-	RemoteEvent_NewFollower.Parent = RobloxReplicatedStorage
+	RemoteEvent_NewFollower.Parent = NAMEHEREReplicatedStorage
 end
 
 --[[ Remote Events ]]--
 local RemoteEvent_SetDialogInUse = Instance.new("RemoteEvent")
 RemoteEvent_SetDialogInUse.Name = "SetDialogInUse"
-RemoteEvent_SetDialogInUse.Parent = RobloxReplicatedStorage 
+RemoteEvent_SetDialogInUse.Parent = NAMEHEREReplicatedStorage 
 
 --[[ Event Connections ]]--
 -- Params:

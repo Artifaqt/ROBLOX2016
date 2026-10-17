@@ -9875,12 +9875,12 @@ bool   CTriangulator::StartTriangulate()
 
 	try
 	{
-        // ROBLOX CHANGE
+        // NAMEHERE CHANGE
 		if (triangulation_temp_flag==SG_DELAUNAY_TRIANGULATION)
 			triangulate("pzqPQ", in_data, out_data, (struct triangulateio *) NULL);//Delone
 		else
 		    triangulate("pzPQ", in_data, out_data, (struct triangulateio *) NULL);
-        // END ROBLOX CHANGE
+        // END NAMEHERE CHANGE
 	}
 	catch (...) 
 	{

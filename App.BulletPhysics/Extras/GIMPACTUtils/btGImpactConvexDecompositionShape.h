@@ -70,14 +70,14 @@ public:
 		buildConvexDecomposition(children_has_transform);
 	}
 
-	// ROBLOX ADDITION, empty constructor for manual decomposition.
+	// NAMEHERE ADDITION, empty constructor for manual decomposition.
 	btGImpactConvexDecompositionShape(bool children_has_transform = true, btScalar margin = btScalar(0.01))
 		:btGImpactCompoundShape(children_has_transform)
 	{
 		m_decomposition = 0;
 		m_collisionMargin = margin;
 	}
-	// END ROBLOX ADDITION
+	// END NAMEHERE ADDITION
 
 	virtual ~btGImpactConvexDecompositionShape();
 

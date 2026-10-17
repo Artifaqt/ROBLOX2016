@@ -200,7 +200,7 @@ struct HttpOptions
 void init(Http::CookieSharingPolicy cookieSharingPolicy); // NOTE: This call is not thread-safe.
 void setCookiesForDomain(const std::string& domain, const std::string& cookies);
 void getCookiesForDomain(const std::string& domain, std::string& cookies);
-boost::filesystem::path getRobloxCookieJarPath();
+boost::filesystem::path getNAMEHERECookieJarPath();
 void setProxy(const std::string& host, long port = 0);
 void perform(HttpOptions& options, std::string& response);
 } // namespace HttpPlatformImpl

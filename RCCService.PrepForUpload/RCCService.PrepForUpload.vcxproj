@@ -72,7 +72,7 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <PostBuildEvent>
-      <Message>Copy bits needed to upload Roblox project to UploadBits directory</Message>
+      <Message>Copy bits needed to upload NAMEHERE project to UploadBits directory</Message>
       <Command>%40echo off
 mkdir ..\UploadBits
 rmdir /s /q ..\UploadBits\$(Platform)-$(Configuration)-RCCService\
@@ -80,14 +80,14 @@ mkdir ..\UploadBits\$(Platform)-$(Configuration)-RCCService\
 xcopy /h /e /k /q ..\RCCService\$(Platform)\$(Configuration)\*.* ..\UploadBits\$(Platform)-$(Configuration)-RCCService\
 xcopy /h /e /k /q ..\content ..\UploadBits\$(Platform)-$(Configuration)-RCCService\content\
 xcopy /h /e /k /q ..\shaders ..\UploadBits\$(Platform)-$(Configuration)-RCCService\shaders\
-xcopy /h /e /k ..\PlatformContent\pc ..\UploadBits\$(Platform)-$(Configuration)-RobloxPlayer\PlatformContent\pc\
+xcopy /h /e /k ..\PlatformContent\pc ..\UploadBits\$(Platform)-$(Configuration)-NAMEHEREPlayer\PlatformContent\pc\
 copy  ..\Installer\Uploader\Redist.zip ..\UploadBits\$(Platform)-$(Configuration)-RCCService\Redist.zip
 </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <PostBuildEvent>
-      <Message>Copy bits needed to upload Roblox project to UploadBits directory</Message>
+      <Message>Copy bits needed to upload NAMEHERE project to UploadBits directory</Message>
       <Command>%40echo off
 mkdir ..\UploadBits
 rmdir /s /q ..\UploadBits\$(Platform)-$(Configuration)-RCCService\
@@ -102,7 +102,7 @@ copy  ..\Installer\Uploader\Redist.zip ..\UploadBits\$(Platform)-$(Configuration
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='NoOpt|Win32'">
     <PostBuildEvent>
-      <Message>Copy bits needed to upload Roblox project to UploadBits directory</Message>
+      <Message>Copy bits needed to upload NAMEHERE project to UploadBits directory</Message>
       <Command>%40echo off
 mkdir ..\UploadBits
 rmdir /s /q ..\UploadBits\$(Platform)-$(Configuration)-RCCService\
@@ -110,13 +110,13 @@ mkdir ..\UploadBits\$(Platform)-$(Configuration)-RCCService\
 xcopy /h /e /k /q ..\RCCService\$(Platform)\$(Configuration)\*.* ..\UploadBits\$(Platform)-$(Configuration)-RCCService\
 xcopy /h /e /k /q ..\content ..\UploadBits\$(Platform)-$(Configuration)-RCCService\content\
 xcopy /h /e /k /q ..\shaders ..\UploadBits\$(Platform)-$(Configuration)-RCCService\shaders\
-xcopy /h /e /k ..\PlatformContent\pc ..\UploadBits\$(Platform)-$(Configuration)-RobloxPlayer\PlatformContent\pc\
+xcopy /h /e /k ..\PlatformContent\pc ..\UploadBits\$(Platform)-$(Configuration)-NAMEHEREPlayer\PlatformContent\pc\
 copy  ..\Installer\Uploader\Redist.zip ..\UploadBits\$(Platform)-$(Configuration)-RCCService\Redist.zip
 </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <Text Include="..\Roblox.PrepForUpload\readme.txt" />
+    <Text Include="..\NAMEHERE.PrepForUpload\readme.txt" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\RCCService\RCCService.vcxproj">

@@ -29,7 +29,7 @@ public:
 		,taskWnd(NULL)
 		,dialogResult(-1)
 	{
-		sprintf_s(instructions, 256, "Roblox needs to close \"%s\"", windowTitle);
+		sprintf_s(instructions, 256, "NAMEHERE needs to close \"%s\"", windowTitle);
 		boost::thread(boost::bind(&CShutdownTaskDialog::run, this, instance, parent));
 	}
 	~CShutdownTaskDialog(void)
@@ -50,7 +50,7 @@ public:
 		config.hwndParent = parent;
 		config.dwCommonButtons              = TDCBF_CANCEL_BUTTON;
 		config.pszMainIcon                    = MAKEINTRESOURCEW(IDI_BOOTSTRAPPER);
-		config.pszWindowTitle               = L"Roblox";
+		config.pszWindowTitle               = L"NAMEHERE";
 		CComBSTR bstr = CString(instructions);
 		config.pszMainInstruction           = (BSTR)bstr;
 
@@ -113,7 +113,7 @@ public:
 	{
 		CString message;
 		message.Format(_T("\"%s\" needs to close.\n\nShut down now?  You may lose work that you haven't saved"), windowTitle);
-		result = ::MessageBox(parent,  message, _T("Roblox"), MB_OKCANCEL | MB_ICONQUESTION);
+		result = ::MessageBox(parent,  message, _T("NAMEHERE"), MB_OKCANCEL | MB_ICONQUESTION);
 	}
 
 	void CloseDialog(void)

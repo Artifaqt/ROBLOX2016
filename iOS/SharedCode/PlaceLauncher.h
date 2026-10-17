@@ -1,9 +1,9 @@
 //
 //  PlaceLauncher.h
-//  RobloxMobile
+//  NAMEHEREMobile
 //
 //  Created by David York on 9/25/12.
-//  Copyright (c) 2012 ROBLOX. All rights reserved.
+//  Copyright (c) 2012 NAMEHERE. All rights reserved.
 //
 #pragma once
 
@@ -26,7 +26,7 @@ enum JoinGameRequest {
 };
 
 class Teleporter;
-class RobloxView;
+class NAMEHEREView;
 @class GameViewController;
 
 @interface RBXGameLaunchParams : NSObject
@@ -46,7 +46,7 @@ class RobloxView;
 
 @interface PlaceLauncher : NSObject
 {
-    RobloxView* rbxView;
+    NAMEHEREView* rbxView;
     
     BOOL isCurrentlyPlayingGame;
     BOOL isLeavingGame;
@@ -78,7 +78,7 @@ class RobloxView;
 -(void) leaveGameShutdown:(BOOL) userRequestedLeave;
 -(void) createGame:(shared_ptr<RBX::Game>)game presentGameAutomatically:(BOOL) presentGameAutomatically;
 -(void) finishGameSetup:(boost::shared_ptr<RBX::Game>)game gameViewController:(GameViewController*) gameController;
--(void) deleteRobloxView:(BOOL) resetCurrentGame;
+-(void) deleteNAMEHEREView:(BOOL) resetCurrentGame;
 -(void) presentGameViewController;
 
 -(void)teleport:(NSString*)ticket withAuthentication:(NSString*)url withScript:(NSString*)script;

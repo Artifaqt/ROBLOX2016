@@ -52,8 +52,8 @@ void CTaskDialog::run()
 	config.hInstance                    = instance;
 	config.dwCommonButtons              = TDCBF_CANCEL_BUTTON;
 	config.pszMainIcon                    = MAKEINTRESOURCEW(IDI_BOOTSTRAPPER);
-	config.pszWindowTitle               = L"Roblox";
-	config.pszMainInstruction           = L"Starting Roblox";
+	config.pszWindowTitle               = L"NAMEHERE";
+	config.pszMainInstruction           = L"Starting NAMEHERE";
 	if (RBX_TDE_MESSAGE == TDE_EXPANDED_INFORMATION)
 	{
 		config.pszExpandedInformation       = L"Please Wait...";		// http://msdn.microsoft.com/en-us/library/bb760536(VS.85).aspx states: If pszExpandedInformation is NULL and you attempt to send a TDM_UPDATE_ELEMENT_TEXT with TDE_EXPANDED_INFORMATION, nothing will happen.
@@ -141,7 +141,7 @@ void CTaskDialog::DisplayError(const char* message, const char* exceptionText)
 	config.hInstance                    = NULL;
 	config.dwCommonButtons              = TDCBF_CLOSE_BUTTON;
 	config.pszMainIcon                    = TD_ERROR_ICON;
-	config.pszWindowTitle               = L"Roblox";
+	config.pszWindowTitle               = L"NAMEHERE";
 	CComBSTR btsr = CString(message);
 	config.pszMainInstruction           = btsr;
 	CComBSTR btsr2 = CString(exceptionText);
@@ -161,7 +161,7 @@ void CTaskDialog::FinalMessage(const char* message)
 	config.hInstance                    = NULL;
 	config.dwCommonButtons              = TDCBF_OK_BUTTON;
 	config.pszMainIcon                    = MAKEINTRESOURCEW(IDI_BOOTSTRAPPER);
-	config.pszWindowTitle               = L"Roblox";
+	config.pszWindowTitle               = L"NAMEHERE";
 	CComBSTR btsr = CString(message);
 	config.pszMainInstruction           = btsr;
 

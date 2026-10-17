@@ -1,5 +1,5 @@
 /**
-  ROBLOX - We are not using the G3D::GCamera, intstead we are using the RBX:Rbx::Camera from old G3D.
+  NAMEHERE - We are not using the G3D::GCamera, intstead we are using the RBX:Rbx::Camera from old G3D.
   @file GCamera.h
 
   @maintainer Morgan McGuire, http://graphics.cs.williams.edu

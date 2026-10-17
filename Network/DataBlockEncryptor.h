@@ -1,4 +1,4 @@
-// Roblox: Moved here from RakNet 3.x
+// NAMEHERE: Moved here from RakNet 3.x
 
 /// \file DataBlockEncryptor.h
 /// \internal

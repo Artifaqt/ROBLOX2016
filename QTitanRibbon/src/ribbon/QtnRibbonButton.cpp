@@ -110,9 +110,9 @@ QSize RibbonButton::sizeHint() const
 
             indicatorCenter = strSecondRow.isEmpty() && opt.features & QStyleOptionToolButton::HasMenu;
 
-			// BEGIN ROBLOX CHANGES
+			// BEGIN NAMEHERE CHANGES
             h = style()->pixelMetric((QStyle::PixelMetric)RibbonStyle::PM_RibbonHeightGroup, 0, this) + 4;
-			// END ROBLOX CHANGES
+			// END NAMEHERE CHANGES
 
             // if the text is more than icon
             if (textFirstSize.width() > w)

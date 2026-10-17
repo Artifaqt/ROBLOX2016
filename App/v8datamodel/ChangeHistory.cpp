@@ -1,6 +1,6 @@
 /**
  * ChangeHistory.cpp
- * Copyright (c) 2013 ROBLOX Corp. All Rights Reserved.
+ * Copyright (c) 2013 NAMEHERE Corp. All Rights Reserved.
  */
 #include "stdafx.h"
 
@@ -11,7 +11,7 @@
 #include <boost/unordered_set.hpp>
 #include <boost/unordered_map.hpp>
 
-// Roblox Headers
+// NAMEHERE Headers
 #include "v8datamodel/changehistory.h"
 #include "v8datamodel/datamodel.h"
 #include "v8datamodel/workspace.h"

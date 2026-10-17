@@ -78,7 +78,7 @@
 		1F2846D815E7075700120D64 /* TerrainPartition.h in Headers */ = {isa = PBXBuildFile; fileRef = 52786C40144762C100D68924 /* TerrainPartition.h */; };
 		1F2846D915E7075700120D64 /* CacheableContentProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = F4737EA114CE4BC800010548 /* CacheableContentProvider.h */; };
 		1F2846DA15E7075700120D64 /* Bindable.h in Headers */ = {isa = PBXBuildFile; fileRef = 524DC2AD14DB060A00BF7F82 /* Bindable.h */; };
-		1F2846DB15E7075700120D64 /* RobloxServicesTools.h in Headers */ = {isa = PBXBuildFile; fileRef = CF9652BD14E1C767001686EB /* RobloxServicesTools.h */; };
+		1F2846DB15E7075700120D64 /* NAMEHEREServicesTools.h in Headers */ = {isa = PBXBuildFile; fileRef = CF9652BD14E1C767001686EB /* NAMEHEREServicesTools.h */; };
 		1F2846DC15E7075700120D64 /* Buoyancy.h in Headers */ = {isa = PBXBuildFile; fileRef = 651BBDBA14DA107F00BACEFD /* Buoyancy.h */; };
 		1F2846DD15E7075700120D64 /* Ragdoll.h in Headers */ = {isa = PBXBuildFile; fileRef = F422C8BA152123E5005CEF6D /* Ragdoll.h */; };
 		1F2846DE15E7075700120D64 /* BuoyancyConnector.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F77EB64154B7412006BFEAD /* BuoyancyConnector.h */; };
@@ -493,7 +493,7 @@
 		1F28489115E7075700120D64 /* Region3int16.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7F7784CA141AC00A003DC36F /* Region3int16.cpp */; };
 		1F28489215E7075700120D64 /* CacheableContentProvider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F4737E9F14CE4BAA00010548 /* CacheableContentProvider.cpp */; };
 		1F28489315E7075700120D64 /* Bindable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 524DC2AB14DB05F700BF7F82 /* Bindable.cpp */; };
-		1F28489415E7075700120D64 /* RobloxServicesTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF9652BB14E1C74D001686EB /* RobloxServicesTools.cpp */; };
+		1F28489415E7075700120D64 /* NAMEHEREServicesTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF9652BB14E1C74D001686EB /* NAMEHEREServicesTools.cpp */; };
 		1F28489515E7075700120D64 /* Buoyancy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 651BBD4F14DA0EDF00BACEFD /* Buoyancy.cpp */; };
 		1F28489615E7075700120D64 /* Ragdoll.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F422C8B8152123C3005CEF6D /* Ragdoll.cpp */; };
 		1F28489715E7075700120D64 /* BuoyancyConnector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F77EB66154B741F006BFEAD /* BuoyancyConnector.cpp */; };
@@ -733,7 +733,7 @@
 		42CA153A19984A0700635DBA /* lzio.h in Headers */ = {isa = PBXBuildFile; fileRef = 528DE2321315AF6D00758A5E /* lzio.h */; };
 		42CA153B19984A0700635DBA /* TweenService.h in Headers */ = {isa = PBXBuildFile; fileRef = 6542C3A1130DC12200D2CF50 /* TweenService.h */; };
 		42CA153E19984A0700635DBA /* FriendService.h in Headers */ = {isa = PBXBuildFile; fileRef = 657DC603131F2457000871DB /* FriendService.h */; };
-		42CA153F19984A0700635DBA /* RobloxGoogleAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 5633C3AB18246A190066D73B /* RobloxGoogleAnalytics.h */; };
+		42CA153F19984A0700635DBA /* NAMEHEREGoogleAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 5633C3AB18246A190066D73B /* NAMEHEREGoogleAnalytics.h */; };
 		42CA154019984A0700635DBA /* GameBasicSettings.h in Headers */ = {isa = PBXBuildFile; fileRef = 65ACE722132942AA004EA504 /* GameBasicSettings.h */; };
 		42CA154119984A0700635DBA /* HttpAsync.h in Headers */ = {isa = PBXBuildFile; fileRef = 42975354192BFD3F00566182 /* HttpAsync.h */; };
 		42CA154219984A0700635DBA /* RenderHooksService.h in Headers */ = {isa = PBXBuildFile; fileRef = F4377D00134FBD520021294E /* RenderHooksService.h */; };
@@ -763,7 +763,7 @@
 		42CA155A19984A0700635DBA /* TerrainPartition.h in Headers */ = {isa = PBXBuildFile; fileRef = 52786C40144762C100D68924 /* TerrainPartition.h */; };
 		42CA155B19984A0700635DBA /* CacheableContentProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = F4737EA114CE4BC800010548 /* CacheableContentProvider.h */; };
 		42CA155C19984A0700635DBA /* Bindable.h in Headers */ = {isa = PBXBuildFile; fileRef = 524DC2AD14DB060A00BF7F82 /* Bindable.h */; };
-		42CA155D19984A0700635DBA /* RobloxServicesTools.h in Headers */ = {isa = PBXBuildFile; fileRef = CF9652BD14E1C767001686EB /* RobloxServicesTools.h */; };
+		42CA155D19984A0700635DBA /* NAMEHEREServicesTools.h in Headers */ = {isa = PBXBuildFile; fileRef = CF9652BD14E1C767001686EB /* NAMEHEREServicesTools.h */; };
 		42CA155E19984A0700635DBA /* rbxrandom.h in Headers */ = {isa = PBXBuildFile; fileRef = 566549681891DCD300774F4D /* rbxrandom.h */; };
 		42CA155F19984A0700635DBA /* Buoyancy.h in Headers */ = {isa = PBXBuildFile; fileRef = 651BBDBA14DA107F00BACEFD /* Buoyancy.h */; };
 		42CA156019984A0700635DBA /* Ragdoll.h in Headers */ = {isa = PBXBuildFile; fileRef = F422C8BA152123E5005CEF6D /* Ragdoll.h */; };
@@ -1236,7 +1236,7 @@
 		42CA173A19984A0700635DBA /* lmem.c in Sources */ = {isa = PBXBuildFile; fileRef = 528DE2021315AF6D00758A5E /* lmem.c */; };
 		42CA173B19984A0700635DBA /* loadlib.c in Sources */ = {isa = PBXBuildFile; fileRef = 528DE2051315AF6D00758A5E /* loadlib.c */; };
 		42CA173C19984A0700635DBA /* lobject.c in Sources */ = {isa = PBXBuildFile; fileRef = 528DE2071315AF6D00758A5E /* lobject.c */; };
-		42CA173D19984A0700635DBA /* RobloxGoogleAnalytics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94370406182AD97B00CABB79 /* RobloxGoogleAnalytics.cpp */; };
+		42CA173D19984A0700635DBA /* NAMEHEREGoogleAnalytics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94370406182AD97B00CABB79 /* NAMEHEREGoogleAnalytics.cpp */; };
 		42CA173E19984A0700635DBA /* lopcodes.c in Sources */ = {isa = PBXBuildFile; fileRef = 528DE20A1315AF6D00758A5E /* lopcodes.c */; };
 		42CA173F19984A0700635DBA /* loslib.c in Sources */ = {isa = PBXBuildFile; fileRef = 528DE20D1315AF6D00758A5E /* loslib.c */; };
 		42CA174019984A0700635DBA /* lparser.c in Sources */ = {isa = PBXBuildFile; fileRef = 528DE20F1315AF6D00758A5E /* lparser.c */; };
@@ -1279,7 +1279,7 @@
 		42CA176719984A0700635DBA /* Region3int16.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7F7784CA141AC00A003DC36F /* Region3int16.cpp */; };
 		42CA176819984A0700635DBA /* CacheableContentProvider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F4737E9F14CE4BAA00010548 /* CacheableContentProvider.cpp */; };
 		42CA176919984A0700635DBA /* Bindable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 524DC2AB14DB05F700BF7F82 /* Bindable.cpp */; };
-		42CA176A19984A0700635DBA /* RobloxServicesTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF9652BB14E1C74D001686EB /* RobloxServicesTools.cpp */; };
+		42CA176A19984A0700635DBA /* NAMEHEREServicesTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF9652BB14E1C74D001686EB /* NAMEHEREServicesTools.cpp */; };
 		42CA176B19984A0700635DBA /* MovementHistory.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F2751C931889E3B6006CEEAF /* MovementHistory.cpp */; };
 		42CA176C19984A0700635DBA /* Buoyancy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 651BBD4F14DA0EDF00BACEFD /* Buoyancy.cpp */; };
 		42CA176D19984A0700635DBA /* Ragdoll.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F422C8B8152123C3005CEF6D /* Ragdoll.cpp */; };
@@ -1340,14 +1340,14 @@
 		42FAF7901B98B702005AD364 /* BulletContact.h in Headers */ = {isa = PBXBuildFile; fileRef = 42FAF78E1B98B702005AD364 /* BulletContact.h */; };
 		42FAF7911B98B702005AD364 /* BulletContact.h in Headers */ = {isa = PBXBuildFile; fileRef = 42FAF78E1B98B702005AD364 /* BulletContact.h */; };
 		42FAF7921B98B702005AD364 /* BulletContact.h in Headers */ = {isa = PBXBuildFile; fileRef = 42FAF78E1B98B702005AD364 /* BulletContact.h */; };
-		456794EF1A82A584009479E0 /* RobloxReplicatedStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456794EE1A82A584009479E0 /* RobloxReplicatedStorage.cpp */; };
-		456794FE1A82A657009479E0 /* RobloxReplicatedStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 456794FD1A82A657009479E0 /* RobloxReplicatedStorage.h */; };
-		456794FF1A82AA47009479E0 /* RobloxReplicatedStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456794EE1A82A584009479E0 /* RobloxReplicatedStorage.cpp */; };
-		456795001A82AA48009479E0 /* RobloxReplicatedStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456794EE1A82A584009479E0 /* RobloxReplicatedStorage.cpp */; };
-		456795011A82AA49009479E0 /* RobloxReplicatedStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456794EE1A82A584009479E0 /* RobloxReplicatedStorage.cpp */; };
-		456795021A82AA5E009479E0 /* RobloxReplicatedStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 456794FD1A82A657009479E0 /* RobloxReplicatedStorage.h */; };
-		456795031A82AA5F009479E0 /* RobloxReplicatedStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 456794FD1A82A657009479E0 /* RobloxReplicatedStorage.h */; };
-		456795041A82AA60009479E0 /* RobloxReplicatedStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 456794FD1A82A657009479E0 /* RobloxReplicatedStorage.h */; };
+		456794EF1A82A584009479E0 /* NAMEHEREReplicatedStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456794EE1A82A584009479E0 /* NAMEHEREReplicatedStorage.cpp */; };
+		456794FE1A82A657009479E0 /* NAMEHEREReplicatedStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 456794FD1A82A657009479E0 /* NAMEHEREReplicatedStorage.h */; };
+		456794FF1A82AA47009479E0 /* NAMEHEREReplicatedStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456794EE1A82A584009479E0 /* NAMEHEREReplicatedStorage.cpp */; };
+		456795001A82AA48009479E0 /* NAMEHEREReplicatedStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456794EE1A82A584009479E0 /* NAMEHEREReplicatedStorage.cpp */; };
+		456795011A82AA49009479E0 /* NAMEHEREReplicatedStorage.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 456794EE1A82A584009479E0 /* NAMEHEREReplicatedStorage.cpp */; };
+		456795021A82AA5E009479E0 /* NAMEHEREReplicatedStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 456794FD1A82A657009479E0 /* NAMEHEREReplicatedStorage.h */; };
+		456795031A82AA5F009479E0 /* NAMEHEREReplicatedStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 456794FD1A82A657009479E0 /* NAMEHEREReplicatedStorage.h */; };
+		456795041A82AA60009479E0 /* NAMEHEREReplicatedStorage.h in Headers */ = {isa = PBXBuildFile; fileRef = 456794FD1A82A657009479E0 /* NAMEHEREReplicatedStorage.h */; };
 		458ECE6617CFE2A300662CAB /* AssetService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 458ECE6517CFE2A300662CAB /* AssetService.cpp */; };
 		458ECE6717CFE2A300662CAB /* AssetService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 458ECE6517CFE2A300662CAB /* AssetService.cpp */; };
 		458ECE6917CFE2C000662CAB /* AssetService.h in Headers */ = {isa = PBXBuildFile; fileRef = 458ECE6817CFE2C000662CAB /* AssetService.h */; };
@@ -1521,9 +1521,9 @@
 		561C84311A031B92004EB619 /* wwwsys.h in Headers */ = {isa = PBXBuildFile; fileRef = 561C842F1A031B92004EB619 /* wwwsys.h */; };
 		561C84321A031B92004EB619 /* wwwsys.h in Headers */ = {isa = PBXBuildFile; fileRef = 561C842F1A031B92004EB619 /* wwwsys.h */; };
 		561C84331A031B92004EB619 /* wwwsys.h in Headers */ = {isa = PBXBuildFile; fileRef = 561C842F1A031B92004EB619 /* wwwsys.h */; };
-		5633C3AC18246A190066D73B /* RobloxGoogleAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 5633C3AB18246A190066D73B /* RobloxGoogleAnalytics.h */; };
-		5633C3AD18246A190066D73B /* RobloxGoogleAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 5633C3AB18246A190066D73B /* RobloxGoogleAnalytics.h */; };
-		5633C3AE18246A190066D73B /* RobloxGoogleAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 5633C3AB18246A190066D73B /* RobloxGoogleAnalytics.h */; };
+		5633C3AC18246A190066D73B /* NAMEHEREGoogleAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 5633C3AB18246A190066D73B /* NAMEHEREGoogleAnalytics.h */; };
+		5633C3AD18246A190066D73B /* NAMEHEREGoogleAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 5633C3AB18246A190066D73B /* NAMEHEREGoogleAnalytics.h */; };
+		5633C3AE18246A190066D73B /* NAMEHEREGoogleAnalytics.h in Headers */ = {isa = PBXBuildFile; fileRef = 5633C3AB18246A190066D73B /* NAMEHEREGoogleAnalytics.h */; };
 		565529C5198B077F00CA55AB /* HttpPlatformImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 565529C4198B077F00CA55AB /* HttpPlatformImpl.cpp */; };
 		565529C6198B077F00CA55AB /* HttpPlatformImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 565529C4198B077F00CA55AB /* HttpPlatformImpl.cpp */; };
 		565529C7198B077F00CA55AB /* HttpPlatformImpl.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 565529C4198B077F00CA55AB /* HttpPlatformImpl.cpp */; };
@@ -1614,7 +1614,7 @@
 		5698A29D17FCA47900816494 /* TerrainPartition.h in Headers */ = {isa = PBXBuildFile; fileRef = 52786C40144762C100D68924 /* TerrainPartition.h */; };
 		5698A29E17FCA47900816494 /* CacheableContentProvider.h in Headers */ = {isa = PBXBuildFile; fileRef = F4737EA114CE4BC800010548 /* CacheableContentProvider.h */; };
 		5698A29F17FCA47900816494 /* Bindable.h in Headers */ = {isa = PBXBuildFile; fileRef = 524DC2AD14DB060A00BF7F82 /* Bindable.h */; };
-		5698A2A017FCA47900816494 /* RobloxServicesTools.h in Headers */ = {isa = PBXBuildFile; fileRef = CF9652BD14E1C767001686EB /* RobloxServicesTools.h */; };
+		5698A2A017FCA47900816494 /* NAMEHEREServicesTools.h in Headers */ = {isa = PBXBuildFile; fileRef = CF9652BD14E1C767001686EB /* NAMEHEREServicesTools.h */; };
 		5698A2A117FCA47900816494 /* Buoyancy.h in Headers */ = {isa = PBXBuildFile; fileRef = 651BBDBA14DA107F00BACEFD /* Buoyancy.h */; };
 		5698A2A217FCA47900816494 /* Ragdoll.h in Headers */ = {isa = PBXBuildFile; fileRef = F422C8BA152123E5005CEF6D /* Ragdoll.h */; };
 		5698A2A317FCA47900816494 /* BuoyancyConnector.h in Headers */ = {isa = PBXBuildFile; fileRef = 9F77EB64154B7412006BFEAD /* BuoyancyConnector.h */; };
@@ -2075,7 +2075,7 @@
 		5698A47A17FCA47900816494 /* Region3int16.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 7F7784CA141AC00A003DC36F /* Region3int16.cpp */; };
 		5698A47B17FCA47900816494 /* CacheableContentProvider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F4737E9F14CE4BAA00010548 /* CacheableContentProvider.cpp */; };
 		5698A47C17FCA47900816494 /* Bindable.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 524DC2AB14DB05F700BF7F82 /* Bindable.cpp */; };
-		5698A47D17FCA47900816494 /* RobloxServicesTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF9652BB14E1C74D001686EB /* RobloxServicesTools.cpp */; };
+		5698A47D17FCA47900816494 /* NAMEHEREServicesTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF9652BB14E1C74D001686EB /* NAMEHEREServicesTools.cpp */; };
 		5698A47E17FCA47900816494 /* Buoyancy.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 651BBD4F14DA0EDF00BACEFD /* Buoyancy.cpp */; };
 		5698A47F17FCA47900816494 /* Ragdoll.cpp in Sources */ = {isa = PBXBuildFile; fileRef = F422C8B8152123C3005CEF6D /* Ragdoll.cpp */; };
 		5698A48017FCA47900816494 /* BuoyancyConnector.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 9F77EB66154B741F006BFEAD /* BuoyancyConnector.cpp */; };
@@ -2173,9 +2173,9 @@
 		941F4BED18D8CBB60062A30D /* PointsService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 941F4BEC18D8CBB60062A30D /* PointsService.cpp */; };
 		941F4BEE18D8CBB60062A30D /* PointsService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 941F4BEC18D8CBB60062A30D /* PointsService.cpp */; };
 		941F4BEF18D8CBB60062A30D /* PointsService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 941F4BEC18D8CBB60062A30D /* PointsService.cpp */; };
-		94370407182AD97B00CABB79 /* RobloxGoogleAnalytics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94370406182AD97B00CABB79 /* RobloxGoogleAnalytics.cpp */; };
-		94370408182AD97B00CABB79 /* RobloxGoogleAnalytics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94370406182AD97B00CABB79 /* RobloxGoogleAnalytics.cpp */; };
-		94370409182AD97B00CABB79 /* RobloxGoogleAnalytics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94370406182AD97B00CABB79 /* RobloxGoogleAnalytics.cpp */; };
+		94370407182AD97B00CABB79 /* NAMEHEREGoogleAnalytics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94370406182AD97B00CABB79 /* NAMEHEREGoogleAnalytics.cpp */; };
+		94370408182AD97B00CABB79 /* NAMEHEREGoogleAnalytics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94370406182AD97B00CABB79 /* NAMEHEREGoogleAnalytics.cpp */; };
+		94370409182AD97B00CABB79 /* NAMEHEREGoogleAnalytics.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94370406182AD97B00CABB79 /* NAMEHEREGoogleAnalytics.cpp */; };
 		94377BD016A89A79001766D6 /* ContextActionService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94377BCE16A89A79001766D6 /* ContextActionService.cpp */; };
 		94377BD116A89A79001766D6 /* ContextActionService.cpp in Sources */ = {isa = PBXBuildFile; fileRef = 94377BCE16A89A79001766D6 /* ContextActionService.cpp */; };
 		94377BD516A89AA9001766D6 /* ContextActionService.h in Headers */ = {isa = PBXBuildFile; fileRef = 94377BD416A89AA9001766D6 /* ContextActionService.h */; };
@@ -2536,8 +2536,8 @@
 		C8EDBEC719C7A7BD0046D07C /* SolidModelContentProvider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C8EDBEC419C7A7BD0046D07C /* SolidModelContentProvider.cpp */; };
 		C8EDBEC819C7A7BD0046D07C /* SolidModelContentProvider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C8EDBEC419C7A7BD0046D07C /* SolidModelContentProvider.cpp */; };
 		C8EDBEC919C7A7BD0046D07C /* SolidModelContentProvider.cpp in Sources */ = {isa = PBXBuildFile; fileRef = C8EDBEC419C7A7BD0046D07C /* SolidModelContentProvider.cpp */; };
-		CF9652BC14E1C74D001686EB /* RobloxServicesTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF9652BB14E1C74D001686EB /* RobloxServicesTools.cpp */; };
-		CF9652BE14E1C767001686EB /* RobloxServicesTools.h in Headers */ = {isa = PBXBuildFile; fileRef = CF9652BD14E1C767001686EB /* RobloxServicesTools.h */; };
+		CF9652BC14E1C74D001686EB /* NAMEHEREServicesTools.cpp in Sources */ = {isa = PBXBuildFile; fileRef = CF9652BB14E1C74D001686EB /* NAMEHEREServicesTools.cpp */; };
+		CF9652BE14E1C767001686EB /* NAMEHEREServicesTools.h in Headers */ = {isa = PBXBuildFile; fileRef = CF9652BD14E1C767001686EB /* NAMEHEREServicesTools.h */; };
 		D04EEF6C1C6386D400E47001 /* URL.h in Headers */ = {isa = PBXBuildFile; fileRef = D04EEF6B1C6386D400E47001 /* URL.h */; };
 		D0E20C1B1C3541B2002EFFB9 /* URL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D0E20C1A1C3541B2002EFFB9 /* URL.cpp */; };
 		D0E20C1C1C3541B2002EFFB9 /* URL.cpp in Sources */ = {isa = PBXBuildFile; fileRef = D0E20C1A1C3541B2002EFFB9 /* URL.cpp */; };
@@ -3015,8 +3015,8 @@
 		42CA17A019984A0700635DBA /* libApp Studio.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libApp Studio.a"; sourceTree = BUILT_PRODUCTS_DIR; };
 		42FAF7891B98B6F1005AD364 /* BulletContact.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = BulletContact.cpp; sourceTree = "<group>"; };
 		42FAF78E1B98B702005AD364 /* BulletContact.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BulletContact.h; sourceTree = "<group>"; };
-		456794EE1A82A584009479E0 /* RobloxReplicatedStorage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RobloxReplicatedStorage.cpp; sourceTree = "<group>"; };
-		456794FD1A82A657009479E0 /* RobloxReplicatedStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobloxReplicatedStorage.h; sourceTree = "<group>"; };
+		456794EE1A82A584009479E0 /* NAMEHEREReplicatedStorage.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NAMEHEREReplicatedStorage.cpp; sourceTree = "<group>"; };
+		456794FD1A82A657009479E0 /* NAMEHEREReplicatedStorage.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAMEHEREReplicatedStorage.h; sourceTree = "<group>"; };
 		458ECE6517CFE2A300662CAB /* AssetService.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AssetService.cpp; sourceTree = "<group>"; };
 		458ECE6817CFE2C000662CAB /* AssetService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AssetService.h; sourceTree = "<group>"; };
 		45A8B99619DDEF93005E0E07 /* StarterPlayerService.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = StarterPlayerService.cpp; sourceTree = "<group>"; };
@@ -3118,7 +3118,7 @@
 		561C83EA1A01C935004EB619 /* HTString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = HTString.h; path = "w3c-libwww-5.4.0/Library/src/HTString.h"; sourceTree = CONTRIB_PATH; };
 		561C840B1A01CA89004EB619 /* HTW3C.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HTW3C.h; sourceTree = "<group>"; };
 		561C842F1A031B92004EB619 /* wwwsys.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = wwwsys.h; path = "w3c-libwww-5.4.0/Library/src/wwwsys.h"; sourceTree = CONTRIB_PATH; };
-		5633C3AB18246A190066D73B /* RobloxGoogleAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RobloxGoogleAnalytics.h; sourceTree = "<group>"; };
+		5633C3AB18246A190066D73B /* NAMEHEREGoogleAnalytics.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = NAMEHEREGoogleAnalytics.h; sourceTree = "<group>"; };
 		565529C4198B077F00CA55AB /* HttpPlatformImpl.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = HttpPlatformImpl.cpp; path = Shared/HttpPlatformImpl.cpp; sourceTree = "<group>"; };
 		5657D91A175030DA000D281C /* MemoryStats.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = MemoryStats.cpp; sourceTree = "<group>"; };
 		5657D91D175030E9000D281C /* MemoryStats.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MemoryStats.h; sourceTree = "<group>"; };
@@ -3168,7 +3168,7 @@
 		941869C318FF49A00081B647 /* AdService.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = AdService.cpp; sourceTree = "<group>"; };
 		941F4BE818D8CBA50062A30D /* PointsService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PointsService.h; sourceTree = "<group>"; };
 		941F4BEC18D8CBB60062A30D /* PointsService.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PointsService.cpp; sourceTree = "<group>"; };
-		94370406182AD97B00CABB79 /* RobloxGoogleAnalytics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = RobloxGoogleAnalytics.cpp; sourceTree = "<group>"; };
+		94370406182AD97B00CABB79 /* NAMEHEREGoogleAnalytics.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = NAMEHEREGoogleAnalytics.cpp; sourceTree = "<group>"; };
 		94377BCE16A89A79001766D6 /* ContextActionService.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = ContextActionService.cpp; sourceTree = "<group>"; };
 		94377BD416A89AA9001766D6 /* ContextActionService.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ContextActionService.h; sourceTree = "<group>"; };
 		94447C6616E8098A007088DD /* InputObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = InputObject.h; sourceTree = "<group>"; };
@@ -3324,8 +3324,8 @@
 		C8C1B71118F8A23000B57DF3 /* PartOperation.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = PartOperation.cpp; sourceTree = "<group>"; };
 		C8EDBEBA19C7A74B0046D07C /* SolidModelContentProvider.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SolidModelContentProvider.h; sourceTree = "<group>"; };
 		C8EDBEC419C7A7BD0046D07C /* SolidModelContentProvider.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = SolidModelContentProvider.cpp; sourceTree = "<group>"; };
-		CF9652BB14E1C74D001686EB /* RobloxServicesTools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = RobloxServicesTools.cpp; path = ../ClientShared/RobloxServicesTools.cpp; sourceTree = SOURCE_ROOT; };
-		CF9652BD14E1C767001686EB /* RobloxServicesTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = RobloxServicesTools.h; path = ../ClientShared/RobloxServicesTools.h; sourceTree = SOURCE_ROOT; };
+		CF9652BB14E1C74D001686EB /* NAMEHEREServicesTools.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; name = NAMEHEREServicesTools.cpp; path = ../ClientShared/NAMEHEREServicesTools.cpp; sourceTree = SOURCE_ROOT; };
+		CF9652BD14E1C767001686EB /* NAMEHEREServicesTools.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = NAMEHEREServicesTools.h; path = ../ClientShared/NAMEHEREServicesTools.h; sourceTree = SOURCE_ROOT; };
 		D04EEF6B1C6386D400E47001 /* URL.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = URL.h; sourceTree = "<group>"; };
 		D0E20C1A1C3541B2002EFFB9 /* URL.cpp */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.cpp.cpp; path = URL.cpp; sourceTree = "<group>"; };
 		D2AAC046055464E500DB518D /* libApp.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libApp.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -4562,7 +4562,7 @@
 				F2CD3EE618C7E06000C60A61 /* PathInterpolatedCFrame.h */,
 				566549681891DCD300774F4D /* rbxrandom.h */,
 				F2751C8F1889E37B006CEEAF /* MovementHistory.h */,
-				5633C3AB18246A190066D73B /* RobloxGoogleAnalytics.h */,
+				5633C3AB18246A190066D73B /* NAMEHEREGoogleAnalytics.h */,
 				9F849C38170E27C500207A60 /* HeapValue.h */,
 				9F849C2F170E077700207A60 /* xxhash.h */,
 				9FFB292E16DC55C200F8DC2A /* MachineIdUploader.h */,
@@ -4576,7 +4576,7 @@
 				9F77FF741592B94A006BFEAD /* ClusterCellIterator.h */,
 				9F77FF751592B94A006BFEAD /* FixedSizeCircularBuffer.h */,
 				9F77FF761592B94A006BFEAD /* VarInt.h */,
-				CF9652BD14E1C767001686EB /* RobloxServicesTools.h */,
+				CF9652BD14E1C767001686EB /* NAMEHEREServicesTools.h */,
 				7F7784C5141ABFF6003DC36F /* CellID.h */,
 				7F7784C6141ABFF6003DC36F /* Region3Int16.h */,
 				7F74A411138B222100225288 /* RbxStringTable.h */,
@@ -4694,7 +4694,7 @@
 				9F9830801AF97F5600A2ADD8 /* HandleAdornment.h */,
 				3995A0D01AB9DF22007F3230 /* BaseRenderJob.h */,
 				BCC695921A7C2E4A007737B0 /* Attachment.h */,
-				456794FD1A82A657009479E0 /* RobloxReplicatedStorage.h */,
+				456794FD1A82A657009479E0 /* NAMEHEREReplicatedStorage.h */,
 				50401BCE1AA0FDA200F0A4EF /* ColorSequence.h */,
 				50401BCF1AA0FDA200F0A4EF /* CustomParticleEmitter.h */,
 				50401BD01AA0FDA200F0A4EF /* NumberRange.h */,
@@ -5177,7 +5177,7 @@
 				F2751C931889E3B6006CEEAF /* MovementHistory.cpp */,
 				94DF679118457BFD006E50E5 /* KeyCode.cpp */,
 				F2DEF42D185A311200938B17 /* StreamRegion.cpp */,
-				94370406182AD97B00CABB79 /* RobloxGoogleAnalytics.cpp */,
+				94370406182AD97B00CABB79 /* NAMEHEREGoogleAnalytics.cpp */,
 				9F5D0F2E17D657F6002D59FB /* MemoryStatsCommon.cpp */,
 				56A8046517A7283400F1188D /* Region3int32.cpp */,
 				9F849C33170E078800207A60 /* xxhash.c */,
@@ -5187,7 +5187,7 @@
 				9F984828166D56A50056A1C6 /* Base64BinaryOutputStream.cpp */,
 				9F4AFE2815C853AE003A31C6 /* Vector3int32.cpp */,
 				9F4AE9EC15BF1A86003A31C6 /* UintSet.cpp */,
-				CF9652BB14E1C74D001686EB /* RobloxServicesTools.cpp */,
+				CF9652BB14E1C74D001686EB /* NAMEHEREServicesTools.cpp */,
 				F4737E9F14CE4BAA00010548 /* CacheableContentProvider.cpp */,
 				7F7784C9141AC00A003DC36F /* CellID.cpp */,
 				7F7784CA141AC00A003DC36F /* Region3int16.cpp */,
@@ -5278,7 +5278,7 @@
 				3995A0D51AB9DF42007F3230 /* BaseRenderJob.cpp */,
 				423DF6521A8AE35E000F698E /* SelectionSphere.cpp */,
 				BCC695A01A7C2E78007737B0 /* Attachment.cpp */,
-				456794EE1A82A584009479E0 /* RobloxReplicatedStorage.cpp */,
+				456794EE1A82A584009479E0 /* NAMEHEREReplicatedStorage.cpp */,
 				50401BBF1AA0FD3400F0A4EF /* ColorSequence.cpp */,
 				50401BC01AA0FD3400F0A4EF /* NumberRange.cpp */,
 				50401BC11AA0FD3400F0A4EF /* NumberSequence.cpp */,
@@ -5671,7 +5671,7 @@
 				C8EDBEBD19C7A74B0046D07C /* SolidModelContentProvider.h in Headers */,
 				22F92F401899B10F007677F1 /* LogService.h in Headers */,
 				1F2846A415E7075700120D64 /* Region2.h in Headers */,
-				456795021A82AA5E009479E0 /* RobloxReplicatedStorage.h in Headers */,
+				456795021A82AA5E009479E0 /* NAMEHEREReplicatedStorage.h in Headers */,
 				1F2846A515E7075700120D64 /* Region3.h in Headers */,
 				9F59EA1318A431860033948B /* LuaCoreFunctions.h in Headers */,
 				39E6DD8A1B9108E400F4E200 /* PhysicalProperties.h in Headers */,
@@ -5758,7 +5758,7 @@
 				1F2846D915E7075700120D64 /* CacheableContentProvider.h in Headers */,
 				1F2846DA15E7075700120D64 /* Bindable.h in Headers */,
 				9481E17119F0AAD500334914 /* HttpRbxApiService.h in Headers */,
-				1F2846DB15E7075700120D64 /* RobloxServicesTools.h in Headers */,
+				1F2846DB15E7075700120D64 /* NAMEHEREServicesTools.h in Headers */,
 				C8C1B70F18F8A1DF00B57DF3 /* PartOperation.h in Headers */,
 				9F9830821AF97F5600A2ADD8 /* HandleAdornment.h in Headers */,
 				1F2846DC15E7075700120D64 /* Buoyancy.h in Headers */,
@@ -5794,7 +5794,7 @@
 				94377BD616A89AA9001766D6 /* ContextActionService.h in Headers */,
 				9FD072EE16AF5985002AAE13 /* ScriptService.h in Headers */,
 				9FA354DE16BC48A300D3AC22 /* ProgramMemoryChecker.h in Headers */,
-				5633C3AD18246A190066D73B /* RobloxGoogleAnalytics.h in Headers */,
+				5633C3AD18246A190066D73B /* NAMEHEREGoogleAnalytics.h in Headers */,
 				9F0477441836CDD600DFD102 /* SurfaceGui.h in Headers */,
 				BCC695CA1A7C2EE4007737B0 /* SolverKernel.h in Headers */,
 				9FEC899416C041C4005B5B4C /* SpatialRegion.h in Headers */,
@@ -5908,7 +5908,7 @@
 				42CA153A19984A0700635DBA /* lzio.h in Headers */,
 				42CA153B19984A0700635DBA /* TweenService.h in Headers */,
 				42CA153E19984A0700635DBA /* FriendService.h in Headers */,
-				42CA153F19984A0700635DBA /* RobloxGoogleAnalytics.h in Headers */,
+				42CA153F19984A0700635DBA /* NAMEHEREGoogleAnalytics.h in Headers */,
 				94DD548C1C6E873700A2E2DE /* HapticService.h in Headers */,
 				42CA154019984A0700635DBA /* GameBasicSettings.h in Headers */,
 				42CA154119984A0700635DBA /* HttpAsync.h in Headers */,
@@ -5950,7 +5950,7 @@
 				42CA155A19984A0700635DBA /* TerrainPartition.h in Headers */,
 				42CA155B19984A0700635DBA /* CacheableContentProvider.h in Headers */,
 				42CA155C19984A0700635DBA /* Bindable.h in Headers */,
-				42CA155D19984A0700635DBA /* RobloxServicesTools.h in Headers */,
+				42CA155D19984A0700635DBA /* NAMEHEREServicesTools.h in Headers */,
 				42CA155E19984A0700635DBA /* rbxrandom.h in Headers */,
 				42CA155F19984A0700635DBA /* Buoyancy.h in Headers */,
 				42CA156019984A0700635DBA /* Ragdoll.h in Headers */,
@@ -5962,7 +5962,7 @@
 				42CA156619984A0700635DBA /* FixedSizeCircularBuffer.h in Headers */,
 				42CA156719984A0700635DBA /* VarInt.h in Headers */,
 				42CA156819984A0700635DBA /* DoubleEndedVector.h in Headers */,
-				456795041A82AA60009479E0 /* RobloxReplicatedStorage.h in Headers */,
+				456795041A82AA60009479E0 /* NAMEHEREReplicatedStorage.h in Headers */,
 				42CA156919984A0700635DBA /* BulletGeometryPoolObjects.h in Headers */,
 				9471C5E81A702E8500F95F31 /* GamepadService.h in Headers */,
 				42CA156A19984A0700635DBA /* UintSet.h in Headers */,
@@ -6078,7 +6078,7 @@
 				5698A26517FCA47900816494 /* StatusInstance.h in Headers */,
 				BCC695C31A7C2EE4007737B0 /* Solver.h in Headers */,
 				561C84321A031B92004EB619 /* wwwsys.h in Headers */,
-				456795031A82AA5F009479E0 /* RobloxReplicatedStorage.h in Headers */,
+				456795031A82AA5F009479E0 /* NAMEHEREReplicatedStorage.h in Headers */,
 				5698A26717FCA47900816494 /* ControlledLRUCache.h in Headers */,
 				5698A26817FCA47900816494 /* Test.h in Headers */,
 				5698A26917FCA47900816494 /* Region2.h in Headers */,
@@ -6125,7 +6125,7 @@
 				5698A28717FCA47900816494 /* FriendService.h in Headers */,
 				3BC2469B1ADDD51800B33BA9 /* Analytics.h in Headers */,
 				42AADC3E1BBC5A0A00F4FD02 /* KDTree.h in Headers */,
-				5633C3AE18246A190066D73B /* RobloxGoogleAnalytics.h in Headers */,
+				5633C3AE18246A190066D73B /* NAMEHEREGoogleAnalytics.h in Headers */,
 				5698A28817FCA47900816494 /* GameBasicSettings.h in Headers */,
 				5698A28917FCA47900816494 /* RenderHooksService.h in Headers */,
 				5698A28A17FCA47900816494 /* CookiesEngineService.h in Headers */,
@@ -6165,7 +6165,7 @@
 				9481E17219F0AAD500334914 /* HttpRbxApiService.h in Headers */,
 				5698A29E17FCA47900816494 /* CacheableContentProvider.h in Headers */,
 				5698A29F17FCA47900816494 /* Bindable.h in Headers */,
-				5698A2A017FCA47900816494 /* RobloxServicesTools.h in Headers */,
+				5698A2A017FCA47900816494 /* NAMEHEREServicesTools.h in Headers */,
 				5665496B1891DCD300774F4D /* rbxrandom.h in Headers */,
 				9481E16E19F0AAD500334914 /* HttpRbxApiJob.h in Headers */,
 				5698A2A117FCA47900816494 /* Buoyancy.h in Headers */,
@@ -6319,7 +6319,7 @@
 				42A639AE1B6858E600F009B7 /* Cylinder.h in Headers */,
 				BCF7DD221ABCFAF0002E4AA2 /* DebugSerializer.h in Headers */,
 				657DC604131F2457000871DB /* FriendService.h in Headers */,
-				5633C3AC18246A190066D73B /* RobloxGoogleAnalytics.h in Headers */,
+				5633C3AC18246A190066D73B /* NAMEHEREGoogleAnalytics.h in Headers */,
 				50401BDA1AA0FDA200F0A4EF /* NumberRange.h in Headers */,
 				65ACE723132942AA004EA504 /* GameBasicSettings.h in Headers */,
 				42975358192BFD3F00566182 /* HttpAsync.h in Headers */,
@@ -6366,7 +6366,7 @@
 				F4737EA214CE4BC800010548 /* CacheableContentProvider.h in Headers */,
 				94DC72271B509ADE00C004C8 /* TouchInputService.h in Headers */,
 				524DC2AE14DB060A00BF7F82 /* Bindable.h in Headers */,
-				CF9652BE14E1C767001686EB /* RobloxServicesTools.h in Headers */,
+				CF9652BE14E1C767001686EB /* NAMEHEREServicesTools.h in Headers */,
 				42AADC401BBC5A0A00F4FD02 /* SmoothClusterGeometry.h in Headers */,
 				566549691891DCD300774F4D /* rbxrandom.h in Headers */,
 				BCC695C51A7C2EE4007737B0 /* SolverBody.h in Headers */,
@@ -6380,7 +6380,7 @@
 				9F290740153DE759003544CF /* Swimming.h in Headers */,
 				9F77FF771592B94A006BFEAD /* ClusterCellIterator.h in Headers */,
 				9F77FF781592B94A006BFEAD /* FixedSizeCircularBuffer.h in Headers */,
-				456794FE1A82A657009479E0 /* RobloxReplicatedStorage.h in Headers */,
+				456794FE1A82A657009479E0 /* NAMEHEREReplicatedStorage.h in Headers */,
 				9F77FF791592B94A006BFEAD /* VarInt.h in Headers */,
 				9F4AE9E715BF1A73003A31C6 /* DoubleEndedVector.h in Headers */,
 				392520321998072F007725D2 /* BulletGeometryPoolObjects.h in Headers */,
@@ -6774,11 +6774,11 @@
 				1F28479815E7075700120D64 /* HandlesBase.cpp in Sources */,
 				1F28479915E7075700120D64 /* Hopper.cpp in Sources */,
 				1F28479A15E7075700120D64 /* ICharacterSubject.cpp in Sources */,
-				456794FF1A82AA47009479E0 /* RobloxReplicatedStorage.cpp in Sources */,
+				456794FF1A82AA47009479E0 /* NAMEHEREReplicatedStorage.cpp in Sources */,
 				1F28479B15E7075700120D64 /* IEquipable.cpp in Sources */,
 				1F28479C15E7075700120D64 /* ImageButton.cpp in Sources */,
 				1F28479D15E7075700120D64 /* ImageLabel.cpp in Sources */,
-				94370408182AD97B00CABB79 /* RobloxGoogleAnalytics.cpp in Sources */,
+				94370408182AD97B00CABB79 /* NAMEHEREGoogleAnalytics.cpp in Sources */,
 				1F28479E15E7075700120D64 /* InsertService.cpp in Sources */,
 				1F28479F15E7075700120D64 /* JointInstance.cpp in Sources */,
 				1F2847A015E7075700120D64 /* JointsService.cpp in Sources */,
@@ -7058,7 +7058,7 @@
 				1F28489115E7075700120D64 /* Region3int16.cpp in Sources */,
 				1F28489215E7075700120D64 /* CacheableContentProvider.cpp in Sources */,
 				1F28489315E7075700120D64 /* Bindable.cpp in Sources */,
-				1F28489415E7075700120D64 /* RobloxServicesTools.cpp in Sources */,
+				1F28489415E7075700120D64 /* NAMEHEREServicesTools.cpp in Sources */,
 				565529C6198B077F00CA55AB /* HttpPlatformImpl.cpp in Sources */,
 				1F28489515E7075700120D64 /* Buoyancy.cpp in Sources */,
 				1F28489615E7075700120D64 /* Ragdoll.cpp in Sources */,
@@ -7547,10 +7547,10 @@
 				42CA173A19984A0700635DBA /* lmem.c in Sources */,
 				42CA173B19984A0700635DBA /* loadlib.c in Sources */,
 				42CA173C19984A0700635DBA /* lobject.c in Sources */,
-				42CA173D19984A0700635DBA /* RobloxGoogleAnalytics.cpp in Sources */,
+				42CA173D19984A0700635DBA /* NAMEHEREGoogleAnalytics.cpp in Sources */,
 				42CA173E19984A0700635DBA /* lopcodes.c in Sources */,
 				42CA173F19984A0700635DBA /* loslib.c in Sources */,
-				456795011A82AA49009479E0 /* RobloxReplicatedStorage.cpp in Sources */,
+				456795011A82AA49009479E0 /* NAMEHEREReplicatedStorage.cpp in Sources */,
 				42CA174019984A0700635DBA /* lparser.c in Sources */,
 				42CA174119984A0700635DBA /* lstate.c in Sources */,
 				42CA174219984A0700635DBA /* lstring.c in Sources */,
@@ -7600,7 +7600,7 @@
 				42CA176819984A0700635DBA /* CacheableContentProvider.cpp in Sources */,
 				42CA176919984A0700635DBA /* Bindable.cpp in Sources */,
 				94DC72251B509A8100C004C8 /* TouchInputService.cpp in Sources */,
-				42CA176A19984A0700635DBA /* RobloxServicesTools.cpp in Sources */,
+				42CA176A19984A0700635DBA /* NAMEHEREServicesTools.cpp in Sources */,
 				42CA176B19984A0700635DBA /* MovementHistory.cpp in Sources */,
 				42CA176C19984A0700635DBA /* Buoyancy.cpp in Sources */,
 				42CA176D19984A0700635DBA /* Ragdoll.cpp in Sources */,
@@ -8100,7 +8100,7 @@
 				5698A45217FCA47900816494 /* lmem.c in Sources */,
 				5698A45317FCA47900816494 /* loadlib.c in Sources */,
 				5698A45417FCA47900816494 /* lobject.c in Sources */,
-				94370409182AD97B00CABB79 /* RobloxGoogleAnalytics.cpp in Sources */,
+				94370409182AD97B00CABB79 /* NAMEHEREGoogleAnalytics.cpp in Sources */,
 				5698A45517FCA47900816494 /* lopcodes.c in Sources */,
 				5698A45617FCA47900816494 /* loslib.c in Sources */,
 				5698A45717FCA47900816494 /* lparser.c in Sources */,
@@ -8144,7 +8144,7 @@
 				5698A47A17FCA47900816494 /* Region3int16.cpp in Sources */,
 				5698A47B17FCA47900816494 /* CacheableContentProvider.cpp in Sources */,
 				5698A47C17FCA47900816494 /* Bindable.cpp in Sources */,
-				5698A47D17FCA47900816494 /* RobloxServicesTools.cpp in Sources */,
+				5698A47D17FCA47900816494 /* NAMEHEREServicesTools.cpp in Sources */,
 				F2751C961889E3B6006CEEAF /* MovementHistory.cpp in Sources */,
 				5698A47E17FCA47900816494 /* Buoyancy.cpp in Sources */,
 				5698A47F17FCA47900816494 /* Ragdoll.cpp in Sources */,
@@ -8176,7 +8176,7 @@
 				39252055199807EC007725D2 /* TriangleMesh.cpp in Sources */,
 				5698A49617FCA47900816494 /* Light.cpp in Sources */,
 				5698A49717FCA47900816494 /* MachineIdUploader.cpp in Sources */,
-				456795001A82AA48009479E0 /* RobloxReplicatedStorage.cpp in Sources */,
+				456795001A82AA48009479E0 /* NAMEHEREReplicatedStorage.cpp in Sources */,
 				5698A49817FCA47900816494 /* MachineIdUploader_OSX.cpp in Sources */,
 				50401BC41AA0FD3400F0A4EF /* ColorSequence.cpp in Sources */,
 				5698A49917FCA47900816494 /* InputObject.cpp in Sources */,
@@ -8642,8 +8642,8 @@
 				528DE25C1315AF6E00758A5E /* lmem.c in Sources */,
 				528DE25F1315AF6E00758A5E /* loadlib.c in Sources */,
 				528DE2611315AF6E00758A5E /* lobject.c in Sources */,
-				94370407182AD97B00CABB79 /* RobloxGoogleAnalytics.cpp in Sources */,
-				456794EF1A82A584009479E0 /* RobloxReplicatedStorage.cpp in Sources */,
+				94370407182AD97B00CABB79 /* NAMEHEREGoogleAnalytics.cpp in Sources */,
+				456794EF1A82A584009479E0 /* NAMEHEREReplicatedStorage.cpp in Sources */,
 				528DE2641315AF6E00758A5E /* lopcodes.c in Sources */,
 				528DE2671315AF6E00758A5E /* loslib.c in Sources */,
 				528DE2691315AF6E00758A5E /* lparser.c in Sources */,
@@ -8691,7 +8691,7 @@
 				F4737EA014CE4BAA00010548 /* CacheableContentProvider.cpp in Sources */,
 				524DC2AC14DB05F700BF7F82 /* Bindable.cpp in Sources */,
 				94DC72221B509A8100C004C8 /* TouchInputService.cpp in Sources */,
-				CF9652BC14E1C74D001686EB /* RobloxServicesTools.cpp in Sources */,
+				CF9652BC14E1C74D001686EB /* NAMEHEREServicesTools.cpp in Sources */,
 				F2751C941889E3B6006CEEAF /* MovementHistory.cpp in Sources */,
 				651BBD5014DA0EDF00BACEFD /* Buoyancy.cpp in Sources */,
 				F422C8B9152123C3005CEF6D /* Ragdoll.cpp in Sources */,

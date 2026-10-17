@@ -1,4 +1,4 @@
--- Written by Kip Turner, Copyright ROBLOX 2015
+-- Written by Kip Turner, Copyright NAMEHERE 2015
 
 -- Herostats Manager
 
@@ -6,7 +6,7 @@ local PlatformService = nil
 pcall(function() PlatformService = game:GetService('PlatformService') end)
 
 local CoreGui = Game:GetService("CoreGui")
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 
 local SortDataModule = Modules:FindFirstChild('SortData')

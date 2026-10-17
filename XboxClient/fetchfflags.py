@@ -10,10 +10,10 @@ python fetchfflags.py
 import sys;
 import urllib;
 
-test = "http://clientsettings.api.roblox.com/Setting/QuietGet/ClientAppSettings/?apiKey=76E5A40C-3AE1-4028-9F10-7C62520BD94F"
+test = "http://clientsettings.api.namehere.com/Setting/QuietGet/ClientAppSettings/?apiKey=76E5A40C-3AE1-4028-9F10-7C62520BD94F"
 
-BASE_SITE = "roblox.com"
-#BASE_SITE = "gametest5.robloxlabs.com"
+BASE_SITE = "namehere.com"
+#BASE_SITE = "gametest5.nameherelabs.com"
 API_KEY   = "76E5A40C-3AE1-4028-9F10-7C62520BD94F"
 
 def main():

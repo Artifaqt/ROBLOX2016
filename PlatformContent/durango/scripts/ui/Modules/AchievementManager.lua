@@ -1,4 +1,4 @@
--- Written by Kip Turner, Copyright ROBLOX 2015
+-- Written by Kip Turner, Copyright NAMEHERE 2015
 
 -- Achievement Manager
 
@@ -6,7 +6,7 @@ local PlatformService = nil
 pcall(function() PlatformService = game:GetService('PlatformService') end)
 
 local CoreGui = Game:GetService("CoreGui")
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 
 local EventHub = require(Modules:FindFirstChild('EventHub'))
@@ -83,13 +83,13 @@ local function FilterInGameFriends(onlineFriends, playersInGame)
 		local playersInGameReverseLookup = {}
 		for _, playerInGame in pairs(playersInGame) do
 			-- TODO: Figure out what the actual lookup
-			if playerInGame['robloxuid'] then
-				playersInGameReverseLookup[playerInGame['robloxuid']] = true
+			if playerInGame['namehereuid'] then
+				playersInGameReverseLookup[playerInGame['namehereuid']] = true
 			end
 		end
 
 		for _, friend in pairs(onlineFriends) do
-			if playersInGameReverseLookup[friend['robloxuid']] then
+			if playersInGameReverseLookup[friend['namehereuid']] then
 				table.insert(result, friend)
 			end
 		end

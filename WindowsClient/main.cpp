@@ -15,7 +15,7 @@ TCHAR szWindowClass[MAX_LOADSTRING];			// the main window class name
 RBX::Application* appPtr;
 
 LOGGROUP(HangDetection)
-LOGGROUP(RobloxWndInit)
+LOGGROUP(NAMEHEREWndInit)
 
 //  Processes messages for the main window.
 LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
@@ -95,7 +95,7 @@ int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
     // will cause issues.
     if (!G3D::System::hasSSE2())
     {
-        MessageBoxA(NULL, "This platform lacks SSE2 support.", "ROBLOX", MB_OK);
+        MessageBoxA(NULL, "This platform lacks SSE2 support.", "NAMEHERE", MB_OK);
         return false;
     }
 
@@ -142,8 +142,8 @@ int APIENTRY _tWinMain(HINSTANCE hInstance, HINSTANCE hPrevInstance,
 	catch (const RBX::initialization_error& e) 
 	{
 		const char* const errorMessage = e.what();
-		FASTLOGS(FLog::RobloxWndInit, "Error during initialization. User message = %s", errorMessage);
-		MessageBoxA(hWnd, errorMessage, "ROBLOX", MB_OK);
+		FASTLOGS(FLog::NAMEHEREWndInit, "Error during initialization. User message = %s", errorMessage);
+		MessageBoxA(hWnd, errorMessage, "NAMEHERE", MB_OK);
 		app.AboutToShutdown();
 		app.Shutdown();
 		return FALSE;

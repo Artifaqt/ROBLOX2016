@@ -214,7 +214,7 @@ int iMod3(int x);
  */
 float uniformRandom(float low = 0.0f, float hi = 1.0f);
 
-// ROBLOX
+// NAMEHERE
 inline int uniformRandomInt(int low, int hi) {
     int answer = static_cast<int>(uniformRandom(static_cast<float>(low), static_cast<float>(hi)));
     return iClamp(answer, low, hi);
@@ -745,7 +745,7 @@ inline float toDegrees(int rad) {
     return rad * 180.0f / (float)pi();
 }
 
-// ROBLOX
+// NAMEHERE
 /**
  Computes an relative epsilon for comparing a and b, given an absolute epsilon.
  */

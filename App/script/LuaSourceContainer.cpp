@@ -1,7 +1,7 @@
 #include "stdafx.h"
 #include "Script/LuaSourceContainer.h"
 #include "Network/Players.h"
-#include "Util/RobloxGoogleAnalytics.h"
+#include "Util/NAMEHEREGoogleAnalytics.h"
 #include "V8DataModel/ContentProvider.h"
 
 DYNAMIC_LOGVARIABLE(PreloadLinkedScriptsTiming, 0)
@@ -282,7 +282,7 @@ void LuaSourceContainer::updateScriptInstancesUnderWriteLock(DataModel* /*unused
 static void reportNamedLinkedSourceUsage(DataModel* dm)
 {
 	std::string placeIdStr = format("%d", dm->getPlaceID());
-	RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "Load Named LinkedSource",
+	NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "Load Named LinkedSource",
 		placeIdStr.c_str());
 }
 

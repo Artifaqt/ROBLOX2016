@@ -100,10 +100,10 @@
     <Image Include="..\Bootstrapper\assets\logo_meatball%401x.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="..\Bootstrapper\assets\logo_robloxstudio%401x.bmp">
+    <Image Include="..\Bootstrapper\assets\logo_nameherestudio%401x.bmp">
       <Filter>Resource Files</Filter>
     </Image>
-    <Image Include="assets\logo_robloxstudio%401x.bmp">
+    <Image Include="assets\logo_nameherestudio%401x.bmp">
       <Filter>Resource Files</Filter>
     </Image>
     <Image Include="..\Bootstrapper\assets\txt_backto-ON%401x .bmp">

@@ -18,7 +18,7 @@
 
 #include "lauxlib.h"
 #include "lualib.h"
-// ROBLOX:
+// NAMEHERE:
 #include "lobject.h"
 #include "FastLog.h"
 #include "Util/ProtectedString.h"
@@ -192,7 +192,7 @@ static int luaB_gcinfo (lua_State *L) {
 
 
 static int luaB_collectgarbage (lua_State *L) {
-	// ROBLOX: allowing users to mess with gc may be dangerous. However, asking for a count is OK
+	// NAMEHERE: allowing users to mess with gc may be dangerous. However, asking for a count is OK
 #if 1
   static const char *const opts[] = {"count", NULL};
   static const int optsnum[] = {LUA_GCCOUNT};
@@ -428,7 +428,7 @@ static int luaB_tostring (lua_State *L) {
 static int luaB_newproxy (lua_State *L) {
   lua_settop(L, 1);
 
-  // ROBLOX:
+  // NAMEHERE:
   // We set may_gc to false to protect ourselves from an exploit.
   // The gc handler runs in a non-sandboxed mode. Therefore we don't
   // want ordinary users to hook into the GC.
@@ -446,7 +446,7 @@ static int luaB_newproxy (lua_State *L) {
   }
   else {
 #if 1
-	// ROBLOX: Because of security issues:
+	// NAMEHERE: Because of security issues:
     return luaL_error(L, "newproxy only supports the arguments nil and true");
 #else
     int validproxy = 0;  /* to check if weaktable[metatable(u)] == true */

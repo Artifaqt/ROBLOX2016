@@ -1,14 +1,14 @@
 //
-//  Roblox.m
-//  RobloxMobile
+//  NAMEHERE.m
+//  NAMEHEREMobile
 //
 //  Created by Ben Tkacheff on 1/30/13.
-//  Copyright (c) 2013 ROBLOX. All rights reserved.
+//  Copyright (c) 2013 NAMEHERE. All rights reserved.
 //
 
 #import "MarshallerInterface.h"
 #include "FunctionMarshaller.h"
-#include "Roblox.h"
+#include "NAMEHERE.h"
 
 
 @implementation FunctionMarshaller
@@ -25,10 +25,10 @@
 
 
 
-static NSString* kAppEventMode = @"RobloxAppEvent";
+static NSString* kAppEventMode = @"NAMEHEREAppEvent";
 static NSArray* kAppEventModeList = [NSArray arrayWithObjects:(NSString*)kCFRunLoopDefaultMode, kAppEventMode, nil];
 
-void Roblox::sendAppEvent(void *pClosure)
+void NAMEHERE::sendAppEvent(void *pClosure)
 {
     RBX::CEvent *waitEvent = ((RBX::FunctionMarshaller::Closure *) pClosure)->waitEvent;
 	BOOL waitFlag = (waitEvent == NULL);
@@ -44,7 +44,7 @@ void Roblox::sendAppEvent(void *pClosure)
 	}
 }
 
-void Roblox::postAppEvent(void *pClosure)
+void NAMEHERE::postAppEvent(void *pClosure)
 {
     FunctionMarshaller* controller = [[FunctionMarshaller alloc] init];
     controller->pClosure = pClosure;
@@ -52,7 +52,7 @@ void Roblox::postAppEvent(void *pClosure)
     [controller performSelectorOnMainThread:@selector(marshallFunction) withObject:nil waitUntilDone:NO modes:kAppEventModeList];
 }
 
-void Roblox::processAppEvents()
+void NAMEHERE::processAppEvents()
 {
     while (CFRunLoopRunInMode((CFStringRef)kAppEventMode, 0, true) == kCFRunLoopRunHandledSource)
         ;

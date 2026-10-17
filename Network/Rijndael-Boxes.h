@@ -1,4 +1,4 @@
-// Roblox: Moved here from RakNet 3.x
+// NAMEHERE: Moved here from RakNet 3.x
 
 word8 Logtable[256] = {
   0,   0,  25,   1,  50,   2,  26, 198,  75, 199,  27, 104,  51, 238, 223,   3, 

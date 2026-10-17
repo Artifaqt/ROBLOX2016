@@ -2,16 +2,16 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
-using Roblox.Grid.Rcc;
-using Roblox.Grid;
-using Roblox.Common;
+using NAMEHERE.Grid.Rcc;
+using NAMEHERE.Grid;
+using NAMEHERE.Common;
 
 
 namespace RCCService.Test
 {
     public static class LuaScripts
     {
-        private static string baseurl = "http://www.roblox.com/";
+        private static string baseurl = "http://www.namehere.com/";
         private static System.Collections.Generic.Stack<string> savedUrls = new Stack<string>();
 
         public class BaseUrlPoper : IDisposable
@@ -86,7 +86,7 @@ namespace RCCService.Test
             return script;
         }
 
-        // lifted from Server\Roblox.Thumbs\Asset.cs
+        // lifted from Server\NAMEHERE.Thumbs\Asset.cs
         private static readonly string ToolThumbScript =
 @"local comment = 'Model thumbnail'
 url, ext, h, v, scriptIcon, toolIcon = ...
@@ -122,7 +122,7 @@ for _,i in ipairs(game:GetObjects(url)) do
 end
 return t:Click(ext, h, v, true)";
 
-        public static Roblox.Grid.Rcc.ScriptExecution MakeToolThumbScript(int assetid, int Width, int Height)
+        public static NAMEHERE.Grid.Rcc.ScriptExecution MakeToolThumbScript(int assetid, int Width, int Height)
         {
             ScriptExecution script = new ScriptExecution();
             script.name = "MakeToolThumbScript";
@@ -226,12 +226,12 @@ guy['Left Leg']:remove()
 t = game:GetService('ThumbnailGenerator')
 return t:Click(ext, h, v, true)";
 
-        public static Roblox.Grid.Rcc.ScriptExecution MakeHeadScript(int assetId, int Width, int Height)
+        public static NAMEHERE.Grid.Rcc.ScriptExecution MakeHeadScript(int assetId, int Width, int Height)
         {
             return MakeThumbScript(HeadScript, assetId, 0, Width, Height, true, 1785197);
         }
 
-        public static Roblox.Grid.Rcc.ScriptExecution MakeThumbScript(string baseScript, int id, int versionid, int Width, int Height, bool needsBaseURL, int guyId)
+        public static NAMEHERE.Grid.Rcc.ScriptExecution MakeThumbScript(string baseScript, int id, int versionid, int Width, int Height, bool needsBaseURL, int guyId)
         {
             ScriptExecution script = new ScriptExecution();
             script.name = "MakeThumbScript";
@@ -278,17 +278,17 @@ return t:Click(ext, h, v, true)";
             }
         }
 
-        public static Roblox.Grid.Rcc.ScriptExecution MakeThumbScript(string baseScript, int id, int versionid, int Width, int Height, bool needsBaseURL)
+        public static NAMEHERE.Grid.Rcc.ScriptExecution MakeThumbScript(string baseScript, int id, int versionid, int Width, int Height, bool needsBaseURL)
         {
             return MakeThumbScript(baseScript, id, versionid, Width, Height, needsBaseURL, -1);
         }
 
-        public static Roblox.Grid.Rcc.ScriptExecution MakePlaceThumbScript(int id, int versionid, int Width, int Height)
+        public static NAMEHERE.Grid.Rcc.ScriptExecution MakePlaceThumbScript(int id, int versionid, int Width, int Height)
         {
             return MakeThumbScript(PlaceThumbScript, id, versionid, Width, Height, false);
         }
 
-        public static Roblox.Grid.Rcc.ScriptExecution MakeCustomThumbScript(string baseScript, string url, int Width, int Height)
+        public static NAMEHERE.Grid.Rcc.ScriptExecution MakeCustomThumbScript(string baseScript, string url, int Width, int Height)
         {
             ScriptExecution script = new ScriptExecution();
             script.name = "MakeCustomThumbScript";
@@ -303,7 +303,7 @@ return t:Click(ext, h, v, true)";
         }
 
 
-        public static Roblox.Grid.Rcc.ScriptExecution MakeCustomThumbScript(string baseScript, params object[] args)
+        public static NAMEHERE.Grid.Rcc.ScriptExecution MakeCustomThumbScript(string baseScript, params object[] args)
         {
             ScriptExecution script = new ScriptExecution();
             script.name = "MakeCustomThumbScript";
@@ -373,7 +373,7 @@ end
 return t:Click(ext, h, v, true)";
 */
 
-        public static Roblox.Grid.Rcc.ScriptExecution MakeModelThumbScript(int id, int versionid, int Width, int Height)
+        public static NAMEHERE.Grid.Rcc.ScriptExecution MakeModelThumbScript(int id, int versionid, int Width, int Height)
         {
             ScriptExecution script = new ScriptExecution();
             script.name = "MakeModelThumbScript";
@@ -411,7 +411,7 @@ for _,i in ipairs(game:GetObjects(url)) do
 end
 return t:Click(ext, h, v, true)";
 
-        public static Roblox.Grid.Rcc.ScriptExecution MakeGearThumbScript(int id, int versionid, int Width, int Height)
+        public static NAMEHERE.Grid.Rcc.ScriptExecution MakeGearThumbScript(int id, int versionid, int Width, int Height)
         {
             return MakeThumbScript(GearThumbScript, id, versionid, Width, Height, true);
         }

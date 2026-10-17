@@ -6,7 +6,7 @@ local currentTools = {}
 
 local BaseUrl = game:GetService("ContentProvider").BaseUrl:lower()
 
-if BaseUrl:find("www.roblox.com") or BaseUrl:find("gametest1") then
+if BaseUrl:find("www.namehere.com") or BaseUrl:find("gametest1") then
     DeleteToolID = 73089190
     PartSelectionID = 73089166
     CloneToolID = 73089204
@@ -81,10 +81,10 @@ function showBuildToolsTutorial()
 	local RbxGui = LoadLibrary("RbxGui")
 
 	local frame, showTutorial, dismissTutorial, gotoPage = RbxGui.CreateTutorial("Build", tutorialKey, false)
-	local firstPage = RbxGui.CreateImageTutorialPage(" ", "http://www.roblox.com/asset/?id=59162193", 359, 296, function() dismissTutorial() end, true)
+	local firstPage = RbxGui.CreateImageTutorialPage(" ", "http://www.namehere.com/asset/?id=59162193", 359, 296, function() dismissTutorial() end, true)
 
 	RbxGui.AddTutorialPage(frame, firstPage)
-	frame.Parent = game:GetService("CoreGui"):FindFirstChild("RobloxGui")
+	frame.Parent = game:GetService("CoreGui"):FindFirstChild("NAMEHEREGui")
 	
 	game:GetService("GuiService"):AddCenterDialog(frame, Enum.CenterDialogType.UnsolicitedDialog,
 		--showFunction
@@ -156,8 +156,8 @@ end
 -- remove legacy identifiers
 -- todo: determine if we still need this
 function removeBuildToolTag(tool)
-	if tool:FindFirstChild("RobloxBuildTool") then
-		tool.RobloxBuildTool:Destroy()
+	if tool:FindFirstChild("NAMEHEREBuildTool") then
+		tool.NAMEHEREBuildTool:Destroy()
 	end
 end
 

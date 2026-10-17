@@ -69,11 +69,11 @@ BEGIN
     BEGIN
         BLOCK "040904b0"
         BEGIN
-            VALUE "CompanyName", "ROBLOX Corporation"
+            VALUE "CompanyName", "NAMEHERE Corporation"
             VALUE "FileDescription", "Refreshpolicies"
             VALUE "FileVersion", "1, 0, 2, 0"
             VALUE "InternalName", "RefreshPolicies"
-            VALUE "LegalCopyright", "© 2007 ROBLOX Corporation"
+            VALUE "LegalCopyright", "© 2007 NAMEHERE Corporation"
             VALUE "OriginalFilename", "RefreshPolicies.dll"
             VALUE "ProductName", "RefreshPolicies Dynamic Link Library"
             VALUE "ProductVersion", "1, 0, 0, 0"

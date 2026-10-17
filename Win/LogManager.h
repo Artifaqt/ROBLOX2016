@@ -48,11 +48,11 @@ protected:
 };
 
 
-class RobloxCrashReporter : public CrashReporter
+class NAMEHERECrashReporter : public CrashReporter
 {
 public:
 	static bool silent;
-	RobloxCrashReporter(const char* outputPath, const char* appName, const char* crashExtention);
+	NAMEHERECrashReporter(const char* outputPath, const char* appName, const char* crashExtention);
 	LONG ProcessException(struct _EXCEPTION_POINTERS *info, bool noMsg);
 protected:
 	/*override*/ void logEvent(const char* msg);
@@ -62,7 +62,7 @@ class MainLogManager
 	: public RBX::ILogProvider
 	, public LogManager
 {
-	boost::scoped_ptr<RobloxCrashReporter> crashReporter;
+	boost::scoped_ptr<NAMEHERECrashReporter> crashReporter;
 	std::vector<RBX::Log*> fastLogChannels;
 	static RBX::mutex fastLogChannelsLock;
 	const char* crashExtention;

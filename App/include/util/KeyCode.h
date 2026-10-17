@@ -285,7 +285,7 @@ namespace RBX {
 		/* Add any other keys here */
 
 
-		// ROBLOX Gamepad stuff
+		// NAMEHERE Gamepad stuff
 		SDLK_GAMEPAD_BUTTONX = 1000,
 		SDLK_GAMEPAD_BUTTONY = 1001,
 		SDLK_GAMEPAD_BUTTONA = 1002,

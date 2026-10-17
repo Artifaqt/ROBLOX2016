@@ -1,4 +1,4 @@
-/* Copyright 2003-2005 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2005 NAMEHERE Corporation, All Rights Reserved */
 #include "stdafx.h"
 
 #include "V8DataModel/Stats.h"
@@ -12,7 +12,7 @@
 #include "v8datamodel/DebugSettings.h"
 #include "script/ScriptContext.h"
 #include "format_string.h"
-#include "RobloxServicesTools.h"
+#include "NAMEHEREServicesTools.h"
 #include "Network/Players.h"
 
 #include <boost/algorithm/string.hpp>
@@ -25,7 +25,7 @@ namespace RBX
 {
 namespace JNI
 {
-extern std::string robloxVersion; // JNIMain.cpp
+extern std::string namehereVersion; // JNIMain.cpp
 }
 }
 #endif
@@ -39,7 +39,7 @@ extern std::string robloxVersion; // JNIMain.cpp
 DYNAMIC_FASTINTVARIABLE(HttpInfluxHundredthsPercentage, 0)
 DYNAMIC_FASTSTRINGVARIABLE(HttpInfluxURL, "https://onepointtwentyone-misterfusion-1.c.influxdb.com:8087")
 DYNAMIC_FASTSTRINGVARIABLE(HttpInfluxDatabase, "Default")
-DYNAMIC_FASTSTRINGVARIABLE(HttpInfluxUser, "roblox")
+DYNAMIC_FASTSTRINGVARIABLE(HttpInfluxUser, "namehere")
 DYNAMIC_FASTSTRINGVARIABLE(HttpInfluxPassword, "te$tu$3r")
 
 DYNAMIC_FASTFLAGVARIABLE(UseNewAnalyticsApi, false)
@@ -259,12 +259,12 @@ namespace RBX
 		const char* const  sStats = "Stats";
 
         REFLECTION_BEGIN();
-		static Reflection::BoundFuncDesc<StatsService, void(std::string, shared_ptr<const Reflection::ValueTable>)> func_report(&StatsService::report, "Report", "category", "data", RBX::Security::RobloxScript);
-		static Reflection::BoundFuncDesc<StatsService, void(bool)> func_reportTaskScheduler(&StatsService::reportTaskScheduler, "ReportTaskScheduler", "includeJobs", false, RBX::Security::RobloxScript);
-		static Reflection::BoundFuncDesc<StatsService, void()> func_reportJobsStepWindow(&StatsService::reportJobsStepWindow, "ReportJobsStepWindow", RBX::Security::RobloxScript);
-		static Reflection::BoundFuncDesc<StatsService, void(std::string)> prop_reportUrl(&StatsService::setReportUrl, "SetReportUrl", "url", Security::RobloxScript);
-		static Reflection::BoundProp<std::string> prop_reporterType("ReporterType", "Reporting", &StatsService::reporterType, Reflection::PropertyDescriptor::UI, Security::RobloxScript);
-		static Reflection::BoundProp<double> prop_minReportInterval("MinReportInterval", "Reporting", &StatsService::minReportInterval, Reflection::PropertyDescriptor::UI, Security::RobloxScript);
+		static Reflection::BoundFuncDesc<StatsService, void(std::string, shared_ptr<const Reflection::ValueTable>)> func_report(&StatsService::report, "Report", "category", "data", RBX::Security::NAMEHEREScript);
+		static Reflection::BoundFuncDesc<StatsService, void(bool)> func_reportTaskScheduler(&StatsService::reportTaskScheduler, "ReportTaskScheduler", "includeJobs", false, RBX::Security::NAMEHEREScript);
+		static Reflection::BoundFuncDesc<StatsService, void()> func_reportJobsStepWindow(&StatsService::reportJobsStepWindow, "ReportJobsStepWindow", RBX::Security::NAMEHEREScript);
+		static Reflection::BoundFuncDesc<StatsService, void(std::string)> prop_reportUrl(&StatsService::setReportUrl, "SetReportUrl", "url", Security::NAMEHEREScript);
+		static Reflection::BoundProp<std::string> prop_reporterType("ReporterType", "Reporting", &StatsService::reporterType, Reflection::PropertyDescriptor::UI, Security::NAMEHEREScript);
+		static Reflection::BoundProp<double> prop_minReportInterval("MinReportInterval", "Reporting", &StatsService::minReportInterval, Reflection::PropertyDescriptor::UI, Security::NAMEHEREScript);
 		
 		const char* const  sStatsItem = "StatsItem";
 
@@ -473,8 +473,8 @@ static const bool jobsAsArray = true;
 			std::string baseUrl = baseUrlInput;
 
 			RBXASSERT(baseUrl.substr(0, 7) == "http://");
-			if (baseUrl.find("www.roblox.com") != std::string::npos)
-				baseUrl = "http://logging.service.roblox.com/";
+			if (baseUrl.find("www.namehere.com") != std::string::npos)
+				baseUrl = "http://logging.service.namehere.com/";
 			else
 				baseUrl.insert(7, "logging.service.");	// Inserted after http://
 			return baseUrl + "Gatherer/LogEntry?Shard=" + shard;
@@ -699,7 +699,7 @@ static const bool jobsAsArray = true;
 					VMProtectBeginMutation("19");
 					ProtectedString verifiedSource = ProtectedString::fromTrustedSource(script);
 					ContentProvider::verifyRequestedScriptSignature(verifiedSource, "StatsScript", true);
-					sc->executeInNewThread(Security::RobloxGameScript_, verifiedSource, "StatsReporting");
+					sc->executeInNewThread(Security::NAMEHEREGameScript_, verifiedSource, "StatsReporting");
 					VMProtectEnd();
 				}
 			}
@@ -769,7 +769,7 @@ static const bool jobsAsArray = true;
 			/*
 			SettingsConsole.exe gametest get ClientSharedSettings
 			SettingsConsole.exe gametest set ClientSharedSettings.StatsGatheringScriptUrl=
-			SettingsConsole.exe gametest set ClientSharedSettings.StatsGatheringScriptUrl=http://logging.gametest.roblox.com/GameScript
+			SettingsConsole.exe gametest set ClientSharedSettings.StatsGatheringScriptUrl=http://logging.gametest.namehere.com/GameScript
 			*/
 			// TODO: This is a hack until we have a common way of getting the correct url
 			std::string baseUrl;

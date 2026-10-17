@@ -37,11 +37,11 @@
             android:src="@drawable/icon_male"
             android:id="@+id/rbxGenderBtnMaleBg"
             android:layout_centerVertical="true" />
-        <com.roblox.client.components.RbxButton
+        <com.namehere.client.components.RbxButton
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/rbxGenderBtnMale"
-            style="@style/Theme.Roblox.Button.Gender.Male"
+            style="@style/Theme.NAMEHERE.Button.Gender.Male"
             android:contentDescription="rbxGenderPickerMale"/>
         </RelativeLayout>
     <RelativeLayout
@@ -59,11 +59,11 @@
             android:src="@drawable/icon_female"
             android:id="@+id/rbxGenderBtnFemaleBg"
             android:layout_centerVertical="true" />
-        <com.roblox.client.components.RbxButton
+        <com.namehere.client.components.RbxButton
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:id="@+id/rbxGenderBtnFemale"
-            style="@style/Theme.Roblox.Button.Gender.Female"
+            style="@style/Theme.NAMEHERE.Button.Gender.Female"
             android:contentDescription="rbxGenderPickerFemale"/>
     </RelativeLayout>
 

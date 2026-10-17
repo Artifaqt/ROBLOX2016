@@ -1,4 +1,4 @@
-/* Copyright 2003-2005 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2005 NAMEHERE Corporation, All Rights Reserved */
 #include "stdafx.h"
 
 #include "V8DataModel/PartOperation.h"
@@ -736,7 +736,7 @@ int World::updateStepsRequiredForCyclicExecutive(float desiredInterval)
 	if (DFFlag::CyclicExecutiveThrottlingCancelWorldStepAccum)
 	{
 		// When under heavy throttling where each WorldStep takes a long time,
-		// we can get into a state where ROBLOX wants to run 15 physics WorldSteps in 1 frame,
+		// we can get into a state where NAMEHERE wants to run 15 physics WorldSteps in 1 frame,
 		// and even with max throttling we will still have to run at least 2, which could potentially
 		// hinder Rendering framerate
 		maxWorldStepsAllowedPerDMStep = (eThrottle.getEnvironmentSpeed() > 0.4f) ? (float)DFInt::MaxMissedWorldStepsRemembered : 4.0f;

@@ -3,12 +3,12 @@
   <integer name="ga_sessionTimeout">300</integer>
     <bool name="ga_autoActivityTracking">true</bool>
 
-	<screenName name="com.roblox.client.ActivityNativeMain">RobloxMobileAndroid ActivityNativeMain</screenName>
-	<screenName name="com.roblox.client.ActivityNativeSidebar">RobloxMobileAndroid ActivityNativeSidebar</screenName>
-	<screenName name="com.roblox.client.RobloxWebFragment">RobloxMobileAndroid ActivityWebView</screenName>
-	<screenName name="com.roblox.client.ActivityFragmentTest">RobloxMobileAndroid ActivityFragmentTest</screenName>
-	<screenName name="com.roblox.client.ActivityGlView">RobloxMobileAndroid ActivityGlView</screenName>
-	<screenName name="com.roblox.client.ActivityCurlTest">RobloxMobileAndroid ActivityCurlTest</screenName>
+	<screenName name="com.namehere.client.ActivityNativeMain">NAMEHEREMobileAndroid ActivityNativeMain</screenName>
+	<screenName name="com.namehere.client.ActivityNativeSidebar">NAMEHEREMobileAndroid ActivityNativeSidebar</screenName>
+	<screenName name="com.namehere.client.NAMEHEREWebFragment">NAMEHEREMobileAndroid ActivityWebView</screenName>
+	<screenName name="com.namehere.client.ActivityFragmentTest">NAMEHEREMobileAndroid ActivityFragmentTest</screenName>
+	<screenName name="com.namehere.client.ActivityGlView">NAMEHEREMobileAndroid ActivityGlView</screenName>
+	<screenName name="com.namehere.client.ActivityCurlTest">NAMEHEREMobileAndroid ActivityCurlTest</screenName>
     
     <string name="ga_trackingId">UA-51088233-1</string>
     

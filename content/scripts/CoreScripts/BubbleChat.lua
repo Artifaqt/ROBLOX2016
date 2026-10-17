@@ -15,7 +15,7 @@ local GameOptions = settings()["Game Options"]
 
 
 while PlayersService.LocalPlayer == nil do PlayersService.ChildAdded:wait() end
-local GuiRoot = CoreGuiService:WaitForChild('RobloxGui')
+local GuiRoot = CoreGuiService:WaitForChild('NAMEHEREGui')
 local playerDropDownModule = require(GuiRoot.Modules:WaitForChild("PlayerDropDown"))
 local blockingUtility = playerDropDownModule:CreateBlockingUtility()
 
@@ -308,7 +308,7 @@ local function createChatOutput()
 	local function createBillboardInstance(adornee)
 		local billboardGui = Instance.new("BillboardGui")
 		billboardGui.Adornee = adornee	
-		billboardGui.RobloxLocked = true
+		billboardGui.NAMEHERELocked = true
 		billboardGui.Size = UDim2.new(0,BILLBOARD_MAX_WIDTH,0,BILLBOARD_MAX_HEIGHT)
 		billboardGui.StudsOffset = Vector3.new(0, 1.5, 2)
 		billboardGui.Parent = CoreGuiService

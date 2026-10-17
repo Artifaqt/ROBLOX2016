@@ -1,49 +1,49 @@
 #include "stdafx.h"
 
 #include "V8DataModel/GameBasicSettings.h"
-#include "Util/RobloxGoogleAnalytics.h"
+#include "Util/NAMEHEREGoogleAnalytics.h"
 
 using namespace RBX;
 
 REFLECTION_BEGIN();
 static const Reflection::EnumPropDescriptor<GameBasicSettings, GameBasicSettings::ControlMode> prop_controlMode("ControlMode", category_Control, &GameBasicSettings::getControlMode, &GameBasicSettings::setControlMode);
-static const Reflection::EnumPropDescriptor<GameBasicSettings, GameBasicSettings::CameraMode> prop_cameraMode("CameraMode", category_Control, &GameBasicSettings::getCameraMode, &GameBasicSettings::setCameraMode, Reflection::PropertyDescriptor::STANDARD, Security::RobloxScript);
+static const Reflection::EnumPropDescriptor<GameBasicSettings, GameBasicSettings::CameraMode> prop_cameraMode("CameraMode", category_Control, &GameBasicSettings::getCameraMode, &GameBasicSettings::setCameraMode, Reflection::PropertyDescriptor::STANDARD, Security::NAMEHEREScript);
 static const Reflection::EnumPropDescriptor<GameBasicSettings, GameBasicSettings::TouchCameraMovementMode> prop_touchCameraMovementMode("TouchCameraMovementMode", category_Control, &GameBasicSettings::getTouchCameraMovementMode, &GameBasicSettings::setTouchCameraMovementMode);
-static const Reflection::PropDescriptor<GameBasicSettings, bool> prop_TouchCameraMovementChanged("TouchCameraMovementChanged",category_Data, &GameBasicSettings::getTouchCameraMovementModeModified,&GameBasicSettings::setTouchCameraMovementModeModified, Reflection::PropertyDescriptor::CLUSTER, Security::Roblox);
+static const Reflection::PropDescriptor<GameBasicSettings, bool> prop_TouchCameraMovementChanged("TouchCameraMovementChanged",category_Data, &GameBasicSettings::getTouchCameraMovementModeModified,&GameBasicSettings::setTouchCameraMovementModeModified, Reflection::PropertyDescriptor::CLUSTER, Security::NAMEHERE);
 static const Reflection::EnumPropDescriptor<GameBasicSettings, GameBasicSettings::ComputerCameraMovementMode> prop_computerCameraMovementMode("ComputerCameraMovementMode", category_Control, &GameBasicSettings::getComputerCameraMovementMode, &GameBasicSettings::setComputerCameraMovementMode);
-static const Reflection::PropDescriptor<GameBasicSettings, bool> prop_ComputerCameraMovementChanged("ComputerCameraMovementChanged",category_Data, &GameBasicSettings::getComputerCameraMovementModeModified,&GameBasicSettings::setComputerCameraMovementModeModified, Reflection::PropertyDescriptor::CLUSTER, Security::Roblox);
+static const Reflection::PropDescriptor<GameBasicSettings, bool> prop_ComputerCameraMovementChanged("ComputerCameraMovementChanged",category_Data, &GameBasicSettings::getComputerCameraMovementModeModified,&GameBasicSettings::setComputerCameraMovementModeModified, Reflection::PropertyDescriptor::CLUSTER, Security::NAMEHERE);
 static const Reflection::EnumPropDescriptor<GameBasicSettings, GameBasicSettings::TouchMovementMode> prop_touchMovementMode("TouchMovementMode", category_Control, &GameBasicSettings::getTouchMovementMode, &GameBasicSettings::setTouchMovementMode);
-static const Reflection::PropDescriptor<GameBasicSettings, bool> prop_TouchMovementChanged("TouchMovementChanged",category_Data, &GameBasicSettings::getTouchMovementModeModified,&GameBasicSettings::setTouchMovementModeModified, Reflection::PropertyDescriptor::CLUSTER, Security::Roblox);
+static const Reflection::PropDescriptor<GameBasicSettings, bool> prop_TouchMovementChanged("TouchMovementChanged",category_Data, &GameBasicSettings::getTouchMovementModeModified,&GameBasicSettings::setTouchMovementModeModified, Reflection::PropertyDescriptor::CLUSTER, Security::NAMEHERE);
 static const Reflection::EnumPropDescriptor<GameBasicSettings, GameBasicSettings::ComputerMovementMode> prop_computerMovementMode("ComputerMovementMode", category_Control, &GameBasicSettings::getComputerMovementMode, &GameBasicSettings::setComputerMovementMode);
-static const Reflection::PropDescriptor<GameBasicSettings, bool> prop_ComputerMovementChanged("ComputerMovementChanged",category_Data, &GameBasicSettings::getComputerMovementModeModified,&GameBasicSettings::setComputerMovementModeModified, Reflection::PropertyDescriptor::CLUSTER, Security::Roblox);
-static const Reflection::EnumPropDescriptor<GameBasicSettings, GameSettings::UploadSetting> prop_uploadVideo("VideoUploadPromptBehavior", category_Video, &GameBasicSettings::getUploadVideoSetting, &GameBasicSettings::setUploadVideoSetting, Reflection::PropertyDescriptor::STANDARD, Security::RobloxScript);
+static const Reflection::PropDescriptor<GameBasicSettings, bool> prop_ComputerMovementChanged("ComputerMovementChanged",category_Data, &GameBasicSettings::getComputerMovementModeModified,&GameBasicSettings::setComputerMovementModeModified, Reflection::PropertyDescriptor::CLUSTER, Security::NAMEHERE);
+static const Reflection::EnumPropDescriptor<GameBasicSettings, GameSettings::UploadSetting> prop_uploadVideo("VideoUploadPromptBehavior", category_Video, &GameBasicSettings::getUploadVideoSetting, &GameBasicSettings::setUploadVideoSetting, Reflection::PropertyDescriptor::STANDARD, Security::NAMEHEREScript);
 static const Reflection::EnumPropDescriptor<GameBasicSettings, GameBasicSettings::RenderQualitySetting> prop_renderQuality("SavedQualityLevel", category_Appearance, &GameBasicSettings::getRenderQuality, &GameBasicSettings::setRenderQuality);
 static const Reflection::EnumPropDescriptor<GameBasicSettings, GameBasicSettings::RotationType> prop_rotationType("RotationType", category_Control, &GameBasicSettings::getRotationType, &GameBasicSettings::setRotationType, Reflection::PropertyDescriptor::SCRIPTING);
 
-static Reflection::BoundFuncDesc<GameBasicSettings, bool(std::string)> func_getTutorialState(&GameBasicSettings::getTutorialState, "GetTutorialState", "tutorialId", Security::RobloxScript);
-static Reflection::BoundFuncDesc<GameBasicSettings, void(std::string, bool)> func_setTutorialState(&GameBasicSettings::setTutorialState, "SetTutorialState", "tutorialId", "value", Security::RobloxScript);
-static const Reflection::PropDescriptor<GameBasicSettings, std::string> prop_CompletedTutorials("CompletedTutorials",category_Data, &GameBasicSettings::getCompletedTutorials,&GameBasicSettings::setCompletedTutorials, Reflection::PropertyDescriptor::STREAMING, Security::RobloxScript);
-static const Reflection::PropDescriptor<GameBasicSettings, bool> prop_AllTutorialsDisabled("AllTutorialsDisabled",category_Data, &GameBasicSettings::getAllTutorialsDisabled,&GameBasicSettings::setAllTutorialsDisabled, Reflection::PropertyDescriptor::STANDARD, Security::RobloxScript);
+static Reflection::BoundFuncDesc<GameBasicSettings, bool(std::string)> func_getTutorialState(&GameBasicSettings::getTutorialState, "GetTutorialState", "tutorialId", Security::NAMEHEREScript);
+static Reflection::BoundFuncDesc<GameBasicSettings, void(std::string, bool)> func_setTutorialState(&GameBasicSettings::setTutorialState, "SetTutorialState", "tutorialId", "value", Security::NAMEHEREScript);
+static const Reflection::PropDescriptor<GameBasicSettings, std::string> prop_CompletedTutorials("CompletedTutorials",category_Data, &GameBasicSettings::getCompletedTutorials,&GameBasicSettings::setCompletedTutorials, Reflection::PropertyDescriptor::STREAMING, Security::NAMEHEREScript);
+static const Reflection::PropDescriptor<GameBasicSettings, bool> prop_AllTutorialsDisabled("AllTutorialsDisabled",category_Data, &GameBasicSettings::getAllTutorialsDisabled,&GameBasicSettings::setAllTutorialsDisabled, Reflection::PropertyDescriptor::STANDARD, Security::NAMEHEREScript);
 
-static Reflection::PropDescriptor<GameBasicSettings, bool> prop_startMaximized("StartMaximized",category_Data, &GameBasicSettings::getStartMaximized, &GameBasicSettings::setStartMaximized, Reflection::PropertyDescriptor::PUBLIC_SERIALIZED, Security::RobloxScript);
-static Reflection::PropDescriptor<GameBasicSettings, Vector2> prop_startScreenSize("StartScreenSize",category_Data, &GameBasicSettings::getStartScreenSize, &GameBasicSettings::setStartScreenSize, Reflection::PropertyDescriptor::PUBLIC_SERIALIZED, Security::RobloxScript);
-static Reflection::PropDescriptor<GameBasicSettings, Vector2> prop_startScreenPos("StartScreenPosition",category_Data, &GameBasicSettings::getStartScreenPos, &GameBasicSettings::setStartScreenPos, Reflection::PropertyDescriptor::PUBLIC_SERIALIZED, Security::RobloxScript);
+static Reflection::PropDescriptor<GameBasicSettings, bool> prop_startMaximized("StartMaximized",category_Data, &GameBasicSettings::getStartMaximized, &GameBasicSettings::setStartMaximized, Reflection::PropertyDescriptor::PUBLIC_SERIALIZED, Security::NAMEHEREScript);
+static Reflection::PropDescriptor<GameBasicSettings, Vector2> prop_startScreenSize("StartScreenSize",category_Data, &GameBasicSettings::getStartScreenSize, &GameBasicSettings::setStartScreenSize, Reflection::PropertyDescriptor::PUBLIC_SERIALIZED, Security::NAMEHEREScript);
+static Reflection::PropDescriptor<GameBasicSettings, Vector2> prop_startScreenPos("StartScreenPosition",category_Data, &GameBasicSettings::getStartScreenPos, &GameBasicSettings::setStartScreenPos, Reflection::PropertyDescriptor::PUBLIC_SERIALIZED, Security::NAMEHEREScript);
 
 Reflection::PropDescriptor<GameBasicSettings, float> GameBasicSettings::prop_masterVolume("MasterVolume",category_Data, &GameBasicSettings::getMasterVolume, &GameBasicSettings::setMasterVolume);
 
 static Reflection::PropDescriptor<GameBasicSettings, float> prop_mouseSensitivity("MouseSensitivity",category_Data, &GameBasicSettings::getMouseSensitivity, &GameBasicSettings::setMouseSensitivity);
 
-static const Reflection::PropDescriptor<GameBasicSettings, bool> prop_isFullscreen("Fullscreen",category_Data, &GameBasicSettings::getFullScreenConst, &GameBasicSettings::setFullScreen, Reflection::PropertyDescriptor::STANDARD, Security::RobloxScript);
+static const Reflection::PropDescriptor<GameBasicSettings, bool> prop_isFullscreen("Fullscreen",category_Data, &GameBasicSettings::getFullScreenConst, &GameBasicSettings::setFullScreen, Reflection::PropertyDescriptor::STANDARD, Security::NAMEHEREScript);
 static const Reflection::BoundFuncDesc<GameBasicSettings, bool()> func_inFullscreenMode(&GameBasicSettings::getFullScreen, "InFullScreen", Security::None);
 static Reflection::BoundFuncDesc<GameBasicSettings, bool()> func_inStudioMode(&GameBasicSettings::inStudioMode, "InStudioMode", Security::None);
 
 static Reflection::EventDesc<GameBasicSettings, void(bool)> event_StudioModeChanged(&GameBasicSettings::studioModeChangedSignal, "StudioModeChanged", "isStudioMode", Security::None);
 static Reflection::EventDesc<GameBasicSettings, void(bool)> event_FullscreenChanged(&GameBasicSettings::fullscreenChangedSignal, "FullscreenChanged", "isFullscreen", Security::None);
 
-static const Reflection::EnumPropDescriptor<GameBasicSettings, GameSettings::UploadSetting> prop_uploadScreenshots("ImageUploadPromptBehavior", "Screenshots", &GameBasicSettings::getPostImageSetting, &GameBasicSettings::setPostImageSetting, Reflection::PropertyDescriptor::STANDARD, Security::RobloxScript);
-static Reflection::PropDescriptor<GameBasicSettings, std::string> prop_googleAnalyticsClientId("gaID", "Configuration", &GameBasicSettings::getGoogleAnalyticsClientId, &GameBasicSettings::setGoogleAnalyticsClientId, Reflection::PropertyDescriptor::CLUSTER, Security::RobloxScript); // TODO: change CLUSTER to more generic name
+static const Reflection::EnumPropDescriptor<GameBasicSettings, GameSettings::UploadSetting> prop_uploadScreenshots("ImageUploadPromptBehavior", "Screenshots", &GameBasicSettings::getPostImageSetting, &GameBasicSettings::setPostImageSetting, Reflection::PropertyDescriptor::STANDARD, Security::NAMEHEREScript);
+static Reflection::PropDescriptor<GameBasicSettings, std::string> prop_googleAnalyticsClientId("gaID", "Configuration", &GameBasicSettings::getGoogleAnalyticsClientId, &GameBasicSettings::setGoogleAnalyticsClientId, Reflection::PropertyDescriptor::CLUSTER, Security::NAMEHEREScript); // TODO: change CLUSTER to more generic name
 
-static const Reflection::PropDescriptor<GameBasicSettings, bool> prop_usedHideHudShortcut("UsedHideHudShortcut",category_Data, &GameBasicSettings::getUsedHideHudShortcut, &GameBasicSettings::setUsedHideHudShortcut, Reflection::PropertyDescriptor::STANDARD, Security::RobloxScript);
+static const Reflection::PropDescriptor<GameBasicSettings, bool> prop_usedHideHudShortcut("UsedHideHudShortcut",category_Data, &GameBasicSettings::getUsedHideHudShortcut, &GameBasicSettings::setUsedHideHudShortcut, Reflection::PropertyDescriptor::STANDARD, Security::NAMEHEREScript);
 
 REFLECTION_END();
 
@@ -172,7 +172,7 @@ GameBasicSettings::GameBasicSettings()
 void GameBasicSettings::setControlMode(ControlMode setting)
 {
 	try {
-		RBX::Security::Context::current().requirePermission(RBX::Security::RobloxScript, "set camera control mode");
+		RBX::Security::Context::current().requirePermission(RBX::Security::NAMEHEREScript, "set camera control mode");
 	} 
 	catch (RBX::base_exception& e) 
 	{
@@ -236,9 +236,9 @@ void GameBasicSettings::setCameraMode(CameraMode setting)
 			label = "CustomCameraModeClassic";
 		}
 
-		if ( RobloxGoogleAnalytics::isInitialized() )
+		if ( NAMEHEREGoogleAnalytics::isInitialized() )
 		{
-			RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "CustomCameraMode", label);
+			NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "CustomCameraMode", label);
 		}
 
 		cameraMode = setting;
@@ -249,7 +249,7 @@ void GameBasicSettings::setCameraMode(CameraMode setting)
 void GameBasicSettings::setTouchCameraMovementMode(TouchCameraMovementMode setting)
 {
 	try {
-		RBX::Security::Context::current().requirePermission(RBX::Security::RobloxScript, "set camera movement mode for touch devices");
+		RBX::Security::Context::current().requirePermission(RBX::Security::NAMEHEREScript, "set camera movement mode for touch devices");
 	} 
 	catch (RBX::base_exception& e) 
 	{
@@ -270,8 +270,8 @@ void GameBasicSettings::setTouchCameraMovementMode(TouchCameraMovementMode setti
 				break;
 		}
 		
-		if (RobloxGoogleAnalytics::isInitialized())
-			RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "TouchCameraMoveMode", label);
+		if (NAMEHEREGoogleAnalytics::isInitialized())
+			NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "TouchCameraMoveMode", label);
 
 		touchCameraMovementMode = setting;
 		raisePropertyChanged(prop_touchCameraMovementMode);
@@ -291,7 +291,7 @@ void GameBasicSettings::setTouchCameraMovementModeModified(bool value)
 void GameBasicSettings::setComputerCameraMovementMode(ComputerCameraMovementMode setting)
 {
 	try {
-		RBX::Security::Context::current().requirePermission(RBX::Security::RobloxScript, "set camera movement mode for computer devices");
+		RBX::Security::Context::current().requirePermission(RBX::Security::NAMEHEREScript, "set camera movement mode for computer devices");
 	} 
 	catch (RBX::base_exception& e) 
 	{
@@ -312,8 +312,8 @@ void GameBasicSettings::setComputerCameraMovementMode(ComputerCameraMovementMode
 				break;
 		}
 		
-		if (RobloxGoogleAnalytics::isInitialized())
-			RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "ComputerCameraMoveMode", label);
+		if (NAMEHEREGoogleAnalytics::isInitialized())
+			NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "ComputerCameraMoveMode", label);
 
 		computerCameraMovementMode = setting;
 		raisePropertyChanged(prop_computerCameraMovementMode);
@@ -333,7 +333,7 @@ void GameBasicSettings::setComputerCameraMovementModeModified(bool value)
 void GameBasicSettings::setTouchMovementMode(TouchMovementMode setting)
 {
 	try {
-		RBX::Security::Context::current().requirePermission(RBX::Security::RobloxScript, "set character movement mode for touch devices");
+		RBX::Security::Context::current().requirePermission(RBX::Security::NAMEHEREScript, "set character movement mode for touch devices");
 	} 
 	catch (RBX::base_exception& e) 
 	{
@@ -360,8 +360,8 @@ void GameBasicSettings::setTouchMovementMode(TouchMovementMode setting)
 				label = "TouchMovementModeClickToMove";
 				break;
 		}
-		if (RobloxGoogleAnalytics::isInitialized())
-			RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "TouchMovementMode", label);
+		if (NAMEHEREGoogleAnalytics::isInitialized())
+			NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "TouchMovementMode", label);
 
 		touchMoveMode = setting;
 		raisePropertyChanged(prop_touchMovementMode);
@@ -381,7 +381,7 @@ void GameBasicSettings::setTouchMovementModeModified(bool value)
 void GameBasicSettings::setComputerMovementMode(ComputerMovementMode setting)
 {
 	try {
-		RBX::Security::Context::current().requirePermission(RBX::Security::RobloxScript, "set character movement mode for computer devices");
+		RBX::Security::Context::current().requirePermission(RBX::Security::NAMEHEREScript, "set character movement mode for computer devices");
 	} 
 	catch (RBX::base_exception& e) 
 	{
@@ -402,8 +402,8 @@ void GameBasicSettings::setComputerMovementMode(ComputerMovementMode setting)
 				label = "ComputerMovementModeClickToMove";
 				break;
 		}
-		if (RobloxGoogleAnalytics::isInitialized())
-			RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "ComputerMovementMode", label);
+		if (NAMEHEREGoogleAnalytics::isInitialized())
+			NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "ComputerMovementMode", label);
 
 		computerMoveMode = setting;
 		raisePropertyChanged(prop_computerMovementMode);
@@ -437,7 +437,7 @@ void GameBasicSettings::setRotationType(RotationType setting)
 void GameBasicSettings::setRenderQuality(RenderQualitySetting value)
 {
 	try {
-		RBX::Security::Context::current().requirePermission(RBX::Security::RobloxScript, "set render quality level");
+		RBX::Security::Context::current().requirePermission(RBX::Security::NAMEHEREScript, "set render quality level");
 	} 
 	catch (RBX::base_exception& e) 
 	{
@@ -535,7 +535,7 @@ void GameBasicSettings::setAllTutorialsDisabled(bool value)
 void GameBasicSettings::setMasterVolume(float value)
 {
 	try {
-		RBX::Security::Context::current().requirePermission(RBX::Security::RobloxScript, "set master sound volume");
+		RBX::Security::Context::current().requirePermission(RBX::Security::NAMEHEREScript, "set master sound volume");
 	} 
 	catch (RBX::base_exception& e) 
 	{
@@ -560,7 +560,7 @@ float GameBasicSettings::getMouseSensitivity() const
 void GameBasicSettings::setMouseSensitivity(float value)
 {
 	try {
-		RBX::Security::Context::current().requirePermission(RBX::Security::RobloxScript, "set mouse sensitivity");
+		RBX::Security::Context::current().requirePermission(RBX::Security::NAMEHEREScript, "set mouse sensitivity");
 	} 
 	catch (RBX::base_exception& e) 
 	{
@@ -603,7 +603,7 @@ void GameBasicSettings::reset()
 	if (RBX::Security::Context::current().identity != RBX::Security::Anonymous) 
 	{
 		try {
-			RBX::Security::Context::current().requirePermission(RBX::Security::RobloxScript, "set GameSettings parent");
+			RBX::Security::Context::current().requirePermission(RBX::Security::NAMEHEREScript, "set GameSettings parent");
 		} 
 		catch (RBX::base_exception& e) 
 		{
@@ -633,9 +633,9 @@ void GameBasicSettings::recordSettingsInGA(bool touchEnabled) const
 				CameraMovement = "TouchCameraMoveModeDefault";
 				break;
 		}
-		RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "TouchCameraMove", CameraMovement);
+		NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "TouchCameraMove", CameraMovement);
 		if (touchCameraMovementModeModified) {
-			RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "TouchCameraMoveModified", CameraMovement);
+			NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "TouchCameraMoveModified", CameraMovement);
 		}
 
 		switch (touchMoveMode) {
@@ -656,9 +656,9 @@ void GameBasicSettings::recordSettingsInGA(bool touchEnabled) const
 			CharacterMovement = "TouchMovementModeDefault";
 			break;
 		}
-		RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "TouchMovement", CharacterMovement);
+		NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "TouchMovement", CharacterMovement);
 		if (touchMoveModeModeModified) {
-			RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "TouchMovementModified", CharacterMovement);
+			NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "TouchMovementModified", CharacterMovement);
 		}
 	} else {
 		switch (computerCameraMovementMode) {
@@ -673,9 +673,9 @@ void GameBasicSettings::recordSettingsInGA(bool touchEnabled) const
 				CameraMovement = "ComputerCameraMoveModeDefault";
 				break;
 		}
-		RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "ComputerCameraMove", CameraMovement);
+		NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "ComputerCameraMove", CameraMovement);
 		if (computerCameraMovementModeModified) {
-			RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "ComputerCameraMoveModified", CameraMovement);
+			NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "ComputerCameraMoveModified", CameraMovement);
 		}
 
 		switch (computerMoveMode) {
@@ -690,9 +690,9 @@ void GameBasicSettings::recordSettingsInGA(bool touchEnabled) const
 			CharacterMovement = "ComputerMovementModeDefault";
 			break;
 		}
-		RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "ComputerMovement", CharacterMovement);
+		NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "ComputerMovement", CharacterMovement);
 		if (computerMoveModeModeModified) {
-			RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "ComputerMovementModified", CharacterMovement);
+			NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "ComputerMovementModified", CharacterMovement);
 		}
 	}
 }

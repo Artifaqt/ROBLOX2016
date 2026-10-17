@@ -1,5 +1,5 @@
 /**
-ROBLOX - We are not using the G3D 8.0 G3D::Ray, intstead we are using the RBX:RbxRay from old G3D.
+NAMEHERE - We are not using the G3D 8.0 G3D::Ray, intstead we are using the RBX:RbxRay from old G3D.
  @file Ray.h
  
  Ray class
@@ -76,7 +76,7 @@ public:
      Creates a Ray from a origin and a (nonzero) unit direction.
      */
     static Ray fromOriginAndDirection(const Vector3& point, const Vector3& direction) {
-		debugAssert(1); /// ROBLOX - Do not use, intead use RBX::RbxRay
+		debugAssert(1); /// NAMEHERE - Do not use, intead use RBX::RbxRay
         return Ray(point, direction);
     }
 

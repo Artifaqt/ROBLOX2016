@@ -62,7 +62,7 @@ static Reflection::BoundFuncDesc<RunService, void()> runFunction(&RunService::ru
 static Reflection::BoundFuncDesc<RunService, void()> pauseFunction(&RunService::pause, "Pause", Security::Plugin);
 static Reflection::BoundFuncDesc<RunService, void()> resetFunction(&RunService::stop, "Reset", Security::Plugin, Reflection::Descriptor::Attributes::deprecated());
 static Reflection::BoundFuncDesc<RunService, void()> func_Stop(&RunService::stop, "Stop", Security::Plugin);
-static Reflection::BoundFuncDesc<RunService, bool()> func_isRunning(&RunService::isRunning, "IsRunning",  Security::RobloxScript);
+static Reflection::BoundFuncDesc<RunService, bool()> func_isRunning(&RunService::isRunning, "IsRunning",  Security::NAMEHEREScript);
 
 static Reflection::BoundFuncDesc<RunService, void(std::string)> func_unbindRenderStepEarly(&RunService::unbindFunctionFromRenderStepEarly, "UnbindFromRenderStep", "name", Security::None);
 static Reflection::BoundFuncDesc<RunService, void(std::string, int, Lua::WeakFunctionRef)> func_bindRenderStepEarly(&RunService::bindFunctionToRenderStepEarly, "BindToRenderStep", "name", "priority", "function", Security::None);

@@ -26,9 +26,9 @@ namespace Analytics {
 
 		// Initialize the User Agent
 #ifdef UNICODE
-		HINTERNET session = InternetOpen(L"Roblox/WinInet", PRE_CONFIG_INTERNET_ACCESS, NULL, NULL, 0);
+		HINTERNET session = InternetOpen(L"NAMEHERE/WinInet", PRE_CONFIG_INTERNET_ACCESS, NULL, NULL, 0);
 #else
-		HINTERNET session = InternetOpen("Roblox/WinInet", PRE_CONFIG_INTERNET_ACCESS, NULL, NULL, 0);
+		HINTERNET session = InternetOpen("NAMEHERE/WinInet", PRE_CONFIG_INTERNET_ACCESS, NULL, NULL, 0);
 #endif
 		if (!session) 
 			goto Error;

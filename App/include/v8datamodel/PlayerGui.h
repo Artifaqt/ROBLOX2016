@@ -1,4 +1,4 @@
-/* Copyright 2003-2009 ROBLOX Corporation, All Rights Reserved  */
+/* Copyright 2003-2009 NAMEHERE Corporation, All Rights Reserved  */
 
 #pragma once
 
@@ -209,7 +209,7 @@ namespace RBX {
 	public:
 		CoreGuiService();
 
-		void createRobloxScreenGui();
+		void createNAMEHEREScreenGui();
 
 		// for showing on screen messages, (duration == 0) for infinite time.
 		void displayOnScreenMessage(int slot, const std::string &message, double duration);
@@ -218,7 +218,7 @@ namespace RBX {
 		
 		void setGuiVisibility(bool visible);
 
-		// used to add/remove standard lua gui elements in (for ROBLOX in-game gui) -bt
+		// used to add/remove standard lua gui elements in (for NAMEHERE in-game gui) -bt
 		void addChild(Instance* instance);
 		void removeChild(Instance* instance);
 		void removeChild(const std::string &Name);
@@ -226,7 +226,7 @@ namespace RBX {
 
 		int getGuiVersion() const;
         
-        shared_ptr<RBX::ScreenGui> getRobloxScreenGui();
+        shared_ptr<RBX::ScreenGui> getNAMEHEREScreenGui();
 
 		////////////////////////////////////////////////////////////////////////////////////
 		//

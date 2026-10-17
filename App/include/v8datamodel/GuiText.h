@@ -134,7 +134,7 @@ void Class::setText(std::string value)																																		\
 	if(value.size() > ContentFilter::MAX_CONTENT_FILTER_SIZE){																												\
 		value = value.substr(0, ContentFilter::MAX_CONTENT_FILTER_SIZE);																									\
 	}																																										\
-	if(!ProfanityFilter::ContainsProfanity(value) || getRobloxLocked()){																									\
+	if(!ProfanityFilter::ContainsProfanity(value) || getNAMEHERELocked()){																									\
 		if(GuiTextMixin::text != value){																																	\
 			bool didTextFit = getTextFits();																																\
 			GuiTextMixin::text = value;																																		\

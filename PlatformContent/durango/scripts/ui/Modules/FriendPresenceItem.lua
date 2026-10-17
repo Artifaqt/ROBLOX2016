@@ -4,7 +4,7 @@
 			// for friends social status
 ]]
 local CoreGui = Game:GetService("CoreGui")
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 
 local AssetManager = require(Modules:FindFirstChild('AssetManager'))
@@ -136,9 +136,9 @@ local function FriendPresenceItem(size, idStr)
 		nameLabel.Text = name
 	end
 
-	function this:SetPresence(str, isInRobloxGame)
+	function this:SetPresence(str, isInNAMEHEREGame)
 		presenceLabel.Text = str
-		presenceStatusImage.ImageColor3 = isInRobloxGame and GlobalSettings.GreenTextColor
+		presenceStatusImage.ImageColor3 = isInNAMEHEREGame and GlobalSettings.GreenTextColor
 			or GlobalSettings.GreySelectedButtonColor
 	end
 

@@ -33,7 +33,7 @@
 // Turned off the G3D Bufferpool - let the system allocator do the work - our big issue is not speed of allocation,
 // rather, it is locality of reference
 //
-// ROBLOX - DB 7/14/08
+// NAMEHERE - DB 7/14/08
 //
 #define NO_BUFFERPOOL
 
@@ -47,7 +47,7 @@
 
 #   include <sys/timeb.h>
 
-#elif defined(G3D_LINUX) || defined(G3D_ANDROID) // ROBLOX
+#elif defined(G3D_LINUX) || defined(G3D_ANDROID) // NAMEHERE
 
 #   include <stdlib.h>
 #   include <stdio.h>
@@ -60,7 +60,7 @@
 #   include <sys/time.h>
 #   include <pthread.h>
 
-#elif defined(G3D_OSX) || defined(G3D_IOS) // ROBLOX
+#elif defined(G3D_OSX) || defined(G3D_IOS) // NAMEHERE
 
     #include <stdlib.h>
     #include <stdio.h>
@@ -75,11 +75,11 @@
     #include <mach-o/arch.h>
 
     #include <sstream>
-//    #include <CoreServices/CoreServices.h> // ROBLOX
+//    #include <CoreServices/CoreServices.h> // NAMEHERE
 #endif
 
 // SIMM include
-#if !defined(G3D_IOS) && !defined(G3D_ANDROID)// ROBLOX
+#if !defined(G3D_IOS) && !defined(G3D_ANDROID)// NAMEHERE
 #include <xmmintrin.h>
 #endif
 
@@ -279,9 +279,9 @@ void System::init() {
             ::free(r);
         }
 
-#   elif defined(G3D_OSX) || defined(G3D_IOS) // ROBLOX
+#   elif defined(G3D_OSX) || defined(G3D_IOS) // NAMEHERE
     
-#if defined(G3D_OSX) // ROBLOX
+#if defined(G3D_OSX) // NAMEHERE
 
         // Operating System:
         SInt32 macVersion;
@@ -301,8 +301,8 @@ void System::init() {
         Gestalt('pclk', &m_OSXCPUSpeed);
         m_cpuSpeed = iRound((double)m_OSXCPUSpeed / (1024 * 1024));
         m_secondsPerNS = 1.0 / 1.0e9;
-#else // ROBLOX
-    mach_timebase_info( &m_info ); // ROBLOX
+#else // NAMEHERE
+    mach_timebase_info( &m_info ); // NAMEHERE
 #endif
     
         // System Architecture:
@@ -387,7 +387,7 @@ static bool checkForCPUID() {
 
 
 void System::getStandardProcessorExtensions() {
-#if ( ! defined(G3D_OSX) && !defined(G3D_IOS)) || defined(G3D_OSX_INTEL) // ROBLOX
+#if ( ! defined(G3D_OSX) && !defined(G3D_IOS)) || defined(G3D_OSX_INTEL) // NAMEHERE
     if (! m_hasCPUID) {
         return;
     }
@@ -434,11 +434,11 @@ void System::memset(void* dst, uint8 value, size_t numBytes) {
 
 
 /** Removes the 'd' that icompile / Morgan's VC convention appends. */
-static std::string computeAppName(const std::string& start) { return "Roblox"; }
+static std::string computeAppName(const std::string& start) { return "NAMEHERE"; }
 
 
 std::string& System::appName() {
-    static std::string n = "Roblox";
+    static std::string n = "NAMEHERE";
     return n;
 }
 
@@ -450,7 +450,7 @@ std::string System::currentProgramFilename() {
     {
         GetModuleFileNameA(NULL, filename, sizeof(filename));
     } 
-#   elif defined(G3D_OSX) || defined(G3D_IOS) // ROBLOX
+#   elif defined(G3D_OSX) || defined(G3D_IOS) // NAMEHERE
     {
         // Run the 'ps' program to extract the program name
         // from the process ID.

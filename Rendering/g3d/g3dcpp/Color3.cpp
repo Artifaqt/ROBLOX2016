@@ -289,7 +289,7 @@ Color3 Color3::jetColorMap(const float& val) {
 	return jet;
 }
 
-// ROBLOX - Added for boost App.Unit Test
+// NAMEHERE - Added for boost App.Unit Test
 std::ostream& operator<<(std::ostream& os, const Color3& c) {
     return os << c.toString();
 }

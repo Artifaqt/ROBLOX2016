@@ -10,7 +10,7 @@ function do_md5()
 }
 
 # Parameters
-OBB_PACKAGE_NAME="com.roblox.client"
+OBB_PACKAGE_NAME="com.namehere.client"
 OBB_VERSION="1"
 
 # The contents of the obb can be specified with variable.

@@ -3,11 +3,11 @@
 			// OutfitData.lua
 
 			// Created by Kip Turner
-			// Copyright Roblox 2015
+			// Copyright NAMEHERE 2015
 ]]
 
 local CoreGui = Game:GetService("CoreGui")
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 
 local Utility = require(Modules:FindFirstChild('Utility'))

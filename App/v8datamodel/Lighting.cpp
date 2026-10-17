@@ -3,11 +3,11 @@
 #include "v8datamodel/lighting.h"
 #include "v8datamodel/sky.h"
 
-#include "Util/RobloxGoogleAnalytics.h"
+#include "Util/NAMEHEREGoogleAnalytics.h"
 
 static void sendLightingShadowsStats()
 {
-	RBX::RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "LightingShadows");
+	RBX::NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "LightingShadows");
 }
 
 using namespace RBX;

@@ -189,23 +189,23 @@ local stampedModels = {}
 
 
 function listenForStampedModels(childAdded)
-	if childAdded and childAdded.Parent == game.Workspace and childAdded:FindFirstChild("RobloxStamper", true) then
+	if childAdded and childAdded.Parent == game.Workspace and childAdded:FindFirstChild("NAMEHEREStamper", true) then
 		table.insert(stampedModels, childAdded)
 	end
 end
 
 function insertStamperTags(parentModel)
-	local stampTag = parentModel:FindFirstChild("RobloxStamper")
+	local stampTag = parentModel:FindFirstChild("NAMEHEREStamper")
 	if not stampTag then 
 		stampTag = Instance.new("BoolValue")
-		stampTag.Name = "RobloxStamper"
+		stampTag.Name = "NAMEHEREStamper"
 		stampTag.Parent = parentModel
 	end
 
-	local modelTag = parentModel:FindFirstChild("RobloxModel")
+	local modelTag = parentModel:FindFirstChild("NAMEHEREModel")
 	if not modelTag then
 		modelTag = Instance.new("BoolValue")
-		modelTag.Name = "RobloxModel"
+		modelTag.Name = "NAMEHEREModel"
 		modelTag.Parent = parentModel
 	end
 end
@@ -633,7 +633,7 @@ g = Instance.new("ScreenGui", game:GetService("CoreGui"))
 frame = Instance.new("Frame", g)
 frame.Position = UDim2.new(0.2, 20, 0, 0)
 frame.Size = UDim2.new(0.6, -40, .4, 0)
-frame.Style = Enum.FrameStyle.RobloxRound
+frame.Style = Enum.FrameStyle.NAMEHERERound
 frame.BackgroundTransparency = 0.5
 frame.Visible = false
 
@@ -669,7 +669,7 @@ infoBox.TextYAlignment = Enum.TextYAlignment.Top
 infoBox.Visible = true
 
 modelInfoFrame = Instance.new("Frame", frame)
-modelInfoFrame.Style = Enum.FrameStyle.RobloxRound
+modelInfoFrame.Style = Enum.FrameStyle.NAMEHERERound
 modelInfoFrame.Name = "ModelInfo"
 modelInfoFrame.Position = UDim2.new(.395, 0, .325, 0)
 modelInfoFrame.Size = UDim2.new(.2, 0, .4, 0)
@@ -687,7 +687,7 @@ backButton.FontSize = Enum.FontSize.Size18
 backButton.Size = UDim2.new(0, 200, 0, 50)
 backButton.Position = UDim2.new(0, 1, 1, -55)
 backButton.BackgroundTransparency = 1
-backButton.Style = Enum.ButtonStyle.RobloxButtonDefault
+backButton.Style = Enum.ButtonStyle.NAMEHEREButtonDefault
 backButton.Text = "Back"
 backButton.TextColor3 = Color3.new(0.5, 0.5, 0.5)
 backButton.MouseButton1Click:connect(goBack)

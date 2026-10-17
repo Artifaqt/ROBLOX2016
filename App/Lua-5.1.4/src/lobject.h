@@ -223,7 +223,7 @@ typedef union Udata {
   struct {
     CommonHeader;
 
-	// ROBLOX
+	// NAMEHERE
 	bool may_gc;
 
   LUAVM_SHUFFLE3(;,
@@ -358,7 +358,7 @@ typedef struct Table {
 
 LUAVM_SHUFFLE3(;,
   lu_byte flags,  /* 1<<p means tagmethod(p) is not present */ 
-  lu_byte readonly,	/* ROBLOX patch to Lua. search code for "readonly" */
+  lu_byte readonly,	/* NAMEHERE patch to Lua. search code for "readonly" */
   lu_byte lsizenode);  /* log2 of size of `node' array */
 
 LUAVM_SHUFFLE6(;,

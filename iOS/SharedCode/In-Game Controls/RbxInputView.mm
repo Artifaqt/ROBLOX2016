@@ -1,9 +1,9 @@
 //
 //  RbxInputView.mm
-//  Roblox iOS Shared Code
+//  NAMEHERE iOS Shared Code
 //
 //  Created by Ben Tkacheff on 10/25/13.
-//  Copyright (c) 2013 ROBLOX. All rights reserved.
+//  Copyright (c) 2013 NAMEHERE. All rights reserved.
 //
 
 #import "RbxInputView.h"
@@ -649,7 +649,7 @@
         return;
     }
     
-    // make values consistent with Android, and translate easier into roblox coordinate system
+    // make values consistent with Android, and translate easier into namehere coordinate system
     userInputService->fireAccelerationEvent( RBX::Vector3(deviceMotion.userAcceleration.x, deviceMotion.userAcceleration.z, deviceMotion.userAcceleration.y) );
     userInputService->fireGravityEvent( RBX::Vector3(deviceMotion.gravity.x, deviceMotion.gravity.z, -deviceMotion.gravity.y) );
     

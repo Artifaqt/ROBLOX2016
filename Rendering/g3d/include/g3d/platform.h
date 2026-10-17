@@ -59,11 +59,11 @@
 #elif defined(__linux__)
     #define G3D_LINUX
 #elif defined(__APPLE__)
-    #if __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ >= 30000 || __IPHONE_OS_VERSION_MIN_REQUIRED >= 30000 // ROBLOX
-        #define G3D_IOS // ROBLOX
-    #else // ROBLOX
-        #define G3D_OSX // ROBLOX
-    #endif // ROBLOX
+    #if __ENVIRONMENT_IPHONE_OS_VERSION_MIN_REQUIRED__ >= 30000 || __IPHONE_OS_VERSION_MIN_REQUIRED >= 30000 // NAMEHERE
+        #define G3D_IOS // NAMEHERE
+    #else // NAMEHERE
+        #define G3D_OSX // NAMEHERE
+    #endif // NAMEHERE
 
    // Prevent OS X fp.h header from being included; it defines
    // pi as a constant, which creates a conflict with G3D
@@ -94,7 +94,7 @@
 #   endif
 #endif
 
-#if defined(G3D_OSX) || defined(G3D_IOS) // ROBLOX
+#if defined(G3D_OSX) || defined(G3D_IOS) // NAMEHERE
 #    ifndef __GNUC__
 #        error G3D only supports the gcc compiler on OS X.
 #    endif
@@ -109,7 +109,7 @@
 
 #endif
 
-#if defined(G3D_ANDROID) // ROBLOX
+#if defined(G3D_ANDROID) // NAMEHERE
 #    ifndef __GNUC__
 #        error G3D only supports the gcc compiler on Android.
 #    endif

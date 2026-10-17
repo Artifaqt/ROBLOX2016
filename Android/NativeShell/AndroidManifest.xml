@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?><manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.roblox.client"
+    package="com.namehere.client"
     android:versionCode="3"
     android:versionName="2.168.11115" >
     
@@ -27,13 +27,13 @@
   <uses-feature android:name="android.hardware.bluetooth" android:required="false" />
 
   <application
-		android:name="com.roblox.client.RobloxApplication"
+		android:name="com.namehere.client.NAMEHEREApplication"
 		android:largeHeap="true"
         android:allowBackup="true"
         android:hardwareAccelerated="true"
         android:icon="@drawable/ic_launcher"
-        android:label="@string/RobloxWord"
-        android:theme="@style/Theme.Roblox.Fullscreen">
+        android:label="@string/NAMEHEREWord"
+        android:theme="@style/Theme.NAMEHERE.Fullscreen">
         
 	<meta-data
 	    android:name="com.google.android.gms.version"
@@ -44,7 +44,7 @@
         android:value="7991889011d53be5ccf9f6f42d9a1ea05a702eb7"/>
 
     <service
-        android:name="com.roblox.client.RobloxService"
+        android:name="com.namehere.client.NAMEHEREService"
         android:stopWithTask="false"
         android:exported="false" />
 		<!--android:process=":service" />-->
@@ -52,8 +52,8 @@
     <activity
         android:name=".ActivityStart"
         android:windowSoftInputMode="adjustPan"
-        android:label="@string/RobloxWord"
-        android:theme="@style/Theme.Roblox"
+        android:label="@string/NAMEHEREWord"
+        android:theme="@style/Theme.NAMEHERE"
         android:alwaysRetainTaskState="true" >
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
@@ -62,8 +62,8 @@
     </activity>
       <activity android:name=".ActivitySplash"
           android:windowSoftInputMode="adjustPan"
-          android:label="@string/RobloxWord"
-          android:theme="@style/Theme.Roblox"
+          android:label="@string/NAMEHEREWord"
+          android:theme="@style/Theme.NAMEHERE"
           android:alwaysRetainTaskState="true" >
           <intent-filter>
               <category android:name="android.intent.category.LAUNCHER" />
@@ -73,15 +73,15 @@
               <action android:name="android.intent.action.VIEW" />
               <category android:name="android.intent.category.DEFAULT" />
               <category android:name="android.intent.category.BROWSABLE" />
-              <data android:scheme="robloxmobile" />
+              <data android:scheme="nameheremobile" />
           </intent-filter>
       </activity>
     <activity
         android:name=".ActivityNativeMain"
         android:windowSoftInputMode="adjustPan"
-        android:label="@string/RobloxWord"
+        android:label="@string/NAMEHEREWord"
         android:alwaysRetainTaskState="true"
-        android:theme="@style/Theme.Roblox"
+        android:theme="@style/Theme.NAMEHERE"
         android:launchMode="singleTask">
 		<intent-filter>
 		    <action android:name="android.intent.action.MAIN" />
@@ -90,14 +90,14 @@
     </activity>
     <activity
         android:name=".ActivityAdColony"
-        android:label="@string/RobloxWord"
+        android:label="@string/NAMEHEREWord"
         android:screenOrientation="sensorLandscape"
         android:launchMode="singleTop"
-        android:theme="@style/Theme.Roblox.Fullscreen" >
+        android:theme="@style/Theme.NAMEHERE.Fullscreen" >
         <!-- Parent activity meta-data to support API level 4+ -->
         <meta-data
         android:name="android.support.PARENT_ACTIVITY"
-        android:value="com.roblox.client.ActivityNativeMain" />
+        android:value="com.namehere.client.ActivityNativeMain" />
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.DEFAULT" />
@@ -106,23 +106,23 @@
     <activity
         android:name=".ActivityGlView"
         android:screenOrientation="sensorLandscape"
-        android:label="@string/RobloxWord"
+        android:label="@string/NAMEHEREWord"
         android:windowSoftInputMode="adjustResize"
         android:process=":glview"
         android:launchMode="singleTask"
 		android:configChanges="orientation|screenSize"
-        android:theme="@style/Theme.Roblox.Dark.Fullscreen">
+        android:theme="@style/Theme.NAMEHERE.Dark.Fullscreen">
 		<intent-filter>
 			<action android:name="android.intent.action.MAIN" />
 			<category android:name="android.intent.category.DEFAULT" />
 		</intent-filter>
 	</activity>
     <activity
-        android:name="com.roblox.client.ActivityCurlTest"
+        android:name="com.namehere.client.ActivityCurlTest"
         android:screenOrientation="sensorLandscape"
-        android:label="@string/RobloxWord"
+        android:label="@string/NAMEHEREWord"
         android:launchMode="singleTop"
-        android:theme="@style/Theme.Roblox.Fullscreen" >
+        android:theme="@style/Theme.NAMEHERE.Fullscreen" >
 		<intent-filter>
 			<action android:name="android.intent.action.MAIN" />
 			<category android:name="android.intent.category.DEFAULT" />
@@ -156,7 +156,7 @@
           <category android:name="android.intent.category.DEFAULT" />
           <category android:name="android.intent.category.BROWSABLE" />
           <!-- must be the all lowercase version of the package and without underscores -->
-          <data android:scheme="com.roblox.client" android:host="gsapi" />
+          <data android:scheme="com.namehere.client" android:host="gsapi" />
       </intent-filter>
   </activity>
 
@@ -168,7 +168,7 @@
       android:configChanges=
           "keyboard|keyboardHidden|screenLayout|screenSize|orientation"
       android:theme="@android:style/Theme.Translucent.NoTitleBar"
-      android:label="@string/RobloxWord" />
+      android:label="@string/NAMEHEREWord" />
 
   <activity android:name=".test.TestHelperActivity" ></activity>
 
@@ -189,6 +189,6 @@
 
       <activity android:name=".ReCaptchaActivity"
         android:label="@string/captchaTitle"
-        android:theme="@style/Theme.Roblox.AppCompat.Light.Dialog.NoActionBar"></activity>
+        android:theme="@style/Theme.NAMEHERE.AppCompat.Light.Dialog.NoActionBar"></activity>
   </application>
 </manifest>

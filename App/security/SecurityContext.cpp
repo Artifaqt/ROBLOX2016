@@ -22,15 +22,15 @@ namespace RBX
             case StudioPlugin:
                 return p == Plugin;
 #endif
-			case GameScriptInRobloxPlace_:
-				return                p == RobloxPlace;
-			case RobloxGameScript_:
-				return p == Plugin || p == RobloxPlace || p == LocalUser ||                      p == RobloxScript;
+			case GameScriptInNAMEHEREPlace_:
+				return                p == NAMEHEREPlace;
+			case NAMEHEREGameScript_:
+				return p == Plugin || p == NAMEHEREPlace || p == LocalUser ||                      p == NAMEHEREScript;
 			case LocalGUI_:
 			case CmdLine_:
-				return p == Plugin || p == RobloxPlace || p == LocalUser;
+				return p == Plugin || p == NAMEHEREPlace || p == LocalUser;
 			case Replicator_:
-				return                p == RobloxPlace ||                   p == WritePlayer  || p == RobloxScript;
+				return                p == NAMEHEREPlace ||                   p == WritePlayer  || p == NAMEHEREScript;
 			case COM:
 			case WebService:
 				return true;

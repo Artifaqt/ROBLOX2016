@@ -67,30 +67,30 @@ private:
 #define LLOG_ENTRY3(logger, msg, a1, a2, a3) logger.write_logentry(msg, reinterpret_cast<const void*>(a1), reinterpret_cast<const void*>(a2), reinterpret_cast<const void*>(a3))
 #define LLOG_ENTRY4(logger, msg, a1, a2, a3, a4) logger.write_logentry(msg, reinterpret_cast<const void*>(a1), reinterpret_cast<const void*>(a2), reinterpret_cast<const void*>(a3), reinterpret_cast<const void*>(a4))
 
-#define FIREFOXREGKEY               "@nsroblox.roblox.com/launcher"
-#define FIREFOXREGKEY64             "@nsroblox.roblox.com/launcher64"
+#define FIREFOXREGKEY               "@nsnamehere.namehere.com/launcher"
+#define FIREFOXREGKEY64             "@nsnamehere.namehere.com/launcher64"
 
-#define PLAYERLINKNAME_CUR          "ROBLOX Player"
-#define PLAYERLINKNAMELEGACY        "Play Roblox"
+#define PLAYERLINKNAME_CUR          "NAMEHERE Player"
+#define PLAYERLINKNAMELEGACY        "Play NAMEHERE"
 
 // MFC Studio names
-#define STUDIOEXENAME               "RobloxStudio.exe"
-#define STUDIOBOOTSTAPPERNAME       "RobloxStudioLauncher.exe"
-#define STUDIOLINKNAMELEGACY        "Roblox Studio"    // wrong case
+#define STUDIOEXENAME               "NAMEHEREStudio.exe"
+#define STUDIOBOOTSTAPPERNAME       "NAMEHEREStudioLauncher.exe"
+#define STUDIOLINKNAMELEGACY        "NAMEHERE Studio"    // wrong case
 
 // QT Studio names
-#define STUDIOQTEXENAME             "RobloxStudioBeta.exe"
-#define STUDIOBOOTSTAPPERNAMEBETA   "RobloxStudioLauncherBeta.exe"
-#define STUDIOQTLINKNAME_CUR        "ROBLOX Studio"
-#define STUDIOQTLINKNAME            "ROBLOX Studio Beta"
-#define STUDIOQTLINKNAME20          "ROBLOX Studio 2.0"
-#define STUDIOQTLINKNAME20BETA      "ROBLOX Studio 2.0 Beta"
-#define STUDIOQTLINKNAME2013        "ROBLOX Studio 2013"
+#define STUDIOQTEXENAME             "NAMEHEREStudioBeta.exe"
+#define STUDIOBOOTSTAPPERNAMEBETA   "NAMEHEREStudioLauncherBeta.exe"
+#define STUDIOQTLINKNAME_CUR        "NAMEHERE Studio"
+#define STUDIOQTLINKNAME            "NAMEHERE Studio Beta"
+#define STUDIOQTLINKNAME20          "NAMEHERE Studio 2.0"
+#define STUDIOQTLINKNAME20BETA      "NAMEHERE Studio 2.0 Beta"
+#define STUDIOQTLINKNAME2013        "NAMEHERE Studio 2013"
 
 // Player names
-#define  PLAYEREXENAME				"RobloxPlayerBeta.exe"
+#define  PLAYEREXENAME				"NAMEHEREPlayerBeta.exe"
 
-// Version URL string names (setup.roblox.com/XXX) - replace XXX with these values to get the most recent version
+// Version URL string names (setup.namehere.com/XXX) - replace XXX with these values to get the most recent version
 // Unfortunately these have to be defined globally so Player knows how to find the latest version of Studio to download
 #define VERSIONGUIDNAMESTUDIO       "versionQTStudio"
 #define VERSIONGUIDNAMERCC			"NOVERSION"
@@ -130,9 +130,9 @@ std::wstring getQTStudioRegistrySubPath();
 std::wstring getQTStudioRegistryPath();
 
 
-void createRobloxShortcut(simple_logger<wchar_t> &logger, bool isPerUser, const TCHAR *linkFileName, const TCHAR *exePath, const TCHAR *args, bool desktop, bool forceCreate);
-void updateExistingRobloxShortcuts(simple_logger<wchar_t> &logger, bool isPerUser, const TCHAR *folder, const TCHAR *exeName, const TCHAR *exeFolderPath, const TCHAR *baseFolderPath);
-std::wstring getRobloxProgramsFolder(simple_logger<wchar_t> &logger, bool isPerUser);
+void createNAMEHEREShortcut(simple_logger<wchar_t> &logger, bool isPerUser, const TCHAR *linkFileName, const TCHAR *exePath, const TCHAR *args, bool desktop, bool forceCreate);
+void updateExistingNAMEHEREShortcuts(simple_logger<wchar_t> &logger, bool isPerUser, const TCHAR *folder, const TCHAR *exeName, const TCHAR *exeFolderPath, const TCHAR *baseFolderPath);
+std::wstring getNAMEHEREProgramsFolder(simple_logger<wchar_t> &logger, bool isPerUser);
 std::wstring getDektopShortcutPath(simple_logger<wchar_t> &logger, const TCHAR *shortcutName);
 bool hasDesktopShortcut(simple_logger<wchar_t> &logger, const TCHAR *shortcutName);
 bool hasProgramShortcut(simple_logger<wchar_t> &logger,  bool isPerUser, const TCHAR *shortcutName);

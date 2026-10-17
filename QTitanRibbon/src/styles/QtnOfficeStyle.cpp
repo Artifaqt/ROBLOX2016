@@ -1519,10 +1519,10 @@ bool OfficeStyle::drawToolButtonLabel(const QStyleOption* opt, QPainter* p, cons
                 alignment |= Qt::TextHideMnemonic;
 
             QPalette::ColorRole textRole = QPalette::ButtonText;
-			// BEGIN ROBLOX CHANGES
+			// BEGIN NAMEHERE CHANGES
             //if (opt->state & State_MouseOver || opt->state & State_Sunken)
             //    textRole = QPalette::HighlightedText;
-			// END ROBLOX CHANGES
+			// END NAMEHERE CHANGES
 
             QString text = toolbutton->text;
             if (d.officePaintManager()->isTopLevelMenuItemUpperCase(w))

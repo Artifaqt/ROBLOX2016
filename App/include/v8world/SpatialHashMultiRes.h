@@ -386,8 +386,8 @@ namespace RBX {
 		void primitiveExtentsChanged(Primitive* p, const Extents& extents);
 
 		// remove these once we can confirm "boost::pool" objects work
-		object_pool<TreeNode, roblox_allocator> treeNodeAllocator;
-		object_pool<SpatialNode, roblox_allocator> spatialNodeAllocator;
+		object_pool<TreeNode, namehere_allocator> treeNodeAllocator;
+		object_pool<SpatialNode, namehere_allocator> spatialNodeAllocator;
 		//
 
 		inline Vector3int32 getChildGrid(const Vector3int32& grid, int offset) 

@@ -5,8 +5,8 @@ using System.Text;
 using System.Collections.Generic;
 using System.Linq;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Roblox.Grid.Rcc;
-using Roblox.Grid;
+using NAMEHERE.Grid.Rcc;
+using NAMEHERE.Grid;
 using System.Threading;
 
 namespace RCCService.Test
@@ -107,9 +107,9 @@ namespace RCCService.Test
         {
 
             int gameport = 53640;
-            using (RCCServiceSoap serverService = Roblox.Grid.Common.GridServiceUtils.GetService(serverUri.Host, serverUri.Port))
+            using (RCCServiceSoap serverService = NAMEHERE.Grid.Common.GridServiceUtils.GetService(serverUri.Host, serverUri.Port))
             {
-                Roblox.Grid.Rcc.Job serverjob = new Roblox.Grid.Rcc.Job(); // ScriptJob(0, timeout, script);
+                NAMEHERE.Grid.Rcc.Job serverjob = new NAMEHERE.Grid.Rcc.Job(); // ScriptJob(0, timeout, script);
                 serverjob.id = "TestSimpleClientServer";
                 serverjob.expirationInSeconds = 60;
                 serverjob.category = 0;
@@ -127,7 +127,7 @@ namespace RCCService.Test
 
 
                     List<RCCServiceSoap> clientservices = new List<RCCServiceSoap>();
-                    Roblox.Grid.Rcc.Job clientjob = new Roblox.Grid.Rcc.Job(); // ScriptJob(0, timeout, script);
+                    NAMEHERE.Grid.Rcc.Job clientjob = new NAMEHERE.Grid.Rcc.Job(); // ScriptJob(0, timeout, script);
                     string clientjobbaseid = "TestSimpleClientServer_client";
                     clientjob.expirationInSeconds = 60;
                     clientjob.category = 0;
@@ -136,7 +136,7 @@ namespace RCCService.Test
 
                         foreach (Uri clienturi in clientUris)
                         {
-                            clientservices.Add(Roblox.Grid.Common.GridServiceUtils.GetService(clienturi.Host, clienturi.Port));
+                            clientservices.Add(NAMEHERE.Grid.Common.GridServiceUtils.GetService(clienturi.Host, clienturi.Port));
                         }
 
                         for (int clientnum = 0; clientnum < numClients; ++clientnum)

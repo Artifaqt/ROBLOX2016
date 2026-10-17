@@ -9,8 +9,8 @@
     #include "ProcessInformation.h"
 #endif
 
-#define ROBLOXREGKEY        "RobloxReg"	        // Can't use "Roblox" because it is used by the old legacy installer
-#define STUDIOQTROBLOXREG   "StudioQTRobloxReg" // Technical debt we need to make this two names globally unique and shared
+#define NAMEHEREREGKEY        "NAMEHEREReg"	        // Can't use "NAMEHERE" because it is used by the old legacy installer
+#define STUDIOQTNAMEHEREREG   "StudioQTNAMEHEREReg" // Technical debt we need to make this two names globally unique and shared
 
 //Pull in the win32 version Library
 #pragma comment(lib, "version.lib")
@@ -39,14 +39,14 @@ CRegKey GetKey(CString& out_operation, bool isStudioKey, bool is64bits)
 		// First check HKCU then try HKLM
 		if ( isStudioKey ) 
 		{
-            out_operation = _T("Open HKEY_CURRENT_USER\\Software\\") _T(STUDIOQTROBLOXREG) _T(" key");
-			if ( SUCCEEDED(key.Open(HKEY_CURRENT_USER, _T("Software\\") _T(STUDIOQTROBLOXREG), regSam)) && key.m_hKey )
+            out_operation = _T("Open HKEY_CURRENT_USER\\Software\\") _T(STUDIOQTNAMEHEREREG) _T(" key");
+			if ( SUCCEEDED(key.Open(HKEY_CURRENT_USER, _T("Software\\") _T(STUDIOQTNAMEHEREREG), regSam)) && key.m_hKey )
 			    return key;
 		}
 		else
 		{
-            out_operation = _T("Open HKEY_CURRENT_USER\\Software\\") _T(ROBLOXREGKEY) _T(" key");
-            if ( SUCCEEDED(key.Open(HKEY_CURRENT_USER, _T("Software\\") _T(ROBLOXREGKEY), regSam)) && key.m_hKey )
+            out_operation = _T("Open HKEY_CURRENT_USER\\Software\\") _T(NAMEHEREREGKEY) _T(" key");
+            if ( SUCCEEDED(key.Open(HKEY_CURRENT_USER, _T("Software\\") _T(NAMEHEREREGKEY), regSam)) && key.m_hKey )
 			    return key;
 		}
 	}
@@ -54,13 +54,13 @@ CRegKey GetKey(CString& out_operation, bool isStudioKey, bool is64bits)
 	// fallback to HKLM (used by "WinXP SP1" and "UAC off")
 	if ( isStudioKey ) 
 	{
-		out_operation = _T("Open HKEY_LOCAL_MACHINE\\Software\\") _T(STUDIOQTROBLOXREG) _T(" key");
-		CheckResult(key.Open(HKEY_LOCAL_MACHINE, _T("Software\\") _T(STUDIOQTROBLOXREG), regSam));
+		out_operation = _T("Open HKEY_LOCAL_MACHINE\\Software\\") _T(STUDIOQTNAMEHEREREG) _T(" key");
+		CheckResult(key.Open(HKEY_LOCAL_MACHINE, _T("Software\\") _T(STUDIOQTNAMEHEREREG), regSam));
 	}
 	else
 	{
-		out_operation = _T("Open HKEY_LOCAL_MACHINE\\Software\\") _T(ROBLOXREGKEY) _T(" key");
-		CheckResult(key.Open(HKEY_LOCAL_MACHINE, _T("Software\\") _T(ROBLOXREGKEY), regSam));
+		out_operation = _T("Open HKEY_LOCAL_MACHINE\\Software\\") _T(NAMEHEREREGKEY) _T(" key");
+		CheckResult(key.Open(HKEY_LOCAL_MACHINE, _T("Software\\") _T(NAMEHEREREGKEY), regSam));
 	}
 
     if ( !key.m_hKey )
@@ -116,7 +116,7 @@ CRegKey GetKey(CString& out_operation, bool isStudioKey, bool is64bits)
 		return _T("");
 
 	// Initialize the User Agent
-	CHINTERNET session = InternetOpen(_T("RobloxProxy"), PRE_CONFIG_INTERNET_ACCESS, NULL, NULL, 0);
+	CHINTERNET session = InternetOpen(_T("NAMEHEREProxy"), PRE_CONFIG_INTERNET_ACCESS, NULL, NULL, 0);
 	CHINTERNET connection = ::InternetConnect(session, u.GetHostName(), u.GetPortNumber(), u.GetUserName(), u.GetPassword(), INTERNET_SERVICE_HTTP, 0, 1); 
 
 	//   1. Open HTTP Request (pass method type [get/post/..] and URL path (except server name))
@@ -168,18 +168,18 @@ CRegKey GetKey(CString& out_operation, bool isStudioKey, bool is64bits)
 	return ticket;
 	}
 
-	static ATL::CPath loadRobloxPath(CString& out_operation, bool isStudio)
+	static ATL::CPath loadNAMEHEREPath(CString& out_operation, bool isStudio)
 	{
 	ATL::CPath path;
 	CRegKey key = GetKey(out_operation, isStudio);
-	out_operation = "Query Roblox default key";
+	out_operation = "Query NAMEHERE default key";
 	DWORD length = _MAX_PATH+1;
 	CheckResult(key.QueryStringValue(NULL,path.m_strPath.GetBuffer(length),&length));
 	path.m_strPath.ReleaseBuffer();
 	return path;
 	}
 
-	static void launchRoblox(TCHAR cmd[2048])
+	static void launchNAMEHERE(TCHAR cmd[2048])
 	{
 	CProcessInformation pi;
 	STARTUPINFO si = {0};
@@ -209,7 +209,7 @@ CRegKey GetKey(CString& out_operation, bool isStudioKey, bool is64bits)
 
 			try
 			{
-				path = loadRobloxPath(operation, isStudioLaunch);
+				path = loadNAMEHEREPath(operation, isStudioLaunch);
 			}
 			catch( CAtlException )
 			{
@@ -218,11 +218,11 @@ CRegKey GetKey(CString& out_operation, bool isStudioKey, bool is64bits)
 			// If studio doesn't exist (they've uninstalled), try launching in play mode
 			if ( (path.m_strPath.IsEmpty() || !path.FileExists()) && isStudioLaunch )
 			{
-				path = loadRobloxPath(operation, false);
+				path = loadNAMEHEREPath(operation, false);
 				launchMode = Play;
 			}
 
-			operation = "Start Roblox.exe";
+			operation = "Start NAMEHERE.exe";
 
 			TCHAR cmd[2048] = {0};
 
@@ -286,7 +286,7 @@ CRegKey GetKey(CString& out_operation, bool isStudioKey, bool is64bits)
 			logger.write_logentry("Final cmd = %s, unideEventName = %s, hidden = %d", cmd, unhideEventName, startInHiddenMode);
 			
 			operation = cmd;
-			launchRoblox(cmd);
+			launchNAMEHERE(cmd);
 		}
 		catch( CAtlException e )
 		{
@@ -319,8 +319,8 @@ CRegKey GetKey(CString& out_operation, bool isStudioKey, bool is64bits)
 	HRESULT hr = S_OK;
 	try
 	{
-		ATL::CPath path = loadRobloxPath(operation, false);
-		operation = "Start Roblox.exe";
+		ATL::CPath path = loadNAMEHEREPath(operation, false);
+		operation = "Start NAMEHERE.exe";
 
 		TCHAR cmd[2048];
 #ifdef UNICODE
@@ -329,7 +329,7 @@ CRegKey GetKey(CString& out_operation, bool isStudioKey, bool is64bits)
 		sprintf_s(cmd, 2048, "\"%s\" -install", (LPCTSTR)path.m_strPath);
 #endif
 		operation = cmd;
-		launchRoblox(cmd);
+		launchNAMEHERE(cmd);
 	}
 	catch( CAtlException e )
 	{
@@ -352,7 +352,7 @@ CRegKey GetKey(CString& out_operation, bool isStudioKey, bool is64bits)
 	try
 	{
 		CRegKey key = GetKey(operation, false);
-		operation = _T("Query Software\\") _T(ROBLOXREGKEY) _T(" key");
+		operation = _T("Query Software\\") _T(NAMEHEREREGKEY) _T(" key");
 		DWORD length = 256;
 		CString host;
 		CheckResult(key.QueryStringValue(_T("install host"), host.GetBuffer(length), &length));
@@ -382,7 +382,7 @@ CRegKey GetKey(CString& out_operation, bool isStudioKey, bool is64bits)
 		try
 		{
 			CRegKey key = GetKey(operation, false);
-			operation = _T("Query Software\\") _T(ROBLOXREGKEY) _T(" key");
+			operation = _T("Query Software\\") _T(NAMEHEREREGKEY) _T(" key");
 			DWORD length = 256;
 			CString host;
 			CheckResult(key.QueryStringValue(_T("Plug-in version"), host.GetBuffer(length), &length));
@@ -414,12 +414,12 @@ CRegKey GetKey(CString& out_operation, bool isStudioKey, bool is64bits)
 	HRESULT hr = S_OK;
 	try
 	{
-		operation = "Update Roblox.exe";
+		operation = "Update NAMEHERE.exe";
 
 		ATL::CPath path;
 		{
 			CRegKey key = GetKey(operation, false);
-			operation = "Query Roblox default key";
+			operation = "Query NAMEHERE default key";
 			DWORD length = _MAX_PATH+1;
 			CheckResult(key.QueryStringValue(NULL, path.m_strPath.GetBuffer(length), &length));
 			path.m_strPath.ReleaseBuffer();
@@ -459,12 +459,12 @@ CRegKey GetKey(CString& out_operation, bool isStudioKey, bool is64bits)
 	(*pVal) = VARIANT_FALSE;
 	try
 	{
-		operation = "IsUpToDate Roblox.exe";
+		operation = "IsUpToDate NAMEHERE.exe";
 
 		ATL::CPath path;
 		{
 			CRegKey key = GetKey(operation, false);
-			operation = "Query Roblox default key";
+			operation = "Query NAMEHERE default key";
 			DWORD length = _MAX_PATH+1;
 			CheckResult(key.QueryStringValue(NULL, path.m_strPath.GetBuffer(length), &length));
 			path.m_strPath.ReleaseBuffer();

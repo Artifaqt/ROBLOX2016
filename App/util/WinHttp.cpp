@@ -132,7 +132,7 @@ namespace RBX
 			throw RBX::runtime_error("'%s' is missing a hostName", theUrl.c_str());
 
 		// Use WinHttpOpen to obtain a session handle.
-		WINHTTPHINTERNET hSession = ::WinHttpOpen( L"Roblox/WinHttp", WINHTTP_ACCESS_TYPE_DEFAULT_PROXY, WINHTTP_NO_PROXY_NAME, WINHTTP_NO_PROXY_BYPASS, 0 );	
+		WINHTTPHINTERNET hSession = ::WinHttpOpen( L"NAMEHERE/WinHttp", WINHTTP_ACCESS_TYPE_DEFAULT_PROXY, WINHTTP_NO_PROXY_NAME, WINHTTP_NO_PROXY_BYPASS, 0 );	
 		ThrowIfFailure(hSession!=NULL, "WinHttpOpen");
 
 		bool isHttps = u.GetScheme()==ATL_URL_SCHEME_HTTPS;
@@ -225,12 +225,12 @@ namespace RBX
 			if (uploadSize>10000)
 			{
 				// TODO: These headers are added to debug the Gzip bug. Maybe we can eliminate them someday...
-				std::string contentSizeHeader = RBX::format("Roblox-Content-Size: %d\r\n", uploadSize);
+				std::string contentSizeHeader = RBX::format("NAMEHERE-Content-Size: %d\r\n", uploadSize);
 				ThrowIfFailure(TRUE==::WinHttpAddRequestHeaders(hRequest, CComBSTR(contentSizeHeader.c_str()), -1, WINHTTP_ADDREQ_FLAG_ADD), "WinHttpAddRequestHeaders failed");
 
 				boost::scoped_ptr<MD5Hasher> hasher(MD5Hasher::create());
 				hasher->addData(uploadData);
-				std::string contentHashHeader = RBX::format("Roblox-Content-Hash: %s\r\n", hasher->c_str());
+				std::string contentHashHeader = RBX::format("NAMEHERE-Content-Hash: %s\r\n", hasher->c_str());
 				ThrowIfFailure(TRUE==::WinHttpAddRequestHeaders(hRequest, CComBSTR(contentHashHeader.c_str()), -1, WINHTTP_ADDREQ_FLAG_ADD), "WinHttpAddRequestHeaders failed");
 			}
 

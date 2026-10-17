@@ -23,7 +23,7 @@ local TEXT_STROKE_TRANSPARENCY = 0.75
 local TEXT_COLOR = Color3.new(1, 1, 243/255)
 local TEXT_STROKE_COLOR = Color3.new(34/255, 34/255, 34/255)
 local MAX_FRIEND_COUNT = 200
-local FRIEND_IMAGE = 'http://www.roblox.com/thumbs/avatar.ashx?userId='
+local FRIEND_IMAGE = 'http://www.namehere.com/thumbs/avatar.ashx?userId='
 
 --[[ Fast Flags ]]--
 local followerSuccess, isFollowersEnabled = pcall(function() return settings():GetFFlag("EnableLuaFollowers") end)
@@ -33,25 +33,25 @@ local serverFollowersSuccess, serverFollowersEnabled = pcall(function() return s
 local IsServerFollowers = serverFollowersSuccess and serverFollowersEnabled
 
 --[[ Modules ]]--
-local RobloxGui = CoreGui:WaitForChild('RobloxGui')
+local NAMEHEREGui = CoreGui:WaitForChild('NAMEHEREGui')
 local settingsHub = nil
 
 spawn(function()
-	settingsHub = require(RobloxGui:WaitForChild("Modules"):WaitForChild("Settings"):WaitForChild("SettingsHub"))
+	settingsHub = require(NAMEHEREGui:WaitForChild("Modules"):WaitForChild("Settings"):WaitForChild("SettingsHub"))
 end)
 
 --[[ Bindables ]]--
 local BinbableFunction_SendNotification = nil
 spawn(function()
-	BinbableFunction_SendNotification = RobloxGui:WaitForChild("SendNotification")
+	BinbableFunction_SendNotification = NAMEHEREGui:WaitForChild("SendNotification")
 end)
 
 --[[ Remotes ]]--
 local RemoteEvent_NewFollower = nil
 
 spawn(function()
-	local RobloxReplicatedStorage = game:GetService('RobloxReplicatedStorage')
-	RemoteEvent_NewFollower = RobloxReplicatedStorage:WaitForChild('NewFollower')
+	local NAMEHEREReplicatedStorage = game:GetService('NAMEHEREReplicatedStorage')
+	RemoteEvent_NewFollower = NAMEHEREReplicatedStorage:WaitForChild('NewFollower')
 end)
 
 --[[ Utility Functions ]]--

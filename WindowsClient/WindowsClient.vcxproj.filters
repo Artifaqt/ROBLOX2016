@@ -105,7 +105,7 @@
     <ClCompile Include="functionHooks.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="robloxHooks.cpp">
+    <ClCompile Include="namehereHooks.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="..\ClientShared\SDLGameController.cpp">
@@ -197,7 +197,7 @@
     <ClInclude Include="RbxWebView.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="RobloxHooks.h">
+    <ClInclude Include="NAMEHEREHooks.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="functionHooks.h">
@@ -264,7 +264,7 @@
     <None Include="html_con.htm" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Roblox.ico">
+    <Image Include="NAMEHERE.ico">
       <Filter>Resource Files</Filter>
     </Image>
   </ItemGroup>

@@ -3,7 +3,7 @@
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
     <!-- Header row start -->
-    <com.roblox.client.components.RbxTextView
+    <com.namehere.client.components.RbxTextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/ChangeEmailTitle"
@@ -24,7 +24,7 @@
             android:layout_gravity="bottom"
             android:layout_centerVertical="true"
             android:id="@+id/fragment_change_email_value_icon"/>
-        <com.roblox.client.components.RbxTextView
+        <com.namehere.client.components.RbxTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/ChangeEmailValue"
@@ -38,22 +38,22 @@
             android:id="@+id/fragment_change_email_value_text"/>
     </RelativeLayout>
     <!-- Header row end -->
-    <com.roblox.client.components.RbxEditText
+    <com.namehere.client.components.RbxEditText
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:id="@+id/fragment_change_email_new_email"
         app:hintText="@string/ChangeEmailNewEmail"
-        style="@style/Theme.Roblox.EditText"
+        style="@style/Theme.NAMEHERE.EditText"
         app:inputType="email"/>
-    <com.roblox.client.components.RbxEditText
+    <com.namehere.client.components.RbxEditText
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:id="@+id/fragment_change_email_current_password"
         app:hintText="@string/ChangeEmailCurrentPassword"
         app:hintTextLong="@string/ChangeEmailCurrentPassword"
-        style="@style/Theme.Roblox.EditText"
+        style="@style/Theme.NAMEHERE.EditText"
         app:inputType="password"/>
     <!-- Bottom button row -->
     <LinearLayout
@@ -70,12 +70,12 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:layout_gravity="top" />
-        <com.roblox.client.components.RbxButton
+        <com.namehere.client.components.RbxButton
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="@string/CancelWord"
             android:id="@+id/fragment_change_email_cancel_btn"
-            style="@style/Theme.Roblox.Button.Flat.White"
+            style="@style/Theme.NAMEHERE.Button.Flat.White"
             android:textSize="@dimen/textSizeBtnCancel"
             android:layout_weight="10"
             android:layout_marginTop="20dp"
@@ -88,12 +88,12 @@
             android:layout_marginTop="20dp"
             android:layout_marginBottom="20dp"
             android:layout_gravity="top" />
-        <com.roblox.client.components.RbxProgressButton
+        <com.namehere.client.components.RbxProgressButton
             android:layout_width="0dp"
             android:layout_height="match_parent"
             app:defButtonText="@string/SettingsSaveWord"
             android:id="@+id/fragment_change_email_save_btn"
-            style="@style/Theme.Roblox.Progress.Button.Blue"
+            style="@style/Theme.NAMEHERE.Progress.Button.Blue"
             app:buttonTextSize="@dimen/textSizeBtnSubmit"
             app:progressTextSize="@dimen/textSizeBtnSubmitProgress"
             android:layout_weight="10"
@@ -117,7 +117,7 @@
         android:paddingBottom="1dp"
         android:id="@+id/fragment_change_email_spacer"
         android:visibility="invisible">
-        <com.roblox.client.components.RbxTextView
+        <com.namehere.client.components.RbxTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="@string/ChangeEmailValue"

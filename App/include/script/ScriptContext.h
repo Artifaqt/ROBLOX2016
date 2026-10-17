@@ -163,7 +163,7 @@ namespace RBX
 		};
 		rbx::safe_queue<WaitingThread> waitingThreads;
 
-		bool robloxPlace;
+		bool nameherePlace;
 		bool scriptsDisabled;	// == don't run the scripts contained in BaseScript objects
 		bool preventNewConnection;
 
@@ -242,7 +242,7 @@ namespace RBX
 
 		////////////////////////////////////////////////
 		// Configuration
-		void setRobloxPlace(bool robloxPlace);
+		void setNAMEHEREPlace(bool nameherePlace);
         void initializeLuaStateSandbox(Lua::WeakThreadRef& threadRef, lua_State* parentState, Security::Identities identity);
         void setKeys(unsigned int scriptKey, unsigned int coreScriptModKey);
 
@@ -393,7 +393,7 @@ namespace RBX
 		static int pluginmanager(lua_State* thread);
 		static int debuggermanager(lua_State *thread);
 		static int loadLibrary(lua_State* L);
-		static int loadRobloxLibrary(lua_State* L);
+		static int loadNAMEHERELibrary(lua_State* L);
         static int requireModuleScript(lua_State* L);
 		static int stats(lua_State* thread);
 		static int version(lua_State* thread);

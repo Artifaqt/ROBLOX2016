@@ -1267,7 +1267,7 @@ static void retstat (LexState *ls) {
     nret = explist1(ls, &e);  /* optional return values */
     if (hasmultret(e.k)) {
       luaK_setmultret(fs, &e);
-      /* ROBLOX: disable tail calls */
+      /* NAMEHERE: disable tail calls */
       if (e.k == VCALL && nret == 1 && false) {  /* tail call? */
         SET_OPCODE(getcode(fs,&e), OP_TAILCALL);
         lua_assert(GETARG_A(getcode(fs,&e)) == fs->nactvar);

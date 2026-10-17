@@ -15,12 +15,12 @@
 #undef HAVE_CTYPE_H
 #include "util/HTW3C.h"
 #include "util/URL.h"
-#include "util/RobloxGoogleAnalytics.h"
+#include "util/NAMEHEREGoogleAnalytics.h"
 #include "util/standardout.h"
 #include "util/Statistics.h"
 #include "util/ThreadPool.h"
 #include "util/Analytics.h"
-#include "Util/RobloxGoogleAnalytics.h"
+#include "Util/NAMEHEREGoogleAnalytics.h"
 
 #include "rbx/TaskScheduler.h"
 
@@ -28,7 +28,7 @@
 #include "v8datamodel/DebugSettings.h"
 #include "v8datamodel/MarketplaceService.h"
 #include "v8datamodel/Stats.h"
-#include "RobloxServicesTools.h"
+#include "NAMEHEREServicesTools.h"
 
 
 
@@ -65,7 +65,7 @@ extern "C" {
 }
 
 // NOTICE: Remove these calls after transition for Apple is complete.
-int rbx_isRobloxSite(const char* url);
+int rbx_isNAMEHERESite(const char* url);
 int rbx_isMoneySite(const char* url);
 #endif // ifdef __APPLE__
 
@@ -212,13 +212,13 @@ class HTTPStatistics
         // reporting failure data.
         if (sendHttpFailureToGA())
         {
-            RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HTTPFailure", reason, delay);
+            NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "HTTPFailure", reason, delay);
         }
 
         if (sendHttpFailureToEvents())
         {
             int placeID = atoi(Http::placeID.c_str());
-            RobloxGoogleAnalytics::sendEventRoblox(GA_CATEGORY_GAME, "HTTPFailure", reason, placeID);
+            NAMEHEREGoogleAnalytics::sendEventNAMEHERE(GA_CATEGORY_GAME, "HTTPFailure", reason, placeID);
         }
     }
 
@@ -377,11 +377,11 @@ std::string Http::gameID;
 std::string Http::placeID;
 std::string Http::requester = "Client";
 #if defined (__APPLE__) && !defined(RBX_PLATFORM_IOS)
-std::string Http::rbxUserAgent = "Roblox/Darwin";
+std::string Http::rbxUserAgent = "NAMEHERE/Darwin";
 #elif defined(RBX_PLATFORM_DURANGO)
-std::string Http::rbxUserAgent = "Roblox/XboxOne";
+std::string Http::rbxUserAgent = "NAMEHERE/XboxOne";
 #elif defined (_WIN32)
-std::string Http::rbxUserAgent = "Roblox/WinInet";
+std::string Http::rbxUserAgent = "NAMEHERE/WinInet";
 #else
 std::string Http::rbxUserAgent;
 #endif
@@ -401,12 +401,12 @@ rbx::atomic<int> Http::cdnFailureCount = 0;
 rbx::atomic<int> Http::alternateCdnSuccessCount = 0;
 rbx::atomic<int> Http::alternateCdnFailureCount = 0;
 double Http::lastCdnFailureTimeSpan = 0;
-rbx::atomic<int> Http::robloxSuccessCount = 0;
-rbx::atomic<int> Http::robloxFailureCount = 0;
-WindowAverage<double, double> Http::robloxResponce(kWindowSize);
+rbx::atomic<int> Http::namehereSuccessCount = 0;
+rbx::atomic<int> Http::namehereFailureCount = 0;
+WindowAverage<double, double> Http::namehereResponce(kWindowSize);
 WindowAverage<double, double> Http::cdnResponce(kWindowSize);
 
-RBX::mutex *Http::robloxResponceLock = NULL;
+RBX::mutex *Http::namehereResponceLock = NULL;
 RBX::mutex *Http::cdnResponceLock = NULL;
 
 Http::MutexGuard Http::lockGuard;
@@ -461,22 +461,22 @@ void Http::httpGetPostImpl(bool isPost, std::istream& data, const std::string& c
 
 Http::MutexGuard::MutexGuard()
 {
-    robloxResponceLock = new RBX::mutex();
+    namehereResponceLock = new RBX::mutex();
     cdnResponceLock = new RBX::mutex();
 }
 
 Http::MutexGuard::~MutexGuard()
 {
-    delete robloxResponceLock;
-    robloxResponceLock = NULL;
+    delete namehereResponceLock;
+    namehereResponceLock = NULL;
 
     delete cdnResponceLock;
     cdnResponceLock = NULL;
 }
 
-RBX::mutex *Http::getRobloxResponceLock()
+RBX::mutex *Http::getNAMEHEREResponceLock()
 {
-    return robloxResponceLock;
+    return namehereResponceLock;
 }
 
 RBX::mutex *Http::getCdnResponceLock()
@@ -516,7 +516,7 @@ void Http::init(API api, CookieSharingPolicy sharingPolicy)
     static boost::scoped_ptr<ThreadPool> tp(new ThreadPool(kNumberThreadPoolThreads));
     threadPool = tp.get();
     Http::defaultApi = api;
-    FASTLOG2(FLog::Http, "Http initialization M1 = 0x%x M2=0x%x", &Http::robloxResponceLock, &Http::cdnResponceLock);
+    FASTLOG2(FLog::Http, "Http initialization M1 = 0x%x M2=0x%x", &Http::namehereResponceLock, &Http::cdnResponceLock);
     cookieSharingPolicy = sharingPolicy;
 	Http::SetUseCurl(useCurlHttpImpl);
 }
@@ -848,7 +848,7 @@ void Http::onWinHttpRedirect(unsigned long dwInternetStatus, std::string redirec
     // If so, then record an alternate URL in case the CDN fails.
     // The alternate URL is the corresponding Amazon S3 URL.
     // bitgravity:
-    int pos = redirectUrl.find("bg.roblox");
+    int pos = redirectUrl.find("bg.namehere");
     if (pos != std::string::npos)
     {
         alternateUrl = redirectUrl.substr(0, pos);
@@ -857,7 +857,7 @@ void Http::onWinHttpRedirect(unsigned long dwInternetStatus, std::string redirec
     }
 
     // cloudfront:
-    pos = redirectUrl.find("-cf.roblox");
+    pos = redirectUrl.find("-cf.namehere");
     if (pos != std::string::npos)
     {
         alternateUrl = redirectUrl.substr(0, pos);
@@ -1024,7 +1024,7 @@ bool Http::isMoneySite(const char* url)
         case ATL_URL_SCHEME_HTTPS:
         case ATL_URL_SCHEME_FTP:
         {
-            // only trust urls from roblox.com
+            // only trust urls from namehere.com
             CString hostName = crack.GetHostName();
             hostName.MakeLower();
             if (hostName.Right(10)=="paypal.com")
@@ -1061,7 +1061,7 @@ bool Http::isMoneySite(const char* url)
 
     std::transform(host.begin(), host.end(), host.begin(), ::tolower);
 
-    // Only trust urls from roblox.com.
+    // Only trust urls from namehere.com.
     if ("paypal.com" == host || hasEnding(host, ".paypal.com"))
     {
         return true;
@@ -1074,31 +1074,31 @@ bool Http::isMoneySite(const char* url)
     return false;
 }
 
-// This allows just roblox domains, not roblox trusted domains like facebook.
-bool Http::isStrictlyRobloxSite(const char* url)
+// This allows just namehere domains, not namehere trusted domains like facebook.
+bool Http::isStrictlyNAMEHERESite(const char* url)
 {
     if (DFFlag::UseNewUrlClass)
     {
         RBX::Url parsed = RBX::Url::fromString(url);
     
-        return parsed.isSubdomainOf("roblox.com") || parsed.isSubdomainOf("robloxlabs.com");
+        return parsed.isSubdomainOf("namehere.com") || parsed.isSubdomainOf("nameherelabs.com");
     }
 
     std::string host(HTParse(url, NULL, PARSE_HOST));
-    if ("roblox.com" != host && !hasEnding(host, ".roblox.com") 
-        && "robloxlabs.com" != host && !hasEnding(host, ".robloxlabs.com"))
+    if ("namehere.com" != host && !hasEnding(host, ".namehere.com") 
+        && "nameherelabs.com" != host && !hasEnding(host, ".nameherelabs.com"))
     {
         return false;
     }
     return true;
 }
 
-bool Http::isRobloxSite(const char* url)
+bool Http::isNAMEHERESite(const char* url)
 {
 #ifdef __APPLE__
     if (!useCurlHttpImpl)
     {
-        return rbx_isRobloxSite(url) != 0;
+        return rbx_isNAMEHERESite(url) != 0;
     }
 #endif // ifdef __APPLE__
 
@@ -1118,8 +1118,8 @@ bool Http::isRobloxSite(const char* url)
             CString urlPath = crack.GetUrlPath();
             urlPath.MakeLower();
 
-            // trust urls from roblox.com
-			if (hostName.Right(10)=="roblox.com" || hostName.Right(14)=="robloxlabs.com")
+            // trust urls from namehere.com
+			if (hostName.Right(10)=="namehere.com" || hostName.Right(14)=="nameherelabs.com")
 				return true;
 
             // trust facebook login
@@ -1157,9 +1157,9 @@ bool Http::isRobloxSite(const char* url)
             return false;
         }
     
-        const bool isRoblox =
-            parsed.isSubdomainOf("roblox.com") ||
-            parsed.isSubdomainOf("robloxlabs.com");
+        const bool isNAMEHERE =
+            parsed.isSubdomainOf("namehere.com") ||
+            parsed.isSubdomainOf("nameherelabs.com");
 
         const bool isFacebook =
             ("login.facebook.com" == parsed.host()
@@ -1183,7 +1183,7 @@ bool Http::isRobloxSite(const char* url)
             ("accounts.google.com" == parsed.host()
                 && parsed.pathEqualsCaseInsensitive("/serviceloginauth"));
 
-        return isRoblox || isFacebook || isYoutube || isGoogle;
+        return isNAMEHERE || isFacebook || isYoutube || isGoogle;
     } // if (DFFlag::UseNewUrlClass)
 
     std::string host;
@@ -1205,8 +1205,8 @@ bool Http::isRobloxSite(const char* url)
     std::transform(path.begin(), path.end(), path.begin(), ::tolower);
 
     return
-        "roblox.com" == host || hasEnding(host, ".roblox.com") ||
-        "robloxlabs.com" == host || hasEnding(host, ".robloxlabs.com") ||
+        "namehere.com" == host || hasEnding(host, ".namehere.com") ||
+        "nameherelabs.com" == host || hasEnding(host, ".nameherelabs.com") ||
         // trust facebook login
         ("login.facebook.com" == host && "/login.php") ||
         ("ssl.facebook.com" == host && "/connect/uiserver.php" == path) ||
@@ -1240,7 +1240,7 @@ bool Http::isExternalRequest(const char* url)
 
         std::string hostname = urlParsed.GetHostName();
 
-        if(hostname.find("roblox.com") != std::string::npos || hostname.find("robloxlabs.com") != std::string::npos)
+        if(hostname.find("namehere.com") != std::string::npos || hostname.find("nameherelabs.com") != std::string::npos)
             return false;
 
         return true;
@@ -1255,8 +1255,8 @@ bool Http::isExternalRequest(const char* url)
             return false;
         }
 
-        return !parsed.isSubdomainOf("roblox.com")
-            && !parsed.isSubdomainOf("robloxlabs.com");
+        return !parsed.isSubdomainOf("namehere.com")
+            && !parsed.isSubdomainOf("nameherelabs.com");
     }
 
     std::string host;
@@ -1273,8 +1273,8 @@ bool Http::isExternalRequest(const char* url)
     std::transform(host.begin(), host.end(), host.begin(), ::tolower);
 
     return
-        "roblox.com" != host && !hasEnding(host, ".roblox.com") &&
-        "robloxlabs.com" != host && !hasEnding(host, ".robloxlabs.com");
+        "namehere.com" != host && !hasEnding(host, ".namehere.com") &&
+        "nameherelabs.com" != host && !hasEnding(host, ".nameherelabs.com");
 }
 
 void Http::setProxy(const std::string& host, long port)
@@ -1296,7 +1296,7 @@ bool Http::trustCheck(const char* url, bool externalRequest)
     }
 
     if (std::string("about:blank") == url ||
-        isRobloxSite(url) ||
+        isNAMEHERESite(url) ||
         isScript(url))
     {
         return true;
@@ -1417,7 +1417,7 @@ bool Http::doHttpGetPostWithNativeFallbackForReporting(bool isPost, std::istream
 	return false;
 #endif
 
-	std::string googleAnalyticsBaseURL = RobloxGoogleAnalytics::kGoogleAnalyticsBaseURL;
+	std::string googleAnalyticsBaseURL = NAMEHEREGoogleAnalytics::kGoogleAnalyticsBaseURL;
 	std::string counterMultiUrl = GetCountersMultiIncrementUrl(::GetBaseURL(), RBX::Stats::countersApiKey);
 	std::string counterSingleUrl = GetCountersUrl(::GetBaseURL(), RBX::Stats::countersApiKey);
 	std::string statsURL = RBX::format("%sgame/report-stats", ::GetBaseURL().c_str());

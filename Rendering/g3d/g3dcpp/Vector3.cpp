@@ -262,7 +262,7 @@ void Vector3::generateOrthonormalBasis (Vector3& rkU, Vector3& rkV,
     rkV = rkW.cross(rkU);
 }
 
-// ROBLOX
+// NAMEHERE
 //----------------------------------------------------------------------------
 // more stable version of the above. doesn't introduce sudden changes in U and V as U changes.
 // rkU and rkV must be orthogonal and of similar length.

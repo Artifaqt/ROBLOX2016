@@ -48,7 +48,7 @@ int getFriends(std::string* ret, UserIDTranslator* translator, Microsoft::Xbox::
     IVectorView< XboxUserProfile^ >^ friendProfiles = ref new Platform::Collections::VectorView< XboxUserProfile^ >(); // make sure we it's not null if an exception occurs
     IVectorView< PresenceRecord^ >^ friendPresence  = ref new Platform::Collections::VectorView< PresenceRecord^ >();
     std::vector< std::string > friendGamertags;
-    std::vector< const UserIDTranslator::Entry* > friendRobloxUids;
+    std::vector< const UserIDTranslator::Entry* > friendNAMEHEREUids;
 
     try {
 
@@ -97,8 +97,8 @@ int getFriends(std::string* ret, UserIDTranslator* translator, Microsoft::Xbox::
         a1.join();
         a2.join();
 
-        translator->get( friendRobloxUids, friendGamertags );
-        UserIDTranslator::waitForUIDs(friendRobloxUids); // we've got nothing better to do
+        translator->get( friendNAMEHEREUids, friendGamertags );
+        UserIDTranslator::waitForUIDs(friendNAMEHEREUids); // we've got nothing better to do
     }
     catch( Platform::Exception^ e )
     {
@@ -107,13 +107,13 @@ int getFriends(std::string* ret, UserIDTranslator* translator, Microsoft::Xbox::
         // Talk to Max if you're hitting this and the string is not well-formed.
     }
 
-    // filter out unresolved roblox ids
+    // filter out unresolved namehere ids
     std::map< std::string, int > rbidLookup;
-    for( auto e : friendRobloxUids )
+    for( auto e : friendNAMEHEREUids )
     {
         auto st = e->getState();
         if( st == UserIDTranslator::Ready )
-            rbidLookup[e->gamertag] = e->robloxUid;
+            rbidLookup[e->gamertag] = e->namehereUid;
     }
 
     // not so sure about the order, so...
@@ -130,10 +130,10 @@ int getFriends(std::string* ret, UserIDTranslator* translator, Microsoft::Xbox::
 			// Yes, we repeat the gamertag data; this is a quick fix to show gamertag in app instead of display name due to us not wanting
 			// to fail cert for having unsupported unicode characters.
             (*str) << L"\"gamertag\" : \"" << profile->Gamertag->Data() << L"\", " << L"\"display\" : \"" << profile->Gamertag->Data() << L"\", ";
-            (*str) << L"\"robloxuid\" : ";
+            (*str) << L"\"namehereuid\" : ";
 
-            if( int robloxuid = rbidLookup[ ws2s(profile->Gamertag->Data()) ] )
-                (*str) << robloxuid <<", ";
+            if( int namehereuid = rbidLookup[ ws2s(profile->Gamertag->Data()) ] )
+                (*str) << namehereuid <<", ";
             else
                 (*str) << L"null, ";
         }
@@ -197,7 +197,7 @@ int getParty(std::vector<std::string>* result, bool filter, UserIDTranslator* tr
     {
         Platform::String^ xuid;
         Platform::String^ gamertag;
-        int               robloxuid;
+        int               namehereuid;
         int               online;
     };
 
@@ -270,9 +270,9 @@ int getParty(std::vector<std::string>* result, bool filter, UserIDTranslator* tr
             return 0; // done
         }
 
-        // check that these players are online and have roblox ids
-        std::vector< const UserIDTranslator::Entry* > robloxuids;
-        translator->get( robloxuids, allgamertags );
+        // check that these players are online and have namehere ids
+        std::vector< const UserIDTranslator::Entry* > namehereuids;
+        translator->get( namehereuids, allgamertags );
 
         // in parallel, fetch friends' online status
         async( xboxLiveContext->PresenceService->GetPresenceForMultipleUsersAsync( ref new Platform::Collections::VectorView< Platform::String^ >( partyMemberXuids ) ) ).complete(
@@ -293,21 +293,21 @@ int getParty(std::vector<std::string>* result, bool filter, UserIDTranslator* tr
             }
         ).join();
 
-        UserIDTranslator::waitForUIDs(robloxuids);
+        UserIDTranslator::waitForUIDs(namehereuids);
 
-        // finally, fill out roblox userids
-        for( int j=0, e=robloxuids.size(); j<e; ++j )
+        // finally, fill out namehere userids
+        for( int j=0, e=namehereuids.size(); j<e; ++j )
         {
-            auto st = robloxuids[j]->getState();
+            auto st = namehereuids[j]->getState();
             if( st == UserIDTranslator::Ready )
             {
-                if( PartyUserInfo* info = gtlookup[ robloxuids[j]->gamertag ] )
+                if( PartyUserInfo* info = gtlookup[ namehereuids[j]->gamertag ] )
                 {
-                    info->robloxuid = robloxuids[j]->robloxUid;
+                    info->namehereuid = namehereuids[j]->namehereUid;
                 }
                 else
             {
-                    dprintf("getParty(): got Roblox UserId for [%s], didn't ask for.\n", robloxuids[j]->gamertag.c_str() );
+                    dprintf("getParty(): got NAMEHERE UserId for [%s], didn't ask for.\n", namehereuids[j]->gamertag.c_str() );
                 }
             }
         }
@@ -316,7 +316,7 @@ int getParty(std::vector<std::string>* result, bool filter, UserIDTranslator* tr
         for( auto& it : partyMembers )
         {
             auto& info = it.second;
-            if( info.online && info.robloxuid > 0 )
+            if( info.online && info.namehereuid > 0 )
             {
                 result->push_back(ws2s(info.gamertag->Data()));
             }

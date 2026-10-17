@@ -52,7 +52,7 @@ template <> struct HashTrait <G3D::uint32> {
     static size_t hashCode(G3D::uint32 k) { return static_cast<size_t>(k); }
 };
 
-#if defined(G3D_OSX) || defined(G3D_IOS) // ROBLOX
+#if defined(G3D_OSX) || defined(G3D_IOS) // NAMEHERE
 template <> struct HashTrait <long unsigned int> {
     static size_t hashCode(G3D::uint32 k) { return static_cast<size_t>(k); }
 };

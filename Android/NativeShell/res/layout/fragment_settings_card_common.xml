@@ -2,12 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.roblox.client.components.RbxTextView
+    <com.namehere.client.components.RbxTextView
         android:layout_width="wrap_content"
         android:layout_height="0dp"
         android:layout_weight=".7"
         android:text="@string/SettingsTitle"
-        style="@style/Theme.Roblox.StandardFontRegular"
+        style="@style/Theme.NAMEHERE.StandardFontRegular"
         android:textColor="@color/black"
         android:layout_gravity="center_horizontal"
         android:textSize="@dimen/textSizeSignupHeader" />
@@ -26,11 +26,11 @@
             android:layout_height="match_parent"
             android:layout_weight="8"
             android:gravity="center">
-            <com.roblox.client.components.RbxButton
+            <com.namehere.client.components.RbxButton
                 android:id="@+id/fragment_settings_facebook_btn"
                 android:text="Connect"
                 android:layout_centerInParent="true"
-                style="@style/Theme.Roblox.Button.Flat.Blue.Settings" />
+                style="@style/Theme.NAMEHERE.Button.Flat.Blue.Settings" />
             <ImageView
                     android:layout_width="wrap_content"
                     android:layout_height="@dimen/settingsIconHeight"
@@ -55,10 +55,10 @@
             android:layout_height="match_parent"
             android:layout_weight="8"
             android:gravity="center">
-        <com.roblox.client.components.RbxButton
+        <com.namehere.client.components.RbxButton
             android:id="@+id/fragment_settings_password_btn"
             android:text="@string/SettingsChangePassword"
-            style="@style/Theme.Roblox.Button.Flat.White.Settings"
+            style="@style/Theme.NAMEHERE.Button.Flat.White.Settings"
             android:layout_centerVertical="true" />
             <ImageView
                 android:layout_width="wrap_content"
@@ -83,10 +83,10 @@
             android:layout_height="match_parent"
             android:layout_weight="8"
             android:gravity="center">
-            <com.roblox.client.components.RbxButton
+            <com.namehere.client.components.RbxButton
                 android:id="@+id/fragment_settings_email_btn"
                 android:text="@string/SettingsChangeEmail"
-                style="@style/Theme.Roblox.Button.Flat.White.Settings"
+                style="@style/Theme.NAMEHERE.Button.Flat.White.Settings"
                 android:layout_centerVertical="true" />
             <ImageView
                 android:layout_width="wrap_content"
@@ -107,12 +107,12 @@
         android:gravity="bottom|center_horizontal"
         android:weightSum="10"
         android:layout_marginTop="10dp">
-        <com.roblox.client.components.RbxButton
+        <com.namehere.client.components.RbxButton
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:text="@string/CloseWord"
             android:id="@+id/fragment_settings_cancel_btn"
-            style="@style/Theme.Roblox.Button.Flat.White"
+            style="@style/Theme.NAMEHERE.Button.Flat.White"
             android:textSize="@dimen/textSizeBtnCancel"
             android:layout_weight="4"
             android:layout_marginTop="12dp"

@@ -785,7 +785,7 @@ void GImage::stripAlpha(GImage& output) const {
     }
 }
 
-//ROBLOX : to review this...
+//NAMEHERE : to review this...
 GImage GImage::stripAlpha() const {
     GImage out(width(), height(), 3);
     
@@ -1138,7 +1138,7 @@ void GImage::makeCheckerboard(GImage& im, int checkerSize, const Color4uint8& A,
     }
 }
 
-// ROBLOX
+// NAMEHERE
 
 GImage GImage::bilinearStretchBlt(
     int                 newwidth,

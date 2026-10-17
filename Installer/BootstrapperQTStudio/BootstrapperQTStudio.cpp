@@ -10,13 +10,13 @@
 #include "StudioProgressDialog.h"
 #include "VersionInfo.h"
 
-// TODO - rename to just "Roblox Studio"
+// TODO - rename to just "NAMEHERE Studio"
 static const TCHAR* BootstrapperQTStudioFileName    = _T(STUDIOBOOTSTAPPERNAMEBETA);
-static const TCHAR* RobloxStudioAppFileName         = _T(STUDIOQTEXENAME);
-static const TCHAR* BootstrapperMutexName           = _T("www.roblox.com/bootstrapperQTStudio");
-static const TCHAR* StartRobloxStudioAppMutex       = _T("www.roblox.com/startRobloxQTStudioApp");
-static const TCHAR* FriendlyName                    = _T("ROBLOX Studio");
-static const TCHAR* StartEvent                      = _T("www.roblox.com/robloxQTStudioStartedEvent");
+static const TCHAR* NAMEHEREStudioAppFileName         = _T(STUDIOQTEXENAME);
+static const TCHAR* BootstrapperMutexName           = _T("www.namehere.com/bootstrapperQTStudio");
+static const TCHAR* StartNAMEHEREStudioAppMutex       = _T("www.namehere.com/startNAMEHEREQTStudioApp");
+static const TCHAR* FriendlyName                    = _T("NAMEHERE Studio");
+static const TCHAR* StartEvent                      = _T("www.namehere.com/namehereQTStudioStartedEvent");
 
 static Bootstrapper* newBootstrapper(HINSTANCE hInstance)
 {
@@ -73,7 +73,7 @@ const wchar_t *BootstrapperQTStudio::GetGuidName() const
 
 const wchar_t *BootstrapperQTStudio::GetStartAppMutexName() const
 {
-	return StartRobloxStudioAppMutex;
+	return StartNAMEHEREStudioAppMutex;
 }
 
 const wchar_t *BootstrapperQTStudio::GetBootstrapperMutexName() const
@@ -86,9 +86,9 @@ std::wstring BootstrapperQTStudio::GetBootstrapperFileName() const
 	return std::wstring(BootstrapperQTStudioFileName);
 }
 
-std::wstring BootstrapperQTStudio::GetRobloxAppFileName() const 
+std::wstring BootstrapperQTStudio::GetNAMEHEREAppFileName() const 
 { 
-	return std::wstring(RobloxStudioAppFileName);
+	return std::wstring(NAMEHEREStudioAppFileName);
 }
 
 const wchar_t* BootstrapperQTStudio::GetFriendlyName() const
@@ -162,9 +162,9 @@ void BootstrapperQTStudio::createDialog()
 	dialog->InitDialog();
 }
 
-void BootstrapperQTStudio::StartRobloxApp(bool fromInstall)
+void BootstrapperQTStudio::StartNAMEHEREApp(bool fromInstall)
 {
-	LOG_ENTRY("BootstrapperQTStudio::StartRobloxApp");
+	LOG_ENTRY("BootstrapperQTStudio::StartNAMEHEREApp");
 
 	if (settings.GetValueShowInstallSuccessPrompt() && fromInstall)
 	{
@@ -178,24 +178,24 @@ void BootstrapperQTStudio::StartRobloxApp(bool fromInstall)
     CEvent readyEvent;
 	if ( !editArgs.readyEvent.empty() )
 	{
-		LOG_ENTRY1("BootstrapperStudio::StartRobloxApp - Play game, syncGameEventName = %s", editArgs.readyEvent.c_str());
+		LOG_ENTRY1("BootstrapperStudio::StartNAMEHEREApp - Play game, syncGameEventName = %s", editArgs.readyEvent.c_str());
 		readyEvent.Open(EVENT_MODIFY_STATE, FALSE, convert_s2w(editArgs.readyEvent).c_str());
 	}
 
-    robloxAppArgs += _T(" ") + convert_s2w(SharedLauncher::StartEventArgument) + _T(" ") + StartEvent;
-    robloxAppArgs += _T(" ") + SharedLauncher::generateEditCommandLine(editArgs);
+    namehereAppArgs += _T(" ") + convert_s2w(SharedLauncher::StartEventArgument) + _T(" ") + StartEvent;
+    namehereAppArgs += _T(" ") + SharedLauncher::generateEditCommandLine(editArgs);
  
 	CProcessInformation pi;
-	CreateProcess((programDirectory() + GetRobloxAppFileName()).c_str(), robloxAppArgs.c_str(), pi);
+	CreateProcess((programDirectory() + GetNAMEHEREAppFileName()).c_str(), namehereAppArgs.c_str(), pi);
 
-	LOG_ENTRY1("BootstrapperQTStudio::StartRobloxApp - waiting for %S",StartEvent);
+	LOG_ENTRY1("BootstrapperQTStudio::StartNAMEHEREApp - waiting for %S",StartEvent);
 	influxDb.addPoint("WaitingForAppStart", GetElapsedTime() / 1000.0f);
 	::WaitForSingleObject(startEvent,10 * 1000);
 	influxDb.addPoint("WaitingForAppEnd", GetElapsedTime() / 1000.0f);
 
     if ( !editArgs.readyEvent.empty() )
 	{
-		LOG_ENTRY("BootstrapperStudio::StartRobloxApp - Setting ready event");
+		LOG_ENTRY("BootstrapperStudio::StartNAMEHEREApp - Setting ready event");
 		readyEvent.Set();
 	}
 }
@@ -220,7 +220,7 @@ void BootstrapperQTStudio::DeployComponents(bool isUpdating, bool commitData)
 	createDirectory((programDirectory() + _T("imageformats")).c_str());
 
 	files.push_back(std::pair<std::wstring, std::wstring>(_T("redist.zip"), _T("")));
-	files.push_back(std::pair<std::wstring, std::wstring>(_T("RobloxStudio.zip"), _T("")));
+	files.push_back(std::pair<std::wstring, std::wstring>(_T("NAMEHEREStudio.zip"), _T("")));
 	files.push_back(std::pair<std::wstring, std::wstring>(_T("Libraries.zip"), _T("")));
 	files.push_back(std::pair<std::wstring, std::wstring>(_T("content-fonts.zip"), _T("content\\fonts\\")));
 	files.push_back(std::pair<std::wstring, std::wstring>(_T("content-music.zip"), _T("content\\music\\")));
@@ -244,22 +244,22 @@ void BootstrapperQTStudio::registerFileTypes()
     // register file extensions
 	{
         // rbxl
-		CRegKey rbxl = CreateKey(classesKey, _T(".rbxl"), _T("Roblox.Place"));
-		CRegKey roblox_place = CreateKey(rbxl, _T("Roblox.Place"), NULL);
-		CreateKey(roblox_place, _T("ShellNew"), NULL);
+		CRegKey rbxl = CreateKey(classesKey, _T(".rbxl"), _T("NAMEHERE.Place"));
+		CRegKey namehere_place = CreateKey(rbxl, _T("NAMEHERE.Place"), NULL);
+		CreateKey(namehere_place, _T("ShellNew"), NULL);
 	}
 
     // register file types
 	{
-        // Roblox.Place
-		CRegKey roblox_place = CreateKey(classesKey, _T("Roblox.Place"), _T("Roblox Place"));
+        // NAMEHERE.Place
+		CRegKey namehere_place = CreateKey(classesKey, _T("NAMEHERE.Place"), _T("NAMEHERE Place"));
 
 		CRegKey defaultIcon = CreateKey(
-            roblox_place, 
+            namehere_place, 
             _T("DefaultIcon"), 
-            format_string(_T("%s%s,0"),programDirectory().c_str(),RobloxStudioAppFileName).c_str() );
+            format_string(_T("%s%s,0"),programDirectory().c_str(),NAMEHEREStudioAppFileName).c_str() );
 
-		CRegKey shell = CreateKey(roblox_place, _T("shell"), NULL);
+		CRegKey shell = CreateKey(namehere_place, _T("shell"), NULL);
 		CRegKey open = CreateKey(shell, _T("Open"), _T("Open"));
 
         std::wstring commandline = format_string(
@@ -280,7 +280,7 @@ void BootstrapperQTStudio::unregisterFileTypes()
 void BootstrapperQTStudio::unregisterFileTypes(HKEY ckey)
 {
 	DeleteKey(logger, classesKey, _T(".rbxl")); 
-	DeleteKey(logger, classesKey, _T("Roblox.Place")); 
+	DeleteKey(logger, classesKey, _T("NAMEHERE.Place")); 
 }
 
 void BootstrapperQTStudio::DoInstallApp()
@@ -310,7 +310,7 @@ void BootstrapperQTStudio::DoInstallApp()
 
 	LOG_ENTRY("BootstrapperQTStudio::DoInstallApp - RegisterElevationPolicy");
 	std::wstring dir = programDirectory();
-	RegisterElevationPolicy(RobloxStudioAppFileName, dir.c_str());
+	RegisterElevationPolicy(NAMEHEREStudioAppFileName, dir.c_str());
 	CheckCancel();
 
 	LOG_ENTRY("BootstrapperQTStudio::DoInstallApp - registerFileTypes()");
@@ -340,15 +340,15 @@ void BootstrapperQTStudio::DoInstallApp()
 		LOG_ENTRY("Cleaning up old beta leftovers");
 
 		LOG_ENTRY("Looking for old beta programs link folder");
-		std::wstring shortcuts = FileSystem::getSpecialFolder(isPerUser() ? FileSystem::RobloxUserPrograms : FileSystem::RobloxCommonPrograms, false, NULL, false);
-		shortcuts += _T("RobloxBeta\\");
+		std::wstring shortcuts = FileSystem::getSpecialFolder(isPerUser() ? FileSystem::NAMEHEREUserPrograms : FileSystem::NAMEHERECommonPrograms, false, NULL, false);
+		shortcuts += _T("NAMEHEREBeta\\");
 		if (FileSystem::IsFolderExists(shortcuts.c_str())) 
 		{
 			deleteDirectory(shortcuts, false);
 		}
 
 		LOG_ENTRY("Looking for old beta data folder");
-		std::wstring oldData = FileSystem::getSpecialFolder(isPerUser() ? FileSystem::RobloxUserApplicationData : FileSystem::RobloxProgramFiles, false, "StudioBetaVersions");
+		std::wstring oldData = FileSystem::getSpecialFolder(isPerUser() ? FileSystem::NAMEHEREUserApplicationData : FileSystem::NAMEHEREProgramFiles, false, "StudioBetaVersions");
 		if (FileSystem::IsFolderExists(oldData.c_str())) 
 		{
 			deleteDirectory(oldData, false);
@@ -388,8 +388,8 @@ void BootstrapperQTStudio::DoUninstallApp(CRegKey &hk)
 	std::wstring exePath = baseProgramDirectory(isPerUser()) + _T(STUDIOBOOTSTAPPERNAMEBETA);
 
 	// reset shortcuts to player's studio launcher
-    createRobloxShortcut(logger,isPerUser(),_T(STUDIOQTLINKNAME_CUR),exePath.c_str(),_T("-ide"),false,false);
-	createRobloxShortcut(logger,isPerUser(),_T(STUDIOQTLINKNAME_CUR),exePath.c_str(),_T("-ide"),true,false);
+    createNAMEHEREShortcut(logger,isPerUser(),_T(STUDIOQTLINKNAME_CUR),exePath.c_str(),_T("-ide"),false,false);
+	createNAMEHEREShortcut(logger,isPerUser(),_T(STUDIOQTLINKNAME_CUR),exePath.c_str(),_T("-ide"),true,false);
 
     // reset key so that shared launcher will run player's studio launcher instead
     std::wstring progPath = baseProgramDirectory(isPerUser()) + _T(STUDIOBOOTSTAPPERNAMEBETA);

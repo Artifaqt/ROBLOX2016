@@ -1,4 +1,4 @@
--- Written by Kip Turner, Copyright ROBLOX 2015
+-- Written by Kip Turner, Copyright NAMEHERE 2015
 
 local Settings =
 {
@@ -58,7 +58,7 @@ local Settings =
 	ParagraphSize = Enum.FontSize.Size14;
 
 -- Font Sizes
-	-- RobloxSize -> Mockup Sizes
+	-- NAMEHERESize -> Mockup Sizes
 	LargeFontSize = Enum.FontSize.Size96;	-- 72pt
 	HeaderSize = Enum.FontSize.Size60;		-- 48pt
 	MediumFontSize = Enum.FontSize.Size48;	-- 36pt

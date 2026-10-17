@@ -36,7 +36,7 @@ public:
 		shared_ptr<Thread> thread(new Thread(taskScheduler));
 
         static rbx::atomic<int> count;
-		std::string name = RBX::format("Roblox TaskScheduler Thread %d", static_cast<int>(++count));
+		std::string name = RBX::format("NAMEHERE TaskScheduler Thread %d", static_cast<int>(++count));
 
 		// loop holds a shared_ptr to the thread, so it won't be collected before the loop exits :)
 		thread->thread.reset(new boost::thread(RBX::thread_wrapper(boost::bind(&Thread::loop, thread), name.c_str())));

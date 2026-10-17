@@ -1,4 +1,4 @@
-/* Copyright 2003-2005 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2005 NAMEHERE Corporation, All Rights Reserved */
 
 #include "stdafx.h"
 
@@ -183,7 +183,7 @@ bool DataModel::uploadPlace(const std::string& uploadUrl, const SaveFilter saveF
 	try
 	{
 
-		if( !RBX::Http::isRobloxSite(uploadUrl.c_str()) )
+		if( !RBX::Http::isNAMEHERESite(uploadUrl.c_str()) )
 			return uploadPlaceReturn(false, "Url is invalid", resumeFunction, errorFunction);
 
 		// serialize the datamodel

@@ -1,4 +1,4 @@
-/* Copyright 2003-2012 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2012 NAMEHERE Corporation, All Rights Reserved */
 #if 1 // disable until we are ready for new joint schema
 #pragma once
 

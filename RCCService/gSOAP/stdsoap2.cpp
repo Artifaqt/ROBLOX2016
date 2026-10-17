@@ -861,9 +861,9 @@ frecv(struct soap *soap, char *s, size_t n)
 #if defined(__cplusplus) && !defined(WITH_LEAN)
   if (soap->is)
   { if (soap->is->good())
-	// BEGIN ROBLOX CHANGE: Add size_t cast to silence compiler warning
+	// BEGIN NAMEHERE CHANGE: Add size_t cast to silence compiler warning
       return (size_t)soap->is->read(s, (std::streamsize)n).gcount();
-    // END ROBLOX CHANGE
+    // END NAMEHERE CHANGE
     return 0;
   }
 #endif

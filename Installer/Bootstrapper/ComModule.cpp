@@ -68,14 +68,14 @@ void ComModule::registerModule(CRegKey &classesKey, std::wstring versionDir, sim
 	}
 
 	{
-		CRegKey keyRobloxAppApp1 = CreateKey(classesKey, convert_s2w(progID).c_str(), name.c_str(), is64Bits);
-		CreateKey(keyRobloxAppApp1, _T("CLSID"), clsid.c_str(), is64Bits);
+		CRegKey keyNAMEHEREAppApp1 = CreateKey(classesKey, convert_s2w(progID).c_str(), name.c_str(), is64Bits);
+		CreateKey(keyNAMEHEREAppApp1, _T("CLSID"), clsid.c_str(), is64Bits);
 	}
 
 	{
-		CRegKey keyRobloxAppApp = CreateKey(classesKey, convert_s2w(versionIndependentProgID).c_str(), name.c_str(), is64Bits);
-		CreateKey(keyRobloxAppApp, _T("CLSID"), clsid.c_str(), is64Bits);
-		CreateKey(keyRobloxAppApp, _T("CurVer"), convert_s2w(progID).c_str(), is64Bits);
+		CRegKey keyNAMEHEREAppApp = CreateKey(classesKey, convert_s2w(versionIndependentProgID).c_str(), name.c_str(), is64Bits);
+		CreateKey(keyNAMEHEREAppApp, _T("CLSID"), clsid.c_str(), is64Bits);
+		CreateKey(keyNAMEHEREAppApp, _T("CurVer"), convert_s2w(progID).c_str(), is64Bits);
 	}
 	{
 		CRegKey clsidKey = CreateKey(classesKey, _T("CLSID"), NULL, is64Bits);

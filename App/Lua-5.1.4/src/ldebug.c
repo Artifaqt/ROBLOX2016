@@ -624,10 +624,10 @@ static void addinfo (lua_State *L, const char *msg) {
 
 
 void luaG_errormsg (lua_State *L) {
-// BEGIN ROBLOX CHANGES
+// BEGIN NAMEHERE CHANGES
   if (L->hookmask & LUA_MASKERROR)
     luaD_callhook(L, LUA_HOOKERROR, -1);
-// END ROBLOX CHANGES
+// END NAMEHERE CHANGES
   if (L->errfunc != 0) {  /* is there an error handling function? */
     StkId errfunc = restorestack(L, L->errfunc);
     if (!ttisfunction(errfunc)) luaD_throw(L, LUA_ERRERR);

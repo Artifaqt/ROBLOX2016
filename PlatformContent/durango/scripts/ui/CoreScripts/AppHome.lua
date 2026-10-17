@@ -1,10 +1,10 @@
--- Written by Kip Turner, Copyright ROBLOX 2015
+-- Written by Kip Turner, Copyright NAMEHERE 2015
 
 -- App's Main
 
 local CoreGui = Game:GetService("CoreGui")
 local ContentProvider = Game:GetService("ContentProvider")
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 -- TODO: Will use for re-auth when finished
 local UserInputService = game:GetService('UserInputService')

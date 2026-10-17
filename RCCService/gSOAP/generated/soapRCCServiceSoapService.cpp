@@ -34,9 +34,9 @@ void RCCServiceSoapService::RCCServiceSoapService_init(soap_mode imode, soap_mod
 	{"SOAP-ENC", "http://schemas.xmlsoap.org/soap/encoding/", "http://www.w3.org/*/soap-encoding", NULL},
 	{"xsi", "http://www.w3.org/2001/XMLSchema-instance", "http://www.w3.org/*/XMLSchema-instance", NULL},
 	{"xsd", "http://www.w3.org/2001/XMLSchema", "http://www.w3.org/*/XMLSchema", NULL},
-	{"ns2", "http://roblox.com/RCCServiceSoap", NULL, NULL},
-	{"ns1", "http://roblox.com/", NULL, NULL},
-	{"ns3", "http://roblox.com/RCCServiceSoap12", NULL, NULL},
+	{"ns2", "http://namehere.com/RCCServiceSoap", NULL, NULL},
+	{"ns1", "http://namehere.com/", NULL, NULL},
+	{"ns3", "http://namehere.com/RCCServiceSoap12", NULL, NULL},
 	{NULL, NULL, NULL, NULL}
 };
 	soap_imode(this, imode);

@@ -1,6 +1,6 @@
 /**
  * DSVideoCaptureEngine.cpp
- * Copyright (c) 2013 ROBLOX Corp. All Rights Reserved.
+ * Copyright (c) 2013 NAMEHERE Corp. All Rights Reserved.
  */
 
 #include "stdafx.h"
@@ -21,7 +21,7 @@
 #include "fmod.h"
 #include "fmod.hpp"
 
-// Roblox Headers
+// NAMEHERE Headers
 #include "rbx/Debug.h"
 #include "util/FileSystem.h"
 #include "util/Statistics.h"
@@ -61,7 +61,7 @@ namespace RBX {
 
 		const LPWSTR RbxVideoId = L"RBXVideo";
 		const LPWSTR VideoFileExt = L"wmv";
-		const LPWSTR ProcTitle = L"robloxapp";
+		const LPWSTR ProcTitle = L"namehereapp";
 		const LPWSTR RbxAudioId = L"RBXAudio";
 		const int MaxWaitTime = 500; //2fps is very bad
 		const int MaxFramesQueue = 5; // no more than 5 frames kept (will prevent out of memory on slow machines)

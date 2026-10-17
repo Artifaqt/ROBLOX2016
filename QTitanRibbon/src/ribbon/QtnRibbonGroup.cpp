@@ -1281,11 +1281,11 @@ void RibbonGroupPrivate::reposition(const QRect& rect)
         if (m_ribbonDefaultGroupButton)
         {
 #ifdef Q_WS_MAC
-			// BEGIN ROBLOX CHANGES
+			// BEGIN NAMEHERE CHANGES
             QWidget* pActivePopup = QApplication::activePopupWidget();
             if (pActivePopup && pActivePopup->isVisible())
                 pActivePopup->hide();
-            // END ROBLOX CHANGES
+            // END NAMEHERE CHANGES
 #endif
             m_ribbonDefaultGroupButton->setVisible(false);
 
@@ -1367,10 +1367,10 @@ void RibbonGroupPrivate::hidePopupMode(QAction* action)
 {
     Q_UNUSED(action);
 	QTN_P(RibbonGroup)
-	// BEGIN ROBLOX CHANGES
+	// BEGIN NAMEHERE CHANGES
     if (!p.isHidden())
         p.setVisible(false);
-    // END ROBLOX CHANGES
+    // END NAMEHERE CHANGES
     //p.setVisbile(false);
 }
 
@@ -1738,13 +1738,13 @@ QSize RibbonGroup::sizeHint() const
     return sz.expandedTo(QApplication::globalStrut());
 }
 
-// BEGIN ROBLOX CHANGES
+// BEGIN NAMEHERE CHANGES
 void RibbonGroup::recalcWidths()
 {
 	QTN_D(RibbonGroup);
 	d.recalcWidths(0);
 }
-// END ROBLOX CHANGES
+// END NAMEHERE CHANGES
 
 void RibbonGroup::currentIndexChanged(int index)
 {

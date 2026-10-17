@@ -1,6 +1,6 @@
 --rbxsig%hm7SbDaf0GHizpUYxb6qQAHuUU7LfsWX8bgPnc64hv1MnSJFX+Komih+acv/5vqLxpzxHNtvBCnuAwN6l63fYukZ0Yat7mDBHBx0w0CPTaWSCs2P5WDx/W7P+L8AkqpaowXKgCKST9VBErgwqTlUySsi0r9+HfExO+cl3h2lXig=%
 --rbxassetid%158948138%
--- Creates the generic "ROBLOX" loading screen on startup
+-- Creates the generic "NAMEHERE" loading screen on startup
 -- Written by ArceusInator & Ben Tkacheff, 2014
 --
 
@@ -23,8 +23,8 @@ local COLORS = {
 
 local IMAGES = {
 	BACKGROUND_THUMBNAIL_VIGNETTE = 'rbxasset://textures/loading/loadingvignette.png',
-	ROBLOX_LOGO_256 = 'rbxasset://textures/loading/robloxlogo.png',
-	GAME_THUMBNAIL =  'http://www.roblox.com/Thumbs/Asset.ashx?format=png&width=420&height=230&assetId=',
+	NAMEHERE_LOGO_256 = 'rbxasset://textures/loading/nameherelogo.png',
+	GAME_THUMBNAIL =  'http://www.namehere.com/Thumbs/Asset.ashx?format=png&width=420&height=230&assetId=',
 	GAME_BACKGROUND = 'rbxasset://textures/loading/loadingTexture.png'
 }
 
@@ -122,7 +122,7 @@ end
 -- Declare member functions
 function MainGui:GenerateMain()
 	local screenGui = create 'ScreenGui' {
-		Name = 'RobloxLoadingGui'
+		Name = 'NAMEHERELoadingGui'
 	}
 	
 	--
@@ -145,9 +145,9 @@ function MainGui:GenerateMain()
 			ZIndex = 5,
 		
 			create 'ImageLabel' {
-				Name = 'RobloxLogo',
+				Name = 'NAMEHERELogo',
 				BackgroundTransparency = 1,
-				Image = IMAGES.ROBLOX_LOGO_256,
+				Image = IMAGES.NAMEHERE_LOGO_256,
 				Position = UDim2.new(0, 214, 1, -80),
 				Rotation = 2,
 				Size = UDim2.new(0, 128, 0, 128),

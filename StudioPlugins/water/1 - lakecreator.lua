@@ -479,8 +479,8 @@ linkImage.BackgroundTransparency = 1
 linkImage.Visible = false
 linkImage.Size = UDim2.new(0,15,0,15)
 linkImage.Position = UDim2.new(0,120,0,51)
-game:GetService("ContentProvider"):Preload("http://gametest.roblox.com/asset/?id=129724452")
-linkImage.Image = "http://gametest.roblox.com/asset/?id=129724452" --todo: put this in a better spot
+game:GetService("ContentProvider"):Preload("http://gametest.namehere.com/asset/?id=129724452")
+linkImage.Image = "http://gametest.namehere.com/asset/?id=129724452" --todo: put this in a better spot
 
 --current width display label
 local lengthLabel = Instance.new("TextLabel", containerFrame)
@@ -697,7 +697,7 @@ createWallsLabel.BackgroundTransparency = 1
 
 local createWallsToggle = Instance.new("TextButton",createWallsLabel)
 createWallsToggle.Name = "CreateWallsToggle"
-createWallsToggle.Style = Enum.ButtonStyle.RobloxButton
+createWallsToggle.Style = Enum.ButtonStyle.NAMEHEREButton
 createWallsToggle.Size = UDim2.new(0,32,0,32)
 createWallsToggle.Position = UDim2.new(0,-34,0.5,-16)
 createWallsToggle.Text = "X"

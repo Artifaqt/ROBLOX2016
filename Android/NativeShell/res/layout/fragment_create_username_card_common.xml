@@ -4,11 +4,11 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
-    <com.roblox.client.components.RbxTextView
+    <com.namehere.client.components.RbxTextView
         android:id="@+id/fragment_create_username_header"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        style="@style/Theme.Roblox.StandardFontLight"
+        style="@style/Theme.NAMEHERE.StandardFontLight"
         android:textColor="@color/RbxGray2"
         android:textSize="@dimen/textSizeCreateUsernameHeader"
         android:text="You're almost done!"
@@ -28,22 +28,22 @@
             app:border_width="1dp"
             app:border_color="@color/RbxGray3"/>
     </LinearLayout>
-    <com.roblox.client.components.RbxTextView
+    <com.namehere.client.components.RbxTextView
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        style="@style/Theme.Roblox.StandardFontLight"
+        style="@style/Theme.NAMEHERE.StandardFontLight"
         android:textColor="@color/RbxGray2"
         android:textSize="@dimen/textSizeCreateUsernameChoose"
         android:text="@string/CreateUsernameChooseHint"
         android:layout_gravity="center"
         android:paddingTop="5dp"/>
-    <com.roblox.client.components.RbxEditText
+    <com.namehere.client.components.RbxEditText
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1.5"
         app:hintText="Username"
         app:hintTextLong="Username (6-20 characters, no spaces)"
-        style="@style/Theme.Roblox.EditText"
+        style="@style/Theme.NAMEHERE.EditText"
         android:id="@+id/fragment_create_username_username"/>
     <!--<Space android:layout_height="0dp"-->
         <!--android:layout_width="match_parent"-->
@@ -62,12 +62,12 @@
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"
             android:layout_gravity="bottom" />
-        <com.roblox.client.components.RbxButton
+        <com.namehere.client.components.RbxButton
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:text="@string/CancelWord"
             android:id="@+id/fragment_create_username_cancel_btn"
-            style="@style/Theme.Roblox.Button.Flat.White"
+            style="@style/Theme.NAMEHERE.Button.Flat.White"
             android:textSize="@dimen/textSizeBtnCancel"
             android:layout_weight="10"
             android:layout_gravity="bottom" />
@@ -78,12 +78,12 @@
             android:layout_marginTop="15dp"
             android:layout_marginBottom="15dp"
             android:layout_gravity="bottom" />
-        <com.roblox.client.components.RbxProgressButton
+        <com.namehere.client.components.RbxProgressButton
             android:layout_width="0dp"
             android:layout_height="match_parent"
             app:defButtonText="@string/SignupCreateUsername"
             android:id="@+id/fragment_create_username_create_button"
-            style="@style/Theme.Roblox.Progress.Button.Blue"
+            style="@style/Theme.NAMEHERE.Progress.Button.Blue"
             app:buttonTextSize="@dimen/textSizeBtnSubmit"
             app:progressTextSize="@dimen/textSizeBtnSubmitProgress"
             android:layout_weight="10"
@@ -96,14 +96,14 @@
             android:layout_marginBottom="15dp"
             android:layout_gravity="bottom" />
     </LinearLayout>
-    <com.roblox.client.components.RbxTextView
+    <com.namehere.client.components.RbxTextView
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_weight="1"
         android:text="@string/CreateUsernameExistingRbx"
         android:layout_marginTop="10dp"
         android:layout_marginBottom="5dp"
-        style="@style/Theme.Roblox.StandardFontItalic"
+        style="@style/Theme.NAMEHERE.StandardFontItalic"
         android:textSize="@dimen/emailAlert"
         android:textColor="@color/RbxGray3"/>
     <!--<Space android:layout_height="0dp"-->

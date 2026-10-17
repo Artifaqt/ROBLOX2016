@@ -1,4 +1,4 @@
-/* Copyright 2003-2007 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2007 NAMEHERE Corporation, All Rights Reserved */
 #include "stdafx.h"
 
 #include "V8DataModel/Visit.h"
@@ -18,9 +18,9 @@ using namespace RBX::Network;
 
 REFLECTION_BEGIN();
 // Still used
-static Reflection::BoundFuncDesc<Visit, void(std::string)> UploadUrlFunction(&Visit::setUploadUrl, "SetUploadUrl", "url", Security::Roblox);
-static Reflection::BoundFuncDesc<Visit, std::string()> getUploadUrl(&Visit::getUploadUrl, "GetUploadUrl", Security::Roblox);
-static Reflection::BoundFuncDesc<Visit, void(std::string, int)> desc_setPing( &Visit::setPing, "SetPing", "pingUrl", "interval", Security::Roblox);
+static Reflection::BoundFuncDesc<Visit, void(std::string)> UploadUrlFunction(&Visit::setUploadUrl, "SetUploadUrl", "url", Security::NAMEHERE);
+static Reflection::BoundFuncDesc<Visit, std::string()> getUploadUrl(&Visit::getUploadUrl, "GetUploadUrl", Security::NAMEHERE);
+static Reflection::BoundFuncDesc<Visit, void(std::string, int)> desc_setPing( &Visit::setPing, "SetPing", "pingUrl", "interval", Security::NAMEHERE);
 REFLECTION_END();
 
 
@@ -49,7 +49,7 @@ worker_thread::work_result Visit::ping(std::string url, int interval)
 	}
 	catch (RBX::base_exception& /*exp*/)
 	{
-		//TODO: This is the kind of message that should only go to the output view for Roblox employees. We should hide it from general users
+		//TODO: This is the kind of message that should only go to the output view for NAMEHERE employees. We should hide it from general users
 		//std::string message = RBX::format("ping %s failed: %s", url.c_str(), exp.what());
 		//StandardOut::singleton()->printf(MESSAGE_WARNING, message.c_str());
 	}

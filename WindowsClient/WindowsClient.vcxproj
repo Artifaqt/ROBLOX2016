@@ -60,21 +60,21 @@
     <OutDir>$(Platform)\$(Configuration)\</OutDir>
     <IntDir>obj\$(Platform)\$(Configuration)\</IntDir>
     <LinkIncremental>true</LinkIncremental>
-    <TargetName>RobloxPlayerBetaRaw.exe</TargetName>
+    <TargetName>NAMEHEREPlayerBetaRaw.exe</TargetName>
     <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <OutDir>$(Platform)\$(Configuration)\</OutDir>
     <IntDir>obj\$(Platform)\$(Configuration)\</IntDir>
     <LinkIncremental>true</LinkIncremental>
-    <TargetName>RobloxPlayerBetaRaw</TargetName>
+    <TargetName>NAMEHEREPlayerBetaRaw</TargetName>
     <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='NoOpt|Win32'">
     <OutDir>$(Platform)\$(Configuration)\</OutDir>
     <IntDir>obj\$(Platform)\$(Configuration)\</IntDir>
     <LinkIncremental>true</LinkIncremental>
-    <TargetName>RobloxPlayerBetaRaw</TargetName>
+    <TargetName>NAMEHEREPlayerBetaRaw</TargetName>
     <PublishDLLDependencyBeforeTargets />
     <DisableFastUpToDateCheck>true</DisableFastUpToDateCheck>
   </PropertyGroup>
@@ -95,7 +95,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>SDL2.lib;strmbasd.lib;sensapi.lib;wmvcore.lib;DxErr9.lib;Urlmon.lib;zlibd.lib;libcurl-d.lib;fmod_vc.lib;legacy_stdio_definitions.lib;WS2_32.lib;Crypt32.lib;Wldap32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)RobloxPlayerBetaRaw.exe</OutputFile>
+      <OutputFile>$(OutDir)NAMEHEREPlayerBetaRaw.exe</OutputFile>
       <AdditionalLibraryDirectories>..\Library\boost\stage\lib;.\libraries;..\Library\SDL2\lib\x86;..\fmod\win32\lib;..\TBB_4_1\lib;..\Library\SDK\Lib;..\Library\DSBaseClasses\Lib;..\Library\VMProtect\lib;..\Library\zlib\lib\debug;..\Library\curl\lib\debug;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
@@ -129,7 +129,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>SDL2.lib;strmbase.lib;sensapi.lib;wmvcore.lib;DxErr9.lib;Urlmon.lib;zlib.lib;libcurl.lib;fmod_vc.lib;legacy_stdio_definitions.lib;WS2_32.lib;Crypt32.lib;Wldap32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)RobloxPlayerBetaRaw.exe</OutputFile>
+      <OutputFile>$(OutDir)NAMEHEREPlayerBetaRaw.exe</OutputFile>
       <AdditionalLibraryDirectories>..\Library\boost\stage\lib;.\libraries;..\Library\SDL2\lib\x86;..\fmod\win32\lib;..\Library\SDK\Lib;..\Library\DSBaseClasses\Lib;..\Library\VMProtect\lib;..\Library\zlib\lib\release;..\Library\curl\lib\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
@@ -170,7 +170,7 @@
     </ClCompile>
     <Link>
       <AdditionalDependencies>$(CONTRIB_PATH)\SDL2\VisualC\Win32\Release\SDL2.lib;strmbase.lib;sensapi.lib;wmvcore.lib;DxErr9.lib;Urlmon.lib;zlib.lib;libcurl.lib;fmod_vc.lib;legacy_stdio_definitions.lib;WS2_32.lib;Crypt32.lib;Wldap32.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <OutputFile>$(OutDir)RobloxPlayerBetaRaw.exe</OutputFile>
+      <OutputFile>$(OutDir)NAMEHEREPlayerBetaRaw.exe</OutputFile>
       <AdditionalLibraryDirectories>..\Library\boost\stage\lib;.\libraries;..\Library\SDL2\lib\x86;..\fmod\win32\lib;..\TBB_4_1\lib;..\Library\SDK\Lib;..\Library\DSBaseClasses\Lib;..\Library\VMProtect\lib;..\Library\zlib\lib\release;..\Library\curl\lib\release;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
       <GenerateDebugInformation>true</GenerateDebugInformation>
       <SubSystem>Windows</SubSystem>
@@ -244,7 +244,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
       </PrecompiledHeader>
     </ClCompile>
-    <ClCompile Include="robloxHooks.cpp" />
+    <ClCompile Include="namehereHooks.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='NoOpt|Win32'">Create</PrecompiledHeader>
@@ -381,7 +381,7 @@
     <ClInclude Include="RenderJob.h" />
     <ClInclude Include="..\ClientBase\RenderSettingsItem.h" />
     <ClInclude Include="resource.h" />
-    <ClInclude Include="RobloxHooks.h" />
+    <ClInclude Include="NAMEHEREHooks.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Teleporter.h" />
     <ClInclude Include="UserInput.h" />
@@ -398,7 +398,7 @@
     <None Include="InvisibleCursor.cur" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="Roblox.ico" />
+    <Image Include="NAMEHERE.ico" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="WindowsClient.rc" />

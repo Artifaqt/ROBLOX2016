@@ -18,7 +18,7 @@
 #include "lualib.h"
 
 
-// ROBLOX CHANGES: file commented out for security
+// NAMEHERE CHANGES: file commented out for security
 #if 0
 
 static int db_getregistry (lua_State *L) {
@@ -394,8 +394,8 @@ static const luaL_Reg dblib[] = {
 #endif
 
 LUALIB_API int luaopen_debug (lua_State *L) {
-  // BEGIN ROBLOX CHANGES
+  // BEGIN NAMEHERE CHANGES
   // luaL_register(L, LUA_DBLIBNAME, dblib);
-  // END ROBLOX CHANGES
+  // END NAMEHERE CHANGES
   return 1;
 }

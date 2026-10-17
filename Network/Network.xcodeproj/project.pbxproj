@@ -1473,7 +1473,7 @@
 			isa = PBXProject;
 			attributes = {
 				BuildIndependentTargetsInParallel = YES;
-				ORGANIZATIONNAME = "Roblox Inc.";
+				ORGANIZATIONNAME = "NAMEHERE Inc.";
 			};
 			buildConfigurationList = 1DEB91EF08733DB70010E9CD /* Build configuration list for PBXProject "Network" */;
 			compatibilityVersion = "Xcode 3.2";

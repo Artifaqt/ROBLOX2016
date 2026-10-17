@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-/* Copyright 2003-2009 ROBLOX Corporation, All Rights Reserved  */
+/* Copyright 2003-2009 NAMEHERE Corporation, All Rights Reserved  */
 #include "V8DataModel/PlayerGui.h"
 #include "V8DataModel/TextLabel.h"
 #include "v8datamodel/ImageLabel.h"
@@ -691,9 +691,9 @@ const Reflection::PropDescriptor<StarterGuiService, bool> StarterGuiService::pro
 
 static const Reflection::BoundFuncDesc<StarterGuiService, void(StarterGuiService::CoreGuiType, bool)> func_setCoreGuiEnabled(&StarterGuiService::setCoreGuiEnabled,"SetCoreGuiEnabled", "coreGuiType", "enabled",  Security::None);
 static const Reflection::BoundFuncDesc<StarterGuiService, bool(StarterGuiService::CoreGuiType)> func_getCoreGuiEnabled(&StarterGuiService::getCoreGuiEnabled,"GetCoreGuiEnabled", "coreGuiType", Security::None);
-static Reflection::EventDesc<StarterGuiService, void(StarterGuiService::CoreGuiType,bool)> event_coreGuiChangedSignal(&StarterGuiService::coreGuiChangedSignal, "CoreGuiChangedSignal", "coreGuiType", "enabled", Security::RobloxScript);
-static const Reflection::BoundFuncDesc<StarterGuiService, void(std::string, Lua::WeakFunctionRef)> func_registerSetCore(&StarterGuiService::registerSetCore,"RegisterSetCore", "parameterName", "setFunction", Security::RobloxScript);
-static const Reflection::BoundFuncDesc<StarterGuiService, void(std::string, Lua::WeakFunctionRef)> func_registerGetCore(&StarterGuiService::registerGetCore,"RegisterGetCore", "parameterName", "getFunction", Security::RobloxScript);
+static Reflection::EventDesc<StarterGuiService, void(StarterGuiService::CoreGuiType,bool)> event_coreGuiChangedSignal(&StarterGuiService::coreGuiChangedSignal, "CoreGuiChangedSignal", "coreGuiType", "enabled", Security::NAMEHEREScript);
+static const Reflection::BoundFuncDesc<StarterGuiService, void(std::string, Lua::WeakFunctionRef)> func_registerSetCore(&StarterGuiService::registerSetCore,"RegisterSetCore", "parameterName", "setFunction", Security::NAMEHEREScript);
+static const Reflection::BoundFuncDesc<StarterGuiService, void(std::string, Lua::WeakFunctionRef)> func_registerGetCore(&StarterGuiService::registerGetCore,"RegisterGetCore", "parameterName", "getFunction", Security::NAMEHEREScript);
 static const Reflection::BoundFuncDesc<StarterGuiService, void(std::string, Reflection::Variant)> func_setCore(&StarterGuiService::setCore,"SetCore", "parameterName", "value", Security::None);
 static const Reflection::BoundYieldFuncDesc<StarterGuiService, Reflection::Variant(std::string)> func_getCore(&StarterGuiService::getCore, "GetCore", "parameterName", Security::None);
 REFLECTION_END();
@@ -899,13 +899,13 @@ GuiResponse StarterGuiService::process(const shared_ptr<InputObject>& event)
 const char *const sCoreGuiService = "CoreGui"; 
 
 REFLECTION_BEGIN();
-static Reflection::RefPropDescriptor<CoreGuiService, GuiObject> prop_CoreSelectionImageObject("SelectionImageObject", category_Appearance, &CoreGuiService::getSelectionImageObject, &CoreGuiService::setSelectionImageObject, Reflection::PropertyDescriptor::STANDARD, Security::RobloxScript);
+static Reflection::RefPropDescriptor<CoreGuiService, GuiObject> prop_CoreSelectionImageObject("SelectionImageObject", category_Appearance, &CoreGuiService::getSelectionImageObject, &CoreGuiService::setSelectionImageObject, Reflection::PropertyDescriptor::STANDARD, Security::NAMEHEREScript);
 static const Reflection::PropDescriptor<CoreGuiService, int> prop_Version("Version", category_Data, &CoreGuiService::getGuiVersion, NULL);
 REFLECTION_END();
 
 CoreGuiService::CoreGuiService()
 {
-	setRobloxLocked(true);
+	setNAMEHERELocked(true);
 	Instance::setName(sCoreGuiService);
 
 	onScreenMessages.resize(MAX_ON_SCREEN_MESSAGES);
@@ -915,19 +915,19 @@ int CoreGuiService::getGuiVersion() const
 {
 	return 0;
 }
-void CoreGuiService::createRobloxScreenGui()
+void CoreGuiService::createNAMEHEREScreenGui()
 {
 	screenGui = Creatable<RBX::Instance>::create<ScreenGui>();
-	screenGui->setName("RobloxGui");
-	screenGui->setRobloxLocked(true);
+	screenGui->setName("NAMEHEREGui");
+	screenGui->setNAMEHERELocked(true);
 	screenGui->setParent(this);
 }
 
-shared_ptr<RBX::ScreenGui> CoreGuiService::getRobloxScreenGui()
+shared_ptr<RBX::ScreenGui> CoreGuiService::getNAMEHEREScreenGui()
 {
     if (!screenGui)
     {
-        createRobloxScreenGui();
+        createNAMEHEREScreenGui();
     }
     
     if ( RBX::ScreenGui* theScreenGui = Instance::fastDynamicCast<RBX::ScreenGui>(screenGui.get()) )
@@ -942,7 +942,7 @@ void CoreGuiService::onDescendantAdded(Instance* instance)
 {
 	if(instance)
     {
-		instance->setRobloxLocked(true);
+		instance->setNAMEHERELocked(true);
     }
 
 	Super::onDescendantAdded(instance);

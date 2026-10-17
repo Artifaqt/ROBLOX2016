@@ -1,11 +1,11 @@
-/* Copyright 2003-2007 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2007 NAMEHERE Corporation, All Rights Reserved */
 
 #include "Network/Player.h"
 
 #include "Client.h"
 #include "ClientReplicator.h"
 #include "Network/Players.h"
-#include "RobloxServicesTools.h"
+#include "NAMEHEREServicesTools.h"
 #include "V8DataModel/GuiService.h"
 #include "V8DataModel/PlayerGui.h"
 #include "V8DataModel/PlayerScripts.h"
@@ -114,8 +114,8 @@ static Reflection::BoundFuncDesc<Player, void()>    func_loadData(&Player::loadD
 static Reflection::BoundFuncDesc<Player, void()>    func_saveData(&Player::saveData, "SaveData", Security::LocalUser);
 static Reflection::BoundFuncDesc<Player, void()>    func_saveLeaderboardData(&Player::saveLeaderboardData, "SaveLeaderboardData", Security::LocalUser);
 
-static Reflection::PropDescriptor<Player, bool>					prop_groupBuildTools("HasBuildTools", category_Data, &Player::getHasGroupBuildTools, &Player::setHasGroupBuildTools, Reflection::PropertyDescriptor::SCRIPTING, Security::RobloxScript);
-static Reflection::PropDescriptor<Player, int>					prop_personalServerRank("PersonalServerRank", category_Data, &Player::getPersonalServerRank, &Player::setPersonalServerRank, Reflection::PropertyDescriptor::SCRIPTING, Security::RobloxScript);
+static Reflection::PropDescriptor<Player, bool>					prop_groupBuildTools("HasBuildTools", category_Data, &Player::getHasGroupBuildTools, &Player::setHasGroupBuildTools, Reflection::PropertyDescriptor::SCRIPTING, Security::NAMEHEREScript);
+static Reflection::PropDescriptor<Player, int>					prop_personalServerRank("PersonalServerRank", category_Data, &Player::getPersonalServerRank, &Player::setPersonalServerRank, Reflection::PropertyDescriptor::SCRIPTING, Security::NAMEHEREScript);
 static Reflection::BoundYieldFuncDesc<Player, std::string()>	func_getWebPersonalServerRank(&Player::getWebPersonalServerRank, "GetWebPersonalServerRank", Security::LocalUser);
 static Reflection::BoundYieldFuncDesc<Player, bool(int)>		func_setPersonalServerRank(&Player::setWebPersonalServerRank, "SetWebPersonalServerRank","rank", Security::WritePlayer);
 
@@ -127,9 +127,9 @@ static Reflection::PropDescriptor<Player, bool> prop_dataReady("DataReady", cate
 static Reflection::BoundYieldFuncDesc<Player, bool()> func_waitForDataReady(&Player::waitForDataReady, "WaitForDataReady", Security::None);
 static Reflection::BoundYieldFuncDesc<Player, bool()> func_dep_waitForDataReady(&Player::waitForDataReady, "waitForDataReady", Security::None, Reflection::Descriptor::Attributes::deprecated(func_waitForDataReady));
 
-static Reflection::BoundFuncDesc<Player, void(shared_ptr<Instance>)> func_requestFriendship(&Player::requestFriendship, "RequestFriendship", "player", Security::RobloxScript);
-static Reflection::BoundFuncDesc<Player, void(shared_ptr<Instance>)> func_revokeFriendship(&Player::revokeFriendship, "RevokeFriendship", "player", Security::RobloxScript);
-static Reflection::RemoteEventDesc<Player, void(bool,int)> desc_remoteFriendServiceSignal(&Player::remoteFriendServiceSignal, "RemoteFriendServiceSignal", "makeFriends", "userId", Security::RobloxScript, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::CLIENT_SERVER);
+static Reflection::BoundFuncDesc<Player, void(shared_ptr<Instance>)> func_requestFriendship(&Player::requestFriendship, "RequestFriendship", "player", Security::NAMEHEREScript);
+static Reflection::BoundFuncDesc<Player, void(shared_ptr<Instance>)> func_revokeFriendship(&Player::revokeFriendship, "RevokeFriendship", "player", Security::NAMEHEREScript);
+static Reflection::RemoteEventDesc<Player, void(bool,int)> desc_remoteFriendServiceSignal(&Player::remoteFriendServiceSignal, "RemoteFriendServiceSignal", "makeFriends", "userId", Security::NAMEHEREScript, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::CLIENT_SERVER);
 
 static Reflection::BoundFuncDesc<Player, shared_ptr<Instance>()> func_getMouse(&Player::getMouseInstance, "GetMouse", Security::None);
 
@@ -161,20 +161,20 @@ static Reflection::BoundFuncDesc<Player, void(std::string, shared_ptr<const RBX:
 static Reflection::BoundFuncDesc<Player, void(Vector3, bool)>  moveCharacterFunction(&Player::move, "Move", "walkDirection", "relativeToCamera", false, Security::None);
 
 // MoveCharacter + JumpCharacter only used by lua control core scripts
-static Reflection::BoundFuncDesc<Player, void(Vector2,float)>    moveLocalCharacterFunction(&Player::luaMoveCharacter, "MoveCharacter", "walkDirection", "maxWalkDelta", Security::RobloxScript);
-static Reflection::BoundFuncDesc<Player, void()>    jumpLocalCharacterFunction(&Player::luaJumpCharacter, "JumpCharacter", Security::RobloxScript);
+static Reflection::BoundFuncDesc<Player, void(Vector2,float)>    moveLocalCharacterFunction(&Player::luaMoveCharacter, "MoveCharacter", "walkDirection", "maxWalkDelta", Security::NAMEHEREScript);
+static Reflection::BoundFuncDesc<Player, void()>    jumpLocalCharacterFunction(&Player::luaJumpCharacter, "JumpCharacter", Security::NAMEHEREScript);
 
 static Reflection::BoundFuncDesc<Player, void(bool)>    loadCharacterFunction(&Player::luaLoadCharacter, "LoadCharacter", "inGame", true, Security::None);
 static Reflection::BoundFuncDesc<Player, void()>    removeCharacterFunction(&Player::removeCharacter, "RemoveCharacter", Security::LocalUser);
-static Reflection::BoundFuncDesc<Player, void(bool)>    func_SetUnder13(&Player::setUnder13, "SetUnder13", "value", Security::Roblox);
-static Reflection::BoundFuncDesc<Player, bool()>    func_GetUnder13(&Player::getUnder13, "GetUnder13", Security::RobloxScript);
+static Reflection::BoundFuncDesc<Player, void(bool)>    func_SetUnder13(&Player::setUnder13, "SetUnder13", "value", Security::NAMEHERE);
+static Reflection::BoundFuncDesc<Player, bool()>    func_GetUnder13(&Player::getUnder13, "GetUnder13", Security::NAMEHEREScript);
 static Reflection::BoundFuncDesc<Player, void(bool)>    func_SetSuperSafeChat(&Player::setSuperSafeChat, "SetSuperSafeChat", "value", Security::Plugin);
-static Reflection::BoundFuncDesc<Player, void(Player::MembershipType)>  func_SetMembershipType(&Player::setMembershipType, "SetMembershipType", "membershipType", Security::RobloxScript);
+static Reflection::BoundFuncDesc<Player, void(Player::MembershipType)>  func_SetMembershipType(&Player::setMembershipType, "SetMembershipType", "membershipType", Security::NAMEHEREScript);
 static Reflection::BoundFuncDesc<Player, void(int)>  func_SetAccountAge(&Player::setAccountAge, "SetAccountAge", "accountAge", Security::Plugin);
 static Reflection::BoundFuncDesc<Player, void(std::string)>    func_Kick(&Player::kick, "Kick", "message", "", Security::None);
-static Reflection::BoundFuncDesc<Player, std::string()> func_GetGameSessionID(&Player::getGameSessionID, "GetGameSessionID", Security::Roblox);
+static Reflection::BoundFuncDesc<Player, std::string()> func_GetGameSessionID(&Player::getGameSessionID, "GetGameSessionID", Security::NAMEHERE);
 static Reflection::RemoteEventDesc<Player, void(std::string)> event_setShutdownMessage(&Player::setShutdownMessageSignal, 
-																								 "SetShutdownMessage", "message", Security::Roblox, 
+																								 "SetShutdownMessage", "message", Security::NAMEHERE, 
 																								 Reflection::RemoteEventCommon::REPLICATE_ONLY, 
 																								 Reflection::RemoteEventCommon::CLIENT_SERVER);
 
@@ -190,7 +190,7 @@ Reflection::PropDescriptor<Player, int> Player::prop_userId("UserId", category_D
 Reflection::PropDescriptor<Player, int> Player::prop_userIdDeprecated("userId", category_Data, &Player::getUserID, &Player::setUserId, Reflection::PropertyDescriptor::Attributes::deprecated(Player::prop_userId, Reflection::PropertyDescriptor::SCRIPTING));
 static Reflection::BoundFuncDesc<Player, float(Vector3)> func_CharacterDistance(&Player::distanceFromCharacter, "DistanceFromCharacter", "point", Security::None);
 
-static Reflection::BoundFuncDesc<Player, FriendService::FriendStatus(shared_ptr<Instance>)> func_GetFriendStatus(&Player::getFriendStatus, "GetFriendStatus", "player", Security::RobloxScript);
+static Reflection::BoundFuncDesc<Player, FriendService::FriendStatus(shared_ptr<Instance>)> func_GetFriendStatus(&Player::getFriendStatus, "GetFriendStatus", "player", Security::NAMEHEREScript);
 
 static Reflection::BoundYieldFuncDesc<Player, bool(int)> func_IsFriendsWith(&Player::isFriendsWith, "IsFriendsWith", "userId", Security::None);
 static Reflection::BoundYieldFuncDesc<Player, bool(int)> dep_IsFriendsWith(&Player::isFriendsWith, "isFriendsWith", "userId", Security::None, Reflection::Descriptor::Attributes::deprecated(func_IsFriendsWith));
@@ -205,22 +205,22 @@ static Reflection::BoundYieldFuncDesc<Player, std::string(int)> func_getRoleInGr
 // TODO: Security - put RBX::Security::WritePlayer checks on these properties (like userId has)
 Reflection::PropDescriptor<Player, bool> Player::prop_SuperSafeChat("SuperSafeChatReplicate", category_Data, &Player::getSuperSafeChat, &Player::setSuperSafeChat, Reflection::PropertyDescriptor::REPLICATE_ONLY, Security::LocalUser);
 
-Reflection::BoundProp<std::string> Player::prop_OsPlatform("OsPlatform", category_Data, &Player::osPlatform, Reflection::PropertyDescriptor::REPLICATE_ONLY, Security::RobloxScript);
-Reflection::BoundProp<std::string> Player::prop_VRDevice("VRDevice", category_Data, &Player::vrDevice, Reflection::PropertyDescriptor::SCRIPTING, Security::RobloxScript);
+Reflection::BoundProp<std::string> Player::prop_OsPlatform("OsPlatform", category_Data, &Player::osPlatform, Reflection::PropertyDescriptor::REPLICATE_ONLY, Security::NAMEHEREScript);
+Reflection::BoundProp<std::string> Player::prop_VRDevice("VRDevice", category_Data, &Player::vrDevice, Reflection::PropertyDescriptor::SCRIPTING, Security::NAMEHEREScript);
 
 static Reflection::RemoteEventDesc<Player, void(float)> event_simulationRadiusChanged(&Player::simulationRadiusChangedSignal, "SimulationRadiusChanged", "radius", Security::LocalUser, Reflection::RemoteEventCommon::SCRIPTING,	Reflection::RemoteEventCommon::CLIENT_SERVER);
 Reflection::PropDescriptor<Player, float> Player::prop_DeprecatedMaxSimulationRadius("MaxSimulationRadius" /*keep this name*/, category_Data, &Player::getDeprecatedMaxSimulationRadius, &Player::setDeprecatedMaxSimulationRadius, Reflection::PropertyDescriptor::REPLICATE_ONLY, Security::LocalUser);
 Reflection::BoundProp<float> Player::prop_MaxSimulationRadius("MaximumSimulationRadius", category_Data, &Player::maxSimulationRadius, Reflection::PropertyDescriptor::UI, Security::TestLocalUser);
 Reflection::BoundProp<float> Player::prop_SimulationRadius("SimulationRadius", category_Data, &Player::simulationRadius, Reflection::PropertyDescriptor::SCRIPTING, Security::TestLocalUser);
 
-Reflection::EnumPropDescriptor<Player, Player::ChatMode> prop_ChatMode("ChatMode", category_Data, &Player::getChatMode, NULL, Reflection::PropertyDescriptor::UI, Security::RobloxScript);
+Reflection::EnumPropDescriptor<Player, Player::ChatMode> prop_ChatMode("ChatMode", category_Data, &Player::getChatMode, NULL, Reflection::PropertyDescriptor::UI, Security::NAMEHEREScript);
 
 static Reflection::PropDescriptor<Player, BrickColor/**/> prop_teamColor ("TeamColor", category_Team, &Player::getTeamColor, &Player::setTeamColor);
 static Reflection::PropDescriptor<Player, bool/**/> prop_neutral("Neutral", category_Team, &Player::getNeutral, &Player::setNeutral);
 
 static Reflection::PropDescriptor<Player, bool> prop_autoJumpEnabled("AutoJumpEnabled", category_Data, &Player::getAutoJumpEnabled, &Player::setAutoJumpEnabled);
 
-static Reflection::PropDescriptor<Player, bool> prop_Guest("Guest", category_Data, &Player::isGuest, NULL, Reflection::PropertyDescriptor::UI, Security::RobloxScript);
+static Reflection::PropDescriptor<Player, bool> prop_Guest("Guest", category_Data, &Player::isGuest, NULL, Reflection::PropertyDescriptor::UI, Security::NAMEHEREScript);
 static Reflection::EnumPropDescriptor<Player, Player::MembershipType> prop_membershipType("MembershipType", category_Data, &Player::getMembershipType, NULL, Reflection::PropertyDescriptor::UI);
 static Reflection::EnumPropDescriptor<Player, Player::MembershipType/**/> prop_membershipTypeReplicate("MembershipTypeReplicate", category_Data, &Player::getMembershipType, &Player::setMembershipType, Reflection::PropertyDescriptor::REPLICATE_ONLY);
 
@@ -232,7 +232,7 @@ static Reflection::EventDesc<Player, void(shared_ptr<Instance>)> event_Character
 static Reflection::RemoteEventDesc<Player, void(shared_ptr<Instance>)> event_CharacterLoaded(&Player::CharacterAppearanceLoadedSignal, "CharacterAppearanceLoaded", "character", Security::None, Reflection::RemoteEventCommon::SCRIPTING, Reflection::RemoteEventCommon::CLIENT_SERVER);
 static Reflection::EventDesc<Player, void(shared_ptr<Instance>)> event_CharacterRemoving(&Player::characterRemovingSignal, "CharacterRemoving", "character");
 static Reflection::EventDesc<Player, void(double)> event_Idled(&Player::idledSignal, "Idled", "time");
-static Reflection::EventDesc<Player, void(shared_ptr<Instance>, FriendService::FriendStatus)> event_FriendStatusChanged(&Player::friendStatusChangedSignal, "FriendStatusChanged", "player", "friendStatus", Security::RobloxScript);
+static Reflection::EventDesc<Player, void(shared_ptr<Instance>, FriendService::FriendStatus)> event_FriendStatusChanged(&Player::friendStatusChangedSignal, "FriendStatusChanged", "player", "friendStatus", Security::NAMEHEREScript);
 
 static Reflection::RemoteEventDesc<Player, void()> desc_kill(&Player::killPlayerSignal, "Kill", Security::LocalUser, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::CLIENT_SERVER);
 
@@ -241,7 +241,7 @@ static Reflection::RemoteEventDesc<Player, void(std::string, Vector3)> desc_remo
 
 static Reflection::RemoteEventDesc<Player, void(std::string)> desc_statsSignal(&Player::statsSignal, "StatsAvailable", "info", Security::LocalUser, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::CLIENT_SERVER);
 
-static Reflection::PropDescriptor<Player, bool> prop_appearanceDidLoad("AppearanceDidLoad", category_Data, &Player::getAppearanceDidLoad, NULL, Reflection::PropertyDescriptor::Attributes::deprecated(Reflection::PropertyDescriptor::UI), Security::RobloxScript);
+static Reflection::PropDescriptor<Player, bool> prop_appearanceDidLoad("AppearanceDidLoad", category_Data, &Player::getAppearanceDidLoad, NULL, Reflection::PropertyDescriptor::Attributes::deprecated(Reflection::PropertyDescriptor::UI), Security::NAMEHEREScript);
 static Reflection::BoundFuncDesc<Player, bool()> func_AppearanceDidLoad(&Player::getAppearanceDidLoadNonConst, "HasAppearanceLoaded", Security::None);
 
 static Reflection::EnumPropDescriptor<Player, Camera::CameraMode> prop_cameraMode("CameraMode", "Camera", &Player::getCameraMode, &Player::setCameraMode);
@@ -259,19 +259,19 @@ static Reflection::EnumPropDescriptor<Player, StarterPlayerService::DeveloperCom
 static Reflection::PropDescriptor<Player, float> prop_nameDisplayDistance("NameDisplayDistance", "Camera", &Player::getNameDisplayDistance, &Player::setNameDisplayDistance);
 static Reflection::PropDescriptor<Player, float> prop_healthDisplayDistance("HealthDisplayDistance", "Camera", &Player::getHealthDisplayDistance, &Player::setHealthDisplayDistance);
 
-static Reflection::RemoteEventDesc<Player, void()>	event_connectDiedSignal(&Player::connectDiedSignalBackend, "ConnectDiedSignalBackend", Security::Roblox, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::CLIENT_SERVER);
+static Reflection::RemoteEventDesc<Player, void()>	event_connectDiedSignal(&Player::connectDiedSignalBackend, "ConnectDiedSignalBackend", Security::NAMEHERE, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::CLIENT_SERVER);
 
 static Reflection::PropDescriptor<Player, int> prop_getFollowUserIdReplicated("FollowUserIdReplicated", category_Data, &Player::getFollowUserId, &Player::setFollowUserId, Reflection::PropertyDescriptor::REPLICATE_ONLY, Security::None);
 static Reflection::PropDescriptor<Player, int> prop_getFollowUserId("FollowUserId", category_Data, &Player::getFollowUserId, NULL);
 
 static Reflection::PropDescriptor<Player, CoordinateFrame> prop_CloudEditCameraCoordinateFrame("CloudEditCameraCoordinateFrame", category_Data, &Player::getCloudEditCameraCoordinateFrame, &Player::setCloudEditCameraCoordinateFrame, Reflection::PropertyDescriptor::REPLICATE_ONLY, Security::None);
-Reflection::RemoteEventDesc<Player, void(shared_ptr<const Reflection::ValueArray>)> Player::event_cloudEditSelectionChanged(&Player::cloudEditSelectionChanged, "CloudEditSelectionChanged", "newSelection", Security::Roblox, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::BROADCAST);
+Reflection::RemoteEventDesc<Player, void(shared_ptr<const Reflection::ValueArray>)> Player::event_cloudEditSelectionChanged(&Player::cloudEditSelectionChanged, "CloudEditSelectionChanged", "newSelection", Security::NAMEHERE, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::BROADCAST);
 
 // Teleport related
 static Reflection::RemoteEventDesc<Player, void(TeleportService::TeleportState, int, std::string)> event_OnTeleport(&Player::onTeleportSignal, "OnTeleport", "teleportState", "placeId", "spawnName", Security::None, Reflection::RemoteEventCommon::SCRIPTING, Reflection::RemoteEventCommon::CLIENT_SERVER);
-static Reflection::RemoteEventDesc<Player, void(TeleportService::TeleportState, shared_ptr<const Reflection::ValueTable>, shared_ptr<Instance>)> event_OnTeleportInternal(&Player::onTeleportInternalSignal, "OnTeleportInternal", "teleportState", "teleportInfo", "customLoadingScreen", Security::Roblox, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::CLIENT_SERVER);
-static Reflection::PropDescriptor<Player, bool> prop_teleported("Teleported", category_Data, &Player::getTeleported, NULL, Reflection::PropertyDescriptor::HIDDEN_SCRIPTING, Security::RobloxScript);
-static Reflection::PropDescriptor<Player, bool> prop_teleportedIn("TeleportedIn", category_Data, &Player::getTeleportedIn, &Player::setTeleportedIn, Reflection::PropertyDescriptor::STANDARD, Security::RobloxScript);
+static Reflection::RemoteEventDesc<Player, void(TeleportService::TeleportState, shared_ptr<const Reflection::ValueTable>, shared_ptr<Instance>)> event_OnTeleportInternal(&Player::onTeleportInternalSignal, "OnTeleportInternal", "teleportState", "teleportInfo", "customLoadingScreen", Security::NAMEHERE, Reflection::RemoteEventCommon::REPLICATE_ONLY, Reflection::RemoteEventCommon::CLIENT_SERVER);
+static Reflection::PropDescriptor<Player, bool> prop_teleported("Teleported", category_Data, &Player::getTeleported, NULL, Reflection::PropertyDescriptor::HIDDEN_SCRIPTING, Security::NAMEHEREScript);
+static Reflection::PropDescriptor<Player, bool> prop_teleportedIn("TeleportedIn", category_Data, &Player::getTeleportedIn, &Player::setTeleportedIn, Reflection::PropertyDescriptor::STANDARD, Security::NAMEHEREScript);
 REFLECTION_END();
 
 
@@ -2432,7 +2432,7 @@ void Player::setDevEnableMouseLockOption(bool setting)
 	if (!Players::backendProcessing(this, false) && Players::frontendProcessing(this, false))
 	{
 		try {
-			RBX::Security::Context::current().requirePermission(RBX::Security::RobloxScript, "setDevEnableMouseLockOption");
+			RBX::Security::Context::current().requirePermission(RBX::Security::NAMEHEREScript, "setDevEnableMouseLockOption");
 		} 
 		catch (RBX::base_exception& e) 
 		{
@@ -2453,7 +2453,7 @@ void Player::setDevTouchCameraMode(StarterPlayerService::DeveloperTouchCameraMov
 	if (!Players::backendProcessing(this, false) && Players::frontendProcessing(this, false))
 	{
 		try {
-			RBX::Security::Context::current().requirePermission(RBX::Security::RobloxScript, "setDevTouchCameraMode");
+			RBX::Security::Context::current().requirePermission(RBX::Security::NAMEHEREScript, "setDevTouchCameraMode");
 		} 
 		catch (RBX::base_exception& e) 
 		{
@@ -2474,7 +2474,7 @@ void Player::setDevComputerCameraMode(StarterPlayerService::DeveloperComputerCam
 	if (!Players::backendProcessing(this, false) && Players::frontendProcessing(this, false))
 	{
 		try {
-			RBX::Security::Context::current().requirePermission(RBX::Security::RobloxScript, "setDevComputerCameraMode");
+			RBX::Security::Context::current().requirePermission(RBX::Security::NAMEHEREScript, "setDevComputerCameraMode");
 		} 
 		catch (RBX::base_exception& e) 
 		{
@@ -2495,7 +2495,7 @@ void Player::setDevCameraOcclusionMode(StarterPlayerService::DeveloperCameraOccl
 	if (!Players::backendProcessing(this, false) && Players::frontendProcessing(this, false))
 	{
 		try {
-			RBX::Security::Context::current().requirePermission(RBX::Security::RobloxScript, "setDevCameraOcclusionMode");
+			RBX::Security::Context::current().requirePermission(RBX::Security::NAMEHEREScript, "setDevCameraOcclusionMode");
 		} 
 		catch (RBX::base_exception& e) 
 		{
@@ -2516,7 +2516,7 @@ void Player::setDevTouchMovementMode(StarterPlayerService::DeveloperTouchMovemen
 	if (!Players::backendProcessing(this, false) && Players::frontendProcessing(this, false))
 	{
 		try {
-			RBX::Security::Context::current().requirePermission(RBX::Security::RobloxScript, "setDevTouchMovementMode");
+			RBX::Security::Context::current().requirePermission(RBX::Security::NAMEHEREScript, "setDevTouchMovementMode");
 		} 
 		catch (RBX::base_exception& e) 
 		{
@@ -2537,7 +2537,7 @@ void Player::setDevComputerMovementMode(StarterPlayerService::DeveloperComputerM
 	if (!Players::backendProcessing(this, false) && Players::frontendProcessing(this, false))
 	{
 		try {
-			RBX::Security::Context::current().requirePermission(RBX::Security::RobloxScript, "setDevComputerMovementMode");
+			RBX::Security::Context::current().requirePermission(RBX::Security::NAMEHEREScript, "setDevComputerMovementMode");
 		} 
 		catch (RBX::base_exception& e) 
 		{

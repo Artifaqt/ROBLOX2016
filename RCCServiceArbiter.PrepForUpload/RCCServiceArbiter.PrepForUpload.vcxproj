@@ -66,36 +66,36 @@
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <PostBuildEvent>
-      <Message>Copy bits needed to upload Roblox project to UploadBits directory</Message>
+      <Message>Copy bits needed to upload NAMEHERE project to UploadBits directory</Message>
       <Command>%40echo off
 mkdir ..\UploadBits
 rmdir /s /q ..\UploadBits\$(Platform)-$(Configuration)-RCCServiceArbiter\
 mkdir ..\UploadBits\$(Platform)-$(Configuration)-RCCServiceArbiter\
-xcopy /h /e /k /q ..\Roblox.RCCServiceArbiter\bin\$(Configuration)\*.* ..\UploadBits\$(Platform)-$(Configuration)-RCCServiceArbiter\
+xcopy /h /e /k /q ..\NAMEHERE.RCCServiceArbiter\bin\$(Configuration)\*.* ..\UploadBits\$(Platform)-$(Configuration)-RCCServiceArbiter\
 
 </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
     <PostBuildEvent>
-      <Message>Copy bits needed to upload Roblox project to UploadBits directory</Message>
+      <Message>Copy bits needed to upload NAMEHERE project to UploadBits directory</Message>
       <Command>%40echo off
 mkdir ..\UploadBits
 rmdir /s /q ..\UploadBits\$(Platform)-$(Configuration)-RCCServiceArbiter\
 mkdir ..\UploadBits\$(Platform)-$(Configuration)-RCCServiceArbiter\
-xcopy /h /e /k /q ..\Roblox.RCCServiceArbiter\bin\$(Configuration)\*.* ..\UploadBits\$(Platform)-$(Configuration)-RCCServiceArbiter\
+xcopy /h /e /k /q ..\NAMEHERE.RCCServiceArbiter\bin\$(Configuration)\*.* ..\UploadBits\$(Platform)-$(Configuration)-RCCServiceArbiter\
 
 </Command>
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='NoOpt|Win32'">
     <PostBuildEvent>
-      <Message>Copy bits needed to upload Roblox project to UploadBits directory</Message>
+      <Message>Copy bits needed to upload NAMEHERE project to UploadBits directory</Message>
       <Command>%40echo off
 mkdir ..\UploadBits
 rmdir /s /q ..\UploadBits\$(Platform)-$(Configuration)-RCCServiceArbiter\
 mkdir ..\UploadBits\$(Platform)-$(Configuration)-RCCServiceArbiter\
-xcopy /h /e /k /q ..\Roblox.RCCServiceArbiter\bin\Release\*.* ..\UploadBits\$(Platform)-$(Configuration)-RCCServiceArbiter\
+xcopy /h /e /k /q ..\NAMEHERE.RCCServiceArbiter\bin\Release\*.* ..\UploadBits\$(Platform)-$(Configuration)-RCCServiceArbiter\
 
 </Command>
     </PostBuildEvent>

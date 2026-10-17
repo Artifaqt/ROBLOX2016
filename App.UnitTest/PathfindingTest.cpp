@@ -1,7 +1,7 @@
 /*
  *  MD5.cpp - boost unit test for RBX::MD5
  *
- *  Copyright 2010 ROBLOX, INC. All rights reserved.
+ *  Copyright 2010 NAMEHERE, INC. All rights reserved.
  *
  */
 

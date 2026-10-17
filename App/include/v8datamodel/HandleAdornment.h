@@ -1,6 +1,6 @@
 /**
  * HandleAdornment.h
- * Copyright (c) 2015 ROBLOX Corp. All Rights Reserved.
+ * Copyright (c) 2015 NAMEHERE Corp. All Rights Reserved.
  * Created by Tyler Berg on 3/24/2015
  */
 

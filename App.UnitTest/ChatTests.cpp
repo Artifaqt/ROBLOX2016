@@ -90,9 +90,9 @@ public:
             RBX::DataModel::LegacyLock lock(&serverDm, RBX::DataModelJob::Write);
 
             RBX::Reflection::Tuple args;
-            //serverDm.execute("game:GetService('ContentProvider'):SetBaseUrl('http://www.gametest1.robloxlabs.com')", args);
-            serverDm.execute("game.Players:SetChatFilterUrl('http://www.gametest1.robloxlabs.com/Game/ChatFilter.ashx')", args, RBX::Security::WebService);
-            ::SetBaseURL("http://www.gametest1.robloxlabs.com/");
+            //serverDm.execute("game:GetService('ContentProvider'):SetBaseUrl('http://www.gametest1.nameherelabs.com')", args);
+            serverDm.execute("game.Players:SetChatFilterUrl('http://www.gametest1.nameherelabs.com/Game/ChatFilter.ashx')", args, RBX::Security::WebService);
+            ::SetBaseURL("http://www.gametest1.nameherelabs.com/");
             serverDm->create<RBX::Network::WebChatFilter>();
         }
 
@@ -206,7 +206,7 @@ public:
 			RBX::DataModel::LegacyLock lock(&serverDm, RBX::DataModelJob::Write);
 
             RBX::Reflection::Tuple args;
-			serverDm.execute("game:GetService('ContentProvider'):SetBaseUrl('http://www.roblox.com')", args);
+			serverDm.execute("game:GetService('ContentProvider'):SetBaseUrl('http://www.namehere.com')", args);
 
 			serverDm->create<Network::Players>()->visitChildren(boost::bind(&PublicCustomFilteredChatTester::loadChatInfo, this, _1));
 		}

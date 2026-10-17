@@ -4,7 +4,7 @@
 			// Manages the vote view for the game details page
 ]]
 local CoreGui = Game:GetService("CoreGui")
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 
 local EventHub = require(Modules:FindFirstChild('EventHub'))

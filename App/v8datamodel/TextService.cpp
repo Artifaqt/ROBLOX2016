@@ -76,7 +76,7 @@ bool StringConverter<TextService::Font>::convertToValue(const std::string& text,
 	return Reflection::EnumDesc<TextService::Font>::singleton().convertToValue(text.c_str(),value);
 }
 
-static Reflection::BoundFuncDesc<TextService, Vector2(std::string, int, TextService::Font, Vector2)> func_getTextSize(&TextService::getTextSize, "GetTextSize", "string", "fontSize", "font", "frameSize", Security::RobloxScript);
+static Reflection::BoundFuncDesc<TextService, Vector2(std::string, int, TextService::Font, Vector2)> func_getTextSize(&TextService::getTextSize, "GetTextSize", "string", "fontSize", "font", "frameSize", Security::NAMEHEREScript);
 
 TextService::Font TextService::FromTextFont(Text::Font font)
 {

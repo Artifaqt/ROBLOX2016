@@ -5,7 +5,7 @@
 #include "Crypt.h"
 #include "Document.h"
 #include "DumpErrorUploader.h"
-#include "RobloxServicesTools.h"
+#include "NAMEHEREServicesTools.h"
 #include "FunctionMarshaller.h"
 #include "gui/ProfanityFilter.h"
 #include "util/FileSystem.h"
@@ -14,7 +14,7 @@
 #include "util/MD5Hasher.h"
 #include "util/SoundService.h"
 #include "util/Statistics.h"
-#include "util/RobloxGoogleAnalytics.h"
+#include "util/NAMEHEREGoogleAnalytics.h"
 #include "util/SafeToLower.h"
 #include "rbx/ProcessPerfCounter.h"
 #include "rbx/Tasks/Coordinator.h"
@@ -42,7 +42,7 @@
 #include "util/ProgramMemoryChecker.h"
 #include "script/LuaVM.h"
 #include "functionHooks.h"
-#include "robloxHooks.h"
+#include "namehereHooks.h"
 #include "GameVerbs.h"
 #include "v8datamodel/GuiService.h"
 #include "v8datamodel/TeleportService.h"
@@ -56,7 +56,7 @@
 
 #include "rbx/Profiler.h"
 
-LOGGROUP(RobloxWndInit)
+LOGGROUP(NAMEHEREWndInit)
 LOGGROUP(Network)
 FASTFLAGVARIABLE(ReloadSettingsOnTeleport, false)
 FASTFLAG(GoogleAnalyticsTrackingEnabled)
@@ -77,7 +77,7 @@ FASTFLAG(PlaceLauncherUsePOST)
 namespace RBX {
 
 Application::Application()
-	: logManager("Roblox", ".Client.dmp", ".Client.crashevent")
+	: logManager("NAMEHERE", ".Client.dmp", ".Client.crashevent")
 	, crashReportEnabled(true)
 	, hideChat(false)
 	, mapFileForWnd(NULL)
@@ -295,16 +295,16 @@ bool Application::requestPlaceInfo(int placeId, std::string& authenticationUrl, 
 void Application::InferredCrashReportingThreadImpl()
 {
 	int crash = 0;
-	if (RBX::RegistryUtil::read32bitNumber("HKEY_CURRENT_USER\\Software\\ROBLOX Corporation\\Roblox\\InferredCrash", crash)) 
+	if (RBX::RegistryUtil::read32bitNumber("HKEY_CURRENT_USER\\Software\\NAMEHERE Corporation\\NAMEHERE\\InferredCrash", crash)) 
 	{
 		// We did not had a clean exit last time, report a crash
 		RBX::Analytics::InfluxDb::Points points;
 		points.addPoint("Session" , crash ? "Crash" : "Success" );
-		points.report("Windows-RobloxPlayer-SessionReport-Inferred", FInt::InferredCrashReportingHundredthsPercentage);
-		RBX::Analytics::EphemeralCounter::reportCounter(crash ? "Windows-ROBLOXPlayer-Session-Inferred-Crash" : "Windows-ROBLOXPlayer-Session-Inferred-Success", 1, true);
+		points.report("Windows-NAMEHEREPlayer-SessionReport-Inferred", FInt::InferredCrashReportingHundredthsPercentage);
+		RBX::Analytics::EphemeralCounter::reportCounter(crash ? "Windows-NAMEHEREPlayer-Session-Inferred-Crash" : "Windows-NAMEHEREPlayer-Session-Inferred-Success", 1, true);
 	}
 	
-	RBX::RegistryUtil::write32bitNumber("HKEY_CURRENT_USER\\Software\\ROBLOX Corporation\\Roblox\\InferredCrash", 1);
+	RBX::RegistryUtil::write32bitNumber("HKEY_CURRENT_USER\\Software\\NAMEHERE Corporation\\NAMEHERE\\InferredCrash", 1);
 }
 
 void Application::LaunchPlaceThreadImpl(const std::string& placeLauncherUrl)
@@ -428,8 +428,8 @@ void Application::UploadSessionLogs()
 			"Warning", MB_OK | MB_ICONWARNING);
 	} else {
 		MessageBoxA(mainWindow, 
-			"Logfiles will be uploaded next time you start Roblox. Please restart roblox now.", 
-			"ROBLOX", MB_OK);
+			"Logfiles will be uploaded next time you start NAMEHERE. Please restart namehere now.", 
+			"NAMEHERE", MB_OK);
 	}
 }
 
@@ -438,7 +438,7 @@ void Application::OnHelp()
 	if (!DFFlag::DontOpenWikiOnClient) 
 	{
 		ShellExecute(mainWindow, "open", "rundll32.exe", 
-			"url.dll,FileProtocolHandler http://wiki.roblox.com", NULL, SW_SHOWDEFAULT);
+			"url.dll,FileProtocolHandler http://wiki.namehere.com", NULL, SW_SHOWDEFAULT);
 	}
 }
 
@@ -479,7 +479,7 @@ void Application::shareHwnd(HWND hWnd)
 	mapFileForWnd = CreateFileMapping(INVALID_HANDLE_VALUE, NULL, PAGE_READWRITE, 0, sizeof(hWnd), mainWndStorageName);
 	if (mapFileForWnd != NULL) 
 	{
-		FASTLOG1(FLog::RobloxWndInit, "CMainFrame::ShareHwnd wnd=%d", hWnd);
+		FASTLOG1(FLog::NAMEHEREWndInit, "CMainFrame::ShareHwnd wnd=%d", hWnd);
 		bufForWnd = (LPTSTR)MapViewOfFile(mapFileForWnd, FILE_MAP_ALL_ACCESS, 0, 0, sizeof(hWnd));
 	}
 
@@ -497,7 +497,7 @@ static void doMachineIdCheck(Application* app, FunctionMarshaller* marshaller, H
 		marshaller->Execute(boost::bind(&Application::AboutToShutdown, app));
 		marshaller->Execute(boost::bind(&Application::Shutdown, app));
 		
-		MessageBoxA(hWnd, MachineIdUploader::kBannedMachineMessage, "ROBLOX", MB_OK);
+		MessageBoxA(hWnd, MachineIdUploader::kBannedMachineMessage, "NAMEHERE", MB_OK);
 		PostMessage(hWnd, WM_CLOSE, 0, 0);
 	}
 }
@@ -638,7 +638,7 @@ bool Application::Initialize(HWND hWnd, HINSTANCE hInstance)
 		RBX::GlobalAdvancedSettings::singleton()->loadState("");
 
 	{
-		RBX::Security::Impersonator impersonate(RBX::Security::RobloxGameScript_);
+		RBX::Security::Impersonator impersonate(RBX::Security::NAMEHEREGameScript_);
 		RBX::GlobalBasicSettings::singleton()->loadState(globalBasicSettingsPath);
 	}
 
@@ -691,15 +691,15 @@ bool Application::Initialize(HWND hWnd, HINSTANCE hInstance)
 		// initialize google analytics
 		if (FFlag::GoogleAnalyticsTrackingEnabled && (lottery < RBX::ClientAppSettings::singleton().GetValueGoogleAnalyticsLoadPlayer()))
 		{
-			RBX::RobloxGoogleAnalytics::setCanUseAnalytics();
+			RBX::NAMEHEREGoogleAnalytics::setCanUseAnalytics();
 
-			RBX::RobloxGoogleAnalytics::init(RBX::ClientAppSettings::singleton().GetValueGoogleAnalyticsAccountPropertyIDPlayer(),
+			RBX::NAMEHEREGoogleAnalytics::init(RBX::ClientAppSettings::singleton().GetValueGoogleAnalyticsAccountPropertyIDPlayer(),
 				RBX::ClientAppSettings::singleton().GetValueGoogleAnalyticsThreadPoolMaxScheduleSize());
 		}
 	}
 
-	RobloxGoogleAnalytics::trackUserTiming(GA_CATEGORY_GAME, GA_CLIENT_START, baseInitTime, "Base Init");
-	RobloxGoogleAnalytics::trackUserTiming(GA_CATEGORY_GAME, GA_CLIENT_START, Time::nowFast().timestampSeconds() * 1000, "Load ClientAppSettings");
+	NAMEHEREGoogleAnalytics::trackUserTiming(GA_CATEGORY_GAME, GA_CLIENT_START, baseInitTime, "Base Init");
+	NAMEHEREGoogleAnalytics::trackUserTiming(GA_CATEGORY_GAME, GA_CLIENT_START, Time::nowFast().timestampSeconds() * 1000, "Load ClientAppSettings");
 	analyticsPoints.addPoint("SettingsLoaded", Time::nowFastSec());
 
 	TCHAR strProfile[MAX_PATH];
@@ -707,7 +707,7 @@ bool Application::Initialize(HWND hWnd, HINSTANCE hInstance)
 
 	RBX::postMachineConfiguration(GetBaseURL().c_str(), atoi(strProfile));
 
-	RobloxGoogleAnalytics::trackUserTiming(GA_CATEGORY_GAME, GA_CLIENT_START, Time::nowFast().timestampSeconds() * 1000, "Post machine info");
+	NAMEHEREGoogleAnalytics::trackUserTiming(GA_CATEGORY_GAME, GA_CLIENT_START, Time::nowFast().timestampSeconds() * 1000, "Post machine info");
 
     TaskScheduler::singleton().add( shared_ptr<TaskScheduler::Job>( new VerifyConnectionJob() ) );
 
@@ -746,16 +746,16 @@ bool Application::Initialize(HWND hWnd, HINSTANCE hInstance)
     // and after the document has been completely set up by StartNewGame
     boost::thread t(boost::bind(&doMachineIdCheck, this, marshaller, hWnd));
 
-	RobloxGoogleAnalytics::trackUserTiming(GA_CATEGORY_GAME, GA_CLIENT_START, Time::nowFast().timestampSeconds() * 1000, "Game started");
+	NAMEHEREGoogleAnalytics::trackUserTiming(GA_CATEGORY_GAME, GA_CLIENT_START, Time::nowFast().timestampSeconds() * 1000, "Game started");
 
 	// delay setting started event if in protocol handler mode, bootstrapper dialog needs to stay up until this window is shown
 	if (!scriptIsPlaceLauncher)
 	{
 		// Bootstrapper will wait for this event, to make sure that app was started
-		ATL::CEvent robloxStartedEvent;
-		if (robloxStartedEvent.Open(EVENT_MODIFY_STATE, FALSE, "www.roblox.com/robloxStartedEvent"))
+		ATL::CEvent namehereStartedEvent;
+		if (namehereStartedEvent.Open(EVENT_MODIFY_STATE, FALSE, "www.namehere.com/namehereStartedEvent"))
 		{
-			robloxStartedEvent.Set();
+			namehereStartedEvent.Set();
 		}
 	}
 
@@ -806,7 +806,7 @@ bool Application::LoadAppSettings(HINSTANCE hInstance)
 
 		// Crash reporting.  Can be set in the registry but not AppSettings
 		CRegKey key;
-		bool validRegKey = (key.Open(HKEY_CURRENT_USER, "Software\\ROBLOX Corporation\\Roblox", KEY_READ) == ERROR_SUCCESS);
+		bool validRegKey = (key.Open(HKEY_CURRENT_USER, "Software\\NAMEHERE Corporation\\NAMEHERE", KEY_READ) == ERROR_SUCCESS);
 		if (validRegKey)
 		{
 			DWORD value = TRUE;
@@ -837,7 +837,7 @@ bool Application::LoadAppSettings(HINSTANCE hInstance)
 				}
 			}
 		}
-		RobloxCrashReporter::silent = (valSilentCrashReport != 0);
+		NAMEHERECrashReporter::silent = (valSilentCrashReport != 0);
 
 		// BaseURL
 		const XmlElement* xmlBaseUrl = root->findFirstChildByTag(tagBaseUrl);
@@ -940,7 +940,7 @@ void Application::Shutdown()
 		FunctionMarshaller::ReleaseWindow(marshaller);
 	}
 
-	RBX::RegistryUtil::write32bitNumber("HKEY_CURRENT_USER\\Software\\ROBLOX Corporation\\Roblox\\InferredCrash", 0);
+	RBX::RegistryUtil::write32bitNumber("HKEY_CURRENT_USER\\Software\\NAMEHERE Corporation\\NAMEHERE\\InferredCrash", 0);
 
 }
 
@@ -971,8 +971,8 @@ bool Application::ParseArguments(const char* argv)
 			("fast", "uses fast startup path")
 
 			#if defined(LOVE_ALL_ACCESS) || defined(_DEBUG) || defined(_NOOPT)
-			("userName", po::value<std::string>(), "Your Roblox UserName")
-			("passWord", po::value<std::string>(), "Your Roblox Password")
+			("userName", po::value<std::string>(), "Your NAMEHERE UserName")
+			("passWord", po::value<std::string>(), "Your NAMEHERE Password")
 			("md5", po::value<std::string>(), 
 			"md5 hash to spoof (debug build only)")
 			#endif // defined(LOVE_ALL_ACCESS) || defined(_DEBUG) || defined(_NOOPT)
@@ -985,7 +985,7 @@ bool Application::ParseArguments(const char* argv)
 		{
 			std::basic_stringstream<char> options;
 			desc.print(options);
-			MessageBoxA(NULL, options.str().c_str(), "Roblox", MB_OK);
+			MessageBoxA(NULL, options.str().c_str(), "NAMEHERE", MB_OK);
 			return false;
 		}
 
@@ -1141,7 +1141,7 @@ void Application::uploadCrashData(bool userRequested)
 		// Only produce a popup if the user explicitly requested this behavior
 		if (userRequested) {
 			MessageBoxA(mainWindow, 
-				"Feature not available in offline mode.\nPlease check internet connection and restart Roblox.",
+				"Feature not available in offline mode.\nPlease check internet connection and restart NAMEHERE.",
 				"Error", MB_ICONSTOP | MB_OK);
 		}
 		return;
@@ -1158,7 +1158,7 @@ void Application::uploadCrashData(bool userRequested)
 				const int MAX_LOADSTRING = 400;
 				TCHAR message[MAX_LOADSTRING];
 				LoadString(GetModuleHandle(NULL), IDS_ERROR_REPORT_PROMPT, message, MAX_LOADSTRING);
-				if (MessageBoxA(mainWindow, message, "ROBLOX", MB_YESNO)==IDYES)
+				if (MessageBoxA(mainWindow, message, "NAMEHERE", MB_YESNO)==IDYES)
 					dumpErrorUploader->Upload(dmpHandlerUrl);
 				else
 					logManager.gatherCrashLogs();
@@ -1176,18 +1176,18 @@ void Application::handleError(const std::exception& e)
 	message.append("\n");
 	OutputDebugString(message.c_str());
 	LogManager::ReportException(e);
-	if (!RobloxCrashReporter::silent) {
-		MessageBoxA(NULL, e.what(), "Roblox", MB_OK | MB_ICONSTOP);
+	if (!NAMEHERECrashReporter::silent) {
+		MessageBoxA(NULL, e.what(), "NAMEHERE", MB_OK | MB_ICONSTOP);
 	}
 }
 
 void Application::waitForNewPlayerProcess(HWND hWnd)
 {
-	static const char kPreventMultipleRobloxPlayersEventName[] = "ROBLOX_singletonEvent";
-	static const char kPreventMultipleRobloxPlayersMutexName[] = "ROBLOX_singletonMutex";
+	static const char kPreventMultipleNAMEHEREPlayersEventName[] = "NAMEHERE_singletonEvent";
+	static const char kPreventMultipleNAMEHEREPlayersMutexName[] = "NAMEHERE_singletonMutex";
 
 	// Create (or open if already created) named event
-	HANDLE event = CreateEventA(NULL, FALSE, FALSE, kPreventMultipleRobloxPlayersEventName);
+	HANDLE event = CreateEventA(NULL, FALSE, FALSE, kPreventMultipleNAMEHEREPlayersEventName);
 
 	// If we cannot create or open the event for some reason we should still run
 	// the process
@@ -1200,7 +1200,7 @@ void Application::waitForNewPlayerProcess(HWND hWnd)
 
 	// Create a mutex to assure we don't have multiple concurrent waits on the
 	// event
-	HANDLE mutex = CreateMutexA(NULL, TRUE, kPreventMultipleRobloxPlayersMutexName);
+	HANDLE mutex = CreateMutexA(NULL, TRUE, kPreventMultipleNAMEHEREPlayersMutexName);
 	if (NULL == mutex) {
 		LogManager::ReportEvent(EVENTLOG_ERROR_TYPE, 
 			RBX::format("Failure creating named (preventing multiple simultaneous processes), "
@@ -1274,10 +1274,10 @@ void Application::waitForShowWindow(int delay)
 			}
 
 			if (waitResult == WAIT_FAILED) {
-				FASTLOG2(FLog::RobloxWndInit, "Waiting for show window (video preroll) is done with ERROR, "
+				FASTLOG2(FLog::NAMEHEREWndInit, "Waiting for show window (video preroll) is done with ERROR, "
 					"wait result is = 0x%X, ERROR = 0x%X", waitResult, GetLastError());
 			} else {
-				FASTLOG1(FLog::RobloxWndInit, 
+				FASTLOG1(FLog::NAMEHEREWndInit, 
 					"Waiting for show window (video preroll) is done and wait result is = 0x%X", waitResult);
 			}
 
@@ -1298,10 +1298,10 @@ void Application::waitForShowWindow(int delay)
 			mainView->ShowWindow();
 
 		// Bootstrapper will wait for this event, to make sure that app was started
-		ATL::CEvent robloxStartedEvent;
-		if (robloxStartedEvent.Open(EVENT_MODIFY_STATE, FALSE, "www.roblox.com/robloxStartedEvent"))
+		ATL::CEvent namehereStartedEvent;
+		if (namehereStartedEvent.Open(EVENT_MODIFY_STATE, FALSE, "www.namehere.com/namehereStartedEvent"))
 		{
-			robloxStartedEvent.Set();
+			namehereStartedEvent.Set();
 		}
 	}
 }
@@ -1309,7 +1309,7 @@ void Application::waitForShowWindow(int delay)
 void Application::validateBootstrapperVersion()
 {
 	boost::filesystem::path dir = RBX::FileSystem::getUserDirectory(false, RBX::DirExe);
-	boost::filesystem::path launcherName = "RobloxPlayerLauncher.exe";
+	boost::filesystem::path launcherName = "NAMEHEREPlayerLauncher.exe";
 	boost::filesystem::path launcherPath = dir / launcherName;
 
 	CVersionInfo vi;
@@ -1338,7 +1338,7 @@ void Application::validateBootstrapperVersion()
 			if (pos == std::string::npos)
 				return;
 
-			// from www.roblox.com or www.gametest1.robloxlabs.com to setup.roblox.com or setup.gametest1.robloxlabs.com, etc...
+			// from www.namehere.com or www.gametest1.nameherelabs.com to setup.namehere.com or setup.gametest1.nameherelabs.com, etc...
 			installHost = "http://setup" + baseUrl.substr(pos+3);
 
 			{
@@ -1385,17 +1385,17 @@ void Application::validateBootstrapperVersion()
 		catch (boost::filesystem::filesystem_error& e)
 		{
 			StandardOut::singleton()->printf(MESSAGE_INFO, "validateBootstrapperVersion File Error: %s (%d)", e.what(), e.code().value());
-			RobloxGoogleAnalytics::trackEventWithoutThrottling(GA_CATEGORY_ERROR, "ValidateBootstrapperVersion File Error", e.what());
+			NAMEHEREGoogleAnalytics::trackEventWithoutThrottling(GA_CATEGORY_ERROR, "ValidateBootstrapperVersion File Error", e.what());
 		}
 		catch (RBX::base_exception& e)
 		{
 			StandardOut::singleton()->printf(MESSAGE_INFO, "validateBootstrapperVersion Error: %s", e.what());
-			RobloxGoogleAnalytics::trackEventWithoutThrottling(GA_CATEGORY_ERROR, "ValidateBootstrapperVersion Error", e.what());
+			NAMEHEREGoogleAnalytics::trackEventWithoutThrottling(GA_CATEGORY_ERROR, "ValidateBootstrapperVersion Error", e.what());
 		}
 
 	}
 	else
-		RobloxGoogleAnalytics::trackEventWithoutThrottling(GA_CATEGORY_ERROR, "ValidateBootstrapperVersion Fail Loading Version Info", launcherPath.string().c_str());
+		NAMEHEREGoogleAnalytics::trackEventWithoutThrottling(GA_CATEGORY_ERROR, "ValidateBootstrapperVersion Fail Loading Version Info", launcherPath.string().c_str());
 }
 
 void Application::onMessageOut(const StandardOutMessage& message)
@@ -1552,7 +1552,7 @@ void Application::doOpenUrl(const std::string url)
 	if (HWND dialog = webView->Create( mainWindow, SW_SHOWNORMAL))
 		::ShowWindowAsync(dialog, SW_SHOWNORMAL);
 	else
-		MessageBox( mainWindow, "There was a problem opening the in-game browser.", "Roblox", MB_OK | MB_ICONSTOP);
+		MessageBox( mainWindow, "There was a problem opening the in-game browser.", "NAMEHERE", MB_OK | MB_ICONSTOP);
 }
 
 void Application::openUrlInBrowserApp(const std::string url)

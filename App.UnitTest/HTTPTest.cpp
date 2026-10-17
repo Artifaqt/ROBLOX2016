@@ -3,7 +3,7 @@
  *  MacClient
  *
  *  Created by Rick Kimball on 12/7/10.
- *  Copyright 2010 Roblox Inc. All rights reserved.
+ *  Copyright 2010 NAMEHERE Inc. All rights reserved.
  *
  */
 #include "FastLog.h"
@@ -100,20 +100,20 @@ BOOST_AUTO_TEST_CASE(HTTP_SYNC_GET_TESTS)
 	{
 		// Make a synchronous get request expecting data
 		{
-			RBX::Http a(guidify("http://www.roblox.com/Info/EULA.htm"));
+			RBX::Http a(guidify("http://www.namehere.com/Info/EULA.htm"));
 			RBX_TEST_WITH_TIMEOUT(boost::bind(&testGet, boost::ref(a), false), RBX::Time::Interval(10));
-			RBX::Http b(guidify("http://www.roblox.com/Info/EULA.htm"), RBX::Http::WinHttp);
+			RBX::Http b(guidify("http://www.namehere.com/Info/EULA.htm"), RBX::Http::WinHttp);
 			RBX_TEST_WITH_TIMEOUT(boost::bind(&testGet, boost::ref(b), false), RBX::Time::Interval(10));
-			RBX::Http c(guidify("http://www.roblox.com/Info/EULA.htm"), RBX::Http::WinInet);
+			RBX::Http c(guidify("http://www.namehere.com/Info/EULA.htm"), RBX::Http::WinInet);
 			RBX_TEST_WITH_TIMEOUT(boost::bind(&testGet, boost::ref(c), false), RBX::Time::Interval(10));
 		}
 	
 		{
-			RBX::Http a(guidify("http://blahblah.roblox.com/this_should_fail.php"));
+			RBX::Http a(guidify("http://blahblah.namehere.com/this_should_fail.php"));
 			RBX_TEST_WITH_TIMEOUT(boost::bind(&testGetFailure, boost::ref(a), false), RBX::Time::Interval(10));
-			RBX::Http b(guidify("http://blahblah.roblox.com/this_should_fail.php"), RBX::Http::WinHttp);
+			RBX::Http b(guidify("http://blahblah.namehere.com/this_should_fail.php"), RBX::Http::WinHttp);
 			RBX_TEST_WITH_TIMEOUT(boost::bind(&testGetFailure, boost::ref(b), false), RBX::Time::Interval(10));
-			RBX::Http c(guidify("http://blahblah.roblox.com/this_should_fail.php"), RBX::Http::WinInet);
+			RBX::Http c(guidify("http://blahblah.namehere.com/this_should_fail.php"), RBX::Http::WinInet);
 			RBX_TEST_WITH_TIMEOUT(boost::bind(&testGetFailure, boost::ref(c), false), RBX::Time::Interval(10));
 		}
 		
@@ -163,7 +163,7 @@ static void doHTTP_SYNC_POST_TESTS()
 
 	formdata << "";
 
-	std::string url = "https://games.api.sitetest1.robloxlabs.com/";
+	std::string url = "https://games.api.sitetest1.nameherelabs.com/";
 	RBX::Http postrequest1a(url);
 	std::string response1a;
 	postrequest1a.post(formdata, RBX::Http::kContentTypeApplicationJson, false, response1a);
@@ -200,7 +200,7 @@ BOOST_AUTO_TEST_CASE(API_PROXY_HTTP_SYNC_GET_TESTS)
 	RBX::DataModel::LegacyLock l(&dm, RBX::DataModelJob::Write);
 
 	RBX::Reflection::Tuple args;
-	dm.execute("game:GetService('ContentProvider'):SetBaseUrl('http://www.roblox.com/')", args);
+	dm.execute("game:GetService('ContentProvider'):SetBaseUrl('http://www.namehere.com/')", args);
 
 	NetworkFixture::startServer(dm);
 	RBX::HttpRbxApiService* apiService = RBX::ServiceProvider::create<RBX::HttpRbxApiService>(&dm);
@@ -233,7 +233,7 @@ BOOST_AUTO_TEST_CASE(API_PROXY_HTTP_ASYNC_GET_TESTS)
 	RBX::DataModel::LegacyLock l(&dm, RBX::DataModelJob::Write);
 
 	RBX::Reflection::Tuple args;
-	dm.execute("game:GetService('ContentProvider'):SetBaseUrl('http://www.roblox.com/')", args);
+	dm.execute("game:GetService('ContentProvider'):SetBaseUrl('http://www.namehere.com/')", args);
 
 	NetworkFixture::startServer(dm);
 	RBX::HttpRbxApiService* apiService = RBX::ServiceProvider::create<RBX::HttpRbxApiService>(&dm);
@@ -252,7 +252,7 @@ BOOST_AUTO_TEST_CASE(API_PROXY_HTTP_ASYNC_POST_TESTS)
 	RBX::DataModel::LegacyLock l(&dm, RBX::DataModelJob::Write);
 
 	RBX::Reflection::Tuple args;
-	dm.execute("game:GetService('ContentProvider'):SetBaseUrl('http://games.www.sitetest1.robloxlabs.com/')", args);
+	dm.execute("game:GetService('ContentProvider'):SetBaseUrl('http://games.www.sitetest1.nameherelabs.com/')", args);
 
 	RBX::HttpRbxApiService* apiService = RBX::ServiceProvider::create<RBX::HttpRbxApiService>(&dm);
 	RBX::ContentProvider* cp = RBX::ServiceProvider::create<RBX::ContentProvider>(&dm);

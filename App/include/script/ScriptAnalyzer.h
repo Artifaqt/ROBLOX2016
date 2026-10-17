@@ -15,7 +15,7 @@ namespace RBX
 
     namespace ScriptAnalyzer
     {
-        // Don't change codes for the existing warnings - they have a corresponding wiki anchor tag in http://wiki.roblox.com/index.php?title=Script_Analysis
+        // Don't change codes for the existing warnings - they have a corresponding wiki anchor tag in http://wiki.namehere.com/index.php?title=Script_Analysis
         enum WarningCode
 		{
             Warning_Unknown = 0,

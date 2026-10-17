@@ -1,6 +1,6 @@
 #include "../sg.h"
 
-// ROBLOX change
+// NAMEHERE change
 #if (SG_CURRENT_PLATFORM!=SG_PLATFORM_IOS)
    sgFloat eps_d = 1.e-5, eps_n = 1.e-3;    //  if sgFloat = double
 #else
@@ -208,7 +208,7 @@ void  define_eps(lpD_POINT min,lpD_POINT max)
   if (x < fabs(max->y)) x=fabs(max->y);
   if (x < fabs(max->z)) x=fabs(max->z);
 
-  // ROBLOX change
+  // NAMEHERE change
   #if (SG_CURRENT_PLATFORM!=SG_PLATFORM_IOS)
      eps_d = x * 1.e-5;    //   if sgFloat = double
   #else

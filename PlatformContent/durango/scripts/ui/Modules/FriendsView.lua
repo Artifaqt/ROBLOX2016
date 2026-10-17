@@ -8,7 +8,7 @@
 				Connect selected/deselected to change color
 ]]
 local CoreGui = Game:GetService("CoreGui")
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 local PlatformService = nil
 pcall(function() PlatformService = game:GetService('PlatformService') end)
@@ -47,7 +47,7 @@ local function setPresenceData(item, data)
 		item:SetNameText(data.Name)
 		item:SetPresence(data.LastLocation, data.PlaceId ~= nil)
 	elseif UserInputService:GetPlatform() == Enum.Platform.XBoxOne then
-		local rbxuid = data["robloxuid"]
+		local rbxuid = data["namehereuid"]
 		item:SetAvatarImage(rbxuid)
 		item:SetNameText(data["display"])
 		if data["PlaceId"] and data["LastLocation"] then
@@ -88,7 +88,7 @@ local createFriendsView = function(viewGridContainer, friendsData, sizeConstrain
 				local inGame = data["PlaceId"] ~= nil
 				if inGame and not data["IsPrivateSession"] then
 					SideBar:AddItem(SIDE_BAR_ITEMS.JoinGame, function()
-						GameJoinModule:StartGame(GameJoinModule.JoinType.Follow, data["robloxuid"])
+						GameJoinModule:StartGame(GameJoinModule.JoinType.Follow, data["namehereuid"])
 					end)
 					SideBar:AddItem(SIDE_BAR_ITEMS.ViewDetails, function()
 						-- pass nil for iconId, gameDetail will fetch
@@ -118,7 +118,7 @@ local createFriendsView = function(viewGridContainer, friendsData, sizeConstrain
 	for i = 1, count do
 		local data = friendsData[i]
 		if data then
-			local idStr = tostring(data.UserId or data["robloxuid"])
+			local idStr = tostring(data.UserId or data["namehereuid"])
 			local presenceItem = FriendPresenceItem(UDim2.new(0, 446, 0, 114), idStr)
 			presenceItems[idStr] = presenceItem
 			presenceItemToData[presenceItem] = data
@@ -155,7 +155,7 @@ local createFriendsView = function(viewGridContainer, friendsData, sizeConstrain
 		for i = 1, size do
 			local data = newFriendsData[i]
 			if data then
-				local idStr = tostring(data.UserId or data["robloxuid"])
+				local idStr = tostring(data.UserId or data["namehereuid"])
 				local presenceItem = presenceItems[idStr]
 				if not presenceItem then
 					presenceItem = FriendPresenceItem(UDim2.new(0, 446, 0, 114), idStr)

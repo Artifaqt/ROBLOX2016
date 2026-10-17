@@ -193,7 +193,7 @@
       </PrecompiledHeader>
     </ClCompile>
     <ClCompile Include="..\..\ClientShared\InfluxDbHelper.cpp" />
-    <ClCompile Include="..\..\ClientShared\RobloxServicesTools.cpp" />
+    <ClCompile Include="..\..\ClientShared\NAMEHEREServicesTools.cpp" />
     <ClCompile Include="..\..\ClientShared\StringConv.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
       </PrecompiledHeader>
@@ -233,7 +233,7 @@
     <ClCompile Include="ProgressDialog.cpp" />
     <ClCompile Include="SharedHelpers.cpp" />
     <ClCompile Include="ShutdownDialog.cpp" />
-    <ClCompile Include="ShutdownRobloxApp.cpp" />
+    <ClCompile Include="ShutdownNAMEHEREApp.cpp" />
     <ClCompile Include="stdafx.cpp">
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
@@ -426,13 +426,13 @@
     <None Include="..\..\Library\cabsdk\BIN\CABINET.DLL" />
     <None Include="..\..\Library\cabsdk\BIN\EXTRACT.EXE" />
     <None Include="..\..\Library\cabsdk\BIN\MAKECAB.EXE" />
-    <None Include="Roblox.inf" />
+    <None Include="NAMEHERE.inf" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\ClientShared\CookiesEngine.h" />
     <ClInclude Include="..\..\ClientShared\format_string.h" />
     <ClInclude Include="..\..\ClientShared\InfluxDbHelper.h" />
-    <ClInclude Include="..\..\ClientShared\RobloxServicesTools.h" />
+    <ClInclude Include="..\..\ClientShared\NAMEHEREServicesTools.h" />
     <ClInclude Include="..\..\ClientShared\StringConv.h" />
     <ClInclude Include="..\..\Win\ProcessInformation.h" />
     <ClInclude Include="..\..\Win\VersionInfo.h" />
@@ -453,7 +453,7 @@
     <ClInclude Include="Resource.h" />
     <ClInclude Include="SharedHelpers.h" />
     <ClInclude Include="ShutdownDialog.h" />
-    <ClInclude Include="ShutdownRobloxApp.h" />
+    <ClInclude Include="ShutdownNAMEHEREApp.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="targetver.h" />
     <ClInclude Include="TaskDialog.h" />

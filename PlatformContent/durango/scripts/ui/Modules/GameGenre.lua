@@ -6,7 +6,7 @@
 				Clean up code
 ]]
 local CoreGui = Game:GetService("CoreGui")
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 local ContextActionService = game:GetService("ContextActionService")
 local GuiService = game:GetService('GuiService')
@@ -190,7 +190,7 @@ local function CreateGameGenre(sortName, gameCollection)
 		Position = UDim2.new(0, SeparatorDot.Position.X.Offset + SeparatorDot.Size.X.Offset + 32, 0,
 			SeparatorDot.Position.Y.Offset + SeparatorDot.Size.Y.Offset/2 - 2 - 10);
 		BackgroundTransparency = 1;
-		Image = 'rbxasset://textures/ui/Shell/Icons/RobloxIcon24.png';
+		Image = 'rbxasset://textures/ui/Shell/Icons/NAMEHEREIcon24.png';
 		Visible = false;
 		Parent = GameGenreContainer;
 	}

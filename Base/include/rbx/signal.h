@@ -46,7 +46,7 @@ namespace rbx
 			This signal class is similar to boost::signal, but with a few
 			important differences. First, it doesn't implement nearly as
 			much functionality as boost's. It merely implements those 
-			portions that Roblox uses.
+			portions that NAMEHERE uses.
 			The big advantage to this implementation is its (limited) thread
 			safety. Any thread is allowed to connect new slots to this
 			signal and also disconnect them at any time. The firing of a signal 

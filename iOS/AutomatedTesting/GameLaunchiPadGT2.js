@@ -52,7 +52,7 @@ target.logElementTree();
 
 //Select test environment
 
-wheel.selectValue("http://www.gametest2.robloxlabs.com/"); //selecting test environment
+wheel.selectValue("http://www.gametest2.nameherelabs.com/"); //selecting test environment
 
 UIALogger.logMessage("Test Environment: " + wheel.value()); //log current selected environment
 

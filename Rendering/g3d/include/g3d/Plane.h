@@ -32,12 +32,12 @@ private:
     /**
      Assumes the normal has unit length.
      */
-// ROBLOX
+// NAMEHERE
 public:
 // =====
 	Plane(const Vector3& n, float d) : _normal(n), _distance(d) {
     }
-//ROBLOX
+//NAMEHERE
 //public:
 // =====
     Plane() : _normal(Vector3::unitY()), _distance(0) {
@@ -69,7 +69,7 @@ public:
 
     static Plane fromEquation(float a, float b, float c, float d);
 
-	// ROBLOX
+	// NAMEHERE
 	bool operator ==(const Plane& other) const {
 		return (	(_normal == other._normal)
 				&&	(_distance == other._distance)	);
@@ -79,7 +79,7 @@ public:
 
     virtual ~Plane() {}
 
-//ROBLOX
+//NAMEHERE
 #if 0
     /**
      Returns true if point is on the side the normal points to or 
@@ -138,7 +138,7 @@ public:
 		return _normal;
 	}
 	
-	// ROBLOX
+	// NAMEHERE
 	inline float distance() const { 
 		return _distance;
 	}

@@ -38,7 +38,7 @@
 #include "GfxBase/FrameRateManager.h"
 #include "util/Profiling.h"
 #include "util/IMetric.h"
-#include "util/RobloxGoogleAnalytics.h"
+#include "util/NAMEHEREGoogleAnalytics.h"
 
 #include "TextureManager.h"
 #include "AdornRender.h"
@@ -413,7 +413,7 @@ void RenderView::sendFeatureLevelStats()
     if (visualEngine.get() && visualEngine.get()->getDevice())
     {
         std::string osAndFeatureLvl = SystemUtil::osPlatform() + " " + visualEngine.get()->getDevice()->getFeatureLevel();
-        RBX::RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "GraphicsFeatureLevel", osAndFeatureLvl.c_str());
+        RBX::NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "GraphicsFeatureLevel", osAndFeatureLvl.c_str());
     }
 }
 
@@ -535,7 +535,7 @@ static void reportVRUsage(int placeId)
 {
 	std::string placeIdStr = format("%d", placeId);
 
-	RobloxGoogleAnalytics::trackEventWithoutThrottling(GA_CATEGORY_GAME, "VR", placeIdStr.c_str());
+	NAMEHEREGoogleAnalytics::trackEventWithoutThrottling(GA_CATEGORY_GAME, "VR", placeIdStr.c_str());
 }
 
 void RenderView::updateVR()
@@ -1730,7 +1730,7 @@ void RenderView::renderThumb(unsigned char* data, int width, int height, bool cr
 }
 
 //
-//	Write render target to file, using user picture folder\Roblox 
+//	Write render target to file, using user picture folder\NAMEHERE 
 //
 bool RenderView::saveScreenshotToFile(std::string& /*output*/ filename)
 {
@@ -1747,7 +1747,7 @@ bool RenderView::saveScreenshotToFile(std::string& /*output*/ filename)
         struct tm* pTime = localtime(&ctTime);
 
         std::ostringstream name;
-        name << "RobloxScreenShot";
+        name << "NAMEHEREScreenShot";
         name << std::setw(2) << std::setfill('0') << (pTime->tm_mon + 1)
             << std::setw(2) << std::setfill('0') << pTime->tm_mday
             << std::setw(2) << std::setfill('0') << (pTime->tm_year + 1900)

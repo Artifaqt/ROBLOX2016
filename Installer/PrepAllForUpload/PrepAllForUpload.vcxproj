@@ -151,11 +151,11 @@
       <Project>{2d9bff1d-bdef-4dd9-82a3-85c1d96ddd37}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\NPRobloxProxy.PrepForUpload\NPRobloxProxy.PrepForUpload.vcxproj">
+    <ProjectReference Include="..\NPNAMEHEREProxy.PrepForUpload\NPNAMEHEREProxy.PrepForUpload.vcxproj">
       <Project>{843cf3f6-14ea-4d45-a660-dcc8348cd4b3}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>
-    <ProjectReference Include="..\RobloxProxy.PrepForUpload\RobloxProxy.PrepForUpload.vcxproj">
+    <ProjectReference Include="..\NAMEHEREProxy.PrepForUpload\NAMEHEREProxy.PrepForUpload.vcxproj">
       <Project>{62f169a2-3326-4e3c-97c2-b56b43bb6828}</Project>
       <ReferenceOutputAssembly>false</ReferenceOutputAssembly>
     </ProjectReference>

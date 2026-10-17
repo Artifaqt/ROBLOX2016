@@ -1,4 +1,4 @@
-/* Copyright 2003-2007 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2007 NAMEHERE Corporation, All Rights Reserved */
 #include "stdafx.h"
 
 #undef min
@@ -193,7 +193,7 @@ HANDLE  g_hConsoleOut;                   // Handle to debug console
 
 
 
-RobloxCrashReporter::RobloxCrashReporter(const char* outputPath, const char* appName, const char* crashExtention)
+NAMEHERECrashReporter::NAMEHERECrashReporter(const char* outputPath, const char* appName, const char* crashExtention)
 {
 	controls.minidumpType=MiniDumpWithDataSegs;
 	
@@ -208,9 +208,9 @@ RobloxCrashReporter::RobloxCrashReporter(const char* outputPath, const char* app
 	strncpy(controls.crashExtention, crashExtention, sizeof(controls.crashExtention));
 }
 
-bool RobloxCrashReporter::silent;
+bool NAMEHERECrashReporter::silent;
 
-LONG RobloxCrashReporter::ProcessException(struct _EXCEPTION_POINTERS *info, bool noMsg)
+LONG NAMEHERECrashReporter::ProcessException(struct _EXCEPTION_POINTERS *info, bool noMsg)
 {
 	LogManager::ReportEvent(EVENTLOG_INFORMATION_TYPE, "StartProcessException...");
 
@@ -219,7 +219,7 @@ LONG RobloxCrashReporter::ProcessException(struct _EXCEPTION_POINTERS *info, boo
 	if (!showedMessage && !noMsg)
 	{
 		showedMessage = true;
-		::MessageBox( NULL, "An unexpected error occurred and ROBLOX needs to quit.  We're sorry!", "ROBLOX Crash", MB_OK );
+		::MessageBox( NULL, "An unexpected error occurred and NAMEHERE needs to quit.  We're sorry!", "NAMEHERE Crash", MB_OK );
 	}
 
 	LogManager::ReportEvent(EVENTLOG_INFORMATION_TYPE, "DoneProcessException");
@@ -231,7 +231,7 @@ LONG RobloxCrashReporter::ProcessException(struct _EXCEPTION_POINTERS *info, boo
 	return result;	
 }
 
-void RobloxCrashReporter::logEvent(const char* msg)
+void NAMEHERECrashReporter::logEvent(const char* msg)
 {
 	LogManager::ReportEvent(EVENTLOG_INFORMATION_TYPE, msg);
 }
@@ -240,7 +240,7 @@ void MainLogManager::WriteCrashDump()
 {
 	std::string appName = "log_";
 	appName += getSessionId();
-	crashReporter.reset(new RobloxCrashReporter((LPCTSTR) GetLogPath(), appName.c_str(), crashExtention));
+	crashReporter.reset(new NAMEHERECrashReporter((LPCTSTR) GetLogPath(), appName.c_str(), crashExtention));
 	crashReporter->Start();
 	CString eventMessage;
 	eventMessage.Format("CrashReporter Start");

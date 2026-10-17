@@ -42,8 +42,8 @@ BOOST_AUTO_TEST_CASE(FilterLogService) {
                                     "HTTP://S3.RBXCDN.COM/ request failed", 4));
 
     // multiple keys in one log
-    testCases.push_back(logTestCase("http://www.roblox.com/h4x.ashx?apikey=1234-1234-1234-1234&evil=true&accesskey=5678-5678", 
-                                    "http://www.roblox.com/h4x.ashx?apikey=&evil=true&accesskey=", 0x3));
+    testCases.push_back(logTestCase("http://www.namehere.com/h4x.ashx?apikey=1234-1234-1234-1234&evil=true&accesskey=5678-5678", 
+                                    "http://www.namehere.com/h4x.ashx?apikey=&evil=true&accesskey=", 0x3));
 
     for (const auto& it : testCases)
     {

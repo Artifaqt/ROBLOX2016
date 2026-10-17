@@ -8,7 +8,7 @@ pcall(function() PlatformService = game:GetService('PlatformService') end)
 
 
 local CoreGui = game:GetService("CoreGui")
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 
 local UserDataModule = require(Modules:FindFirstChild('UserData'))

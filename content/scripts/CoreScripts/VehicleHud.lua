@@ -13,14 +13,14 @@ while not Players.LocalPlayer do
 	wait()
 end
 local LocalPlayer = Players.LocalPlayer
-local RobloxGui = script.Parent
+local NAMEHEREGui = script.Parent
 local CurrentVehicleSeat = nil
 local VehicleSeatRenderCn = nil
 local VehicleSeatHUDChangedCn = nil
 
-local RobloxGui = game:GetService("CoreGui"):WaitForChild("RobloxGui")
-RobloxGui:WaitForChild("Modules"):WaitForChild("TenFootInterface")
-local isTenFootInterface = require(RobloxGui.Modules.TenFootInterface):IsEnabled()
+local NAMEHEREGui = game:GetService("CoreGui"):WaitForChild("NAMEHEREGui")
+NAMEHEREGui:WaitForChild("Modules"):WaitForChild("TenFootInterface")
+local isTenFootInterface = require(NAMEHEREGui.Modules.TenFootInterface):IsEnabled()
 
 
 --[[ Images ]]--
@@ -68,7 +68,7 @@ VehicleHudFrame.Size = UDim2.new(0, (isTenFootInterface and 316 or 158), 0, (isT
 VehicleHudFrame.Position = UDim2.new(0.5, -(VehicleHudFrame.Size.X.Offset/2), 1, -BOTTOM_OFFSET - VehicleHudFrame.Size.Y.Offset)
 VehicleHudFrame.BackgroundTransparency = 1
 VehicleHudFrame.Visible = false
-VehicleHudFrame.Parent = RobloxGui
+VehicleHudFrame.Parent = NAMEHEREGui
 
 local speedBarClippingFrame = Instance.new("Frame")
 speedBarClippingFrame.Name = "SpeedBarClippingFrame"

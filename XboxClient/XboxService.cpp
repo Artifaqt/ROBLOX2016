@@ -84,36 +84,36 @@ using namespace Microsoft::Xbox::Services::Achievements;
 using G3D::clamp;
 
 #ifdef RBX_XBOX_SITETEST1
-    const char* const kBaseUrl = "https://www.sitetest1.robloxlabs.com/";
-    const std::string kApiUrl = "https://api.sitetest1.robloxlabs.com/";
+    const char* const kBaseUrl = "https://www.sitetest1.nameherelabs.com/";
+    const std::string kApiUrl = "https://api.sitetest1.nameherelabs.com/";
 #else
-    const char* const kBaseUrl = "https://www.roblox.com/";
-    const std::string kApiUrl = "https://api.roblox.com/";
+    const char* const kBaseUrl = "https://www.namehere.com/";
+    const std::string kApiUrl = "https://api.namehere.com/";
 #endif
 
-//const char* const kBaseUrl = "https://www.sitetest3.robloxlabs.com/";
-//const std::string kApiUrl = "https://api.sitetest3.robloxlabs.com/";
+//const char* const kBaseUrl = "https://www.sitetest3.nameherelabs.com/";
+//const std::string kApiUrl = "https://api.sitetest3.nameherelabs.com/";
 
-//const char* const kBaseUrl = "https://www.gametest5.robloxlabs.com/";
-//const std::string kApiUrl  = "https://api.gametest5.robloxlabs.com/";
+//const char* const kBaseUrl = "https://www.gametest5.nameherelabs.com/";
+//const std::string kApiUrl  = "https://api.gametest5.nameherelabs.com/";
 
-//const char* const kBaseUrl = "https://www.gametest2.robloxlabs.com/";
-//const std::string kApiUrl = "https://api.gametest2.robloxlabs.com/";
+//const char* const kBaseUrl = "https://www.gametest2.nameherelabs.com/";
+//const std::string kApiUrl = "https://api.gametest2.nameherelabs.com/";
 
-//const char* const kBaseUrl = "https://www.sitetest2.robloxlabs.com/";
-//const std::string kApiUrl = "https://api.sitetest2.robloxlabs.com/";
+//const char* const kBaseUrl = "https://www.sitetest2.nameherelabs.com/";
+//const std::string kApiUrl = "https://api.sitetest2.nameherelabs.com/";
 
 const std::string kInventoryEndpoint = "/xboxlive/get-inventory";
 const std::string kConsumeInventoryEnpoint = "/xboxlive/consume-all";
 const std::string kUserIdTranslatorEndpoint = "/xbox/translate";
 
 const std::string kAuthEndpoint = "/xboxlive/connect";
-const std::string kXboxUserInfoEndpoint = "/xboxlive/get-roblox-userInfo";
+const std::string kXboxUserInfoEndpoint = "/xboxlive/get-namehere-userInfo";
 const std::string kGetPartyInfoEndpoint = "/xbox/get-party-info";
 
 const std::string kXboxAccountLinkEndpoint = "/xboxlive/link-existing-user";
 const std::string kUnlinkAccountEndpoint = "/xboxlive/disconnect";
-const std::string kXboxSetRobloxUsernamePasswordEndpoint = "/xboxlive/set-roblox-username-password";
+const std::string kXboxSetNAMEHEREUsernamePasswordEndpoint = "/xboxlive/set-namehere-username-password";
 const std::string kHasLinkedAccountEndpoint = "/xboxlive/has-linked-account";
 const std::string kHasSetUsernamePasswordEndpoint = "/xboxlive/has-set-username-password";
 
@@ -226,7 +226,7 @@ XboxPlatform::XboxPlatform()
         RBX::GlobalAdvancedSettings::singleton()->loadState("");
 		
 		{
-			RBX::Security::Impersonator impersonate(RBX::Security::RobloxGameScript_);
+			RBX::Security::Impersonator impersonate(RBX::Security::NAMEHEREGameScript_);
 			std::string basicLocalStoragePath = ws2s(localStoragePathW->Begin()) + "\\basicsettings.xml";
 			RBX::GlobalBasicSettings::singleton()->setSaveTarget( basicLocalStoragePath );
 			RBX::GlobalBasicSettings::singleton()->loadState(basicLocalStoragePath);
@@ -273,7 +273,7 @@ XboxPlatform::XboxPlatform()
         {
             shared_ptr<DataModel> dm = intro->getDataModel();
 
-            Security::Impersonator impersonate(Security::RobloxGameScript_);
+            Security::Impersonator impersonate(Security::NAMEHEREGameScript_);
 
             dm->startCoreScripts(true, "XStarterScript");
 
@@ -743,18 +743,18 @@ void XboxPlatform::tick()
 				}
 				*/
 				
-				//bool result = performHasRobloxCredentials();
-				//dprintf("performHasRobloxCredentials Results: %s\n", (result)?"true":"false");
+				//bool result = performHasNAMEHERECredentials();
+				//dprintf("performHasNAMEHERECredentials Results: %s\n", (result)?"true":"false");
             }
 			
             if(int(ON_BUTTON_UP(gr.Buttons,prev_gr.Buttons, GamepadButtons::X)))
             {
 				//multiplayerManager->requestJoinParty();
 				/*
-				std::string robloxname = "robloxCred8";
-				std::string robloxpass = "hackproof123";
+				std::string nameherename = "namehereCred8";
+				std::string nameherepass = "hackproof123";
 				std::string result;
-				performAccountLink(robloxname,robloxpass,&result);
+				performAccountLink(nameherename,nameherepass,&result);
 				dprintf("performAccountLink Results: %s\n", result.c_str());
 				*/
 				//multiplayerManager->recentPlayersList();
@@ -764,11 +764,11 @@ void XboxPlatform::tick()
             if(int(ON_BUTTON_UP(gr.Buttons, prev_gr.Buttons,GamepadButtons::Y)))
             {
 				/*
-				std::string robloxname = "robloxCred8";
-				std::string robloxpass = "hackproof123";
+				std::string nameherename = "namehereCred8";
+				std::string nameherepass = "hackproof123";
 				std::string result;
-				performSetRobloxCredentials(robloxname, robloxpass, &result);
-				dprintf("performSetRobloxCredentials Results: %s\n", result.c_str());
+				performSetNAMEHERECredentials(nameherename, nameherepass, &result);
+				dprintf("performSetNAMEHERECredentials Results: %s\n", result.c_str());
 				*/
 
 				//multiplayerManager->getInGamePlayers();
@@ -980,7 +980,7 @@ GameStartResult XboxPlatform::startGame3( RBX::GameJoinType gt, int id )
     {
 		if(gt == RBX::GameJoin_PMPCreator)
 		{
-			multiplayerManager->createGameSession(multiplayerManager->getLocalRobloxUserId());
+			multiplayerManager->createGameSession(multiplayerManager->getLocalNAMEHEREUserId());
 		}
 		else
 		{
@@ -1214,8 +1214,8 @@ shared_ptr<const Reflection::ValueTable> XboxPlatform::getPlatformUserInfo()
 		Network::Player* localplayer = intro->getDataModel()->find<Network::Players>()->getLocalPlayer();
 		(*userInfoTable)["Gamertag"] = ws2s(currentUser->DisplayInfo->Gamertag->Data());
 		(*userInfoTable)["XboxUserId"] = ws2s(currentUser->XboxUserId->Data());
-		(*userInfoTable)["RobloxUserName"] = localplayer->getName();
-		(*userInfoTable)["RobloxUserId"] = localplayer->getUserID();
+		(*userInfoTable)["NAMEHEREUserName"] = localplayer->getName();
+		(*userInfoTable)["NAMEHEREUserId"] = localplayer->getUserID();
 	}
 
 	return userInfoTable;
@@ -1247,7 +1247,7 @@ void XboxPlatform::doTeleport(const std::string& auth, const std::string& ticket
                     dprintf("Teleport re-auth: %s\n", url.c_str() );
 
                     Http h(url);
-                    h.additionalHeaders[Http::kRBXAuthenticationNegotiation] = "roblox.com";
+                    h.additionalHeaders[Http::kRBXAuthenticationNegotiation] = "namehere.com";
                     h.get(response);
 
                     dprintf("Teleport re-auth response: %s\n", response.c_str());
@@ -1475,7 +1475,7 @@ RBX::GameStartResult XboxPlatform::initGame( const std::string& authUrl, const s
     {
         DataModel::LegacyLock lock( game->getDataModel().get(), DataModelJob::Write);
 
-        Security::Impersonator impersonate(Security::RobloxGameScript_);
+        Security::Impersonator impersonate(Security::NAMEHEREGameScript_);
 
 		// make sure the gamepad navigation info is the same in the game datamodel as it is in the appshell
         if (auto uis = RBX::ServiceProvider::create<UserInputService>(intro->getDataModel().get()))
@@ -1833,7 +1833,7 @@ void XboxPlatform::sendConsumeAllRequest(bool is_purchase)
 			Sleep(sleeptime);
 			
 			doConsumeAll = false;
-			// check inventory ourselves before sending a call to Roblox
+			// check inventory ourselves before sending a call to NAMEHERE
 			async(xbliveContext->InventoryService->GetInventoryItemsAsync( Microsoft::Xbox::Services::Marketplace::MediaItemType::GameConsumable )).complete(
 				[this, &doConsumeAll](Marketplace::InventoryItemsResult^ inventoryResult){
 					try
@@ -2504,10 +2504,10 @@ AccountAuthResult httpErrorToAccountLinkResult(const std::string& status)
 		return AccountAuth_LeaseLocked;
 	else if(status.compare("AccountLinkingDisabled") == 0)
 		return AccountAuth_AccountLinkingDisabled;
-	else if(status.compare("InvalidRobloxUser") == 0)
-		return AccountAuth_InvalidRobloxUser;
-	else if(status.compare("RobloxUserAlreadyLinked") == 0)
-		return AccountAuth_RobloxUserAlreadyLinked;
+	else if(status.compare("InvalidNAMEHEREUser") == 0)
+		return AccountAuth_InvalidNAMEHEREUser;
+	else if(status.compare("NAMEHEREUserAlreadyLinked") == 0)
+		return AccountAuth_NAMEHEREUserAlreadyLinked;
 	else if(status.compare("XboxUserAlreadyLinked") == 0)
 		return AccountAuth_XboxUserAlreadyLinked;
 	else if(status.compare("IllegalChildAccountLinking") == 0)
@@ -2604,7 +2604,7 @@ int XboxPlatform::performAccountLink(const std::string& accountName, const std::
 int XboxPlatform::performUnlinkAccount(std::string* response)
 {
 	dprintf("Attempting to UnlinkAccount...\n");
-	AccountAuthResult status = performHasRobloxCredentials();
+	AccountAuthResult status = performHasNAMEHERECredentials();
 
 	if (status == AccountAuth_Success)
 	{
@@ -2625,11 +2625,11 @@ int XboxPlatform::performUnlinkAccount(std::string* response)
 }
 
 
-int XboxPlatform::performSetRobloxCredentials( const std::string& accountName, const std::string& password, std::string* response)
+int XboxPlatform::performSetNAMEHERECredentials( const std::string& accountName, const std::string& password, std::string* response)
 {
-	dprintf("Attempting to setRobloxCredentials of %s...\n", accountName);
+	dprintf("Attempting to setNAMEHERECredentials of %s...\n", accountName);
 
-	std::string url = kApiUrl + kXboxSetRobloxUsernamePasswordEndpoint;
+	std::string url = kApiUrl + kXboxSetNAMEHEREUsernamePasswordEndpoint;
 	url = url + "?username=" + accountName + "&password=" + password;
 	AccountAuthResult retval = xboxAuthHttpHelper(url, response, true);
 
@@ -2684,9 +2684,9 @@ AccountAuthResult XboxPlatform::performHasLinkedAccount()
 }
 
 
-AccountAuthResult XboxPlatform::performHasRobloxCredentials()
+AccountAuthResult XboxPlatform::performHasNAMEHERECredentials()
 {
-	dprintf("Attempting to check if hasRobloxCredentials...\n");
+	dprintf("Attempting to check if hasNAMEHERECredentials...\n");
 	std::string url = kApiUrl + kHasSetUsernamePasswordEndpoint;
 	std::string result;
 	AccountAuthResult retval = xboxAuthHttpHelper(url, &result, false);

@@ -19,7 +19,7 @@ namespace RBX
 		:Super()
 	{
 		setName(sCoreScript);
-		setRobloxLocked(true);
+		setNAMEHERELocked(true);
 	}
 
 	// used to make sure corescripts not in the workspace still get removed properly

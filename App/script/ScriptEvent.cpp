@@ -28,8 +28,8 @@ void YieldingThreads::queueWaiter(lua_State *L)
 
 void YieldingThreads::queueWaiter(lua_State *L, LUA_NUMBER delay)
 {
-	RBXASSERT(!RobloxExtraSpace::get(L)->yieldCaptured);
-	RobloxExtraSpace::get(L)->yieldCaptured = true;
+	RBXASSERT(!NAMEHEREExtraSpace::get(L)->yieldCaptured);
+	NAMEHEREExtraSpace::get(L)->yieldCaptured = true;
 
 	waitingThreads.push(WaitingThread(L, RBX::Time::Interval(delay)));
 }

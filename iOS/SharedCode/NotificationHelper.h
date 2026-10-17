@@ -1,9 +1,9 @@
 //
 //  NotificationHelper.h
-//  RobloxMobile
+//  NAMEHEREMobile
 //
 //  Created by Ganesh on 5/14/14.
-//  Copyright (c) 2014 ROBLOX. All rights reserved.
+//  Copyright (c) 2014 NAMEHERE. All rights reserved.
 //
 
 #import <Foundation/Foundation.h>

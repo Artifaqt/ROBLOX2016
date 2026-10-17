@@ -40,7 +40,7 @@ private:
 	//install steps of Bootstrapper client
 	void DeployBootstrapper();
 	void RegisterInstallHost();
-	void DeployRobloxProxys();
+	void DeployNAMEHEREProxys();
 	void InstallPlayer();
 
 	std::string BuildDateTime(int y, int m, int d);
@@ -51,8 +51,8 @@ private:
 
 	void deployExtraStudioBootstrapper(std::string exeName, TCHAR *linkName, std::wstring componentId, bool forceDesktopIconCreation, const TCHAR *registryPath);
 	void deployStudioBetaBootstrapper(bool forceDesktopIconCreation);
-	void deployRobloxProxy(bool commitData);
-	void deployNPRobloxProxy(bool commitData);
+	void deployNAMEHEREProxy(bool commitData);
+	void deployNPNAMEHEREProxy(bool commitData);
 	void registerFirefoxPlugin(const TCHAR* id, bool is64Bits);
 	void unregisterFirefoxPlugin(const TCHAR* id, bool is64Bits);
 
@@ -68,11 +68,11 @@ private:
 
 	virtual void DoInstallApp();
 	virtual void DoUninstallApp(CRegKey &hk);
-	virtual std::wstring GetRobloxAppFileName() const;
+	virtual std::wstring GetNAMEHEREAppFileName() const;
 	virtual std::wstring GetBootstrapperFileName() const;
 	virtual std::wstring GetProductCodeKey() const;
 	virtual void DeployComponents(bool isUpdating, bool commitData);
-	virtual void StartRobloxApp(bool fromInstall);
+	virtual void StartNAMEHEREApp(bool fromInstall);
 	virtual bool IsPlayMode() { return (playArgs != NULL); }
 	virtual bool HasUnhideGuid() { return (playArgs != NULL && !playArgs->guidName.empty()); }
 	virtual bool ProcessArg(wchar_t** args, int &pos, int count);
@@ -81,8 +81,8 @@ protected:
 	virtual void initialize();
 	virtual void createDialog();
 
-	virtual HRESULT SheduleRobloxUpdater();
-	virtual HRESULT UninstallRobloxUpdater();
+	virtual HRESULT SheduleNAMEHEREUpdater();
+	virtual HRESULT UninstallNAMEHEREUpdater();
 	
 	virtual void SetupGoogleAnalytics();
 	virtual bool ValidateInstalledExeVersion();

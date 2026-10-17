@@ -24,7 +24,7 @@
             android:layout_height="match_parent"
             android:id="@+id/fragment_sign_up_card_inner_container"/>
     </LinearLayout>
-    <com.roblox.client.components.RbxTextView
+    <com.namehere.client.components.RbxTextView
         android:id="@+id/fragment_sign_up_agreement"
         android:layout_width="fill_parent"
         android:layout_height="0dp"
@@ -41,7 +41,7 @@
         android:layout_marginLeft="12dp"
         android:layout_marginRight="10dp"
         android:paddingLeft="1dp"
-        style="@style/Theme.Roblox.StandardFontLight"
+        style="@style/Theme.NAMEHERE.StandardFontLight"
         android:layout_weight="1" />
     <Space android:layout_width="match_parent" android:layout_height="0dp" android:layout_weight="0.5"/>
 </LinearLayout>

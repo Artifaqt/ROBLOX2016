@@ -1,6 +1,6 @@
 #include "stdafx.h"
 
-/* Copyright 2003-2005 ROBLOX Corporation, All Rights Reserved */
+/* Copyright 2003-2005 NAMEHERE Corporation, All Rights Reserved */
 
 #include "Util/Quaternion.h"
 #include "rbx/Debug.h"

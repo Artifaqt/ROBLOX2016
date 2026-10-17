@@ -14,11 +14,11 @@
         android:orientation="vertical"
         android:id="@+id/videoContainer">
 
-        <com.roblox.ima.AdPlayer
+        <com.namehere.ima.AdPlayer
             android:id="@+id/videoPlayerWithAdPlayback"
             android:layout_width="match_parent"
             android:layout_height="wrap_content">
-            <com.roblox.ima.VideoPlayerImpl
+            <com.namehere.ima.VideoPlayerImpl
                 android:id="@+id/videoPlayer"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -27,6 +27,6 @@
                 android:id="@+id/adUiContainer"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent" />
-        </com.roblox.ima.AdPlayer>
+        </com.namehere.ima.AdPlayer>
     </LinearLayout>
 </LinearLayout>

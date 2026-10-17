@@ -23,7 +23,7 @@ class ViewBase;
 class RenderJob : public BaseRenderJob, public IMetric
 {
 	FunctionMarshaller* marshaller;
-	View* robloxView;
+	View* namehereView;
 	volatile int stopped;
 
 	CEvent prepareBeginEvent;
@@ -32,7 +32,7 @@ class RenderJob : public BaseRenderJob, public IMetric
 	static void scheduleRender(weak_ptr<RenderJob> selfWeak, ViewBase* view, double timeJobStart);
 
 public:
-	RenderJob(View* robloxView, FunctionMarshaller* marshaller,
+	RenderJob(View* namehereView, FunctionMarshaller* marshaller,
 		boost::shared_ptr<DataModel> dataModel);
 
 	Time::Interval timeSinceLastRender() const;

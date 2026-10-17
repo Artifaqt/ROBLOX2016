@@ -5,7 +5,7 @@
 			// Used by GameDetail and BadgeScreen
 ]]
 local CoreGui = Game:GetService("CoreGui")
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 local GuiService = game:GetService('GuiService')
 local ContextActionService = game:GetService("ContextActionService")
@@ -32,7 +32,7 @@ local createBadgeOverlay = function(badgeData)
 		Name = "BadgeImage";
 		Size = UDim2.new(0, 394, 0, 394);
 		BackgroundTransparency = 1;
-		Image = 'http://www.roblox.com/Thumbs/Asset.ashx?width='..
+		Image = 'http://www.namehere.com/Thumbs/Asset.ashx?width='..
 				tostring(250)..'&height='..tostring(250)..'&assetId='..tostring(badgeData.AssetId);
 		ZIndex = this.BaseZIndex + 1;
 		Parent = badgeImageContainer;

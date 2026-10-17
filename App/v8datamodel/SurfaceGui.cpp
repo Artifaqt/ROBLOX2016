@@ -11,18 +11,18 @@
 
 #include "v8datamodel/PlayerGui.h"
 
-#include "Util/RobloxGoogleAnalytics.h"
+#include "Util/NAMEHEREGoogleAnalytics.h"
 
 FASTFLAGVARIABLE(GUIZFighterGPU, true)
 
 static void sendSurfaceGuiStats()
 {
-	RBX::RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "SurfaceGui");
+	RBX::NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME, "SurfaceGui");
 }
 
 static void sendSurfaceGUINonTextUsage()
 {
-	RBX::RobloxGoogleAnalytics::trackEvent(GA_CATEGORY_GAME,"SurfaceGuiNonText");
+	RBX::NAMEHEREGoogleAnalytics::trackEvent(GA_CATEGORY_GAME,"SurfaceGuiNonText");
 }
 
 namespace RBX {

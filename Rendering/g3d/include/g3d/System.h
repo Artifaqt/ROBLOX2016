@@ -23,10 +23,10 @@
 #   include <CoreServices/CoreServices.h>
 #endif
 
-#ifdef G3D_IOS // ROBLOX
+#ifdef G3D_IOS // NAMEHERE
     #include <mach/mach.h>
     #include <mach/mach_time.h>
-#endif // ROBLOX
+#endif // NAMEHERE
 
 #include <stdint.h>
 
@@ -134,9 +134,9 @@ private:
     double         m_secondsPerNS;
 #endif
 
-#ifdef G3D_IOS // ROBLOX
+#ifdef G3D_IOS // NAMEHERE
 	mach_timebase_info_data_t m_info;
-#endif //ROBLOX
+#endif //NAMEHERE
     
     /** The Real-World time of System::getTick() time 0.  Set by initTime */
     RealTime       m_realWorldGetTickTime0;
@@ -393,7 +393,7 @@ public:
         return  __rdtsc();
     }
 
-#elif defined(G3D_LINUX) || defined(G3D_ANDROID) // ROBLOX
+#elif defined(G3D_LINUX) || defined(G3D_ANDROID) // NAMEHERE
 
     inline uint64 System::getCycleCount() {
 #   if defined(G3D_LINUX)
@@ -423,7 +423,7 @@ public:
 		//return (uint64) mach_absolute_time();
     }
 
-#elif defined(G3D_IOS) // ROBLOX
+#elif defined(G3D_IOS) // NAMEHERE
 	
 	inline uint64 System::getCycleCount() {
 		//Note:  To put off extra processing until the end, this does not

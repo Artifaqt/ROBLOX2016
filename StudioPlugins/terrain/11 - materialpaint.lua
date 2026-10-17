@@ -23,15 +23,15 @@ local r = 5
 for i,v in pairs(materialNames) do
 	materialToImageMap[v] = {}
 	if v == "Grass" then
-		materialToImageMap[v].Regular = "http://www.roblox.com/asset/?id=56563112"
+		materialToImageMap[v].Regular = "http://www.namehere.com/asset/?id=56563112"
 	elseif v == "Sand" then
-		materialToImageMap[v].Regular = "http://www.roblox.com/asset/?id=62356652"
+		materialToImageMap[v].Regular = "http://www.namehere.com/asset/?id=62356652"
 	elseif v == "Brick" then
-		materialToImageMap[v].Regular = "http://www.roblox.com/asset/?id=65961537"
-		materialToImageMap[v].Over = "http://www.roblox.com/asset/?id=65961537"
+		materialToImageMap[v].Regular = "http://www.namehere.com/asset/?id=65961537"
+		materialToImageMap[v].Over = "http://www.namehere.com/asset/?id=65961537"
 	elseif v == "Granite" then
-		materialToImageMap[v].Regular = "http://www.roblox.com/asset/?id=65961588"
-		materialToImageMap[v].Over = "http://www.roblox.com/asset/?id=65961588"
+		materialToImageMap[v].Regular = "http://www.namehere.com/asset/?id=65961588"
+		materialToImageMap[v].Over = "http://www.namehere.com/asset/?id=65961588"
 	end
 end
 

@@ -1,4 +1,4 @@
--- Creates the generic "ROBLOX" loading screen on startup
+-- Creates the generic "NAMEHERE" loading screen on startup
 -- Written by ArceusInator & Ben Tkacheff, 2014
 --
 
@@ -241,7 +241,7 @@ end
 -- Declare member functions
 function MainGui:GenerateMain()
 	local screenGui = create 'ScreenGui' {
-		Name = 'RobloxLoadingGui'
+		Name = 'NAMEHERELoadingGui'
 	}
 
 	--
@@ -377,7 +377,7 @@ function MainGui:GenerateMain()
 					Size = UDim2.new(0, 30, 0, 30),
 					Position = UDim2.new(0, 38, 0, 80),
 					ImageTransparency = 0,
-					Image = 'rbxasset://textures/ui/Shell/Icons/RobloxIcon32.png',
+					Image = 'rbxasset://textures/ui/Shell/Icons/NAMEHEREIcon32.png',
 					ZIndex = 2,
 					Visible = false,
 					Parent = infoFrame,
@@ -568,10 +568,10 @@ renderSteppedConnection = game:GetService("RunService").RenderStepped:connect(fu
 end)
 
 spawn(function()
-	local RobloxGui = game:GetService("CoreGui"):WaitForChild("RobloxGui")
+	local NAMEHEREGui = game:GetService("CoreGui"):WaitForChild("NAMEHEREGui")
 	local guiInsetChangedEvent = Instance.new("BindableEvent")
 	guiInsetChangedEvent.Name = "GuiInsetChanged"
-	guiInsetChangedEvent.Parent = RobloxGui
+	guiInsetChangedEvent.Parent = NAMEHEREGui
 	guiInsetChangedEvent.Event:connect(function(x1, y1, x2, y2)
 		if currScreenGui and currScreenGui:FindFirstChild("BlackFrame") then
 			currScreenGui.BlackFrame.Position = UDim2.new(0, -x1, 0, -y1)
@@ -604,8 +604,8 @@ guiService.ErrorMessageChanged:connect(function()
 			-- we show a B button to kill game data model on console
 			if not isTenFootInterface then
 				if leaveGameButton == nil then
-					local RobloxGui = game:GetService("CoreGui"):WaitForChild("RobloxGui")
-					local utility = require(RobloxGui.Modules.Settings.Utility)
+					local NAMEHEREGui = game:GetService("CoreGui"):WaitForChild("NAMEHEREGui")
+					local utility = require(NAMEHEREGui.Modules.Settings.Utility)
 					local textLabel = nil
 					leaveGameButton, leaveGameTextLabel = utility:MakeStyledButton("LeaveGame", "Leave", UDim2.new(0, 288, 0, 78))
 					leaveGameButton:SetVerb("Exit")

@@ -869,8 +869,8 @@ void btGImpactCollisionAlgorithm::gimpact_vs_concave(
 
 void btGImpactCollisionAlgorithm::processCollision (const btCollisionObjectWrapper* body0Wrap,const btCollisionObjectWrapper* body1Wrap,const btDispatcherInfo& dispatchInfo,btManifoldResult* resultOut)
 {
-    // Roblox change - do not do a clearCache 
-	// Without clearCache Roblox is able to utilize the previous step's contacts to give more 
+    // NAMEHERE change - do not do a clearCache 
+	// Without clearCache NAMEHERE is able to utilize the previous step's contacts to give more 
 	// robust contact with complicated contacts (i.e. surface to surface) that require more contact
 	// points to achieve stability.
 	//clearCache()

@@ -2,14 +2,14 @@
 <Package xmlns="http://schemas.microsoft.com/appx/2010/manifest" xmlns:mx="http://schemas.microsoft.com/appx/2013/xbox/manifest" IgnorableNamespaces="mx">
 
     <!--- 'Name' and 'Version' appear in the package path created by deploy  -->
-    <Identity Name="roblox"
-            Publisher="CN=ROBLOX, O=ROBLOX, L=San Mateo, S=California, C=US"
+    <Identity Name="namehere"
+            Publisher="CN=NAMEHERE, O=NAMEHERE, L=San Mateo, S=California, C=US"
             Version="1.0.0.0" />
 
   <Properties>
-    <DisplayName>ROBLOX</DisplayName>
-    <PublisherDisplayName>ROBLOX</PublisherDisplayName>
-    <Logo>img/roblox.png</Logo>
+    <DisplayName>NAMEHERE</DisplayName>
+    <PublisherDisplayName>NAMEHERE</PublisherDisplayName>
+    <Logo>img/namehere.png</Logo>
     <Description>Community Created Gaming. Limitless Possibilities.</Description>
   </Properties>
   
@@ -27,20 +27,20 @@
       <!--- Debug config -->
       <!--- 'Id' is in the aumid returned from deploy  -->
       <!--- 'Executable' must match the .exe produced by the build  -->
-      <Application Id="RobloxClient0"
+      <Application Id="NAMEHEREClient0"
           Executable="XboxClient.exe"
           EntryPoint="XboxClient.App">
           <!--- all fields except DisplayName not yet implemented -->
           <VisualElements
-              DisplayName="ROBLOX"
+              DisplayName="NAMEHERE"
               Logo="img/logo208.png"
               SmallLogo="img/logo100.png"
               Description="Description"
               ForegroundText="dark"
               BackgroundColor="#000040">
-              <DefaultTile WideLogo="img/robloxWide.png" ShortName ="ROBLOX" />
+              <DefaultTile WideLogo="img/namehereWide.png" ShortName ="NAMEHERE" />
 
-              <SplashScreen Image="img/roblox.png" />
+              <SplashScreen Image="img/namehere.png" />
           </VisualElements>
 
           <mx:Ratings Category="game">

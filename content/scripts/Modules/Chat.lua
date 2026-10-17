@@ -1,7 +1,7 @@
 --[[
 	// FileName: Chat.lua
 	// Written by: SolarCrane
-	// Description: Code for lua side chat on ROBLOX.
+	// Description: Code for lua side chat on NAMEHERE.
 ]]
 
 --[[ CONSTANTS ]]
@@ -71,10 +71,10 @@ local Player = PlayersService.LocalPlayer
 local GuiRoot = nil
 if NON_CORESCRIPT_MODE then
 	GuiRoot = Instance.new("ScreenGui")
-	GuiRoot.Name = "RobloxGui"
+	GuiRoot.Name = "NAMEHEREGui"
 	GuiRoot.Parent = Player:WaitForChild('PlayerGui')
 else
-	GuiRoot = CoreGuiService:WaitForChild('RobloxGui')
+	GuiRoot = CoreGuiService:WaitForChild('NAMEHEREGui')
 end
 
 local chatRepositioned = false
@@ -1462,7 +1462,7 @@ local function CreateChatBarWidget(settings)
 		this.ChatBarContainer.Parent = GuiRoot
 
 		if GetTopBarFlag() then
-			local function RobloxClientScreenSizeChanged(newSize)
+			local function NAMEHEREClientScreenSizeChanged(newSize)
 				if chatBarContainer then
 					local chatbarVisible = this.ChatBar and this.ChatBar.Visible
 					local bubbleChatIsOn = not PlayersService.ClassicChat and PlayersService.BubbleChat
@@ -1499,8 +1499,8 @@ local function CreateChatBarWidget(settings)
 				end
 			end
 
-			GuiRoot.Changed:connect(function(prop) if prop == "AbsoluteSize" and not chatRepositioned then RobloxClientScreenSizeChanged(GuiRoot.AbsoluteSize) end end)
-			RobloxClientScreenSizeChanged(GuiRoot.AbsoluteSize)
+			GuiRoot.Changed:connect(function(prop) if prop == "AbsoluteSize" and not chatRepositioned then NAMEHEREClientScreenSizeChanged(GuiRoot.AbsoluteSize) end end)
+			NAMEHEREClientScreenSizeChanged(GuiRoot.AbsoluteSize)
 		end
 	end
 
@@ -1934,7 +1934,7 @@ local function CreateChatWindowWidget(settings)
 		end
 		container.Changed:connect(function(prop) if prop == 'AbsoluteSize' then this:OnResize() end end)
 
-		local function RobloxClientScreenSizeChanged(newSize)
+		local function NAMEHEREClientScreenSizeChanged(newSize)
 			if container then
 				if GetTopBarFlag() then
 					container.Position = UDim2.new(0,0,0,2);
@@ -1952,8 +1952,8 @@ local function CreateChatWindowWidget(settings)
 			end
 		end
 
-		GuiRoot.Changed:connect(function(prop) if prop == "AbsoluteSize" and not chatRepositioned then RobloxClientScreenSizeChanged(GuiRoot.AbsoluteSize) end end)
-		RobloxClientScreenSizeChanged(GuiRoot.AbsoluteSize)
+		GuiRoot.Changed:connect(function(prop) if prop == "AbsoluteSize" and not chatRepositioned then NAMEHEREClientScreenSizeChanged(GuiRoot.AbsoluteSize) end end)
+		NAMEHEREClientScreenSizeChanged(GuiRoot.AbsoluteSize)
 
 		messageContainer.Changed:connect(OnChatWindowResize)
 		scrollingFrame.Changed:connect(OnChatWindowResize)
@@ -2300,7 +2300,7 @@ local function CreateChat()
 			Size = UDim2.new(0, 128, 0, 32);
 			Position = UDim2.new(0, 88, 0, 0);
 			BackgroundTransparency = 1.0;
-			Image = 'http://www.roblox.com/asset/?id=97078724';
+			Image = 'http://www.namehere.com/asset/?id=97078724';
 		};
 	end
 

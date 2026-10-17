@@ -815,7 +815,7 @@ protected:
 	DataStructures::Queue<RequestedConnectionStruct*> requestedConnectionQueue;
 	SimpleMutex requestedConnectionQueueMutex;
 
-	// ROBLOX: Made this virtual so we can profile it!
+	// NAMEHERE: Made this virtual so we can profile it!
 	virtual bool RunUpdateCycle( RakNet::TimeUS timeNS, RakNet::Time timeMS, BitStream &updateBitStream );
 	// void RunMutexedUpdateCycle(void);
 

@@ -1,4 +1,4 @@
--- Written by Kip Turner, Copyright ROBLOX 2015
+-- Written by Kip Turner, Copyright NAMEHERE 2015
 
 local CoreGui = Game:GetService("CoreGui")
 local GuiService = game:GetService('GuiService')
@@ -6,7 +6,7 @@ local PlayersService = game:GetService("Players")
 local RunService = game:GetService("RunService")
 local ContextActionService = game:GetService('ContextActionService')
 
-local GuiRoot = CoreGui:FindFirstChild("RobloxGui")
+local GuiRoot = CoreGui:FindFirstChild("NAMEHEREGui")
 local Modules = GuiRoot:FindFirstChild("Modules")
 
 local Utility = require(Modules:FindFirstChild('Utility'))

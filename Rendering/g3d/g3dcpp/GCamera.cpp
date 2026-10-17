@@ -1,5 +1,5 @@
 /**
-  ROBLOX - We are not using the G3D 8.0 G3D::GCamera, intstead we are using the RBX:Rbx::Camera from old G3D.
+  NAMEHERE - We are not using the G3D 8.0 G3D::GCamera, intstead we are using the RBX:Rbx::Camera from old G3D.
   @file GCamera.cpp
 
   @author Morgan McGuire, http://graphics.cs.williams.edu
@@ -18,7 +18,7 @@
 namespace G3D {
 
 GCamera::GCamera() {
-	debugAssert(1); /// ROBLOX - Do not use, intead use RBX::RbxCamera
+	debugAssert(1); /// NAMEHERE - Do not use, intead use RBX::RbxCamera
     setNearPlaneZ(-0.2f);
     setFarPlaneZ(-150.0f);
     setFieldOfView((float)toRadians(90.0f), HORIZONTAL);
@@ -26,7 +26,7 @@ GCamera::GCamera() {
 
 
 GCamera::GCamera(const Matrix4& proj, const CFrame& frame) {
-	debugAssert(1); /// ROBLOX - Do not use, intead use RBX::RbxCamera
+	debugAssert(1); /// NAMEHERE - Do not use, intead use RBX::RbxCamera
     float left, right, bottom, top, nearval, farval;
     proj.getPerspectiveProjectionParameters(left, right, bottom, top, nearval, farval);
     setNearPlaneZ(-nearval);

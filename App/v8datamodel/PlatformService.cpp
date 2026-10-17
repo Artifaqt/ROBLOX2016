@@ -20,64 +20,64 @@ namespace RBX {
 
 const char* const sPlatformService = "PlatformService";
 
-static Reflection::BoundYieldFuncDesc<PlatformService, int(InputObject::UserInputType)> func_beginAuth(&PlatformService::beginAuthorization, "BeginAuthorization", "gamepadId", Security::RobloxScript);
-static Reflection::BoundYieldFuncDesc<PlatformService, int(InputObject::UserInputType)> func_beginAuth2(&PlatformService::beginAuthUnlinkCheck, "BeginAuthUnlinkCheck", "gamepadId", Security::RobloxScript);
-static Reflection::BoundYieldFuncDesc<PlatformService, int(int,int)> func_beginStartGame3(&PlatformService::beginStartGame3, "BeginStartGame3", "mode", "id", Security::RobloxScript);
-static Reflection::BoundFuncDesc<PlatformService, void(void)> func_requestGameShutdown(&PlatformService::requestGameShutdown, "RequestGameShutdown", Security::RobloxScript);
-static Reflection::BoundYieldFuncDesc<PlatformService, std::string(InputObject::UserInputType)> func_beginFetchFriends(&PlatformService::beginFetchFriends, "BeginFetchFriends", "gamepadId",  Security::RobloxScript);
-static Reflection::BoundFuncDesc<PlatformService, void(void)> func_popupHelpUI(&PlatformService::popupHelpUI, "PopupHelpUI", Security::RobloxScript);
-static Reflection::BoundFuncDesc<PlatformService, void(std::string)> func_launchPlatformUri(&PlatformService::launchPlatformUri, "LaunchPlatformUri", "baseUri", Security::RobloxScript);
-static Reflection::BoundYieldFuncDesc<PlatformService, void(InputObject::UserInputType)> func_popupPartyUI(&PlatformService::popupPartyUI, "PopupPartyUI","gamepadId",  Security::RobloxScript);
-static Reflection::BoundYieldFuncDesc<PlatformService, void(InputObject::UserInputType, std::string)> func_popupProfileUI(&PlatformService::popupProfileUI, "PopupProfileUI", "gamepadId", "uid", Security::RobloxScript);
-static Reflection::BoundFuncDesc<PlatformService, void(InputObject::UserInputType)> func_popupAccountPickerUI(&PlatformService::popupAccountPickerUI, "PopupAccountPickerUI", "gamepadId", Security::RobloxScript);
-static Reflection::BoundFuncDesc<PlatformService, void()> func_popupGameInviteUI(&PlatformService::popupGameInviteUI, "PopupGameInviteUI", Security::RobloxScript);
-static Reflection::BoundYieldFuncDesc<PlatformService, shared_ptr<const Reflection::ValueArray>(void)> func_getPlatformPartyMembers(&PlatformService::beginGetPartyMembers, "GetPlatformPartyMembers", Security::RobloxScript);
-static Reflection::BoundYieldFuncDesc<PlatformService, shared_ptr<const Reflection::ValueArray>(void)> funce_getInGamePlayers(&PlatformService::beginGetInGamePlayers, "GetInGamePlayers", Security::RobloxScript);
+static Reflection::BoundYieldFuncDesc<PlatformService, int(InputObject::UserInputType)> func_beginAuth(&PlatformService::beginAuthorization, "BeginAuthorization", "gamepadId", Security::NAMEHEREScript);
+static Reflection::BoundYieldFuncDesc<PlatformService, int(InputObject::UserInputType)> func_beginAuth2(&PlatformService::beginAuthUnlinkCheck, "BeginAuthUnlinkCheck", "gamepadId", Security::NAMEHEREScript);
+static Reflection::BoundYieldFuncDesc<PlatformService, int(int,int)> func_beginStartGame3(&PlatformService::beginStartGame3, "BeginStartGame3", "mode", "id", Security::NAMEHEREScript);
+static Reflection::BoundFuncDesc<PlatformService, void(void)> func_requestGameShutdown(&PlatformService::requestGameShutdown, "RequestGameShutdown", Security::NAMEHEREScript);
+static Reflection::BoundYieldFuncDesc<PlatformService, std::string(InputObject::UserInputType)> func_beginFetchFriends(&PlatformService::beginFetchFriends, "BeginFetchFriends", "gamepadId",  Security::NAMEHEREScript);
+static Reflection::BoundFuncDesc<PlatformService, void(void)> func_popupHelpUI(&PlatformService::popupHelpUI, "PopupHelpUI", Security::NAMEHEREScript);
+static Reflection::BoundFuncDesc<PlatformService, void(std::string)> func_launchPlatformUri(&PlatformService::launchPlatformUri, "LaunchPlatformUri", "baseUri", Security::NAMEHEREScript);
+static Reflection::BoundYieldFuncDesc<PlatformService, void(InputObject::UserInputType)> func_popupPartyUI(&PlatformService::popupPartyUI, "PopupPartyUI","gamepadId",  Security::NAMEHEREScript);
+static Reflection::BoundYieldFuncDesc<PlatformService, void(InputObject::UserInputType, std::string)> func_popupProfileUI(&PlatformService::popupProfileUI, "PopupProfileUI", "gamepadId", "uid", Security::NAMEHEREScript);
+static Reflection::BoundFuncDesc<PlatformService, void(InputObject::UserInputType)> func_popupAccountPickerUI(&PlatformService::popupAccountPickerUI, "PopupAccountPickerUI", "gamepadId", Security::NAMEHEREScript);
+static Reflection::BoundFuncDesc<PlatformService, void()> func_popupGameInviteUI(&PlatformService::popupGameInviteUI, "PopupGameInviteUI", Security::NAMEHEREScript);
+static Reflection::BoundYieldFuncDesc<PlatformService, shared_ptr<const Reflection::ValueArray>(void)> func_getPlatformPartyMembers(&PlatformService::beginGetPartyMembers, "GetPlatformPartyMembers", Security::NAMEHEREScript);
+static Reflection::BoundYieldFuncDesc<PlatformService, shared_ptr<const Reflection::ValueArray>(void)> funce_getInGamePlayers(&PlatformService::beginGetInGamePlayers, "GetInGamePlayers", Security::NAMEHEREScript);
 
-static Reflection::BoundYieldFuncDesc<PlatformService, int(std::string, std::string)> func_beginAccountLink(&PlatformService::beginAccountLink, "BeginAccountLink", "accountName", "password", Security::RobloxScript);
-static Reflection::BoundYieldFuncDesc<PlatformService, int(void)> func_beginUnlinkAccount(&PlatformService::beginUnlinkAccount, "BeginUnlinkAccount", Security::RobloxScript);
-static Reflection::BoundYieldFuncDesc<PlatformService, int(std::string, std::string)> func_beginSetRobloxCredentials(&PlatformService::beginSetRobloxCredentials, "BeginSetRobloxCredentials", "accountName", "password", Security::RobloxScript);
-static Reflection::BoundYieldFuncDesc<PlatformService, int()> func_beginHasLinkedAccount(&PlatformService::beginHasLinkedAccount, "BeginHasLinkedAccount", Security::RobloxScript);
-static Reflection::BoundYieldFuncDesc<PlatformService, int()> func_beginHasRobloxCredentials(&PlatformService::beginHasRobloxCredentials, "BeginHasRobloxCredentials", Security::RobloxScript);
+static Reflection::BoundYieldFuncDesc<PlatformService, int(std::string, std::string)> func_beginAccountLink(&PlatformService::beginAccountLink, "BeginAccountLink", "accountName", "password", Security::NAMEHEREScript);
+static Reflection::BoundYieldFuncDesc<PlatformService, int(void)> func_beginUnlinkAccount(&PlatformService::beginUnlinkAccount, "BeginUnlinkAccount", Security::NAMEHEREScript);
+static Reflection::BoundYieldFuncDesc<PlatformService, int(std::string, std::string)> func_beginSetNAMEHERECredentials(&PlatformService::beginSetNAMEHERECredentials, "BeginSetNAMEHERECredentials", "accountName", "password", Security::NAMEHEREScript);
+static Reflection::BoundYieldFuncDesc<PlatformService, int()> func_beginHasLinkedAccount(&PlatformService::beginHasLinkedAccount, "BeginHasLinkedAccount", Security::NAMEHEREScript);
+static Reflection::BoundYieldFuncDesc<PlatformService, int()> func_beginHasNAMEHERECredentials(&PlatformService::beginHasNAMEHERECredentials, "BeginHasNAMEHERECredentials", Security::NAMEHEREScript);
 
-static Reflection::BoundYieldFuncDesc<PlatformService, shared_ptr<const Reflection::ValueArray>()> func_fetchCatalogInfo(&PlatformService::beginGetCatalogInfo, "BeginGetCatalogInfo", Security::RobloxScript);
-static Reflection::BoundYieldFuncDesc<PlatformService, shared_ptr<const Reflection::ValueArray>()> func_fetchInventoryInfo(&PlatformService::beginGetInventoryInfo, "BeginGetInventoryInfo", Security::RobloxScript);
-static Reflection::BoundYieldFuncDesc<PlatformService, int(std::string)> func_beginPlatformStorePurchase(&PlatformService::beginPlatformStorePurchase, "BeginPlatformStorePurchase", "productId",  Security::RobloxScript);
-static Reflection::BoundYieldFuncDesc<PlatformService, int(std::string)> func_beginAwardAchievement(&PlatformService::beginAwardAchievement, "BeginAwardAchievement", "eventName", Security::RobloxScript );
-static Reflection::BoundYieldFuncDesc<PlatformService, int(std::string, double)> func_beginHeroStat(&PlatformService::beginHeroStat, "BeginHeroStat", "eventName", "value", DBL_MIN, Security::RobloxScript );
-static Reflection::BoundFuncDesc<PlatformService, void(double,double)> a1 (&PlatformService::changeScreenResolution, "changeScreenResolution", "px", "py", Security::RobloxScript);
-static Reflection::BoundYieldFuncDesc<PlatformService, int()> func_beginGetPMPCreatorId(&PlatformService::beginGetPMPCreatorId, "BeginGetPMPCreatorId", Security::RobloxScript);
-static Reflection::BoundFuncDesc<PlatformService, int()> func_getTitleId(&PlatformService::getTitleId, "GetTitleId", Security::RobloxScript);
-static Reflection::BoundFuncDesc<PlatformService, shared_ptr<const Reflection::ValueTable>()> func_getVersionIdInfo(&PlatformService::getVersionIdInfo, "GetVersionIdInfo", Security::RobloxScript);
-static Reflection::BoundFuncDesc<PlatformService, shared_ptr<const Reflection::ValueTable>()> func_getPlatformUserInfo(&PlatformService::getPlatformUserInfo, "GetPlatformUserInfo", Security::RobloxScript);
-static Reflection::BoundFuncDesc<PlatformService, void(std::string, std::string, std::string, XboxKeyBoardType)> func_showKeyBoard(&PlatformService::showKeyBoard, "ShowKeyboard", "title", "description", "defaultText", "keyboardType", Security::RobloxScript);
-static Reflection::EventDesc<PlatformService, void(int)> event_GameJoined(&PlatformService::gameJoinedSignal, "GameJoined", "joinResult", Security::RobloxScript);
-static Reflection::EventDesc<PlatformService, void(int)> event_ViewChanged(&PlatformService::viewChanged, "ViewChanged", "viewType", Security::RobloxScript);
-static Reflection::EventDesc<PlatformService, void()> event_UserAuthComplete(&PlatformService::userAuthCompleteSignal, "UserAuthComplete", Security::RobloxScript);
-static Reflection::EventDesc<PlatformService, void(int)> event_UserAccountChanged(&PlatformService::userAccountChangeSignal, "UserAccountChanged", "accountChangeStatus", Security::RobloxScript);
-static Reflection::EventDesc<PlatformService, void(int)> event_robuxAmountChanged(&PlatformService::robuxAmountChangedSignal, "RobuxAmountChanged", "robuxChangeStatus", Security::RobloxScript);
+static Reflection::BoundYieldFuncDesc<PlatformService, shared_ptr<const Reflection::ValueArray>()> func_fetchCatalogInfo(&PlatformService::beginGetCatalogInfo, "BeginGetCatalogInfo", Security::NAMEHEREScript);
+static Reflection::BoundYieldFuncDesc<PlatformService, shared_ptr<const Reflection::ValueArray>()> func_fetchInventoryInfo(&PlatformService::beginGetInventoryInfo, "BeginGetInventoryInfo", Security::NAMEHEREScript);
+static Reflection::BoundYieldFuncDesc<PlatformService, int(std::string)> func_beginPlatformStorePurchase(&PlatformService::beginPlatformStorePurchase, "BeginPlatformStorePurchase", "productId",  Security::NAMEHEREScript);
+static Reflection::BoundYieldFuncDesc<PlatformService, int(std::string)> func_beginAwardAchievement(&PlatformService::beginAwardAchievement, "BeginAwardAchievement", "eventName", Security::NAMEHEREScript );
+static Reflection::BoundYieldFuncDesc<PlatformService, int(std::string, double)> func_beginHeroStat(&PlatformService::beginHeroStat, "BeginHeroStat", "eventName", "value", DBL_MIN, Security::NAMEHEREScript );
+static Reflection::BoundFuncDesc<PlatformService, void(double,double)> a1 (&PlatformService::changeScreenResolution, "changeScreenResolution", "px", "py", Security::NAMEHEREScript);
+static Reflection::BoundYieldFuncDesc<PlatformService, int()> func_beginGetPMPCreatorId(&PlatformService::beginGetPMPCreatorId, "BeginGetPMPCreatorId", Security::NAMEHEREScript);
+static Reflection::BoundFuncDesc<PlatformService, int()> func_getTitleId(&PlatformService::getTitleId, "GetTitleId", Security::NAMEHEREScript);
+static Reflection::BoundFuncDesc<PlatformService, shared_ptr<const Reflection::ValueTable>()> func_getVersionIdInfo(&PlatformService::getVersionIdInfo, "GetVersionIdInfo", Security::NAMEHEREScript);
+static Reflection::BoundFuncDesc<PlatformService, shared_ptr<const Reflection::ValueTable>()> func_getPlatformUserInfo(&PlatformService::getPlatformUserInfo, "GetPlatformUserInfo", Security::NAMEHEREScript);
+static Reflection::BoundFuncDesc<PlatformService, void(std::string, std::string, std::string, XboxKeyBoardType)> func_showKeyBoard(&PlatformService::showKeyBoard, "ShowKeyboard", "title", "description", "defaultText", "keyboardType", Security::NAMEHEREScript);
+static Reflection::EventDesc<PlatformService, void(int)> event_GameJoined(&PlatformService::gameJoinedSignal, "GameJoined", "joinResult", Security::NAMEHEREScript);
+static Reflection::EventDesc<PlatformService, void(int)> event_ViewChanged(&PlatformService::viewChanged, "ViewChanged", "viewType", Security::NAMEHEREScript);
+static Reflection::EventDesc<PlatformService, void()> event_UserAuthComplete(&PlatformService::userAuthCompleteSignal, "UserAuthComplete", Security::NAMEHEREScript);
+static Reflection::EventDesc<PlatformService, void(int)> event_UserAccountChanged(&PlatformService::userAccountChangeSignal, "UserAccountChanged", "accountChangeStatus", Security::NAMEHEREScript);
+static Reflection::EventDesc<PlatformService, void(int)> event_robuxAmountChanged(&PlatformService::robuxAmountChangedSignal, "RobuxAmountChanged", "robuxChangeStatus", Security::NAMEHEREScript);
 static Reflection::EventDesc<PlatformService, void(std::string)> event_NetworkStatusChanged(&PlatformService::networkStatusChangedSignal, "NetworkStatusChanged", "statusJSON");
 static Reflection::EventDesc<PlatformService, void(std::string)> event_KeyboardClosed(&PlatformService::keyboardClosedSignal, "KeyboardClosed", "text");
 
-static Reflection::EventDesc<PlatformService, void(std::string)> event_GainedActiveUser(&PlatformService::gainedActiveUser, "GainedActiveUser", "userDisplayName", Security::RobloxScript);
-static Reflection::EventDesc<PlatformService, void(std::string)> event_LostActiveUser(&PlatformService::lostActiveUser, "LostActiveUser", "userDisplayName", Security::RobloxScript);
+static Reflection::EventDesc<PlatformService, void(std::string)> event_GainedActiveUser(&PlatformService::gainedActiveUser, "GainedActiveUser", "userDisplayName", Security::NAMEHEREScript);
+static Reflection::EventDesc<PlatformService, void(std::string)> event_LostActiveUser(&PlatformService::lostActiveUser, "LostActiveUser", "userDisplayName", Security::NAMEHEREScript);
 
-static Reflection::EventDesc<PlatformService, void(std::string)> event_LostUserGamepad(&PlatformService::lostUserGamepad, "LostUserGamepad", "userDisplayName", Security::RobloxScript);
-static Reflection::EventDesc<PlatformService, void(std::string)> event_GainedUserGamepad(&PlatformService::gainedUserGamepad, "GainedUserGamepad", "userDisplayName", Security::RobloxScript);
+static Reflection::EventDesc<PlatformService, void(std::string)> event_LostUserGamepad(&PlatformService::lostUserGamepad, "LostUserGamepad", "userDisplayName", Security::NAMEHEREScript);
+static Reflection::EventDesc<PlatformService, void(std::string)> event_GainedUserGamepad(&PlatformService::gainedUserGamepad, "GainedUserGamepad", "userDisplayName", Security::NAMEHEREScript);
 
-static Reflection::EventDesc<PlatformService, void()> event_suspend(&PlatformService::suspendSignal, "Suspended", Security::RobloxScript);
+static Reflection::EventDesc<PlatformService, void()> event_suspend(&PlatformService::suspendSignal, "Suspended", Security::NAMEHEREScript);
 
-static Reflection::BoundFuncDesc<PlatformService, void(int,bool)> func_voiceChatSetMuteState (&PlatformService::voiceChatSetMuteState, "VoiceChatSetMuteState", "userID", "muted", Security::RobloxScript);
-static Reflection::BoundFuncDesc<PlatformService, VoiceChatState(int)> func_voiceChatGetState(&PlatformService::voiceChatGetState, "VoiceChatGetState", "userId", Security::RobloxScript );
-static Reflection::EventDesc<PlatformService, void(int)> event_voiceChatUserTalkingStart(&PlatformService::voiceChatUserTalkingStartSignal , "VoiceChatUserTalkingStart", "userId", Security::RobloxScript);
-static Reflection::EventDesc<PlatformService, void(int)> event_voiceChatUserTalkingEnd(&PlatformService::voiceChatUserTalkingEndSignal, "VoiceChatUserTalkingEndSignal", "userId", Security::RobloxScript);
+static Reflection::BoundFuncDesc<PlatformService, void(int,bool)> func_voiceChatSetMuteState (&PlatformService::voiceChatSetMuteState, "VoiceChatSetMuteState", "userID", "muted", Security::NAMEHEREScript);
+static Reflection::BoundFuncDesc<PlatformService, VoiceChatState(int)> func_voiceChatGetState(&PlatformService::voiceChatGetState, "VoiceChatGetState", "userId", Security::NAMEHEREScript );
+static Reflection::EventDesc<PlatformService, void(int)> event_voiceChatUserTalkingStart(&PlatformService::voiceChatUserTalkingStartSignal , "VoiceChatUserTalkingStart", "userId", Security::NAMEHEREScript);
+static Reflection::EventDesc<PlatformService, void(int)> event_voiceChatUserTalkingEnd(&PlatformService::voiceChatUserTalkingEndSignal, "VoiceChatUserTalkingEndSignal", "userId", Security::NAMEHEREScript);
 
-Reflection::BoundProp<float> PlatformService::desc_Brightness("Brightness", category_Appearance, &PlatformService::brightness, Reflection::PropertyDescriptor::SCRIPTING, Security::RobloxScript);
-Reflection::BoundProp<float> PlatformService::desc_Contrast("Contrast", category_Appearance, &PlatformService::contrast, Reflection::PropertyDescriptor::SCRIPTING, Security::RobloxScript);
-Reflection::BoundProp<float> PlatformService::desc_GrayscaleLevel("GrayscaleLevel", category_Appearance, &PlatformService::grayscaleLevel, Reflection::PropertyDescriptor::SCRIPTING, Security::RobloxScript);
-Reflection::BoundProp<float> PlatformService::desc_BlurIntensity("BlurIntensity", category_Appearance, &PlatformService::blurIntensity, Reflection::PropertyDescriptor::SCRIPTING, Security::RobloxScript);
-Reflection::BoundProp<Color3> PlatformService::desc_TintColor("TintColor", category_Appearance, &PlatformService::tintColor, Reflection::PropertyDescriptor::SCRIPTING, Security::RobloxScript);
-Reflection::PropDescriptor<PlatformService, int> PlatformService::prop_DatamodelType("DatamodelType", category_Data, &PlatformService::getPlatformDatamodelType, NULL, Reflection::PropertyDescriptor::SCRIPTING, Security::RobloxScript);
+Reflection::BoundProp<float> PlatformService::desc_Brightness("Brightness", category_Appearance, &PlatformService::brightness, Reflection::PropertyDescriptor::SCRIPTING, Security::NAMEHEREScript);
+Reflection::BoundProp<float> PlatformService::desc_Contrast("Contrast", category_Appearance, &PlatformService::contrast, Reflection::PropertyDescriptor::SCRIPTING, Security::NAMEHEREScript);
+Reflection::BoundProp<float> PlatformService::desc_GrayscaleLevel("GrayscaleLevel", category_Appearance, &PlatformService::grayscaleLevel, Reflection::PropertyDescriptor::SCRIPTING, Security::NAMEHEREScript);
+Reflection::BoundProp<float> PlatformService::desc_BlurIntensity("BlurIntensity", category_Appearance, &PlatformService::blurIntensity, Reflection::PropertyDescriptor::SCRIPTING, Security::NAMEHEREScript);
+Reflection::BoundProp<Color3> PlatformService::desc_TintColor("TintColor", category_Appearance, &PlatformService::tintColor, Reflection::PropertyDescriptor::SCRIPTING, Security::NAMEHEREScript);
+Reflection::PropDescriptor<PlatformService, int> PlatformService::prop_DatamodelType("DatamodelType", category_Data, &PlatformService::getPlatformDatamodelType, NULL, Reflection::PropertyDescriptor::SCRIPTING, Security::NAMEHEREScript);
 
 namespace Reflection 
 {
@@ -250,7 +250,7 @@ void PlatformService::beginUnlinkAccount(boost::function<void(int)> resumeFuncti
 	worker.detach();
 }
 
-void PlatformService::beginSetRobloxCredentials(std::string accountName, std::string password, boost::function<void(int)> resumeFunction, boost::function<void(std::string)> errorFunction)
+void PlatformService::beginSetNAMEHERECredentials(std::string accountName, std::string password, boost::function<void(int)> resumeFunction, boost::function<void(std::string)> errorFunction)
 {
 	RBXASSERT(platform);
 	auto cl = makeClosure(resumeFunction, errorFunction);
@@ -260,7 +260,7 @@ void PlatformService::beginSetRobloxCredentials(std::string accountName, std::st
 		if( InterlockedCompareExchange( &alFlag, 1, 0 ) == 0 )
 		{
 			std::string resp;
-			int r = platform->performSetRobloxCredentials(accountName, password, &resp);
+			int r = platform->performSetNAMEHERECredentials(accountName, password, &resp);
 			endTask( this, [=](...) { cl->resume(r); delete cl; } );
 			InterlockedExchange( &alFlag, 0 );
 			return;
@@ -284,14 +284,14 @@ void PlatformService::beginHasLinkedAccount(boost::function<void(int)> resumeFun
 
 	worker.detach();
 }
-void PlatformService::beginHasRobloxCredentials(boost::function<void(int)> resumeFunction, boost::function<void(std::string)> errorFunction)
+void PlatformService::beginHasNAMEHERECredentials(boost::function<void(int)> resumeFunction, boost::function<void(std::string)> errorFunction)
 {
 	RBXASSERT(platform);
 	auto cl = makeClosure(resumeFunction, errorFunction);
 	boost::thread worker( 
 		[=]() -> void
 	{
-		int r = platform->performHasRobloxCredentials();
+		int r = platform->performHasNAMEHERECredentials();
 		endTask( this, [=](...) { cl->resume(r); delete cl; } );
 		return;
 	} );

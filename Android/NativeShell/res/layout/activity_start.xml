@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<com.roblox.client.components.RbxLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<com.namehere.client.components.RbxLinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
         android:orientation="vertical" android:layout_width="match_parent"
         android:layout_height="match_parent" android:background="@drawable/home_bkg" android:id="@+id/activity_start">
     <Space android:layout_height="0dp" android:layout_width="match_parent" android:layout_weight="1"/>
@@ -12,7 +12,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:src="@drawable/roblox_logo"
+            android:src="@drawable/namehere_logo"
             android:id="@+id/activity_start_logo"/>
     </LinearLayout>
     <LinearLayout
@@ -28,13 +28,13 @@
                 android:gravity="center"
                 android:layout_marginBottom="20dp"
                 android:id="@+id/activity_start_facebook_container">
-            <com.roblox.client.components.RbxButton
+            <com.namehere.client.components.RbxButton
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:id="@+id/gigya_facebook_login"
                     android:text="@string/FacebookLandingLong"
                     android:layout_centerInParent="true"
-                    style="@style/Theme.Roblox.Button.Flat.Blue.Settings"
+                    style="@style/Theme.NAMEHERE.Button.Flat.Blue.Settings"
                     android:gravity="right|center_vertical"
                     android:textSize="@dimen/startFacebookLogInTextSize"/>
             <ImageView
@@ -48,10 +48,10 @@
         </RelativeLayout>
         <!-- Facebook button end -->
         <!-- Landing buttons start -->
-        <com.roblox.client.components.RbxButton
+        <com.namehere.client.components.RbxButton
                 android:layout_width="250dp"
                 android:layout_height="@dimen/landingButtonHeight"
-                style="@style/Theme.Roblox.Button.Flat.White.Settings"
+                style="@style/Theme.NAMEHERE.Button.Flat.White.Settings"
                 android:id="@+id/login_button"
                 android:enabled="true"
                 android:text="@string/LoginButton" />
@@ -59,20 +59,20 @@
                 android:layout_width="20dp"
                 android:layout_height="20dp" />
 
-        <com.roblox.client.components.RbxButton
+        <com.namehere.client.components.RbxButton
                 android:layout_width="250dp"
                 android:layout_height="@dimen/landingButtonHeight"
-                style="@style/Theme.Roblox.Button.Flat.White.Settings"
+                style="@style/Theme.NAMEHERE.Button.Flat.White.Settings"
                 android:id="@+id/signup_button"
                 android:enabled="true"
                 android:text="@string/SignupLower" />
         <Space
                 android:layout_width="20dp"
                 android:layout_height="20dp" />
-        <com.roblox.client.components.RbxButton
+        <com.namehere.client.components.RbxButton
                 android:layout_width="250dp"
                 android:layout_height="@dimen/landingButtonHeight"
-                style="@style/Theme.Roblox.Button.Flat.White.Settings"
+                style="@style/Theme.NAMEHERE.Button.Flat.White.Settings"
                 android:id="@+id/play_now_button"
                 android:enabled="true"
                 android:text="@string/PlayNowButtonLabel" />
@@ -112,4 +112,4 @@
             android:layout_alignParentBottom="true"
             android:layout_alignParentRight="true" />
     </RelativeLayout>
-</com.roblox.client.components.RbxLinearLayout>
+</com.namehere.client.components.RbxLinearLayout>

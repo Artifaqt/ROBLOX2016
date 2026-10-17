@@ -469,7 +469,7 @@ void BitStream::WriteBits( const unsigned char* inByteArray, BitSize_t numberOfB
 }
 
 ///////////////////////////////////////////////////////////////////////
-// Roblox
+// NAMEHERE
 void BitStream::WriteBits( const unsigned char* inByteArray, BitSize_t startBitPos, BitSize_t numberOfBitsToWrite)
 {
 	AddBitsAndReallocate( numberOfBitsToWrite );
@@ -521,7 +521,7 @@ void BitStream::WriteBits( const unsigned char* inByteArray, BitSize_t startBitP
 	}
 	
 }
-// End Roblox
+// End NAMEHERE
 //////////////////////////////////////////////////////////////////////
 
 // Set the stream to some initial data.  For internal use
